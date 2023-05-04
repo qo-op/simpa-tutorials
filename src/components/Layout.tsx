@@ -19,11 +19,6 @@ class Layout extends React.Component<{
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
           <link
-            rel="preload"
-            href="https://qo-op.github.io/simpa/simpa.css"
-            as="style"
-          />
-          <link
             rel="stylesheet"
             href="https://qo-op.github.io/simpa/simpa.css"
           />

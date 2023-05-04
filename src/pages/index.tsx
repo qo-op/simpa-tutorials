@@ -1,4 +1,5 @@
 import React from "react";
+import type { HeadFC } from "gatsby";
 import Layout from "components/Layout";
 
 class IndexPage extends React.Component {
@@ -25,12 +26,23 @@ class IndexPage extends React.Component {
           </li>
         </ul>
         <p>
-          Throughout this series of tutorials, we will use practical examples
-          and code snippets to illustrate each concept.
+          Throughout these tutorials, we will use practical examples and code
+          snippets to illustrate each concept.
         </p>
       </Layout>
     );
   };
 }
+
+export const Head: HeadFC = () => (
+  <>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+    <script src="https://qo-op.github.io/simpa/simpa.js"></script>
+  </>
+);
 
 export default IndexPage;
