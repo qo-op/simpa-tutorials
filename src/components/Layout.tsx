@@ -12,18 +12,6 @@ class Layout extends React.Component<{
   render = () => {
     return (
       <>
-        <Helmet>
-          <title>{this.props.pageTitle}</title>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-          <link
-            rel="stylesheet"
-            href="https://qo-op.github.io/simpa/simpa.css"
-          />
-          <script src="https://qo-op.github.io/simpa/simpa.js"></script>
-        </Helmet>
         <div className="Layout BorderLayout">
           <div className="PageStartBorderLayout">
             <div className="LineBorderLayout">

@@ -2,10 +2,12 @@ import React from "react";
 import type { HeadFC } from "gatsby";
 import Layout from "components/Layout";
 
+const pageTitle: string = "Simpa Tutorials";
+
 class IndexPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle="Simpa Tutorials">
+      <Layout pageTitle={pageTitle}>
         <p>
           Simpa is a user interface library that assists developers to create
           Single-Page Applications. Simpa provides a set of layouts and
@@ -36,6 +38,7 @@ class IndexPage extends React.Component {
 
 export const Head: HeadFC = () => (
   <>
+    <title>{pageTitle}</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"

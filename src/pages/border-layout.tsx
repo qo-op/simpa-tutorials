@@ -1,10 +1,13 @@
 import React from "react";
+import type { HeadFC } from "gatsby";
 import Layout from "components/Layout";
+
+const pageTitle: string = "How to Use BorderLayout";
 
 class BorderLayoutPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle="How to Use BorderLayout">
+      <Layout pageTitle={pageTitle}>
         <p>
           <code>BorderLayout</code> is a type of layout manager that is used to
           arrange and organize components in a container. It divides the
@@ -150,5 +153,17 @@ class BorderLayoutPage extends React.Component {
     );
   };
 }
+
+export const Head: HeadFC = () => (
+  <>
+    <title>{pageTitle}</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+    <script src="https://qo-op.github.io/simpa/simpa.js"></script>
+  </>
+);
 
 export default BorderLayoutPage;
