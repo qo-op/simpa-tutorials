@@ -1,6 +1,5 @@
 import * as React from "react";
 import type { PageProps, HeadFC } from "gatsby";
-import { Link } from "gatsby";
 import Layout from "components/Layout";
 
 class AboutPage extends React.Component<PageProps> {

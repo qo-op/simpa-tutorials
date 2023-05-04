@@ -1,3 +1,4 @@
 npm init gatsby
 npm run develop
-call gatsby build --prefix-paths
+cmd
+gatsby build --prefix-paths

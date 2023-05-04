@@ -1,0 +1,87 @@
+.material-icons.info::after {
+    content: "info";
+}
+
+.material-icons.close::after {
+    content: "close";
+}
+
+.Layout {
+    height: 100vh;
+}
+
+.MenuBar [href="/"] {
+    padding: 2px 8px;
+    font-family: cursive;
+    text-decoration: none;
+    color: black;
+}
+
+.MessageDialog {
+    align-self: center;
+    justify-self: center;
+}
+
+.MessageDialog>:first-child {
+    padding: 5px;
+    gap: 5px;
+    background-color: lightgray;
+    user-select: none;
+}
+
+.MessageDialog .material-icons.info::after {
+    color: slateblue;
+}
+
+.MessageDialog .material-icons.close::after {
+    color: gray;
+}
+
+.MessageDialog .material-icons.close:hover::after {
+    color: red;
+}
+
+.NavigationTree.Tree li>a.TreeNode {
+    text-decoration: none;
+    color: black;
+    padding-inline-start: calc(8px + 1rem + 5px);
+}
+
+.NavigationTree.Tree .material-icons.icon::after {
+    content: "school";
+    color: black;
+}
+
+.SplitPane>:nth-child(2) {
+    position: relative;
+    border-inline-start: 1px solid gray;
+}
+
+.SplitPaneDivider {
+    position: absolute;
+    inset-inline-start: -6px;
+    width: 11px;
+    height: 100%;
+}
+
+.Tutorial {
+    padding: 0 8px;
+}
+
+.Tutorial>* {
+    max-width: 800px;
+    text-align: justify;
+}
+
+.Tutorial h1 {
+    margin: 0
+}
+
+.Tutorial .Code {
+    color: gray;
+    text-align: start;
+}
+
+html {
+    font-size: 20px;
+}
