@@ -11,4 +11,8 @@ const config: GatsbyConfig = {
   plugins: [],
 }
 
+module.exports = {
+  plugins: ["gatsby-plugin-root-import"],
+};
+
 export default config
