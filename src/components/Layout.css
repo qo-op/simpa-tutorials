@@ -10,9 +10,8 @@
     height: 100vh;
 }
 
-.MenuBar [href="/"] {
+.MenuBar a {
     padding: 2px 8px;
-    font-family: cursive;
     text-decoration: none;
     color: black;
 }
