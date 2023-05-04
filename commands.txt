@@ -1,3 +1,5 @@
 npm init gatsby
 npm run develop
 cmd /c gatsby build --prefix-paths
+cmd /c gatsby serve --prefix-paths
+Flash of Unstyled Content

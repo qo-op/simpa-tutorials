@@ -39,11 +39,6 @@ class IndexPage extends React.Component {
 export const Head: HeadFC = () => (
   <>
     <title>{pageTitle}</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
     <script src="https://qo-op.github.io/simpa/simpa.js"></script>
   </>
 );

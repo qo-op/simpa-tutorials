@@ -2,6 +2,7 @@ import * as React from "react";
 import MenuBar from "components/MenuBar";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
+import "./simpa.css";
 import "./Layout.css";
 
 class Layout extends React.Component<
@@ -11,6 +12,17 @@ class Layout extends React.Component<
   },
   { mounted: boolean }
 > {
+  constructor(props: { pageTitle: string; children: React.ReactNode }) {
+    super(props);
+    this.state = {
+      mounted: false,
+    };
+  }
+  componentDidMount = () => {
+    this.setState({
+      mounted: true,
+    });
+  };
   render = () => {
     return (
       <div className="Layout BorderLayout">
@@ -36,7 +48,13 @@ class Layout extends React.Component<
                 <div className="CenterLayout">
                   <h1>{this.props.pageTitle}</h1>
                 </div>
-                <div>{this.props.children}</div>
+                <div
+                  style={{
+                    visibility: this.state.mounted ? "visible" : "hidden",
+                  }}
+                >
+                  {this.props.children}
+                </div>
               </div>
             </div>
           </div>
