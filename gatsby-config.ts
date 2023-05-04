@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteUrl: `https://qo-op.github.io/simpa-tutorials/`,
+    siteUrl: "https://qo-op.github.io/simpa-tutorials",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -13,7 +13,7 @@ const config: GatsbyConfig = {
 
 module.exports = {
   plugins: ["gatsby-plugin-root-import"],
-  pathPrefix: "/simpa-tutorials",
+  pathPrefix: `/simpa-tutorials`,
 };
 
 export default config
