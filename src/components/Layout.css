@@ -1,3 +1,7 @@
+html {
+    font-size: 20px;
+}
+
 .material-icons.info::after {
     content: "info";
 }
@@ -79,8 +83,4 @@
 .Tutorial .Code {
     color: gray;
     text-align: start;
-}
-
-html {
-    font-size: 20px;
 }
