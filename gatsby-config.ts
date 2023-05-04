@@ -13,6 +13,7 @@ const config: GatsbyConfig = {
 
 module.exports = {
   plugins: ["gatsby-plugin-root-import"],
+  pathPrefix: "/simpa-tutorials",
 };
 
 export default config
