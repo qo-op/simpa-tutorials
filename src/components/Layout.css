@@ -2,14 +2,6 @@ html {
     font-size: 20px;
 }
 
-.material-icons.info::after {
-    content: "info";
-}
-
-.material-icons.close::after {
-    content: "close";
-}
-
 .Layout {
     height: 100vh;
 }
@@ -18,30 +10,6 @@ html {
     padding: 2px 8px;
     text-decoration: none;
     color: black;
-}
-
-.MessageDialog {
-    align-self: center;
-    justify-self: center;
-}
-
-.MessageDialog>:first-child {
-    padding: 5px;
-    gap: 5px;
-    background-color: lightgray;
-    user-select: none;
-}
-
-.MessageDialog .material-icons.info::after {
-    color: slateblue;
-}
-
-.MessageDialog .material-icons.close::after {
-    color: gray;
-}
-
-.MessageDialog .material-icons.close:hover::after {
-    color: red;
 }
 
 .NavigationTree.Tree li>a.TreeNode {

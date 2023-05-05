@@ -11,49 +11,20 @@ class MessageDialog extends React.Component<{
   dispose = () => {
     ModalLayer.dispose();
   };
-  move = (ev: React.PointerEvent<HTMLDivElement>) => {
-    const target: HTMLElement = ev.target as HTMLElement;
-    const dialog: HTMLElement = ev.currentTarget as HTMLElement;
-    const dialogTopPane: HTMLElement = dialog.firstElementChild as HTMLElement;
-    if (!dialogTopPane.contains(target) || target.onclick) {
-      return;
-    }
-    var rect = dialog.getBoundingClientRect();
-    let x = ev.clientX - rect.left;
-    let y = ev.clientY - rect.top;
-    const dragLayer = document.createElement("div");
-    document.body.appendChild(dragLayer);
-    dragLayer.classList.add("DragLayer");
-    const dragLayerEventListener = {
-      pointermove(ev: MouseEvent) {
-        dialog.style.left = ev.clientX - x + "px";
-        dialog.style.top = ev.clientY - y + "px";
-      },
-      pointerup(ev: MouseEvent) {
-        dragLayer.remove();
-      },
-      pointerleave(ev: MouseEvent) {
-        dragLayer.remove();
-      },
-    };
-    dragLayer.addEventListener(
-      "pointermove",
-      dragLayerEventListener.pointermove
-    );
-    dragLayer.addEventListener("pointerup", dragLayerEventListener.pointerup);
-    dragLayer.addEventListener(
-      "pointerleave",
-      dragLayerEventListener.pointerleave
+  pointerdown = (ev: React.PointerEvent<HTMLDivElement>) => {
+    document.dispatchEvent(
+      new CustomEvent("dialogtitlepanepointerdown", {
+        detail: {
+          event: ev,
+        },
+      })
     );
   };
   render = () => {
     return (
-      <div
-        className="MessageDialog Dialog PageStartBorderLayout"
-        onPointerDown={this.move}
-      >
+      <div className="Dialog PageStartBorderLayout">
         <div className="LineEndBorderLayout" style={{ alignItems: "center" }}>
-          <span>
+          <span onPointerDown={this.pointerdown}>
             <b>{this.props.title}</b>
           </span>
           <span className="material-icons close" onClick={this.dispose}></span>
