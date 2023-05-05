@@ -55,18 +55,6 @@ html {
     color: black;
 }
 
-.SplitPane>:nth-child(2) {
-    position: relative;
-    border-inline-start: 1px solid gray;
-}
-
-.SplitPaneDivider {
-    position: absolute;
-    inset-inline-start: -6px;
-    width: 11px;
-    height: 100%;
-}
-
 .Tutorial {
     padding: 0 8px;
 }
