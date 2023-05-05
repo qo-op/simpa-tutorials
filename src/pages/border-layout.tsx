@@ -1,5 +1,8 @@
 import React from "react";
 import type { HeadFC } from "gatsby";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import Layout from "components/Layout";
 
 const pageTitle: string = "How to Use BorderLayout";
@@ -45,46 +48,14 @@ class BorderLayoutPage extends React.Component {
           Here's an example of using <code>BorderLayout</code> to create a
           simple user interface with a text and a button:
         </p>
-        <div style={{ backgroundColor: "black" }}>
-          <code className="Code">
-            <div>{"..."}</div>
-            <div>
-              {"<"}
-              <span style={{ color: "blue" }}>div</span>
-              <span style={{ color: "lightblue" }}> class</span>=
-              <span style={{ color: "orange" }}>"BorderLayout"</span>
-              {">"}
-            </div>
-            <div>
-              &nbsp;&nbsp;
-              {"<"}
-              <span style={{ color: "blue" }}>span</span>
-              <span style={{ color: "lightblue" }}> data-constraints</span>=
-              <span style={{ color: "orange" }}>"page-start"</span>
-              {">"}
-              {"Hello, World!"}
-              {"<"}
-              <span style={{ color: "blue" }}>/span</span>
-              {">"}
-            </div>
-            <div>
-              &nbsp;&nbsp;
-              {"<"}
-              <span style={{ color: "blue" }}>button</span>
-              {">"}
-              {"Click me!"}
-              {"<"}
-              <span style={{ color: "blue" }}>/button</span>
-              {">"}
-            </div>
-            <div>
-              {"<"}
-              <span style={{ color: "blue" }}>/div</span>
-              {">"}
-            </div>
-            <div>{"..."}</div>
-          </code>
-        </div>
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...\n` +
+            `<div class="BorderLayout">\n` +
+            `  <span data-constraints="page-start">Hello, World!</span>\n` +
+            `  <button>Click me!</button>\n` +
+            `</div>\n` +
+            `...`}
+        </SyntaxHighlighter>
         <p>
           In a BorderLayout, if no <code>data-constraints</code> are specified
           for a component, then the component is placed in the{" "}
@@ -113,32 +84,13 @@ class BorderLayoutPage extends React.Component {
           link to the Simpa stylesheet in the head section of your HTML
           document.
         </p>
-        <div style={{ backgroundColor: "black" }}>
-          <code className="Code">
-            <div>
-              {"<"}
-              <span style={{ color: "blue" }}>head</span>
-              {">"}
-            </div>
-            <div>
-              &nbsp;&nbsp;
-              {"<"}
-              <span style={{ color: "blue" }}>link</span>
-              <span style={{ color: "lightblue" }}> rel</span>=
-              <span style={{ color: "orange" }}>"stylesheet"</span>
-              <span style={{ color: "lightblue" }}> href</span>=
-              <span style={{ color: "orange" }}>
-                "https://qo-op.github.io/simpa/simpa.css"
-              </span>
-              {">"}
-            </div>
-            <div>
-              {"<"}
-              <span style={{ color: "blue" }}>/head</span>
-              {">"}
-            </div>
-          </code>
-        </div>
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`<head>\n` +
+            `  ...\n` +
+            `  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">\n` +
+            `  ...\n` +
+            `</head>`}
+        </SyntaxHighlighter>
         <p>
           It's important to note that the URL in the <code>href</code> attribute
           points to an external resource on the internet. This means that your

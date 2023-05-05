@@ -18,14 +18,17 @@
   "dependencies": {
     "@types/react-helmet": "^6.1.6",
     "gatsby": "^5.9.0",
+    "gatsby-remark-vscode": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "@types/node": "^18.16.2",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "@types/react-syntax-highlighter": "^15.5.6",
     "gatsby-plugin-root-import": "^2.0.9",
     "typescript": "^5.0.4"
   }
