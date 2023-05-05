@@ -1,5 +1,5 @@
 /**
- * simpa.css
+ * Simpa.css
  * CSS definitions for Single-Page Applications
  *
  * @author Yassuo Toda
@@ -275,7 +275,8 @@ body {
     grid-row: 1 !important;
 }
 
-.PageAxisBoxLayout>* .PageAxisStretchBoxLayout>* {
+.PageAxisBoxLayout>*
+.PageAxisStretchBoxLayout>* {
     grid-column: 1 !important;
 }
 
@@ -416,29 +417,31 @@ body {
 }
 
 /**
- * Material icons
+ * Material Icons
  */
- @font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 
 .material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
 /**
@@ -1096,7 +1099,7 @@ table.RowHeader>tbody>tr>td:first-child {
     display: none !important;
 }
 
-.Tree li[data-open]>ul {
+.Tree li[data-folder="open"]>ul {
     display: block !important;
 }
 
@@ -1112,18 +1115,18 @@ table.RowHeader>tbody>tr>td:first-child {
     grid-row: 1 !important;
 }
 
-.Tree .material-icons.icon::after {
-    content: "insert_drive_file";
+.Tree .material-icons::after {
+    content: "description";
     color: gray;
 }
 
-.Tree li[data-closed]>.material-icons.icon::after,
-.Tree li[data-closed]>:not(ul) .material-icons.icon::after {
+.Tree li>.material-icons.folder::after,
+.Tree li>:not(ul) .material-icons.folder::after {
     content: "keyboard_arrow_right";
 }
 
-.Tree li[data-open]>.material-icons.icon::after,
-.Tree li[data-open]>:not(ul) .material-icons.icon::after {
+.Tree li[data-folder="open"]>.material-icons.folder::after,
+.Tree li[data-folder="open"]>:not(ul) .material-icons.folder::after {
     content: "keyboard_arrow_down";
 }
 

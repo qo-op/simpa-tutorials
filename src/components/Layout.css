@@ -50,7 +50,7 @@ html {
     padding-inline-start: calc(8px + 1rem + 5px);
 }
 
-.NavigationTree.Tree .material-icons.icon::after {
+.NavigationTree.Tree .material-icons::after {
     content: "school";
     color: black;
 }

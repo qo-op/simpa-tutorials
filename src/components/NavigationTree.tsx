@@ -2,21 +2,30 @@ import React from "react";
 import { Link } from "gatsby";
 
 class NavigationTree extends React.Component {
-  render() {
+  expandOrCollapse = (ev: React.MouseEvent) => {
+    const treeNode: HTMLElement = ev.currentTarget as HTMLElement;
+    const li: HTMLElement = treeNode.parentElement as HTMLElement;
+    if (li.dataset.folder === "open") {
+        li.dataset.folder = "closed";
+    } else {
+        li.dataset.folder = "open";
+    }
+  }
+  render = () => {
     return (
       <ul
         className="NavigationTree Tree"
         data-selection-mode="single-tree-selection"
       >
-        <li data-open>
-          <div className="TreeNode">
-            <span className="material-icons icon"></span>
+        <li data-folder="open">
+          <div className="TreeNode" onClick={this.expandOrCollapse}>
+            <span className="material-icons folder"></span>
             <span>Layouts</span>
           </div>
           <ul>
             <li>
               <Link to="/border-layout" className="TreeNode">
-                <span className="material-icons icon"></span>
+                <span className="material-icons"></span>
                 <span>How to Use BorderLayout</span>
               </Link>
             </li>
@@ -49,8 +58,8 @@ class NavigationTree extends React.Component {
           </ul>
         </li>
         {/*
-        <li data-open>
-          <div className="TreeNode">
+        <li data-folder="open">
+          <div className="TreeNode" onClick={this.expandOrCollapse}>
             <span className="material-icons icon"></span>
             <span>Components</span>
           </div>
