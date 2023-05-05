@@ -4,4 +4,9 @@ cmd /c gatsby clean
 cmd /c gatsby build --prefix-paths
 cmd /c gatsby serve --prefix-paths
 
-Flash of Unstyled Content
+fouc flash of unstyled content
+gatsby-browser
+wrapRootElement
+wrapPageElement
+jamstack
+nextjs

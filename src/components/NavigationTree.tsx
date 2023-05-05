@@ -1,24 +1,19 @@
 import React from "react";
 import { Link } from "gatsby";
+import { connect } from "react-redux";
 
-class NavigationTree extends React.Component {
-  expandOrCollapse = (ev: React.MouseEvent) => {
-    const treeNode: HTMLElement = ev.currentTarget as HTMLElement;
-    const li: HTMLElement = treeNode.parentElement as HTMLElement;
-    if (li.dataset.folder === "open") {
-        li.dataset.folder = "closed";
-    } else {
-        li.dataset.folder = "open";
-    }
-  }
+class NavigationTree extends React.Component<{
+  layouts: string;
+  expandOrCollapseLayouts: () => void;
+}> {
   render = () => {
     return (
-      <ul
-        className="NavigationTree Tree"
-        data-selection-mode="single-tree-selection"
-      >
-        <li data-folder="open">
-          <div className="TreeNode" onClick={this.expandOrCollapse}>
+      <ul className="NavigationTree Tree">
+        <li data-folder={this.props.layouts}>
+          <div
+            className="TreeNode"
+            onClick={this.props.expandOrCollapseLayouts}
+          >
             <span className="material-icons folder"></span>
             <span>Layouts</span>
           </div>
@@ -75,7 +70,18 @@ class NavigationTree extends React.Component {
         */}
       </ul>
     );
-  }
+  };
 }
 
-export default NavigationTree;
+const mapStateToProps = (state: { layouts: string }) => ({
+  layouts: state.layouts,
+});
+
+const mapDispatchToProps = (
+  dispatch: (action: { type: string }) => { type: string }
+) => ({
+  expandOrCollapseLayouts: () =>
+    dispatch({ type: "NavigationTree/expandOrCollapseLayouts" }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationTree);

@@ -4,6 +4,7 @@ import MenuBar from "components/MenuBar";
 import SplitPane from "components/SplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
+import Counter from "components/Counter";
 import "./simpa.css";
 import "./Layout.css";
 
