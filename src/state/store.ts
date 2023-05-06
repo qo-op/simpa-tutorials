@@ -1,13 +1,14 @@
 import { createStore } from "redux";
 
-function counterReducer(state = { count: 0, layouts: "open" }, action: { type: string }) {
+function counterReducer(state = {
+    layouts: "open",
+    dividerLocation: null
+}, action: { type: string, payload: any }) {
     switch (action.type) {
-        case 'counter/incremented':
-            return { ...state, count: state.count + 1 };
-        case 'counter/decremented':
-            return { ...state, count: state.count - 1 };
         case 'NavigationTree/expandOrCollapseLayouts':
             return { ...state, layouts: state.layouts === "open" ? "closed" : "open" };
+        case 'SplitPane/setDividerLocation':
+            return { ...state, dividerLocation: action.payload };
         default:
             return state;
     }

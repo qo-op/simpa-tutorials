@@ -78,10 +78,16 @@ const mapStateToProps = (state: { layouts: string }) => ({
 });
 
 const mapDispatchToProps = (
-  dispatch: (action: { type: string }) => { type: string }
+  dispatch: (action: { type: string; payload: any }) => {
+    type: string;
+    payload: any;
+  }
 ) => ({
   expandOrCollapseLayouts: () =>
-    dispatch({ type: "NavigationTree/expandOrCollapseLayouts" }),
+    dispatch({
+      type: "NavigationTree/expandOrCollapseLayouts",
+      payload: null,
+    }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationTree);
