@@ -2,11 +2,12 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
+import NoteAboutLayouts from "components/NoteAboutLayouts";
 
 class BorderLayoutPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle={"How to Use BorderLayout"}>
+      <Layout pageTitle={"How to Use BorderLayout\nwith HTML and CSS"}>
         <p>
           <code>BorderLayout</code> is a type of layout manager that is used to
           arrange and organize components in a container. It divides the
@@ -40,6 +41,8 @@ class BorderLayoutPage extends React.Component {
           container. The component placed in the <code>center</code> region is
           stretched to fill the remaining space in the container.
         </p>
+        <hr />
+        <h2>Example with two components</h2>
         <p>
           Here's an example of using <code>BorderLayout</code> to create a
           simple user interface with a text and a button:
@@ -75,29 +78,33 @@ class BorderLayoutPage extends React.Component {
           <span data-constraints="page-start">Hello, World!</span>
           <button>Click me!</button>
         </div>
+        <p />
+        <hr />
+        <h2>Adding gaps</h2>
         <p>
-          In order to use <code>BorderLayout</code> in your HTML file, you need to include a
-          link to the Simpa stylesheet in the head section of your HTML
-          document.
+          To create gaps between components in <code>BorderLayout</code>, you
+          can add a margin to the component placed in the <code>center</code>{" "}
+          region. For example, if you want to create a gap between a component
+          in the <code>page-start</code> region and a component in the{" "}
+          <code>center</code> region, you can add a margin to the{" "}
+          <code>center</code> component.
         </p>
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`<head>\n` +
-            `  ...\n` +
-            `  <link rel="stylesheet"\n` +
-            `        href="https://qo-op.github.io/simpa/simpa.css" />\n` +
-            `  ...\n` +
-            `</head>`}
+          {`...\n` +
+            `<div class="BorderLayout">\n` +
+            `  <button data-constraints="page-start">Button 1</button>\n` +
+            `  <button style="margin-block-start: 5px">Button 2</button>\n` +
+            `</div>\n` +
+            `...`}
         </SyntaxHighlighter>
-        <p>
-          It's important to note that the URL in the <code>href</code> attribute
-          points to an external resource on the internet. This means that your
-          web page will only be able to use Simpa if it has a working internet
-          connection and can access the Simpa CDN (Content Delivery Network) at
-          the specified URL. If you want to use Simpa offline or on a local
-          server, you can download the Simpa stylesheet and include it in your
-          project directory instead of using the CDN.
-        </p>
-        <p></p>
+        <p>After running this code, we will see a panel with two buttons.</p>
+        <div className="BorderLayout" style={{ backgroundColor: "lightgray" }}>
+          <button data-constraints="page-start">Button 1</button>
+          <button style={{ marginBlockStart: "5px" }}>Button 2</button>
+        </div>
+        <p />
+        <NoteAboutLayouts />
+        <p />
       </Layout>
     );
   };

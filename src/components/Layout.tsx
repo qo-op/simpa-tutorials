@@ -4,19 +4,19 @@ import MenuBar from "components/MenuBar";
 import SplitPane from "components/SplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
-import Counter from "components/Counter";
 import "./simpa.css";
 import "./Layout.css";
 
 class Layout extends React.Component<{
   pageTitle: string;
+
   children: React.ReactNode;
 }> {
   render = () => {
     return (
       <>
         <Helmet>
-          <title>{this.props.pageTitle}</title>
+          <title>{this.props.pageTitle.split(/\r?\n/).join(" ")}</title>
           <script src="https://qo-op.github.io/simpa/simpa.js"></script>
         </Helmet>
         <div className="Layout BorderLayout">
@@ -31,9 +31,9 @@ class Layout extends React.Component<{
                 <NavigationTree />
               </nav>
               <div className="Tutorial CenterLayout">
-                <div className="CenterLayout">
-                  <h1>{this.props.pageTitle}</h1>
-                </div>
+                {this.props.pageTitle.split(/\r?\n/).map((line: string) => (
+                  <h1 className="CenterLayout">{line}</h1>
+                ))}
                 <div>{this.props.children}</div>
               </div>
             </SplitPane>

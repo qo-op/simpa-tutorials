@@ -2,16 +2,19 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
+import NoteAboutLayouts from "components/NoteAboutLayouts";
 
 class BorderLayoutPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle={"How to Use BoxLayout"}>
+      <Layout pageTitle={"How to Use BoxLayout\nwith HTML and CSS"}>
         <p>
           <code>BoxLayout</code> is a layout manager that arranges components in
           a single row or column. It's useful when you need to lay out
           components in a specific direction, such as in a toolbar.
         </p>
+        <hr />
+        <h2>Example with components arranged horizontally</h2>
         <p>
           To use <code>BoxLayout</code>, you first need to create a container to
           hold your components. This can be a <code>div</code> element. Once you
@@ -47,6 +50,9 @@ class BorderLayoutPage extends React.Component {
             button
           </button>
         </div>
+        <p />
+        <hr />
+        <h2>Example with components arranged vertically</h2>
         <p>
           To use BoxLayout to lay out components vertically, you need to set{" "}
           <code>data-axis</code> to <code>"page-axis"</code>. Here's an example:
@@ -59,6 +65,7 @@ class BorderLayoutPage extends React.Component {
             `  <button>First</button>\n` +
             `  <button>Second</button>\n` +
             `  <button>Third</button>\n` +
+            `  <button>Fourth</button>\n` +
             `</div>\n` +
             `...`}
         </SyntaxHighlighter>
@@ -74,7 +81,11 @@ class BorderLayoutPage extends React.Component {
           <button>First</button>
           <button>Second</button>
           <button>Third</button>
+          <button>Fourth</button>
         </div>
+        <p />
+        <hr />
+        <h2>Example with alignment set to "stretch"</h2>
         <p>
           To stretch components within a <code>BoxLayout</code> container, you
           need to set the <code>data-alignment</code> to <code>"stretch"</code>.
@@ -95,12 +106,12 @@ class BorderLayoutPage extends React.Component {
             `  <button>First</button>\n` +
             `  <button>Second</button>\n` +
             `  <button>Third</button>\n` +
+            `  <button>Fourth</button>\n` +
             `</div>\n` +
             `...`}
         </SyntaxHighlighter>
         <p>
-          After running this code, we will see a panel with stretched buttons,
-          like this:
+          After running this code, we will see a panel with stretched buttons.
         </p>
         <div
           className="BoxLayout"
@@ -111,29 +122,10 @@ class BorderLayoutPage extends React.Component {
           <button>First</button>
           <button>Second</button>
           <button>Third</button>
+          <button>Fourth</button>
         </div>
-        <p>
-          In order to use <code>BoxLayout</code> in your HTML file, you need to
-          include a link to the Simpa stylesheet in the head section of your
-          HTML document.
-        </p>
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`<head>\n` +
-            `  ...\n` +
-            `  <link rel="stylesheet"\n` +
-            `        href="https://qo-op.github.io/simpa/simpa.css" />\n` +
-            `  ...\n` +
-            `</head>`}
-        </SyntaxHighlighter>
-        <p>
-          It's important to note that the URL in the <code>href</code> attribute
-          points to an external resource on the internet. This means that your
-          web page will only be able to use Simpa if it has a working internet
-          connection and can access the Simpa CDN (Content Delivery Network) at
-          the specified URL. If you want to use Simpa offline or on a local
-          server, you can download the Simpa stylesheet and include it in your
-          project directory instead of using the CDN.
-        </p>
+        <p></p>
+        <NoteAboutLayouts />
         <p></p>
       </Layout>
     );
