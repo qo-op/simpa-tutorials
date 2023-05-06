@@ -23,7 +23,7 @@ class MessageDialog extends React.Component<{
   render = () => {
     return (
       <div className="Dialog PageStartBorderLayout">
-        <div className="LineEndBorderLayout" style={{ alignItems: "center" }}>
+        <div className="LineEndCenterBorderLayout">
           <span onPointerDown={this.pointerdown}>
             <b>{this.props.title}</b>
           </span>
