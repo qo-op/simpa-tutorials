@@ -24,13 +24,13 @@ class NavigationTree extends React.Component<{
                 <span>How to Use BorderLayout</span>
               </Link>
             </li>
-            {/*
             <li>
               <Link to="/box-layout" className="TreeNode">
                 <span className="material-icons icon"></span>
                 <span>How to Use BoxLayout</span>
               </Link>
             </li>
+            {/*
             <li>
               <Link to="/card-layout" className="TreeNode">
                 <span className="material-icons icon"></span>

@@ -22,9 +22,7 @@ class Layout extends React.Component<{
         <div className="Layout BorderLayout">
           <div className="PageStartBorderLayout">
             <div className="LineBorderLayout">
-              <div className="StretchBoxLayout">
-                <MenuBar />
-              </div>
+              <MenuBar />
               <div></div>
               <div></div>
             </div>

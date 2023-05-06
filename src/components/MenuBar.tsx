@@ -5,7 +5,7 @@ import HelpMenu from "components/HelpMenu";
 class MenuBar extends React.Component {
   render() {
     return (
-      <ul className="MenuBar StretchBoxLayout">
+      <ul className="MenuBar BoxLayout" data-alignment="stretch">
         <li>
           <Link to="/" className="Menu">
             <span>Simpa Tutorials</span>

@@ -53,7 +53,7 @@ class BorderLayoutPage extends React.Component {
             `...`}
         </SyntaxHighlighter>
         <p>
-          In a BorderLayout, if no <code>data-constraints</code> are specified
+          In a BorderLayout, if no <code>data-constraints</code> is specified
           for a component, then the component is placed in the{" "}
           <code>center</code> region by default.
         </p>
@@ -76,14 +76,15 @@ class BorderLayoutPage extends React.Component {
           <button>Click me!</button>
         </div>
         <p>
-          In order to use BorderLayout in your HTML file, you need to include a
+          In order to use <code>BorderLayout</code> in your HTML file, you need to include a
           link to the Simpa stylesheet in the head section of your HTML
           document.
         </p>
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`<head>\n` +
             `  ...\n` +
-            `  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">\n` +
+            `  <link rel="stylesheet"\n` +
+            `        href="https://qo-op.github.io/simpa/simpa.css" />\n` +
             `  ...\n` +
             `</head>`}
         </SyntaxHighlighter>
