@@ -1,12 +1,13 @@
 import React from "react";
 import MediaQuery from "react-responsive";
+import { navigate } from "gatsby";
 import { connect } from "react-redux";
 import store from "state/store";
 
 class Hamburger extends React.Component<{
   hamburgerClosed: boolean;
 }> {
-  toggle = (hamburgerClosed: boolean) => {
+  toggle = (hamburgerClosed: boolean, mobileView: boolean) => {
     store.dispatch({
       type: "HamburgerSplitPane/setDividerLocation",
       payload: hamburgerClosed ? -2 : -1,
@@ -15,6 +16,9 @@ class Hamburger extends React.Component<{
       type: "Hamburger/toggle",
       payload: null,
     });
+    if (mobileView) {
+      navigate("/blank");
+    }
   }
   render = () => {
     return (
@@ -22,7 +26,7 @@ class Hamburger extends React.Component<{
         {(matches: boolean) => (
           <div
             className="Hamburger BorderLayout"
-            onClick={() => this.toggle(this.props.hamburgerClosed)}
+            onClick={() => this.toggle(this.props.hamburgerClosed, matches)}
           >
             <span className="material-icons">
               {this.props.hamburgerClosed

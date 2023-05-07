@@ -7,6 +7,7 @@ import NextPage from "./NextPage";
 import HamburgerSplitPane from "components/HamburgerSplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
+import Tutorial from "components/Tutorial";
 import "./simpa.css";
 import "./Layout.css";
 
@@ -21,12 +22,14 @@ class Layout extends React.Component<{
           <title>{this.props.pageTitle.split(/\r?\n/).join(" ")}</title>
           <script src="https://qo-op.github.io/simpa/simpa.js"></script>
         </Helmet>
-        {/* <BrowserView> */}
         <div className="Layout BorderLayout">
           <div className="PageStartBorderLayout">
             <div
               className="LineStartCenterBorderLayout"
-              style={{ borderBlockEnd: "1px black solid", paddingInline: "16px" }}
+              style={{
+                borderBlockEnd: "1px black solid",
+                paddingInline: "16px",
+              }}
             >
               <Hamburger />
               <div className="LineCenterBorderLayout">
@@ -37,57 +40,25 @@ class Layout extends React.Component<{
                     style={{
                       textDecoration: "none",
                       color: "black",
-                      fontFamily: "cursive",
                       fontSize: "2rem",
                       marginInline: "4px",
                     }}
                   >
-                    Simpa Tutorials
+                    Simpa
                   </Link>
                 </div>
                 <NextPage />
               </div>
             </div>
             <HamburgerSplitPane>
-              <nav>
-                <NavigationTree />
-              </nav>
-              <div className="Tutorial BoxLayout" data-axis="page-axis">
-                {this.props.pageTitle
-                  .split(/\r?\n/)
-                  .map((line: string, index: number) => (
-                    <h1 key={index}>{line}</h1>
-                  ))}
-                <div>{this.props.children}</div>
-              </div>
+              <NavigationTree />
+              <Tutorial pageTitle={this.props.pageTitle}>
+                {this.props.children}
+              </Tutorial>
             </HamburgerSplitPane>
           </div>
           <ModalLayer />
         </div>
-        {/* </BrowserView> */}
-        {/* <MobileView>
-          <div className="Layout BorderLayout">
-            <div className="PageStartBorderLayout">
-              <div className="LineBorderLayout">
-                <MenuBar />
-                <div></div>
-                <div></div>
-              </div>
-              <div className="ScrollPane">
-                <div className="Tutorial BoxLayout" data-axis="page-axis">
-                  {this.props.pageTitle
-                    .split(/\r?\n/)
-                    .map((line: string, index: number) => (
-                      <h2 key={index}>{line}</h2>
-                    ))}
-                  <div>{this.props.children}</div>
-                </div>
-              </div>
-            </div>
-            <ModalLayer />
-          </div>
-        </MobileView>
-         */}
       </>
     );
   };

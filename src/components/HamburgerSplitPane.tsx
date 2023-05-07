@@ -23,7 +23,6 @@ class HamburgerSplitPane extends React.Component<{
     );
   };
   render = () => {
-    console.log(this.props.dividerLocation);
     return (
       <MediaQuery maxWidth={480}>
         {(matches: boolean) => (
