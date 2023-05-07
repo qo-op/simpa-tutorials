@@ -2,6 +2,11 @@ html {
     font-size: 20px;
 }
 
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
 .Layout {
     height: 100vh;
 }
@@ -18,13 +23,29 @@ html {
     padding-inline-start: calc(8px + 1rem + 5px);
 }
 
+.NavigationTree.Tree>li>a.TreeNode {
+    text-decoration: none;
+    color: black;
+    padding-inline-start: calc(8px);
+}
+
 .NavigationTree.Tree .material-icons::after {
     content: "school";
     color: black;
 }
 
 .Tutorial {
-    padding: 0 8px;
+    padding: 8px;
+}
+
+.Tutorial h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.Tutorial h2 {
+    font-size: 1.25rem;
+    margin: 0;
 }
 
 .Tutorial>* {
@@ -32,12 +53,54 @@ html {
     text-align: justify;
 }
 
-.Tutorial h1 {
-    margin: 0
-}
-
 .Tutorial pre {
     font-size: 18px;
     text-align: left;
     overflow: hidden;
+}
+
+.material-icons.arrow-back::after {
+    content: "arrow_back";
+    font-size: 40px;
+}
+
+.Hamburger {
+    padding-block: 8px;
+    padding-inline: 16px;
+    padding-inline-start: 32px;
+}
+
+.Hamburger:hover {
+    background-color: rgba(128, 128, 128, .25);
+}
+
+.Hamburger .material-icons {
+    font-size: 40px;
+}
+
+.PreviousPage {
+    padding-block: 8px;
+    padding-inline: 16px;
+}
+
+.PreviousPage:hover {
+    background-color: rgba(128, 128, 128, .25);
+}
+
+.PreviousPage .material-icons {
+    font-size: 40px;
+}
+
+.NextPage {
+    padding-block: 8px;
+    padding-inline: 16px;
+    padding-inline-end: 32px;
+}
+
+.NextPage:hover {
+    background-color: rgba(128, 128, 128, .25);
+}
+
+.NextPage .material-icons {
+    font-size: 40px;
 }

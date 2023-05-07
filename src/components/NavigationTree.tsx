@@ -8,7 +8,13 @@ class NavigationTree extends React.Component<{
 }> {
   render = () => {
     return (
-      <ul className="NavigationTree Tree">
+      <ul className="NavigationTree Tree" style={{ marginBlock: "8px" }}>
+        <li>
+          <Link to="/" className="TreeNode">
+            <span className="material-icons"></span>
+            <span>Introduction to Simpa</span>
+          </Link>
+        </li>
         <li data-folder={this.props.layouts}>
           <div
             className="TreeNode"

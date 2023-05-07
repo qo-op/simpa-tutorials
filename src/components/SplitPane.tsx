@@ -40,8 +40,8 @@ class SplitPane extends React.Component<{
           <div
             style={{
               position: "absolute",
-              insetInlineStart: "-6px",
-              width: "11px",
+              insetInlineStart: "-9px",
+              width: "17px",
               height: "100%",
             }}
           ></div>

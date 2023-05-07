@@ -6,11 +6,6 @@ class MenuBar extends React.Component {
   render() {
     return (
       <ul className="MenuBar BoxLayout" data-alignment="stretch">
-        <li>
-          <Link to="/" className="Menu">
-            <span>Simpa Tutorials</span>
-          </Link>
-        </li>
         <HelpMenu />
       </ul>
     );

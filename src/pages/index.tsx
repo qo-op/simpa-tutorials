@@ -4,9 +4,9 @@ import Layout from "components/Layout";
 class IndexPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle={"Simpa Tutorials"}>
+      <Layout pageTitle={"Introduction to Simpa"}>
         <p>
-          Simpa is a user interface library that assists developers to create
+          Simpa is a user interface library that helps developers to create
           Single-Page Applications. Simpa provides a set of layouts and
           components for building graphical user interfaces.
         </p>
