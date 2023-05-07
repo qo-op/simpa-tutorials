@@ -5,6 +5,9 @@ class IndexPage extends React.Component {
   render = () => {
     return (
       <Layout pageTitle={"Introduction to Simpa"}>
+        <h1 className="BoxLayout" data-axis="page-axis">
+          <span>Introduction to Simpa</span>
+        </h1>
         <p>
           Simpa is a user interface library that helps developers to create
           Single-Page Applications. Simpa provides a set of layouts and

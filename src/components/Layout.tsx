@@ -19,7 +19,7 @@ class Layout extends React.Component<{
     return (
       <>
         <Helmet>
-          <title>{this.props.pageTitle.split(/\r?\n/).join(" ")}</title>
+          <title>{this.props.pageTitle}</title>
           <script src="https://qo-op.github.io/simpa/simpa.js"></script>
         </Helmet>
         <div className="Layout BorderLayout">
@@ -52,7 +52,7 @@ class Layout extends React.Component<{
             </div>
             <HamburgerSplitPane>
               <NavigationTree />
-              <Tutorial pageTitle={this.props.pageTitle}>
+              <Tutorial>
                 {this.props.children}
               </Tutorial>
             </HamburgerSplitPane>

@@ -7,7 +7,11 @@ import NoteAboutLayouts from "components/NoteAboutLayouts";
 class BorderLayoutPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle={"How to Use BoxLayout\nwith HTML and CSS"}>
+      <Layout pageTitle={"How to Use BoxLayout with HTML and CSS"}>
+        <h1 className="BoxLayout" data-axis="page-axis">
+          <span>How to Use BoxLayout</span>
+          <span>with HTML and CSS</span>
+        </h1>
         <p>
           <code>BoxLayout</code> is a layout manager that arranges components in
           a single row or column. It's useful when you need to lay out

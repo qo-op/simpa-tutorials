@@ -7,7 +7,11 @@ import NoteAboutLayouts from "components/NoteAboutLayouts";
 class BorderLayoutPage extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle={"How to Use BorderLayout\nwith HTML and CSS"}>
+      <Layout pageTitle={"How to Use BorderLayout with HTML and CSS"}>
+        <h1 className="BoxLayout" data-axis="page-axis">
+          <span>How to Use BorderLayout</span>
+          <span>with HTML and CSS</span>
+        </h1>
         <p>
           <code>BorderLayout</code> is a type of layout manager that is used to
           arrange and organize components in a container. It divides the

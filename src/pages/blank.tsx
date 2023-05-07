@@ -4,7 +4,8 @@ import Layout from "components/Layout";
 class Blank extends React.Component {
   render = () => {
     return (
-      <Layout pageTitle={""}>
+      <Layout pageTitle={"Simpa Tutorials"}>
+        <p></p>
       </Layout>
     );
   };
