@@ -1,18 +1,28 @@
 import React from "react";
 import MediaQuery from "react-responsive";
 import { connect } from "react-redux";
+import store from "state/store";
 
 class Hamburger extends React.Component<{
   hamburgerClosed: boolean;
-  toggle: (hamburgerClosed: boolean) => void;
 }> {
+  toggle = (hamburgerClosed: boolean) => {
+    store.dispatch({
+      type: "HamburgerSplitPane/setDividerLocation",
+      payload: hamburgerClosed ? -2 : -1,
+    });
+    store.dispatch({
+      type: "Hamburger/toggle",
+      payload: null,
+    });
+  }
   render = () => {
     return (
       <MediaQuery maxWidth={480}>
         {(matches: boolean) => (
           <div
             className="Hamburger BorderLayout"
-            onClick={() => this.props.toggle(this.props.hamburgerClosed)}
+            onClick={() => this.toggle(this.props.hamburgerClosed)}
           >
             <span className="material-icons">
               {this.props.hamburgerClosed
@@ -34,22 +44,4 @@ const mapStateToProps = (state: { hamburgerClosed: boolean }) => ({
   hamburgerClosed: state.hamburgerClosed,
 });
 
-const mapDispatchToProps = (
-  dispatch: (action: { type: string; payload: any }) => {
-    type: string;
-    payload: any;
-  }
-) => ({
-  toggle: (hamburgerClosed: boolean) => {
-    dispatch({
-      type: "HamburgerSplitPane/setDividerLocation",
-      payload: hamburgerClosed ? -2 : -1,
-    });
-    dispatch({
-      type: "Hamburger/toggle",
-      payload: null,
-    });
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Hamburger);
+export default connect(mapStateToProps)(Hamburger);

@@ -1,18 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
 import MediaQuery from "react-responsive";
+import store from "state/store";
 
-class MainSplitPane extends React.Component<{
+class HamburgerSplitPane extends React.Component<{
   children: React.ReactNode[];
   dividerLocation: number;
-  setDividerLocation: (dividerLocation: number) => void;
 }> {
   pointerdown = (ev: React.PointerEvent) => {
     document.dispatchEvent(
       new CustomEvent("splitpanedividerpointerdown", {
         detail: {
           event: ev,
-          callback: this.props.setDividerLocation,
+          callback: (dividerLocation: number) => {
+            store.dispatch({
+              type: "HamburgerSplitPane/setDividerLocation",
+              payload: dividerLocation,
+            });
+          },
         },
       })
     );
@@ -79,17 +84,4 @@ const mapStateToProps = (state: { dividerLocation: number }) => ({
   dividerLocation: state.dividerLocation,
 });
 
-const mapDispatchToProps = (
-  dispatch: (action: { type: string; payload: any }) => {
-    type: string;
-    payload: any;
-  }
-) => ({
-  setDividerLocation: (dividerLocation: number) =>
-    dispatch({
-      type: "HamburgerSplitPane/setDividerLocation",
-      payload: dividerLocation,
-    }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainSplitPane);
+export default connect(mapStateToProps)(HamburgerSplitPane);

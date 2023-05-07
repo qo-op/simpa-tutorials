@@ -11,21 +11,11 @@ h1 {
     height: 100vh;
 }
 
-.MenuBar a {
-    padding: 2px 8px;
-    text-decoration: none;
-    color: black;
-}
-
-.NavigationTree.Tree li>a.TreeNode {
-    text-decoration: none;
-    color: black;
+.NavigationTree.Tree li>.TreeNode {
     padding-inline-start: calc(8px + 1rem + 5px);
 }
 
-.NavigationTree.Tree>li>a.TreeNode {
-    text-decoration: none;
-    color: black;
+.NavigationTree.Tree>li>.TreeNode {
     padding-inline-start: calc(8px);
 }
 

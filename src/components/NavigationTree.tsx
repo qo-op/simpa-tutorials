@@ -1,12 +1,11 @@
 import React from "react";
 import MediaQuery from "react-responsive";
-import { Link, navigate } from "gatsby";
+import { navigate } from "gatsby";
 import { connect } from "react-redux";
 import store from "state/store";
 
 class NavigationTree extends React.Component<{
   layouts: string;
-  expandOrCollapseLayouts: () => void;
 }> {
   click = (to: string, toggle: boolean) => {
     navigate(to);
@@ -20,14 +19,20 @@ class NavigationTree extends React.Component<{
         payload: null,
       });
     }
-  };
+  }
+  expandOrCollapseLayouts = () => {
+    store.dispatch({
+      type: "NavigationTree/expandOrCollapseLayouts",
+      payload: null,
+    });
+  }
   render = () => {
     return (
       <MediaQuery maxWidth={480}>
         {(matches) => (
           <ul className="NavigationTree Tree" style={{ marginBlock: "8px" }}>
             <li>
-              <div className="TreeNode" onClick={() => this.click("/", true)}>
+              <div className="TreeNode" onClick={() => this.click("/", matches)}>
                 <span className="material-icons"></span>
                 <span>Introduction to Simpa</span>
               </div>
@@ -35,20 +40,20 @@ class NavigationTree extends React.Component<{
             <li data-folder={this.props.layouts}>
               <div
                 className="TreeNode"
-                onClick={this.props.expandOrCollapseLayouts}
+                onClick={this.expandOrCollapseLayouts}
               >
                 <span className="material-icons folder"></span>
                 <span>Layouts</span>
               </div>
               <ul>
                 <li>
-                  <div className="TreeNode" onClick={() => this.click("/border-layout", true)}>
+                  <div className="TreeNode" onClick={() => this.click("/border-layout", matches)}>
                     <span className="material-icons"></span>
                     <span>How to Use BorderLayout</span>
                   </div>
                 </li>
                 <li>
-                  <div className="TreeNode" onClick={() => this.click("/box-layout", true)}>
+                  <div className="TreeNode" onClick={() => this.click("/box-layout", matches)}>
                     <span className="material-icons icon"></span>
                     <span>How to Use BoxLayout</span>
                   </div>
@@ -102,17 +107,4 @@ const mapStateToProps = (state: { layouts: string }) => ({
   layouts: state.layouts,
 });
 
-const mapDispatchToProps = (
-  dispatch: (action: { type: string; payload: any }) => {
-    type: string;
-    payload: any;
-  }
-) => ({
-  expandOrCollapseLayouts: () =>
-    dispatch({
-      type: "NavigationTree/expandOrCollapseLayouts",
-      payload: null,
-    }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationTree);
+export default connect(mapStateToProps)(NavigationTree);
