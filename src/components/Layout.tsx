@@ -53,15 +53,18 @@ class Layout extends React.Component<{
                 <div></div>
                 <div></div>
               </div>
-              <div className="Tutorial BoxLayout" data-axis="page-axis">
-                {this.props.pageTitle
-                  .split(/\r?\n/)
-                  .map((line: string, index: number) => (
-                    <h1 key={index}>{line}</h1>
-                  ))}
-                <div>{this.props.children}</div>
+              <div className="ScrollPane">
+                <div className="Tutorial BoxLayout" data-axis="page-axis">
+                  {this.props.pageTitle
+                    .split(/\r?\n/)
+                    .map((line: string, index: number) => (
+                      <h2 key={index}>{line}</h2>
+                    ))}
+                  <div>{this.props.children}</div>
+                </div>
               </div>
             </div>
+            <ModalLayer />
           </div>
         </MobileView>
       </>
