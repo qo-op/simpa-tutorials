@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import MediaQuery from "react-responsive";
 
 class Hamburger extends React.Component<{
   hamburgerClosed: boolean;
@@ -7,10 +8,23 @@ class Hamburger extends React.Component<{
 }> {
   render = () => {
     return (
-      <div className="Hamburger BorderLayout" onClick={() => this.props.toggle(this.props.hamburgerClosed)}>
-        <span className="material-icons">
-          {this.props.hamburgerClosed ? "menu" : "menu_open"}
-        </span>
+      <div
+        className="Hamburger BorderLayout"
+        onClick={() => this.props.toggle(this.props.hamburgerClosed)}
+      >
+        <MediaQuery maxWidth={480}>
+          {(matches) =>
+            matches ? (
+              <span className="material-icons">
+                {this.props.hamburgerClosed ? "menu" : "menu_open"}
+              </span>
+            ) : (
+              <span className="material-icons">
+                {!this.props.hamburgerClosed ? "menu" : "menu_open"}
+              </span>
+            )
+          }
+        </MediaQuery>
       </div>
     );
   };
@@ -29,7 +43,7 @@ const mapDispatchToProps = (
   toggle: (hamburgerClosed: boolean) => {
     dispatch({
       type: "SplitPane/setDividerLocation",
-      payload: hamburgerClosed ? null : 0,
+      payload: hamburgerClosed ? -2 : -1,
     });
     dispatch({
       type: "Hamburger/toggle",

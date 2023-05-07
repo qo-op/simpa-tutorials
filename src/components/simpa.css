@@ -978,6 +978,7 @@ img {
 
 .SplitPane>* {
     padding: 0 !important;
+    box-sizing: border-box;
 }
 
 .SplitPane>:nth-child(2),

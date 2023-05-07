@@ -1,9 +1,9 @@
 import { createStore } from "redux";
 
 function counterReducer(state = {
-    hamburgerClosed: false,
+    hamburgerClosed: true,
     layouts: "open",
-    dividerLocation: null
+    dividerLocation: -1
 }, action: { type: string, payload: any }) {
     switch (action.type) {
         case 'Hamburger/toggle':

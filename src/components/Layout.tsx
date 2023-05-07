@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Hamburger from "components/Hamburger";
 import PreviousPage from "components/PreviousPage";
 import NextPage from "./NextPage";
-import SplitPane from "components/MainSplitPane";
+import HamburgerSplitPane from "components/HamburgerSplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
 import "./simpa.css";
@@ -12,7 +12,6 @@ import "./Layout.css";
 
 class Layout extends React.Component<{
   pageTitle: string;
-
   children: React.ReactNode;
 }> {
   render = () => {
@@ -49,7 +48,7 @@ class Layout extends React.Component<{
                 <NextPage />
               </div>
             </div>
-            <SplitPane>
+            <HamburgerSplitPane>
               <nav>
                 <NavigationTree />
               </nav>
@@ -61,7 +60,7 @@ class Layout extends React.Component<{
                   ))}
                 <div>{this.props.children}</div>
               </div>
-            </SplitPane>
+            </HamburgerSplitPane>
           </div>
           <ModalLayer />
         </div>
