@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import MediaQuery from "react-responsive";
+import { connect } from "react-redux";
 
 class Hamburger extends React.Component<{
   hamburgerClosed: boolean;
@@ -8,24 +8,24 @@ class Hamburger extends React.Component<{
 }> {
   render = () => {
     return (
-      <div
-        className="Hamburger BorderLayout"
-        onClick={() => this.props.toggle(this.props.hamburgerClosed)}
-      >
-        <MediaQuery maxWidth={480}>
-          {(matches) =>
-            matches ? (
-              <span className="material-icons">
-                {this.props.hamburgerClosed ? "menu" : "menu_open"}
-              </span>
-            ) : (
-              <span className="material-icons">
-                {!this.props.hamburgerClosed ? "menu" : "menu_open"}
-              </span>
-            )
-          }
-        </MediaQuery>
-      </div>
+      <MediaQuery maxWidth={480}>
+        {(matches: boolean) => (
+          <div
+            className="Hamburger BorderLayout"
+            onClick={() => this.props.toggle(this.props.hamburgerClosed)}
+          >
+            <span className="material-icons">
+              {this.props.hamburgerClosed
+                ? matches
+                  ? "menu"
+                  : "menu_open"
+                : matches
+                ? "menu_open"
+                : "menu"}
+            </span>
+          </div>
+        )}
+      </MediaQuery>
     );
   };
 }
@@ -42,12 +42,12 @@ const mapDispatchToProps = (
 ) => ({
   toggle: (hamburgerClosed: boolean) => {
     dispatch({
-      type: "SplitPane/setDividerLocation",
+      type: "HamburgerSplitPane/setDividerLocation",
       payload: hamburgerClosed ? -2 : -1,
     });
     dispatch({
       type: "Hamburger/toggle",
-      payload: !hamburgerClosed,
+      payload: null,
     });
   },
 });

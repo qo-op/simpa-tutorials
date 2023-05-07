@@ -20,46 +20,19 @@ class MainSplitPane extends React.Component<{
   render = () => {
     console.log(this.props.dividerLocation);
     return (
-      <div className="SplitPane">
-        <MediaQuery maxWidth={480}>
-          {(matches) =>
-            matches ? (
-              <>
-                <div
-                  className="ScrollPane"
-                  style={{
-                    width:
-                      this.props.dividerLocation === -1
-                        ? "0px"
-                        : this.props.dividerLocation === -2
-                        ? undefined
-                        : this.props.dividerLocation + "px",
-                  }}
-                >
-                  {this.props.children[0]}
-                </div>
-                <div
-                  style={{
-                    position: "relative",
-                    borderInlineStart:
-                      this.props.dividerLocation === -1
-                        ? "none"
-                        : "1px solid gray",
-                  }}
-                  onPointerDown={this.pointerdown}
-                >
-                  <div
-                    style={{
-                      position: "absolute",
-                      insetInlineStart: "-6px",
-                      width: "11px",
-                      height: "100%",
-                    }}
-                  ></div>
-                </div>
-              </>
+      <MediaQuery maxWidth={480}>
+        {(matches: boolean) => (
+          <>
+            {matches ? (
+              this.props.dividerLocation === -1 ? (
+                <div className="ScrollPane">{this.props.children[1]}</div>
+              ) : (
+                <div className="ScrollPane">{this.props.children[0]}</div>
+              )
+            ) : this.props.dividerLocation === -2 ? (
+              <div className="ScrollPane">{this.props.children[1]}</div>
             ) : (
-              <>
+              <div className="SplitPane">
                 <div
                   className="ScrollPane"
                   style={{
@@ -92,12 +65,12 @@ class MainSplitPane extends React.Component<{
                     }}
                   ></div>
                 </div>
-              </>
-            )
-          }
-        </MediaQuery>
-        <div className="ScrollPane">{this.props.children[1]}</div>
-      </div>
+                <div className="ScrollPane">{this.props.children[1]}</div>
+              </div>
+            )}
+          </>
+        )}
+      </MediaQuery>
     );
   };
 }
@@ -114,7 +87,7 @@ const mapDispatchToProps = (
 ) => ({
   setDividerLocation: (dividerLocation: number) =>
     dispatch({
-      type: "SplitPane/setDividerLocation",
+      type: "HamburgerSplitPane/setDividerLocation",
       payload: dividerLocation,
     }),
 });
