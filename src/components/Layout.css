@@ -59,15 +59,11 @@ h1 {
     overflow: hidden;
 }
 
-.material-icons.arrow-back::after {
-    content: "arrow_back";
-    font-size: 40px;
-}
-
 .Hamburger {
     padding-block: 8px;
     padding-inline: 16px;
-    padding-inline-start: 32px;
+    user-select: none;
+    cursor: pointer;
 }
 
 .Hamburger:hover {
@@ -81,6 +77,8 @@ h1 {
 .PreviousPage {
     padding-block: 8px;
     padding-inline: 16px;
+    user-select: none;
+    cursor: pointer;
 }
 
 .PreviousPage:hover {
@@ -94,7 +92,8 @@ h1 {
 .NextPage {
     padding-block: 8px;
     padding-inline: 16px;
-    padding-inline-end: 32px;
+    user-select: none;
+    cursor: pointer;
 }
 
 .NextPage:hover {

@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Hamburger from "components/Hamburger";
 import PreviousPage from "components/PreviousPage";
 import NextPage from "./NextPage";
-import SplitPane from "components/SplitPane";
+import SplitPane from "components/MainSplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
 import "./simpa.css";
@@ -27,7 +27,7 @@ class Layout extends React.Component<{
           <div className="PageStartBorderLayout">
             <div
               className="LineStartCenterBorderLayout"
-              style={{ borderBlockEnd: "1px black solid" }}
+              style={{ borderBlockEnd: "1px black solid", paddingInline: "16px" }}
             >
               <Hamburger />
               <div className="LineCenterBorderLayout">

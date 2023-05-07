@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-class SplitPane extends React.Component<{
+class MainSplitPane extends React.Component<{
   children: React.ReactNode[];
   dividerLocation: number;
   setDividerLocation: (dividerLocation: number) => void;
@@ -69,4 +69,4 @@ const mapDispatchToProps = (
     }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SplitPane);
+export default connect(mapStateToProps, mapDispatchToProps)(MainSplitPane);
