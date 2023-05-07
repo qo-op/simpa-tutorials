@@ -1,14 +1,13 @@
 import React from "react";
-import MediaQuery from "react-responsive";
 import { navigate } from "gatsby";
 import { connect } from "react-redux";
 import store from "state/store";
 
 class NavigationTree extends React.Component<{
+  mobileView: boolean;
   layouts: string;
 }> {
   click = (to: string, mobileView: boolean) => {
-    navigate(to);
     if (mobileView) {
       store.dispatch({
         type: "HamburgerSplitPane/setDividerLocation",
@@ -19,6 +18,7 @@ class NavigationTree extends React.Component<{
         payload: null,
       });
     }
+    navigate(to);
   };
   expandOrCollapse = (folder: string) => {
     store.dispatch({
@@ -28,47 +28,49 @@ class NavigationTree extends React.Component<{
   };
   render = () => {
     return (
-      <MediaQuery maxWidth={480}>
-        {(matches) => (
-          <nav>
-            <ul className="NavigationTree Tree" style={{ marginBlock: "8px" }}>
+      <nav>
+        <ul className="NavigationTree Tree" style={{ marginBlock: "8px" }}>
+          <li>
+            <div
+              className="TreeNode"
+              onClick={() => this.click("/", this.props.mobileView)}
+            >
+              <span className="material-icons"></span>
+              <span>Introduction to Simpa</span>
+            </div>
+          </li>
+          <li data-folder={this.props.layouts}>
+            <div
+              className="TreeNode"
+              onClick={() => this.expandOrCollapse("layouts")}
+            >
+              <span className="material-icons folder"></span>
+              <span>Layouts</span>
+            </div>
+            <ul>
               <li>
                 <div
                   className="TreeNode"
-                  onClick={() => this.click("/", matches)}
+                  onClick={() =>
+                    this.click("/border-layout", this.props.mobileView)
+                  }
                 >
                   <span className="material-icons"></span>
-                  <span>Introduction to Simpa</span>
+                  <span>How to Use BorderLayout</span>
                 </div>
               </li>
-              <li data-folder={this.props.layouts}>
+              <li>
                 <div
                   className="TreeNode"
-                  onClick={() => this.expandOrCollapse("layouts")}
+                  onClick={() =>
+                    this.click("/box-layout", this.props.mobileView)
+                  }
                 >
-                  <span className="material-icons folder"></span>
-                  <span>Layouts</span>
+                  <span className="material-icons icon"></span>
+                  <span>How to Use BoxLayout</span>
                 </div>
-                <ul>
-                  <li>
-                    <div
-                      className="TreeNode"
-                      onClick={() => this.click("/border-layout", matches)}
-                    >
-                      <span className="material-icons"></span>
-                      <span>How to Use BorderLayout</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div
-                      className="TreeNode"
-                      onClick={() => this.click("/box-layout", matches)}
-                    >
-                      <span className="material-icons icon"></span>
-                      <span>How to Use BoxLayout</span>
-                    </div>
-                  </li>
-                  {/*
+              </li>
+              {/*
           <li>
             <Link to="/card-layout" className="TreeNode">
               <span className="material-icons icon"></span>
@@ -88,9 +90,9 @@ class NavigationTree extends React.Component<{
             </Link>
           </li>
         */}
-                </ul>
-              </li>
-              {/*
+            </ul>
+          </li>
+          {/*
       <li data-folder="open">
         <div className="TreeNode" onClick={this.expandOrCollapse}>
           <span className="material-icons icon"></span>
@@ -106,10 +108,8 @@ class NavigationTree extends React.Component<{
         </ul>
       </li>
       */}
-            </ul>
-          </nav>
-        )}
-      </MediaQuery>
+        </ul>
+      </nav>
     );
   };
 }

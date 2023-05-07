@@ -1,10 +1,10 @@
 import React from "react";
-import MediaQuery from "react-responsive";
 import { navigate } from "gatsby";
 import { connect } from "react-redux";
 import store from "state/store";
 
 class Hamburger extends React.Component<{
+  mobileView: boolean;
   hamburgerClosed: boolean;
 }> {
   toggle = (hamburgerClosed: boolean, mobileView: boolean) => {
@@ -17,29 +17,27 @@ class Hamburger extends React.Component<{
       payload: null,
     });
     if (mobileView) {
-      navigate("/blank");
+      if (hamburgerClosed) {
+        navigate("/blank");
+      }
     }
-  }
+  };
   render = () => {
     return (
-      <MediaQuery maxWidth={480}>
-        {(matches: boolean) => (
-          <div
-            className="Hamburger BorderLayout"
-            onClick={() => this.toggle(this.props.hamburgerClosed, matches)}
-          >
-            <span className="material-icons">
-              {this.props.hamburgerClosed
-                ? matches
-                  ? "menu"
-                  : "menu_open"
-                : matches
-                ? "menu_open"
-                : "menu"}
-            </span>
-          </div>
-        )}
-      </MediaQuery>
+      <div
+        className="Hamburger BorderLayout"
+        onClick={() => this.toggle(this.props.hamburgerClosed, this.props.mobileView)}
+      >
+        <span className="material-icons">
+          {this.props.hamburgerClosed
+            ? this.props.mobileView
+              ? "menu"
+              : "menu_open"
+            : this.props.mobileView
+            ? "menu_open"
+            : "menu"}
+        </span>
+      </div>
     );
   };
 }
