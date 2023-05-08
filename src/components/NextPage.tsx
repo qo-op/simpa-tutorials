@@ -20,11 +20,9 @@ class NextPage extends React.Component<{
   };
   render = () => {
     return (
-      <>
-        <div className="NextPage BorderLayout" onClick={this.click}>
-          <ArrowForwardIcon fontSize="large" />
-        </div>
-      </>
+      <div className="NextPage BorderLayout" onClick={this.click}>
+        <ArrowForwardIcon fontSize="large" />
+      </div>
     );
   };
 }

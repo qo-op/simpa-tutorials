@@ -49,11 +49,15 @@ class Layout extends React.Component<{
                   style={{
                     borderBlockEnd: "1px black solid",
                     paddingInline: "16px",
+                    gap: "16px",
                   }}
                 >
                   <Hamburger mobileView={!matches} />
                   <div className="LineCenterBorderLayout">
-                    <PreviousPage tutorialPages={tutorialPages} pathname={this.props.pathname}/>
+                    <PreviousPage
+                      tutorialPages={tutorialPages}
+                      pathname={this.props.pathname}
+                    />
                     <div className="CenterLayout">
                       <Link
                         to="/"
@@ -61,13 +65,15 @@ class Layout extends React.Component<{
                           textDecoration: "none",
                           color: "black",
                           fontSize: "2rem",
-                          marginInline: "4px",
                         }}
                       >
                         Simpa
                       </Link>
                     </div>
-                    <NextPage tutorialPages={tutorialPages} pathname={this.props.pathname}/>
+                    <NextPage
+                      tutorialPages={tutorialPages}
+                      pathname={this.props.pathname}
+                    />
                   </div>
                 </div>
                 <HamburgerSplitPane mobileView={!matches}>

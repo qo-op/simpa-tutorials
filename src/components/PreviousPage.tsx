@@ -20,8 +20,8 @@ class PreviousPage extends React.Component<{
   };
   render = () => {
     return (
-      <div className="PreviousPage BorderLayout" onClick={this.click}>
-        <ArrowBackIcon fontSize="large" />
+      <div className="PreviousPage BorderLayout">
+        <ArrowBackIcon fontSize="large" onClick={this.click} />
       </div>
     );
   };

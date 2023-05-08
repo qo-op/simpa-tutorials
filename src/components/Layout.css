@@ -20,7 +20,9 @@ h1 {
 }
 
 .TutorialPane {
+    max-width: 800px;
     padding: 8px;
+    text-align: justify;
 }
 
 .TutorialPane h1 {
@@ -33,11 +35,6 @@ h1 {
     margin: 0;
 }
 
-.TutorialPane>* {
-    max-width: 800px;
-    text-align: justify;
-}
-
 .TutorialPane pre {
     font-size: 18px;
     text-align: left;
@@ -45,34 +42,16 @@ h1 {
 }
 
 .Hamburger {
-    padding-block: 8px;
-    padding-inline: 16px;
     user-select: none;
     cursor: pointer;
-}
-
-.Hamburger:hover {
-    background-color: rgba(128, 128, 128, .25);
 }
 
 .PreviousPage {
-    padding-block: 8px;
-    padding-inline: 16px;
     user-select: none;
     cursor: pointer;
-}
-
-.PreviousPage:hover {
-    background-color: rgba(128, 128, 128, .25);
 }
 
 .NextPage {
-    padding-block: 8px;
-    padding-inline: 16px;
     user-select: none;
     cursor: pointer;
-}
-
-.NextPage:hover {
-    background-color: rgba(128, 128, 128, .25);
 }
