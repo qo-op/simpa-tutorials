@@ -8,9 +8,9 @@ class NextPage extends React.Component<{
   pathname: string;
 }> {
   click = () => {
-    let i: number = 0;
-    for (; i < this.props.tutorialPages.length; i++) {
-      if (this.props.tutorialPages[i].path === this.props.pathname) {
+    let i: number = this.props.tutorialPages.length - 1;
+    for (; i >= 0; i--) {
+      if (this.props.pathname.endsWith(this.props.tutorialPages[i].path)) {
         break;
       }
     }
@@ -21,8 +21,8 @@ class NextPage extends React.Component<{
   render = () => {
     return (
       <>
-        <div className="NextPage BorderLayout">
-          <ArrowForwardIcon fontSize="large" onClick={this.click} />
+        <div className="NextPage BorderLayout" onClick={this.click}>
+          <ArrowForwardIcon fontSize="large" />
         </div>
       </>
     );
