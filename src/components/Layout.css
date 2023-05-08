@@ -20,9 +20,12 @@ h1 {
 }
 
 .TutorialPane {
-    max-width: 800px;
     padding: 8px;
     text-align: justify;
+}
+
+.TutorialPane>* {
+    max-width: 800px;
 }
 
 .TutorialPane h1 {

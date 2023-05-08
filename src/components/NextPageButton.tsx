@@ -1,9 +1,9 @@
 import React from "react";
 import { navigate } from "gatsby";
 import TutorialPage from "model/TutorialPage";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-class PreviousPage extends React.Component<{
+class NextPageButton extends React.Component<{
   tutorialPages: TutorialPage[];
   pathname: string;
 }> {
@@ -14,17 +14,19 @@ class PreviousPage extends React.Component<{
         break;
       }
     }
-    if (i > 0) {
-      navigate(this.props.tutorialPages[i - 1].path);
+    if (i < this.props.tutorialPages.length - 1) {
+      navigate(this.props.tutorialPages[i + 1].path);
     }
   };
   render = () => {
     return (
-      <div className="PreviousPage BorderLayout">
-        <ArrowBackIcon fontSize="large" onClick={this.click} />
-      </div>
+      <ArrowForwardIcon
+        className="NextPage"
+        fontSize="large"
+        onClick={this.click}
+      />
     );
   };
 }
 
-export default PreviousPage;
+export default NextPageButton;

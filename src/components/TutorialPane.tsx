@@ -5,7 +5,7 @@ class TutorialPane extends React.Component<{
 }> {
   render = () => {
     return (
-      <div className="TutorialPane">
+      <div className="TutorialPane BoxLayout" data-axis="page-axis">
         <div>{this.props.children}</div>
       </div>
     );

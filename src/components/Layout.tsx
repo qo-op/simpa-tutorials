@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import MediaQuery from "react-responsive";
 import Hamburger from "components/Hamburger";
-import PreviousPage from "components/PreviousPage";
-import NextPage from "./NextPage";
+import PreviousPageButton from "components/PreviousPageButton";
+import NextPageButton from "components/NextPageButton";
 import HamburgerSplitPane from "components/HamburgerSplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
@@ -54,7 +54,7 @@ class Layout extends React.Component<{
                 >
                   <Hamburger mobileView={!matches} />
                   <div className="LineCenterBorderLayout">
-                    <PreviousPage
+                    <PreviousPageButton
                       tutorialPages={tutorialPages}
                       pathname={this.props.pathname}
                     />
@@ -70,7 +70,7 @@ class Layout extends React.Component<{
                         Simpa
                       </Link>
                     </div>
-                    <NextPage
+                    <NextPageButton
                       tutorialPages={tutorialPages}
                       pathname={this.props.pathname}
                     />
