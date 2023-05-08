@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksimpa_tutorials=self.webpackChunksimpa_tutorials||[]).push([[609],{2986:function(t,e,a){a.r(e);var n=a(4578),r=a(7294),l=a(5743);let p=function(t){function e(){for(var e,a=arguments.length,n=new Array(a),p=0;p<a;p++)n[p]=arguments[p];return(e=t.call.apply(t,[this].concat(n))||this).render=()=>r.createElement(l.Z,{pageTitle:"Simpa Tutorials",pathname:e.props.location.pathname},r.createElement("p",null)),e}return(0,n.Z)(e,t),e}(r.Component);e.default=p}}]);
+//# sourceMappingURL=component---src-pages-blank-tsx-4e28a3bd868fd609d344.js.map

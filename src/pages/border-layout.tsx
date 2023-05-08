@@ -4,10 +4,12 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutLayouts from "components/NoteAboutLayouts";
 
-class BorderLayoutPage extends React.Component {
+class BorderLayoutPage extends React.Component<{
+  location: any
+}> {
   render = () => {
     return (
-      <Layout pageTitle={"How to Use BorderLayout with HTML and CSS"}>
+      <Layout pageTitle={"How to Use BorderLayout with HTML and CSS"} pathname={this.props.location.pathname}>
         <h1 className="BoxLayout" data-axis="page-axis">
           <span>How to Use BorderLayout</span>
           <span>with HTML and CSS</span>

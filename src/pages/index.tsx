@@ -1,10 +1,12 @@
 import React from "react";
 import Layout from "components/Layout";
 
-class IndexPage extends React.Component {
+class IndexPage extends React.Component<{
+  location: any
+}> {
   render = () => {
     return (
-      <Layout pageTitle={"Introduction to Simpa"}>
+      <Layout pageTitle={"Introduction to Simpa"} pathname={this.props.location.pathname}>
         <h1 className="BoxLayout" data-axis="page-axis">
           <span>Introduction to Simpa</span>
         </h1>

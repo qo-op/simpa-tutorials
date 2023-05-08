@@ -8,13 +8,30 @@ import NextPage from "./NextPage";
 import HamburgerSplitPane from "components/HamburgerSplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
-import Tutorial from "components/Tutorial";
+import TutorialPane from "components/TutorialPane";
+import TutorialPage from "model/TutorialPage";
 import "./simpa.css";
 import "./Layout.css";
 
+const tutorialPages: TutorialPage[] = [
+  {
+    text: "Introduction to Simpa",
+    path: "/",
+  },
+  {
+    text: "How to Use BorderLayout",
+    path: "/border-layout/",
+  },
+  {
+    text: "How to Use BoxLayout",
+    path: "/box-layout/",
+  },
+];
+
 class Layout extends React.Component<{
-  pageTitle: string;
   children: React.ReactNode;
+  pageTitle: string;
+  pathname: string;
 }> {
   render = () => {
     return (
@@ -36,7 +53,7 @@ class Layout extends React.Component<{
                 >
                   <Hamburger mobileView={!matches} />
                   <div className="LineCenterBorderLayout">
-                    <PreviousPage />
+                    <PreviousPage tutorialPages={tutorialPages} pathname={this.props.pathname}/>
                     <div className="CenterLayout">
                       <Link
                         to="/"
@@ -50,12 +67,15 @@ class Layout extends React.Component<{
                         Simpa
                       </Link>
                     </div>
-                    <NextPage />
+                    <NextPage tutorialPages={tutorialPages} pathname={this.props.pathname}/>
                   </div>
                 </div>
                 <HamburgerSplitPane mobileView={!matches}>
-                  <NavigationTree mobileView={!matches}/>
-                  <Tutorial>{this.props.children}</Tutorial>
+                  <NavigationTree
+                    mobileView={!matches}
+                    tutorialPages={tutorialPages}
+                  />
+                  <TutorialPane>{this.props.children}</TutorialPane>
                 </HamburgerSplitPane>
               </div>
               <ModalLayer />

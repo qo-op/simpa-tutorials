@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import store from "state/store";
+import store from "model/store";
 
 class HamburgerSplitPane extends React.Component<{
   mobileView: boolean;

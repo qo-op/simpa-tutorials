@@ -1,10 +1,12 @@
 import React from "react";
 import Layout from "components/Layout";
 
-class Blank extends React.Component {
+class Blank extends React.Component<{
+  location: any
+}> {
   render = () => {
     return (
-      <Layout pageTitle={"Simpa Tutorials"}>
+      <Layout pageTitle={"Simpa Tutorials"} pathname={this.props.location.pathname}>
         <p></p>
       </Layout>
     );

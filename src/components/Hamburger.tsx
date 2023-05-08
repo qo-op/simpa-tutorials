@@ -3,7 +3,7 @@ import { navigate } from "gatsby";
 import { connect } from "react-redux";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import store from "state/store";
+import store from "model/store";
 
 class Hamburger extends React.Component<{
   mobileView: boolean;

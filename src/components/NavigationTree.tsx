@@ -4,10 +4,12 @@ import { connect } from "react-redux";
 import SchoolIcon from "@mui/icons-material/School";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import store from "state/store";
+import store from "model/store";
+import TutorialPage from "model/TutorialPage";
 
 class NavigationTree extends React.Component<{
   mobileView: boolean;
+  tutorialPages: TutorialPage[];
   layouts: string;
 }> {
   click = (to: string, mobileView: boolean) => {
@@ -36,10 +38,10 @@ class NavigationTree extends React.Component<{
           <li>
             <div
               className="TreeNode"
-              onClick={() => this.click("/", this.props.mobileView)}
+              onClick={() => this.click(this.props.tutorialPages[0].path, this.props.mobileView)}
             >
               <SchoolIcon fontSize="small" />
-              <span>Introduction to Simpa</span>
+              <span>{this.props.tutorialPages[0].text}</span>
             </div>
           </li>
           <li data-folder={this.props.layouts}>
@@ -59,22 +61,22 @@ class NavigationTree extends React.Component<{
                 <div
                   className="TreeNode"
                   onClick={() =>
-                    this.click("/border-layout", this.props.mobileView)
+                    this.click(this.props.tutorialPages[1].path, this.props.mobileView)
                   }
                 >
                   <SchoolIcon fontSize="small" />
-                  <span>How to Use BorderLayout</span>
+                  <span>{this.props.tutorialPages[1].text}</span>
                 </div>
               </li>
               <li>
                 <div
                   className="TreeNode"
                   onClick={() =>
-                    this.click("/box-layout", this.props.mobileView)
+                    this.click(this.props.tutorialPages[2].path, this.props.mobileView)
                   }
                 >
                   <SchoolIcon fontSize="small" />
-                  <span>How to Use BoxLayout</span>
+                  <span>{this.props.tutorialPages[2].text}</span>
                 </div>
               </li>
               {/*
