@@ -18,7 +18,7 @@ class Layout extends React.Component<{
 }> {
   render = () => {
     return (
-      <MediaQuery maxWidth={480}>
+      <MediaQuery minWidth={480}>
         {(matches: boolean) => (
           <>
             <Helmet>
@@ -34,7 +34,7 @@ class Layout extends React.Component<{
                     paddingInline: "16px",
                   }}
                 >
-                  <Hamburger mobileView={matches} />
+                  <Hamburger mobileView={!matches} />
                   <div className="LineCenterBorderLayout">
                     <PreviousPage />
                     <div className="CenterLayout">
@@ -53,8 +53,8 @@ class Layout extends React.Component<{
                     <NextPage />
                   </div>
                 </div>
-                <HamburgerSplitPane mobileView={matches}>
-                  <NavigationTree mobileView={matches}/>
+                <HamburgerSplitPane mobileView={!matches}>
+                  <NavigationTree mobileView={!matches}/>
                   <Tutorial>{this.props.children}</Tutorial>
                 </HamburgerSplitPane>
               </div>

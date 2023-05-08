@@ -41,8 +41,6 @@ class HamburgerSplitPane extends React.Component<{
                 width:
                   this.props.dividerLocation === -1
                     ? undefined
-                    : this.props.dividerLocation === -2
-                    ? "0px"
                     : this.props.dividerLocation + "px",
               }}
             >
@@ -51,8 +49,7 @@ class HamburgerSplitPane extends React.Component<{
             <div
               style={{
                 position: "relative",
-                borderInlineStart:
-                  this.props.dividerLocation === -2 ? "none" : "1px solid gray",
+                borderInlineStart: "1px solid gray",
               }}
               onPointerDown={this.pointerdown}
             >
