@@ -21,6 +21,8 @@ class Hamburger extends React.Component<{
     if (mobileView) {
       if (hamburgerClosed) {
         navigate("/blank");
+      } else {
+        navigate(-1);
       }
     }
   };
