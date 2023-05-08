@@ -19,11 +19,6 @@ h1 {
     padding-inline-start: calc(8px);
 }
 
-.NavigationTree.Tree .material-icons::after {
-    content: "school";
-    color: black;
-}
-
 .Tutorial {
     padding: 8px;
 }
@@ -60,10 +55,6 @@ h1 {
     background-color: rgba(128, 128, 128, .25);
 }
 
-.Hamburger .material-icons {
-    font-size: 40px;
-}
-
 .PreviousPage {
     padding-block: 8px;
     padding-inline: 16px;
@@ -75,10 +66,6 @@ h1 {
     background-color: rgba(128, 128, 128, .25);
 }
 
-.PreviousPage .material-icons {
-    font-size: 40px;
-}
-
 .NextPage {
     padding-block: 8px;
     padding-inline: 16px;
@@ -88,8 +75,4 @@ h1 {
 
 .NextPage:hover {
     background-color: rgba(128, 128, 128, .25);
-}
-
-.NextPage .material-icons {
-    font-size: 40px;
 }

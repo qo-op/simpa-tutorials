@@ -1,6 +1,9 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { connect } from "react-redux";
+import SchoolIcon from "@mui/icons-material/School";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import store from "state/store";
 
 class NavigationTree extends React.Component<{
@@ -35,7 +38,7 @@ class NavigationTree extends React.Component<{
               className="TreeNode"
               onClick={() => this.click("/", this.props.mobileView)}
             >
-              <span className="material-icons"></span>
+              <SchoolIcon fontSize="small" />
               <span>Introduction to Simpa</span>
             </div>
           </li>
@@ -44,7 +47,11 @@ class NavigationTree extends React.Component<{
               className="TreeNode"
               onClick={() => this.expandOrCollapse("layouts")}
             >
-              <span className="material-icons folder"></span>
+              {this.props.layouts === "closed" ? (
+                <KeyboardArrowRightIcon fontSize="small" />
+              ) : (
+                <KeyboardArrowDownIcon fontSize="small" />
+              )}
               <span>Layouts</span>
             </div>
             <ul>
@@ -55,7 +62,7 @@ class NavigationTree extends React.Component<{
                     this.click("/border-layout", this.props.mobileView)
                   }
                 >
-                  <span className="material-icons"></span>
+                  <SchoolIcon fontSize="small" />
                   <span>How to Use BorderLayout</span>
                 </div>
               </li>
@@ -66,26 +73,26 @@ class NavigationTree extends React.Component<{
                     this.click("/box-layout", this.props.mobileView)
                   }
                 >
-                  <span className="material-icons icon"></span>
+                  <SchoolIcon fontSize="small" />
                   <span>How to Use BoxLayout</span>
                 </div>
               </li>
               {/*
           <li>
             <Link to="/card-layout" className="TreeNode">
-              <span className="material-icons icon"></span>
+                  <SchoolIcon fontSize="small" />
               <span>How to Use CardLayout</span>
             </Link>
           </li>
           <li>
             <Link to="/flow-layout" className="TreeNode">
-              <span className="material-icons icon"></span>
+                  <SchoolIcon fontSize="small" />
               <span>How to Use FlowLayout</span>
             </Link>
           </li>
           <li>
             <Link to="/grid-bag-layout" className="TreeNode">
-              <span className="material-icons icon"></span>
+                  <SchoolIcon fontSize="small" />
               <span>How to Use GridBagLayout</span>
             </Link>
           </li>
@@ -101,7 +108,7 @@ class NavigationTree extends React.Component<{
         <ul>
           <li>
             <Link to="/menu" className="TreeNode">
-              <span className="material-icons icon"></span>
+                  <SchoolIcon fontSize="small" />
               <span>How to Use Menus</span>
             </Link>
           </li>

@@ -1,5 +1,6 @@
 import React from "react";
 import ModalLayer from "components/ModalLayer";
+import CloseIcon from "@mui/icons-material/Close";
 
 class MessageDialog extends React.Component<{
   message: string;
@@ -27,7 +28,7 @@ class MessageDialog extends React.Component<{
           <span onPointerDown={this.pointerdown}>
             <b>{this.props.title}</b>
           </span>
-          <span className="material-icons close" onClick={this.dispose}></span>
+          <CloseIcon onClick={this.dispose} />
         </div>
         <div
           className="PageEndBorderLayout"

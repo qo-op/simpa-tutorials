@@ -12,7 +12,7 @@ function counterReducer(state = {
         case 'NavigationTree/expandOrCollapse':
             switch (action.payload) {
                 case "layouts":
-                    return { ...state, layouts: state.layouts === "open" ? "closed" : "open" };
+                    return { ...state, layouts: state.layouts === "closed" ? "open" : "closed" };
                 default:
                     return state;
             }

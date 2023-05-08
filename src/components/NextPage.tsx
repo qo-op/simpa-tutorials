@@ -1,10 +1,11 @@
 import React from "react";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 class NextPage extends React.Component {
   render = () => {
     return (
       <div className="NextPage BorderLayout">
-        <span className="material-icons">arrow_forward</span>
+        <ArrowForwardIcon fontSize="large" />
       </div>
     );
   };

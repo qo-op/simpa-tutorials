@@ -1,6 +1,8 @@
 import React from "react";
 import { navigate } from "gatsby";
 import { connect } from "react-redux";
+import MenuIcon from "@mui/icons-material/Menu";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import store from "state/store";
 
 class Hamburger extends React.Component<{
@@ -26,17 +28,21 @@ class Hamburger extends React.Component<{
     return (
       <div
         className="Hamburger BorderLayout"
-        onClick={() => this.toggle(this.props.hamburgerClosed, this.props.mobileView)}
+        onClick={() =>
+          this.toggle(this.props.hamburgerClosed, this.props.mobileView)
+        }
       >
-        <span className="material-icons">
-          {this.props.hamburgerClosed
-            ? this.props.mobileView
-              ? "menu"
-              : "menu_open"
-            : this.props.mobileView
-            ? "menu_open"
-            : "menu"}
-        </span>
+        {this.props.hamburgerClosed ? (
+          this.props.mobileView ? (
+            <MenuIcon fontSize="large" />
+          ) : (
+            <MenuOpenIcon fontSize="large" />
+          )
+        ) : this.props.mobileView ? (
+          <MenuOpenIcon fontSize="large" />
+        ) : (
+          <MenuIcon fontSize="large" />
+        )}
       </div>
     );
   };
