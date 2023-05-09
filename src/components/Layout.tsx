@@ -1,6 +1,9 @@
-import * as React from "react";
+import React from "react";
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useMediaQuery } from "react-responsive";
+import { useAppSelector, useAppDispatch } from "app/hooks";
+import { setLoading } from "features/LoadingSlice";
 import ContentSplitPane from "components/ContentSplitPane";
 import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
@@ -24,6 +27,9 @@ const Layout = ({
   pageTitle: string;
   blank?: boolean;
 }) => {
+  const loading = useAppSelector((state) => state.loading.value);
+  const dispatch = useAppDispatch();
+  useEffect(() => { dispatch(setLoading(false))}), [];
   const browserView = useMediaQuery({ query: "(min-width: 480px)" });
   const mobileView = !browserView;
   return (
@@ -32,7 +38,7 @@ const Layout = ({
         <title>{pageTitle}</title>
         <script src="https://qo-op.github.io/simpa/simpa.js"></script>
       </Helmet>
-      <div className="Layout LayeredPane" style={LayoutStyle}>
+      <div className="Layout LayeredPane" style={{... LayoutStyle, visibility: loading ? "hidden" : "visible" }}>
         <div className="LayoutContentPane BorderLayout">
           <div className="PageStart">
             <ToolBar path={path} mobileView={mobileView} blank={!!blank} />

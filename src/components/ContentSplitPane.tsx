@@ -27,47 +27,42 @@ const ContentSplitPane = ({
       })
     );
   };
-  return (
-    <>
-      {mobileView ? (
-        dividerLocation === -1 ? (
-          <>{blank ? <div className="ScrollPane">{children[0]}</div> : <div className="ScrollPane">{children[1]}</div>}</>
-        ) : (
-          <div className="ScrollPane">{children[0]}</div>
-        )
-      ) : dividerLocation === -2 ? (
-        <div className="ScrollPane">{children[1]}</div>
-      ) : (
-        <div className="SplitPane">
-          <div
-            className="ScrollPane"
-            style={{
-              width:
-                dividerLocation === -1 ? undefined : dividerLocation + "px",
-            }}
-          >
-            {children[0]}
-          </div>
-          <div
-            style={{
-              position: "relative",
-              borderInlineStart: "1px solid gray",
-            }}
-            onPointerDown={pointerdown}
-          >
-            <div
-              style={{
-                position: "absolute",
-                insetInlineStart: "-6px",
-                width: "11px",
-                height: "100%",
-              }}
-            ></div>
-          </div>
-          <div className="ScrollPane">{children[1]}</div>
-        </div>
-      )}
-    </>
+  return mobileView ? (
+    dividerLocation === -1 && !blank ? (
+      <div className="ScrollPane">{children[1]}</div>
+    ) : (
+      <div className="ScrollPane">{children[0]}</div>
+    )
+  ) : dividerLocation === -2 ? (
+    <div className="ScrollPane">{children[1]}</div>
+  ) : (
+    <div className="SplitPane">
+      <div
+        className="ScrollPane"
+        style={{
+          width: dividerLocation === -1 ? undefined : dividerLocation + "px",
+        }}
+      >
+        {children[0]}
+      </div>
+      <div
+        style={{
+          position: "relative",
+          borderInlineStart: "1px solid gray",
+        }}
+        onPointerDown={pointerdown}
+      >
+        <div
+          style={{
+            position: "absolute",
+            insetInlineStart: "-6px",
+            width: "11px",
+            height: "100%",
+          }}
+        ></div>
+      </div>
+      <div className="ScrollPane">{children[1]}</div>
+    </div>
   );
 };
 
