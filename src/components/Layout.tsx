@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import MediaQuery from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 import Hamburger from "components/Hamburger";
 import PreviousPageButton from "components/PreviousPageButton";
 import HomeButton from "components/HomeButton";
@@ -14,48 +14,46 @@ import "./Layout.css";
 
 const Layout = ({
   children,
-  pageTitle,
   path,
+  pageTitle,
 }: {
   children: React.ReactNode;
-  pageTitle: string;
   path: string;
+  pageTitle: string;
 }) => {
+  const browserView = useMediaQuery({ query: "(min-width: 480px)" });
+  const mobileView = !browserView;
   return (
-    <MediaQuery minWidth={480}>
-      {(matches: boolean) => (
-        <>
-          <Helmet>
-            <title>{pageTitle}</title>
-            <script src="https://qo-op.github.io/simpa/simpa.js"></script>
-          </Helmet>
-          <div className="Layout BorderLayout">
-            <div className="PageStartBorderLayout">
-              <div
-                className="LineStartCenterBorderLayout"
-                style={{
-                  borderBlockEnd: "1px black solid",
-                  paddingInline: "16px",
-                  gap: "16px",
-                }}
-              >
-                <Hamburger mobileView={!matches} />
-                <div className="LineCenterBorderLayout">
-                  <PreviousPageButton path={path} />
-                  <HomeButton />
-                  <NextPageButton path={path} />
-                </div>
-              </div>
-              <ContentSplitPane mobileView={!matches}>
-                <NavigationTree mobileView={!matches} />
-                <TutorialPane>{children}</TutorialPane>
-              </ContentSplitPane>
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <script src="https://qo-op.github.io/simpa/simpa.js"></script>
+      </Helmet>
+      <div className="Layout BorderLayout">
+        <div className="PageStartBorderLayout">
+          <div
+            className="LineStartCenterBorderLayout"
+            style={{
+              borderBlockEnd: "1px black solid",
+              paddingInline: "16px",
+              gap: "16px",
+            }}
+          >
+            <Hamburger mobileView={mobileView} />
+            <div className="LineCenterBorderLayout">
+              <PreviousPageButton path={path} />
+              <HomeButton />
+              <NextPageButton path={path} />
             </div>
-            <ModalLayer />
           </div>
-        </>
-      )}
-    </MediaQuery>
+          <ContentSplitPane mobileView={mobileView}>
+            <NavigationTree mobileView={mobileView} />
+            <TutorialPane>{children}</TutorialPane>
+          </ContentSplitPane>
+        </div>
+        <ModalLayer />
+      </div>
+    </>
   );
 };
 

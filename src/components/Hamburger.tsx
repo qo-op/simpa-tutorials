@@ -21,7 +21,7 @@ const Hamburger = ({ mobileView }: { mobileView: boolean }) => {
     }
   };
   return (
-    <div className="Hamburger BorderLayout" onClick={() => click()}>
+    <div className="Hamburger BorderLayout" onClick={click}>
       {closed ? (
         mobileView ? (
           <MenuIcon fontSize="large" />
