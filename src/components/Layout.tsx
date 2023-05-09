@@ -1,16 +1,17 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 import { useMediaQuery } from "react-responsive";
-import Hamburger from "components/Hamburger";
-import PreviousPageButton from "components/PreviousPageButton";
-import HomeButton from "components/HomeButton";
-import NextPageButton from "components/NextPageButton";
 import ContentSplitPane from "components/ContentSplitPane";
-import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
+import NavigationTree from "components/NavigationTree";
+import ToolBar from "components/ToolBar";
 import TutorialPane from "components/TutorialPane";
 import "./simpa.css";
 import "./Layout.css";
+
+const LayoutStyle = {
+  height: "100vh",
+};
 
 const Layout = ({
   children,
@@ -29,22 +30,10 @@ const Layout = ({
         <title>{pageTitle}</title>
         <script src="https://qo-op.github.io/simpa/simpa.js"></script>
       </Helmet>
-      <div className="Layout BorderLayout">
-        <div className="PageStartBorderLayout">
-          <div
-            className="LineStartCenterBorderLayout"
-            style={{
-              borderBlockEnd: "1px black solid",
-              paddingInline: "16px",
-              gap: "16px",
-            }}
-          >
-            <Hamburger mobileView={mobileView} />
-            <div className="LineCenterBorderLayout">
-              <PreviousPageButton path={path} />
-              <HomeButton />
-              <NextPageButton path={path} />
-            </div>
+      <div className="Layout LayeredPane" style={LayoutStyle}>
+        <div className="LayoutContentPane BorderLayout">
+          <div className="PageStart">
+            <ToolBar path={path} mobileView={mobileView} />
           </div>
           <ContentSplitPane mobileView={mobileView}>
             <NavigationTree mobileView={mobileView} />

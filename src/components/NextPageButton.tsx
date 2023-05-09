@@ -16,9 +16,7 @@ const NextPageButton = ({ path }: { path: string }) => {
     }
   };
   return (
-    <div className="NextPage BorderLayout" onClick={click}>
-      <ArrowForwardIcon fontSize="large" />
-    </div>
+    <ArrowForwardIcon className="NextPage" fontSize="large" onClick={click} />
   );
 };
 

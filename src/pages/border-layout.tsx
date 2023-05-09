@@ -15,33 +15,41 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>
         <code>BorderLayout</code> is a type of layout manager that is used to
         arrange and organize components in a container. It divides the container
-        into five regions: <code>page-start</code> (north),{" "}
-        <code>page-end</code> (south), <code>line-start</code> (west),{" "}
-        <code>line-end</code> (east) and <code>center</code>.
+        into five regions: <code>PageStart</code> (north), <code>PageEnd</code>{" "}
+        (south), <code>LineStart</code> (west), <code>LineEnd</code> (east) and{" "}
+        <code>Center</code>.
       </p>
       <div className="BorderLayout" style={{ height: "8rem" }}>
-        <button data-constraints="page-start">page-start</button>
-        <button data-constraints="line-start">line-start</button>
-        <button>center</button>
-        <button data-constraints="line-end">line-end</button>
-        <button data-constraints="page-end">page-end</button>
+        <div className="PageStart">
+          <button>PageStart</button>
+        </div>
+        <div className="LineStart">
+          <button>LineStart</button>
+        </div>
+        <button>Center</button>
+        <div className="LineEnd">
+          <button>LineEnd</button>
+        </div>
+        <div className="PageEnd">
+          <button>PageEnd</button>
+        </div>
       </div>
       <p>
         When components are added to a container with <code>BorderLayout</code>,
         they are placed in one of these five regions according to the rules of
-        the layout. The <code>page-start</code> region is placed at the top, the{" "}
-        <code>page-end</code> region at the bottom, the <code>line-start</code>{" "}
-        region on the left side, the <code>line-end</code> region on the right
-        side and the <code>center</code> region in the middle.
+        the layout. The <code>PageStart</code> region is placed at the top, the{" "}
+        <code>PageEnd</code> region at the bottom, the <code>LineStart</code>{" "}
+        region on the left side, the <code>LineEnd</code> region on the right
+        side and the <code>Center</code> region in the middle.
       </p>
       <p>
-        The components placed in the <code>page-start</code> and{" "}
-        <code>page-end</code> regions are sized to their preferred height and
+        The components placed in the <code>PageStart</code> and{" "}
+        <code>PageEnd</code> regions are sized to their preferred height and
         stretched to the full width of the container. The components placed in
-        the <code>line-start</code> and <code>line-end</code> regions are sized
-        to their preferred width and stretched to the full height of the
-        container. The component placed in the <code>center</code> region is
-        stretched to fill the remaining space in the container.
+        the <code>LineStart</code> and <code>LineEnd</code> regions are sized to
+        their preferred width and stretched to the full height of the container.
+        The component placed in the <code>Center</code> region is stretched to
+        fill the remaining space in the container.
       </p>
       <hr />
       <h2>Example with two components</h2>
@@ -51,36 +59,48 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
         {`...\n` +
-          `<div class="BorderLayout">\n` +
-          `  <span data-constraints="page-start">Hello, World!</span>\n` +
+          `<div class="BorderLayout" style="height: 100px;">\n` +
+          `  <div class="PageStart">\n` +
+          `    <span>Hello, World!</span>\n` +
+          `  </div>\n` +
           `  <button>Click me!</button>\n` +
           `</div>\n` +
           `...`}
       </SyntaxHighlighter>
       <p>
-        In a BorderLayout, if no <code>data-constraints</code> is specified for
-        a component, then the component is placed in the <code>center</code>{" "}
-        region by default.
+        To specify a region for a component, wrap the component in a{" "}
+        <code>div</code> element with the <code>class</code> attribute set to{" "}
+        <code>"PageStart"</code>, <code>"PageEnd"</code>,{" "}
+        <code>"LineStart"</code> or <code>"LineEnd"</code> regions.
       </p>
       <p>
-        In this example, we create a <code>div</code> and set its{" "}
-        <code>class</code> to <code>"BorderLayout"</code>. We then add a{" "}
-        <code>span</code> that says "Hello, World!" to the{" "}
-        <code>page-start</code> region of the <code>div</code>. We add a{" "}
-        <code>button</code> with the text "Click me!" to the <code>div</code>,
-        without any <code>data-constraints</code>. Since we didn't specify any{" "}
-        <code>data-constraints</code>, the <code>button</code> is automatically
-        placed in the center region of the <code>div</code>.
+        If no region is specified for a component, then the component is placed
+        in the <code>Center</code> region by default.
+      </p>
+      <p>
+        In this example, we create a <code>div</code> container with{" "}
+        <code>style="height: 100px;"</code> and set its <code>class</code> to{" "}
+        <code>"BorderLayout"</code>. We then add a wrapped <code>span</code>{" "}
+        that says "Hello, World!" to the <code>PageStart</code> region of the
+        container. We add a <code>button</code> with the text "Click me!" to the
+        container. Since we didn't specify any region, the <code>button</code>{" "}
+        is automatically placed in the <code>Center</code> region of the
+        container.
       </p>
       <p>
         When we run this code, we will see a panel with the text at the top and
         the button in the center, like this:
       </p>
-      <div className="BorderLayout" style={{ backgroundColor: "lightgray" }}>
-        <span data-constraints="page-start">Hello, World!</span>
+      <div
+        className="BorderLayout"
+        style={{ height: "100px", backgroundColor: "lightgray" }}
+      >
+        <div className="PageStart">
+          <span>Hello, World!</span>
+        </div>
         <button>Click me!</button>
       </div>
-      <p />
+      <p></p>
       <hr />
       <h2>Adding gaps</h2>
       <p>
@@ -93,20 +113,27 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
         {`...\n` +
-          `<div class="BorderLayout">\n` +
-          `  <button data-constraints="page-start">Button 1</button>\n` +
-          `  <button style="margin-block-start: 5px">Button 2</button>\n` +
+          `<div class="BorderLayout" style="height: 100px;">\n` +
+          `  <div class="PageStart">\n` +
+          `    <button>Button 1</button>\n` +
+          `  </div>\n` +
+          `  <button style="margin-block-start: 10px">Button 2</button>\n` +
           `</div>\n` +
           `...`}
       </SyntaxHighlighter>
       <p>After running this code, we will see a panel with two buttons.</p>
-      <div className="BorderLayout" style={{ backgroundColor: "lightgray" }}>
-        <button data-constraints="page-start">Button 1</button>
-        <button style={{ marginBlockStart: "5px" }}>Button 2</button>
+      <div
+        className="BorderLayout"
+        style={{ height: "100px", backgroundColor: "lightgray" }}
+      >
+        <div className="PageStart">
+          <button>Button 1</button>
+        </div>
+        <button style={{ marginBlockStart: "10px" }}>Button 2</button>
       </div>
-      <p />
+      <p></p>
       <NoteAboutLayouts />
-      <p />
+      <p></p>
     </Layout>
   );
 };

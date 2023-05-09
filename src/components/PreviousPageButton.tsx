@@ -16,9 +16,7 @@ const PreviousPageButton = ({ path }: { path: string }) => {
     }
   };
   return (
-    <div className="PreviousPage BorderLayout" onClick={click}>
-      <ArrowBackIcon fontSize="large" />
-    </div>
+    <ArrowBackIcon className="PreviousPage" fontSize="large" onClick={click} />
   );
 };
 

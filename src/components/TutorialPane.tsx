@@ -1,5 +1,4 @@
 import React from "react";
-import { PageProps } from "gatsby";
 
 const TutorialPane = ({ children }: { children: React.ReactNode }) => {
   return (

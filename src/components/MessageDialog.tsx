@@ -23,20 +23,23 @@ class MessageDialog extends React.Component<{
   };
   render = () => {
     return (
-      <div className="Dialog PageStartBorderLayout">
-        <div className="LineEndCenterBorderLayout">
-          <span onPointerDown={this.pointerdown}>
-            <b>{this.props.title}</b>
-          </span>
-          <CloseIcon onClick={this.dispose} />
+      <div className="Dialog BorderLayout">
+        <div className="PageStart">
+          <div className="BorderLayout">
+            <span className="BoxLayout" onPointerDown={this.pointerdown}>
+              <b>{this.props.title}</b>
+            </span>
+            <div className="LineEnd">
+              <CloseIcon onClick={this.dispose} />
+            </div>
+          </div>
         </div>
-        <div
-          className="PageEndBorderLayout"
-          style={{ gap: "5px", padding: "5px" }}
-        >
+        <div className="BorderLayout" style={{ gap: "5px", padding: "5px" }}>
           <span>{this.props.message}</span>
-          <div className="CenterLayout">
-            <button onClick={this.dispose}>OK</button>
+          <div className="PageEnd">
+            <div className="CenterLayout">
+              <button onClick={this.dispose}>OK</button>
+            </div>
           </div>
         </div>
       </div>

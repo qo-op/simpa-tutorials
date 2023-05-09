@@ -2,15 +2,6 @@ html {
     font-size: 20px;
 }
 
-h1 {
-    font-size: 2rem;
-    margin: 0;
-}
-
-.Layout {
-    height: 100vh;
-}
-
 .NavigationTree.Tree li>.TreeNode {
     padding-inline-start: calc(8px + 1rem + 5px);
 }

@@ -20,13 +20,52 @@ body {
     display: grid !important;
     grid-template-rows: auto minmax(0, 1fr) auto !important;
     grid-template-columns: auto minmax(0, 1fr) auto !important;
-    align-items: stretch;
-    justify-items: stretch;
+    align-items: stretch !important;
+    justify-items: stretch !important;
 }
 
 .BorderLayout>* {
     grid-row: 2 !important;
     grid-column: 2 !important;
+}
+
+.BorderLayout>.PageStart {
+    grid-row: 1 !important;
+    grid-column: 1 / -1 !important;
+    display: grid !important;
+}
+
+.BorderLayout>.PageEnd {
+    grid-row: 3 !important;
+    grid-column: 1 / -1 !important;
+    display: grid !important;
+}
+
+.BorderLayout>.LineStart {
+    grid-row: 2 !important;
+    grid-column: 1 !important;
+    display: grid !important;
+}
+
+.BorderLayout>.LineEnd {
+    grid-row: 2 !important;
+    grid-column: 3 !important;
+    display: grid !important;
+}
+
+.BorderLayout>.Center {
+    grid-row: 2 !important;
+    grid-column: 2 !important;
+    display: grid !important;
+}
+
+.BorderLayout>.PageStart>*,
+.BorderLayout>.PageEnd>*,
+.BorderLayout>.LineStart>*,
+.BorderLayout>.LineEnd>*,
+.BorderLayout>.Center>* {
+    grid-row: 1 !important;
+    grid-column: 1 !important;
 }
 
 .BorderLayout>[data-constraints="page-start"] {
@@ -433,34 +472,65 @@ body {
     display: grid !important;
     align-content: stretch !important;
     justify-content: start !important;
-    align-items: center;
+    align-items: center !important;
 }
 
 .BoxLayout[data-axis="page-axis"] {
     display: grid !important;
     align-content: start !important;
     justify-content: stretch !important;
-    justify-items: center;
+    justify-items: center !important;
 }
 
-.BoxLayout[data-alignment="stretch"],
-.BoxLayout[data-axis="line-axis"][data-alignment="stretch"] {
-    display: grid !important;
-    align-content: stretch !important;
-    justify-content: start !important;
-    align-items: stretch;
+.BoxLayout[data-axis="page-axis"][data-alignment-x="start"] {
+    justify-items: start !important;
 }
 
-.BoxLayout[data-axis="page-axis"][data-alignment="stretch"] {
-    display: grid !important;
-    align-content: start !important;
-    justify-content: stretch !important;
-    justify-items: stretch;
+.BoxLayout[data-alignment-x="center"],
+.BoxLayout[data-axis="line-axis"][data-alignment-x="center"] {
+    justify-content: center !important;
+}
+
+.BoxLayout[data-alignment-x="end"],
+.BoxLayout[data-axis="line-axis"][data-alignment-x="end"] {
+    justify-content: end !important;
+}
+
+.BoxLayout[data-axis="page-axis"][data-alignment-x="end"] {
+    justify-items: end !important;
+}
+
+.BoxLayout[data-axis="page-axis"][data-alignment-x="stretch"] {
+    justify-items: stretch !important;
+}
+
+.BoxLayout[data-alignment-y="start"],
+.BoxLayout[data-axis="line-axis"][data-alignment-y="start"] {
+    align-items: start !important;
+}
+
+.BoxLayout[data-axis="page-axis"][data-alignment-y="center"] {
+    align-content: center !important;
+}
+
+.BoxLayout[data-alignment-y="end"],
+.BoxLayout[data-axis="line-axis"][data-alignment-y="end"] {
+    align-items: end !important;
+}
+
+.BoxLayout[data-axis="page-axis"][data-alignment-y="end"] {
+    align-content: end !important;
+}
+
+.BoxLayout[data-alignment-y="stretch"],
+.BoxLayout[data-axis="line-axis"][data-alignment-y="stretch"] {
+    align-items: stretch !important;
 }
 
 .BoxLayout>*,
 .BoxLayout[data-axis="line-axis"]>* {
     grid-row: 1 !important;
+    grid-column: unset !important;
 }
 
 .BoxLayout[data-axis="page-axis"]>* {
@@ -476,6 +546,11 @@ body {
     display: grid !important;
     align-content: center !important;
     justify-content: center !important;
+}
+
+.CenterLayout>* {
+    grid-row: 1 !important;
+    grid-column: 1 !important;
 }
 
 /**
@@ -700,6 +775,21 @@ img {
     height: 1rem;
     -webkit-user-drag: none;
     user-select: none;
+}
+
+/*
+ * LayeredPane
+ */
+
+.LayeredPane {
+    display: grid !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.LayeredPane>* {
+    grid-row: 1 !important;
+    grid-column: 1 !important;
 }
 
 /**
@@ -978,7 +1068,6 @@ img {
 
 .SplitPane>* {
     padding: 0 !important;
-    box-sizing: border-box;
 }
 
 .SplitPane>:nth-child(2),

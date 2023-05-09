@@ -9,11 +9,9 @@ const HomeButtonStyle = {
 
 const HomeButton = () => {
   return (
-    <div className="HomeButton CenterLayout">
-      <Link to="/" style={HomeButtonStyle}>
-        Simpa
-      </Link>
-    </div>
+    <Link to="/" className="HomeButton" style={HomeButtonStyle}>
+      Simpa
+    </Link>
   );
 };
 
