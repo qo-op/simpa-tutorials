@@ -7,9 +7,11 @@ import PreviousPageButton from "components/PreviousPageButton";
 const ToolBar = ({
   path,
   mobileView,
+  blank,
 }: {
   path: string;
   mobileView: boolean;
+  blank: boolean;
 }) => {
   return (
     <div
@@ -20,7 +22,7 @@ const ToolBar = ({
       }}
     >
       <div className="LineStart CenterLayout">
-        <Hamburger mobileView={mobileView} />
+        <Hamburger mobileView={mobileView} path={path} blank={!!blank} />
       </div>
       <div className="BorderLayout" style={{ marginInlineStart: "16px" }}>
         <div className="LineStart CenterLayout">

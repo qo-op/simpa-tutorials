@@ -6,20 +6,27 @@ import SchoolIcon from "@mui/icons-material/School";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { expandOrCollapse } from "features/NavigationTreeSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
-import { toggle } from "features/HamburgerSlice";
+import { setClosed } from "features/HamburgerSlice";
 import tutorials from "app/tutorials";
 
-const NavigationTree = ({ mobileView }: { mobileView: boolean }) => {
+const NavigationTree = ({
+  mobileView,
+  blank,
+}: {
+  mobileView: boolean;
+  blank: boolean;
+}) => {
   const layoutFolderClosed = useAppSelector(
     (state) => state.navigationTree.layoutFolderClosed
   );
+  const closed = blank
+    ? false
+    : useAppSelector((state) => state.hamburger.closed);
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
     if (mobileView) {
-      dispatch(
-        setDividerLocation(-1)
-      );
-      dispatch(toggle());
+      dispatch(setDividerLocation(-1));
+      dispatch(setClosed(!closed));
     }
     navigate(to);
   };

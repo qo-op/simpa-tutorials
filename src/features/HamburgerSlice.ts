@@ -6,12 +6,12 @@ const HamburgerSlice = createSlice({
         closed: true
     },
     reducers: {
-        toggle: (state) => {
-            state.closed = !state.closed;
+        setClosed: (state, action) => {
+            state.closed = action.payload;
         }
     }
 });
 
-export const { toggle } = HamburgerSlice.actions;
+export const { setClosed } = HamburgerSlice.actions;
 
 export default HamburgerSlice.reducer;

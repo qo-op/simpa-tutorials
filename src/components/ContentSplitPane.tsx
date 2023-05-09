@@ -21,9 +21,7 @@ const ContentSplitPane = ({
         detail: {
           event: ev,
           callback: (dividerLocation: number) => {
-            dispatch(
-              setDividerLocation(dividerLocation)
-            );
+            dispatch(setDividerLocation(dividerLocation));
           },
         },
       })
@@ -32,8 +30,8 @@ const ContentSplitPane = ({
   return (
     <>
       {mobileView ? (
-        dividerLocation === -1 && !blank ? (
-          <div className="ScrollPane">{children[1]}</div>
+        dividerLocation === -1 ? (
+          <>{blank ? <div className="ScrollPane">{children[0]}</div> : <div className="ScrollPane">{children[1]}</div>}</>
         ) : (
           <div className="ScrollPane">{children[0]}</div>
         )
