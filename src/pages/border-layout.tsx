@@ -109,7 +109,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         For example, if you want to create a gap between a component in the{" "}
         <code>page-start</code> region and a component in the{" "}
         <code>center</code> region, you can add a margin to the{" "}
-        <code>center</code> component.
+        <code>center</code> component, as seen below:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
         {`...\n` +
@@ -121,7 +121,10 @@ const BorderLayoutPage = ({ path }: PageProps) => {
           `</div>\n` +
           `...`}
       </SyntaxHighlighter>
-      <p>After running this code, we will see a panel with two buttons.</p>
+      <p>
+        After running this code, we will see a panel with two buttons with a gap
+        between them.
+      </p>
       <div
         className="BorderLayout"
         style={{ height: "100px", backgroundColor: "lightgray" }}
@@ -133,6 +136,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <NoteAboutLayouts />
+      <p></p>
+      <p></p>
+      <p></p>
       <p></p>
     </Layout>
   );

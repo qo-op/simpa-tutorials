@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunksimpa_tutorials=self.webpackChunksimpa_tutorials||[]).push([[609],{2986:function(e,t,a){a.r(t);var l=a(7294),u=a(7111);t.default=e=>{let{path:t}=e;return l.createElement(u.Z,{pageTitle:"Simpa Tutorials",path:t},l.createElement("p",null))}}}]);
-//# sourceMappingURL=component---src-pages-blank-tsx-1baade860f1bc5181277.js.map

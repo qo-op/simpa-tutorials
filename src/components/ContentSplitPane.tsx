@@ -5,9 +5,11 @@ import { setDividerLocation } from "features/ContentSplitPaneSlice";
 const ContentSplitPane = ({
   children,
   mobileView,
+  blank,
 }: {
   children: React.ReactNode[];
   mobileView: boolean;
+  blank: boolean;
 }) => {
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
@@ -30,7 +32,7 @@ const ContentSplitPane = ({
   return (
     <>
       {mobileView ? (
-        dividerLocation === -1 ? (
+        dividerLocation === -1 && !blank ? (
           <div className="ScrollPane">{children[1]}</div>
         ) : (
           <div className="ScrollPane">{children[0]}</div>

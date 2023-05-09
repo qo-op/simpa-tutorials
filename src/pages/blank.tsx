@@ -4,7 +4,7 @@ import Layout from "components/Layout";
 
 const Blank = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"Simpa Tutorials"} path={path}>
+    <Layout pageTitle={"Simpa Tutorials"} path={path} blank={true}>
       <p></p>
     </Layout>
   );

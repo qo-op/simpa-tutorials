@@ -16,10 +16,12 @@ const LayoutStyle = {
 const Layout = ({
   children,
   path,
+  blank,
   pageTitle,
 }: {
   children: React.ReactNode;
   path: string;
+  blank?: boolean;
   pageTitle: string;
 }) => {
   const browserView = useMediaQuery({ query: "(min-width: 480px)" });
@@ -35,7 +37,7 @@ const Layout = ({
           <div className="PageStart">
             <ToolBar path={path} mobileView={mobileView} />
           </div>
-          <ContentSplitPane mobileView={mobileView}>
+          <ContentSplitPane mobileView={mobileView} blank={!!blank}>
             <NavigationTree mobileView={mobileView} />
             <TutorialPane>{children}</TutorialPane>
           </ContentSplitPane>

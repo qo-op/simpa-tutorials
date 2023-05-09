@@ -239,13 +239,13 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <p>
         For example, the following code sets the y alignment of a horizontal{" "}
-        <code>BoxLayout</code> container to bottom:
+        <code>BoxLayout</code> container to <code>"stretch"</code>:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
         {`...\n` +
           `<div class="BoxLayout"\n` +
           `     data-axis="line-axis"\n` +
-          `     data-alignment-y="end"\n` +
+          `     data-alignment-y="stretch"\n` +
           `     style="gap: 10px; height: 100px">\n` +
           `  <button>Button</button>\n` +
           `  <button>Another<br />button</button>\n` +
@@ -253,13 +253,13 @@ const BorderLayoutPage = ({ path }: PageProps) => {
           `...`}
       </SyntaxHighlighter>
       <p>
-        After running this code, we will see a panel with buttons laid out
-        horizontally aligned to the bottom of the container.
+        After running this code, we will see a panel with stretched buttons laid out
+        horizontally.
       </p>
       <div
         className="BoxLayout"
         data-axis="line-axis"
-        data-alignment-y="end"
+        data-alignment-y="stretch"
         style={{ gap: "10px", height: "100px", backgroundColor: "lightgray" }}
       >
         <button>Button</button>
@@ -370,7 +370,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>Combine x and y alignments</h2>
+      <h2>x and y alignment combinations</h2>
       <p>
         You can combine the x and y alignments of a <code>BoxLayout</code>{" "}
         container to position the child components both horizontally and
@@ -383,6 +383,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <p></p>
       <NoteAboutLayouts />
+      <p></p>
+      <p></p>
+      <p></p>
       <p></p>
     </Layout>
   );
