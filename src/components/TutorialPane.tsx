@@ -1,15 +1,12 @@
-import * as React from "react";
+import React from "react";
+import { PageProps } from "gatsby";
 
-class TutorialPane extends React.Component<{
-  children: React.ReactNode;
-}> {
-  render = () => {
-    return (
-      <div className="TutorialPane BoxLayout" data-axis="page-axis">
-        <div>{this.props.children}</div>
-      </div>
-    );
-  };
-}
+const TutorialPane = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="TutorialPane BoxLayout" data-axis="page-axis">
+      <div>{children}</div>
+    </div>
+  );
+};
 
 export default TutorialPane;

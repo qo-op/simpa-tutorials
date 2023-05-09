@@ -1,96 +1,62 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby";
 import MediaQuery from "react-responsive";
 import Hamburger from "components/Hamburger";
 import PreviousPageButton from "components/PreviousPageButton";
+import HomeButton from "components/HomeButton";
 import NextPageButton from "components/NextPageButton";
-import HamburgerSplitPane from "components/HamburgerSplitPane";
+import ContentSplitPane from "components/ContentSplitPane";
 import NavigationTree from "components/NavigationTree";
 import ModalLayer from "components/ModalLayer";
 import TutorialPane from "components/TutorialPane";
-import TutorialPage from "model/TutorialPage";
 import "./simpa.css";
 import "./Layout.css";
 
-const tutorialPages: TutorialPage[] = [
-  {
-    text: "Introduction to Simpa",
-    path: "/",
-  },
-  {
-    text: "How to Use BorderLayout",
-    path: "/border-layout/",
-  },
-  {
-    text: "How to Use BoxLayout",
-    path: "/box-layout/",
-  },
-];
-
-class Layout extends React.Component<{
+const Layout = ({
+  children,
+  pageTitle,
+  path,
+}: {
   children: React.ReactNode;
   pageTitle: string;
-  pathname: string;
-}> {
-  render = () => {
-    return (
-      <MediaQuery minWidth={480}>
-        {(matches: boolean) => (
-          <>
-            <Helmet>
-              <title>{this.props.pageTitle}</title>
-              <script src="https://qo-op.github.io/simpa/simpa.js"></script>
-            </Helmet>
-            <div className="Layout BorderLayout">
-              <div className="PageStartBorderLayout">
-                <div
-                  className="LineStartCenterBorderLayout"
-                  style={{
-                    borderBlockEnd: "1px black solid",
-                    paddingInline: "16px",
-                    gap: "16px",
-                  }}
-                >
-                  <Hamburger mobileView={!matches} />
-                  <div className="LineCenterBorderLayout">
-                    <PreviousPageButton
-                      tutorialPages={tutorialPages}
-                      pathname={this.props.pathname}
-                    />
-                    <div className="CenterLayout">
-                      <Link
-                        to="/"
-                        style={{
-                          textDecoration: "none",
-                          color: "black",
-                          fontSize: "2rem",
-                        }}
-                      >
-                        Simpa
-                      </Link>
-                    </div>
-                    <NextPageButton
-                      tutorialPages={tutorialPages}
-                      pathname={this.props.pathname}
-                    />
-                  </div>
+  path: string;
+}) => {
+  return (
+    <MediaQuery minWidth={480}>
+      {(matches: boolean) => (
+        <>
+          <Helmet>
+            <title>{pageTitle}</title>
+            <script src="https://qo-op.github.io/simpa/simpa.js"></script>
+          </Helmet>
+          <div className="Layout BorderLayout">
+            <div className="PageStartBorderLayout">
+              <div
+                className="LineStartCenterBorderLayout"
+                style={{
+                  borderBlockEnd: "1px black solid",
+                  paddingInline: "16px",
+                  gap: "16px",
+                }}
+              >
+                <Hamburger mobileView={!matches} />
+                <div className="LineCenterBorderLayout">
+                  <PreviousPageButton path={path} />
+                  <HomeButton />
+                  <NextPageButton path={path} />
                 </div>
-                <HamburgerSplitPane mobileView={!matches}>
-                  <NavigationTree
-                    mobileView={!matches}
-                    tutorialPages={tutorialPages}
-                  />
-                  <TutorialPane>{this.props.children}</TutorialPane>
-                </HamburgerSplitPane>
               </div>
-              <ModalLayer />
+              <ContentSplitPane mobileView={!matches}>
+                <NavigationTree mobileView={!matches} />
+                <TutorialPane>{children}</TutorialPane>
+              </ContentSplitPane>
             </div>
-          </>
-        )}
-      </MediaQuery>
-    );
-  };
-}
+            <ModalLayer />
+          </div>
+        </>
+      )}
+    </MediaQuery>
+  );
+};
 
 export default Layout;

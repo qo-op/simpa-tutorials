@@ -1,57 +1,40 @@
 import React from "react";
 import { navigate } from "gatsby";
-import { connect } from "react-redux";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import store from "model/store";
+import { useAppSelector, useAppDispatch } from "app/hooks";
+import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import { toggle } from "features/HamburgerSlice";
 
-class Hamburger extends React.Component<{
-  mobileView: boolean;
-  hamburgerClosed: boolean;
-}> {
-  toggle = (hamburgerClosed: boolean, mobileView: boolean) => {
-    store.dispatch({
-      type: "HamburgerSplitPane/setDividerLocation",
-      payload: hamburgerClosed ? -2 : -1,
-    });
-    store.dispatch({
-      type: "Hamburger/toggle",
-      payload: null,
-    });
+const Hamburger = ({ mobileView }: { mobileView: boolean }) => {
+  let closed = useAppSelector((state) => state.hamburger.closed);
+  const dispatch = useAppDispatch();
+  const click = () => {
+    dispatch(setDividerLocation(closed ? -2 : -1));
+    dispatch(toggle());
     if (mobileView) {
-      if (hamburgerClosed) {
+      if (closed) {
         navigate("/blank");
       } else {
         navigate(-1);
       }
     }
   };
-  render = () => {
-    return (
-      <div
-        className="Hamburger BorderLayout"
-        onClick={() =>
-          this.toggle(this.props.hamburgerClosed, this.props.mobileView)
-        }
-      >
-        {this.props.hamburgerClosed ? (
-          this.props.mobileView ? (
-            <MenuIcon fontSize="large" />
-          ) : (
-            <MenuOpenIcon fontSize="large" />
-          )
-        ) : this.props.mobileView ? (
-          <MenuOpenIcon fontSize="large" />
-        ) : (
+  return (
+    <div className="Hamburger BorderLayout" onClick={() => click()}>
+      {closed ? (
+        mobileView ? (
           <MenuIcon fontSize="large" />
-        )}
-      </div>
-    );
-  };
-}
+        ) : (
+          <MenuOpenIcon fontSize="large" />
+        )
+      ) : mobileView ? (
+        <MenuOpenIcon fontSize="large" />
+      ) : (
+        <MenuIcon fontSize="large" />
+      )}
+    </div>
+  );
+};
 
-const mapStateToProps = (state: { hamburgerClosed: boolean }) => ({
-  hamburgerClosed: state.hamburgerClosed,
-});
-
-export default connect(mapStateToProps)(Hamburger);
+export default Hamburger;

@@ -1,23 +1,23 @@
 import { createStore } from "redux";
 
 function counterReducer(state = {
-    hamburgerClosed: true,
-    layouts: "open",
-    dividerLocation: -1,
+    hamburger: { closed: true },
+    navigationTree: { layoutFolderClosed: false },
+    contentSplitPane: { dividerLocation: -1 },
     tutorialVisible: true,
 }, action: { type: string, payload: any }) {
     switch (action.type) {
         case 'Hamburger/toggle':
-            return { ...state, hamburgerClosed: !state.hamburgerClosed };
+            return { ...state, hamburger: { closed: !state.hamburger.closed } };
         case 'NavigationTree/expandOrCollapse':
             switch (action.payload) {
                 case "layouts":
-                    return { ...state, layouts: state.layouts === "closed" ? "open" : "closed" };
+                    return { ...state, navigationTree: { layoutFolderClosed: !state.navigationTree.layoutFolderClosed} };
                 default:
                     return state;
             }
         case 'HamburgerSplitPane/setDividerLocation':
-            return { ...state, dividerLocation: action.payload };
+            return { ...state, contentSplitPane: { dividerLocation: action.payload } };
         default:
             return state;
     }

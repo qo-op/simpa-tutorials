@@ -1,30 +1,25 @@
 import React from "react";
 import { navigate } from "gatsby";
-import TutorialPage from "model/TutorialPage";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import tutorials from "app/tutorials";
 
-class NextPageButton extends React.Component<{
-  tutorialPages: TutorialPage[];
-  pathname: string;
-}> {
-  click = () => {
-    let i: number = this.props.tutorialPages.length - 1;
+const NextPageButton = ({ path }: { path: string }) => {
+  const click = () => {
+    let i: number = tutorials.length - 1;
     for (; i >= 0; i--) {
-      if (this.props.pathname.endsWith(this.props.tutorialPages[i].path)) {
+      if (path.endsWith(tutorials[i].path)) {
         break;
       }
     }
-    if (i < this.props.tutorialPages.length - 1) {
-      navigate(this.props.tutorialPages[i + 1].path);
+    if (i < tutorials.length - 1) {
+      navigate(tutorials[i + 1].path);
     }
   };
-  render = () => {
-    return (
-      <div className="NextPage BorderLayout" onClick={this.click}>
-        <ArrowForwardIcon fontSize="large" />
-      </div>
-    );
-  };
-}
+  return (
+    <div className="NextPage BorderLayout" onClick={click}>
+      <ArrowForwardIcon fontSize="large" />
+    </div>
+  );
+};
 
 export default NextPageButton;
