@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const NextPathSlice = createSlice({
     name: "nextPath",
     initialState: {
-        value: "/"
+        value: ""
     },
     reducers: {
         setNextPath: (state, action) => {
