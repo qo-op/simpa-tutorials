@@ -1,0 +1,15 @@
+.TutorialPane h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.TutorialPane h2 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.TutorialPane pre {
+    font-size: 18px;
+    text-align: left;
+    overflow: hidden;
+}

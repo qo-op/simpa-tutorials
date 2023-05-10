@@ -2,11 +2,19 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
+const NoteAboutLayoutsStyle: React.CSSProperties = {
+  backgroundColor: "ivory",
+};
+
+const NoteAboutLayoutsContentPaneStyle: React.CSSProperties = {
+  padding: "0 20px",
+}
+
 const NoteAboutLayouts = () => {
   return (
-    <div style={{ backgroundColor: "ivory" }}>
+    <div className="NoteAboutLayouts" style={NoteAboutLayoutsStyle}>
       <hr />
-      <div style={{ padding: "0 20px" }}>
+      <div className="NoteAboutLayoutsContentPane" style={NoteAboutLayoutsContentPaneStyle}>
         <h2>Note about Simpa Layouts</h2>
         <p>
           In order to use Simpa Layouts in your HTML file, you need to include a{" "}

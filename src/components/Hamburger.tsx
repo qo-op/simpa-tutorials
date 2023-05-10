@@ -5,11 +5,14 @@ import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerSlice";
 
-const Hamburger = ({
-  mobileView,
-}: {
-  mobileView: boolean;
-}) => {
+const HamburgerStyle: React.CSSProperties = {
+  userSelect: "none",
+  cursor: "pointer",
+  border: "none",
+  backgroundColor: "unset",
+};
+
+const Hamburger = ({ mobileView }: { mobileView: boolean }) => {
   const closed = useAppSelector((state) => state.hamburger.closed);
   const dispatch = useAppDispatch();
   const click = () => {
@@ -17,7 +20,11 @@ const Hamburger = ({
     dispatch(setClosed(!closed));
   };
   return (
-    <div className="Hamburger BorderLayout" onClick={click}>
+    <button
+      className="Hamburger BorderLayout"
+      style={HamburgerStyle}
+      onClick={click}
+    >
       {mobileView ? (
         closed ? (
           <MenuIcon fontSize="large" />
@@ -29,7 +36,7 @@ const Hamburger = ({
       ) : (
         <MenuIcon fontSize="large" />
       )}
-    </div>
+    </button>
   );
 };
 

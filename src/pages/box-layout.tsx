@@ -370,7 +370,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>x and y alignment combinations</h2>
+      <h2>x and y alignment are independent of each other</h2>
       <p>
         You can combine the x and y alignments of a <code>BoxLayout</code>{" "}
         container to position the child components both horizontally and
@@ -383,10 +383,6 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <p></p>
       <NoteAboutLayouts />
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
     </Layout>
   );
 };

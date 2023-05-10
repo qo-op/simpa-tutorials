@@ -1,6 +1,6 @@
 import React from "react";
-import { useAppSelector, useAppDispatch } from "app/hooks";
-import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import { useAppSelector } from "app/hooks";
+import ContentSplitPaneDivider from "./ContentSplitPaneDivider";
 
 const ContentSplitPane = ({
   children,
@@ -12,19 +12,6 @@ const ContentSplitPane = ({
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
-  const dispatch = useAppDispatch();
-  const pointerdown = (ev: React.PointerEvent) => {
-    document.dispatchEvent(
-      new CustomEvent("splitpanedividerpointerdown", {
-        detail: {
-          event: ev,
-          callback: (dividerLocation: number) => {
-            dispatch(setDividerLocation(dividerLocation));
-          },
-        },
-      })
-    );
-  };
   return mobileView ? (
     dividerLocation === -1 ? (
       <div className="ScrollPane">{children[1]}</div>
@@ -43,22 +30,7 @@ const ContentSplitPane = ({
       >
         {children[0]}
       </div>
-      <div
-        style={{
-          position: "relative",
-          borderInlineStart: "1px solid gray",
-        }}
-        onPointerDown={pointerdown}
-      >
-        <div
-          style={{
-            position: "absolute",
-            insetInlineStart: "-6px",
-            width: "11px",
-            height: "100%",
-          }}
-        ></div>
-      </div>
+      <ContentSplitPaneDivider/>
       <div className="ScrollPane">{children[1]}</div>
     </div>
   );

@@ -1,0 +1,7 @@
+.NavigationTree li>.TreeNode {
+    padding-inline-start: calc(8px + 1rem + 5px);
+}
+
+.NavigationTree>li>.TreeNode {
+    padding-inline-start: calc(8px);
+}

@@ -14,7 +14,7 @@ import TutorialPane from "components/TutorialPane";
 import "./simpa.css";
 import "./Layout.css";
 
-const LayoutStyle = {
+const LayoutStyle: React.CSSProperties = {
   height: "100vh",
 };
 
@@ -57,7 +57,13 @@ const Layout = ({
               mobileView={mobileView}
               tutorialIndex={tutorialIndex}
             />
-            <TutorialPane path={path}>{children}</TutorialPane>
+            <TutorialPane
+              path={path}
+              mobileView={mobileView}
+              tutorialIndex={tutorialIndex}
+            >
+              {children}
+            </TutorialPane>
           </ContentSplitPane>
         </div>
         <ModalLayer />

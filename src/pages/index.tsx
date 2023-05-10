@@ -28,10 +28,6 @@ const IndexPage = ({ path }: PageProps) => {
         Throughout these tutorials, we will use practical examples and code
         snippets to illustrate each concept.
       </p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
     </Layout>
   );
 };

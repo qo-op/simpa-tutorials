@@ -4,6 +4,11 @@ import HomeButton from "components/HomeButton";
 import NextPageButton from "components/NextPageButton";
 import PreviousPageButton from "components/PreviousPageButton";
 
+const ToolBarStyle: React.CSSProperties = {
+  borderBlockEnd: "1px black solid",
+  paddingInline: "16px",
+};
+
 const ToolBar = ({
   mobileView,
   tutorialIndex,
@@ -12,13 +17,7 @@ const ToolBar = ({
   tutorialIndex: number;
 }) => {
   return (
-    <div
-      className="ToolBar BorderLayout"
-      style={{
-        borderBlockEnd: "1px black solid",
-        paddingInline: "16px",
-      }}
-    >
+    <div className="ToolBar BorderLayout" style={ToolBarStyle}>
       <div className="LineStart CenterLayout">
         <Hamburger mobileView={mobileView} />
       </div>

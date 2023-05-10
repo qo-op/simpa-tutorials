@@ -6,16 +6,23 @@ const NavigationTreeSlice = createSlice({
         layoutFolderClosed: false
     },
     reducers: {
-        expandOrCollapse: (state, action) => {
+        expand: (state, action) => {
             switch (action.payload) {
-                case "layoutFolder":
-                    state.layoutFolderClosed = !state.layoutFolderClosed;
+                case "Layouts":
+                    state.layoutFolderClosed = false;
+                    break;
+            }
+        },
+        collapse: (state, action) => {
+            switch (action.payload) {
+                case "Layouts":
+                    state.layoutFolderClosed = true;
                     break;
             }
         }
     }
 });
 
-export const { expandOrCollapse } = NavigationTreeSlice.actions;
+export const { expand, collapse } = NavigationTreeSlice.actions;
 
 export default NavigationTreeSlice.reducer;

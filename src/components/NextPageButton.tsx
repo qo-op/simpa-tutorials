@@ -7,6 +7,13 @@ import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerSlice";
 import tutorials from "app/tutorials";
 
+const NextPageButtonStyle: React.CSSProperties = {
+  userSelect: "none",
+  cursor: "pointer",
+  border: "none",
+  backgroundColor: "unset",
+};
+
 const NextPageButton = ({
   mobileView,
   tutorialIndex,
@@ -20,15 +27,22 @@ const NextPageButton = ({
     if (tutorialIndex < tutorials.length - 1) {
       const to = tutorials[tutorialIndex + 1].path;
       navigate(to);
+      dispatch(setNextPath(to));
       if (mobileView && !closed) {
-        dispatch(setNextPath(to));
         dispatch(setDividerLocation(-1));
         dispatch(setClosed(true));
       }
     }
   };
   return (
-    <ArrowForwardIcon className="NextPage" fontSize="large" onClick={click} />
+    <button
+      className="NextPage BorderLayout"
+      style={NextPageButtonStyle}
+      disabled={tutorialIndex === tutorials.length - 1}
+      onClick={click}
+    >
+      <ArrowForwardIcon fontSize="large" />
+    </button>
   );
 };
 

@@ -6,6 +6,14 @@ import { setNextPath } from "features/NextPathSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerSlice";
 import tutorials from "app/tutorials";
+import { Button } from "@mui/material";
+
+const PreviousPageButtonStyle: React.CSSProperties = {
+  userSelect: "none",
+  cursor: "pointer",
+  border: "none",
+  backgroundColor: "unset",
+};
 
 const PreviousPageButton = ({
   mobileView,
@@ -20,15 +28,22 @@ const PreviousPageButton = ({
     if (tutorialIndex > 0) {
       const to = tutorials[tutorialIndex - 1].path;
       navigate(to);
+      dispatch(setNextPath(to));
       if (mobileView && !closed) {
-        dispatch(setNextPath(to));
         dispatch(setDividerLocation(-1));
         dispatch(setClosed(true));
       }
     }
   };
   return (
-    <ArrowBackIcon className="PreviousPage" fontSize="large" onClick={click} />
+    <button
+      className="PreviousPage BorderLayout"
+      style={PreviousPageButtonStyle}
+      disabled={tutorialIndex === 0}
+      onClick={click}
+    >
+      <ArrowBackIcon fontSize="large" />
+    </button>
   );
 };
 

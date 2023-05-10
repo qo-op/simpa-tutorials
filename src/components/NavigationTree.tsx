@@ -5,10 +5,19 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import SchoolIcon from "@mui/icons-material/School";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setNextPath } from "features/NextPathSlice";
-import { expandOrCollapse } from "features/NavigationTreeSlice";
+import { expand, collapse } from "features/NavigationTreeSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerSlice";
 import tutorials from "app/tutorials";
+import "./NavigationTree.css";
+
+const NavigationTreeStyle: React.CSSProperties = {
+  marginBlock: "8px",
+};
+
+const NavigationTreeNodeStyle = (selected: boolean): React.CSSProperties => ({
+  backgroundColor: selected ? "lightsteelblue" : undefined,
+});
 
 const NavigationTree = ({
   mobileView,
@@ -24,25 +33,26 @@ const NavigationTree = ({
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
     navigate(to);
+    dispatch(setNextPath(to));
     if (mobileView) {
-      dispatch(setNextPath(to));
       dispatch(setDividerLocation(-1));
       dispatch(setClosed(!closed));
     }
   };
   const folderClick = (folder: string) => {
-    dispatch(expandOrCollapse(folder));
+    if (layoutFolderClosed) {
+      dispatch(expand(folder));
+    } else {
+      dispatch(collapse(folder));
+    }
   };
   return (
     <nav>
-      <ul className="NavigationTree Tree" style={{ marginBlock: "8px" }}>
+      <ul className="NavigationTree Tree" style={NavigationTreeStyle}>
         <li>
           <div
             className="TreeNode"
-            style={{
-              backgroundColor:
-                tutorialIndex == 0 ? "lightsteelblue" : undefined,
-            }}
+            style={NavigationTreeNodeStyle(tutorialIndex == 0)}
             onClick={() => tutorialClick(tutorials[0].path, mobileView)}
           >
             <SchoolIcon fontSize="small" />
@@ -50,7 +60,7 @@ const NavigationTree = ({
           </div>
         </li>
         <li data-folder={layoutFolderClosed ? "closed" : "open"}>
-          <div className="TreeNode" onClick={() => folderClick("layoutFolder")}>
+          <div className="TreeNode" onClick={() => folderClick("Layouts")}>
             {layoutFolderClosed ? (
               <KeyboardArrowRightIcon fontSize="small" />
             ) : (
@@ -62,10 +72,7 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
-                style={{
-                  backgroundColor:
-                    tutorialIndex == 1 ? "lightsteelblue" : undefined,
-                }}
+                style={NavigationTreeNodeStyle(tutorialIndex == 1)}
                 onClick={() => tutorialClick(tutorials[1].path, mobileView)}
               >
                 <SchoolIcon fontSize="small" />
@@ -75,10 +82,7 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
-                style={{
-                  backgroundColor:
-                    tutorialIndex == 2 ? "lightsteelblue" : undefined,
-                }}
+                style={NavigationTreeNodeStyle(tutorialIndex == 2)}
                 onClick={() => tutorialClick(tutorials[2].path, mobileView)}
               >
                 <SchoolIcon fontSize="small" />

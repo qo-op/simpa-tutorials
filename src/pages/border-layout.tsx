@@ -136,10 +136,6 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <NoteAboutLayouts />
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
     </Layout>
   );
 };
