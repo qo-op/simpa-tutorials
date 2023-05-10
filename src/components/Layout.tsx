@@ -2,8 +2,10 @@ import React from "react";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useMediaQuery } from "react-responsive";
+import { withPrefix } from "gatsby";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setLoading } from "features/LoadingSlice";
+import { tutorialIndexes } from "app/tutorials";
 import ContentSplitPane from "components/ContentSplitPane";
 import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
@@ -28,10 +30,12 @@ const Layout = ({
   blank?: boolean;
 }) => {
   const loading = useAppSelector((state) => state.loading.value);
+  const previousPath = useAppSelector((state) => state.previousPath.value);
   const dispatch = useAppDispatch();
   useEffect(() => { dispatch(setLoading(false))}), [];
   const browserView = useMediaQuery({ query: "(min-width: 480px)" });
   const mobileView = !browserView;
+  const tutorialIndex = blank ? tutorialIndexes["/" + previousPath.replace(withPrefix("/"), "")] : tutorialIndexes["/" + path.replace(withPrefix("/"), "")];
   return (
     <>
       <Helmet>
@@ -41,10 +45,10 @@ const Layout = ({
       <div className="Layout LayeredPane" style={{... LayoutStyle, visibility: loading ? "hidden" : "visible" }}>
         <div className="LayoutContentPane BorderLayout">
           <div className="PageStart">
-            <ToolBar path={path} mobileView={mobileView} blank={!!blank} />
+            <ToolBar path={path} mobileView={mobileView} tutorialIndex={tutorialIndex} blank={!!blank} />
           </div>
           <ContentSplitPane mobileView={mobileView} blank={!!blank}>
-            <NavigationTree mobileView={mobileView} blank={!!blank}/>
+            <NavigationTree mobileView={mobileView} tutorialIndex={tutorialIndex} blank={!!blank}/>
             <TutorialPane>{children}</TutorialPane>
           </ContentSplitPane>
         </div>

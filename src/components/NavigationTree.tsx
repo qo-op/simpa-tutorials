@@ -11,9 +11,11 @@ import tutorials from "app/tutorials";
 
 const NavigationTree = ({
   mobileView,
+  tutorialIndex,
   blank,
 }: {
   mobileView: boolean;
+  tutorialIndex: number;
   blank: boolean;
 }) => {
   const layoutFolderClosed = useAppSelector(
@@ -39,6 +41,10 @@ const NavigationTree = ({
         <li>
           <div
             className="TreeNode"
+            style={{
+              backgroundColor:
+                tutorialIndex == 0 ? "lightsteelblue" : undefined,
+            }}
             onClick={() => tutorialClick(tutorials[0].path, mobileView)}
           >
             <SchoolIcon fontSize="small" />
@@ -58,6 +64,10 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
+                style={{
+                  backgroundColor:
+                    tutorialIndex == 1 ? "lightsteelblue" : undefined,
+                }}
                 onClick={() => tutorialClick(tutorials[1].path, mobileView)}
               >
                 <SchoolIcon fontSize="small" />
@@ -67,6 +77,10 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
+                style={{
+                  backgroundColor:
+                    tutorialIndex == 2 ? "lightsteelblue" : undefined,
+                }}
                 onClick={() => tutorialClick(tutorials[2].path, mobileView)}
               >
                 <SchoolIcon fontSize="small" />

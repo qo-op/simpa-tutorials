@@ -1,18 +1,26 @@
 import React from "react";
 import { navigate } from "gatsby";
+import { useAppDispatch } from "app/hooks";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import { setClosed } from "features/HamburgerSlice";
 import tutorials from "app/tutorials";
 
-const NextPageButton = ({ path }: { path: string }) => {
+const NextPageButton = ({
+  mobileView,
+  tutorialIndex,
+}: {
+  mobileView: boolean;
+  tutorialIndex: number;
+}) => {
+  const dispatch = useAppDispatch();
   const click = () => {
-    let i: number = tutorials.length - 1;
-    for (; i >= 0; i--) {
-      if (path.endsWith(tutorials[i].path)) {
-        break;
+    if (tutorialIndex < tutorials.length - 1) {
+      navigate(tutorials[tutorialIndex + 1].path);
+      if (mobileView) {
+        dispatch(setDividerLocation(-1));
+        dispatch(setClosed(true));
       }
-    }
-    if (i < tutorials.length - 1) {
-      navigate(tutorials[i + 1].path);
     }
   };
   return (

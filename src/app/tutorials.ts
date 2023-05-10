@@ -13,4 +13,6 @@ const tutorials = [
     },
 ];
 
+export const tutorialIndexes: { [key: string]: number} = tutorials.reduce((accumulator, tutorial, index) => ({ ... accumulator, [tutorial.path]: index }), {});
+
 export default tutorials;
