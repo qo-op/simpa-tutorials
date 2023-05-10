@@ -35,7 +35,12 @@ const Layout = ({
   useEffect(() => { dispatch(setLoading(false))}), [];
   const browserView = useMediaQuery({ query: "(min-width: 480px)" });
   const mobileView = !browserView;
-  const tutorialIndex = blank ? tutorialIndexes["/" + previousPath.replace(withPrefix("/"), "")] : tutorialIndexes["/" + path.replace(withPrefix("/"), "")];
+  const tutorialIndex = blank ? tutorialIndexes[previousPath] : tutorialIndexes[path];
+  console.log("path: " + path);
+  console.log("withPrefix('/'): " + withPrefix("/"));
+  console.log("path:" + "/" + path.replace(withPrefix("/"), ""));
+  console.log("tutorialIndexes:" + tutorialIndexes);
+  console.log("tutorialIndex: " + tutorialIndex);
   return (
     <>
       <Helmet>
