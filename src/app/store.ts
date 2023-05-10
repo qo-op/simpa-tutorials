@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import loadingReducer from "features/LoadingSlice"
-import previousPathReducer from "features/PreviousPathSlice"
+import nextPathReducer from "features/NextPathSlice"
 import hamburgerReducer from "features/HamburgerSlice"
 import contentSplitPaneReducer from "features/ContentSplitPaneSlice"
 import navigationTreeReducer from "features/NavigationTreeSlice"
@@ -8,7 +8,7 @@ import navigationTreeReducer from "features/NavigationTreeSlice"
 const store = configureStore({
     reducer: {
         "loading": loadingReducer,
-        "previousPath": previousPathReducer,
+        "nextPath": nextPathReducer,
         "hamburger": hamburgerReducer,
         "contentSplitPane": contentSplitPaneReducer,
         "navigationTree": navigationTreeReducer,
@@ -16,5 +16,5 @@ const store = configureStore({
 });
 export default store;
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

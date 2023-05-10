@@ -4,6 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import SchoolIcon from "@mui/icons-material/School";
 import { useAppSelector, useAppDispatch } from "app/hooks";
+import { setNextPath } from "features/NextPathSlice";
 import { expandOrCollapse } from "features/NavigationTreeSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerSlice";
@@ -12,25 +13,22 @@ import tutorials from "app/tutorials";
 const NavigationTree = ({
   mobileView,
   tutorialIndex,
-  blank,
 }: {
   mobileView: boolean;
   tutorialIndex: number;
-  blank: boolean;
 }) => {
   const layoutFolderClosed = useAppSelector(
     (state) => state.navigationTree.layoutFolderClosed
   );
-  const closed = blank
-    ? false
-    : useAppSelector((state) => state.hamburger.closed);
+  const closed = useAppSelector((state) => state.hamburger.closed);
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
+    navigate(to);
     if (mobileView) {
+      dispatch(setNextPath(to));
       dispatch(setDividerLocation(-1));
       dispatch(setClosed(!closed));
     }
-    navigate(to);
   };
   const folderClick = (folder: string) => {
     dispatch(expandOrCollapse(folder));

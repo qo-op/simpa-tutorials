@@ -5,15 +5,11 @@ import NextPageButton from "components/NextPageButton";
 import PreviousPageButton from "components/PreviousPageButton";
 
 const ToolBar = ({
-  path,
   mobileView,
   tutorialIndex,
-  blank,
 }: {
-  path: string;
   mobileView: boolean;
   tutorialIndex: number;
-  blank: boolean;
 }) => {
   return (
     <div
@@ -24,17 +20,23 @@ const ToolBar = ({
       }}
     >
       <div className="LineStart CenterLayout">
-        <Hamburger mobileView={mobileView} path={path} blank={blank} />
+        <Hamburger mobileView={mobileView} />
       </div>
       <div className="BorderLayout" style={{ marginInlineStart: "16px" }}>
         <div className="LineStart CenterLayout">
-          <PreviousPageButton mobileView={mobileView} tutorialIndex={tutorialIndex} />
+          <PreviousPageButton
+            mobileView={mobileView}
+            tutorialIndex={tutorialIndex}
+          />
         </div>
         <div className="CenterLayout">
           <HomeButton />
         </div>
         <div className="LineEnd CenterLayout">
-          <NextPageButton mobileView={mobileView} tutorialIndex={tutorialIndex} />
+          <NextPageButton
+            mobileView={mobileView}
+            tutorialIndex={tutorialIndex}
+          />
         </div>
       </div>
     </div>
