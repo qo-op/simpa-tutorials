@@ -21,6 +21,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.3",
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/react-helmet": "^6.1.6",
     "gatsby": "^5.9.0",
     "gatsby-remark-vscode": "^3.3.1",
