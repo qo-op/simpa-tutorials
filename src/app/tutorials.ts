@@ -14,6 +14,11 @@ const tutorials = [
         path: "/box-layout/",
         folder: "Layouts",
     },
+    {
+        text: "How to Use CenterLayout",
+        path: "/center-layout/",
+        folder: "Layouts",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

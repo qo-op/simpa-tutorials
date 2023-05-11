@@ -15,8 +15,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>
         <code>BorderLayout</code> is a type of layout manager that is used to
         arrange and organize components in a container. It divides the container
-        into five regions: <code>PageStart</code> (north), <code>PageEnd</code>{" "}
-        (south), <code>LineStart</code> (west), <code>LineEnd</code> (east) and{" "}
+        into five regions: <code>PageStart</code> (or <code>North</code>),{" "}
+        <code>PageEnd</code> (or <code>South</code>), <code>LineStart</code> (or{" "}
+        <code>West</code>), <code>LineEnd</code> (or <code>East</code>) and{" "}
         <code>Center</code>.
       </p>
       <div className="BorderLayout" style={{ height: "8rem" }}>
@@ -81,11 +82,11 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         In this example, we create a <code>div</code> container with{" "}
         <code>style="height: 100px;"</code> and set its <code>class</code> to{" "}
         <code>"BorderLayout"</code>. We then add a wrapped <code>span</code>{" "}
-        that says "Hello, World!" to the <code>PageStart</code> region of the
-        container. We add a <code>button</code> with the text "Click me!" to the
-        container. Since we didn't specify any region, the <code>button</code>{" "}
-        is automatically placed in the <code>Center</code> region of the
-        container.
+        that says "<code>Hello, World!</code>" to the <code>PageStart</code>{" "}
+        region of the container. We add a <code>button</code> with the text "
+        <code>Click me!</code>" to the container. Since we didn't specify any
+        region, the <code>button</code> is automatically placed in the{" "}
+        <code>Center</code> region of the container.
       </p>
       <p>
         When we run this code, we will see a panel with the text at the top and
