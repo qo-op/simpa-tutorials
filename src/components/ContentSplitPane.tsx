@@ -9,10 +9,13 @@ const ContentSplitPane = ({
   children: React.ReactNode[];
   mobileView: boolean;
 }) => {
+  const loading = useAppSelector((state) => state.loading.value);
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
-  return mobileView ? (
+  return loading ? (
+    <div className="ScrollPane">{children[1]}</div>
+  ) : mobileView ? (
     dividerLocation === -1 ? (
       <div className="ScrollPane">{children[1]}</div>
     ) : (
@@ -30,7 +33,7 @@ const ContentSplitPane = ({
       >
         {children[0]}
       </div>
-      <ContentSplitPaneDivider/>
+      <ContentSplitPaneDivider />
       <div className="ScrollPane">{children[1]}</div>
     </div>
   );

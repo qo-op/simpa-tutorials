@@ -8,7 +8,7 @@ import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButto
 
 const TutorialPaneStyle: React.CSSProperties = {
   padding: "8px",
-  paddingBlockEnd: "40px",
+  paddingBlockEnd: "64px",
   textAlign: "justify",
 };
 
