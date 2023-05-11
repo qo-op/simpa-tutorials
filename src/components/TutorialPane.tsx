@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import "./TutorialPane.css";
 import tutorials from "app/tutorials";
 import { expand } from "features/NavigationTreeSlice";
+import { setDisabled as setPreviousPageButtonDisabled } from "features/PreviousPageButtonSlice";
+import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
 
 const TutorialPaneStyle: React.CSSProperties = {
   padding: "8px",
@@ -27,12 +29,16 @@ const TutorialPane = ({
 }) => {
   const nextPath = useAppSelector((state) => state.nextPath.value);
   const ready = path === nextPath;
-  if (ready) {
-    if (tutorials[tutorialIndex].folder === "Layouts") {
-      const dispatch = useAppDispatch();
-      dispatch(expand("Layouts"));
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (ready) {
+      dispatch(setPreviousPageButtonDisabled(tutorialIndex === 0));
+      dispatch(setNextPageButtonDisabled(tutorialIndex === tutorials.length - 1));
+      if (tutorials[tutorialIndex].folder === "Layouts") {
+        dispatch(expand("Layouts"));
+      }
     }
-  }
+  });
   return (
     <div
       className="TutorialPane BoxLayout"

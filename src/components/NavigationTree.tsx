@@ -7,7 +7,7 @@ import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setNextPath } from "features/NextPathSlice";
 import { expand, collapse } from "features/NavigationTreeSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
-import { setClosed } from "features/HamburgerSlice";
+import { setClosed } from "features/HamburgerButtonSlice";
 import tutorials from "app/tutorials";
 import "./NavigationTree.css";
 
@@ -29,7 +29,7 @@ const NavigationTree = ({
   const layoutFolderClosed = useAppSelector(
     (state) => state.navigationTree.layoutFolderClosed
   );
-  const closed = useAppSelector((state) => state.hamburger.closed);
+  const closed = useAppSelector((state) => state.hamburgerButton.closed);
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
     navigate(to);

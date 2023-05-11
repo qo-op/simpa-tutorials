@@ -4,7 +4,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setNextPath } from "features/NextPathSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
-import { setClosed } from "features/HamburgerSlice";
+import { setClosed } from "features/HamburgerButtonSlice";
 import tutorials from "app/tutorials";
 
 const NextPageButtonStyle: React.CSSProperties = {
@@ -21,7 +21,8 @@ const NextPageButton = ({
   mobileView: boolean;
   tutorialIndex: number;
 }) => {
-  const closed = useAppSelector((state) => state.hamburger.closed);
+  const disabled = useAppSelector((state) => state.nextPageButton.disabled);
+  const closed = useAppSelector((state) => state.hamburgerButton.closed);
   const dispatch = useAppDispatch();
   const click = () => {
     if (tutorialIndex < tutorials.length - 1) {
@@ -38,7 +39,7 @@ const NextPageButton = ({
     <button
       className="NextPage BorderLayout"
       style={NextPageButtonStyle}
-      disabled={tutorialIndex === tutorials.length - 1}
+      disabled={disabled}
       onClick={click}
     >
       <ArrowForwardIcon fontSize="large" />

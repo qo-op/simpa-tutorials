@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const HamburgerSlice = createSlice({
-    name: "hamburger",
+const HamburgerButtonSlice = createSlice({
+    name: "hamburgerButton",
     initialState: {
         closed: true
     },
@@ -12,6 +12,6 @@ const HamburgerSlice = createSlice({
     }
 });
 
-export const { setClosed } = HamburgerSlice.actions;
+export const { setClosed } = HamburgerButtonSlice.actions;
 
-export default HamburgerSlice.reducer;
+export default HamburgerButtonSlice.reducer;

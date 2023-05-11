@@ -1,5 +1,5 @@
 import React from "react";
-import Hamburger from "components/Hamburger";
+import HamburgerButton from "components/HamburgerButton";
 import HomeButton from "components/HomeButton";
 import NextPageButton from "components/NextPageButton";
 import PreviousPageButton from "components/PreviousPageButton";
@@ -19,7 +19,7 @@ const ToolBar = ({
   return (
     <div className="ToolBar BorderLayout" style={ToolBarStyle}>
       <div className="LineStart CenterLayout">
-        <Hamburger mobileView={mobileView} />
+        <HamburgerButton mobileView={mobileView} />
       </div>
       <div className="BorderLayout" style={{ marginInlineStart: "16px" }}>
         <div className="LineStart CenterLayout">

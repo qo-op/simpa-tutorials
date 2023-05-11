@@ -4,9 +4,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setNextPath } from "features/NextPathSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
-import { setClosed } from "features/HamburgerSlice";
+import { setClosed } from "features/HamburgerButtonSlice";
 import tutorials from "app/tutorials";
-import { Button } from "@mui/material";
 
 const PreviousPageButtonStyle: React.CSSProperties = {
   userSelect: "none",
@@ -22,7 +21,8 @@ const PreviousPageButton = ({
   mobileView: boolean;
   tutorialIndex: number;
 }) => {
-  const closed = useAppSelector((state) => state.hamburger.closed);
+  const disabled = useAppSelector((state) => state.previousPageButton.disabled);
+  const closed = useAppSelector((state) => state.hamburgerButton.closed);
   const dispatch = useAppDispatch();
   const click = () => {
     if (tutorialIndex > 0) {
@@ -39,7 +39,7 @@ const PreviousPageButton = ({
     <button
       className="PreviousPage BorderLayout"
       style={PreviousPageButtonStyle}
-      disabled={tutorialIndex === 0}
+      disabled={disabled}
       onClick={click}
     >
       <ArrowBackIcon fontSize="large" />
