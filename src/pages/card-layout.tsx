@@ -23,7 +23,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
   };
   return (
     <Layout
-      pageTitle={"How to Use CardLayout with HTML and CSS and JavaScript"}
+      pageTitle={"How to Use CardLayout with HTML and CSS"}
       path={path}
     >
       <h1 className="BoxLayout" data-axis="page-axis">
@@ -32,10 +32,12 @@ const CardLayoutPage = ({ path }: PageProps) => {
       </h1>
       <p>
         <code>CardLayout</code> is a layout manager that allows you to switch
-        between different components (such as panels) in a container, as if they
-        were a stack of cards. In <code>CardLayout</code> only one component
-        must be visible at a time. When you switch between components, the
-        previous component must be hidden and the new component must be visible.
+        between multiple components in a container like flipping through a deck
+        of cards. It is useful for creating user interfaces with multiple views.
+      </p>
+      <p>
+        With <code>CardLayout</code>, you can have several components in a
+        single container, but only one is visible at a time.
       </p>
       <p>
         Here's an example of how to use <code>CardLayout</code>:
@@ -44,7 +46,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
 <div class="CardLayout"
-     style="height: 100px;">
+     style="height: 100px; padding: 10px;">
   <button style="visibility: hidden;">
     Button 1
   </button>
@@ -59,23 +61,35 @@ const CardLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container with{" "}
-        <code>class</code> set to "<code>CardLayout</code>". We then create
-        three <code>button</code>s and add them to the container. We set the{" "}
-        <code>visibility</code> of the second button to <code>visible</code> and
-        set the <code>visibility</code> of its siblings to <code>hidden</code>.
+        In this example, we create a <code>div</code> container with its{" "}
+        <code>class</code> set to "<code>CardLayout</code>". We then add three{" "}
+        <code>buttons</code> that we want to switch between to the container.
       </p>
       <p>
-        When we run this code, we will see a panel with a button labeled "
+        We set the <code>visibility</code> of the second button to{" "}
+        <code>visible</code> and set the <code>visibility</code> of its siblings
+        to <code>hidden</code>.
+      </p>
+      <p>
+        When we run this code, we will see a container with a button labeled "
         <code>Button 2</code>", like this:
       </p>
-      <div className="CardLayout" style={{ height: "100px" }}>
+      <div
+        className="CardLayout"
+        style={{
+          height: "100px",
+          padding: "10px",
+          backgroundColor: "LightGray",
+        }}
+      >
         <button style={{ visibility: "hidden" }}>Button 1</button>
         <button style={{ visibility: "visible" }}>Button 2</button>
         <button style={{ visibility: "hidden" }}>Button 3</button>
       </div>
       <p></p>
-      <p>Here's another example, using JavaScript to switch between cards:</p>
+      <hr />
+      <h2>Example with a simple code to switch between cards</h2>
+      <p>Here's a example that uses JavaScript to switch between cards:</p>
       <p></p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -107,11 +121,12 @@ const CardLayoutPage = ({ path }: PageProps) => {
   <div class="BorderLayout"
        style="border: 1px solid gray; height: 100px; padding: 10px">
     <div class="PageStart">
+      <!-- combo box -->
       <select onchange="change(event);">
         <option value="Card 1"
-                selected>1st card</option>
-        <option value="Card 2">2nd card</option>
-        <option value="Card 3">3rd card</option>
+                selected>1st Card</option>
+        <option value="Card 2">2nd Card</option>
+        <option value="Card 3">3rd Card</option>
       </select>
     </div>
     <!-- card container -->
@@ -138,9 +153,34 @@ const CardLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run the example, you will see a panel with a combo box and a
-        button. Try switching to another card by selecting another item in the
-        combo box below.
+        In this example, we create three <code>buttons</code> as cards. We add
+        the <code>buttons</code> to the card container giving each a{" "}
+        <code>name</code> attribute, which will be used to switch between them
+        later with JavaScript, when the combo box value is changed.
+      </p>
+      <p>
+        When we run the code, initially we will see a panel with a combo box
+        with "<code>1st Card</code>" item selected and a button with the text "
+        <code>
+          <b>First</b> Button
+        </code>
+        ".
+      </p>
+      <p>
+        If you select the "<code>2nd Card</code>" item in the combo box, the
+        button with the text "
+        <code>
+          <u>Second</u> Button
+        </code>
+        " will be shown. If you select the "<code>3rd Card</code>" item in the
+        combo box, the button with the text "
+        <code>
+          <u>Third</u> Button
+        </code>
+        " will be shown.
+      </p>
+      <p>
+        Try selecting an item in the combo box below to switch between cards.
       </p>
       <div className="CenterLayout">
         <div
@@ -149,9 +189,9 @@ const CardLayoutPage = ({ path }: PageProps) => {
         >
           <div className="PageStart">
             <select onChange={change} defaultValue={"Card 1"}>
-              <option value="Card 1">1st card</option>
-              <option value="Card 2">2nd card</option>
-              <option value="Card 3">3rd card</option>
+              <option value="Card 1">1st Card</option>
+              <option value="Card 2">2nd Card</option>
+              <option value="Card 3">3rd Card</option>
             </select>
           </div>
           <div

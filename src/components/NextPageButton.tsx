@@ -2,6 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useAppSelector, useAppDispatch } from "app/hooks";
+import { setReady } from "features/ReadySlice";
 import { setNextPath } from "features/NextPathSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
@@ -30,6 +31,7 @@ const NextPageButton = ({
       navigate(to);
       dispatch(setNextPath(to));
       if (mobileView && !closed) {
+        dispatch(setReady(false));
         dispatch(setDividerLocation(-1));
         dispatch(setClosed(true));
       }

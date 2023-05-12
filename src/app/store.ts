@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import loadingReducer from "features/LoadingSlice"
+import readyReducer from "features/ReadySlice"
 import nextPathReducer from "features/NextPathSlice"
 import previousPageButtonReducer from "features/PreviousPageButtonSlice"
 import nextPageButtonReducer from "features/NextPageButtonSlice"
@@ -10,6 +11,7 @@ import navigationTreeReducer from "features/NavigationTreeSlice"
 const store = configureStore({
     reducer: {
         "loading": loadingReducer,
+        "ready": readyReducer,
         "nextPath": nextPathReducer,
         "previousPageButton": previousPageButtonReducer,
         "nextPageButton": nextPageButtonReducer,

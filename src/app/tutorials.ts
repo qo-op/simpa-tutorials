@@ -24,6 +24,11 @@ const tutorials = [
         path: "/card-layout/",
         folder: "Layouts",
     },
+    {
+        text: "How to Use FlowLayout",
+        path: "/flow-layout/",
+        folder: "Layouts",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

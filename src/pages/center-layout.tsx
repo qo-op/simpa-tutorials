@@ -35,7 +35,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we're setting the <code>div</code>'s layout to{" "}
-        <code>CenterLayout</code> to center the content. We then add a{" "}
+        <code>CenterLayout</code> to center its content. We then add a{" "}
         <code>button</code> with the text "<code>Click me!</code>" to the
         container.
       </p>
@@ -45,7 +45,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
       </p>
       <div
         className="CenterLayout"
-        style={{ height: "100px", backgroundColor: "lightgray" }}
+        style={{ height: "100px", backgroundColor: "LightGray" }}
       >
         <button>Click me!</button>
       </div>

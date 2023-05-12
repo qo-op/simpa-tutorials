@@ -4,6 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import SchoolIcon from "@mui/icons-material/School";
 import { useAppSelector, useAppDispatch } from "app/hooks";
+import { setReady } from "features/ReadySlice";
 import { setNextPath } from "features/NextPathSlice";
 import { expand, collapse } from "features/NavigationTreeSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
@@ -29,14 +30,14 @@ const NavigationTree = ({
   const layoutFolderClosed = useAppSelector(
     (state) => state.navigationTree.layoutFolderClosed
   );
-  const closed = useAppSelector((state) => state.hamburgerButton.closed);
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
     navigate(to);
     dispatch(setNextPath(to));
     if (mobileView) {
+      dispatch(setReady(false));
       dispatch(setDividerLocation(-1));
-      dispatch(setClosed(!closed));
+      dispatch(setClosed(true));
     }
   };
   const folderClick = (folder: string) => {
@@ -107,6 +108,16 @@ const NavigationTree = ({
               >
                 <SchoolIcon fontSize="small" />
                 <span>{tutorials[4].text}</span>
+              </div>
+            </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex == 5)}
+                onClick={() => tutorialClick(tutorials[5].path, mobileView)}
+              >
+                <SchoolIcon fontSize="small" />
+                <span>{tutorials[5].text}</span>
               </div>
             </li>
             {/*

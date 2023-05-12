@@ -20,7 +20,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>West</code>), <code>LineEnd</code> (or <code>East</code>) and{" "}
         <code>Center</code>.
       </p>
-      <div className="BorderLayout" style={{ height: "8rem" }}>
+      <div className="BorderLayout" style={{ height: "200px" }}>
         <div className="PageStart">
           <button>PageStart</button>
         </div>
@@ -97,7 +97,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <div
         className="BorderLayout"
-        style={{ height: "100px", backgroundColor: "lightgray" }}
+        style={{ height: "100px", backgroundColor: "LightGray" }}
       >
         <div className="PageStart">
           <span>Hello, World!</span>
@@ -134,7 +134,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <div
         className="BorderLayout"
-        style={{ height: "100px", backgroundColor: "lightgray" }}
+        style={{ height: "100px", backgroundColor: "LightGray" }}
       >
         <div className="PageStart">
           <button>Button 1</button>

@@ -31,7 +31,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
           {`...
 <div class="BoxLayout"
      data-axis="line-axis"
-     style="gap: 10px; height: 100px">
+     style="height: 100px">
   <button>Button</button>
   <button>Another<br />button</button>
 </div>
@@ -47,7 +47,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <div
         className="BoxLayout"
         data-axis="line-axis"
-        style={{ gap: "10px", height: "100px", backgroundColor: "lightgray" }}
+        style={{ height: "100px", backgroundColor: "LightGray" }}
       >
         <button>Button</button>
         <button>
@@ -68,7 +68,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
           {`...
 <div class="BoxLayout"
      data-axis="page-axis"
-     style="gap: 10px; height: 200px;">
+     style="height: 200px;">
   <button>First</button>
   <button>Second</button>
   <button>Third</button>
@@ -84,7 +84,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <div
         className="BoxLayout"
         data-axis="page-axis"
-        style={{ gap: "10px", height: "150px", backgroundColor: "lightgray" }}
+        style={{ height: "150px", backgroundColor: "LightGray" }}
       >
         <button>First</button>
         <button>Second</button>
@@ -112,7 +112,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
 <div class="BoxLayout"
      data-axis="page-axis"
      data-alignment-x="stretch"
-     style="gap: 10px; height: 200px;">
+     style="height: 200px;">
   <button>First</button>
   <button>Second</button>
   <button>Third</button>
@@ -128,7 +128,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         className="BoxLayout"
         data-axis="page-axis"
         data-alignment-x="stretch"
-        style={{ gap: "10px", height: "150px", backgroundColor: "lightgray" }}
+        style={{ height: "150px", backgroundColor: "LightGray" }}
       >
         <button>First</button>
         <button>Second</button>
@@ -151,9 +151,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="page-axis"
             data-alignment-x="start"
             style={{
-              gap: "10px",
               height: "150px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>First</button>
@@ -174,9 +173,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="page-axis"
             data-alignment-x="end"
             style={{
-              gap: "10px",
               height: "150px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>First</button>
@@ -195,9 +193,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="line-axis"
             data-alignment-x="end"
             style={{
-              gap: "10px",
               height: "100px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>Button</button>
@@ -220,9 +217,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="line-axis"
             data-alignment-x="center"
             style={{
-              gap: "10px",
               height: "100px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>Button</button>
@@ -253,7 +249,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
 <div class="BoxLayout"
      data-axis="line-axis"
      data-alignment-y="stretch"
-     style="gap: 10px; height: 100px">
+     style="height: 100px">
   <button>Button</button>
   <button>Another<br />button</button>
 </div>
@@ -268,7 +264,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         className="BoxLayout"
         data-axis="line-axis"
         data-alignment-y="stretch"
-        style={{ gap: "10px", height: "100px", backgroundColor: "lightgray" }}
+        style={{ height: "100px", backgroundColor: "LightGray" }}
       >
         <button>Button</button>
         <button>
@@ -294,9 +290,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="line-axis"
             data-alignment-y="start"
             style={{
-              gap: "10px",
               height: "100px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>Button</button>
@@ -319,9 +314,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="line-axis"
             data-alignment-y="end"
             style={{
-              gap: "10px",
               height: "100px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>Button</button>
@@ -342,9 +336,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="page-axis"
             data-alignment-y="end"
             style={{
-              gap: "10px",
               height: "150px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>First</button>
@@ -365,9 +358,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             data-axis="page-axis"
             data-alignment-y="center"
             style={{
-              gap: "10px",
               height: "150px",
-              backgroundColor: "lightgray",
+              backgroundColor: "LightGray",
             }}
           >
             <button>First</button>
@@ -378,7 +370,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>x and y alignment are independent of each other</h2>
+      <h2>X and Y alignment are independent of each other</h2>
       <p>
         You can combine the x and y alignments of a <code>BoxLayout</code>{" "}
         container to position the child components both horizontally and
@@ -389,6 +381,37 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         can set them to different values to achieve different positioning
         effects.
       </p>
+      <p></p>
+      <hr />
+      <h2>Adding gaps</h2>
+      <p>
+        To create gaps between components in <code>BoxLayout</code>, you can use
+        the <code>gap</code> style property.
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
+<div class="BoxLayout"
+     data-axis="line-axis"
+     style="gap: 10px; height: 100px">
+  <button>Button 1</button>
+  <button>Button 2</button>
+</div>
+...`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        In this example, we create a container with the gap set to 10 pixels.
+        When we run this code, we will see two buttons with a gap between them.
+      </p>
+      <div
+        className="BoxLayout"
+        data-axis="line-axis"
+        style={{ gap: "10px", height: "100px", backgroundColor: "LightGray" }}
+      >
+        <button>Button 1</button>
+        <button>Button 2</button>
+      </div>
       <p></p>
       <NoteAboutLayouts />
     </Layout>

@@ -9,8 +9,8 @@ const ContentSplitPaneDividerStyle: React.CSSProperties = {
 
 const ContentSplitPaneDividerGlassPaneStyle: React.CSSProperties = {
   position: "absolute",
-  insetInlineStart: "-6px",
-  width: "11px",
+  insetInlineStart: "-5px",
+  width: "9px",
   height: "100%",
 };
 
