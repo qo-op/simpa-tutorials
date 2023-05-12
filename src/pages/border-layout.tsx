@@ -59,14 +59,15 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         user interface with a text and a button:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...\n` +
-          `<div class="BorderLayout" style="height: 100px;">\n` +
-          `  <div class="PageStart">\n` +
-          `    <span>Hello, World!</span>\n` +
-          `  </div>\n` +
-          `  <button>Click me!</button>\n` +
-          `</div>\n` +
-          `...`}
+        {`...
+<div class="BorderLayout"
+     style="height: 100px;">
+  <div class="PageStart">
+    <span>Hello, World!</span>
+  </div>
+  <button>Click me!</button>
+</div>
+...`}
       </SyntaxHighlighter>
       <p>
         To specify a region for a component, wrap the component in a{" "}
@@ -113,14 +114,15 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>center</code> component, as seen below:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...\n` +
-          `<div class="BorderLayout" style="height: 100px;">\n` +
-          `  <div class="PageStart">\n` +
-          `    <button>Button 1</button>\n` +
-          `  </div>\n` +
-          `  <button style="margin-block-start: 10px">Button 2</button>\n` +
-          `</div>\n` +
-          `...`}
+        {`...
+<div class="BorderLayout"
+     style="height: 100px;">
+  <div class="PageStart">
+    <button>Button 1</button>
+  </div>
+  <button style="margin-block-start: 10px">Button 2</button>
+</div>
+...`}
       </SyntaxHighlighter>
       <p>
         After running this code, we will see a panel with two buttons with a gap

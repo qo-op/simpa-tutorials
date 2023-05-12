@@ -27,14 +27,14 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>class</code> attribute.
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...\n` +
-          `<div class="BoxLayout"\n` +
-          `     data-axis="line-axis"\n` +
-          `     style="gap: 10px; height: 100px">\n` +
-          `  <button>Button</button>\n` +
-          `  <button>Another<br />button</button>\n` +
-          `</div>\n` +
-          `...`}
+        {`...
+<div class="BoxLayout"
+     data-axis="line-axis"
+     style="gap: 10px; height: 100px">
+  <button>Button</button>
+  <button>Another<br />button</button>
+</div>
+...`}
       </SyntaxHighlighter>
       <p>
         In this example, we're setting the <code>div</code>'s layout to{" "}
@@ -62,16 +62,16 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>data-axis</code> to <code>"page-axis"</code>. Here's an example:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...\n` +
-          `<div class="BoxLayout"\n` +
-          `     data-axis="page-axis"\n` +
-          `     style="gap: 10px; height: 200px;">\n` +
-          `  <button>First</button>\n` +
-          `  <button>Second</button>\n` +
-          `  <button>Third</button>\n` +
-          `  <button>Fourth</button>\n` +
-          `</div>\n` +
-          `...`}
+        {`...
+<div class="BoxLayout"
+     data-axis="page-axis"
+     style="gap: 10px; height: 200px;">
+  <button>First</button>
+  <button>Second</button>
+  <button>Third</button>
+  <button>Fourth</button>
+</div>
+...`}
       </SyntaxHighlighter>
       <p>
         When we run this code, we will see a panel with buttons laid out
@@ -103,17 +103,17 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         the <code>data-alignment-x</code> to <code>"stretch"</code>:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...\n` +
-          `<div class="BoxLayout"\n` +
-          `     data-axis="page-axis"\n` +
-          `     data-alignment-x="stretch"\n` +
-          `     style="gap: 10px; height: 200px;">\n` +
-          `  <button>First</button>\n` +
-          `  <button>Second</button>\n` +
-          `  <button>Third</button>\n` +
-          `  <button>Fourth</button>\n` +
-          `</div>\n` +
-          `...`}
+        {`...
+<div class="BoxLayout"
+     data-axis="page-axis"
+     data-alignment-x="stretch"
+     style="gap: 10px; height: 200px;">
+  <button>First</button>
+  <button>Second</button>
+  <button>Third</button>
+  <button>Fourth</button>
+</div>
+...`}
       </SyntaxHighlighter>
       <p>
         After running this code, we will see a panel with stretched buttons.
@@ -242,15 +242,15 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>BoxLayout</code> container to <code>"stretch"</code>:
       </p>
       <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...\n` +
-          `<div class="BoxLayout"\n` +
-          `     data-axis="line-axis"\n` +
-          `     data-alignment-y="stretch"\n` +
-          `     style="gap: 10px; height: 100px">\n` +
-          `  <button>Button</button>\n` +
-          `  <button>Another<br />button</button>\n` +
-          `</div>\n` +
-          `...`}
+        {`...
+<div class="BoxLayout"
+     data-axis="line-axis"
+     data-alignment-y="stretch"
+     style="gap: 10px; height: 100px">
+  <button>Button</button>
+  <button>Another<br />button</button>
+</div>
+...`}
       </SyntaxHighlighter>
       <p>
         After running this code, we will see a panel with stretched buttons laid out

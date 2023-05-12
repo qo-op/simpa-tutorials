@@ -22,12 +22,12 @@ const NoteAboutLayouts = () => {
           section of your HTML document.
         </p>
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`<head>\n` +
-            `  ...\n` +
-            `  <link rel="stylesheet"\n` +
-            `        href="https://qo-op.github.io/simpa/simpa.css" />\n` +
-            `  ...\n` +
-            `</head>`}
+          {`<head>
+  ...
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+  ...
+</head>`}
         </SyntaxHighlighter>
         <p>
           It's important to note that the URL in the <code>href</code> attribute
