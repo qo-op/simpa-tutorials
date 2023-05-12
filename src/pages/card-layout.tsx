@@ -107,9 +107,9 @@ const CardLayoutPage = ({ path }: PageProps) => {
     <div class="BorderLayout"
          style="border: 1px solid gray; height: 100px; padding: 10px">
         <div class="PageStart">
-            <select onchange="change(event);"
-                defaultValue="Card 1">
-                <option value="Card 1">1st card</option>
+            <select onchange="change(event);">
+                <option value="Card 1"
+                        selected>1st card</option>
                 <option value="Card 2">2nd card</option>
                 <option value="Card 3">3rd card</option>
             </select>
