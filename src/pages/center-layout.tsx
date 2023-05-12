@@ -19,7 +19,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
       <p>
         To use <code>CenterLayout</code>, you first need to create a container
         to hold your component. This can be a <code>div</code> element. Once you
-        have your container, you can set its layout manager to{" "}
+        have your container, you can set its layout to{" "}
         <code>CenterLayout</code> by adding "<code>CenterLayout</code>" to its{" "}
         <code>class</code> attribute.
       </p>
@@ -40,7 +40,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         container.
       </p>
       <p>
-        When we run this code, we will see a panel with a button in the center,
+        When we run this code, we will see a panel with a <code>button</code> in the center,
         like this:
       </p>
       <div

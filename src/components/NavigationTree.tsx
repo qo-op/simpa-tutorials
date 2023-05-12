@@ -2,7 +2,7 @@ import React from "react";
 import { navigate } from "gatsby";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import SchoolIcon from "@mui/icons-material/School";
+import ArticleIcon from "@mui/icons-material/Article";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setReady } from "features/ReadySlice";
 import { setNextPath } from "features/NextPathSlice";
@@ -56,7 +56,7 @@ const NavigationTree = ({
             style={NavigationTreeNodeStyle(tutorialIndex == 0)}
             onClick={() => tutorialClick(tutorials[0].path, mobileView)}
           >
-            <SchoolIcon fontSize="small" />
+            <ArticleIcon fontSize="small" />
             <span>{tutorials[0].text}</span>
           </div>
         </li>
@@ -76,7 +76,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 1)}
                 onClick={() => tutorialClick(tutorials[1].path, mobileView)}
               >
-                <SchoolIcon fontSize="small" />
+                <ArticleIcon fontSize="small" />
                 <span>{tutorials[1].text}</span>
               </div>
             </li>
@@ -86,7 +86,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 2)}
                 onClick={() => tutorialClick(tutorials[2].path, mobileView)}
               >
-                <SchoolIcon fontSize="small" />
+                <ArticleIcon fontSize="small" />
                 <span>{tutorials[2].text}</span>
               </div>
             </li>
@@ -96,7 +96,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 3)}
                 onClick={() => tutorialClick(tutorials[3].path, mobileView)}
               >
-                <SchoolIcon fontSize="small" />
+                <ArticleIcon fontSize="small" />
                 <span>{tutorials[3].text}</span>
               </div>
             </li>
@@ -106,7 +106,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 4)}
                 onClick={() => tutorialClick(tutorials[4].path, mobileView)}
               >
-                <SchoolIcon fontSize="small" />
+                <ArticleIcon fontSize="small" />
                 <span>{tutorials[4].text}</span>
               </div>
             </li>
@@ -116,26 +116,36 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 5)}
                 onClick={() => tutorialClick(tutorials[5].path, mobileView)}
               >
-                <SchoolIcon fontSize="small" />
+                <ArticleIcon fontSize="small" />
                 <span>{tutorials[5].text}</span>
+              </div>
+            </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex == 6)}
+                onClick={() => tutorialClick(tutorials[6].path, mobileView)}
+              >
+                <ArticleIcon fontSize="small" />
+                <span>{tutorials[6].text}</span>
               </div>
             </li>
             {/*
           <li>
             <Link to="/card-layout" className="TreeNode">
-                  <SchoolIcon fontSize="small" />
+                  <ArticleIcon fontSize="small" />
               <span>How to Use CardLayout</span>
             </Link>
           </li>
           <li>
             <Link to="/flow-layout" className="TreeNode">
-                  <SchoolIcon fontSize="small" />
+                  <ArticleIcon fontSize="small" />
               <span>How to Use FlowLayout</span>
             </Link>
           </li>
           <li>
             <Link to="/grid-bag-layout" className="TreeNode">
-                  <SchoolIcon fontSize="small" />
+                  <ArticleIcon fontSize="small" />
               <span>How to Use GridBagLayout</span>
             </Link>
           </li>
@@ -151,7 +161,7 @@ const NavigationTree = ({
         <ul>
           <li>
             <Link to="/menu" className="TreeNode">
-                  <SchoolIcon fontSize="small" />
+                  <ArticleIcon fontSize="small" />
               <span>How to Use Menus</span>
             </Link>
           </li>

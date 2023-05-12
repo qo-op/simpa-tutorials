@@ -15,10 +15,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>
         <code>BorderLayout</code> is a type of layout manager that is used to
         arrange and organize components in a container. It divides the container
-        into five regions: <code>PageStart</code> (or <code>North</code>),{" "}
-        <code>PageEnd</code> (or <code>South</code>), <code>LineStart</code> (or{" "}
-        <code>West</code>), <code>LineEnd</code> (or <code>East</code>) and{" "}
-        <code>Center</code>.
+        into five regions: <code>PageStart</code>, <code>PageEnd</code>,{" "}
+        <code>LineStart</code>, <code>LineEnd</code> and <code>Center</code>.
       </p>
       <div className="BorderLayout" style={{ height: "200px" }}>
         <div className="PageStart">

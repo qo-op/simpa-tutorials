@@ -29,7 +29,7 @@ const ToolBar = ({
           />
         </div>
         <div className="CenterLayout">
-          <HomeButton />
+          <HomeButton mobileView={mobileView} />
         </div>
         <div className="LineEnd CenterLayout">
           <NextPageButton

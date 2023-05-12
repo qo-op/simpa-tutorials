@@ -22,7 +22,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>
         To use <code>BoxLayout</code>, you first need to create a container to
         hold your components. This can be a <code>div</code> element. Once you
-        have your container, you can set its layout manager to{" "}
+        have your container, you can set its layout to{" "}
         <code>BoxLayout</code> by adding "<code>BoxLayout</code>" to its{" "}
         <code>class</code> attribute.
       </p>
@@ -370,7 +370,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>X and Y alignment are independent of each other</h2>
+      <h2>Combining the x and y alignments</h2>
       <p>
         You can combine the x and y alignments of a <code>BoxLayout</code>{" "}
         container to position the child components both horizontally and

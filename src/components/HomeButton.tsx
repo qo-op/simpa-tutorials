@@ -1,17 +1,35 @@
 import React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
+import { useAppDispatch } from "app/hooks";
+import { setNextPath } from "features/NextPathSlice";
+import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import { setClosed } from "features/HamburgerButtonSlice";
+import { setReady } from "features/ReadySlice";
 
-const HomeButtonStyle = {
-  textDecoration: "none",
-  color: "black",
+const HomeButtonStyle: React.CSSProperties = {
+  userSelect: "none",
+  cursor: "pointer",
+  border: "none",
+  backgroundColor: "unset",
   fontSize: "2rem",
 };
 
-const HomeButton = () => {
+const HomeButton = ({ mobileView }: {mobileView: boolean}) => {
+  const dispatch = useAppDispatch();
+  const click = () => {
+    const to = "/";
+    navigate(to);
+    dispatch(setNextPath(to));
+    if (mobileView && !closed) {
+      dispatch(setReady(false));
+      dispatch(setDividerLocation(-1));
+      dispatch(setClosed(true));
+    }
+};
   return (
-    <Link to="/" className="HomeButton" style={HomeButtonStyle}>
+    <button className="HomeButton" style={HomeButtonStyle} onClick={click}>
       Simpa
-    </Link>
+    </button>
   );
 };
 

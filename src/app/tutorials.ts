@@ -29,6 +29,11 @@ const tutorials = [
         path: "/flow-layout/",
         folder: "Layouts",
     },
+    {
+        text: "How to Use GridBagConstraints",
+        path: "/grid-bag-constraints/",
+        folder: "Layouts",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

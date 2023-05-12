@@ -89,8 +89,8 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         add three <code>buttons</code> to the <code>div</code> container.
       </p>
       <p>
-        When you run the example, you will see three buttons arranged in a
-        left-to-right flow aligned to the left.
+        When you run the example, you will see three buttons arranged in a{" "}
+        <code>leading</code> alignment.
       </p>
       <div
         className="FlowLayout"
@@ -107,8 +107,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         Example with <code>rtl</code> direction
       </h2>
       <p>
-        By default, <code>FlowLayout</code> arranges components from left to
-        right in a container. To change the flow direction from right to left,
+        In order to change the flow direction from right to left,
         you can set its <code>direction</code> style to <code>rtl</code>.
       </p>
       <div className="SyntaxHighlighter">
