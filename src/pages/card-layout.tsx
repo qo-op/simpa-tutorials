@@ -77,7 +77,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <p></p>
       <p>Here's another example, using JavaScript to switch between cards:</p>
       <p></p>
-      <div className="SyntaxHighlighter">
+      <div className="SyntaxHighlighter" style={{ fontSize: "14px" }}>
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`<!DOCTYPE html>
 <html>
