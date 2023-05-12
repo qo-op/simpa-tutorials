@@ -77,61 +77,61 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <p></p>
       <p>Here's another example, using JavaScript to switch between cards:</p>
       <p></p>
-      <div className="SyntaxHighlighter" style={{ fontSize: "14px" }}>
+      <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`<!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet"
-          href="https://qo-op.github.io/simpa/simpa.css">
-    <script>
-        function change(ev) {
-            const name = ev.target.value;
-            const container = document.getElementById("container");
-            const cards = container.children;
-            for (let i = 0; i < cards.length; i++) {
-                const card = container.children[i];
-                if (card.getAttribute("name") === name) {
-                    card.style.visibility = "visible";
-                } else {
-                    card.style.visibility = "hidden";
-                }
-            }
-        };
-    </script>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script>
+    function change(ev) {
+      const name = ev.target.value;
+      const container = document.getElementById("container");
+      const cards = container.children;
+      for (let i = 0; i < cards.length; i++) {
+        const card = container.children[i];
+        if (card.getAttribute("name") === name) {
+          card.style.visibility = "visible";
+        } else {
+          card.style.visibility = "hidden";
+        }
+      }
+    };
+  </script>
 </head>
 
 <body class="CenterLayout"
       style="margin: 0; height: 100vh;">
-    <div class="BorderLayout"
-         style="border: 1px solid gray; height: 100px; padding: 10px">
-        <div class="PageStart">
-            <select onchange="change(event);">
-                <option value="Card 1"
-                        selected>1st card</option>
-                <option value="Card 2">2nd card</option>
-                <option value="Card 3">3rd card</option>
-            </select>
-        </div>
-        <!-- card container -->
-        <div class="CardLayout"
-             id="container"
-             style="padding: 10px">
-            <button name="Card 1"
-                    style="visibility: visible;">
-                <u>First</u> Button
-            </button>
-            <button name="Card 2"
-                    style="visibility: hidden;">
-                <u>Second</u> Button
-            </button>
-            <button name="Card 3"
-                    style="visibility: hidden;">
-                <u>Third</u> Button
-            </button>
-        </div>
+  <div class="BorderLayout"
+       style="border: 1px solid gray; height: 100px; padding: 10px">
+    <div class="PageStart">
+      <select onchange="change(event);">
+        <option value="Card 1"
+                selected>1st card</option>
+        <option value="Card 2">2nd card</option>
+        <option value="Card 3">3rd card</option>
+      </select>
     </div>
+    <!-- card container -->
+    <div class="CardLayout"
+         id="container"
+         style="padding: 10px">
+      <button name="Card 1"
+              style="visibility: visible;">
+        <u>First</u> Button
+      </button>
+      <button name="Card 2"
+              style="visibility: hidden;">
+        <u>Second</u> Button
+      </button>
+      <button name="Card 3"
+              style="visibility: hidden;">
+        <u>Third</u> Button
+      </button>
+    </div>
+  </div>
 </body>
 
 </html>`}
