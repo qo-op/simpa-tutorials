@@ -8,27 +8,32 @@ const NoteAboutLayoutsStyle: React.CSSProperties = {
 
 const NoteAboutLayoutsContentPaneStyle: React.CSSProperties = {
   padding: "0 20px",
-}
+};
 
 const NoteAboutLayouts = () => {
   return (
     <div className="NoteAboutLayouts" style={NoteAboutLayoutsStyle}>
       <hr />
-      <div className="NoteAboutLayoutsContentPane" style={NoteAboutLayoutsContentPaneStyle}>
+      <div
+        className="NoteAboutLayoutsContentPane"
+        style={NoteAboutLayoutsContentPaneStyle}
+      >
         <h2>Note about Simpa Layouts</h2>
         <p>
           In order to use Simpa Layouts in your HTML file, you need to include a{" "}
           <code>link</code> to the Simpa stylesheet in the <code>head</code>{" "}
           section of your HTML document.
         </p>
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`<head>
+        <div className="SyntaxHighlighter">
+          <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+            {`<head>
   ...
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css" />
   ...
 </head>`}
-        </SyntaxHighlighter>
+          </SyntaxHighlighter>
+        </div>
         <p>
           It's important to note that the URL in the <code>href</code> attribute
           points to an external resource on the internet. This means that your

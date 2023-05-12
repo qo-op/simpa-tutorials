@@ -40,8 +40,9 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <p>
         Here's an example of how to use <code>CardLayout</code>:
       </p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
 <div class="CardLayout"
      style="height: 100px;">
   <button style="visibility: hidden;">
@@ -55,7 +56,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
   </button>
 </div>
 ...`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
         In this example, we create a <code>div</code> container with{" "}
         <code>class</code> set to "<code>CardLayout</code>". We then create
@@ -75,8 +77,9 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <p></p>
       <p>Here's another example, using JavaScript to switch between cards:</p>
       <p></p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`<!DOCTYPE html>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`<!DOCTYPE html>
 <html>
 
 <head>
@@ -104,9 +107,9 @@ const CardLayoutPage = ({ path }: PageProps) => {
     <div class="BorderLayout"
          style="border: 1px solid gray; height: 100px; padding: 10px">
         <div class="PageStart">
-            <select onchange="change(event);">
-                <option value="Card 1"
-                        selected>1st card</option>
+            <select onchange="change(event);"
+                defaultValue="Card 1">
+                <option value="Card 1">1st card</option>
                 <option value="Card 2">2nd card</option>
                 <option value="Card 3">3rd card</option>
             </select>
@@ -132,7 +135,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
 </body>
 
 </html>`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
         When we run the example, you will see a panel with a combo box and a
         button. Try switching to another card by selecting another item in the
@@ -144,10 +148,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
           style={{ border: "1px solid gray", height: "100px", padding: "10px" }}
         >
           <div className="PageStart">
-            <select onChange={change}>
-              <option value="Card 1" selected>
-                1st card
-              </option>
+            <select onChange={change} defaultValue={"Card 1"}>
+              <option value="Card 1">1st card</option>
               <option value="Card 2">2nd card</option>
               <option value="Card 3">3rd card</option>
             </select>

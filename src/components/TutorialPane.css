@@ -8,8 +8,8 @@
     margin: 0;
 }
 
-.TutorialPane pre {
-    overflow: hidden !important;
-    font-size: 18px;
+.TutorialPane .SyntaxHighlighter {
+    overflow: hidden;
     text-align: left;
+    font-size: 16px;
 }

@@ -26,8 +26,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>BoxLayout</code> by adding "<code>BoxLayout</code>" to its{" "}
         <code>class</code> attribute.
       </p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
 <div class="BoxLayout"
      data-axis="line-axis"
      style="gap: 10px; height: 100px">
@@ -35,7 +36,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
   <button>Another<br />button</button>
 </div>
 ...`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
         In this example, we're setting the <code>div</code>'s layout to{" "}
         <code>BoxLayout</code> and specifying that we want components to be laid
@@ -61,8 +63,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         To use BoxLayout to lay out components vertically, you need to set{" "}
         <code>data-axis</code> to <code>"page-axis"</code>. Here's an example:
       </p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
 <div class="BoxLayout"
      data-axis="page-axis"
      style="gap: 10px; height: 200px;">
@@ -72,7 +75,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
   <button>Fourth</button>
 </div>
 ...`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
         When we run this code, we will see a panel with buttons laid out
         vertically, from top to bottom, like this:
@@ -102,8 +106,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>BoxLayout</code> container with a vertical layout, you would set
         the <code>data-alignment-x</code> to <code>"stretch"</code>:
       </p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
 <div class="BoxLayout"
      data-axis="page-axis"
      data-alignment-x="stretch"
@@ -114,7 +119,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
   <button>Fourth</button>
 </div>
 ...`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
         After running this code, we will see a panel with stretched buttons.
       </p>
@@ -241,8 +247,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         For example, the following code sets the y alignment of a horizontal{" "}
         <code>BoxLayout</code> container to <code>"stretch"</code>:
       </p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
 <div class="BoxLayout"
      data-axis="line-axis"
      data-alignment-y="stretch"
@@ -251,10 +258,11 @@ const BorderLayoutPage = ({ path }: PageProps) => {
   <button>Another<br />button</button>
 </div>
 ...`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
-        After running this code, we will see a panel with stretched buttons laid out
-        horizontally.
+        After running this code, we will see a panel with stretched buttons laid
+        out horizontally.
       </p>
       <div
         className="BoxLayout"

@@ -23,14 +23,16 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         <code>CenterLayout</code> by adding "<code>CenterLayout</code>" to its{" "}
         <code>class</code> attribute.
       </p>
-      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-        {`...
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
 <div class="CenterLayout"
      style="height: 100px">
   <button>Click me!</button>
 </div>
 ...`}
-      </SyntaxHighlighter>
+        </SyntaxHighlighter>
+      </div>
       <p>
         In this example, we're setting the <code>div</code>'s layout to{" "}
         <code>CenterLayout</code> to center the content. We then add a{" "}
