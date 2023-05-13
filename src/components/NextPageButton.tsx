@@ -12,6 +12,7 @@ const NextPageButtonStyle: React.CSSProperties = {
   userSelect: "none",
   cursor: "pointer",
   border: "none",
+  padding: "0",
   backgroundColor: "unset",
 };
 
