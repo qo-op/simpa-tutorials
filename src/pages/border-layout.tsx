@@ -8,7 +8,7 @@ import NoteAboutLayouts from "components/NoteAboutLayouts";
 const BorderLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use BorderLayout with HTML and CSS"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis">
+      <h1 className="FlowLayout" style={{ textAlign: "center" }}>
         <span>How to Use BorderLayout</span>
         <span>with HTML and CSS</span>
       </h1>

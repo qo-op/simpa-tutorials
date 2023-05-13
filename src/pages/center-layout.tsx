@@ -8,7 +8,7 @@ import NoteAboutLayouts from "components/NoteAboutLayouts";
 const CenterLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use CenterLayout with HTML and CSS"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis">
+      <h1 className="FlowLayout" style={{ textAlign: "center" }}>
         <span>How to Use CenterLayout</span>
         <span>with HTML and CSS</span>
       </h1>

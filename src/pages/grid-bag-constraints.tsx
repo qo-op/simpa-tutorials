@@ -11,7 +11,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       pageTitle={"How to Use GridBagConstraints with HTML and CSS"}
       path={path}
     >
-      <h1 className="BoxLayout" data-axis="page-axis">
+      <h1 className="FlowLayout" style={{ textAlign: "center" }}>
         <span>How to Use GridBagConstraints</span>
         <span>with HTML and CSS</span>
       </h1>

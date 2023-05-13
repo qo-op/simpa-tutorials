@@ -26,7 +26,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       pageTitle={"How to Use CardLayout with HTML and CSS"}
       path={path}
     >
-      <h1 className="BoxLayout" data-axis="page-axis">
+      <h1 className="FlowLayout" style={{ textAlign: "center" }}>
         <span>How to Use CardLayout</span>
         <span>with HTML and CSS</span>
       </h1>
