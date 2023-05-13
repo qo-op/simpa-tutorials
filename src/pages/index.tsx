@@ -5,7 +5,7 @@ import Layout from "components/Layout";
 const IndexPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"Introduction to Simpa"} path={path}>
-      <h1 className="FlowLayout" style={{ textAlign: "center" }}>
+      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
         <span>Introduction to Simpa</span>
       </h1>
       <p>

@@ -8,7 +8,7 @@ import NoteAboutLayouts from "components/NoteAboutLayouts";
 const FlowLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use FlowLayout with HTML and CSS"} path={path}>
-      <h1 className="FlowLayout" style={{ textAlign: "center" }}>
+      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
         <span>How to Use FlowLayout</span>
         <span>with HTML and CSS</span>
       </h1>
