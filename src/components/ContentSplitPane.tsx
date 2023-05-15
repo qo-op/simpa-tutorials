@@ -23,7 +23,7 @@ const ContentSplitPane = ({
           width: mobileView
             ? dividerLocation === -1
               ? "0"
-              : ref.current !== null ? ((ref.current as HTMLElement).offsetWidth + 1) + "px" : undefined
+              : ref.current !== null ? (ref.current as HTMLElement).offsetWidth + "px" : undefined
             : dividerLocation === -2
             ? "0"
             : dividerLocation === -1
@@ -33,7 +33,7 @@ const ContentSplitPane = ({
       >
         <div
           className="ScrollPane"
-          style={{ borderInlineEnd: "1px solid black" }}
+          style={{ borderInlineEnd: mobileView ? undefined : "1px solid black" }}
         >
           {children[0]}
         </div>
