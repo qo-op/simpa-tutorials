@@ -11,15 +11,20 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       pageTitle={"How to Use GridBagConstraints with HTML and CSS"}
       path={path}
     >
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>How to Use GridBagConstraints</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
         <code>GridBagConstraints</code> is a layout manager that is used to lay
         out a single component in a container. It is used to specify how a
-        component should be positioned (<code>anchor</code>) as well as how the
-        component should be resize (<code>fill</code>) within its container.
+        component should be positioned as well as how the component should be
+        resize within its container. It has two attributes:{" "}
+        <code>data-anchor</code> and <code>data-fill</code>
       </p>
       <hr />
       <h2>
@@ -28,8 +33,44 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       <p>
         The <code>data-anchor</code> attribute in the{" "}
         <code>GridBagConstraints</code> layout is used to specify the position
-        of a component within its container. This attribute can be set to one of
-        the following values:
+        of a component within its container.
+      </p>
+      <p>
+        Here's an example of using <code>GridBagConstraints</code> layout with
+        the <code>data-anchor</code> attribute:
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
+<div className="GridBagConstraints"
+     data-anchor="center"
+     style="height: 100px;">
+  <button>Click me!</button>
+</div>
+...`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        In this example, we create a <code>div</code> container, set its{" "}
+        <code>class</code> attribute to <code>GridBagConstraints</code> and its{" "}
+        <code>data-anchor</code> attribute to <code>center</code>. We then add a{" "}
+        <code>button</code> with the text "<code>Click me!</code>" to the
+        container.
+      </p>
+      <p>
+        When we run this code, we will see a panel with a centered button, like
+        this:
+      </p>
+      <div
+        className="GridBagConstraints"
+        data-anchor="center"
+        style={{ height: "100px", backgroundColor: "LightGray" }}
+      >
+        <button>Click me!</button>
+      </div>
+      <p>
+        The <code>data-anchor</code> attribute can be set to one of the
+        following values:
       </p>
       <ul>
         <li>
@@ -189,9 +230,38 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       <p>
         The <code>data-fill</code> attribute in the{" "}
         <code>GridBagConstraints</code> layout is used to specify how a
-        component should be resized within its container. This attribute can be
-        set to one of the following values:
+        component should be resized within its container.
       </p>
+      <p>
+        Here's an example of how to use the <code>data-fill</code> attribute to
+        specify the fill behavior for a component:
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
+<div className="GridBagConstraints"
+     data-fill="vertical"
+     style="height: 100px;">
+  <button>Click me!</button>
+</div>
+...`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        In this example, we create a <code>div</code> container, sets its class
+        to <code>GridBagConstraints</code> and set its <code>data-fill</code>{" "}
+        attribute to <code>vertical</code>. This will resize the button
+        vertically to fill the available space in its container, but will not
+        resize it horizontally, like this:
+      </p>
+      <div
+        className="GridBagConstraints"
+        data-fill="vertical"
+        style={{ height: "100px", backgroundColor: "LightGray" }}
+      >
+        <button>Click me!</button>
+      </div>
+      <p>This attribute can be set to one of the following values:</p>
       <ul>
         <li>
           <code>none</code>: The component is not resized (default).
@@ -243,78 +313,6 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
           <br />
         </li>
       </ul>
-      <hr />
-      <h2>
-        Example with the <code>data-anchor</code> attribute
-      </h2>
-      <p>
-        Here's an example of using <code>GridBagConstraints</code> layout with
-        the <code>data-anchor</code> attribute:
-      </p>
-      <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div className="GridBagConstraints"
-     data-anchor="last-line-end"
-     style="height: 100px;">
-  <button>Click me!</button>
-</div>
-...`}
-        </SyntaxHighlighter>
-      </div>
-      <p>
-        In this example, we create a <code>div</code> container, set its{" "}
-        <code>class</code> attribute to <code>GridBagConstraints</code> and its{" "}
-        <code>data-anchor</code> attribute to <code>last-line-end</code>. We
-        then add a <code>button</code> with the text "<code>Click me!</code>" to
-        the container.
-      </p>
-      <p>
-        When we run this code, we will see a panel with a button at the
-        bottom-right corner of its container, like this:
-      </p>
-      <div
-        className="GridBagConstraints"
-        data-anchor="last-line-end"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
-      >
-        <button>Click me!</button>
-      </div>
-      <p></p>
-      <hr />
-      <h2>
-        Example with the <code>data-fill</code> attribute
-      </h2>
-      <p>
-        Here's an example of how to use the <code>data-fill</code> attribute to
-        specify the fill behavior for a component:
-      </p>
-      <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div className="GridBagConstraints"
-     data-fill="vertical"
-     style="height: 100px;">
-  <button>Click me!</button>
-</div>
-...`}
-        </SyntaxHighlighter>
-      </div>
-      <p>
-        In this example, we create a <code>div</code> container, sets its class
-        to <code>GridBagConstraints</code> and set its <code>data-fill</code>{" "}
-        attribute to <code>vertical</code>. This will resize the button
-        vertically to fill the available space in its container, but will not
-        resize it horizontally, like this:
-      </p>
-      <div
-        className="GridBagConstraints"
-        data-fill="vertical"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
-      >
-        <button>Click me!</button>
-      </div>
-      <p></p>
       <hr />
       <h2>
         Combining the <code>data-anchor</code> and <code>data-fill</code>{" "}

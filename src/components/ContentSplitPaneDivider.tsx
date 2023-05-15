@@ -4,13 +4,12 @@ import { setDividerLocation } from "features/ContentSplitPaneSlice";
 
 const ContentSplitPaneDividerStyle: React.CSSProperties = {
   position: "relative",
-  borderInlineStart: "1px solid gray",
 };
 
 const ContentSplitPaneDividerGlassPaneStyle: React.CSSProperties = {
   position: "absolute",
-  insetInlineStart: "-5px",
-  width: "9px",
+  insetInlineStart: "-4px",
+  width: "8px",
   height: "100%",
 };
 

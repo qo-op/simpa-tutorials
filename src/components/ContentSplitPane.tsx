@@ -21,17 +21,26 @@ const ContentSplitPane = ({
     ) : (
       <div className="ScrollPane">{children[0]}</div>
     )
-  ) : dividerLocation === -2 ? (
-    <div className="ScrollPane">{children[1]}</div>
   ) : (
     <div className="SplitPane">
       <div
-        className="ScrollPane"
+        className="BorderLayout"
         style={{
-          width: dividerLocation === -1 ? undefined : dividerLocation + "px",
+          overflow: "hidden",
+          width:
+            dividerLocation === -2
+              ? "0"
+              : dividerLocation === -1
+              ? undefined
+              : dividerLocation + "px",
         }}
       >
-        {children[0]}
+        <div
+          className="ScrollPane"
+          style={{ borderInlineEnd: "1px solid black" }}
+        >
+          {children[0]}
+        </div>
       </div>
       <ContentSplitPaneDivider />
       <div className="ScrollPane">{children[1]}</div>
