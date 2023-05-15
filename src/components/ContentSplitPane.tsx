@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "./ContentSplitPaneDivider";
 
@@ -9,30 +9,26 @@ const ContentSplitPane = ({
   children: React.ReactNode[];
   mobileView: boolean;
 }) => {
+  const ref = useRef(null);
   const loading = useAppSelector((state) => state.loading.value);
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
-  return loading ? (
-    <div className="ScrollPane">{children[1]}</div>
-  ) : mobileView ? (
-    dividerLocation === -1 ? (
-      <div className="ScrollPane">{children[1]}</div>
-    ) : (
-      <div className="ScrollPane">{children[0]}</div>
-    )
-  ) : (
-    <div className="SplitPane">
+  return (
+    <div className="SplitPane" ref={ref}>
       <div
         className="BorderLayout"
         style={{
           overflow: "hidden",
-          width:
-            dividerLocation === -2
+          width: mobileView
+            ? dividerLocation === -1
               ? "0"
-              : dividerLocation === -1
-              ? undefined
-              : dividerLocation + "px",
+              : ref.current !== null ? ((ref.current as HTMLElement).offsetWidth + 1) + "px" : undefined
+            : dividerLocation === -2
+            ? "0"
+            : dividerLocation === -1
+            ? undefined
+            : dividerLocation + "px",
         }}
       >
         <div
