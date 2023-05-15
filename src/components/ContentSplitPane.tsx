@@ -39,7 +39,7 @@ const ContentSplitPane = ({
         </div>
       </div>
       <ContentSplitPaneDivider />
-      <div className="ScrollPane">{children[1]}</div>
+      <div className="ScrollPane" style={{ borderInlineEnd: "1px solid black" }}>{children[1]}</div>
     </div>
   );
 };
