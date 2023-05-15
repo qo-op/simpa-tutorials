@@ -20,7 +20,9 @@ const ContentSplitPane = ({
         className="BorderLayout"
         style={{
           overflow: "hidden",
-          width: mobileView
+          width: loading
+            ? "0"
+            : mobileView
             ? dividerLocation === -1
               ? "0"
               : ref.current !== null
