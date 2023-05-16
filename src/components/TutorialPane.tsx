@@ -48,7 +48,7 @@ const TutorialPane = ({
       data-axis="page-axis"
       style={{
         ...TutorialPaneStyle,
-        visibility: mobileView && !ready ? "hidden" : "visible",
+        visibility: mobileView && !ready ? "hidden" : "inherit",
       }}
     >
       <div

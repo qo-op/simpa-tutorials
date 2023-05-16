@@ -46,7 +46,7 @@ const Layout = ({
       </Helmet>
       <div
         className="Layout LayeredPane"
-        style={{ ...LayoutStyle, visibility: loading ? "hidden" : "visible" }}
+        style={{ ...LayoutStyle, visibility: loading ? "hidden" : "inherit" }}
       >
         <div className="LayoutContentPane BorderLayout">
           <div className="PageStart">

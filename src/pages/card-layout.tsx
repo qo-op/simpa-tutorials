@@ -15,7 +15,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
     for (let i = 0; i < cards.length; i++) {
       const card: HTMLElement = container.children[i] as HTMLElement;
       if (card.getAttribute("name") === name) {
-        card.style.visibility = "visible";
+        card.style.visibility = "inherit";
       } else {
         card.style.visibility = "hidden";
       }
@@ -50,7 +50,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
   <button style="visibility: hidden;">
     Button 1
   </button>
-  <button style="visibility: visible;">
+  <button style="visibility: inherit;">
     Button 2
   </button>
   <button style="visibility: hidden;">
@@ -67,7 +67,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       </p>
       <p>
         We set the <code>visibility</code> of the second button to{" "}
-        <code>visible</code> and set the <code>visibility</code> of its siblings
+        <code>inherit</code> and set the <code>visibility</code> of its siblings
         to <code>hidden</code>.
       </p>
       <p>
@@ -83,7 +83,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         }}
       >
         <button style={{ visibility: "hidden" }}>Button 1</button>
-        <button style={{ visibility: "visible" }}>Button 2</button>
+        <button style={{ visibility: "inherit" }}>Button 2</button>
         <button style={{ visibility: "hidden" }}>Button 3</button>
       </div>
       <p></p>
@@ -107,7 +107,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       for (let i = 0; i < cards.length; i++) {
         const card = container.children[i];
         if (card.getAttribute("name") === name) {
-          card.style.visibility = "visible";
+          card.style.visibility = "inherit";
         } else {
           card.style.visibility = "hidden";
         }
@@ -134,7 +134,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
          id="container"
          style="padding: 10px">
       <button name="Card 1"
-              style="visibility: visible;">
+              style="visibility: inherit;">
         <u>First</u> Button
       </button>
       <button name="Card 2"
@@ -199,7 +199,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
             id="container"
             style={{ padding: "10px" }}
           >
-            <button name="Card 1" style={{ visibility: "visible" }}>
+            <button name="Card 1" style={{ visibility: "inherit" }}>
               <u>First</u> Button
             </button>
             <button name="Card 2" style={{ visibility: "hidden" }}>
