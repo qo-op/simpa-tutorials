@@ -89,7 +89,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         add three <code>buttons</code> to the <code>div</code> container.
       </p>
       <p>
-        When you run the example, you will see three buttons arranged in a{" "}
+        When we run the example, we will see three buttons arranged in a{" "}
         <code>leading</code> alignment.
       </p>
       <div

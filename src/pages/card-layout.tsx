@@ -162,7 +162,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         When we run the code, initially we will see a panel with a combo box
         with "<code>1st Card</code>" item selected and a button with the text "
         <code>
-          <b>First</b> Button
+          <u>First</u> Button
         </code>
         ".
       </p>

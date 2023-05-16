@@ -34,6 +34,11 @@ const tutorials = [
         path: "/grid-bag-constraints/",
         folder: "Layouts",
     },
+    {
+        text: "How to Use CSS Grid Layout",
+        path: "/css-grid-layout/",
+        folder: "Layouts",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

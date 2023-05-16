@@ -58,8 +58,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
         container.
       </p>
       <p>
-        When we run this code, we will see a panel with a centered button, like
-        this:
+        When we run this code, we will see a panel with a centered button:
       </p>
       <div
         className="GridBagConstraints"
@@ -252,7 +251,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
         to <code>GridBagConstraints</code> and set its <code>data-fill</code>{" "}
         attribute to <code>vertical</code>. This will resize the button
         vertically to fill the available space in its container, but will not
-        resize it horizontally, like this:
+        resize it horizontally:
       </p>
       <div
         className="GridBagConstraints"
@@ -261,7 +260,10 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       >
         <button>Click me!</button>
       </div>
-      <p>This attribute can be set to one of the following values:</p>
+      <p>
+        The <code>data-fill</code> attribute can be set to one of the following
+        values:
+      </p>
       <ul>
         <li>
           <code>none</code>: The component is not resized (default).
@@ -301,8 +303,8 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
           <br />
         </li>
         <li>
-          <code>both</code>: The component is resized vertically to fill the
-          available space in its container.
+          <code>both</code>: The component is resized both horizontally and
+          vertically to fill the available space in its container.
           <div
             className="GridBagConstraints"
             data-fill="both"
