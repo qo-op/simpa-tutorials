@@ -55,16 +55,16 @@ const NavigationTree = ({
             style={NavigationTreeNodeStyle(tutorialIndex == 0)}
             onClick={() => tutorialClick(tutorials[0].path, mobileView)}
           >
-            <ArticleIcon fontSize="small" />
+            <ArticleIcon />
             <span>{tutorials[0].text}</span>
           </div>
         </li>
         <li data-folder={layoutFolderClosed ? "closed" : "open"}>
           <div className="TreeNode" onClick={() => folderClick("Layouts")}>
             {layoutFolderClosed ? (
-              <KeyboardArrowRightIcon fontSize="small" />
+              <KeyboardArrowRightIcon />
             ) : (
-              <KeyboardArrowDownIcon fontSize="small" />
+              <KeyboardArrowDownIcon />
             )}
             <span>Layouts</span>
           </div>
@@ -75,7 +75,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 1)}
                 onClick={() => tutorialClick(tutorials[1].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[1].text}</span>
               </div>
             </li>
@@ -85,7 +85,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 2)}
                 onClick={() => tutorialClick(tutorials[2].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[2].text}</span>
               </div>
             </li>
@@ -95,7 +95,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 3)}
                 onClick={() => tutorialClick(tutorials[3].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[3].text}</span>
               </div>
             </li>
@@ -105,7 +105,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 4)}
                 onClick={() => tutorialClick(tutorials[4].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[4].text}</span>
               </div>
             </li>
@@ -115,7 +115,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 5)}
                 onClick={() => tutorialClick(tutorials[5].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[5].text}</span>
               </div>
             </li>
@@ -125,7 +125,7 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 6)}
                 onClick={() => tutorialClick(tutorials[6].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[6].text}</span>
               </div>
             </li>
@@ -135,8 +135,18 @@ const NavigationTree = ({
                 style={NavigationTreeNodeStyle(tutorialIndex == 7)}
                 onClick={() => tutorialClick(tutorials[7].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
+                <ArticleIcon />
                 <span>{tutorials[7].text}</span>
+              </div>
+            </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex == 8)}
+                onClick={() => tutorialClick(tutorials[8].path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorials[8].text}</span>
               </div>
             </li>
           </ul>
@@ -144,9 +154,9 @@ const NavigationTree = ({
         <li data-folder={componentFolderClosed ? "closed" : "open"}>
           <div className="TreeNode" onClick={() => folderClick("Components")}>
             {componentFolderClosed ? (
-              <KeyboardArrowRightIcon fontSize="small" />
+              <KeyboardArrowRightIcon />
             ) : (
-              <KeyboardArrowDownIcon fontSize="small" />
+              <KeyboardArrowDownIcon />
             )}
             <span>Components</span>
           </div>
@@ -154,11 +164,11 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex == 8)}
-                onClick={() => tutorialClick(tutorials[8].path, mobileView)}
+                style={NavigationTreeNodeStyle(tutorialIndex == 9)}
+                onClick={() => tutorialClick(tutorials[9].path, mobileView)}
               >
-                <ArticleIcon fontSize="small" />
-                <span>{tutorials[8].text}</span>
+                <ArticleIcon />
+                <span>{tutorials[9].text}</span>
               </div>
             </li>
           </ul>

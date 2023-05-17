@@ -32,7 +32,7 @@ const LayeredPanePage = ({ path }: PageProps) => {
       <p>
         When components are added to a <code>LayeredPane</code>, they can be
         assigned a unique depth value or layer, with the <code>z-index</code>{" "}
-        property. The <code>z-index</code> determines the order in which the
+        style property. The <code>z-index</code> determines the order in which the
         components are rendered, with higher values appearing on top of lower
         values.
       </p>
@@ -93,7 +93,7 @@ const LayeredPanePage = ({ path }: PageProps) => {
         </div>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="LayeredPane" />
+      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
     </Layout>
   );
 };

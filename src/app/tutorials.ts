@@ -40,8 +40,13 @@ const tutorials = [
         folder: "Layouts",
     },
     {
-        text: "How to Use Layered Panes",
+        text: "How to Use LayeredPane",
         path: "/layered-pane/",
+        folder: "Layouts",
+    },
+    {
+        text: "How to Use MenuBar",
+        path: "/menu-bar/",
         folder: "Components",
     },
 ];
