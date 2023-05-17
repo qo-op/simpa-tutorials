@@ -163,23 +163,6 @@ const NavigationTree = ({
             </li>
           </ul>
         </li>
-
-        {/*
-      <li data-folder="open">
-        <div className="TreeNode" onClick={this.expandOrCollapse}>
-          <span className="material-icons icon"></span>
-          <span>Components</span>
-        </div>
-        <ul>
-          <li>
-            <Link to="/menu" className="TreeNode">
-                  <ArticleIcon fontSize="small" />
-              <span>How to Use Menus</span>
-            </Link>
-          </li>
-        </ul>
-      </li>
-      */}
       </ul>
     </nav>
   );

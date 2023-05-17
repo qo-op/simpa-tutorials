@@ -37,8 +37,8 @@ const TutorialPane = ({
       dispatch(setReady(true));
       dispatch(setPreviousPageButtonDisabled(tutorialIndex === 0));
       dispatch(setNextPageButtonDisabled(tutorialIndex === tutorials.length - 1));
-      if (tutorials[tutorialIndex].folder === "Layouts") {
-        dispatch(expand("Layouts"));
+      if (path === nextPath) {
+        dispatch(expand(tutorials[tutorialIndex].folder));
       }
     }
   });
