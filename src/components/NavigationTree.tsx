@@ -6,7 +6,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setReady } from "features/ReadySlice";
 import { setNextPath } from "features/NextPathSlice";
-import { expand, collapse } from "features/NavigationTreeSlice";
+import { toggle } from "features/NavigationTreeSlice";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 import tutorials from "app/tutorials";
@@ -30,6 +30,9 @@ const NavigationTree = ({
   const layoutFolderClosed = useAppSelector(
     (state) => state.navigationTree.layoutFolderClosed
   );
+  const componentFolderClosed = useAppSelector(
+    (state) => state.navigationTree.componentFolderClosed
+  );
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
     navigate(to);
@@ -41,11 +44,7 @@ const NavigationTree = ({
     }
   };
   const folderClick = (folder: string) => {
-    if (layoutFolderClosed) {
-      dispatch(expand(folder));
-    } else {
-      dispatch(collapse(folder));
-    }
+    dispatch(toggle(folder));
   };
   return (
     <nav>
@@ -140,28 +139,31 @@ const NavigationTree = ({
                 <span>{tutorials[7].text}</span>
               </div>
             </li>
-            {/*
-          <li>
-            <Link to="/card-layout" className="TreeNode">
-                  <ArticleIcon fontSize="small" />
-              <span>How to Use CardLayout</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/flow-layout" className="TreeNode">
-                  <ArticleIcon fontSize="small" />
-              <span>How to Use FlowLayout</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/grid-bag-layout" className="TreeNode">
-                  <ArticleIcon fontSize="small" />
-              <span>How to Use GridBagLayout</span>
-            </Link>
-          </li>
-        */}
           </ul>
         </li>
+        <li data-folder={componentFolderClosed ? "closed" : "open"}>
+          <div className="TreeNode" onClick={() => folderClick("Components")}>
+            {componentFolderClosed ? (
+              <KeyboardArrowRightIcon fontSize="small" />
+            ) : (
+              <KeyboardArrowDownIcon fontSize="small" />
+            )}
+            <span>Components</span>
+          </div>
+          <ul>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex == 8)}
+                onClick={() => tutorialClick(tutorials[8].path, mobileView)}
+              >
+                <ArticleIcon fontSize="small" />
+                <span>{tutorials[8].text}</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+
         {/*
       <li data-folder="open">
         <div className="TreeNode" onClick={this.expandOrCollapse}>

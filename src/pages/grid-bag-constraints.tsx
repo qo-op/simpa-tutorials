@@ -3,7 +3,7 @@ import { PageProps } from "gatsby";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
-import NoteAboutLayouts from "components/NoteAboutLayouts";
+import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 
 const GridBagConstraintsPage = ({ path }: PageProps) => {
   return (
@@ -330,7 +330,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
         resize components in a variety of ways to achieve the desired layout.
       </p>
       <p></p>
-      <NoteAboutLayouts />
+      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
     </Layout>
   );
 };

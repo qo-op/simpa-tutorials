@@ -2,25 +2,29 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const NoteAboutLayoutsStyle: React.CSSProperties = {
+const NoteAboutSimpaCSSStyle: React.CSSProperties = {
   backgroundColor: "ivory",
 };
 
-const NoteAboutLayoutsContentPaneStyle: React.CSSProperties = {
+const NoteAboutSimpaCSSContentPaneStyle: React.CSSProperties = {
   padding: "0 20px",
 };
 
-const NoteAboutLayouts = () => {
+const NoteAboutSimpaCSS = ({
+  subject
+}:{
+  subject: string
+}) => {
   return (
-    <div className="NoteAboutLayouts" style={NoteAboutLayoutsStyle}>
+    <div className="NoteAboutSimpaCSS" style={NoteAboutSimpaCSSStyle}>
       <hr />
       <div
-        className="NoteAboutLayoutsContentPane"
-        style={NoteAboutLayoutsContentPaneStyle}
+        className="NoteAboutSimpaCSSContentPane"
+        style={NoteAboutSimpaCSSContentPaneStyle}
       >
-        <h2>Note about Simpa Layouts</h2>
+        <h2>Note about {subject}</h2>
         <p>
-          In order to use Simpa Layouts in your HTML file, you need to include a{" "}
+          In order to use {subject} in your HTML file, you need to include a{" "}
           <code>link</code> to the Simpa stylesheet in the <code>head</code>{" "}
           section of your HTML document.
         </p>
@@ -49,4 +53,4 @@ const NoteAboutLayouts = () => {
   );
 };
 
-export default NoteAboutLayouts;
+export default NoteAboutSimpaCSS;

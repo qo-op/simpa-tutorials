@@ -3,7 +3,7 @@ import { PageProps } from "gatsby";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
-import NoteAboutLayouts from "components/NoteAboutLayouts";
+import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 
 const CardLayoutPage = ({ path }: PageProps) => {
   const change = (ev: React.ChangeEvent) => {
@@ -212,7 +212,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p></p>
-      <NoteAboutLayouts />
+      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
     </Layout>
   );
 };

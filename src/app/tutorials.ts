@@ -39,6 +39,11 @@ const tutorials = [
         path: "/css-grid-layout/",
         folder: "Layouts",
     },
+    {
+        text: "How to Use Layered Panes",
+        path: "/layered-pane/",
+        folder: "Components",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

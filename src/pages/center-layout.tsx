@@ -3,7 +3,7 @@ import { PageProps } from "gatsby";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
-import NoteAboutLayouts from "components/NoteAboutLayouts";
+import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 
 const CenterLayoutPage = ({ path }: PageProps) => {
   return (
@@ -50,7 +50,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         <button>Click me!</button>
       </div>
       <p></p>
-      <NoteAboutLayouts />
+      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
     </Layout>
   );
 };

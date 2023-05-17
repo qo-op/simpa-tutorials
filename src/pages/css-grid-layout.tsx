@@ -1,9 +1,9 @@
 import React from "react";
-import { PageProps } from "gatsby";
+import { Link, PageProps } from "gatsby";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
-import NoteAboutLayouts from "components/NoteAboutLayouts";
+import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 
 const CSSGridLayoutPage = ({ path }: PageProps) => {
   return (
@@ -297,8 +297,13 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
           </div>
         </div>
       </div>
+      <p>
+        If you want to learn more about <code>GridBagConstraints</code>, see the
+        previous tutorial:
+      </p>
+      <p><Link to="/grid-bag-constraints/">How to Use GridBagConstraints</Link></p>
       <p></p>
-      <NoteAboutLayouts />
+      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
     </Layout>
   );
 };
