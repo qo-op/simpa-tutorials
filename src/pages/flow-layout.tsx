@@ -8,7 +8,11 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 const FlowLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use FlowLayout with HTML and CSS"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>How to Use FlowLayout</span>
         <span>with HTML and CSS</span>
       </h1>
@@ -107,8 +111,8 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         Example with <code>rtl</code> direction
       </h2>
       <p>
-        In order to change the flow direction from right to left,
-        you can set its <code>direction</code> style to <code>rtl</code>.
+        In order to change the flow direction from right to left, you can set
+        its <code>direction</code> style to <code>rtl</code>.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -170,7 +174,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        After running this code, we will see a panel with 9 buttons with the
+        After running this code, you will see a panel with 9 buttons with the
         horizontal gap set to 40 pixels and the vertical gap set to 20 pixels.
       </p>
       <div
@@ -193,7 +197,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         <button>Button 9</button>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

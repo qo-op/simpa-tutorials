@@ -39,7 +39,7 @@ const NoteAboutSimpaJS = ({ subject }: { subject: string }) => {
         </div>
         <p>
           It's important to note that the URLs in the <code>href</code> and{" "}
-          <code>src</code> attributes points to an external resource on the
+          <code>src</code> attributes points to external resources on the
           internet. This means that your web page will only be able to use Simpa
           if it has a working internet connection and can access the Simpa CDN
           (Content Delivery Network) at the specified URL. If you want to use

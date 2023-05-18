@@ -8,7 +8,11 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 const BorderLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use BoxLayout with HTML and CSS"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>How to Use BoxLayout</span>
         <span>with HTML and CSS</span>
       </h1>
@@ -22,9 +26,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>
         To use <code>BoxLayout</code>, you first need to create a container to
         hold your components. This can be a <code>div</code> element. Once you
-        have your container, you can set its layout to{" "}
-        <code>BoxLayout</code> by adding "<code>BoxLayout</code>" to its{" "}
-        <code>class</code> attribute.
+        have your container, you can set its layout to <code>BoxLayout</code> by
+        adding "<code>BoxLayout</code>" to its <code>class</code> attribute.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -78,7 +81,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run this code, we will see a panel with buttons laid out
+        When you run this code, you will see a panel with buttons laid out
         vertically, from top to bottom, like this:
       </p>
       <div
@@ -122,7 +125,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        After running this code, we will see a panel with stretched buttons.
+        After running this code, you will see a panel with stretched buttons.
       </p>
       <div
         className="BoxLayout"
@@ -257,8 +260,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        After running this code, we will see a panel with stretched buttons laid
-        out horizontally.
+        After running this code, you will see a panel with stretched buttons
+        laid out horizontally.
       </p>
       <div
         className="BoxLayout"
@@ -402,7 +405,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a container with the gap set to 10 pixels.
-        When we run this code, we will see two buttons with a gap between them.
+        When you run this code, you will see two buttons with a gap between
+        them.
       </p>
       <div
         className="BoxLayout"
@@ -413,7 +417,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <button>Button 2</button>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

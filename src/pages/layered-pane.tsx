@@ -32,9 +32,9 @@ const LayeredPanePage = ({ path }: PageProps) => {
       <p>
         When components are added to a <code>LayeredPane</code>, they can be
         assigned a unique depth value or layer, with the <code>z-index</code>{" "}
-        style property. The <code>z-index</code> determines the order in which the
-        components are rendered, with higher values appearing on top of lower
-        values.
+        style property. The <code>z-index</code> determines the order in which
+        the components are rendered, with higher values appearing on top of
+        lower values.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -52,7 +52,7 @@ const LayeredPanePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run this code, we will see two panels, with the second panel
+        When you run this code, you will see two panels, with the second panel
         appearing on top and overlapping the first panel:
       </p>
       <div
@@ -93,7 +93,7 @@ const LayeredPanePage = ({ path }: PageProps) => {
         </div>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Components" />
     </Layout>
   );
 };

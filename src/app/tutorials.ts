@@ -7,47 +7,52 @@ const tutorials = [
     {
         text: "How to Use BorderLayout",
         path: "/border-layout/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use BoxLayout",
         path: "/box-layout/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use CenterLayout",
         path: "/center-layout/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use CardLayout",
         path: "/card-layout/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use FlowLayout",
         path: "/flow-layout/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use GridBagConstraints",
         path: "/grid-bag-constraints/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use CSS Grid Layout",
         path: "/css-grid-layout/",
-        folder: "Layouts",
+        folder: "CSS Layouts",
     },
     {
         text: "How to Use LayeredPane",
         path: "/layered-pane/",
-        folder: "Layouts",
+        folder: "CSS Components",
+    },
+    {
+        text: "How to Use ScrollPane",
+        path: "/scroll-pane/",
+        folder: "CSS Components",
     },
     {
         text: "How to Use MenuBar",
         path: "/menu-bar/",
-        folder: "Components",
+        folder: "JS Components",
     },
 ];
 

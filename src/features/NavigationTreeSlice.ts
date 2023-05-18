@@ -3,37 +3,47 @@ import { createSlice } from '@reduxjs/toolkit'
 const NavigationTreeSlice = createSlice({
     name: "navigationTree",
     initialState: {
-        layoutFolderClosed: false,
-        componentFolderClosed: false
+        cssLayoutFolderClosed: false,
+        cssComponentFolderClosed: false,
+        jsComponentFolderClosed: false,
     },
     reducers: {
         expand: (state, action) => {
             switch (action.payload) {
-                case "Layouts":
-                    state.layoutFolderClosed = false;
+                case "CSS Layouts":
+                    state.cssLayoutFolderClosed = false;
                     break;
-                case "Components":
-                    state.componentFolderClosed = false;
+                case "CSS Components":
+                    state.cssComponentFolderClosed = false;
+                    break;
+                case "JS Components":
+                    state.jsComponentFolderClosed = false;
                     break;
             }
         },
         collapse: (state, action) => {
             switch (action.payload) {
-                case "Layouts":
-                    state.layoutFolderClosed = true;
+                case "CSS Layouts":
+                    state.cssLayoutFolderClosed = true;
                     break;
-                case "Components":
-                    state.componentFolderClosed = true;
+                case "CSS Components":
+                    state.cssComponentFolderClosed = true;
+                    break;
+                case "JS Components":
+                    state.jsComponentFolderClosed = true;
                     break;
             }
         },
         toggle: (state, action) => {
             switch (action.payload) {
-                case "Layouts":
-                    state.layoutFolderClosed = !state.layoutFolderClosed;
+                case "CSS Layouts":
+                    state.cssLayoutFolderClosed = !state.cssLayoutFolderClosed;
                     break;
-                case "Components":
-                    state.componentFolderClosed = !state.componentFolderClosed;
+                case "CSS Components":
+                    state.cssComponentFolderClosed = !state.cssComponentFolderClosed;
+                    break;
+                case "JS Components":
+                    state.jsComponentFolderClosed = !state.jsComponentFolderClosed;
                     break;
             }
         }

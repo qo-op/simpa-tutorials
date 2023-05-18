@@ -58,7 +58,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
         container.
       </p>
       <p>
-        When we run this code, we will see a panel with a centered button:
+        When you run this code, you will see a panel with a centered button:
       </p>
       <div
         className="GridBagConstraints"
@@ -330,7 +330,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
         resize components in a variety of ways to achieve the desired layout.
       </p>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

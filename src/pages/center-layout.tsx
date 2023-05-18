@@ -8,7 +8,11 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 const CenterLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use CenterLayout with HTML and CSS"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>How to Use CenterLayout</span>
         <span>with HTML and CSS</span>
       </h1>
@@ -19,9 +23,9 @@ const CenterLayoutPage = ({ path }: PageProps) => {
       <p>
         To use <code>CenterLayout</code>, you first need to create a container
         to hold your component. This can be a <code>div</code> element. Once you
-        have your container, you can set its layout to{" "}
-        <code>CenterLayout</code> by adding "<code>CenterLayout</code>" to its{" "}
-        <code>class</code> attribute.
+        have your container, you can set its layout to <code>CenterLayout</code>{" "}
+        by adding "<code>CenterLayout</code>" to its <code>class</code>{" "}
+        attribute.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -40,8 +44,8 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         container.
       </p>
       <p>
-        When we run this code, we will see a panel with a <code>button</code> in the center,
-        like this:
+        When you run this code, you will see a panel with a <code>button</code>{" "}
+        in the center, like this:
       </p>
       <div
         className="CenterLayout"
@@ -50,7 +54,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         <button>Click me!</button>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

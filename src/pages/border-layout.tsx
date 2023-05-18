@@ -8,7 +8,11 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 const BorderLayoutPage = ({ path }: PageProps) => {
   return (
     <Layout pageTitle={"How to Use BorderLayout with HTML and CSS"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>How to Use BorderLayout</span>
         <span>with HTML and CSS</span>
       </h1>
@@ -90,7 +94,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <code>Center</code> region of the container.
       </p>
       <p>
-        When we run this code, we will see a panel with the text at the top and
+        When we you this code, you will see a panel with the text at the top and
         the button in the center, like this:
       </p>
       <div
@@ -127,8 +131,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        After running this code, we will see a panel with two buttons with a gap
-        between them.
+        After running this code, you will see a panel with two buttons with a
+        gap between them.
       </p>
       <div
         className="BorderLayout"
@@ -140,7 +144,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <button style={{ margin: "10px 0 0 0" }}>Button 2</button>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

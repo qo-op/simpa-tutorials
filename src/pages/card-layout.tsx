@@ -22,11 +22,12 @@ const CardLayoutPage = ({ path }: PageProps) => {
     }
   };
   return (
-    <Layout
-      pageTitle={"How to Use CardLayout with HTML and CSS"}
-      path={path}
-    >
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+    <Layout pageTitle={"How to Use CardLayout with HTML and CSS"} path={path}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>How to Use CardLayout</span>
         <span>with HTML and CSS</span>
       </h1>
@@ -71,7 +72,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         to <code>hidden</code>.
       </p>
       <p>
-        When we run this code, we will see a container with a button labeled "
+        When you this code, you will see a container with a button labeled "
         <code>Button 2</code>", like this:
       </p>
       <div
@@ -212,7 +213,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

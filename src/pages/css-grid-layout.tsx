@@ -65,9 +65,9 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run this code, we will see a panel with five buttons. To aid the
-        comprehension of the preceding code, a red grid was overlaid onto the
-        image:
+        When you run this code, you will see a panel with five buttons. To aid
+        the comprehension of the preceding code, a red grid was overlaid onto
+        the image:
       </p>
       <div className="BorderLayout" style={{ backgroundColor: "LightGray" }}>
         <div style={{ display: "grid" }}>
@@ -136,7 +136,8 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
       <p>
         We have modified the previous example so that the buttons now expand
         horizontally to occupy the entire space within their grid cell, by
-        applying <code>GridBagConstraints</code> layout to the grid cell:
+        applying <code>GridBagConstraints</code> layout with{" "}
+        <code>horizontal</code> fill to the grid cell:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -172,7 +173,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run this code, we will see a panel with five buttons stretched
+        When you run this code, you will see a panel with five buttons stretched
         horizontally within its cell. To aid the comprehension of the preceding
         code, a red grid was overlaid onto the image:
       </p>
@@ -301,9 +302,11 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         If you want to learn more about <code>GridBagConstraints</code>, see the
         previous tutorial:
       </p>
-      <p><Link to="/grid-bag-constraints/">How to Use GridBagConstraints</Link></p>
+      <p>
+        <Link to="/grid-bag-constraints/">How to Use GridBagConstraints</Link>
+      </p>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa Layouts"/>
+      <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
 };

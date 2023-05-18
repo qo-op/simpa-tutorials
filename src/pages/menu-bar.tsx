@@ -10,14 +10,18 @@ import Logout from "@mui/icons-material/Logout";
 
 const MenuBarPage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use MenuBar with HTML and CSS"} path={path}>
+    <Layout
+      pageTitle={"How to Use MenuBar with HTML, CSS and JavaScript"}
+      path={path}
+    >
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
         <span>How to Use MenuBar</span>
-        <span>with HTML and CSS</span>
+        <span>with HTML, CSS</span>
+        <span>and JavaScript</span>
       </h1>
       <p>
         <code>MenuBar</code> is a component that provides a menu bar
@@ -147,8 +151,8 @@ const MenuBarPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run this code, we will see a menu bar with two drop-down menus:
-        "File" and "Edit", like this:
+        When you run this code, you will see a menu bar with two drop-down
+        menus: "File" and "Edit", like this:
       </p>
       <div
         className="BorderLayout"
@@ -295,7 +299,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        When we run this code, we will see a menu bar with a "File" drop-down
+        When you run this code, you will see a menu bar with a "File" drop-down
         menu.
         <br />
         Try clicking on the "File" menu to open the drop-down menu.
@@ -411,7 +415,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
         <hr />
       </div>
-      <NoteAboutSimpaJS subject="Simpa Components" />
+      <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>
   );
 };
