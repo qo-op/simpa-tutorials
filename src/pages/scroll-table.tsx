@@ -35,158 +35,88 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <div
           className="ScrollTable"
           data-row-header
-          style={{ maxWidth: "400px" }}
+          style={{ maxWidth: "250px", height: "200px" }}
         >
           <table>
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Constructor</th>
-                <th>Type</th>
-                <th>Horsepower</th>
-                <th>Sales in 2020</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Gender</th>
+                <th>Country</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Ford F-Series</td>
-                <td>Ford</td>
-                <td>Pickup</td>
-                <td style={{ textAlign: "right" }}>290 HP</td>
-                <td style={{ textAlign: "right" }}>787,422</td>
+                <td>John Doe</td>
+                <td>35</td>
+                <td>Engineer</td>
+                <td>Male</td>
+                <td>United States</td>
               </tr>
               <tr>
-                <td>Chevrolet Silverado</td>
-                <td>General Motors</td>
-                <td>Pickup</td>
-                <td style={{ textAlign: "right" }}>310 HP</td>
-                <td style={{ textAlign: "right" }}>594,094</td>
+                <td>Jane Smith</td>
+                <td>28</td>
+                <td>Teacher</td>
+                <td>Female</td>
+                <td>Canada</td>
               </tr>
               <tr>
-                <td>Ram Pickup</td>
-                <td>Ram</td>
-                <td>Pickup</td>
-                <td style={{ textAlign: "right" }}>260 HP</td>
-                <td style={{ textAlign: "right" }}>563,676</td>
+                <td>Michael Johnson</td>
+                <td>42</td>
+                <td>Doctor</td>
+                <td>Male</td>
+                <td>Australia</td>
               </tr>
               <tr>
-                <td>Toyota RAV4</td>
-                <td>Toyota</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>203 HP</td>
-                <td style={{ textAlign: "right" }}>430,387</td>
+                <td>Sarah Brown</td>
+                <td>31</td>
+                <td>Lawyer</td>
+                <td>Female</td>
+                <td>United Kingdom</td>
               </tr>
               <tr>
-                <td>Honda CR-V</td>
-                <td>Honda</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>190 HP</td>
-                <td style={{ textAlign: "right" }}>333,502</td>
+                <td>Robert Wilson</td>
+                <td>39</td>
+                <td>Artist</td>
+                <td>Male</td>
+                <td>Germany</td>
               </tr>
               <tr>
-                <td>Toyota Camry</td>
-                <td>Toyota</td>
-                <td>Sedan</td>
-                <td style={{ textAlign: "right" }}>206 HP</td>
-                <td style={{ textAlign: "right" }}>294,348</td>
+                <td>Emily Davis</td>
+                <td>25</td>
+                <td>Writer</td>
+                <td>Female</td>
+                <td>France</td>
               </tr>
               <tr>
-                <td>Chevrolet Equinox</td>
-                <td>General Motors</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>170 HP</td>
-                <td style={{ textAlign: "right" }}>270,994</td>
+                <td>David Lee</td>
+                <td>33</td>
+                <td>Software Developer</td>
+                <td>Male</td>
+                <td>South Korea</td>
               </tr>
               <tr>
-                <td>Honda Civic</td>
-                <td>Honda</td>
-                <td>Sedan</td>
-                <td style={{ textAlign: "right" }}>158 HP</td>
-                <td style={{ textAlign: "right" }}>261,225</td>
+                <td>Anna Taylor</td>
+                <td>29</td>
+                <td>Nurse</td>
+                <td>Female</td>
+                <td>New Zealand</td>
               </tr>
               <tr>
-                <td>Toyota Corolla</td>
-                <td>Toyota</td>
-                <td>Sedan</td>
-                <td style={{ textAlign: "right" }}>139 HP</td>
-                <td style={{ textAlign: "right" }}>237,178</td>
+                <td>William Chen</td>
+                <td>37</td>
+                <td>Business Analyst</td>
+                <td>Male</td>
+                <td>China</td>
               </tr>
               <tr>
-                <td>GMC Sierra</td>
-                <td>General Motors</td>
-                <td>Pickup</td>
-                <td style={{ textAlign: "right" }}>277 HP</td>
-                <td style={{ textAlign: "right" }}>236,745</td>
-              </tr>
-              <tr>
-                <td>Chevrolet Malibu</td>
-                <td>General Motors</td>
-                <td>Sedan</td>
-                <td style={{ textAlign: "right" }}>160 HP</td>
-                <td style={{ textAlign: "right" }}>238,312</td>
-              </tr>
-              <tr>
-                <td>Hyundai Elantra</td>
-                <td>Hyundai</td>
-                <td>Sedan</td>
-                <td style={{ textAlign: "right" }}>147 HP</td>
-                <td style={{ textAlign: "right" }}>200,415</td>
-              </tr>
-              <tr>
-                <td>Ford Explorer</td>
-                <td>Ford</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>300 HP</td>
-                <td style={{ textAlign: "right" }}>226,217</td>
-              </tr>
-              <tr>
-                <td>Jeep Grand Cherokee</td>
-                <td>Jeep</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>295 HP</td>
-                <td style={{ textAlign: "right" }}>209,786</td>
-              </tr>
-              <tr>
-                <td>Nissan Rogue</td>
-                <td>Nissan</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>170 HP</td>
-                <td style={{ textAlign: "right" }}>227,935</td>
-              </tr>
-              <tr>
-                <td>Ford Escape</td>
-                <td>Ford</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>181 HP</td>
-                <td style={{ textAlign: "right" }}>202,740</td>
-              </tr>
-              <tr>
-                <td>Subaru Forester</td>
-                <td>Subaru</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>182 HP</td>
-                <td style={{ textAlign: "right" }}>176,996</td>
-              </tr>
-              <tr>
-                <td>Subaru Outback</td>
-                <td>Subaru</td>
-                <td>Wagon</td>
-                <td style={{ textAlign: "right" }}>182 HP</td>
-                <td style={{ textAlign: "right" }}>153,294</td>
-              </tr>
-              <tr>
-                <td>Toyota Highlander</td>
-                <td>Toyota</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>295 HP</td>
-                <td style={{ textAlign: "right" }}>141,677</td>
-              </tr>
-              <tr>
-                <td>Jeep Wrangler</td>
-                <td>Jeep</td>
-                <td>SUV</td>
-                <td style={{ textAlign: "right" }}>285 HP</td>
-                <td style={{ textAlign: "right" }}>139,482</td>
+                <td>Olivia Martinez</td>
+                <td>26</td>
+                <td>Marketing Manager</td>
+                <td>Female</td>
+                <td>Mexico</td>
               </tr>
             </tbody>
           </table>
@@ -216,18 +146,18 @@ const ScrollTablePage = ({ path }: PageProps) => {
     <tbody>
       <tr>
         <td>John Doe</td>
-        <td>25</td>
-        <td>Software Engineer</td>
+        <td>35</td>
+        <td>Engineer</td>
       </tr>
       <tr>
         <td>Jane Smith</td>
-        <td>30</td>
-        <td>Data Analyst</td>
+        <td>28</td>
+        <td>Teacher</td>
       </tr>
       <tr>
-        <td>Mark Johnson</td>
-        <td>28</td>
-        <td>Web Developer</td>
+        <td>Michael Johnson</td>
+        <td>42</td>
+        <td>Doctor</td>
       </tr>
     </tbody>
   </table>
@@ -261,18 +191,18 @@ const ScrollTablePage = ({ path }: PageProps) => {
             <tbody>
               <tr>
                 <td>John Doe</td>
-                <td>25</td>
-                <td>Software Engineer</td>
+                <td>35</td>
+                <td>Engineer</td>
               </tr>
               <tr>
                 <td>Jane Smith</td>
-                <td>30</td>
-                <td>Data Analyst</td>
+                <td>28</td>
+                <td>Teacher</td>
               </tr>
               <tr>
-                <td>Mark Johnson</td>
-                <td>28</td>
-                <td>Web Developer</td>
+                <td>Michael Johnson</td>
+                <td>42</td>
+                <td>Doctor</td>
               </tr>
             </tbody>
           </table>
@@ -301,7 +231,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
           {`...
 <div class="ScrollTable"
      data-row-header
-     style="max-width: 300px;">
+     style="max-width: 250px;">
   <table>
     <thead>
       <tr>
@@ -315,22 +245,22 @@ const ScrollTablePage = ({ path }: PageProps) => {
     <tbody>
       <tr>
         <td>John Doe</td>
-        <td>25</td>
-        <td>Software Engineer</td>
+        <td>35</td>
+        <td>Engineer</td>
         <td>Male</td>
-        <td>USA</td>
+        <td>United States</td>
       </tr>
       <tr>
         <td>Jane Smith</td>
-        <td>30</td>
-        <td>Data Analyst</td>
+        <td>28</td>
+        <td>Teacher</td>
         <td>Female</td>
         <td>Canada</td>
       </tr>
       <tr>
-        <td>Mark Johnson</td>
-        <td>28</td>
-        <td>Web Developer</td>
+        <td>Michael Johnson</td>
+        <td>42</td>
+        <td>Doctor</td>
         <td>Male</td>
         <td>Australia</td>
       </tr>
@@ -353,7 +283,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <div
           className="ScrollTable"
           data-row-header
-          style={{ maxWidth: "300px" }}
+          style={{ maxWidth: "250px" }}
         >
           <table>
             <thead>
@@ -368,27 +298,27 @@ const ScrollTablePage = ({ path }: PageProps) => {
             <tbody>
               <tr>
                 <td>John Doe</td>
-                <td>25</td>
-                <td>Software Engineer</td>
+                <td>35</td>
+                <td>Engineer</td>
                 <td>Male</td>
-                <td>USA</td>
+                <td>United States</td>
               </tr>
               <tr>
                 <td>Jane Smith</td>
-                <td>30</td>
-                <td>Data Analyst</td>
+                <td>28</td>
+                <td>Teacher</td>
                 <td>Female</td>
                 <td>Canada</td>
               </tr>
               <tr>
-                <td>Mark Johnson</td>
-                <td>28</td>
-                <td>Web Developer</td>
+                <td>Michael Johnson</td>
+                <td>42</td>
+                <td>Doctor</td>
                 <td>Male</td>
                 <td>Australia</td>
               </tr>
             </tbody>
-          </table>
+          </table>{" "}
         </div>
       </div>
       <p></p>
