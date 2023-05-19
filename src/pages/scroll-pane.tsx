@@ -49,9 +49,9 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </p>
       <p>
         When you run this code, you will see a panel with a scrollable paragraph
-        inside the <code>ScrollPane</code>. The scrollbars appears automatically
-        when the text content extends beyond the visible area, allowing you to
-        scroll and view the complete text.
+        inside the <code>ScrollPane</code>. The scrollbars may appear
+        automatically when the text content extends beyond the visible area,
+        allowing you to scroll and view the complete text.
       </p>
       <div
         className="ScrollPane"

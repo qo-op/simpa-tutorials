@@ -89,6 +89,10 @@ const MenuBarPage = ({ path }: PageProps) => {
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
+<!-- material icons -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons">
+...
 <ul class="MenuBar">
   <li>
     <div class="Menu">
@@ -104,7 +108,9 @@ const MenuBarPage = ({ path }: PageProps) => {
       </li>
       <li>
         <div class="MenuItem">
-          <span></span>
+          <span class="material-icons">
+            file_open
+          </span>
           <span>Open</span>
           <span></span>
         </div>
@@ -174,7 +180,7 @@ const MenuBarPage = ({ path }: PageProps) => {
                 </li>
                 <li>
                   <div className="MenuItem">
-                    <span />
+                    <span className="material-icons">file_open</span>
                     <span>Open</span>
                     <span />
                   </div>
@@ -229,6 +235,10 @@ const MenuBarPage = ({ path }: PageProps) => {
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
+<!-- material icons -->
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons">
+...
 <ul class="MenuBar">
   <li>
     <div class="Menu">
@@ -253,7 +263,9 @@ const MenuBarPage = ({ path }: PageProps) => {
         <div class="Menu">
           <span></span>
           <span>Recent</span>
-          <span>&#x276F;</span>
+          <span class="material-icons">
+            keyboard_arrow_right
+          </span>
         </div>
         <ul>
           <li>
@@ -335,7 +347,7 @@ const MenuBarPage = ({ path }: PageProps) => {
                   <div className="Menu">
                     <span></span>
                     <span>Recent</span>
-                    <span>&#x276F;</span>
+                    <span className="material-icons">keyboard_arrow_right</span>
                   </div>
                   <ul>
                     <li>

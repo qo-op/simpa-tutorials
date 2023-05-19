@@ -42,6 +42,10 @@ const Layout = ({
     <>
       <Helmet>
         <title>{pageTitle}</title>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
         <script src="https://qo-op.github.io/simpa/simpa.js"></script>
       </Helmet>
       <div
