@@ -50,6 +50,11 @@ const tutorials = [
         folder: "CSS Components",
     },
     {
+        text: "How to Use ScrollTable",
+        path: "/scroll-table/",
+        folder: "CSS Components",
+    },
+    {
         text: "How to Use MenuBar",
         path: "/menu-bar/",
         folder: "JS Components",

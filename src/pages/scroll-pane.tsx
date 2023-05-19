@@ -68,7 +68,7 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Scrollbar overlay</h2>
+      <h2>The <code>data-scrollbar-ovelay</code> attribute</h2>
       <p>
         Some browsers can display the scrollbars on top of the content, rather
         than taking up additional space within the container. This overlay
@@ -77,14 +77,14 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </p>
       <p>
         If your browser supports scrollbar overlay, you can add the{" "}
-        <code>data-overlay</code> attribute to enable it.
+        <code>data-scrollbar-overlay</code> attribute to enable it.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
 <div class="ScrollPane"
-     data-overlay
-     style="width: 200px; white-space: nowrap;">
+     data-scrollbar-overlay
+     style="max-width: 200px; white-space: nowrap;">
   <p>This is a long text that requires scrolling.</p>
 </div>
 ...`}
@@ -98,9 +98,9 @@ const ScrollPanePage = ({ path }: PageProps) => {
       <div className="CenterLayout">
         <div
           className="ScrollPane"
-          data-overlay
+          data-scrollbar-overlay
           style={{
-            width: "200px",
+            maxWidth: "200px",
             whiteSpace: "nowrap",
             border: "1px solid gray",
             backgroundColor: "WhiteSmoke",

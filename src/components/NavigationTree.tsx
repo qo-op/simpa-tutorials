@@ -177,6 +177,16 @@ const NavigationTree = ({
                 <span>{tutorials[9].text}</span>
               </div>
             </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex === 10)}
+                onClick={() => tutorialClick(tutorials[10].path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorials[10].text}</span>
+              </div>
+            </li>
           </ul>
         </li>
         <li data-folder={jsComponentFolderClosed ? "closed" : "open"}>
@@ -195,11 +205,11 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 10)}
-                onClick={() => tutorialClick(tutorials[10].path, mobileView)}
+                style={NavigationTreeNodeStyle(tutorialIndex === 11)}
+                onClick={() => tutorialClick(tutorials[11].path, mobileView)}
               >
                 <ArticleIcon />
-                <span>{tutorials[10].text}</span>
+                <span>{tutorials[11].text}</span>
               </div>
             </li>
           </ul>
