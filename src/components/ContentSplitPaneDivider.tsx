@@ -27,17 +27,18 @@ const ContentSplitPaneDivider = () => {
         },
       })
     );
+    ev.stopPropagation();
   };
   return (
     <div
       className="ContentSplitPaneDivider"
       style={ContentSplitPaneDividerStyle}
-      onPointerDown={pointerdown}
     >
       <div
-        className="ContentSplitPaneDividerGlassPane"
+        className="SplitPaneDivider"
         style={ContentSplitPaneDividerGlassPaneStyle}
-      />
+        onPointerDown={pointerdown}
+        />
     </div>
   );
 };

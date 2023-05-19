@@ -15,13 +15,13 @@ const tutorials = [
         folder: "CSS Layouts",
     },
     {
-        text: "How to Use CenterLayout",
-        path: "/center-layout/",
+        text: "How to Use CardLayout",
+        path: "/card-layout/",
         folder: "CSS Layouts",
     },
     {
-        text: "How to Use CardLayout",
-        path: "/card-layout/",
+        text: "How to Use CenterLayout",
+        path: "/center-layout/",
         folder: "CSS Layouts",
     },
     {
@@ -35,7 +35,7 @@ const tutorials = [
         folder: "CSS Layouts",
     },
     {
-        text: "How to Use CSS Grid Layout",
+        text: "How to Use Grid Layout",
         path: "/css-grid-layout/",
         folder: "CSS Layouts",
     },
@@ -62,6 +62,11 @@ const tutorials = [
     {
         text: "How to Use MenuBar",
         path: "/menu-bar/",
+        folder: "JS Components",
+    },
+    {
+        text: "How to Use SplitPane",
+        path: "/split-pane/",
         folder: "JS Components",
     },
 ];
