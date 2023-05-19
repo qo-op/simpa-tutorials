@@ -53,15 +53,61 @@ const ScrollPanePage = ({ path }: PageProps) => {
         automatically when the text content extends beyond the visible area,
         allowing you to scroll and view the complete text.
       </p>
-      <div
-        className="ScrollPane"
-        style={{
-          whiteSpace: "nowrap",
-          width: "200px",
-          border: "1px solid gray",
-        }}
-      >
-        <p>This is a long text that requires scrolling.</p>
+      <div className="CenterLayout">
+        <div
+          className="ScrollPane"
+          style={{
+            width: "200px",
+            whiteSpace: "nowrap",
+            border: "1px solid gray",
+            backgroundColor: "WhiteSmoke",
+          }}
+        >
+          <p>This is a long text that requires scrolling.</p>
+        </div>
+      </div>
+      <p></p>
+      <hr />
+      <h2>Scrollbar overlay</h2>
+      <p>
+        Some browsers can display the scrollbars on top of the content, rather
+        than taking up additional space within the container. This overlay
+        effect allows the content to maintain its original dimensions without
+        being affected by the space taken up by the scrollbars.
+      </p>
+      <p>
+        If your browser supports scrollbar overlay, you can add the{" "}
+        <code>data-overlay</code> attribute to enable it.
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
+<div class="ScrollPane"
+     data-overlay
+     style="width: 200px; white-space: nowrap;">
+  <p>This is a long text that requires scrolling.</p>
+</div>
+...`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        When you run this code, you will see a semi-transparent scrollbar when
+        you hover over the scrollpane if scrollbar overlay is natively
+        supported by your browser.
+      </p>
+      <div className="CenterLayout">
+        <div
+          className="ScrollPane"
+          data-overlay
+          style={{
+            width: "200px",
+            whiteSpace: "nowrap",
+            border: "1px solid gray",
+            backgroundColor: "WhiteSmoke",
+          }}
+        >
+          <p>This is a long text that requires scrolling.</p>
+        </div>
       </div>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Components" />

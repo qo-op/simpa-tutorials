@@ -95,11 +95,13 @@ const MenuBarPage = ({ path }: PageProps) => {
 ...
 <ul class="MenuBar">
   <li>
+    <!-- menu -->
     <div class="Menu">
       <span>File</span>
     </div>
     <ul>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span> <!-- icon -->
           <span>New</span> <!-- text -->
@@ -107,6 +109,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span class="material-icons">
             file_open
@@ -116,6 +119,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <!-- text with shortcut -->
@@ -127,9 +131,11 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
-        <hr /> <!-- separator -->
+        <!-- separator -->
+        <hr />
       </li>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <span>Exit</span>
@@ -139,11 +145,13 @@ const MenuBarPage = ({ path }: PageProps) => {
     </ul>
   </li>
   <li>
+    <!-- menu -->
     <div class="Menu">
       <span>Edit</span>
     </div>
     <ul>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <span>Copy</span>
@@ -241,11 +249,13 @@ const MenuBarPage = ({ path }: PageProps) => {
 ...
 <ul class="MenuBar">
   <li>
+    <!-- menu -->
     <div class="Menu">
       <span>File</span>
     </div>
     <ul>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <span>New</span>
@@ -253,6 +263,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <span>Open</span>
@@ -260,6 +271,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
+        <!-- submenu -->
         <div class="Menu">
           <span></span>
           <span>Recent</span>
@@ -269,6 +281,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
         <ul>
           <li>
+            <!-- submenu item -->
             <div class="MenuItem">
               <span></span>
               <span>File 1</span>
@@ -276,6 +289,7 @@ const MenuBarPage = ({ path }: PageProps) => {
             </div>
           </li>
           <li>
+            <!-- submenu item -->
             <div class="MenuItem">
               <span></span>
               <span>File 2</span>
@@ -285,6 +299,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         </ul>
       </li>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <div className="MenuItemShortcut">
@@ -298,6 +313,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         <hr />
       </li>
       <li>
+        <!-- menu item -->
         <div class="MenuItem">
           <span></span>
           <span>Exit</span>
@@ -397,14 +413,14 @@ const MenuBarPage = ({ path }: PageProps) => {
         <div style={{ padding: "0 20px" }}>
           <h2>Note about Drop-down Menus on Small Screen Devices</h2>
           <p>
-            Using drop-down menus on small screens devices, such as phones, is
+            Using drop-down menus on small screen devices, such as phones, is
             not recommended due to limited screen space, making it harder for
             users to view and interact with them. Navigation complexity and
             nested drop-down menus further complicate usability on small
             screens, causing frustration among users.
           </p>
           <p>
-            Instead of using traditional drop-down menus on small screens
+            Instead of using traditional drop-down menus on small screen
             devices, it is recommended to consider alternative navigation
             patterns that are more suitable for mobile devices. Some options
             include:
