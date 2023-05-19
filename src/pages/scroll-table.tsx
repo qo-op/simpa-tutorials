@@ -36,7 +36,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
           className="ScrollTable"
           style={{ maxWidth: "300px", height: "200px" }}
         >
-          <table style={{ fontFamily: "monospace" }}>
+          <table style={{ fontWeight: "bold" }}>
             <thead>
               <tr>
                 <th>#</th>
