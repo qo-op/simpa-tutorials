@@ -35,7 +35,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <div
           className="ScrollTable"
           data-row-header
-          style={{ maxWidth: "400px", height: "200px" }}
+          style={{ maxWidth: "400px" }}
         >
           <table>
             <thead>
