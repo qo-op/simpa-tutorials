@@ -55,6 +55,11 @@ const tutorials = [
         folder: "CSS Components",
     },
     {
+        text: "How to Use Tree",
+        path: "/tree/",
+        folder: "CSS Components",
+    },
+    {
         text: "How to Use MenuBar",
         path: "/menu-bar/",
         folder: "JS Components",

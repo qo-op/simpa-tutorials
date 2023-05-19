@@ -8,7 +8,7 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 const LayeredPanePage = ({ path }: PageProps) => {
   return (
     <Layout
-      pageTitle={"How to Use LayeredPane with HTML, CSS and JavaScript"}
+      pageTitle={"How to Use LayeredPane with HTML and CSS"}
       path={path}
     >
       <h1

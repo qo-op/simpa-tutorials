@@ -28,8 +28,8 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <b>column and row headers</b> are designed to{" "}
         <b>remain visible even when scrolling</b> through the table's content.
         This means that as you scroll vertically or horizontally within the
-        table, the headers for each column and the headers for each row will
-        stay fixed at the top or left side of the table, respectively.
+        table, the column headers for each column and the row headers for each
+        row will stay fixed at the top or left side of the table, respectively.
       </p>
       <div className="CenterLayout">
         <div
@@ -134,13 +134,16 @@ const ScrollTablePage = ({ path }: PageProps) => {
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
-<div class="ScrollTable">
+<div class="ScrollTable"
+     style="max-width: 500px;">
   <table>
     <thead>
       <tr>
         <th>Name</th>
         <th>Age</th>
         <th>Occupation</th>
+        <th>Gender</th>
+        <th>Country</th>
       </tr>
     </thead>
     <tbody>
@@ -148,16 +151,22 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <td>John Doe</td>
         <td>35</td>
         <td>Engineer</td>
+        <td>Male</td>
+        <td>United States</td>
       </tr>
       <tr>
         <td>Jane Smith</td>
         <td>28</td>
         <td>Teacher</td>
+        <td>Female</td>
+        <td>Canada</td>
       </tr>
       <tr>
         <td>Michael Johnson</td>
         <td>42</td>
         <td>Doctor</td>
+        <td>Male</td>
+        <td>Australia</td>
       </tr>
     </tbody>
   </table>
@@ -179,13 +188,15 @@ const ScrollTablePage = ({ path }: PageProps) => {
         visible area.
       </p>
       <div className="CenterLayout">
-        <div className="ScrollTable">
+        <div className="ScrollTable" style={{ maxWidth: "500px" }}>
           <table>
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Occupation</th>
+                <th>Gender</th>
+                <th>Country</th>
               </tr>
             </thead>
             <tbody>
@@ -193,16 +204,22 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td>John Doe</td>
                 <td>35</td>
                 <td>Engineer</td>
+                <td>Male</td>
+                <td>United States</td>
               </tr>
               <tr>
                 <td>Jane Smith</td>
                 <td>28</td>
                 <td>Teacher</td>
+                <td>Female</td>
+                <td>Canada</td>
               </tr>
               <tr>
                 <td>Michael Johnson</td>
                 <td>42</td>
                 <td>Doctor</td>
+                <td>Male</td>
+                <td>Australia</td>
               </tr>
             </tbody>
           </table>
@@ -229,8 +246,9 @@ const ScrollTablePage = ({ path }: PageProps) => {
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
+<!-- ScrollTable with data-row-header="true" -->
 <div class="ScrollTable"
-     data-row-header
+     data-row-header="true"
      style="max-width: 250px;">
   <table>
     <thead>
@@ -272,17 +290,17 @@ const ScrollTablePage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container and set its
-        class to <code>ScrollTable</code>. Then we add the{" "}
-        <code>data-row-header</code> attribute.
+        class to <code>ScrollTable</code>. We then enable the{" "}
+        <code>data-row-header</code> attribute by setting it to <code>"true"</code>.
       </p>
       <p>
         When you run this code, you will see a window containing the{" "}
-        <code>ScrollTable</code> with row headers displayed in the first column.
+        <code>ScrollTable</code> with the first column cells as row headers.
       </p>
       <div className="CenterLayout">
         <div
           className="ScrollTable"
-          data-row-header
+          data-row-header="true"
           style={{ maxWidth: "250px" }}
         >
           <table>
@@ -318,7 +336,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td>Australia</td>
               </tr>
             </tbody>
-          </table>{" "}
+          </table>
         </div>
       </div>
       <p></p>

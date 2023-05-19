@@ -7,6 +7,8 @@ import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import FileOpenIcon from "@mui/icons-material/FileOpen";
 import SaveIcon from "@mui/icons-material/Save";
 import Logout from "@mui/icons-material/Logout";
+import FileOpen from "@mui/icons-material/FileOpen";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 
 const MenuBarPage = ({ path }: PageProps) => {
   return (
@@ -33,7 +35,7 @@ const MenuBarPage = ({ path }: PageProps) => {
       </p>
       <div
         className="BorderLayout"
-        style={{ height: "200px", border: "1px solid gray" }}
+        style={{ height: "200px", border: "1px solid Gray" }}
       >
         <div className="PageStart">
           <ul
@@ -170,7 +172,7 @@ const MenuBarPage = ({ path }: PageProps) => {
       </p>
       <div
         className="BorderLayout"
-        style={{ height: "200px", border: "1px solid gray" }}
+        style={{ height: "200px", border: "1px solid Gray" }}
       >
         <div className="PageStart">
           <ul className="MenuBar" style={{ backgroundColor: "LightGray" }}>
@@ -188,7 +190,7 @@ const MenuBarPage = ({ path }: PageProps) => {
                 </li>
                 <li>
                   <div className="MenuItem">
-                    <span className="material-icons">file_open</span>
+                    <FileOpen />
                     <span>Open</span>
                     <span />
                   </div>
@@ -336,7 +338,7 @@ const MenuBarPage = ({ path }: PageProps) => {
       </p>
       <div
         className="BorderLayout"
-        style={{ height: "200px", border: "1px solid gray" }}
+        style={{ height: "200px", border: "1px solid Gray" }}
       >
         <div className="PageStart">
           <ul className="MenuBar" style={{ backgroundColor: "LightGray" }}>
@@ -363,7 +365,7 @@ const MenuBarPage = ({ path }: PageProps) => {
                   <div className="Menu">
                     <span></span>
                     <span>Recent</span>
-                    <span className="material-icons">keyboard_arrow_right</span>
+                    <KeyboardArrowRight />
                   </div>
                   <ul>
                     <li>

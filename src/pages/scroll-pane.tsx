@@ -59,7 +59,7 @@ const ScrollPanePage = ({ path }: PageProps) => {
           style={{
             width: "200px",
             whiteSpace: "nowrap",
-            border: "1px solid gray",
+            border: "1px solid Gray",
             backgroundColor: "WhiteSmoke",
           }}
         >
@@ -102,7 +102,7 @@ const ScrollPanePage = ({ path }: PageProps) => {
           style={{
             maxWidth: "200px",
             whiteSpace: "nowrap",
-            border: "1px solid gray",
+            border: "1px solid Gray",
             backgroundColor: "WhiteSmoke",
           }}
         >

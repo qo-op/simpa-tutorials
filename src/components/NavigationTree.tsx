@@ -14,6 +14,7 @@ import "./NavigationTree.css";
 
 const NavigationTreeStyle: React.CSSProperties = {
   marginBlock: "8px",
+  marginBlockEnd: "80px",
 };
 
 const NavigationTreeNodeStyle = (selected: boolean): React.CSSProperties => ({
@@ -49,6 +50,7 @@ const NavigationTree = ({
   const folderClick = (folder: string) => {
     dispatch(toggle(folder));
   };
+  let index = 0;
   return (
     <nav>
       <ul className="NavigationTree Tree" style={NavigationTreeStyle}>
@@ -62,8 +64,12 @@ const NavigationTree = ({
             <span>{tutorials[0].text}</span>
           </div>
         </li>
-        <li data-folder={cssLayoutFolderClosed ? "closed" : "open"}>
-          <div className="TreeNode" onClick={() => folderClick("CSS Layouts")}>
+        <li>
+          <div
+            className="TreeNode"
+            data-closed={cssLayoutFolderClosed ? "true" : "false"}
+            onClick={() => folderClick("CSS Layouts")}
+          >
             {cssLayoutFolderClosed ? (
               <KeyboardArrowRightIcon />
             ) : (
@@ -144,9 +150,10 @@ const NavigationTree = ({
             </li>
           </ul>
         </li>
-        <li data-folder={cssComponentFolderClosed ? "closed" : "open"}>
+        <li>
           <div
             className="TreeNode"
+            data-closed={cssComponentFolderClosed ? "true" : "false"}
             onClick={() => folderClick("CSS Components")}
           >
             {cssComponentFolderClosed ? (
@@ -187,11 +194,22 @@ const NavigationTree = ({
                 <span>{tutorials[10].text}</span>
               </div>
             </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex === 11)}
+                onClick={() => tutorialClick(tutorials[11].path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorials[11].text}</span>
+              </div>
+            </li>
           </ul>
         </li>
-        <li data-folder={jsComponentFolderClosed ? "closed" : "open"}>
+        <li>
           <div
             className="TreeNode"
+            data-closed={jsComponentFolderClosed ? "true" : "false"}
             onClick={() => folderClick("JS Components")}
           >
             {jsComponentFolderClosed ? (
@@ -205,11 +223,11 @@ const NavigationTree = ({
             <li>
               <div
                 className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 11)}
-                onClick={() => tutorialClick(tutorials[11].path, mobileView)}
+                style={NavigationTreeNodeStyle(tutorialIndex === 12)}
+                onClick={() => tutorialClick(tutorials[12].path, mobileView)}
               >
                 <ArticleIcon />
-                <span>{tutorials[11].text}</span>
+                <span>{tutorials[12].text}</span>
               </div>
             </li>
           </ul>

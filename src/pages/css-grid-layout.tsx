@@ -90,42 +90,42 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             style={{
               gridRow: 1,
               gridColumn: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridRow: 2,
               gridColumn: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridRow: 3,
               gridColumn: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridColumn: 1,
               gridRow: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridColumn: 2,
               gridRow: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridColumn: 3,
               gridRow: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
         </div>
@@ -218,42 +218,42 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             style={{
               gridRow: 1,
               gridColumn: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridRow: 2,
               gridColumn: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridRow: 3,
               gridColumn: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridColumn: 1,
               gridRow: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridColumn: 2,
               gridRow: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
           <div
             style={{
               gridColumn: 3,
               gridRow: "1 / span 3",
-              border: "1px solid red",
+              border: "1px solid Red",
             }}
           />
         </div>

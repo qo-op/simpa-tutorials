@@ -120,7 +120,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
 <body class="CenterLayout"
       style="margin: 0; height: 100vh;">
   <div class="BorderLayout"
-       style="border: 1px solid gray; height: 100px; padding: 10px">
+       style="border: 1px solid Gray; height: 100px; padding: 10px">
     <div class="PageStart">
       <!-- combo box -->
       <select onchange="change(event);">
@@ -186,7 +186,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <div className="CenterLayout">
         <div
           className="BorderLayout"
-          style={{ border: "1px solid gray", height: "100px", padding: "10px" }}
+          style={{ border: "1px solid Gray", height: "100px", padding: "10px" }}
         >
           <div className="PageStart">
             <select onChange={change} defaultValue={"Card 1"}>
