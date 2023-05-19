@@ -35,22 +35,20 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <div
           className="ScrollTable"
           data-row-header
-          style={{ maxWidth: "300px", height: "200px" }}
+          style={{ maxWidth: "400px", height: "200px" }}
         >
           <table>
             <thead>
               <tr>
-                <th>#</th>
                 <th>Name</th>
                 <th>Constructor</th>
                 <th>Type</th>
                 <th>Horsepower</th>
-                <th style={{ textAlign: "right" }}>Sales in 2020</th>
+                <th>Sales in 2020</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>1</td>
                 <td>Ford F-Series</td>
                 <td>Ford</td>
                 <td>Pickup</td>
@@ -58,7 +56,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>787,422</td>
               </tr>
               <tr>
-                <td>2</td>
                 <td>Chevrolet Silverado</td>
                 <td>General Motors</td>
                 <td>Pickup</td>
@@ -66,7 +63,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>594,094</td>
               </tr>
               <tr>
-                <td>3</td>
                 <td>Ram Pickup</td>
                 <td>Ram</td>
                 <td>Pickup</td>
@@ -74,7 +70,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>563,676</td>
               </tr>
               <tr>
-                <td>4</td>
                 <td>Toyota RAV4</td>
                 <td>Toyota</td>
                 <td>SUV</td>
@@ -82,7 +77,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>430,387</td>
               </tr>
               <tr>
-                <td>5</td>
                 <td>Honda CR-V</td>
                 <td>Honda</td>
                 <td>SUV</td>
@@ -90,7 +84,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>333,502</td>
               </tr>
               <tr>
-                <td>6</td>
                 <td>Toyota Camry</td>
                 <td>Toyota</td>
                 <td>Sedan</td>
@@ -98,7 +91,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>294,348</td>
               </tr>
               <tr>
-                <td>7</td>
                 <td>Chevrolet Equinox</td>
                 <td>General Motors</td>
                 <td>SUV</td>
@@ -106,7 +98,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>270,994</td>
               </tr>
               <tr>
-                <td>8</td>
                 <td>Honda Civic</td>
                 <td>Honda</td>
                 <td>Sedan</td>
@@ -114,7 +105,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>261,225</td>
               </tr>
               <tr>
-                <td>9</td>
                 <td>Toyota Corolla</td>
                 <td>Toyota</td>
                 <td>Sedan</td>
@@ -122,7 +112,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>237,178</td>
               </tr>
               <tr>
-                <td>10</td>
                 <td>GMC Sierra</td>
                 <td>General Motors</td>
                 <td>Pickup</td>
@@ -130,7 +119,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>236,745</td>
               </tr>
               <tr>
-                <td>11</td>
                 <td>Chevrolet Malibu</td>
                 <td>General Motors</td>
                 <td>Sedan</td>
@@ -138,7 +126,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>238,312</td>
               </tr>
               <tr>
-                <td>12</td>
                 <td>Hyundai Elantra</td>
                 <td>Hyundai</td>
                 <td>Sedan</td>
@@ -146,7 +133,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>200,415</td>
               </tr>
               <tr>
-                <td>13</td>
                 <td>Ford Explorer</td>
                 <td>Ford</td>
                 <td>SUV</td>
@@ -154,7 +140,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>226,217</td>
               </tr>
               <tr>
-                <td>14</td>
                 <td>Jeep Grand Cherokee</td>
                 <td>Jeep</td>
                 <td>SUV</td>
@@ -162,7 +147,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>209,786</td>
               </tr>
               <tr>
-                <td>15</td>
                 <td>Nissan Rogue</td>
                 <td>Nissan</td>
                 <td>SUV</td>
@@ -170,7 +154,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>227,935</td>
               </tr>
               <tr>
-                <td>16</td>
                 <td>Ford Escape</td>
                 <td>Ford</td>
                 <td>SUV</td>
@@ -178,7 +161,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>202,740</td>
               </tr>
               <tr>
-                <td>17</td>
                 <td>Subaru Forester</td>
                 <td>Subaru</td>
                 <td>SUV</td>
@@ -186,7 +168,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>176,996</td>
               </tr>
               <tr>
-                <td>18</td>
                 <td>Subaru Outback</td>
                 <td>Subaru</td>
                 <td>Wagon</td>
@@ -194,7 +175,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>153,294</td>
               </tr>
               <tr>
-                <td>19</td>
                 <td>Toyota Highlander</td>
                 <td>Toyota</td>
                 <td>SUV</td>
@@ -202,7 +182,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td style={{ textAlign: "right" }}>141,677</td>
               </tr>
               <tr>
-                <td>20</td>
                 <td>Jeep Wrangler</td>
                 <td>Jeep</td>
                 <td>SUV</td>
@@ -363,7 +342,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container and set its
-        class to <code>ScrollTable</code> and add the{" "}
+        class to <code>ScrollTable</code>. Then we add the{" "}
         <code>data-row-header</code> attribute.
       </p>
       <p>
