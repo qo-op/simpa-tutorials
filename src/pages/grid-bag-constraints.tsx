@@ -42,7 +42,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
-<div className="GridBagConstraints"
+<div class="GridBagConstraints"
      data-anchor="center"
      style="height: 100px;">
   <button>Click me!</button>
@@ -238,7 +238,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
-<div className="GridBagConstraints"
+<div class="GridBagConstraints"
      data-fill="vertical"
      style="height: 100px;">
   <button>Click me!</button>

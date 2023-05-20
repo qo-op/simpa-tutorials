@@ -67,7 +67,7 @@ const TreePage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
-        <!-- tree item -->
+        <!-- tree node -->
         <div class="TreeNode"
              style="padding: 0 0 0 24px;">
           <span class="material-icons">
@@ -77,7 +77,7 @@ const TreePage = ({ path }: PageProps) => {
         </div>
       </li>
       <li>
-        <!-- tree item -->
+        <!-- tree node -->
         <div class="TreeNode"
              style="padding: 0 0 0 24px;">
           <span class="material-icons">

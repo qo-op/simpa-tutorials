@@ -125,7 +125,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         <div class="MenuItem">
           <span></span>
           <!-- text with shortcut -->
-          <div className="MenuItemShortcut">
+          <div class="MenuItemShortcut">
             <span>Save</span>
             <span>Ctrl+S</span>
           </div>
@@ -304,7 +304,7 @@ const MenuBarPage = ({ path }: PageProps) => {
         <!-- menu item -->
         <div class="MenuItem">
           <span></span>
-          <div className="MenuItemShortcut">
+          <div class="MenuItemShortcut">
             <span>Save</span>
             <span>Ctrl+S</span>
           </div>
@@ -412,7 +412,7 @@ const MenuBarPage = ({ path }: PageProps) => {
       <p></p>
       <div style={{ backgroundColor: "ivory" }}>
         <hr />
-        <div style={{ padding: "0 20px" }}>
+        <div style={{ padding: "0 1em" }}>
           <h2>Note about Drop-down Menus on Small Screen Devices</h2>
           <p>
             Using drop-down menus on small screen devices, such as phones, is

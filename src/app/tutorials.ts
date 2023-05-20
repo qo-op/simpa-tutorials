@@ -69,6 +69,11 @@ const tutorials = [
         path: "/split-pane/",
         folder: "JS Components",
     },
+    {
+        text: "How to Use TabbedPane",
+        path: "/tabbed-pane/",
+        folder: "JS Components",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

@@ -13,7 +13,7 @@ import tutorials from "app/tutorials";
 import "./NavigationTree.css";
 
 const NavigationTreeStyle: React.CSSProperties = {
-  marginBlock: "8px",
+  marginBlock: ".5em",
   marginBlockEnd: "80px",
 };
 
@@ -238,6 +238,16 @@ const NavigationTree = ({
               >
                 <ArticleIcon />
                 <span>{tutorials[13].text}</span>
+              </div>
+            </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex === 14)}
+                onClick={() => tutorialClick(tutorials[14].path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorials[14].text}</span>
               </div>
             </li>
           </ul>

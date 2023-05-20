@@ -8,7 +8,7 @@ import tutorials from "app/tutorials";
 import "./TutorialPane.css";
 
 const TutorialPaneStyle: React.CSSProperties = {
-  padding: "8px",
+  padding: ".5em",
   paddingBlockEnd: "80px",
   textAlign: "justify",
 };

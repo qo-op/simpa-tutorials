@@ -7,7 +7,7 @@ const NoteAboutSimpaCSSStyle: React.CSSProperties = {
 };
 
 const NoteAboutSimpaCSSContentPaneStyle: React.CSSProperties = {
-  padding: "0 20px",
+  padding: "0 1em",
 };
 
 const NoteAboutSimpaCSS = ({

@@ -46,7 +46,7 @@ const SplitPanePage = ({ path }: PageProps) => {
      data-orientation="horizontal-split"
      style="height: 100px;">
   <!-- left component -->
-  <div style="width: 100px; text-align: center; background-color: Cyan;">
+  <div style="width: 100px; background-color: Cyan;">
   </div>
   <!-- split pane divider border -->
   <div class="SplitPaneDividerBorder">
@@ -54,7 +54,7 @@ const SplitPanePage = ({ path }: PageProps) => {
     <div class="SplitPaneDivider"></div>
   </div>
   <!-- right component -->
-  <div style="text-align: center; background-color: LightGreen;">
+  <div style="background-color: LightGreen;">
   </div>
 </div>
 ...`}
@@ -82,19 +82,15 @@ const SplitPanePage = ({ path }: PageProps) => {
         <div
           style={{
             width: "100px",
-            textAlign: "center",
             backgroundColor: "Cyan",
           }}
         ></div>
         <div className="SplitPaneDividerBorder">
           <div className="SplitPaneDivider"></div>
         </div>
-        <div
-          style={{ textAlign: "center", backgroundColor: "LightGreen" }}
-        ></div>
+        <div style={{ backgroundColor: "LightGreen" }}></div>
       </div>
       <p></p>
-
       <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>
   );

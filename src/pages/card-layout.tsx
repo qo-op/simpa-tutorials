@@ -14,7 +14,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
     const cards = container.children;
     for (let i = 0; i < cards.length; i++) {
       const card: HTMLElement = container.children[i] as HTMLElement;
-      if (card.getAttribute("name") === name) {
+      if (card.dataset.name === name) {
         card.style.visibility = "inherit";
       } else {
         card.style.visibility = "hidden";
@@ -107,7 +107,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       const cards = container.children;
       for (let i = 0; i < cards.length; i++) {
         const card = container.children[i];
-        if (card.getAttribute("name") === name) {
+        if (card.dataset.name === name) {
           card.style.visibility = "inherit";
         } else {
           card.style.visibility = "hidden";
@@ -134,15 +134,15 @@ const CardLayoutPage = ({ path }: PageProps) => {
     <div class="CardLayout"
          id="container"
          style="padding: 10px">
-      <button name="Card 1"
+      <button data-name="Card 1"
               style="visibility: inherit;">
         <u>First</u> Button
       </button>
-      <button name="Card 2"
+      <button data-name="Card 2"
               style="visibility: hidden;">
         <u>Second</u> Button
       </button>
-      <button name="Card 3"
+      <button data-name="Card 3"
               style="visibility: hidden;">
         <u>Third</u> Button
       </button>
@@ -156,7 +156,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <p>
         In this example, we create three <code>buttons</code> as cards. We add
         the <code>buttons</code> to the card container giving each a{" "}
-        <code>name</code> attribute, which will be used to switch between them
+        <code>data-name</code> attribute, which will be used to switch between them
         later with JavaScript, when the combo box value is changed.
       </p>
       <p>
@@ -200,13 +200,13 @@ const CardLayoutPage = ({ path }: PageProps) => {
             id="container"
             style={{ padding: "10px" }}
           >
-            <button name="Card 1" style={{ visibility: "inherit" }}>
+            <button data-name="Card 1" style={{ visibility: "inherit" }}>
               <u>First</u> Button
             </button>
-            <button name="Card 2" style={{ visibility: "hidden" }}>
+            <button data-name="Card 2" style={{ visibility: "hidden" }}>
               <u>Second</u> Button
             </button>
-            <button name="Card 3" style={{ visibility: "hidden" }}>
+            <button data-name="Card 3" style={{ visibility: "hidden" }}>
               <u>Third</u> Button
             </button>
           </div>
