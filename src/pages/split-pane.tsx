@@ -46,11 +46,7 @@ const SplitPanePage = ({ path }: PageProps) => {
      data-orientation="horizontal-split"
      style="height: 100px;">
   <!-- left component -->
-  <div class="ScrollPane"
-       style=" background-color: Cyan;">
-    <div style="text-align: center;">
-      <p>Left content.</p>
-    </div>
+  <div style="width: 100px; text-align: center; background-color: Cyan;">
   </div>
   <!-- split pane divider border -->
   <div class="SplitPaneDividerBorder">
@@ -58,11 +54,7 @@ const SplitPanePage = ({ path }: PageProps) => {
     <div class="SplitPaneDivider"></div>
   </div>
   <!-- right component -->
-  <div class="ScrollPane"
-       style=" background-color: LightGreen;">
-    <div style="text-align: center;">
-      <p>Right content.</p>
-    </div>
+  <div style="text-align: center; background-color: LightGreen;">
   </div>
 </div>
 ...`}
@@ -75,29 +67,31 @@ const SplitPanePage = ({ path }: PageProps) => {
         horizontal split.
       </p>
       <p>
-        We then add two components wrapped in a <code>ScrollPane</code> and a{" "}
-        <code>SplitPaneDivider</code> wrapped in a{" "}
-        <code>SplitPaneDividerBorder</code> between then.
+        We then add two components and a <code>SplitPaneDivider</code> wrapped
+        in a <code>SplitPaneDividerBorder</code> between then.
       </p>
       <p>
         The resulting split pane will display the two panels side by side, with
         a divider in between. You can resize the panels by dragging the divider
         to adjust the width of each panel.
       </p>
-      <div className="SplitPane" style={{ height: "100px", paddingInline: "32px" }}>
-        <div className="ScrollPane" style={{ backgroundColor: "Cyan" }}>
-          <div style={{ textAlign: "center" }}>
-            <p>Left content.</p>
-          </div>
-        </div>
+      <div
+        className="SplitPane"
+        style={{ height: "100px", paddingInline: "32px" }}
+      >
+        <div
+          style={{
+            width: "100px",
+            textAlign: "center",
+            backgroundColor: "Cyan",
+          }}
+        ></div>
         <div className="SplitPaneDividerBorder">
           <div className="SplitPaneDivider"></div>
         </div>
-        <div className="ScrollPane" style={{ backgroundColor: "LightGreen" }}>
-          <div style={{ textAlign: "center" }}>
-            <p>Right content.</p>
-          </div>
-        </div>
+        <div
+          style={{ textAlign: "center", backgroundColor: "LightGreen" }}
+        ></div>
       </div>
       <p></p>
 
