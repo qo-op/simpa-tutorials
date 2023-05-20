@@ -84,7 +84,7 @@ const SplitPanePage = ({ path }: PageProps) => {
         a divider in between. You can resize the panels by dragging the divider
         to adjust the width of each panel.
       </p>
-      <div className="SplitPane" style={{ height: "100px" }}>
+      <div className="SplitPane" style={{ height: "100px", paddingInline: "32px" }}>
         <div className="ScrollPane" style={{ backgroundColor: "Cyan" }}>
           <div style={{ textAlign: "center" }}>
             <p>Left content.</p>
