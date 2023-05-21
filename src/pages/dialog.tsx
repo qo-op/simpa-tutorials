@@ -10,7 +10,7 @@ const DialogPage = ({ path }: PageProps) => {
     const button: HTMLElement = ev.target as HTMLElement;
     const dialog: HTMLElement = button.closest(".Dialog") as HTMLElement;
     if (dialog.style.position === "absolute") {
-        dialog.style.visibility = "hidden";
+      dialog.style.visibility = "hidden";
     }
   };
   return (
@@ -66,8 +66,12 @@ const DialogPage = ({ path }: PageProps) => {
       </p>
       <p>
         When you run this code, you will see a dialog with a "This is a dialog!"
-        message. Try moving the dialog by its title bar to remove from this
-        tutorial.
+        message.
+      </p>
+      <p>
+        By default, <code>Dialog</code> enables the user to move the dialog by
+        simply clicking and dragging its title bar. Try moving the dialog by its
+        title bar to remove from this tutorial.
       </p>
       <div className="CenterLayout">
         <div className="Dialog BorderLayout">
