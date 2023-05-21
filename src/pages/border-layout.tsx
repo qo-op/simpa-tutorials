@@ -87,7 +87,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         In this example, we create a <code>div</code> container with{" "}
         <code>style="height: 100px;"</code> and set its <code>class</code> to{" "}
         <code>"BorderLayout"</code>. We then add a wrapped <code>span</code>{" "}
-        that says "<code>Hello, World!</code>" to the <code>PageStart</code>{" "}
+        that says <code>"Hello, World!"</code> to the <code>PageStart</code>{" "}
         region of the container. We add a <code>button</code> with the text "
         <code>Click me!</code>" to the container. Since we didn't specify any
         region, the <code>button</code> is automatically placed in the{" "}

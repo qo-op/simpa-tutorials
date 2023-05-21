@@ -63,7 +63,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container with its{" "}
-        <code>class</code> set to "<code>CardLayout</code>". We then add three{" "}
+        <code>class</code> set to <code>"CardLayout"</code>. We then add three{" "}
         <code>buttons</code> that we want to switch between to the container.
       </p>
       <p>
@@ -161,19 +161,19 @@ const CardLayoutPage = ({ path }: PageProps) => {
       </p>
       <p>
         When we run the code, initially we will see a panel with a combo box
-        with "<code>1st Card</code>" item selected and a button with the text "
+        with <code>"1st Card"</code> item selected and a button with the text "
         <code>
           <u>First</u> Button
         </code>
         ".
       </p>
       <p>
-        If you select the "<code>2nd Card</code>" item in the combo box, the
+        If you select the <code>"2nd Card"</code> item in the combo box, the
         button with the text "
         <code>
           <u>Second</u> Button
         </code>
-        " will be shown. If you select the "<code>3rd Card</code>" item in the
+        " will be shown. If you select the <code>"3rd Card"</code> item in the
         combo box, the button with the text "
         <code>
           <u>Third</u> Button

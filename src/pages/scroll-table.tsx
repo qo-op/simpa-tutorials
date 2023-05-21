@@ -176,7 +176,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container and set its
-        class to <code>ScrollTable</code>. Inside the <code>div</code>{" "}
+        class to <code>"ScrollTable"</code>. Inside the <code>div</code>{" "}
         container, we create a table with three columns: "Name", "Age" and
         "Occupation"
       </p>
@@ -290,7 +290,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container and set its
-        class to <code>ScrollTable</code>. We then enable the{" "}
+        class to <code>"ScrollTable"</code>. We then enable the{" "}
         <code>data-row-header</code> attribute by setting it to <code>"true"</code>.
       </p>
       <p>

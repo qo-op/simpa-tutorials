@@ -27,7 +27,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         To use <code>BoxLayout</code>, you first need to create a container to
         hold your components. This can be a <code>div</code> element. Once you
         have your container, you can set its layout to <code>BoxLayout</code> by
-        adding "<code>BoxLayout</code>" to its <code>class</code> attribute.
+        adding <code>"BoxLayout"</code> to its <b>class</b> attribute.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>

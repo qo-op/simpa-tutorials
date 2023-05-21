@@ -44,7 +44,7 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container and set its
-        class to <code>ScrollPane</code>. Inside the <code>div</code> container,
+        class to <code>"ScrollPane"</code>. Inside the <code>div</code> container,
         we create a paragraph and set some sample text to demonstrate scrolling.
       </p>
       <p>

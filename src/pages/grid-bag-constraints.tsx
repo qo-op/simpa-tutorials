@@ -52,9 +52,9 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container, set its{" "}
-        <code>class</code> attribute to <code>GridBagConstraints</code> and its{" "}
+        <code>class</code> attribute to <code>"GridBagConstraints"</code> and its{" "}
         <code>data-anchor</code> attribute to <code>center</code>. We then add a{" "}
-        <code>button</code> with the text "<code>Click me!</code>" to the
+        <code>button</code> with the text <code>"Click me!"</code> to the
         container.
       </p>
       <p>

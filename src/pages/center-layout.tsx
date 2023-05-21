@@ -24,7 +24,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         To use <code>CenterLayout</code>, you first need to create a container
         to hold your component. This can be a <code>div</code> element. Once you
         have your container, you can set its layout to <code>CenterLayout</code>{" "}
-        by adding "<code>CenterLayout</code>" to its <code>class</code>{" "}
+        by adding <code>"CenterLayout"</code> to its <code>class</code>{" "}
         attribute.
       </p>
       <div className="SyntaxHighlighter">
@@ -40,7 +40,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
       <p>
         In this example, we're setting the <code>div</code>'s layout to{" "}
         <code>CenterLayout</code> to center its content. We then add a{" "}
-        <code>button</code> with the text "<code>Click me!</code>" to the
+        <code>button</code> with the text <code>"Click me!"</code> to the
         container.
       </p>
       <p>

@@ -299,11 +299,10 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        If you want to learn more about <code>GridBagConstraints</code>, see the
-        previous tutorial:
-      </p>
-      <p>
-        <Link to="/grid-bag-constraints/">How to Use GridBagConstraints</Link>
+        If you want to learn more about <code>GridBagConstraints</code>, refer
+        to the{" "}
+        <Link to="/grid-bag-constraints/">How to Use GridBagConstraints</Link>{" "}
+        tutorial.
       </p>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />

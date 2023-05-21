@@ -126,7 +126,7 @@ const TabbedPanePage = ({ path }: PageProps) => {
             <span>Panel #2</span>
           </div>
         </div>
-      </div>{" "}
+      </div>
       <p></p>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>

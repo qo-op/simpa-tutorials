@@ -88,7 +88,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container, set its{" "}
-        <code>class</code> to <code>FlowLayout</code> and set the{" "}
+        <code>class</code> to <code>"FlowLayout"</code> and set the{" "}
         <code>data-alignment</code> attribute to <code>leading</code>. We then
         add three <code>buttons</code> to the <code>div</code> container.
       </p>

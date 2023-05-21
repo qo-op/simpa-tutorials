@@ -36,7 +36,7 @@ const tutorials = [
     },
     {
         text: "How to Use Grid Layout",
-        path: "/css-grid-layout/",
+        path: "/grid-layout/",
         folder: "CSS Layouts",
     },
     {
@@ -58,6 +58,11 @@ const tutorials = [
         text: "How to Use Tree",
         path: "/tree/",
         folder: "CSS Components",
+    },
+    {
+        text: "How to Use Dialog",
+        path: "/dialog/",
+        folder: "JS Components",
     },
     {
         text: "How to Use MenuBar",
