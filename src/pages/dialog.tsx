@@ -40,7 +40,7 @@ const DialogPage = ({ path }: PageProps) => {
           {`...
 <div class="Dialog BorderLayout">
   <!-- dialog title -->
-  <div class="DialogTitle PageStart"
+  <div class="DialogTitleBar PageStart"
          style="padding: 0 .5em; background-color: LightGray;">
     <span>Message</span>
   </div>
@@ -66,13 +66,13 @@ const DialogPage = ({ path }: PageProps) => {
       </p>
       <p>
         When you run this code, you will see a dialog with a "This is a dialog!"
-        message. Try moving the dialog by its title to remove from this
+        message. Try moving the dialog by its title bar to remove from this
         tutorial.
       </p>
       <div className="CenterLayout">
         <div className="Dialog BorderLayout">
           <div
-            className="DialogTitle PageStart"
+            className="DialogTitleBar PageStart"
             style={{ padding: "0 .5em", backgroundColor: "LightGray" }}
           >
             <span>Message</span>
