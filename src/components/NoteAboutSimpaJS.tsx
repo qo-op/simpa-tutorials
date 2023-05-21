@@ -44,7 +44,7 @@ const NoteAboutSimpaJS = ({ subject }: { subject: string }) => {
           if it has a working internet connection and can access the Simpa CDN
           (Content Delivery Network) at the specified URL. If you want to use
           Simpa offline or on a local server, you can download the Simpa
-          stylesheet and JavaScript and include it in your project directory
+          stylesheet and JavaScript and include them in your project directory
           instead of using the CDN.
         </p>
       </div>

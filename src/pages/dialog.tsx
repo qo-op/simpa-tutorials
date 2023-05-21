@@ -10,7 +10,7 @@ const DialogPage = ({ path }: PageProps) => {
     const button: HTMLElement = ev.target as HTMLElement;
     const dialog: HTMLElement = button.closest(".Dialog") as HTMLElement;
     if (dialog.style.position === "absolute") {
-      dialog.style.visibility = "hidden";
+      dialog.style.position = "";
     }
   };
   return (
@@ -74,17 +74,33 @@ const DialogPage = ({ path }: PageProps) => {
         title bar to remove from this tutorial.
       </p>
       <div className="CenterLayout">
-        <div className="Dialog BorderLayout">
-          <div
-            className="DialogTitleBar PageStart"
-            style={{ padding: "0 .5em", backgroundColor: "LightGray" }}
-          >
-            <span>Message</span>
+        <div className="LayeredPane">
+          <div className="Dialog BorderLayout" style={{ visibility: "hidden" }}>
+            <div
+              className="DialogTitleBar PageStart"
+              style={{ padding: "0 .5em", backgroundColor: "LightGray" }}
+            >
+              <span>Message</span>
+            </div>
+            <div className="BorderLayout" style={{ padding: ".5em" }}>
+              <span style={{ margin: "0 0 .5em 0" }}>This is a dialog!</span>
+              <div className="PageEnd CenterLayout">
+                <button onClick={click}>OK</button>
+              </div>
+            </div>
           </div>
-          <div className="BorderLayout" style={{ padding: ".5em" }}>
-            <span style={{ margin: "0 0 .5em 0" }}>This is a dialog!</span>
-            <div className="PageEnd CenterLayout">
-              <button onClick={click}>OK</button>
+          <div className="Dialog BorderLayout">
+            <div
+              className="DialogTitleBar PageStart"
+              style={{ padding: "0 .5em", backgroundColor: "LightGray" }}
+            >
+              <span>Message</span>
+            </div>
+            <div className="BorderLayout" style={{ padding: ".5em" }}>
+              <span style={{ margin: "0 0 .5em 0" }}>This is a dialog!</span>
+              <div className="PageEnd CenterLayout">
+                <button onClick={click}>OK</button>
+              </div>
             </div>
           </div>
         </div>
