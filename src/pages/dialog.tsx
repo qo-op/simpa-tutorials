@@ -71,7 +71,7 @@ const DialogPage = ({ path }: PageProps) => {
       <p>
         By default, <code>Dialog</code> enables the user to move the dialog by
         simply clicking and dragging its title bar. Try moving the dialog by its
-        title bar to remove from this tutorial.
+        title bar.
       </p>
       <div className="CenterLayout">
         <div className="LayeredPane">
