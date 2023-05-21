@@ -1060,3 +1060,7 @@ body {
 .Tree li>:not(ul):hover {
     background-color: rgba(128, 128, 128, .25);
 }
+
+button {
+    touch-action: manipulation;
+}

@@ -91,7 +91,8 @@ const TabbedPanePage = ({ path }: PageProps) => {
         corresponding cards in the card container.
       </p>
       <p>
-        Try clicking on a tab to see the associated card.
+        When you run this code, you should see a tabbed pane containing two tabs
+        labeled "Tab 1" and "Tab 2". Try clicking on a tab to see the associated card.
       </p>
       <div
         className="TabbedPane"
