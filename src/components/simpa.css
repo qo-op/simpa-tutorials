@@ -970,6 +970,7 @@ body {
     padding: 0;
     margin: 0;
     outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .TabbedPane[data-tab-layout-policy="scroll-tab-layout"]>.TabLayout>button,
@@ -1059,8 +1060,4 @@ body {
 
 .Tree li>:not(ul):hover {
     background-color: rgba(128, 128, 128, .25);
-}
-
-button {
-    touch-action: manipulation;
 }
