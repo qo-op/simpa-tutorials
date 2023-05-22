@@ -10,6 +10,7 @@
 
 .TutorialPane .SyntaxHighlighter pre code {
     font-size: 16px;
+    line-height: 1.2;
     text-align: left;
     overflow: hidden;
     overflow-wrap: anywhere;

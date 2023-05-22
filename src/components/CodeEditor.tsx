@@ -24,6 +24,7 @@ const CodeEditor = () => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
     textArea.style.caretColor = "White";
+    // textArea.style.color = "Yellow";
   };
   const change = (ev: React.ChangeEvent) => {
     const textArea: HTMLTextAreaElement =
@@ -55,7 +56,7 @@ const CodeEditor = () => {
           onFocus={focus}
           onChange={change}
         ></textarea>
-        <pre style={{ margin: "0" }}>
+        <pre>
           <code className="language-markup">
             <div className="CodeEditorHighlighter" style={{}}></div>
           </code>
