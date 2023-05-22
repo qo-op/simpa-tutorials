@@ -24,7 +24,6 @@ const CodeEditor = () => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
     textArea.style.caretColor = "White";
-    // textArea.style.color = "Yellow";
   };
   const change = (ev: React.ChangeEvent) => {
     const textArea: HTMLTextAreaElement =
@@ -40,7 +39,7 @@ const CodeEditor = () => {
       textArea.selectionStart = textArea.selectionEnd - 1;
       textArea.selectionEnd = textArea.selectionEnd - 1;
     }
-    const highlightedCode = Prism.highlight(code, Prism.languages.html, "html");
+    const highlightedCode = Prism.highlight(code, Prism.languages.markup, "markup");
     codeEditorHighlighter.innerHTML = highlightedCode;
   };
   return (
@@ -57,7 +56,7 @@ const CodeEditor = () => {
           onChange={change}
         ></textarea>
         <pre style={{ margin: "0" }}>
-          <code className="language-html">
+          <code className="language-markup">
             <div className="CodeEditorHighlighter" style={{}}></div>
           </code>
         </pre>
