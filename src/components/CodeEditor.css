@@ -5,13 +5,15 @@
     line-height: 1.2;
     overflow: hidden;
     overflow-wrap: anywhere;
+    margin: 0;
+    border: none;
     padding: 0;
-}
-
-.CodeEditor code[class*="language-"] {
-    pointer-events: none;
 }
 
 .CodeEditor code[class*="language-"] .token.operator {
     background-color: transparent;
+}
+
+.CodeEditor pre {
+    pointer-events: none;
 }

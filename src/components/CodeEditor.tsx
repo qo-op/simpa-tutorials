@@ -33,7 +33,7 @@ const CodeEditor = () => {
   const change = (ev: React.ChangeEvent) => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
-    textArea.style.color = "Transparent";
+    textArea.style.color = CodeEditorStyle.backgroundColor as string;
     textArea.style.caretColor = "White";
     const codeEditor = textArea.closest(".CodeEditor") as HTMLElement;
     const codeEditorHighlighter = codeEditor.querySelector(
@@ -57,16 +57,16 @@ const CodeEditor = () => {
       onClick={click}
     >
       <div className="LayeredPane">
-        <pre style={{ margin: "0" }}>
-          <code className="language-html">
-            <div className="CodeEditorHighlighter" style={{}}></div>
-          </code>
-        </pre>
         <textarea
           style={CodeEditorTextAreaStyle}
           spellCheck="false"
           onChange={change}
         ></textarea>
+        <pre style={{ margin: "0" }}>
+          <code className="language-html">
+            <div className="CodeEditorHighlighter" style={{}}></div>
+          </code>
+        </pre>
       </div>
     </div>
   );
