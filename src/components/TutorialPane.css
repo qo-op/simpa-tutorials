@@ -8,11 +8,9 @@
     margin: 0;
 }
 
-.TutorialPane .SyntaxHighlighter,
-.TutorialPane .SyntaxHighlighter pre[class*="language-"],
-.TutorialPane .SyntaxHighlighter code[class*="language-"] {
-    text-align: left;
+.TutorialPane .SyntaxHighlighter pre code {
     font-size: 16px;
+    text-align: left;
     overflow: hidden;
     overflow-wrap: anywhere;
 }

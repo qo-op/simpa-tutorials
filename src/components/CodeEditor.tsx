@@ -9,16 +9,6 @@ const CodeEditorStyle: React.CSSProperties = {
   backgroundColor: "rgb(30, 30, 30)",
 };
 
-const CodeEditorTextAreaStyle: React.CSSProperties = {
-  border: "none",
-  backgroundColor: "Transparent",
-  color: "White",
-  padding: "0",
-  resize: "none",
-  outline: "none",
-  height: "auto",
-};
-
 const CodeEditor = () => {
   const click = (ev: React.MouseEvent) => {
     const target: HTMLElement = ev.target as HTMLElement;
@@ -30,12 +20,15 @@ const CodeEditor = () => {
     ) as HTMLElement;
     textArea.focus();
   };
+  const focus = (ev: React.FocusEvent) => {
+    const textArea: HTMLTextAreaElement =
+      ev.currentTarget as HTMLTextAreaElement;
+    textArea.style.caretColor = "White";
+    // textArea.style.color = "Yellow";
+  };
   const change = (ev: React.ChangeEvent) => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
-    const caretColor = textArea.style.caretColor || "Gray";
-    textArea.style.color = CodeEditorStyle.backgroundColor as string;
-    textArea.style.caretColor = caretColor;
     const codeEditor = textArea.closest(".CodeEditor") as HTMLElement;
     const codeEditorHighlighter = codeEditor.querySelector(
       ".CodeEditorHighlighter"
@@ -59,8 +52,8 @@ const CodeEditor = () => {
     >
       <div className="LayeredPane">
         <textarea
-          style={CodeEditorTextAreaStyle}
           spellCheck="false"
+          onFocus={focus}
           onChange={change}
         ></textarea>
         <pre style={{ margin: "0" }}>
@@ -72,30 +65,5 @@ const CodeEditor = () => {
     </div>
   );
 };
-
-/*
-const CodeEditor = () => {
-  const [code, setCode] = useState('');
-
-  const handleInputChange = (ev: React.ChangeEvent) => {
-    const textArea: HTMLTextAreaElement = ev.currentTarget as HTMLTextAreaElement;
-    const enteredCode = textArea.value;
-    setCode(enteredCode);
-  };
-
-  const highlightCode = (code: string) => {
-    return Prism.highlight(code, Prism.languages.html, 'html');
-  };
-
-  return (
-    <div>
-      <textarea value={code} onChange={handleInputChange}></textarea>
-      <pre>
-        <code dangerouslySetInnerHTML={{ __html: highlightCode(code) }}></code>
-      </pre>
-    </div>
-  );
-};
-*/
 
 export default CodeEditor;

@@ -1,20 +1,41 @@
 .CodeEditor textarea,
+.CodeEditor pre {
+  /* Resetting box-sizing and border */
+  box-sizing: content-box;
+  border: none;
+
+  /* Resetting appearance and background */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+
+  /* Resetting padding, margin, and outline */
+  padding: 0;
+  margin: 0;
+  outline: none;
+
+  /* Resetting font properties */
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  color: inherit;
+
+  /* Resetting resizing */
+  resize: none;
+
+  pointer-events: none;
+}
+
 .CodeEditor pre code {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
     text-align: left;
-    font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
-    font-size: 16px;
-    line-height: 1.2;
     overflow: hidden;
     overflow-wrap: anywhere;
-    margin: 0;
-    border: none;
-    padding: 0;
 }
 
 .CodeEditor pre code .token.operator {
     background-color: transparent;
-}
-
-.CodeEditor pre {
-    pointer-events: none;
 }
