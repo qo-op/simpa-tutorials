@@ -33,8 +33,9 @@ const CodeEditor = () => {
   const change = (ev: React.ChangeEvent) => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
+    const caretColor = textArea.style.caretColor || "Gray";
     textArea.style.color = CodeEditorStyle.backgroundColor as string;
-    textArea.style.caretColor = "White";
+    textArea.style.caretColor = caretColor;
     const codeEditor = textArea.closest(".CodeEditor") as HTMLElement;
     const codeEditorHighlighter = codeEditor.querySelector(
       ".CodeEditorHighlighter"
