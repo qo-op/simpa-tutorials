@@ -1,0 +1,17 @@
+.CodeEditor textarea,
+.CodeEditor code[class*="language-"] {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.2;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    padding: 0;
+}
+
+.CodeEditor code[class*="language-"] {
+    pointer-events: none;
+}
+
+.CodeEditor code[class*="language-"] .token.operator {
+    background-color: transparent;
+}
