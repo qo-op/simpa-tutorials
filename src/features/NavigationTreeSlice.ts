@@ -6,6 +6,7 @@ const NavigationTreeSlice = createSlice({
         cssLayoutFolderClosed: false,
         cssComponentFolderClosed: false,
         jsComponentFolderClosed: false,
+        exampleFolderClosed: false,
     },
     reducers: {
         expand: (state, action) => {
@@ -18,6 +19,9 @@ const NavigationTreeSlice = createSlice({
                     break;
                 case "JS Components":
                     state.jsComponentFolderClosed = false;
+                    break;
+                case "Examples":
+                    state.exampleFolderClosed = false;
                     break;
             }
         },
@@ -32,6 +36,9 @@ const NavigationTreeSlice = createSlice({
                 case "JS Components":
                     state.jsComponentFolderClosed = true;
                     break;
+                case "Examples":
+                    state.exampleFolderClosed = true;
+                    break;
             }
         },
         toggle: (state, action) => {
@@ -44,6 +51,9 @@ const NavigationTreeSlice = createSlice({
                     break;
                 case "JS Components":
                     state.jsComponentFolderClosed = !state.jsComponentFolderClosed;
+                    break;
+                case "Examples":
+                    state.exampleFolderClosed = !state.exampleFolderClosed;
                     break;
             }
         }

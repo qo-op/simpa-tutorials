@@ -1,3 +1,8 @@
+.CodeEditor {
+    background-color: rgb(30, 30, 30);
+    padding: .25em .5em;
+}
+
 .CodeEditor textarea {
     border: none;
     -webkit-appearance: none;
@@ -14,6 +19,7 @@
 .CodeEditor pre {
     all: initial;
     pointer-events: none;
+    visibility: inherit;
 }
 
 .CodeEditor textarea,

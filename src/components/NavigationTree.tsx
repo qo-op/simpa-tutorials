@@ -37,6 +37,9 @@ const NavigationTree = ({
   const jsComponentFolderClosed = useAppSelector(
     (state) => state.navigationTree.jsComponentFolderClosed
   );
+  const exampleFolderClosed = useAppSelector(
+    (state) => state.navigationTree.exampleFolderClosed
+  );
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
     navigate(to);
@@ -50,7 +53,6 @@ const NavigationTree = ({
   const folderClick = (folder: string) => {
     dispatch(toggle(folder));
   };
-  let index = 0;
   return (
     <nav>
       <ul className="NavigationTree Tree" style={NavigationTreeStyle}>
@@ -258,6 +260,32 @@ const NavigationTree = ({
               >
                 <ArticleIcon />
                 <span>{tutorials[15].text}</span>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div
+            className="TreeNode"
+            data-closed={exampleFolderClosed ? "true" : "false"}
+            onClick={() => folderClick("Examples")}
+          >
+            {exampleFolderClosed ? (
+              <KeyboardArrowRightIcon />
+            ) : (
+              <KeyboardArrowDownIcon />
+            )}
+            <span>Examples</span>
+          </div>
+          <ul>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex === 16)}
+                onClick={() => tutorialClick(tutorials[16].path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorials[16].text}</span>
               </div>
             </li>
           </ul>

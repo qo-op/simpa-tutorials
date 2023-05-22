@@ -79,6 +79,11 @@ const tutorials = [
         path: "/tabbed-pane/",
         folder: "JS Components",
     },
+    {
+        text: "ButtonDemo",
+        path: "/button-demo/",
+        folder: "Examples",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

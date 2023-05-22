@@ -2,7 +2,7 @@ import React from "react";
 import { useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "./ContentSplitPaneDivider";
 
-const ContentSplitPane = ({
+const ExampleContentSplitPane = ({
   children,
   mobileView,
 }: {
@@ -14,11 +14,11 @@ const ContentSplitPane = ({
     (state) => state.contentSplitPane.dividerLocation
   );
   return loading ? (
-    <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+    <div className="ExampleContentSplitPane">
       {children[1]}
     </div>
   ) : mobileView ? (
-    <div className="ContentSplitPane CardLayout">
+    <div className="ExampleContentSplitPane CardLayout">
       <div
         className="ScrollPane"
         data-scrollbar-overlay
@@ -27,19 +27,17 @@ const ContentSplitPane = ({
         {children[0]}
       </div>
       <div
-        className="ScrollPane"
-        data-scrollbar-overlay
         style={{ visibility: dividerLocation === -1 ? "inherit" : "hidden" }}
       >
         {children[1]}
       </div>
     </div>
   ) : dividerLocation === -2 ? (
-    <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+    <div className="ExampleContentSplitPane">
       {children[1]}
     </div>
   ) : (
-    <div className="ContentSplitPane SplitPane">
+    <div className="ExampleContentSplitPane SplitPane">
       <div
         className="ScrollPane"
         data-scrollbar-overlay
@@ -50,11 +48,9 @@ const ContentSplitPane = ({
         {children[0]}
       </div>
       <ContentSplitPaneDivider />
-      <div className="ScrollPane" data-scrollbar-overlay>
-        {children[1]}
-      </div>
+      {children[1]}
     </div>
   );
 };
 
-export default ContentSplitPane;
+export default ExampleContentSplitPane;

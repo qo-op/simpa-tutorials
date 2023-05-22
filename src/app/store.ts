@@ -7,6 +7,7 @@ import nextPageButtonReducer from "features/NextPageButtonSlice"
 import hamburgerButtonReducer from "features/HamburgerButtonSlice"
 import contentSplitPaneReducer from "features/ContentSplitPaneSlice"
 import navigationTreeReducer from "features/NavigationTreeSlice"
+import resultPaneReducer from "features/ResultPaneSlice"
 
 const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ const store = configureStore({
         "hamburgerButton": hamburgerButtonReducer,
         "contentSplitPane": contentSplitPaneReducer,
         "navigationTree": navigationTreeReducer,
+        "resultPane": resultPaneReducer,
     }
 });
 export default store;

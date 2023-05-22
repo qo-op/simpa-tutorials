@@ -167,8 +167,8 @@ body {
 
 .CardLayout {
     display: grid !important;
-    grid-template-rows: minmax(0, auto) !important;
-    grid-template-columns: minmax(0, auto) !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
 }
 
 .CardLayout>* {
@@ -290,8 +290,8 @@ body {
     z-index: 200 !important;
     background-color: rgba(0, 0, 0, 0.25);
     display: grid;
-    grid-template-rows: minmax(0, auto);
-    grid-template-columns: minmax(0, auto);
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
     justify-content: center;
 }
@@ -320,8 +320,8 @@ body {
 
 .LayeredPane {
     display: grid !important;
-    grid-template-rows: minmax(0, auto) !important;
-    grid-template-columns: minmax(0, auto) !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
 }
 
 .LayeredPane>* {
@@ -514,8 +514,8 @@ body {
 
 .ScrollTable {
     display: grid !important;
-    grid-template-rows: minmax(0, auto) !important;
-    grid-template-columns: minmax(0, auto) !important;
+    grid-template-rows: minmax(0, 1fr) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
     overflow: auto;
     overscroll-behavior: none;
 }
@@ -625,39 +625,31 @@ body {
  * SplitPane
  */
 
-.SplitPane,
+.SplitPane:not([data-orientation="vertical-split"]),
 .SplitPane[data-orientation="horizontal-split"],
 .SplitPane[data-orientation="horizontal-split"][data-divider-anchor="start"] {
     display: grid !important;
     grid-template-rows: minmax(0, 1fr) !important;
-    grid-template-columns: auto auto minmax(0, 1fr) !important;
-    align-items: stretch !important;
-    justify-items: stretch !important;
+    grid-template-columns: auto auto minmax(0, 1fr);
 }
 
 .SplitPane[data-orientation="horizontal-split"][data-divider-anchor="end"] {
     display: grid !important;
     grid-template-rows: minmax(0, 1fr) !important;
-    grid-template-columns: minmax(0, 1fr) auto auto !important;
-    align-items: stretch !important;
-    justify-items: stretch !important;
+    grid-template-columns: minmax(0, 1fr) auto auto;
 }
 
 .SplitPane[data-orientation="vertical-split"],
 .SplitPane[data-orientation="vertical-split"][data-divider-anchor="start"] {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-rows: auto auto minmax(0, 1fr) !important;
-    align-items: stretch !important;
-    justify-items: stretch !important;
+    grid-template-rows: auto auto minmax(0, 1fr);
 }
 
 .SplitPane[data-orientation="vertical-split"][data-divider-anchor="end"] {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) !important;
-    grid-template-rows: minmax(0, 1fr) auto auto !important;
-    align-items: stretch !important;
-    justify-items: stretch !important;
+    grid-template-rows: minmax(0, 1fr) auto auto;
 }
 
 .SplitPane>* {
@@ -870,8 +862,6 @@ body {
     align-content: end !important;
     justify-content: start !important;
     align-items: end !important;
-    gap: 1px;
-    background-color: whitesmoke;
 }
 
 .TabbedPane[data-tab-placement="page-end"]>.TabLayout,
@@ -945,15 +935,12 @@ body {
 .TabbedPane[data-tab-placement="line-end"][data-tab-layout-policy="wrap-tab-layout"]>.TabLayout>button {
     flex-shrink: 0 !important;
     user-select: none !important;
-    background-color: rgba(128, 128, 128, .25);
-    /* Resetting all button styles */
-    /* background: none; */
     border: none;
     color: inherit;
     cursor: pointer;
     font: inherit;
     line-height: inherit;
-    padding: 0;
+    padding: 0 .5em;
     margin: 0;
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -980,10 +967,6 @@ body {
     grid-column: 1 !important;
 }
 
-.TabbedPane>.TabLayout>button[tabindex="-1"] {
-    background-color: white;
-}
-
 .TabbedPane>.TabLayout>button * {
     pointer-events: none;
 }
@@ -993,21 +976,40 @@ body {
  */
 
 .TabbedPane>.TabLayout>button {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: grid !important;
+    align-content: stretch !important;
+    justify-content: start !important;
+    align-items: center !important;
     gap: .5em;
-    align-items: center;
 }
+
+.TabbedPane>.TabLayout>button>* {
+    grid-row: 1 !important;
+    grid-column: unset !important;
+}
+
 
 .TabbedPane>.TabLayout>button>:first-child,
 .TabbedPane>.TabLayout>button>:last-child {
-    width: 1em;
+    min-width: 1em;
     font-size: 1em;
 }
 
-.ButtonContainer button {
-    border: none;
-    background: none;
+/**
+ * TabbedPane default background colors
+ */
+
+.TabbedPane>.TabLayout {
+    background-color: whitesmoke;
+    gap: 1px;
+}
+
+.TabbedPane>.TabLayout>button {
+    background-color: rgba(128, 128, 128, .25);
+}
+
+.TabbedPane>.TabLayout>button[tabindex="-1"] {
+    background-color: white;
 }
 
 /**

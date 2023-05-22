@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
 import { useMediaQuery } from "react-responsive";
 import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setLoading } from "features/LoadingSlice";
@@ -14,18 +13,12 @@ import TutorialPane from "components/TutorialPane";
 import "./simpa.css";
 import "./Layout.css";
 
-const LayoutStyle: React.CSSProperties = {
-  height: "100vh",
-};
-
 const Layout = ({
   children,
   path,
-  title,
 }: {
   children: React.ReactNode;
   path: string;
-  title: string;
 }) => {
   const loading = useAppSelector((state) => state.loading.value);
   const dispatch = useAppDispatch();
@@ -38,21 +31,11 @@ const Layout = ({
   const browserView = useMediaQuery({ query: "(min-width: 480px)" });
   const mobileView = !browserView;
   const tutorialIndex = tutorialIndexes[path];
-  /*
-      <Helmet>
-        <title>{title}</title>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-        <script src="https://qo-op.github.io/simpa/simpa.js"></script>
-      </Helmet>
-   */
   return (
     <>
       <div
         className="Layout LayeredPane"
-        style={{ ...LayoutStyle, visibility: loading ? "hidden" : "inherit" }}
+        style={{ visibility: loading ? "hidden" : "inherit" }}
       >
         <div className="LayoutContentPane BorderLayout">
           <div className="PageStart">

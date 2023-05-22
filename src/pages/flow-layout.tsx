@@ -11,7 +11,7 @@ const description: string = "This tutorial shows how to use flow layouts (FlowLa
 
 const FlowLayoutPage = ({ path }: PageProps) => {
   return (
-    <Layout title={title} path={path}>
+    <Layout path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
