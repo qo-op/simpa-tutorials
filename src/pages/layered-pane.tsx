@@ -21,7 +21,7 @@ const LayeredPanePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        A <code>LayeredPane</code> provides a way to organize and manage
+        <code>LayeredPane</code> provides a way to organize and manage
         multiple components or layers within a single container.
       </p>
       <p>
