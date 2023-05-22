@@ -1,11 +1,19 @@
 import React from "react";
 import { PageProps } from "gatsby";
 import Layout from "components/Layout";
+import { SEO } from "components/SEO";
+
+const title: string = "Introduction to Simpa";
+const description: string = "This series of tutorial shows how to use Simpa layouts and components using HTML, CSS and JavaScript.";
 
 const IndexPage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"Introduction to Simpa"} path={path}>
-      <h1 className="BoxLayout" data-axis="page-axis" style={{ textAlign: "center" }}>
+    <Layout title={title} path={path}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
         <span>Introduction to Simpa</span>
       </h1>
       <p>
@@ -33,3 +41,5 @@ const IndexPage = ({ path }: PageProps) => {
 };
 
 export default IndexPage;
+
+export const Head = () => <SEO title={title} description={description} />;

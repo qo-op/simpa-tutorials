@@ -4,20 +4,21 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Grid Layouts with Grid Bag Constraints";
+const description: string = "This tutorial shows how to use grid layouts (GridLayout) with Grid Bag Constraints using HTML and CSS.";
 
 const CSSGridLayoutPage = ({ path }: PageProps) => {
   return (
-    <Layout
-      pageTitle={"How to Use CSS Grid Layout with GridBagConstraints"}
-      path={path}
-    >
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use CSS Grid Layout</span>
-        <span>with GridBagConstraints</span>
+        <span>How to Use Grid Layouts</span>
+        <span>with Grid Bag Constraints</span>
       </h1>
       <p>
         CSS <code>Grid</code> Layout is a type of layout manager that enables
@@ -311,3 +312,5 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
 };
 
 export default CSSGridLayoutPage;
+
+export const Head = () => <SEO title={title} description={description} />;

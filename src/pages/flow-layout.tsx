@@ -4,16 +4,20 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Flow Layoutswith HTML and CSS";
+const description: string = "This tutorial shows how to use flow layouts (FlowLayout) using HTML and CSS.";
 
 const FlowLayoutPage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use FlowLayout with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use FlowLayout</span>
+        <span>How to Use Flow Layouts</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
@@ -203,3 +207,5 @@ const FlowLayoutPage = ({ path }: PageProps) => {
 };
 
 export default FlowLayoutPage;
+
+export const Head = () => <SEO title={title} description={description} />;

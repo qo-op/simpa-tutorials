@@ -4,16 +4,20 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Box Layouts with HTML and CSS";
+const description: string = "This tutorial shows how to use box layouts (BoxLayout) using HTML and CSS.";
 
 const BorderLayoutPage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use BoxLayout with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use BoxLayout</span>
+        <span>How to Use Box Layouts</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
@@ -423,3 +427,5 @@ const BorderLayoutPage = ({ path }: PageProps) => {
 };
 
 export default BorderLayoutPage;
+
+export const Head = () => <SEO title={title} description={description} />;

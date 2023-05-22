@@ -21,11 +21,11 @@ const LayoutStyle: React.CSSProperties = {
 const Layout = ({
   children,
   path,
-  pageTitle,
+  title,
 }: {
   children: React.ReactNode;
   path: string;
-  pageTitle: string;
+  title: string;
 }) => {
   const loading = useAppSelector((state) => state.loading.value);
   const dispatch = useAppDispatch();
@@ -38,16 +38,18 @@ const Layout = ({
   const browserView = useMediaQuery({ query: "(min-width: 480px)" });
   const mobileView = !browserView;
   const tutorialIndex = tutorialIndexes[path];
-  return (
-    <>
+  /*
       <Helmet>
-        <title>{pageTitle}</title>
+        <title>{title}</title>
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
         <script src="https://qo-op.github.io/simpa/simpa.js"></script>
       </Helmet>
+   */
+  return (
+    <>
       <div
         className="Layout LayeredPane"
         style={{ ...LayoutStyle, visibility: loading ? "hidden" : "inherit" }}

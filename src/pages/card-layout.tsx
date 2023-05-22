@@ -4,6 +4,10 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Card Layouts with HTML and CSS";
+const description: string = "This tutorial shows how to use card layouts (CardLayout) using HTML and CSS.";
 
 const CardLayoutPage = ({ path }: PageProps) => {
   const change = (ev: React.ChangeEvent) => {
@@ -22,13 +26,13 @@ const CardLayoutPage = ({ path }: PageProps) => {
     }
   };
   return (
-    <Layout pageTitle={"How to Use CardLayout with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use CardLayout</span>
+        <span>How to Use Card Layouts</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
@@ -156,8 +160,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
       <p>
         In this example, we create three <code>buttons</code> as cards. We add
         the <code>buttons</code> to the card container giving each a{" "}
-        <code>data-name</code> attribute, which will be used to switch between them
-        later with JavaScript, when the combo box value is changed.
+        <code>data-name</code> attribute, which will be used to switch between
+        them later with JavaScript, when the combo box value is changed.
       </p>
       <p>
         When we run the code, initially we will see a panel with a combo box
@@ -219,3 +223,5 @@ const CardLayoutPage = ({ path }: PageProps) => {
 };
 
 export default CardLayoutPage;
+
+export const Head = () => <SEO title={title} description={description} />;

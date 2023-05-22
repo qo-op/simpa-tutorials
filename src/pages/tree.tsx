@@ -8,22 +8,24 @@ import Blender from "@mui/icons-material/Blender";
 import CoffeeMaker from "@mui/icons-material/CoffeeMaker";
 import Iron from "@mui/icons-material/Iron";
 import Folder from "@mui/icons-material/Folder";
-import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Trees with HTML and CSS";
+const description: string = "This tutorial shows how to use trees (Tree) using HTML, CSS and JavaScript.";
 
 const TreePage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use Tree with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use Tree</span>
+        <span>How to Use Trees</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>Tree</code> is a component that represents a hierarchical
+        A <code>Tree</code> is a component that represents a hierarchical
         structure of data in a tree-like format. It is used to display and
         manipulate hierarchical data.
       </p>
@@ -236,3 +238,5 @@ const TreePage = ({ path }: PageProps) => {
 };
 
 export default TreePage;
+
+export const Head = () => <SEO title={title} description={description} />;

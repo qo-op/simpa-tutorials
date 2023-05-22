@@ -4,16 +4,20 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Scrollable Tables with HTML and CSS";
+const description: string = "This tutorial shows how to use scrollable tables (ScrollTable) using HTML and CSS.";
 
 const ScrollTablePage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use ScrollTable with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use ScrollTable</span>
+        <span>How to Use Scrollable Tables</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
@@ -291,7 +295,8 @@ const ScrollTablePage = ({ path }: PageProps) => {
       <p>
         In this example, we create a <code>div</code> container and set its
         class to <code>"ScrollTable"</code>. We then enable the{" "}
-        <code>data-row-header</code> attribute by setting it to <code>"true"</code>.
+        <code>data-row-header</code> attribute by setting it to{" "}
+        <code>"true"</code>.
       </p>
       <p>
         When you run this code, you will see a window containing the{" "}
@@ -346,3 +351,5 @@ const ScrollTablePage = ({ path }: PageProps) => {
 };
 
 export default ScrollTablePage;
+
+export const Head = () => <SEO title={title} description={description} />;

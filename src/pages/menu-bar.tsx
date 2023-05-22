@@ -9,19 +9,20 @@ import SaveIcon from "@mui/icons-material/Save";
 import Logout from "@mui/icons-material/Logout";
 import FileOpen from "@mui/icons-material/FileOpen";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Menu Bars with HTML, CSS and JavaScript";
+const description: string = "This tutorial shows how to use menu bars (MenuBar) using HTML, CSS and JavaScript.";
 
 const MenuBarPage = ({ path }: PageProps) => {
   return (
-    <Layout
-      pageTitle={"How to Use MenuBar with HTML, CSS and JavaScript"}
-      path={path}
-    >
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use MenuBar</span>
+        <span>How to Use Menu Bars</span>
         <span>with HTML, CSS</span>
         <span>and JavaScript</span>
       </h1>
@@ -451,3 +452,5 @@ const MenuBarPage = ({ path }: PageProps) => {
 };
 
 export default MenuBarPage;
+
+export const Head = () => <SEO title={title} description={description} />;

@@ -4,24 +4,20 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
-import FileOpenIcon from "@mui/icons-material/FileOpen";
-import SaveIcon from "@mui/icons-material/Save";
-import Logout from "@mui/icons-material/Logout";
-import FileOpen from "@mui/icons-material/FileOpen";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Tabbed Panes with HTML, CSS and JavaScript";
+const description: string = "This tutorial shows how to use tabbed panes (TabbedPane) using HTML, CSS and JavaScript.";
 
 const TabbedPanePage = ({ path }: PageProps) => {
   return (
-    <Layout
-      pageTitle={"How to Use TabbedPane with HTML, CSS and JavaScript"}
-      path={path}
-    >
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use TabbedPane</span>
+        <span>How to Use Tabbed Panes</span>
         <span>with HTML, CSS</span>
         <span>and JavaScript</span>
       </h1>
@@ -92,7 +88,8 @@ const TabbedPanePage = ({ path }: PageProps) => {
       </p>
       <p>
         When you run this code, you should see a tabbed pane containing two tabs
-        labeled "Tab 1" and "Tab 2". Try clicking on a tab to see the associated card.
+        labeled "Tab 1" and "Tab 2". Try clicking on a tab to see the associated
+        card.
       </p>
       <div
         className="TabbedPane"
@@ -134,3 +131,5 @@ const TabbedPanePage = ({ path }: PageProps) => {
 };
 
 export default TabbedPanePage;
+
+export const Head = () => <SEO title={title} description={description} />;

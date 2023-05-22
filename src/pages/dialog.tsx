@@ -4,6 +4,10 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Dialogs with HTML, CSS and JavaScript";
+const description: string = "This tutorial shows how to use dialogs using HTML, CSS and JavaScript.";
 
 const DialogPage = ({ path }: PageProps) => {
   const click = (ev: React.MouseEvent) => {
@@ -14,16 +18,13 @@ const DialogPage = ({ path }: PageProps) => {
     }
   };
   return (
-    <Layout
-      pageTitle={"How to Use Dialog with HTML, CSS and JavaScript"}
-      path={path}
-    >
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use Dialog</span>
+        <span>How to Use Dialogs</span>
         <span>with HTML, CSS</span>
         <span>and JavaScript</span>
       </h1>
@@ -69,7 +70,7 @@ const DialogPage = ({ path }: PageProps) => {
         message.
       </p>
       <p>
-        By default, <code>Dialog</code> enables the user to move the dialog by
+        By default, <code>Dialog</code> enables the user to move itself by
         simply clicking and dragging its title bar. Try moving the dialog by its
         title bar.
       </p>
@@ -112,3 +113,5 @@ const DialogPage = ({ path }: PageProps) => {
 };
 
 export default DialogPage;
+
+export const Head = () => <SEO title={title} description={description} />;

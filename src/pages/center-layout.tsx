@@ -4,16 +4,20 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Center Layouts with HTML and CSS";
+const description: string = "This tutorial shows how to use center layouts (CenterLayout) using HTML and CSS.";
 
 const CenterLayoutPage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use CenterLayout with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use CenterLayout</span>
+        <span>How to Use Center Layouts</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
@@ -60,3 +64,5 @@ const CenterLayoutPage = ({ path }: PageProps) => {
 };
 
 export default CenterLayoutPage;
+
+export const Head = () => <SEO title={title} description={description} />;

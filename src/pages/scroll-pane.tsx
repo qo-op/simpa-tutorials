@@ -4,16 +4,20 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import { SEO } from "components/SEO";
+
+const title: string = "How to Use Scrollable Panes with HTML and CSS";
+const description: string = "This tutorial shows how to use scrollable panes (ScrollPane) using HTML and CSS.";
 
 const ScrollPanePage = ({ path }: PageProps) => {
   return (
-    <Layout pageTitle={"How to Use ScrollPane with HTML and CSS"} path={path}>
+    <Layout title={title} path={path}>
       <h1
         className="BoxLayout"
         data-axis="page-axis"
         style={{ textAlign: "center" }}
       >
-        <span>How to Use ScrollPane</span>
+        <span>How to Use Scrollable Panes</span>
         <span>with HTML and CSS</span>
       </h1>
       <p>
@@ -44,8 +48,9 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we create a <code>div</code> container and set its
-        class to <code>"ScrollPane"</code>. Inside the <code>div</code> container,
-        we create a paragraph and set some sample text to demonstrate scrolling.
+        class to <code>"ScrollPane"</code>. Inside the <code>div</code>{" "}
+        container, we create a paragraph and set some sample text to demonstrate
+        scrolling.
       </p>
       <p>
         When you run this code, you will see a panel with a scrollable paragraph
@@ -68,7 +73,9 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>The <code>data-scrollbar-ovelay</code> attribute</h2>
+      <h2>
+        The <code>data-scrollbar-ovelay</code> attribute
+      </h2>
       <p>
         Some browsers can display the scrollbars on top of the content, rather
         than taking up additional space within the container. This overlay
@@ -92,8 +99,8 @@ const ScrollPanePage = ({ path }: PageProps) => {
       </div>
       <p>
         When you run this code, you will see a semi-transparent scrollbar when
-        you hover over the scrollpane if scrollbar overlay is natively
-        supported by your browser.
+        you hover over the scrollpane if scrollbar overlay is natively supported
+        by your browser.
       </p>
       <div className="CenterLayout">
         <div
@@ -116,3 +123,5 @@ const ScrollPanePage = ({ path }: PageProps) => {
 };
 
 export default ScrollPanePage;
+
+export const Head = () => <SEO title={title} description={description} />;
