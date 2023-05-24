@@ -30,7 +30,10 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
         });
       }
       */
-      break;
+      useEffect(() => {
+        dispatch(setResultPaneHtmlCode(code));
+      });
+    break;
     case "css":
       codeEditorCssCode = useAppSelector((state) => state.codeEditor.cssCode) || code;
       /*
@@ -41,7 +44,10 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
         });
       }
       */
-      break;
+      useEffect(() => {
+        dispatch(setResultPaneCssCode(code));
+      });
+    break;
     case "js":
       codeEditorJavaScriptCode = useAppSelector((state) => state.codeEditor.javaScriptCode) || code;
       /*
@@ -52,7 +58,10 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
         });
       }
       */
-      break;
+      useEffect(() => {
+        dispatch(setResultPaneJavaScriptCode(code));
+      });
+    break;
   }
   const click = (ev: React.MouseEvent) => {
     const target: HTMLElement = ev.target as HTMLElement;
