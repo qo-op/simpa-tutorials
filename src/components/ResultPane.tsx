@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useAppSelector } from "app/hooks";
-import DOMPurify from "dompurify";
 
 const ResultPane = () => {
+  const ref = useRef(null);
   let code = "";
   const htmlCode = useAppSelector((state) => state.resultPane.htmlCode);
   const cssCode = useAppSelector((state) => state.resultPane.cssCode);
@@ -33,11 +33,24 @@ const ResultPane = () => {
     console.log(code);
   }
   */
+  useEffect(() => {
+    if (ref.current === null) {
+      return;
+    }
+    const iFrame: HTMLIFrameElement = ref.current;
+    if (iFrame.contentWindow === null) {
+      return;
+    }
+    const iFrameDocument = iFrame.contentWindow.document;
+    iFrameDocument.open();
+    iFrameDocument.write(code);
+    iFrameDocument.close();
+});
   return (
     <iframe
       className="ResultPane"
-      srcDoc={code}
       style={{ width: "100%", height: "100%", border: "none" }}
+      ref={ref}
     />
   );
 };

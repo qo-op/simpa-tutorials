@@ -15,8 +15,9 @@ import {
 import CodeEditor from "components/CodeEditor";
 import ResultPane from "components/ResultPane";
 import "./ExamplePane.css";
+import Log from "./Log";
 
-const ExamplePane = ({
+const ExampleLogPane = ({
   path,
   mobileView,
   tutorialIndex,
@@ -117,6 +118,10 @@ const ExamplePane = ({
               <InfoOutlined style={{ color: "Blue" }} />
               <span>Info</span>
             </button>
+            <button value="Log">
+              <InfoOutlined style={{ color: "Blue" }} />
+              <span>Log</span>
+            </button>
           </div>
           <div className="CardLayout">
             <div
@@ -127,6 +132,13 @@ const ExamplePane = ({
               <ResultPane />
             </div>
             <div data-name="Info" style={{ visibility: "hidden" }}></div>
+            <div
+              className="BorderLayout"
+              data-name="Log"
+              style={{ visibility: "hidden" }}
+            >
+              <Log />
+            </div>
           </div>
         </div>
       </div>
@@ -134,4 +146,4 @@ const ExamplePane = ({
   );
 };
 
-export default ExamplePane;
+export default ExampleLogPane;

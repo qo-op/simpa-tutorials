@@ -39,13 +39,16 @@ const ExampleContentSplitPane = ({
         className="ScrollPane"
         data-scrollbar-overlay
         style={{
-          width: dividerLocation === -1 ? undefined : dividerLocation + "px",
+          width: dividerLocation === -1 ? undefined : dividerLocation + "%",
+          borderInlineEnd: ".5px solid Gray"
         }}
       >
         {children[0]}
       </div>
       <ContentSplitPaneDivider />
-      {children[1]}
+      <div className="BorderLayout" style={{ borderInlineStart: ".5px solid Gray"}}>
+        {children[1]}
+      </div>
     </div>
   );
 };

@@ -7,7 +7,8 @@ import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 
 const title: string = "How to Use Split Panes with HTML, CSS and JavaScript";
-const description: string = "This tutorial shows how to use split panes (SplitPane) using HTML, CSS and JavaScript.";
+const description: string =
+  "This tutorial shows how to use split panes (SplitPane) using HTML, CSS and JavaScript.";
 
 const SplitPanePage = ({ path }: PageProps) => {
   return (
@@ -42,15 +43,14 @@ const SplitPanePage = ({ path }: PageProps) => {
      data-orientation="horizontal-split"
      style="height: 100px;">
   <!-- left component -->
-  <div style="width: 100px; background-color: Cyan;">
+  <div style="width: 50%; background-color: Cyan;">
   </div>
-  <!-- split pane divider border -->
-  <div class="SplitPaneDividerBorder">
+  <div>
     <!-- split pane divider-->
     <div class="SplitPaneDivider"></div>
   </div>
   <!-- right component -->
-  <div style="background-color: LightGreen;">
+  <div style="width: 50%; background-color: LightGreen;">
   </div>
 </div>
 ...`}
@@ -75,12 +75,7 @@ const SplitPanePage = ({ path }: PageProps) => {
         className="SplitPane"
         style={{ height: "100px", paddingInline: "32px" }}
       >
-        <div
-          style={{
-            width: "100px",
-            backgroundColor: "Cyan",
-          }}
-        ></div>
+        <div style={{ width: "50%", backgroundColor: "Cyan" }}></div>
         <div className="SplitPaneDividerBorder">
           <div className="SplitPaneDivider"></div>
         </div>
