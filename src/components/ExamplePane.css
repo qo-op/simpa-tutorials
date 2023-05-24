@@ -1,8 +1,10 @@
-.ExamplePane .CodeTabbedPane.TabbedPane>.TabLayout {
+
+.ExamplePane .TabbedPane:first-child>.TabLayout {
     background-color: rgb(38, 38, 38);
     color: White;
 }
 
-.ExamplePane .CodeTabbedPane.TabbedPane>.TabLayout>button[tabindex="-1"] {
+.ExamplePane .TabbedPane:first-child>.TabLayout>button[tabindex="-1"] {
     background-color: rgb(30, 30, 30);
+    color: White;
 }

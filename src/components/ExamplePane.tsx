@@ -13,8 +13,8 @@ import {
   SystemUpdateAlt,
 } from "@mui/icons-material";
 import CodeEditor from "components/CodeEditor";
-import "./ExamplePane.css";
 import ResultPane from "components/ResultPane";
+import "./ExamplePane.css";
 
 const ExamplePane = ({
   path,
@@ -58,10 +58,11 @@ const ExamplePane = ({
         className="SplitPane"
         data-orientation="vertical-split"
         style={{
+          padding: ".5em",
           gridTemplateRows: "minmax(0, 1fr) auto minmax(0, 1fr)",
         }}
       >
-        <div className="CodeTabbedPane TabbedPane">
+        <div className="TabbedPane">
           <div className="TabLayout">
             <button value="html" tabIndex={-1}>
               <Code style={{ color: "Red" }} />
@@ -118,7 +119,7 @@ const ExamplePane = ({
             <div
               className="BorderLayout"
               data-name="Result"
-              style={{ visibility: "inherit", padding: ".5em" }}
+              style={{ visibility: "inherit" }}
             >
               <ResultPane />
             </div>
