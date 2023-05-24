@@ -15,58 +15,43 @@ import {
 } from "features/CodeEditorSlice";
 
 const CodeEditor = ({ code, language }: { code: string; language: string }) => {
-  const ref = useRef(null);
   const dispatch = useAppDispatch();
   let codeEditorHtmlCode;
   let codeEditorCssCode;
   let codeEditorJavaScriptCode;
   switch (language) {
     case "html":
-      codeEditorHtmlCode = useAppSelector((state) => state.codeEditor.htmlCode);
+      codeEditorHtmlCode = useAppSelector((state) => state.codeEditor.htmlCode) || code;
+      /*
       if (!codeEditorHtmlCode) {
         useEffect(() => {
-          if (ref.current) {
-            const textArea: HTMLTextAreaElement =
-              ref.current as HTMLTextAreaElement;
-            let text: string = code;
-            textArea.focus();
-            dispatch(setCodeEditorHtmlCode(text));
-            dispatch(setResultPaneHtmlCode(text));
-          }
+          dispatch(setCodeEditorHtmlCode(code));
+          dispatch(setResultPaneHtmlCode(code));
         });
       }
+      */
       break;
     case "css":
-      codeEditorCssCode = useAppSelector((state) => state.codeEditor.cssCode);
+      codeEditorCssCode = useAppSelector((state) => state.codeEditor.cssCode) || code;
+      /*
       if (!codeEditorCssCode) {
         useEffect(() => {
-          if (ref.current) {
-            const textArea: HTMLTextAreaElement =
-              ref.current as HTMLTextAreaElement;
-            let text: string = code;
-            textArea.focus();
-            dispatch(setCodeEditorCssCode(text));
-            dispatch(setResultPaneCssCode(text));
-          }
+          dispatch(setCodeEditorCssCode(code));
+          dispatch(setResultPaneCssCode(code));
         });
       }
+      */
       break;
     case "js":
-      codeEditorJavaScriptCode = useAppSelector(
-        (state) => state.codeEditor.javaScriptCode
-      );
+      codeEditorJavaScriptCode = useAppSelector((state) => state.codeEditor.javaScriptCode) || code;
+      /*
       if (!codeEditorJavaScriptCode) {
         useEffect(() => {
-          if (ref.current) {
-            const textArea: HTMLTextAreaElement =
-              ref.current as HTMLTextAreaElement;
-            let text: string = code;
-            textArea.focus();
-            dispatch(setCodeEditorJavaScriptCode(text));
-            dispatch(setResultPaneJavaScriptCode(text));
-          }
+          dispatch(setCodeEditorJavaScriptCode(code));
+          dispatch(setResultPaneJavaScriptCode(code));
         });
       }
+      */
       break;
   }
   const click = (ev: React.MouseEvent) => {
@@ -113,6 +98,7 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
         break;
     }
   };
+  /*
   return (
     <div
       className="CodeEditor ScrollPane"
@@ -132,7 +118,49 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
               ? codeEditorCssCode
               : codeEditorJavaScriptCode
           }
-          ref={ref}
+        ></textarea>
+        <div className="SyntaxHighlighter">
+          <SyntaxHighlighter
+            language={
+              language === "html"
+                ? "xml"
+                : language === "css"
+                ? "css"
+                : "javascript"
+            }
+            style={vs2015}
+            wrapLongLines
+          >
+            {language === "html"
+              ? codeEditorHtmlCode || ""
+              : language === "css"
+              ? codeEditorCssCode || ""
+              : codeEditorJavaScriptCode || ""}
+          </SyntaxHighlighter>
+        </div>
+      </div>
+    </div>
+  );
+  */
+  return (
+    <div
+      className="CodeEditor ScrollPane"
+      data-scrollbar-overlay
+      onClick={click}
+    >
+      <div className="LayeredPane">
+        <textarea
+          spellCheck="false"
+          onFocus={focus}
+          onChange={change}
+          disabled={process.env.NODE_ENV !== "development"}
+          value={
+            language === "html"
+              ? codeEditorHtmlCode
+              : language === "css"
+              ? codeEditorCssCode
+              : codeEditorJavaScriptCode
+          }
         ></textarea>
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter
