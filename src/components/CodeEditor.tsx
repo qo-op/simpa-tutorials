@@ -1,74 +1,74 @@
 import React, { useEffect, useRef, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-/*
-import Prism from "prismjs";
-import "prism-themes/themes/prism-vsc-dark-plus.css";
-*/
 import "./CodeEditor.css";
-import { useAppDispatch } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import {
-  setCssCode,
-  setHtmlCode,
-  setJavaScriptCode,
+  setHtmlCode as setResultPaneHtmlCode,
+  setCssCode as setResultPaneCssCode,
+  setJavaScriptCode as setResultPaneJavaScriptCode,
 } from "features/ResultPaneSlice";
+import {
+  setHtmlCode as setCodeEditorHtmlCode,
+  setCssCode as setCodeEditorCssCode,
+  setJavaScriptCode as setCodeEditorJavaScriptCode,
+} from "features/CodeEditorSlice";
 
 const CodeEditor = ({ code, language }: { code: string; language: string }) => {
-  const [innerHTML, setInnerHTML] = useState("");
   const ref = useRef(null);
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (ref.current) {
-      const textArea: HTMLTextAreaElement = ref.current as HTMLTextAreaElement;
-      const codeEditor = textArea.closest(".CodeEditor") as HTMLElement;
-      /*
-      const codeEditorHighlighter = codeEditor.querySelector(
-        ".CodeEditorHighlighter"
-      ) as HTMLElement;
-      */
-      let text: string = code;
-      if (text.endsWith("\n")) {
-        text = text + " ";
+  let codeEditorHtmlCode;
+  let codeEditorCssCode;
+  let codeEditorJavaScriptCode;
+  switch (language) {
+    case "html":
+      codeEditorHtmlCode = useAppSelector((state) => state.codeEditor.htmlCode);
+      if (!codeEditorHtmlCode) {
+        useEffect(() => {
+          if (ref.current) {
+            const textArea: HTMLTextAreaElement =
+              ref.current as HTMLTextAreaElement;
+            let text: string = code;
+            textArea.focus();
+            dispatch(setCodeEditorHtmlCode(text));
+            dispatch(setResultPaneHtmlCode(text));
+          }
+        });
       }
-      textArea.value = text;
-      textArea.selectionStart = 0;
-      textArea.selectionEnd = 0;
-      textArea.focus();
-      setInnerHTML(text);
-      switch (language) {
-        case "html":
-          /*
-          codeEditorHighlighter.innerHTML = Prism.highlight(
-            text,
-            Prism.languages.markup,
-            "markup"
-          );
-          */
-          dispatch(setHtmlCode(text));
-          break;
-        case "css":
-          /*
-          codeEditorHighlighter.innerHTML = Prism.highlight(
-            text,
-            Prism.languages.css,
-            "css"
-          );
-          */
-          dispatch(setCssCode(text));
-          break;
-        case "js":
-          /*
-          codeEditorHighlighter.innerHTML = Prism.highlight(
-            text,
-            Prism.languages.js,
-            "js"
-          );
-          */
-          dispatch(setJavaScriptCode(text));
-          break;
+      break;
+    case "css":
+      codeEditorCssCode = useAppSelector((state) => state.codeEditor.cssCode);
+      if (!codeEditorCssCode) {
+        useEffect(() => {
+          if (ref.current) {
+            const textArea: HTMLTextAreaElement =
+              ref.current as HTMLTextAreaElement;
+            let text: string = code;
+            textArea.focus();
+            dispatch(setCodeEditorCssCode(text));
+            dispatch(setResultPaneCssCode(text));
+          }
+        });
       }
-    }
-  });
+      break;
+    case "js":
+      codeEditorJavaScriptCode = useAppSelector(
+        (state) => state.codeEditor.javaScriptCode
+      );
+      if (!codeEditorJavaScriptCode) {
+        useEffect(() => {
+          if (ref.current) {
+            const textArea: HTMLTextAreaElement =
+              ref.current as HTMLTextAreaElement;
+            let text: string = code;
+            textArea.focus();
+            dispatch(setCodeEditorJavaScriptCode(text));
+            dispatch(setResultPaneJavaScriptCode(text));
+          }
+        });
+      }
+      break;
+  }
   const click = (ev: React.MouseEvent) => {
     const target: HTMLElement = ev.target as HTMLElement;
     if (target instanceof HTMLTextAreaElement) {
@@ -85,18 +85,12 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
   const focus = (ev: React.FocusEvent) => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
-    textArea.style.caretColor = "White";
+    textArea.style.caretColor = "Gray";
     // textArea.style.color = "Yellow";
   };
   const change = (ev: React.ChangeEvent) => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
-    const codeEditor = textArea.closest(".CodeEditor") as HTMLElement;
-    /*
-    const codeEditorHighlighter = codeEditor.querySelector(
-      ".CodeEditorHighlighter"
-    ) as HTMLElement;
-    */
     let text: string = textArea.value;
     if (text.endsWith("\n")) {
       text = text + " ";
@@ -104,41 +98,21 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
       textArea.selectionStart = textArea.selectionEnd - 1;
       textArea.selectionEnd = textArea.selectionEnd - 1;
     }
-    setInnerHTML(text);
     switch (language) {
       case "html":
-        /*
-        codeEditorHighlighter.innerHTML = Prism.highlight(
-          text,
-          Prism.languages.markup,
-          "markup"
-        );
-        */
-        dispatch(setHtmlCode(text));
+        dispatch(setCodeEditorHtmlCode(text));
+        dispatch(setResultPaneHtmlCode(text));
         break;
       case "css":
-        /*
-        codeEditorHighlighter.innerHTML = Prism.highlight(
-          text,
-          Prism.languages.css,
-          "css"
-        );
-        */
-        dispatch(setCssCode(text));
+        dispatch(setCodeEditorCssCode(text));
+        dispatch(setResultPaneCssCode(text));
         break;
       case "js":
-        /*
-        codeEditorHighlighter.innerHTML = Prism.highlight(
-          text,
-          Prism.languages.js,
-          "js"
-        );
-        */
-        dispatch(setJavaScriptCode(text));
+        dispatch(setCodeEditorJavaScriptCode(text));
+        dispatch(setResultPaneJavaScriptCode(text));
         break;
     }
   };
-  /*
   return (
     <div
       className="CodeEditor ScrollPane"
@@ -151,34 +125,32 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
           onFocus={focus}
           onChange={change}
           disabled={process.env.NODE_ENV !== "development"}
-          ref={ref}
-        ></textarea>
-        <pre>
-          <code className="language-markup">
-            <div className="CodeEditorHighlighter"></div>
-          </code>
-        </pre>
-      </div>
-    </div>
-  );
-  */
-  return (
-    <div
-      className="CodeEditor ScrollPane"
-      data-scrollbar-overlay
-      onClick={click}
-    >
-      <div className="LayeredPane">
-        <textarea
-          spellCheck="false"
-          onFocus={focus}
-          onChange={change}
-          disabled={process.env.NODE_ENV !== "development"}
+          value={
+            language === "html"
+              ? codeEditorHtmlCode
+              : language === "css"
+              ? codeEditorCssCode
+              : codeEditorJavaScriptCode
+          }
           ref={ref}
         ></textarea>
         <div className="SyntaxHighlighter">
-          <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-            {innerHTML}
+          <SyntaxHighlighter
+            language={
+              language === "html"
+                ? "xml"
+                : language === "css"
+                ? "css"
+                : "javascript"
+            }
+            style={vs2015}
+            wrapLongLines
+          >
+            {language === "html"
+              ? codeEditorHtmlCode || ""
+              : language === "css"
+              ? codeEditorCssCode || ""
+              : codeEditorJavaScriptCode || ""}
           </SyntaxHighlighter>
         </div>
       </div>

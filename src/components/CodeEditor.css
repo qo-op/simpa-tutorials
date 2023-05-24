@@ -19,7 +19,7 @@
 .CodeEditor pre {
     all: initial;
     visibility: inherit;
-    padding: 0 !important; 
+    padding: 0 !important;
     background-color: transparent !important; 
 }
 
@@ -40,4 +40,5 @@
 .CodeEditor .SyntaxHighlighter,
 .CodeEditor .SyntaxHighlighter * {
     pointer-events: none;
+    font-style: normal !important;
 }
