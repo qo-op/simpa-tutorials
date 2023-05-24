@@ -14,13 +14,13 @@
     outline: none;
     color: inherit;
     resize: none;
-    white-space: nowrap;
 }
 
 .CodeEditor pre {
     all: initial;
-    pointer-events: none;
     visibility: inherit;
+    padding: 0 !important; 
+    background-color: transparent !important; 
 }
 
 .CodeEditor textarea,
@@ -30,8 +30,14 @@
     line-height: 1.2;
     text-align: left;
     overflow: hidden;
+    overflow-wrap: anywhere;
 }
 
 .CodeEditor pre code .token.operator {
     background-color: transparent;
+}
+
+.CodeEditor .SyntaxHighlighter,
+.CodeEditor .SyntaxHighlighter * {
+    pointer-events: none;
 }
