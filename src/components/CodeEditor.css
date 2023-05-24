@@ -14,6 +14,7 @@
     outline: none;
     color: inherit;
     resize: none;
+    white-space: nowrap;
 }
 
 .CodeEditor pre {
@@ -29,7 +30,6 @@
     line-height: 1.2;
     text-align: left;
     overflow: hidden;
-    overflow-wrap: anywhere;
 }
 
 .CodeEditor pre code .token.operator {

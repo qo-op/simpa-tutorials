@@ -28,9 +28,11 @@ const ResultPane = () => {
       "</script>" +
       htmlCode.substring(index);
   }
+  /*
   if (process.env.NODE_ENV === "development") {
     console.log(code);
   }
+  */
   return (
     <iframe
       className="ResultPane"

@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Prism from "prismjs";
 import "prism-themes/themes/prism-vsc-dark-plus.css";
 import "./CodeEditor.css";
@@ -118,20 +120,35 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
       data-scrollbar-overlay
       onClick={click}
     >
-      <div className="LayeredPane">
-        <textarea
-          spellCheck="false"
-          disabled={process.env.NODE_ENV !== "development"}
-          onFocus={focus}
-          onChange={change}
-          ref={ref}
-        ></textarea>
-        <pre>
-          <code className="language-markup">
-            <div className="CodeEditorHighlighter"></div>
-          </code>
-        </pre>
-      </div>
+      {process.env.NODE_ENV === "development" ? (
+        <div className="LayeredPane">
+          <textarea
+            spellCheck="false"
+            onFocus={focus}
+            onChange={change}
+            ref={ref}
+          ></textarea>
+          <pre>
+            <code className="language-markup">
+              <div className="CodeEditorHighlighter"></div>
+            </code>
+          </pre>
+        </div>
+      ) : (
+        <div className="SyntaxHighlighter">
+          <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+            {`...
+<div class="BorderLayout"
+     style="height: 100px;">
+  <div class="PageStart">
+    <span>Hello, World!</span>
+  </div>
+  <button>Click me!</button>
+</div>
+...`}
+          </SyntaxHighlighter>
+        </div>
+      )}
     </div>
   );
 };

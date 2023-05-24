@@ -14,9 +14,7 @@ const ExampleContentSplitPane = ({
     (state) => state.contentSplitPane.dividerLocation
   );
   return loading ? (
-    <div className="ExampleContentSplitPane">
-      {children[1]}
-    </div>
+    <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>
   ) : mobileView ? (
     <div className="ExampleContentSplitPane CardLayout">
       <div
@@ -27,15 +25,14 @@ const ExampleContentSplitPane = ({
         {children[0]}
       </div>
       <div
+        className="BorderLayout"
         style={{ visibility: dividerLocation === -1 ? "inherit" : "hidden" }}
       >
         {children[1]}
       </div>
     </div>
   ) : dividerLocation === -2 ? (
-    <div className="ExampleContentSplitPane">
-      {children[1]}
-    </div>
+    <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>
   ) : (
     <div className="ExampleContentSplitPane SplitPane">
       <div
