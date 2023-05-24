@@ -103,7 +103,7 @@ const ExamplePane = ({
         <div className="SplitPaneDividerBorder">
           <div className="SplitPaneDivider" />
         </div>
-        <div className="TabbedPane">
+        <div className="TabbedPane" data-tab-placement="page-end">
           <div className="TabLayout">
             <button value="Result" tabIndex={-1}>
               <SystemUpdateAlt style={{ color: "Green" }} />
@@ -115,8 +115,12 @@ const ExamplePane = ({
             </button>
           </div>
           <div className="CardLayout">
-            <div className="BorderLayout" data-name="Result" style={{ visibility: "inherit", padding: ".5em" }}>
-              <ResultPane/>
+            <div
+              className="BorderLayout"
+              data-name="Result"
+              style={{ visibility: "inherit", padding: ".5em" }}
+            >
+              <ResultPane />
             </div>
             <div data-name="Info" style={{ visibility: "hidden" }}></div>
           </div>
