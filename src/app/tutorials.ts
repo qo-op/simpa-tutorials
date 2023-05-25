@@ -80,6 +80,11 @@ const tutorials = [
         folder: "JS Components",
     },
     {
+        text: "BorderDemo",
+        path: "/border-demo/",
+        folder: "Examples",
+    },
+    {
         text: "ButtonDemo",
         path: "/button-demo/",
         folder: "Examples",

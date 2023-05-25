@@ -18,11 +18,13 @@ const ExampleLayout = ({
   htmlCode,
   cssCode,
   jsCode,
+  info,
 }: {
   path: string;
   htmlCode: string;
   cssCode: string;
   jsCode: string;
+  info: string;
 }) => {
   const loading = useAppSelector((state) => state.loading.value);
   const dispatch = useAppDispatch();
@@ -57,6 +59,7 @@ const ExampleLayout = ({
               htmlCode={htmlCode}
               cssCode={cssCode}
               jsCode={jsCode}
+              info={info}
             />
           </ExampleContentSplitPane>
         </div>

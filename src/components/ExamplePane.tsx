@@ -23,6 +23,7 @@ const ExamplePane = ({
   htmlCode,
   cssCode,
   jsCode,
+  info,
 }: {
   path: string;
   mobileView: boolean;
@@ -30,6 +31,7 @@ const ExamplePane = ({
   htmlCode: string;
   cssCode: string;
   jsCode: string;
+  info: string;
 }) => {
   const nextPath = useAppSelector((state) => state.nextPath.value);
   let ready = useAppSelector((state) => state.ready.value);
@@ -124,9 +126,17 @@ const ExamplePane = ({
               data-name="Result"
               style={{ visibility: "inherit" }}
             >
-              <ResultPane htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode}/>
+              <ResultPane
+                htmlCode={htmlCode}
+                cssCode={cssCode}
+                jsCode={jsCode}
+              />
             </div>
-            <div data-name="Info" style={{ visibility: "hidden" }}></div>
+            <div data-name="Info" style={{ visibility: "hidden" }}>
+              {info.split('\n').map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </div>
           </div>
         </div>
       </div>

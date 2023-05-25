@@ -21,9 +21,12 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <script src="./ex.js">
   </script>
 </head>
-<body class="CenterLayout" id="ButtonDemo">
-  <div class="FlowLayout"
+<body class="CenterLayout ScrollPane"
+      data-scrollbar-overlay
+      id="ButtonDemo">
+  <div class="BoxLayout"
        style="gap: .5em">
+    <!-- Disable middle button -->
     <button class="BoxLayout"
             onclick="disable(event);"
             id="b1">
@@ -32,6 +35,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
         arrow_right
       </span>
     </button>
+    <!-- Middle button -->
     <button class="BoxLayout"
             data-axis="page-axis"
             id="b2">
@@ -41,6 +45,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
         star
       </span>
     </button>
+    <!-- Enable middle button -->
     <button class="BoxLayout"
             onclick="enable(event);"
             id="b3"
@@ -52,7 +57,8 @@ const ButtonDemoPage = ({ path }: PageProps) => {
     </button>
   </div>
 </body>
-</html>`}
+</html>
+`}
       cssCode={`/* ex.css */
 `}
       jsCode={`/* ex.js */
@@ -71,7 +77,11 @@ function enable(event) {
   b1.disabled = false;
   b2.disabled = false;
   b3.disabled = true;
-};`}
+};
+`}
+      info={`
+An HTML version of Oracle's ButtonDemo example, using simpa.css
+`}
     />
   );
 };
