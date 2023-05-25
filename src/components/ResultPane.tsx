@@ -63,10 +63,11 @@ const ResultPane = ({
     iFrameDocument.write(code);
     iFrameDocument.close();
   });
+  const visible = useAppSelector((state) => state.resultPane.visible);
   return (
     <iframe
       className="ResultPane"
-      style={{ width: "100%", height: "100%", border: "none" }}
+      style={{ width: "100%", height: "100%", border: "none", display: visible ? "block" : "none" }}
       ref={ref}
     />
   );
