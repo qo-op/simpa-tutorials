@@ -122,9 +122,9 @@ const ExamplePane = ({
             <div
               className="BorderLayout"
               data-name="Result"
-              style={{ visibility: "hidden" }}
+              style={{ visibility: "inherit" }}
             >
-              <ResultPane />
+              <ResultPane htmlCode={htmlCode} cssCode={cssCode} jsCode={jsCode}/>
             </div>
             <div data-name="Info" style={{ visibility: "hidden" }}></div>
           </div>

@@ -1,32 +1,49 @@
 import React, { useEffect, useRef } from "react";
 import { useAppSelector } from "app/hooks";
 
-const ResultPane = () => {
+const ResultPane = ({
+  htmlCode,
+  cssCode,
+  jsCode,
+}: {
+  htmlCode: string;
+  cssCode: string;
+  jsCode: string;
+}) => {
   const ref = useRef(null);
+  let resultPaneHtmlCode =
+    useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
+  const resultPaneCssCode =
+    useAppSelector((state) => state.resultPane.cssCode) || cssCode;
+  const resultPaneJavaScriptCode =
+    useAppSelector((state) => state.resultPane.javaScriptCode) || jsCode;
   let code = "";
-  const htmlCode = useAppSelector((state) => state.resultPane.htmlCode);
-  const cssCode = useAppSelector((state) => state.resultPane.cssCode);
-  const javaScriptCode = useAppSelector(
-    (state) => state.resultPane.javaScriptCode
+  resultPaneHtmlCode = resultPaneHtmlCode.replace(
+    /<link rel="stylesheet"\s*href="\.\/ex\.css">/,
+    ""
   );
-  let index = htmlCode.toLowerCase().indexOf("</head>");
+  resultPaneHtmlCode = resultPaneHtmlCode.replace(
+    /<script src="\.\/ex\.js">\s*<\/script>/,
+    ""
+  );
+  let index = resultPaneHtmlCode.toLowerCase().indexOf("</head>");
   if (index === -1) {
     code =
       "<head><style>" +
-      cssCode +
+      resultPaneCssCode +
       "</style><script>" +
-      javaScriptCode +
+      resultPaneJavaScriptCode +
       "</script></head>" +
-      htmlCode;
+      resultPaneHtmlCode;
   } else {
     code =
-      htmlCode.substring(0, index) +
+      resultPaneHtmlCode.substring(0, index) +
       "<style>" +
-      cssCode +
+      resultPaneCssCode +
       "</style><script>" +
-      javaScriptCode +
+      resultPaneJavaScriptCode +
       "</script>" +
-      htmlCode.substring(index);
+      resultPaneHtmlCode.substring(index);
   }
   /*
   if (process.env.NODE_ENV === "development") {
@@ -38,14 +55,14 @@ const ResultPane = () => {
       return;
     }
     const iFrame: HTMLIFrameElement = ref.current;
-    if (iFrame.contentWindow === null) {
+    if (iFrame.contentDocument === null) {
       return;
     }
-    const iFrameDocument = iFrame.contentWindow.document;
+    const iFrameDocument = iFrame.contentDocument;
     iFrameDocument.open();
     iFrameDocument.write(code);
     iFrameDocument.close();
-});
+  });
   return (
     <iframe
       className="ResultPane"
