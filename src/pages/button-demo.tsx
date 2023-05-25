@@ -10,7 +10,9 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
-      htmlCode={`<html>
+      htmlCode={`<!-- ex.html -->
+<!-- An HTML version of Oracle's ButtonDemo example -->
+<html>
 <head>
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
@@ -21,7 +23,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <script src="./ex.js">
   </script>
 </head>
-<body class="CenterLayout ScrollPane"
+<body class="FlowLayout ScrollPane"
       data-scrollbar-overlay
       id="ButtonDemo">
   <div class="BoxLayout"

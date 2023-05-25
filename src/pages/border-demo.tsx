@@ -10,7 +10,9 @@ const BorderDemoPage = ({ path }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
-      htmlCode={`<html>
+      htmlCode={`<!-- ex.html -->
+<!-- An HTML version of Oracle's BorderDemo example -->
+<html>
 <head>
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
@@ -21,7 +23,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
   <script src="./ex.js">
   </script>
 </head>
-<body class="CenterLayout ScrollPane"
+<body class="FlowLayout ScrollPane"
       data-scrollbar-overlay
       id="BorderDemo">
   <div class=TabbedPane>
@@ -69,11 +71,24 @@ const BorderDemoPage = ({ path }: PageProps) => {
                   display: grid;
                   grid-auto-rows: 1fr;
                   gap: .5em;">
-        <!-- matte border -->
+        <!-- matte border (10, icon) -->
+        <div style="border: 10px solid;
+                    border-image: url(/wavy.png) 20 round;"
+             class="wavy-border CenterLayout">
+          matte border (10, icon)
+        </div>
+        <!-- matte border (1, 1, 1, 5, Red) -->
         <div style="border: solid Red;
                     border-width: 1px 1px 1px 5px;"
              class="CenterLayout">
           matte border (1, 1, 1, 5, Red)
+        </div>
+        <!-- matte border (0, 0, 0, 10, icon) -->
+        <div style="border: solid;
+                    border-width: 0 0 0 10px;
+                    border-image: url(/wavy.png) 20 round;"
+             class="wavy-border CenterLayout">
+          matte border (0, 0, 0, 10, icon)
         </div>
       </div>
       <div data-name="Titled"
@@ -165,6 +180,14 @@ const BorderDemoPage = ({ path }: PageProps) => {
                       border-color: White Gray Gray White;"
                class="CenterLayout">
             lowered etched border
+          </div>
+        </div>
+        <!-- lowered etched border -->
+        <div style="border: 1px solid Red;"
+             class="BorderLayout">
+          <div style="border: 2px solid Gray;"
+               class="CenterLayout">
+            compound border (red outline)
           </div>
         </div>
       </div>

@@ -124,7 +124,7 @@ const ExamplePane = ({
             <div
               className="BorderLayout"
               data-name="Result"
-              style={{ visibility: "inherit", paddingBlock: "24px" }}
+              style={{ visibility: "inherit", paddingBlock: "40px" }}
             >
               <ResultPane
                 mobileView={mobileView}
