@@ -69,12 +69,11 @@ const BorderDemoPage = ({ path }: PageProps) => {
       <div data-name="Matte"
            style="visibility: hidden;
                   display: grid;
-                  grid-auto-rows: 1fr auto 1fr;
+                  grid-auto-rows: 1fr;
                   gap: .5em;">
         <!-- matte border (10, icon) -->
         <div style="border: 10px solid;
-                    border-image: url(/wavy.png) 20 round;
-                    padding: 15px;"
+                    border-image: url(/wavy.png) 20 round;"
              class="wavy-border CenterLayout">
           matte border (10, icon)
         </div>
@@ -87,8 +86,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
         <!-- matte border (0, 0, 0, 10, icon) -->
         <div style="border: solid;
                     border-width: 0 0 0 10px;
-                    border-image: url(/wavy.png) 20 round;
-                    padding: 15px;"
+                    border-image: url(/wavy.png) 20 round;"
              class="wavy-border CenterLayout">
           matte border (0, 0, 0, 10, icon)
         </div>
