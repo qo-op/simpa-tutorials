@@ -127,13 +127,14 @@ const ExamplePane = ({
               style={{ visibility: "inherit", paddingBlock: "24px" }}
             >
               <ResultPane
+                mobileView={mobileView}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
                 jsCode={jsCode}
               />
             </div>
             <div data-name="Info" style={{ visibility: "hidden" }}>
-              {info.split('\n').map((line, index) => (
+              {info.split("\n").map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
             </div>

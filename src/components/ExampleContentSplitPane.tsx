@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "./ContentSplitPaneDivider";
-import { setVisible as setResultPaneVisible } from "features/ResultPaneSlice";
 
 const ExampleContentSplitPane = ({
   children,
@@ -14,15 +13,12 @@ const ExampleContentSplitPane = ({
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
-  const dispatch = useAppDispatch();
   if (loading) {
-    dispatch(setResultPaneVisible(true));
     return (
       <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>
     );
   } else if (mobileView) {
     if (dividerLocation === -1) {
-      dispatch(setResultPaneVisible(true));
       return (
         <div className="ExampleContentSplitPane CardLayout">
           <div
@@ -54,12 +50,10 @@ const ExampleContentSplitPane = ({
       );
     }
   } else if (dividerLocation === -2) {
-    dispatch(setResultPaneVisible(true));
     return (
       <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>
     );
   } else {
-    dispatch(setResultPaneVisible(true));
     return (
       <div className="ExampleContentSplitPane SplitPane">
         <div
