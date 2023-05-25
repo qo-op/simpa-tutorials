@@ -87,8 +87,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
                       padding-left: .5em"
                class="FlowLayout"
                data-alignment="leading">
-            <span style="padding: 0 .5em;
-                         background-color: WhiteSmoke;">
+            <span style="background-color: WhiteSmoke;
+                         padding-inline: .5em;">
               title
             </span>
           </div>
@@ -107,8 +107,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
                       padding-left: .5em"
                class="FlowLayout"
                data-alignment="center">
-            <span style="padding: 0 .5em;
-                         background-color: WhiteSmoke;">
+            <span style="background-color: WhiteSmoke;
+                         padding-inline: .5em;">
               title
             </span>
           </div>
@@ -127,8 +127,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
                       padding-right: .5em"
                class="FlowLayout"
                data-alignment="trailing">
-            <span style="padding: 0 .5em;
-                         background-color: WhiteSmoke;">
+            <span style="background-color: WhiteSmoke;
+                         padding-inline: .5em;">
               title
             </span>
           </div>
@@ -184,22 +184,6 @@ const BorderDemoPage = ({ path }: PageProps) => {
 }
 `}
       jsCode={`/* ex.js */
-function disable(event) {
-  const b1 = document.getElementById("b1");
-  const b2 = document.getElementById("b2");
-  const b3 = document.getElementById("b3");
-  b1.disabled = true;
-  b2.disabled = true;
-  b3.disabled = false;
-};
-function enable(event) {
-  const b1 = document.getElementById("b1");
-  const b2 = document.getElementById("b2");
-  const b3 = document.getElementById("b3");
-  b1.disabled = false;
-  b2.disabled = false;
-  b3.disabled = true;
-};
 `}
       info={`
 An HTML version of Oracle's BorderDemo example, using simpa.css
