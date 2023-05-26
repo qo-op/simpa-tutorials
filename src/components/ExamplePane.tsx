@@ -67,15 +67,15 @@ const ExamplePane = ({
           <div className="TabLayout">
             <button value="html" tabIndex={-1}>
               <Code style={{ color: "Red" }} />
-              <span>ex.html</span>
+              <span>html</span>
             </button>
             <button value="css">
               <Tag style={{ color: "Blue" }} />
-              <span>ex.css</span>
+              <span>css</span>
             </button>
             <button value="js">
               <Javascript style={{ color: "Yellow" }} />
-              <span>ex.js</span>
+              <span>js</span>
             </button>
           </div>
           <div className="CardLayout">
@@ -113,18 +113,21 @@ const ExamplePane = ({
           <div className="TabLayout">
             <button value="Result" tabIndex={-1}>
               <SystemUpdateAlt style={{ color: "Green" }} />
-              <span>Result</span>
+              <span>result</span>
             </button>
             <button value="Info">
               <InfoOutlined style={{ color: "Blue" }} />
-              <span>Info</span>
+              <span>info</span>
             </button>
           </div>
           <div className="CardLayout">
             <div
               className="BorderLayout"
               data-name="Result"
-              style={{ visibility: "inherit", paddingBlockStart: "40px" }}
+              style={{
+                visibility: "inherit",
+                paddingBlockStart: mobileView ? "40px" : "16px",
+              }}
             >
               <ResultPane
                 mobileView={mobileView}

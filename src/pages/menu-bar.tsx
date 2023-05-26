@@ -411,41 +411,6 @@ const MenuBarPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p></p>
-      <div style={{ backgroundColor: "ivory" }}>
-        <hr />
-        <div style={{ padding: "0 1em" }}>
-          <h2>Note about Drop-down Menus on Small Screen Devices</h2>
-          <p>
-            Using drop-down menus on small screen devices, such as phones, is
-            not recommended due to limited screen space, making it harder for
-            users to view and interact with them. Navigation complexity and
-            nested drop-down menus further complicate usability on small
-            screens, causing frustration among users.
-          </p>
-          <p>
-            Instead of using traditional drop-down menus on small screen
-            devices, it is recommended to consider alternative navigation
-            patterns that are more suitable for mobile devices. Some options
-            include:
-          </p>
-          <ul>
-            <li>
-              Hamburger menu: Use an icon (typically three horizontal lines)
-              that expands to display a menu when tapped.
-            </li>
-            <li>
-              Accordion menus: Present a collapsible menu structure that expands
-              and collapses sections as needed.
-            </li>
-          </ul>
-          <p>
-            These alternatives offer better usability, take advantage of the
-            limited screen space, and provide a more mobile-friendly navigation
-            experience for users on small screens.
-          </p>
-        </div>
-        <hr />
-      </div>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>
   );

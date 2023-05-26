@@ -98,15 +98,6 @@ const BorderDemoPage = ({ path }: PageProps) => {
                   gap: .5em;">
         <!-- titled line border (left just.) -->
         <div class="LayeredPane">
-          <div style="z-index: 1;
-                      padding-left: .5em"
-               class="FlowLayout"
-               data-alignment="leading">
-            <span style="background-color: WhiteSmoke;
-                         padding-inline: .5em;">
-              title
-            </span>
-          </div>
           <div style="padding-top: .5em;"
                class="BorderLayout">
             <div style="border: 1px solid Gray;
@@ -115,18 +106,17 @@ const BorderDemoPage = ({ path }: PageProps) => {
                  titled line border (left just.)
             </div>
           </div>
-        </div>
-        <!-- titled line border (centered) -->
-        <div class="LayeredPane">
-          <div style="z-index: 1;
-                      padding-left: .5em"
+          <div style="padding-left: .5em"
                class="FlowLayout"
-               data-alignment="center">
+               data-alignment="leading">
             <span style="background-color: WhiteSmoke;
                          padding-inline: .5em;">
               title
             </span>
           </div>
+        </div>
+        <!-- titled line border (centered) -->
+        <div class="LayeredPane">
           <div style="padding-top: .5em;"
                class="BorderLayout">
             <div style="border: 1px solid Gray;
@@ -135,18 +125,17 @@ const BorderDemoPage = ({ path }: PageProps) => {
                  titled line border (centered)
             </div>
           </div>
-        </div>
-        <!-- titled line border (right just.) -->
-        <div class="LayeredPane">
-          <div style="z-index: 1;
-                      padding-right: .5em"
+          <div style="padding-left: .5em"
                class="FlowLayout"
-               data-alignment="trailing">
+               data-alignment="center">
             <span style="background-color: WhiteSmoke;
                          padding-inline: .5em;">
               title
             </span>
           </div>
+        </div>
+        <!-- titled line border (right just.) -->
+        <div class="LayeredPane">
           <div style="padding-top: .5em;"
                class="BorderLayout">
             <div style="border: 1px solid Gray;
@@ -154,6 +143,14 @@ const BorderDemoPage = ({ path }: PageProps) => {
                  class="CenterLayout">
                  titled line border (right just.)
             </div>
+          </div>
+          <div style="padding-right: .5em"
+               class="FlowLayout"
+               data-alignment="trailing">
+            <span style="background-color: WhiteSmoke;
+                         padding-inline: .5em;">
+              title
+            </span>
           </div>
         </div>
       </div>
