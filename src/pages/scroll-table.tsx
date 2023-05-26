@@ -7,7 +7,8 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
 
 const title: string = "How to Use Scrollable Tables with HTML and CSS";
-const description: string = "This tutorial shows how to use scrollable tables (ScrollTable) using HTML and CSS.";
+const description: string =
+  "This tutorial shows how to use scrollable tables (ScrollTable) using HTML and CSS.";
 
 const ScrollTablePage = ({ path }: PageProps) => {
   return (
@@ -42,15 +43,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
           style={{ maxWidth: "250px", height: "200px" }}
         >
           <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Occupation</th>
-                <th>Gender</th>
-                <th>Country</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td>John Doe</td>
@@ -123,6 +115,15 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td>Mexico</td>
               </tr>
             </tbody>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>
           </table>
         </div>
       </div>
@@ -141,15 +142,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
 <div class="ScrollTable"
      style="max-width: 500px;">
   <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Occupation</th>
-        <th>Gender</th>
-        <th>Country</th>
-      </tr>
-    </thead>
+    <!-- table data -->
     <tbody>
       <tr>
         <td>John Doe</td>
@@ -173,6 +166,16 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <td>Australia</td>
       </tr>
     </tbody>
+    <!-- column headers -->
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+        <th>Gender</th>
+        <th>Country</th>
+      </tr>
+    </thead>
   </table>
 </div>
 ...`}
@@ -181,8 +184,17 @@ const ScrollTablePage = ({ path }: PageProps) => {
       <p>
         In this example, we create a <code>div</code> container and set its
         class to <code>"ScrollTable"</code>. Inside the <code>div</code>{" "}
-        container, we create a table with three columns: "Name", "Age" and
-        "Occupation"
+        container, we create a table with five columns: "Name", "Age",
+        "Occupation", "Gender" and "Country".
+      </p>
+      <p>
+        Please note that in the <code>table</code> element, we have two child
+        elements: <code>tbody</code> and <code>thead</code>. The{" "}
+        <code>tbody</code> element contains the table data, while the{" "}
+        <code>thead</code> element holds the column headers. To ensure proper
+        functionality of a scrollable table, it is important to arrange the
+        elements in the following order: <code>tbody</code> should be placed
+        first, followed by <code>thead</code>.
       </p>
       <p>
         When you run this code, you will see a table displayed with the
@@ -194,15 +206,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
       <div className="CenterLayout">
         <div className="ScrollTable" style={{ maxWidth: "500px" }}>
           <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Occupation</th>
-                <th>Gender</th>
-                <th>Country</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td>John Doe</td>
@@ -226,6 +229,15 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td>Australia</td>
               </tr>
             </tbody>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>
           </table>
         </div>
       </div>
@@ -255,15 +267,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
      data-row-header="true"
      style="max-width: 250px;">
   <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Occupation</th>
-        <th>Gender</th>
-        <th>Country</th>
-      </tr>
-    </thead>
+    <!-- table data -->
     <tbody>
       <tr>
         <td>John Doe</td>
@@ -287,6 +291,16 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <td>Australia</td>
       </tr>
     </tbody>
+    <!-- column headers -->
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Occupation</th>
+        <th>Gender</th>
+        <th>Country</th>
+      </tr>
+    </thead>
   </table>
 </div>
 ...`}
@@ -309,15 +323,6 @@ const ScrollTablePage = ({ path }: PageProps) => {
           style={{ maxWidth: "250px" }}
         >
           <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Occupation</th>
-                <th>Gender</th>
-                <th>Country</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
                 <td>John Doe</td>
@@ -341,6 +346,15 @@ const ScrollTablePage = ({ path }: PageProps) => {
                 <td>Australia</td>
               </tr>
             </tbody>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+                <th>Gender</th>
+                <th>Country</th>
+              </tr>
+            </thead>
           </table>
         </div>
       </div>
