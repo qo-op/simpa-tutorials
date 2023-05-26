@@ -192,7 +192,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
         elements: <code>tbody</code> and <code>thead</code>. The{" "}
         <code>tbody</code> element contains the table data, while the{" "}
         <code>thead</code> element holds the column headers. To ensure proper
-        functionality of a scrollable table, it is important to arrange the
+        functionality of the <code>ScrollTable</code>, it is important to arrange the
         elements in the following order: <code>tbody</code> should be placed
         first, followed by <code>thead</code>.
       </p>

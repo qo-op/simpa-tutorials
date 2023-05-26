@@ -65,7 +65,7 @@ const tutorials = [
         folder: "JS Components",
     },
     {
-        text: "How to Use MenuBars",
+        text: "How to Use Menu Bars",
         path: "/menu-bar/",
         folder: "JS Components",
     },
@@ -80,12 +80,12 @@ const tutorials = [
         folder: "JS Components",
     },
     {
-        text: "BorderDemo",
+        text: "Border Demo",
         path: "/border-demo/",
         folder: "Examples",
     },
     {
-        text: "ButtonDemo",
+        text: "Button Demo",
         path: "/button-demo/",
         folder: "Examples",
     },

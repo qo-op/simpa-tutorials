@@ -66,15 +66,15 @@ const ExampleLogPane = ({
           <div className="TabLayout">
             <button value="html" tabIndex={-1}>
               <Code style={{ color: "Red" }} />
-              <span>ex.html</span>
+              <span>html</span>
             </button>
             <button value="css">
               <Tag style={{ color: "Blue" }} />
-              <span>ex.css</span>
+              <span>css</span>
             </button>
             <button value="js">
               <Javascript style={{ color: "Yellow" }} />
-              <span>ex.js</span>
+              <span>js</span>
             </button>
           </div>
           <div className="CardLayout">
@@ -129,7 +129,12 @@ const ExampleLogPane = ({
               data-name="Result"
               style={{ visibility: "hidden" }}
             >
-              <ResultPane />
+              <ResultPane
+                mobileView={mobileView}
+                htmlCode={htmlCode}
+                cssCode={cssCode}
+                jsCode={jsCode}
+              />
             </div>
             <div data-name="Info" style={{ visibility: "hidden" }}></div>
             <div

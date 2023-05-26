@@ -10,7 +10,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
-      htmlCode={`<!-- ex.html -->
+      htmlCode={`<!-- example.html -->
 <!-- An HTML version of Oracle's BorderDemo example -->
 <html>
 <head>
@@ -19,8 +19,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
   <script src="https://qo-op.github.io/simpa/simpa.js">
   </script>
   <link rel="stylesheet"
-        href="./ex.css">
-  <script src="./ex.js">
+        href="./example.css">
+  <script src="./example.js">
   </script>
 </head>
 <body class="FlowLayout ScrollPane"
@@ -193,7 +193,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
 </body>
 </html>
 `}
-      cssCode={`/* ex.css */
+      cssCode={`/* example.css */
 #BorderDemo .TabbedPane {
   border: 1px solid Gray
 }
@@ -203,7 +203,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
   padding: .5em;
 }
 `}
-      jsCode={`/* ex.js */
+      jsCode={`/* example.js */
 `}
       info={`
 An HTML version of Oracle's BorderDemo example, using simpa.css

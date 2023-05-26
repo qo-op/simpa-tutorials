@@ -10,7 +10,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
-      htmlCode={`<!-- ex.html -->
+      htmlCode={`<!-- example.html -->
 <!-- An HTML version of Oracle's ButtonDemo example -->
 <html>
 <head>
@@ -19,8 +19,8 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
-        href="./ex.css">
-  <script src="./ex.js">
+        href="./example.css">
+  <script src="./example.js">
   </script>
 </head>
 <body class="FlowLayout ScrollPane"
@@ -61,9 +61,9 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 </body>
 </html>
 `}
-      cssCode={`/* ex.css */
+      cssCode={`/* example.css */
 `}
-      jsCode={`/* ex.js */
+      jsCode={`/* example.js */
 function disable(event) {
   const b1 = document.getElementById("b1");
   const b2 = document.getElementById("b2");
