@@ -7,16 +7,6 @@ import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButto
 import tutorials from "app/tutorials";
 import "./TutorialPane.css";
 
-const TutorialPaneStyle: React.CSSProperties = {
-  padding: ".5em",
-  paddingBlockEnd: "80px",
-  textAlign: "justify",
-};
-
-const TutorialContentPaneStyle: React.CSSProperties = {
-  maxWidth: "768px",
-};
-
 const TutorialPane = ({
   path,
   children,
@@ -49,16 +39,10 @@ const TutorialPane = ({
       className="TutorialPane BoxLayout"
       data-axis="page-axis"
       style={{
-        ...TutorialPaneStyle,
         visibility: mobileView && !ready ? "hidden" : "inherit",
       }}
     >
-      <div
-        className="TutorialContentPaneStyle"
-        style={TutorialContentPaneStyle}
-      >
-        {children}
-      </div>
+      <div className="TutorialContentPane">{children}</div>
     </div>
   );
 };

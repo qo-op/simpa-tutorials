@@ -114,7 +114,7 @@ const TabbedPanePage = ({ path }: PageProps) => {
             data-name="Card 1"
             style={{ visibility: "hidden" }}
           >
-            <span>Panel #1</span>-
+            <span>Panel #1</span>
           </div>
           <div
             className="CenterLayout"

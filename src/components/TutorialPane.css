@@ -1,3 +1,13 @@
+.TutorialPane {
+    padding: .5em;
+    padding-block-end: 80px;
+    text-align: justify;
+}
+
+.TutorialContentPane {
+    max-width: 768px;
+}
+
 .TutorialPane h1 {
     font-size: 1.5rem;
     margin: 0;
@@ -8,12 +18,12 @@
     margin: 0;
 }
 
-.TutorialPane .SyntaxHighlighter pre code {
+.TutorialPane pre {
     font-size: 16px;
     line-height: 1.2;
-    text-align: left;
     overflow: hidden;
     overflow-wrap: anywhere;
+    text-align: left;
 }
 
 .TutorialPane thead {

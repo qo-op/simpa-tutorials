@@ -34,7 +34,10 @@ const ExampleLayout = ({
   useEffect(() => {
     dispatch(setNextPath(path));
   });
-  const mobileView = useMediaQuery({ maxWidth: 768 });
+  const mobileView = !useMediaQuery({
+    minWidth: 480,
+    minHeight: 480,
+  });
   const landscapeView = useMediaQuery({ orientation: "landscape" });
   const tutorialIndex = tutorialIndexes[path];
   return (
