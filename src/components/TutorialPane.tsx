@@ -48,14 +48,10 @@ const TutorialPane = ({
     <div
       className="TutorialPane BoxLayout"
       data-axis="page-axis"
-      style={
-        mobileView && !ready
-          ? {
-              ...TutorialPaneStyle,
-              visibility: "hidden",
-            }
-          : TutorialPaneStyle
-      }
+      style={{
+        ...TutorialPaneStyle,
+        visibility: mobileView && !ready ? "hidden" : "inherit",
+      }}
     >
       <div
         className="TutorialContentPaneStyle"

@@ -20,7 +20,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
     for (let i = 0; i < cards.length; i++) {
       const card: HTMLElement = container.children[i] as HTMLElement;
       if (card.dataset.name === name) {
-        card.style.visibility = "";
+        card.style.visibility = "inherit";
       } else {
         card.style.visibility = "hidden";
       }
@@ -56,7 +56,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
   <button style="visibility: hidden;">
     Button 1
   </button>
-  <button>
+  <button style="visibility: inherit;">
     Button 2
   </button>
   <button style="visibility: hidden;">
@@ -88,7 +88,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         }}
       >
         <button style={{ visibility: "hidden" }}>Button 1</button>
-        <button>Button 2</button>
+        <button style={{ visibility: "inherit" }}>Button 2</button>
         <button style={{ visibility: "hidden" }}>Button 3</button>
       </div>
       <p></p>
@@ -112,7 +112,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       for (let i = 0; i < cards.length; i++) {
         const card = container.children[i];
         if (card.dataset.name === name) {
-          card.style.visibility = "";
+          card.style.visibility = "inherit";
         } else {
           card.style.visibility = "hidden";
         }
@@ -138,7 +138,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
     <div class="CardLayout"
          id="container"
          style="padding: 10px">
-      <button data-name="Card 1">
+      <button data-name="Card 1"
+              style="visibility: inherit;">
         <u>First</u> Button
       </button>
       <button data-name="Card 2"
@@ -203,7 +204,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
             id="container"
             style={{ padding: "10px" }}
           >
-            <button data-name="Card 1">
+            <button data-name="Card 1" style={{ visibility: "inherit" }}>
               <u>First</u> Button
             </button>
             <button data-name="Card 2" style={{ visibility: "hidden" }}>

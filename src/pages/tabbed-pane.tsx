@@ -70,7 +70,8 @@ const TabbedPanePage = ({ path }: PageProps) => {
     <!-- card component selected -->
     <!-- not hidden -->
     <div class="CenterLayout"
-         data-name="Card 2">
+         data-name="Card 2"
+         style="visibility: inherit;">
       <span>Panel #2</span>
     </div>
   </div>
@@ -113,9 +114,13 @@ const TabbedPanePage = ({ path }: PageProps) => {
             data-name="Card 1"
             style={{ visibility: "hidden" }}
           >
-            <span>Panel #1</span>
+            <span>Panel #1</span>-
           </div>
-          <div className="CenterLayout" data-name="Card 2">
+          <div
+            className="CenterLayout"
+            data-name="Card 2"
+            style={{ visibility: "inherit" }}
+          >
             <span>Panel #2</span>
           </div>
         </div>

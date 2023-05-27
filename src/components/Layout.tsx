@@ -34,7 +34,7 @@ const Layout = ({
     <>
       <div
         className="Layout LayeredPane"
-        style={loading ? { visibility: "hidden" } : {}}
+        style={{ visibility: loading ? "hidden" : "inherit" }}
       >
         <div className="LayoutContentPane BorderLayout">
           <div className="PageStart">

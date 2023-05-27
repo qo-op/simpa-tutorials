@@ -52,13 +52,9 @@ const ExampleLogPane = ({
   return (
     <div
       className="ExamplePane BorderLayout"
-      style={
-        mobileView && !ready
-          ? {
-              visibility: "hidden",
-            }
-          : {}
-      }
+      style={{
+        visibility: mobileView && !ready ? "hidden" : "inherit",
+      }}
     >
       <div
         className="SplitPane"
@@ -83,7 +79,11 @@ const ExampleLogPane = ({
             </button>
           </div>
           <div className="CardLayout">
-            <div className="BorderLayout" data-name="html">
+            <div
+              className="BorderLayout"
+              data-name="html"
+              style={{ visibility: "inherit" }}
+            >
               <CodeEditor code={htmlCode} language="html" />
             </div>
             <div
