@@ -1,16 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useAppSelector } from "app/hooks";
 
 const ResultPane = ({
+  style,
   htmlCode,
   cssCode,
   jsCode,
+  iframeRef,
 }: {
+  style?: React.CSSProperties;
   htmlCode: string;
   cssCode: string;
   jsCode: string;
+  iframeRef: React.MutableRefObject<null>;
 }) => {
-  const ref = useRef(null);
   let resultPaneHtmlCode =
     useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
   const resultPaneCssCode =
@@ -51,10 +54,10 @@ const ResultPane = ({
   }
   */
   useEffect(() => {
-    if (ref.current === null) {
+    if (iframeRef.current === null) {
       return;
     }
-    const iFrame: HTMLIFrameElement = ref.current;
+    const iFrame: HTMLIFrameElement = iframeRef.current as HTMLIFrameElement;
     if (iFrame.contentDocument === null) {
       return;
     }
@@ -63,17 +66,16 @@ const ResultPane = ({
     iFrameDocument.write(code);
     iFrameDocument.close();
   });
-  const visible = useAppSelector((state) => state.resultPane.visible);
   return (
     <iframe
       className="ResultPane"
       style={{
+        ...style,
         width: "100%",
         height: "100%",
         border: "none",
-        display: visible ? "block" : "none",
       }}
-      ref={ref}
+      ref={iframeRef}
     />
   );
 };

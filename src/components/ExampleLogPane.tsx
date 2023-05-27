@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { setReady } from "features/ReadySlice";
 import { expand } from "features/NavigationTreeSlice";
@@ -48,6 +48,7 @@ const ExampleLogPane = ({
       }
     }
   });
+  const iframeRef = useRef(null);
   return (
     <div
       className="ExamplePane BorderLayout"
@@ -133,6 +134,7 @@ const ExampleLogPane = ({
                 htmlCode={htmlCode}
                 cssCode={cssCode}
                 jsCode={jsCode}
+                iframeRef={iframeRef}
               />
             </div>
             <div data-name="Info" style={{ visibility: "hidden" }}></div>

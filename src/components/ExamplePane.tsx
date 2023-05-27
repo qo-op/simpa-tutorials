@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { setReady } from "features/ReadySlice";
 import { expand } from "features/NavigationTreeSlice";
@@ -15,7 +15,6 @@ import {
 import CodeEditor from "components/CodeEditor";
 import ResultPane from "components/ResultPane";
 import "./ExamplePane.css";
-import { setVisible } from "features/ResultPaneSlice";
 
 const ExamplePane = ({
   path,
@@ -52,11 +51,17 @@ const ExamplePane = ({
       }
     }
   });
-  const focusGained = (ev: React.FocusEvent) => {
-    const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
-    dispatch(setVisible(cardComponent.dataset.name === "Result"));
-  };
   if (mobileView && landscapeView) {
+    const iframeRef = useRef(null);
+    const focusGained = (ev: React.FocusEvent) => {
+      if (iframeRef.current === null) {
+        return;
+      }
+      const iFrame: HTMLIFrameElement = iframeRef.current as HTMLIFrameElement;
+      const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
+      iFrame.style.display =
+        cardComponent.dataset.name === "Result" ? "block" : "none";
+    };
     return (
       <div
         className="ExamplePane BorderLayout"
@@ -125,9 +130,11 @@ const ExamplePane = ({
               onFocus={focusGained}
             >
               <ResultPane
+                style={{ display: "none" }}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
                 jsCode={jsCode}
+                iframeRef={iframeRef}
               />
             </div>
             <div
@@ -144,6 +151,16 @@ const ExamplePane = ({
       </div>
     );
   } else {
+    const iframeRef = useRef(null);
+    const focusGained = (ev: React.FocusEvent) => {
+      if (iframeRef.current === null) {
+        return;
+      }
+      const iFrame: HTMLIFrameElement = iframeRef.current;
+      const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
+      iFrame.style.display =
+        cardComponent.dataset.name === "Result" ? "block" : "none";
+    };
     return (
       <div
         className="ExamplePane BorderLayout"
@@ -223,9 +240,11 @@ const ExamplePane = ({
                 onFocus={focusGained}
               >
                 <ResultPane
+                  style={{ display: "block" }}
                   htmlCode={htmlCode}
                   cssCode={cssCode}
                   jsCode={jsCode}
+                  iframeRef={iframeRef}
                 />
               </div>
               <div
