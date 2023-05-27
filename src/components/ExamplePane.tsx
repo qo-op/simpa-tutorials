@@ -122,7 +122,7 @@ const ExamplePane = ({
               data-name="Result"
               style={{
                 visibility: "hidden",
-                paddingBlockStart: mobileView ? "40px" : "16px",
+                paddingBlockStart: mobileView && !landscapeView ? "34px" : "10px",
               }}
               onFocus={focusGained}
             >
@@ -233,7 +233,7 @@ const ExamplePane = ({
                 data-name="Result"
                 style={{
                   visibility: "inherit",
-                  paddingBlockStart: mobileView ? "40px" : "16px",
+                  paddingBlockStart: mobileView && !landscapeView ? "34px" : "10px",
                 }}
                 onFocus={focusGained}
               >
