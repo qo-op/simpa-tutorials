@@ -19,6 +19,7 @@ import "./ExamplePane.css";
 const ExamplePane = ({
   path,
   mobileView,
+  landscapeView,
   tutorialIndex,
   htmlCode,
   cssCode,
@@ -27,6 +28,7 @@ const ExamplePane = ({
 }: {
   path: string;
   mobileView: boolean;
+  landscapeView: boolean;
   tutorialIndex: number;
   htmlCode: string;
   cssCode: string;
@@ -49,21 +51,15 @@ const ExamplePane = ({
       }
     }
   });
-  return (
-    <div
-      className="ExamplePane BorderLayout"
-      style={{
-        visibility: mobileView && !ready ? "hidden" : "inherit",
-      }}
-    >
+  if (mobileView && landscapeView) {
+    return (
       <div
-        className="SplitPane"
-        data-orientation="vertical-split"
+        className="ExamplePane BorderLayout"
         style={{
-          padding: ".5em",
+          visibility: mobileView && !ready ? "hidden" : "inherit",
         }}
       >
-        <div className="TabbedPane" style={{ height: "50%" }}>
+        <div className="TabbedPane" style={{ padding: ".5em" }}>
           <div className="TabLayout">
             <button value="html" tabIndex={-1}>
               <Code style={{ color: "Red" }} />
@@ -76,6 +72,14 @@ const ExamplePane = ({
             <button value="js">
               <Javascript style={{ color: "Yellow" }} />
               <span>js</span>
+            </button>
+            <button value="Result">
+              <SystemUpdateAlt style={{ color: "Green" }} />
+              <span>res</span>
+            </button>
+            <button value="Info">
+              <InfoOutlined style={{ color: "Blue" }} />
+              <span>inf</span>
             </button>
           </div>
           <div className="CardLayout">
@@ -100,32 +104,12 @@ const ExamplePane = ({
             >
               <CodeEditor code={jsCode} language="js" />
             </div>
-          </div>
-        </div>
-        <div>
-          <div className="SplitPaneDivider" />
-        </div>
-        <div
-          className="TabbedPane"
-          data-tab-placement="page-end"
-          style={{ height: "50%" }}
-        >
-          <div className="TabLayout">
-            <button value="Result" tabIndex={-1}>
-              <SystemUpdateAlt style={{ color: "Green" }} />
-              <span>result</span>
-            </button>
-            <button value="Info">
-              <InfoOutlined style={{ color: "Blue" }} />
-              <span>info</span>
-            </button>
-          </div>
-          <div className="CardLayout">
+
             <div
               className="BorderLayout"
               data-name="Result"
               style={{
-                visibility: "inherit",
+                visibility: "hidden",
                 paddingBlockStart: mobileView ? "40px" : "16px",
               }}
             >
@@ -144,8 +128,104 @@ const ExamplePane = ({
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div
+        className="ExamplePane BorderLayout"
+        style={{
+          visibility: mobileView && !ready ? "hidden" : "inherit",
+        }}
+      >
+        <div
+          className="SplitPane"
+          data-orientation="vertical-split"
+          style={{ padding: ".5em" }}
+        >
+          <div className="TabbedPane" style={{ height: "50%" }}>
+            <div className="TabLayout">
+              <button value="html" tabIndex={-1}>
+                <Code style={{ color: "Red" }} />
+                <span>html</span>
+              </button>
+              <button value="css">
+                <Tag style={{ color: "Blue" }} />
+                <span>css</span>
+              </button>
+              <button value="js">
+                <Javascript style={{ color: "Yellow" }} />
+                <span>js</span>
+              </button>
+            </div>
+            <div className="CardLayout">
+              <div
+                className="BorderLayout"
+                data-name="html"
+                style={{ visibility: "inherit" }}
+              >
+                <CodeEditor code={htmlCode} language="html" />
+              </div>
+              <div
+                className="BorderLayout"
+                data-name="css"
+                style={{ visibility: "hidden" }}
+              >
+                <CodeEditor code={cssCode} language="css" />
+              </div>
+              <div
+                className="BorderLayout"
+                data-name="js"
+                style={{ visibility: "hidden" }}
+              >
+                <CodeEditor code={jsCode} language="js" />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="SplitPaneDivider" />
+          </div>
+          <div
+            className="TabbedPane"
+            data-tab-placement="page-end"
+            style={{ height: "50%" }}
+          >
+            <div className="TabLayout">
+              <button value="Result" tabIndex={-1}>
+                <SystemUpdateAlt style={{ color: "Green" }} />
+                <span>result</span>
+              </button>
+              <button value="Info">
+                <InfoOutlined style={{ color: "Blue" }} />
+                <span>info</span>
+              </button>
+            </div>
+            <div className="CardLayout">
+              <div
+                className="BorderLayout"
+                data-name="Result"
+                style={{
+                  visibility: "inherit",
+                  paddingBlockStart: mobileView ? "40px" : "16px",
+                }}
+              >
+                <ResultPane
+                  mobileView={mobileView}
+                  htmlCode={htmlCode}
+                  cssCode={cssCode}
+                  jsCode={jsCode}
+                />
+              </div>
+              <div data-name="Info" style={{ visibility: "hidden" }}>
+                {info.split("\n").map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 };
 
 export default ExamplePane;

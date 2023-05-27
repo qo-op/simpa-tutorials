@@ -28,8 +28,7 @@ const Layout = ({
   useEffect(() => {
     dispatch(setNextPath(path));
   });
-  const browserView = useMediaQuery({ query: "(min-width: 480px)" });
-  const mobileView = !browserView;
+  const mobileView = useMediaQuery({ maxWidth: 768 });
   const tutorialIndex = tutorialIndexes[path];
   return (
     <>

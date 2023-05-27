@@ -34,8 +34,8 @@ const ExampleLayout = ({
   useEffect(() => {
     dispatch(setNextPath(path));
   });
-  const browserView = useMediaQuery({ query: "(min-width: 480px)" });
-  const mobileView = !browserView;
+  const mobileView = useMediaQuery({ maxWidth: 768 });
+  const landscapeView = useMediaQuery({ orientation: 'landscape' });
   const tutorialIndex = tutorialIndexes[path];
   return (
     <>
@@ -55,6 +55,7 @@ const ExampleLayout = ({
             <ExamplePane
               path={path}
               mobileView={mobileView}
+              landscapeView={landscapeView}
               tutorialIndex={tutorialIndex}
               htmlCode={htmlCode}
               cssCode={cssCode}
