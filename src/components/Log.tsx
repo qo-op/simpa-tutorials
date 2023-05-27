@@ -13,7 +13,7 @@ const Log = () => {
     const cardComponents = cardContainer.children;
     for (let i = 0; i < cardComponents.length; i++) {
       const cardComponent: HTMLElement = cardComponents[i] as HTMLElement;
-      if (cardComponent.style.visibility !== "hidden") {
+      if (cardComponent.dataset.name === "js") {
         selectedCardComponent = cardComponent;
         break;
       }
