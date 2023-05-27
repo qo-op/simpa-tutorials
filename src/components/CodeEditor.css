@@ -27,9 +27,9 @@
     font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
     font-size: 16px !important;
     line-height: 20px !important;
-    text-align: left;
     overflow: hidden;
     overflow-wrap: anywhere;
+    text-align: left;
 }
 
 .CodeEditor pre code .token.operator {
@@ -40,4 +40,5 @@
 .CodeEditor .SyntaxHighlighter * {
     pointer-events: none;
     font-style: normal !important;
+    transform: none;
 }
