@@ -8,3 +8,19 @@
     background-color: rgb(30, 30, 30);
     color: White;
 }
+
+@media (pointer: coarse) {
+
+    .ExamplePane div[data-name="Result"],
+    .ExampleLogPane div[data-name="Result"] {
+        padding-block-start: 34px;
+    }
+}
+
+@media (pointer: fine) {
+
+    .ExamplePane div[data-name="Result"],
+    .ExampleLogPane div[data-name="Result"] {
+        padding-block-start: 10px;
+    }
+}

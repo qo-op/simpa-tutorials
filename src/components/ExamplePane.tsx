@@ -85,11 +85,11 @@ const ExamplePane = ({
             </button>
             <button value="Result">
               <SystemUpdateAlt style={{ color: "Green" }} />
-              <span>res</span>
+              <span>result</span>
             </button>
             <button value="Info">
               <InfoOutlined style={{ color: "Blue" }} />
-              <span>inf</span>
+              <span>info</span>
             </button>
           </div>
           <div className="CardLayout">
@@ -122,7 +122,7 @@ const ExamplePane = ({
               data-name="Result"
               style={{
                 visibility: "hidden",
-                paddingBlockStart: mobileView && !landscapeView ? "34px" : "10px",
+                paddingBlockStart: "10px",
               }}
               onFocus={focusGained}
             >
@@ -231,10 +231,7 @@ const ExamplePane = ({
               <div
                 className="BorderLayout"
                 data-name="Result"
-                style={{
-                  visibility: "inherit",
-                  paddingBlockStart: mobileView && !landscapeView ? "34px" : "10px",
-                }}
+                style={{ visibility: "inherit" }}
                 onFocus={focusGained}
               >
                 <ResultPane

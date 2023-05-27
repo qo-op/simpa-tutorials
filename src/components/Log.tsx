@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-/* font-size */
+/* font-size
 const Log = () => {
   const [lines, setLines] = useState([] as string[][]);
   const click = () => {
@@ -47,13 +47,25 @@ const Log = () => {
     </div>
   );
 };
+ */
 
-/* width and heights
+/* width and heights */
 const Log = () => {
   const [lines, setLines] = useState([] as string[][]);
   const click = () => {
     const newLines: string[][] = [];
-    const elements = document.querySelectorAll("*");
+    let container = document.getElementById("iframe");
+    if (container === null) {
+      return;
+    }
+    if (container instanceof HTMLIFrameElement) {
+      container.style.display = "block";
+      if (container.contentDocument === null) {
+        return;
+      }
+      container = container.contentDocument.body;
+    }
+    const elements = container.querySelectorAll("*");
     elements.forEach((element: Element) => {
       const htmlElement = element as HTMLElement;
       const tagName: string = htmlElement.tagName;
@@ -67,29 +79,17 @@ const Log = () => {
   return (
     <div className="ScrollPane" onClick={click}>
       {lines.map((line, index) => {
-        if (line[0] === "BODY" || line[0] === "TEXTAREA") {
-          return (
-            <>
-              <span key={index}>
-                {line[0] + ", " + line[1] + "," + line[2] + ", " + line[3]}
-              </span>
-              <br />
-            </>
-          );
-        } else if (line[0] === "DIV") {
-          return (
-            <>
-              <span key={index}>
-                {line[1] + "," + line[2] + ", " + line[3]}
-              </span>
-              <br />
-            </>
-          );
-        }
+        return (
+          <>
+            <span key={index}>
+              {line[0] + ", " + line[1] + "," + line[2] + ", " + line[3]}
+            </span>
+            <br />
+          </>
+        );
       })}
     </div>
   );
 };
- */
 
 export default Log;

@@ -68,6 +68,7 @@ const ResultPane = ({
   });
   return (
     <iframe
+    id="iframe"
       className="ResultPane"
       style={{
         ...style,

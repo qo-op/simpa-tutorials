@@ -86,11 +86,11 @@ const ExampleLogPane = ({
             </button>
             <button value="Result">
               <SystemUpdateAlt style={{ color: "Green" }} />
-              <span>res</span>
+              <span>result</span>
             </button>
             <button value="Info">
               <InfoOutlined style={{ color: "Blue" }} />
-              <span>inf</span>
+              <span>info</span>
             </button>
             <button value="Log">
               <span>log</span>
@@ -103,7 +103,7 @@ const ExampleLogPane = ({
               style={{ visibility: "inherit" }}
               onFocus={focusGained}
             >
-              <CodeEditor code={htmlCode} language="html"/>
+              <CodeEditor code={htmlCode} language="html" />
             </div>
             <div
               className="BorderLayout"
@@ -126,7 +126,7 @@ const ExampleLogPane = ({
               data-name="Result"
               style={{
                 visibility: "hidden",
-                paddingBlockStart: mobileView && !landscapeView ? "34px" : "10px",
+                paddingBlockStart: "10px",
               }}
               onFocus={focusGained}
             >
@@ -203,7 +203,7 @@ const ExampleLogPane = ({
                 data-name="html"
                 style={{ visibility: "inherit" }}
               >
-                <CodeEditor code={htmlCode} language="html"/>
+                <CodeEditor code={htmlCode} language="html" />
               </div>
               <div
                 className="BorderLayout"
@@ -246,10 +246,7 @@ const ExampleLogPane = ({
               <div
                 className="BorderLayout"
                 data-name="Result"
-                style={{
-                  visibility: "inherit",
-                  paddingBlockStart: mobileView && !landscapeView ? "34px" : "10px",
-                }}
+                style={{ visibility: "inherit" }}
                 onFocus={focusGained}
               >
                 <ResultPane
