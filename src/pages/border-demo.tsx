@@ -44,8 +44,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
     </div>
     <div class="CardLayout">
       <div data-name="Simple"
-           style="visibility: inherit;
-                  display: grid;
+           style="display: grid;
                   grid-auto-rows: 1fr;
                   gap: .5em;">
         <!-- line border -->

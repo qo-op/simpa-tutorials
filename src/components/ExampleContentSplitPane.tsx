@@ -28,19 +28,13 @@ const ExampleContentSplitPane = ({
           >
             {children[0]}
           </div>
-          <div className="BorderLayout" style={{ visibility: "inherit" }}>
-            {children[1]}
-          </div>
+          <div className="BorderLayout">{children[1]}</div>
         </div>
       );
     } else {
       return (
         <div className="ExampleContentSplitPane CardLayout">
-          <div
-            className="ScrollPane"
-            data-scrollbar-overlay
-            style={{ visibility: "inherit" }}
-          >
+          <div className="ScrollPane" data-scrollbar-overlay>
             {children[0]}
           </div>
           <div className="BorderLayout" style={{ visibility: "hidden" }}>

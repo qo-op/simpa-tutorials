@@ -36,7 +36,9 @@ const TutorialPane = ({
     if (ready) {
       dispatch(setReady(true));
       dispatch(setPreviousPageButtonDisabled(tutorialIndex === 0));
-      dispatch(setNextPageButtonDisabled(tutorialIndex === tutorials.length - 1));
+      dispatch(
+        setNextPageButtonDisabled(tutorialIndex === tutorials.length - 1)
+      );
       if (path === nextPath) {
         dispatch(expand(tutorials[tutorialIndex].folder));
       }
@@ -46,10 +48,14 @@ const TutorialPane = ({
     <div
       className="TutorialPane BoxLayout"
       data-axis="page-axis"
-      style={{
-        ...TutorialPaneStyle,
-        visibility: mobileView && !ready ? "hidden" : "inherit",
-      }}
+      style={
+        mobileView && !ready
+          ? {
+              ...TutorialPaneStyle,
+              visibility: "hidden",
+            }
+          : TutorialPaneStyle
+      }
     >
       <div
         className="TutorialContentPaneStyle"

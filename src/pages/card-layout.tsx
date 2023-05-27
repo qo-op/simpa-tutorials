@@ -7,7 +7,8 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
 
 const title: string = "How to Use Card Layouts with HTML and CSS";
-const description: string = "This tutorial shows how to use card layouts (CardLayout) using HTML and CSS.";
+const description: string =
+  "This tutorial shows how to use card layouts (CardLayout) using HTML and CSS.";
 
 const CardLayoutPage = ({ path }: PageProps) => {
   const change = (ev: React.ChangeEvent) => {
@@ -19,7 +20,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
     for (let i = 0; i < cards.length; i++) {
       const card: HTMLElement = container.children[i] as HTMLElement;
       if (card.dataset.name === name) {
-        card.style.visibility = "inherit";
+        card.style.visibility = "";
       } else {
         card.style.visibility = "hidden";
       }
@@ -55,7 +56,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
   <button style="visibility: hidden;">
     Button 1
   </button>
-  <button style="visibility: inherit;">
+  <button>
     Button 2
   </button>
   <button style="visibility: hidden;">
@@ -71,9 +72,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
         <code>buttons</code> that we want to switch between to the container.
       </p>
       <p>
-        We set the <code>visibility</code> of the second button to{" "}
-        <code>inherit</code> and set the <code>visibility</code> of its siblings
-        to <code>hidden</code>.
+        We set the <code>visibility</code> of the first and third buttons to{" "}
+        <code>hidden</code>.
       </p>
       <p>
         When you this code, you will see a container with a button labeled "
@@ -88,7 +88,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
         }}
       >
         <button style={{ visibility: "hidden" }}>Button 1</button>
-        <button style={{ visibility: "inherit" }}>Button 2</button>
+        <button>Button 2</button>
         <button style={{ visibility: "hidden" }}>Button 3</button>
       </div>
       <p></p>
@@ -112,7 +112,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       for (let i = 0; i < cards.length; i++) {
         const card = container.children[i];
         if (card.dataset.name === name) {
-          card.style.visibility = "inherit";
+          card.style.visibility = "";
         } else {
           card.style.visibility = "hidden";
         }
@@ -138,8 +138,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
     <div class="CardLayout"
          id="container"
          style="padding: 10px">
-      <button data-name="Card 1"
-              style="visibility: inherit;">
+      <button data-name="Card 1">
         <u>First</u> Button
       </button>
       <button data-name="Card 2"
@@ -204,7 +203,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
             id="container"
             style={{ padding: "10px" }}
           >
-            <button data-name="Card 1" style={{ visibility: "inherit" }}>
+            <button data-name="Card 1">
               <u>First</u> Button
             </button>
             <button data-name="Card 2" style={{ visibility: "hidden" }}>

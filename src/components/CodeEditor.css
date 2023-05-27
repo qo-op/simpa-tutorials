@@ -12,13 +12,12 @@
     padding: 0;
     margin: 0;
     outline: none;
-    color: inherit;
     resize: none;
 }
 
 .CodeEditor pre {
     all: initial;
-    visibility: inherit;
+    visibility: unset;
     padding: 0 !important;
     background-color: transparent !important; 
 }
@@ -26,8 +25,8 @@
 .CodeEditor textarea,
 .CodeEditor pre code {
     font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 16px !important;
+    line-height: 20px !important;
     text-align: left;
     overflow: hidden;
     overflow-wrap: anywhere;

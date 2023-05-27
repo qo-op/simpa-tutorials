@@ -55,9 +55,13 @@ const ExamplePane = ({
     return (
       <div
         className="ExamplePane BorderLayout"
-        style={{
-          visibility: mobileView && !ready ? "hidden" : "inherit",
-        }}
+        style={
+          mobileView && !ready
+            ? {
+                visibility: "hidden",
+              }
+            : {}
+        }
       >
         <div className="TabbedPane" style={{ padding: ".5em" }}>
           <div className="TabLayout">
@@ -83,11 +87,7 @@ const ExamplePane = ({
             </button>
           </div>
           <div className="CardLayout">
-            <div
-              className="BorderLayout"
-              data-name="html"
-              style={{ visibility: "inherit" }}
-            >
+            <div className="BorderLayout" data-name="html">
               <CodeEditor code={htmlCode} language="html" />
             </div>
             <div
@@ -133,9 +133,13 @@ const ExamplePane = ({
     return (
       <div
         className="ExamplePane BorderLayout"
-        style={{
-          visibility: mobileView && !ready ? "hidden" : "inherit",
-        }}
+        style={
+          mobileView && !ready
+            ? {
+                visibility: "hidden",
+              }
+            : {}
+        }
       >
         <div
           className="SplitPane"
@@ -161,7 +165,6 @@ const ExamplePane = ({
               <div
                 className="BorderLayout"
                 data-name="html"
-                style={{ visibility: "inherit" }}
               >
                 <CodeEditor code={htmlCode} language="html" />
               </div>
@@ -204,7 +207,6 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="Result"
                 style={{
-                  visibility: "inherit",
                   paddingBlockStart: mobileView ? "40px" : "16px",
                 }}
               >

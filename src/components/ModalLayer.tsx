@@ -39,7 +39,7 @@ class Component extends React.Component<{}, { visible: boolean }> {
     return (
       <div
         className="ModalLayer"
-        style={{ visibility: this.state.visible ? "inherit" : "hidden" }}
+        style={!this.state.visible ? { visibility: "hidden" } : {}}
       >
         {this.dialog}
       </div>

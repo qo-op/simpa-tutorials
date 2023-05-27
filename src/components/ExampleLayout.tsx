@@ -35,13 +35,13 @@ const ExampleLayout = ({
     dispatch(setNextPath(path));
   });
   const mobileView = useMediaQuery({ maxWidth: 768 });
-  const landscapeView = useMediaQuery({ orientation: 'landscape' });
+  const landscapeView = useMediaQuery({ orientation: "landscape" });
   const tutorialIndex = tutorialIndexes[path];
   return (
     <>
       <div
         className="ExampleLayout LayeredPane"
-        style={{ visibility: loading ? "hidden" : "inherit" }}
+        style={loading ? { visibility: "hidden" } : {}}
       >
         <div className="LayoutContentPane BorderLayout">
           <div className="PageStart">

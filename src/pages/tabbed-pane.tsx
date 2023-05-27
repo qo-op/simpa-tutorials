@@ -7,7 +7,8 @@ import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 
 const title: string = "How to Use Tabbed Panes with HTML, CSS and JavaScript";
-const description: string = "This tutorial shows how to use tabbed panes (TabbedPane) using HTML, CSS and JavaScript.";
+const description: string =
+  "This tutorial shows how to use tabbed panes (TabbedPane) using HTML, CSS and JavaScript.";
 
 const TabbedPanePage = ({ path }: PageProps) => {
   return (
@@ -67,10 +68,9 @@ const TabbedPanePage = ({ path }: PageProps) => {
       <span>Panel #1</span>
     </div>
     <!-- card component selected -->
-    <!-- with visibility: inherit -->
+    <!-- not hidden -->
     <div class="CenterLayout"
-         data-name="Card 2"
-         style="visibility: inherit;">
+         data-name="Card 2">
       <span>Panel #2</span>
     </div>
   </div>
@@ -115,11 +115,7 @@ const TabbedPanePage = ({ path }: PageProps) => {
           >
             <span>Panel #1</span>
           </div>
-          <div
-            className="CenterLayout"
-            data-name="Card 2"
-            style={{ visibility: "inherit" }}
-          >
+          <div className="CenterLayout" data-name="Card 2">
             <span>Panel #2</span>
           </div>
         </div>
