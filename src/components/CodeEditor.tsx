@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "./CodeEditor.css";
@@ -14,20 +14,31 @@ import {
   setJavaScriptCode as setCodeEditorJavaScriptCode,
 } from "features/CodeEditorSlice";
 
-const CodeEditor = ({ code, language }: { code: string; language: string }) => {
+const CodeEditor = ({
+  code,
+  language,
+  id,
+}: {
+  code: string;
+  language: string;
+  id?: string;
+}) => {
   const dispatch = useAppDispatch();
   let codeEditorHtmlCode;
   let codeEditorCssCode;
   let codeEditorJavaScriptCode;
   switch (language) {
     case "html":
-      codeEditorHtmlCode = useAppSelector((state) => state.codeEditor.htmlCode) || code;
+      codeEditorHtmlCode =
+        useAppSelector((state) => state.codeEditor.htmlCode) || code;
       break;
     case "css":
-      codeEditorCssCode = useAppSelector((state) => state.codeEditor.cssCode) || code;
+      codeEditorCssCode =
+        useAppSelector((state) => state.codeEditor.cssCode) || code;
       break;
     case "js":
-      codeEditorJavaScriptCode = useAppSelector((state) => state.codeEditor.javaScriptCode) || code;
+      codeEditorJavaScriptCode =
+        useAppSelector((state) => state.codeEditor.javaScriptCode) || code;
       break;
   }
   const click = (ev: React.MouseEvent) => {
@@ -79,6 +90,7 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
       className="CodeEditor ScrollPane"
       data-scrollbar-overlay
       onClick={click}
+      id={id || ""}
     >
       <div className="LayeredPane">
         <textarea

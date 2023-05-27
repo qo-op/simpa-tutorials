@@ -23,21 +23,21 @@
 }
 
 .CodeEditor textarea,
-.CodeEditor pre {
-    overflow: hidden;
-    overflow-wrap: anywhere;
-    text-align: left;
-}
-
-.CodeEditor textarea,
-.CodeEditor pre code * {
+.CodeEditor pre code {
     font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace;
     font-size: 16px !important;
-    line-height: 1.2;
-    font-style: normal !important;
+    line-height: 20px !important;
+    text-align: left;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+.CodeEditor pre code .token.operator {
+    background-color: transparent;
 }
 
 .CodeEditor .SyntaxHighlighter,
 .CodeEditor .SyntaxHighlighter * {
     pointer-events: none;
+    font-style: normal !important;
 }
