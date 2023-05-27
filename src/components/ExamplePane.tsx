@@ -15,6 +15,7 @@ import {
 import CodeEditor from "components/CodeEditor";
 import ResultPane from "components/ResultPane";
 import "./ExamplePane.css";
+import { setVisible } from "features/ResultPaneSlice";
 
 const ExamplePane = ({
   path,
@@ -51,6 +52,10 @@ const ExamplePane = ({
       }
     }
   });
+  const focusGained = (ev: React.FocusEvent) => {
+    const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
+    dispatch(setVisible(cardComponent.dataset.name === "Result"));
+  };
   if (mobileView && landscapeView) {
     return (
       <div
@@ -87,13 +92,18 @@ const ExamplePane = ({
             </button>
           </div>
           <div className="CardLayout">
-            <div className="BorderLayout" data-name="html">
+            <div
+              className="BorderLayout"
+              data-name="html"
+              onFocus={focusGained}
+            >
               <CodeEditor code={htmlCode} language="html" />
             </div>
             <div
               className="BorderLayout"
               data-name="css"
               style={{ visibility: "hidden" }}
+              onFocus={focusGained}
             >
               <CodeEditor code={cssCode} language="css" />
             </div>
@@ -101,10 +111,10 @@ const ExamplePane = ({
               className="BorderLayout"
               data-name="js"
               style={{ visibility: "hidden" }}
+              onFocus={focusGained}
             >
               <CodeEditor code={jsCode} language="js" />
             </div>
-
             <div
               className="BorderLayout"
               data-name="Result"
@@ -112,15 +122,19 @@ const ExamplePane = ({
                 visibility: "hidden",
                 paddingBlockStart: mobileView ? "40px" : "16px",
               }}
+              onFocus={focusGained}
             >
               <ResultPane
-                mobileView={mobileView}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
                 jsCode={jsCode}
               />
             </div>
-            <div data-name="Info" style={{ visibility: "hidden" }}>
+            <div
+              data-name="Info"
+              style={{ visibility: "hidden" }}
+              onFocus={focusGained}
+            >
               {info.split("\n").map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
@@ -162,10 +176,7 @@ const ExamplePane = ({
               </button>
             </div>
             <div className="CardLayout">
-              <div
-                className="BorderLayout"
-                data-name="html"
-              >
+              <div className="BorderLayout" data-name="html">
                 <CodeEditor code={htmlCode} language="html" />
               </div>
               <div
@@ -209,15 +220,19 @@ const ExamplePane = ({
                 style={{
                   paddingBlockStart: mobileView ? "40px" : "16px",
                 }}
+                onFocus={focusGained}
               >
                 <ResultPane
-                  mobileView={mobileView}
                   htmlCode={htmlCode}
                   cssCode={cssCode}
                   jsCode={jsCode}
                 />
               </div>
-              <div data-name="Info" style={{ visibility: "hidden" }}>
+              <div
+                data-name="Info"
+                style={{ visibility: "hidden" }}
+                onFocus={focusGained}
+              >
                 {info.split("\n").map((line, index) => (
                   <p key={index}>{line}</p>
                 ))}

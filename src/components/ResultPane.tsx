@@ -2,12 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { useAppSelector } from "app/hooks";
 
 const ResultPane = ({
-  mobileView,
   htmlCode,
   cssCode,
   jsCode,
 }: {
-  mobileView: boolean;
   htmlCode: string;
   cssCode: string;
   jsCode: string;
@@ -65,20 +63,7 @@ const ResultPane = ({
     iFrameDocument.write(code);
     iFrameDocument.close();
   });
-  let visible = false;
-  const loading = useAppSelector((state) => state.loading.value);
-  const dividerLocation = useAppSelector(
-    (state) => state.contentSplitPane.dividerLocation
-  );
-  if (loading) {
-    visible = true;
-  } else if (mobileView) {
-    if (dividerLocation === -1) {
-      visible = true;
-    }
-  } else {
-    visible = true;
-  }
+  const visible = useAppSelector((state) => state.resultPane.visible);
   return (
     <iframe
       className="ResultPane"

@@ -6,6 +6,7 @@ const ResultPaneSlice = createSlice({
         htmlCode: "",
         cssCode: "",
         javaScriptCode: "",
+        visible: true,
     },
     reducers: {
         setHtmlCode: (state, action) => {
@@ -16,10 +17,13 @@ const ResultPaneSlice = createSlice({
         },
         setJavaScriptCode: (state, action) => {
             state.javaScriptCode = action.payload;
+        },
+        setVisible: (state, action) => {
+            state.visible = action.payload;
         }
     }
 });
 
-export const { setHtmlCode, setCssCode, setJavaScriptCode } = ResultPaneSlice.actions;
+export const { setHtmlCode, setCssCode, setJavaScriptCode, setVisible } = ResultPaneSlice.actions;
 
 export default ResultPaneSlice.reducer;

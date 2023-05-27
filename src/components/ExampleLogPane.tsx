@@ -130,7 +130,6 @@ const ExampleLogPane = ({
               style={{ visibility: "hidden" }}
             >
               <ResultPane
-                mobileView={mobileView}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
                 jsCode={jsCode}

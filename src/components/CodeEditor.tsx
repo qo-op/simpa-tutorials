@@ -43,7 +43,7 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
     ) as HTMLElement;
     textArea.focus();
   };
-  const focus = (ev: React.FocusEvent) => {
+  const focusGained = (ev: React.FocusEvent) => {
     const textArea: HTMLTextAreaElement =
       ev.currentTarget as HTMLTextAreaElement;
     textArea.style.caretColor = "Gray";
@@ -83,7 +83,7 @@ const CodeEditor = ({ code, language }: { code: string; language: string }) => {
       <div className="LayeredPane">
         <textarea
           spellCheck="false"
-          onFocus={focus}
+          onFocus={focusGained}
           onChange={change}
           disabled={process.env.NODE_ENV !== "development"}
           value={

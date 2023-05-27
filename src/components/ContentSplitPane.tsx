@@ -22,36 +22,14 @@ const ContentSplitPane = ({
   } else if (mobileView) {
     if (dividerLocation === -1) {
       return (
-        <div className="ContentSplitPane CardLayout">
-          <div
-            className="ScrollPane"
-            data-scrollbar-overlay
-            style={{
-              visibility: "hidden",
-            }}
-          >
-            {children[0]}
-          </div>
-          <div className="ScrollPane" data-scrollbar-overlay>
-            {children[1]}
-          </div>
+        <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+          {children[1]}
         </div>
       );
     } else {
       return (
-        <div className="ContentSplitPane CardLayout">
-          <div className="ScrollPane" data-scrollbar-overlay>
-            {children[0]}
-          </div>
-          <div
-            className="ScrollPane"
-            data-scrollbar-overlay
-            style={{
-              visibility: "hidden",
-            }}
-          >
-            {children[1]}
-          </div>
+        <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+          {children[0]}
         </div>
       );
     }
