@@ -6,7 +6,7 @@ import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
 
-const title: string = "How to Use Flow Layoutswith HTML and CSS";
+const title: string = "How to Use Flow Layouts with HTML and CSS";
 const description: string = "This tutorial shows how to use flow layouts (FlowLayout) using HTML and CSS.";
 
 const FlowLayoutPage = ({ path }: PageProps) => {
