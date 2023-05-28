@@ -30,35 +30,40 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"
-        style="gap: .5em">
+         style="gap: .5em">
       <!-- Disable middle button -->
-      <button class="BoxLayout"
-              onclick="disable(event);"
+      <button onclick="disable(event);"
               id="b1">
-        <span>Disable middle button</span>
-        <span class="material-icons">
-          arrow_right
+        <span class="BoxLayout">
+          <span>Disable middle button</span>
+          <span class="material-icons"
+                style="width: 1em;">
+            arrow_right
+          </span>
         </span>
       </button>
       <!-- Middle button -->
-      <button class="BoxLayout"
-              data-axis="page-axis"
-              id="b2">
-        <span>Middle button</span>
-        <span class="material-icons"
-              style="color: Gold;">
-          star
+      <button id="b2">
+        <span class="BoxLayout"
+              data-axis="page-axis">
+          <span>Middle button</span>
+          <span class="material-icons"
+                style="width: 1em; color: Gold;">
+            star
+          </span>
         </span>
       </button>
       <!-- Enable middle button -->
-      <button class="BoxLayout"
-              onclick="enable(event);"
+      <button onclick="enable(event);"
               id="b3"
               disabled>
-        <span class="material-icons">
-          arrow_left
+        <span class="BoxLayout">
+          <span class="material-icons"
+                style="width: 1em;">
+            arrow_left
+          </span>
+          <span>Enable middle button</span>
         </span>
-        <span>Enable middle button</span>
       </button>
     </div>
   </div>

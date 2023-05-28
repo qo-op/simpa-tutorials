@@ -41,7 +41,6 @@ const ExampleLayout = ({
   const landscapeView = useMediaQuery({ orientation: "landscape" });
   const tutorialIndex = tutorialIndexes[path];
   return (
-    <>
       <div
         className="ExampleLayout LayeredPane"
         style={{ visibility: loading ? "hidden" : "inherit" }}
@@ -69,7 +68,6 @@ const ExampleLayout = ({
         </div>
         <ModalLayer />
       </div>
-    </>
   );
 };
 

@@ -47,146 +47,149 @@ const BorderDemoPage = ({ path }: PageProps) => {
       </div>
       <div class="CardLayout">
         <div data-name="Simple"
-            style="visibility: inherit;
+             style="visibility: inherit;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- line border -->
           <div style="border: 1px solid Gray;"
-              class="CenterLayout">
+               class="CenterLayout">
             line border
           </div>
           <!-- raised level border -->
           <div style="border: 2px solid;
                       border-color: White Gray Gray White;"
-              class="CenterLayout">
+               class="CenterLayout">
             raised bevel border
           </div>
           <!-- lowered bevel border -->
           <div style="border: 2px solid;
                       border-color: Gray White White Gray;"
-              class="CenterLayout">
+               class="CenterLayout">
             lowered bevel border
           </div>
         </div>
         <div data-name="Matte"
-            style="visibility: hidden;
+             style="visibility: hidden;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- matte border (10, icon) -->
           <div style="border: 10px solid;
                       border-image: url(/wavy.png) 20 round;"
-              class="wavy-border CenterLayout">
+               class="CenterLayout">
             matte border (10, icon)
           </div>
           <!-- matte border (1, 1, 1, 5, Red) -->
           <div style="border: solid Red;
                       border-width: 1px 1px 1px 5px;"
-              class="CenterLayout">
+               class="CenterLayout">
             matte border (1, 1, 1, 5, Red)
           </div>
           <!-- matte border (0, 0, 0, 10, icon) -->
           <div style="border: solid;
                       border-width: 0 0 0 10px;
                       border-image: url(/wavy.png) 20 round;"
-              class="wavy-border CenterLayout">
+               class="CenterLayout">
             matte border (0, 0, 0, 10, icon)
           </div>
         </div>
         <div data-name="Titled"
-            style="visibility: hidden;
+             style="visibility: hidden;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- titled line border (left just.) -->
           <div class="LayeredPane">
             <div style="padding-top: .5em;"
-                class="BorderLayout">
+                 class="BorderLayout">
               <div style="border: 1px solid Gray;
                           padding-top: .7em"
-                  class="CenterLayout">
-                  titled line border (left just.)
+                   class="CenterLayout">
+                titled line border (left just.)
               </div>
             </div>
-            <div style="padding-left: .5em"
-                class="FlowLayout"
-                data-alignment="leading">
-              <span style="background-color: WhiteSmoke;
-                          padding-inline: .5em;">
-                title
-              </span>
+            <div style="display: grid; padding-left: .5em">
+              <div class="GridBagConstraints"
+                   data-anchor="first-line-start">
+                <span style="background-color: WhiteSmoke;
+                             padding-inline: .5em;">
+                  title
+                </span>
+              </div>
             </div>
           </div>
           <!-- titled line border (centered) -->
           <div class="LayeredPane">
             <div style="padding-top: .5em;"
-                class="BorderLayout">
+                 class="BorderLayout">
               <div style="border: 1px solid Gray;
                           padding-top: .7em"
-                  class="CenterLayout">
-                  titled line border (centered)
+                   class="CenterLayout">
+                titled line border (centered)
               </div>
             </div>
-            <div style="padding-left: .5em"
-                class="FlowLayout"
-                data-alignment="center">
-              <span style="background-color: WhiteSmoke;
-                          padding-inline: .5em;">
-                title
-              </span>
+            <div style="display: grid; padding-left: .5em">
+              <div class="GridBagConstraints"
+                   data-anchor="page-start">
+                <span style="background-color: WhiteSmoke;
+                             padding-inline: .5em;">
+                  title
+                </span>
+              </div>
             </div>
           </div>
           <!-- titled line border (right just.) -->
           <div class="LayeredPane">
             <div style="padding-top: .5em;"
-                class="BorderLayout">
+                 class="BorderLayout">
               <div style="border: 1px solid Gray;
                           padding-top: .7em"
-                  class="CenterLayout">
-                  titled line border (right just.)
+                   class="CenterLayout">
+                titled line border (right just.)
               </div>
             </div>
-            <div style="padding-right: .5em"
-                class="FlowLayout"
-                data-alignment="trailing">
-              <span style="background-color: WhiteSmoke;
-                          padding-inline: .5em;">
-                title
-              </span>
+            <div style="display: grid; padding-right: .5em">
+              <div class="GridBagConstraints"
+                   data-anchor="first-line-end">
+                <span style="background-color: WhiteSmoke;
+                            padding-inline: .5em;">
+                  title
+                </span>
+              </div>
             </div>
           </div>
         </div>
         <div data-name="Compound"
-            style="visibility: hidden;
+             style="visibility: hidden;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- raised etched border -->
           <div style="border: 2px solid;
                       border-color: White Gray Gray White;"
-              class="BorderLayout">
+               class="BorderLayout">
             <div style="border: 2px solid;
                         border-color: Gray White White Gray;"
-                class="CenterLayout">
+                 class="CenterLayout">
               raised etched border
             </div>
           </div>
           <!-- lowered etched border -->
           <div style="border: 2px solid;
                       border-color: Gray White White Gray;"
-              class="BorderLayout">
+               class="BorderLayout">
             <div style="border: 2px solid;
                         border-color: White Gray Gray White;"
-                class="CenterLayout">
+                 class="CenterLayout">
               lowered etched border
             </div>
           </div>
           <!-- lowered etched border -->
           <div style="border: 1px solid Red;"
-              class="BorderLayout">
+               class="BorderLayout">
             <div style="border: 2px solid Gray;"
-                class="CenterLayout">
+                 class="CenterLayout">
               compound border (red outline)
             </div>
           </div>

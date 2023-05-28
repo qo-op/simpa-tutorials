@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useAppSelector, useAppDispatch } from "app/hooks";
@@ -34,32 +34,30 @@ const Layout = ({
   });
   const tutorialIndex = tutorialIndexes[path];
   return (
-    <>
-      <div
-        className="Layout LayeredPane"
-        style={{ visibility: loading ? "hidden" : "inherit" }}
-      >
-        <div className="LayoutContentPane BorderLayout">
-          <div className="PageStart">
-            <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
-          </div>
-          <ContentSplitPane mobileView={mobileView}>
-            <NavigationTree
-              mobileView={mobileView}
-              tutorialIndex={tutorialIndex}
-            />
-            <TutorialPane
-              path={path}
-              mobileView={mobileView}
-              tutorialIndex={tutorialIndex}
-            >
-              {children}
-            </TutorialPane>
-          </ContentSplitPane>
+    <div
+      className="Layout LayeredPane"
+      style={{ visibility: loading ? "hidden" : "inherit" }}
+    >
+      <div className="LayoutContentPane BorderLayout">
+        <div className="PageStart">
+          <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
         </div>
-        <ModalLayer />
+        <ContentSplitPane mobileView={mobileView}>
+          <NavigationTree
+            mobileView={mobileView}
+            tutorialIndex={tutorialIndex}
+          />
+          <TutorialPane
+            path={path}
+            mobileView={mobileView}
+            tutorialIndex={tutorialIndex}
+          >
+            {children}
+          </TutorialPane>
+        </ContentSplitPane>
       </div>
-    </>
+      <ModalLayer />
+    </div>
   );
 };
 

@@ -105,10 +105,10 @@ const CodeEditor = ({
               ? codeEditorCssCode
               : codeEditorJavaScriptCode
           }
-          style={{
+          style={/*{
             visibility:
               process.env.NODE_ENV !== "development" ? "hidden" : "inherit",
-          }}
+          }*/{}}
         ></textarea>
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter

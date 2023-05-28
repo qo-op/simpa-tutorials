@@ -101,6 +101,7 @@ const ExampleLogPane = ({
               className="BorderLayout"
               data-name="html"
               style={{ visibility: "inherit" }}
+              tabIndex={-1}
               onFocus={focusGained}
             >
               <CodeEditor code={htmlCode} language="html" />
@@ -109,6 +110,7 @@ const ExampleLogPane = ({
               className="BorderLayout"
               data-name="css"
               style={{ visibility: "hidden" }}
+              tabIndex={-1}
               onFocus={focusGained}
             >
               <CodeEditor code={cssCode} language="css" />
@@ -117,6 +119,7 @@ const ExampleLogPane = ({
               className="BorderLayout"
               data-name="js"
               style={{ visibility: "hidden" }}
+              tabIndex={-1}
               onFocus={focusGained}
             >
               <CodeEditor code={jsCode} language="js" />
@@ -128,6 +131,7 @@ const ExampleLogPane = ({
                 visibility: "hidden",
                 paddingBlockStart: "10px",
               }}
+              tabIndex={-1}
               onFocus={focusGained}
             >
               <ResultPane
@@ -141,6 +145,7 @@ const ExampleLogPane = ({
             <div
               data-name="Info"
               style={{ visibility: "hidden" }}
+              tabIndex={-1}
               onFocus={focusGained}
             >
               {info.split("\n").map((line, index) => (
@@ -151,6 +156,7 @@ const ExampleLogPane = ({
               className="BorderLayout"
               data-name="Log"
               style={{ visibility: "hidden" }}
+              tabIndex={-1}
               onFocus={focusGained}
             >
               <Log />
@@ -247,6 +253,7 @@ const ExampleLogPane = ({
                 className="BorderLayout"
                 data-name="Result"
                 style={{ visibility: "inherit" }}
+                tabIndex={-1}
                 onFocus={focusGained}
               >
                 <ResultPane
@@ -260,6 +267,7 @@ const ExampleLogPane = ({
               <div
                 data-name="Info"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={focusGained}
               >
                 {info.split("\n").map((line, index) => (
@@ -270,6 +278,7 @@ const ExampleLogPane = ({
                 className="BorderLayout"
                 data-name="Log"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={focusGained}
               >
                 <Log />
