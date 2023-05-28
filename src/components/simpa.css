@@ -468,6 +468,7 @@ body {
 
 .ScrollPane {
     overflow: auto !important;
+    border: 1px solid Red;
 }
 
 .ScrollPane[data-policy="scrollbar-as-needed"],
