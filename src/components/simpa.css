@@ -1098,3 +1098,7 @@ body {
 .Tree li>:not(ul):hover {
     background-color: rgba(128, 128, 128, .25);
 }
+
+.Version {
+    content: 0.172
+}
