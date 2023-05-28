@@ -9,7 +9,7 @@ import ExampleContentSplitPane from "components/ExampleContentSplitPane";
 import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
-import ExamplePane from "components/ExampleLogPane";
+import ExamplePane from "components/ExamplePane";
 import "./simpa.css";
 import "./ExampleLayout.css";
 

@@ -23,40 +23,42 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <script src="./example.js">
   </script>
 </head>
-<body class="FlowLayout ScrollPane"
+<body class="ScrollPane"
       data-scrollbar-overlay
       id="ButtonDemo">
-  <div class="BoxLayout"
-       style="gap: .5em">
-    <!-- Disable middle button -->
-    <button class="BoxLayout"
-            onclick="disable(event);"
-            id="b1">
-      <span>Disable middle button</span>
-      <span class="material-icons">
-        arrow_right
-      </span>
-    </button>
-    <!-- Middle button -->
-    <button class="BoxLayout"
-            data-axis="page-axis"
-            id="b2">
-      <span>Middle button</span>
-      <span class="material-icons"
-            style="color: Gold;">
-        star
-      </span>
-    </button>
-    <!-- Enable middle button -->
-    <button class="BoxLayout"
-            onclick="enable(event);"
-            id="b3"
-            disabled>
-      <span class="material-icons">
-        arrow_left
-      </span>
-      <span>Enable middle button</span>
-    </button>
+  <div class="FlowLayout">
+    <div class="BoxLayout"
+        style="gap: .5em">
+      <!-- Disable middle button -->
+      <button class="BoxLayout"
+              onclick="disable(event);"
+              id="b1">
+        <span>Disable middle button</span>
+        <span class="material-icons">
+          arrow_right
+        </span>
+      </button>
+      <!-- Middle button -->
+      <button class="BoxLayout"
+              data-axis="page-axis"
+              id="b2">
+        <span>Middle button</span>
+        <span class="material-icons"
+              style="color: Gold;">
+          star
+        </span>
+      </button>
+      <!-- Enable middle button -->
+      <button class="BoxLayout"
+              onclick="enable(event);"
+              id="b3"
+              disabled>
+        <span class="material-icons">
+          arrow_left
+        </span>
+        <span>Enable middle button</span>
+      </button>
+    </div>
   </div>
 </body>
 </html>
