@@ -23,7 +23,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
   <script src="./example.js">
   </script>
 </head>
-<body class="ScrollPane"
+<body class="FlowLayout ScrollPane"
       data-scrollbar-overlay
       id="BorderDemo">
   <div class=TabbedPane>

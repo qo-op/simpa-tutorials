@@ -23,7 +23,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <script src="./example.js">
   </script>
 </head>
-<body class="ScrollPane"
+<body class="FlowLayout ScrollPane"
       data-scrollbar-overlay
       id="ButtonDemo">
   <div class="BoxLayout"
