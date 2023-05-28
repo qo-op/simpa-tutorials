@@ -27,7 +27,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
       data-scrollbar-overlay
       style="display: grid;"
       id="BorderDemo">
-  <div class="FlowLayout">
+  <div class="GridBagConstraints"
+       data-anchor="page-start">
     <div class=TabbedPane>
       <div class="TabLayout">
         <button value="Simple"
