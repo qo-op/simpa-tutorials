@@ -64,6 +64,11 @@ const Log = () => {
         return;
       }
       container = container.contentDocument.body;
+      const tagName: string = container.tagName;
+      const classList: string = "" + container.classList;
+      const width: string = "" + container.offsetWidth;
+      const height: string = "" + container.offsetHeight;
+      newLines.push([tagName, classList, width, height]);
     }
     const elements = container.querySelectorAll("*");
     elements.forEach((element: Element) => {
@@ -82,7 +87,7 @@ const Log = () => {
         return (
           <>
             <span key={index}>
-              {line[0] + ", " + line[1] + "," + line[2] + ", " + line[3]}
+              {line[0] + ", " + line[1] + ", " + line[2] + ", " + line[3]}
             </span>
             <br />
           </>
