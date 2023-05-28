@@ -759,7 +759,7 @@ body {
 .TabbedPane[data-tab-placement="page-start"][data-tab-layout-policy="scroll-tab-layout"] {
     display: grid !important;
     grid-template-rows: auto 1fr !important;
-    grid-template-columns: auto !important;
+    grid-template-columns: 1fr auto !important;
 }
 
 .TabbedPane>:first-child,
