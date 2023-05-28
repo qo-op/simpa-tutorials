@@ -25,8 +25,10 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
+      style="display: grid;"
       id="ButtonDemo">
-  <div class="FlowLayout">
+  <div class="GridBagConstraints"
+       data-anchor="page-start">
     <div class="BoxLayout"
         style="gap: .5em">
       <!-- Disable middle button -->
