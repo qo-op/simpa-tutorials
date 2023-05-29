@@ -71,7 +71,7 @@ const ExamplePane = ({
       >
         <div className="TabbedPane" style={{ padding: ".5em" }}>
           <div className="TabLayout">
-            <button value="html" tabIndex={-1}>
+            <button value="html">
               <Code style={{ color: "Red" }} />
               <span>html</span>
             </button>
@@ -83,7 +83,7 @@ const ExamplePane = ({
               <Javascript style={{ color: "Yellow" }} />
               <span>js</span>
             </button>
-            <button value="Result">
+            <button value="Result" tabIndex={-1}>
               <SystemUpdateAlt style={{ color: "Green" }} />
               <span>result</span>
             </button>
@@ -96,7 +96,7 @@ const ExamplePane = ({
             <div
               className="BorderLayout"
               data-name="html"
-              style={{ visibility: "inherit" }}
+              style={{ visibility: "hidden" }}
               tabIndex={-1}
               onFocus={focusGained}
             >
@@ -124,14 +124,14 @@ const ExamplePane = ({
               className="BorderLayout"
               data-name="Result"
               style={{
-                visibility: "hidden",
+                visibility: "inherit",
                 paddingBlockStart: "10px",
               }}
               tabIndex={-1}
               onFocus={focusGained}
             >
               <ResultPane
-                style={{ display: "none" }}
+                style={{ display: "block" }}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
                 jsCode={jsCode}

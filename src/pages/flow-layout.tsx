@@ -36,24 +36,22 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         className="FlowLayout"
         style={{ height: "200px", backgroundColor: "LightGray" }}
       >
-        <div>
-          <button>Button 1</button>
-          <button>Button 2</button>
-          <button>Button 3</button>
-          <button>Button 4</button>
-          <button>Button 5</button>
-          <button>Button 6</button>
-          <button>Button 7</button>
-          <button>Button 8</button>
-          <button>Button 9</button>
-          <button>Button 10</button>
-          <button>Button 11</button>
-          <button>Button 12</button>
-          <button>Button 13</button>
-          <button>Button 14</button>
-          <button>Button 15</button>
-          <button>Button 16</button>
-        </div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+        <button>Button 4</button>
+        <button>Button 5</button>
+        <button>Button 6</button>
+        <button>Button 7</button>
+        <button>Button 8</button>
+        <button>Button 9</button>
+        <button>Button 10</button>
+        <button>Button 11</button>
+        <button>Button 12</button>
+        <button>Button 13</button>
+        <button>Button 14</button>
+        <button>Button 15</button>
+        <button>Button 16</button>
       </div>
       <p></p>
       <hr />
@@ -86,11 +84,9 @@ const FlowLayoutPage = ({ path }: PageProps) => {
 <div class="FlowLayout"
      data-alignment="leading"
      style="height: 100px;">
-  <div>
-    <button>Button 1</button>
-    <button>Button 2</button>
-    <button>Button 3</button>
-  </div>
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
 </div>
 ...`}
         </SyntaxHighlighter>
@@ -110,11 +106,9 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         data-alignment="leading"
         style={{ height: "100px", backgroundColor: "LightGray" }}
       >
-        <div>
-          <button>Button 1</button>
-          <button>Button 2</button>
-          <button>Button 3</button>
-        </div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
       </div>
       <p></p>
       <hr />
@@ -131,11 +125,9 @@ const FlowLayoutPage = ({ path }: PageProps) => {
 <div class="FlowLayout"
      data-alignment="leading"
      style="direction: rtl; height: 100px;">
-  <div>
-    <button>Button 1</button>
-    <button>Button 2</button>
-    <button>Button 3</button>
-  </div>
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
 </div>
 ...`}
         </SyntaxHighlighter>
@@ -155,11 +147,9 @@ const FlowLayoutPage = ({ path }: PageProps) => {
           backgroundColor: "LightGray",
         }}
       >
-        <div>
-          <button>Button 1</button>
-          <button>Button 2</button>
-          <button>Button 3</button>
-        </div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
       </div>
       <p></p>
       <hr />
@@ -174,18 +164,16 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
 <div class="FlowLayout"
-     style="height: 100px;">
-  <div style="row-gap: 20px; column-gap: 40px;">
-    <button>Button 1</button>
-    <button>Button 2</button>
-    <button>Button 3</button>
-    <button>Button 4</button>
-    <button>Button 5</button>
-    <button>Button 6</button>
-    <button>Button 7</button>
-    <button>Button 8</button>
-    <button>Button 9</button>
-  </div>
+     style="row-gap: 20px; column-gap: 40px; height: 100px;">
+  <button>Button 1</button>
+  <button>Button 2</button>
+  <button>Button 3</button>
+  <button>Button 4</button>
+  <button>Button 5</button>
+  <button>Button 6</button>
+  <button>Button 7</button>
+  <button>Button 8</button>
+  <button>Button 9</button>
 </div>
 ...`}
         </SyntaxHighlighter>
@@ -197,21 +185,21 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <div
         className="FlowLayout"
         style={{
+          rowGap: "20px",
+          columnGap: "40px",
           height: "200px",
           backgroundColor: "LightGray",
         }}
       >
-        <div style={{ rowGap: "20px", columnGap: "40px" }}>
-          <button>Button 1</button>
-          <button>Button 2</button>
-          <button>Button 3</button>
-          <button>Button 4</button>
-          <button>Button 5</button>
-          <button>Button 6</button>
-          <button>Button 7</button>
-          <button>Button 8</button>
-          <button>Button 9</button>
-        </div>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+        <button>Button 4</button>
+        <button>Button 5</button>
+        <button>Button 6</button>
+        <button>Button 7</button>
+        <button>Button 8</button>
+        <button>Button 9</button>
       </div>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
