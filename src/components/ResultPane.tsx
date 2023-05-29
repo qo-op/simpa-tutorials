@@ -22,11 +22,11 @@ const ResultPane = ({
     useAppSelector((state) => state.resultPane.javaScriptCode) || jsCode;
   let code = "";
   resultPaneHtmlCode = resultPaneHtmlCode.replace(
-    /<link rel="stylesheet"\s*href="\.\/example\.css">/,
+    /<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">/,
     ""
   );
   resultPaneHtmlCode = resultPaneHtmlCode.replace(
-    /<script src="\.\/example\.js">\s*<\/script>/,
+    /<script src="\.\/[A-Za-z]+\.js">\s*<\/script>/,
     ""
   );
   let index = resultPaneHtmlCode.toLowerCase().indexOf("</head>");

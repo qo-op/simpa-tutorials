@@ -12,6 +12,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
       path={path}
       htmlCode={`<!-- ${title}.html -->
 <!-- ${description} -->
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet"

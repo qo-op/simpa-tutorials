@@ -12,6 +12,7 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
       path={path}
       htmlCode={`<!-- ${title}.html -->
 <!-- ${description} -->
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet"
@@ -30,41 +31,50 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"
-         style="gap: .5em">
-      <!-- Disable middle button -->
-      <button onclick="disable(event);"
-              id="b1">
-        <span class="BoxLayout">
-          <span><u>D</u>isable middle button</span>
-          <span class="material-icons"
-                style="width: 1em;">
-            arrow_right
-          </span>
-        </span>
-      </button>
-      <!-- Middle button -->
-      <button id="b2">
-        <span class="BoxLayout"
-              data-axis="page-axis">
-          <span><u>M</u>iddle button</span>
-          <span class="material-icons"
-                style="width: 1em; color: Gold;">
-            star
-          </span>
-        </span>
-      </button>
-      <!-- Enable middle button -->
-      <button onclick="enable(event);"
-              id="b3"
-              disabled>
-        <span class="BoxLayout">
-          <span class="material-icons"
-                style="width: 1em;">
-            arrow_left
-          </span>
-          <span><u>E</u>nable middle button</span>
-        </span>
-      </button>
+         style="gap: .5em;">
+      <!-- check boxes -->
+      <div>
+        <!-- Chin check box -->
+        <label>
+          <input type="checkbox"
+                  name="accessories"
+                  value="c"
+                  onchange="updatePicture(event);"
+                  checked>
+            Chin
+        </label><br>
+        <!-- Glasses check box -->
+        <label>
+          <input type="checkbox"
+                  name="accessories"
+                  value="g"
+                  onchange="updatePicture(event);"
+                  checked>
+            Glasses
+        </label><br>
+        <!-- Hair check box -->
+        <label>
+          <input type="checkbox"
+                  name="accessories"
+                  value="h"
+                  onchange="updatePicture(event);"
+                  checked>
+            Hair
+        </label><br>
+        <!-- Teeth check box -->
+        <label>
+          <input type="checkbox"
+                  name="accessories"
+                  value="t"
+                  onchange="updatePicture(event);"
+                  checked>
+            Teeth
+        </label>
+      </div>
+      <!-- picture -->
+      <img src="/geek-cght.gif"
+           alt="Geek image"
+           id="picture">
     </div>
   </div>
 </body>
@@ -73,44 +83,32 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function disable(event) {
-  const b1 = document.getElementById("b1");
-  const b2 = document.getElementById("b2");
-  const b3 = document.getElementById("b3");
-  b1.disabled = true;
-  b2.disabled = true;
-  b3.disabled = false;
-};
-function enable(event) {
-  const b1 = document.getElementById("b1");
-  const b2 = document.getElementById("b2");
-  const b3 = document.getElementById("b3");
-  b1.disabled = false;
-  b2.disabled = false;
-  b3.disabled = true;
-};
-function handleKeyDown(event) {
-  if (event.altKey) {
-    switch(event.key) {
-      case "d":
-        const b1 = document.getElementById("b1");
-        b1.click();
-        event.preventDefault();
-        break;
-      case "m":
-        const b2 = document.getElementById("b2");
-        b2.click();
-        event.preventDefault();
-        break;
-      case "e":
-        const b3 = document.getElementById("b3");
-        b3.click();
-        event.preventDefault();
-        break;
-    }
+var choices = "cght".split("");
+function updatePicture(event) {
+  let index = 0;
+  const checkBox = event.currentTarget;
+  let c = checkBox.value;
+  switch (c) {
+    case "c":
+      index = 0;
+      break;
+    case "g":
+      index = 1;
+      break;
+    case "h":
+      index = 2;
+      break;
+    case "t":
+      index = 3;
+      break;
   }
+  if (!checkBox.checked) {
+    c = "-";
+  }
+  choices[index] = c;
+  const img = document.getElementById("picture");
+  img.src = "/geek-" + choices.join("") + ".gif";
 };
-document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
 An HTML version of Oracle's CheckBoxDemo example, using simpa.css

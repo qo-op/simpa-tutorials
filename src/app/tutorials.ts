@@ -89,6 +89,11 @@ const tutorials = [
         path: "/button-demo/",
         folder: "Examples",
     },
+    {
+        text: "Check Box Demo",
+        path: "/check-box-demo/",
+        folder: "Examples",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

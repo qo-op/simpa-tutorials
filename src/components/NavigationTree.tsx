@@ -298,6 +298,16 @@ const NavigationTree = ({
                 <span>{tutorials[17].text}</span>
               </div>
             </li>
+            <li>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex === 18)}
+                onClick={() => tutorialClick(tutorials[18].path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorials[18].text}</span>
+              </div>
+            </li>
           </ul>
         </li>
       </ul>
