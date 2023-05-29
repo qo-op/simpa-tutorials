@@ -3,10 +3,10 @@ import { PageProps } from "gatsby";
 import { SEO } from "components/SEO";
 import ExampleLayout from "components/ExampleLayout";
 
-const title: string = "ButtonDemo";
+const title: string = "CheckBoxDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
-const ButtonDemoPage = ({ path }: PageProps) => {
+const CheckBoxDemoPage = ({ path }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
@@ -26,7 +26,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 <body class="ScrollPane"
       data-scrollbar-overlay
       style="display: grid;"
-      id="ButtonDemo">
+      id="CheckBoxDemo">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"
@@ -113,12 +113,12 @@ function handleKeyDown(event) {
 document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
-An HTML version of Oracle's ButtonDemo example, using simpa.css
+An HTML version of Oracle's CheckBoxDemo example, using simpa.css
 `}
     />
   );
 };
 
-export default ButtonDemoPage;
+export default CheckBoxDemoPage;
 
 export const Head = () => <SEO title={title} description={description} />;

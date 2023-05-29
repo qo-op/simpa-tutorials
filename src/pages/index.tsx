@@ -4,7 +4,8 @@ import Layout from "components/Layout";
 import { SEO } from "components/SEO";
 
 const title: string = "Introduction to Simpa";
-const description: string = "This series of tutorial shows how to use Simpa layouts and components using HTML, CSS and JavaScript.";
+const description: string =
+  "This series of tutorial shows how to use Simpa layouts and components using HTML, CSS and JavaScript.";
 
 const IndexPage = ({ path }: PageProps) => {
   return (
@@ -17,7 +18,7 @@ const IndexPage = ({ path }: PageProps) => {
         <span>Introduction to Simpa</span>
       </h1>
       <p>
-        Simpa is a user interface library that helps developers to create
+        Simpa is a user interface library that helps developers create
         Single-Page Applications. Simpa provides a set of layouts and components
         for building graphical user interfaces.
       </p>
@@ -29,7 +30,7 @@ const IndexPage = ({ path }: PageProps) => {
         <li>How to use layout managers to arrange components on the screen</li>
         <li>
           The fundamentals of Simpa composite components, such as menus, split
-          panes, tabbed panes, tables and trees
+          panes, tabbed panes, tables, and trees
         </li>
       </ul>
       <p>

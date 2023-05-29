@@ -3,15 +3,15 @@ import { PageProps } from "gatsby";
 import { SEO } from "components/SEO";
 import ExampleLayout from "components/ExampleLayout";
 
-const title: string = "";
-const description: string = "";
+const title: string = "BorderDemo";
+const description: string = `An HTML version of Oracle's ${title} example`;
 
 const BorderDemoPage = ({ path }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
-      htmlCode={`<!-- example.html -->
-<!-- An HTML version of Oracle's BorderDemo example -->
+      htmlCode={`<!-- ${title}.html -->
+<!-- ${description} -->
 <html>
 <head>
   <link rel="stylesheet"
@@ -19,8 +19,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
   <script src="https://qo-op.github.io/simpa/simpa.js">
   </script>
   <link rel="stylesheet"
-        href="./example.css">
-  <script src="./example.js">
+        href="./${title}.css">
+  <script src="./${title}.js">
   </script>
 </head>
 <body class="ScrollPane"
@@ -33,16 +33,24 @@ const BorderDemoPage = ({ path }: PageProps) => {
       <div class="TabLayout">
         <button value="Simple"
                 tabindex=-1>
-          <span>Simple</span>
+          <span>
+            <span>Simple</span>
+          </span>
         </button>
         <button value="Matte">
-          <span>Matte</span>
+          <span>
+            <span>Matte</span>
+          </span>
         </button>
         <button value="Titled">
-          <span>Titled</span>
+          <span>
+            <span>Titled</span>
+          </span>
         </button>
         <button value="Compound">
-          <span>Compound</span>
+          <span>
+            <span>Compound</span>
+          </span>
         </button>
       </div>
       <div class="CardLayout">
@@ -200,7 +208,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
 </body>
 </html>
 `}
-      cssCode={`/* example.css */
+      cssCode={`/* ${title}.css */
 #BorderDemo .TabbedPane {
   border: 1px solid Gray
 }
@@ -210,7 +218,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
   padding: .5em;
 }
 `}
-      jsCode={`/* example.js */
+      jsCode={`/* ${title}.js */
 `}
       info={`
 An HTML version of Oracle's BorderDemo example, using simpa.css

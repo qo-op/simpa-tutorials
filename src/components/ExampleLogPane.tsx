@@ -73,27 +73,39 @@ const ExampleLogPane = ({
         <div className="TabbedPane" style={{ padding: ".5em" }}>
           <div className="TabLayout">
             <button value="html" tabIndex={-1}>
-              <Code style={{ color: "Red" }} />
-              <span>html</span>
+              <span>
+                <Code style={{ color: "Red" }} />
+                <span>html</span>
+              </span>
             </button>
             <button value="css">
-              <Tag style={{ color: "Blue" }} />
-              <span>css</span>
+              <span>
+                <Tag style={{ color: "Blue" }} />
+                <span>css</span>
+              </span>
             </button>
             <button value="js">
-              <Javascript style={{ color: "Yellow" }} />
-              <span>js</span>
+              <span>
+                <Javascript style={{ color: "Yellow" }} />
+                <span>js</span>
+              </span>
             </button>
             <button value="Result">
-              <SystemUpdateAlt style={{ color: "Green" }} />
-              <span>result</span>
+              <span>
+                <SystemUpdateAlt style={{ color: "Green" }} />
+                <span>result</span>
+              </span>
             </button>
             <button value="Info">
-              <InfoOutlined style={{ color: "Blue" }} />
-              <span>info</span>
+              <span>
+                <InfoOutlined style={{ color: "Blue" }} />
+                <span>info</span>
+              </span>
             </button>
             <button value="Log">
-              <span>log</span>
+              <span>
+                <span>log</span>
+              </span>
             </button>
           </div>
           <div className="CardLayout" id="card-container">
@@ -191,16 +203,22 @@ const ExampleLogPane = ({
           <div className="TabbedPane" style={{ height: "50%" }}>
             <div className="TabLayout">
               <button value="html" tabIndex={-1}>
-                <Code style={{ color: "Red" }} />
-                <span>html</span>
+                <span>
+                  <Code style={{ color: "Red" }} />
+                  <span>html</span>
+                </span>
               </button>
               <button value="css">
-                <Tag style={{ color: "Blue" }} />
-                <span>css</span>
+                <span>
+                  <Tag style={{ color: "Blue" }} />
+                  <span>css</span>
+                </span>
               </button>
               <button value="js">
-                <Javascript style={{ color: "Yellow" }} />
-                <span>js</span>
+                <span>
+                  <Javascript style={{ color: "Yellow" }} />
+                  <span>js</span>
+                </span>
               </button>
             </div>
             <div className="CardLayout" id="card-container">
@@ -237,15 +255,21 @@ const ExampleLogPane = ({
           >
             <div className="TabLayout">
               <button value="Result" tabIndex={-1}>
-                <SystemUpdateAlt style={{ color: "Green" }} />
-                <span>result</span>
+                <span>
+                  <SystemUpdateAlt style={{ color: "Green" }} />
+                  <span>result</span>
+                </span>
               </button>
               <button value="Info">
-                <InfoOutlined style={{ color: "Blue" }} />
-                <span>info</span>
+                <span>
+                  <InfoOutlined style={{ color: "Blue" }} />
+                  <span>info</span>
+                </span>
               </button>
               <button value="Log">
-                <span>log</span>
+                <span>
+                  <span>log</span>
+                </span>
               </button>
             </div>
             <div className="CardLayout">

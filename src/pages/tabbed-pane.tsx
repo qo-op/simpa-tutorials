@@ -46,17 +46,21 @@ const TabbedPanePage = ({ path }: PageProps) => {
   <div class="TabLayout">
     <!-- tab component -->
     <button value="Card 1">
-      <span></span> <!-- tab icon -->
-      <span>Tab 1</span> <!-- tab text -->
-      <span></span> <!-- tab close icon -->
+      <span>
+        <span></span> <!-- tab icon -->
+        <span>Tab 1</span> <!-- tab text -->
+        <span></span> <!-- tab close icon -->
+      </span>
     </button>
     <!-- tab component selected -->
     <!-- with tabindex="-1" -->
     <button value="Card 2"
             tabindex="-1">
-      <span></span>
-      <span>Tab 2</span>
-      <span></span>
+      <span>
+        <span></span>
+        <span>Tab 2</span>
+        <span></span>
+      </span>
     </button>
   </div>
   <!-- card layout -->
@@ -98,14 +102,18 @@ const TabbedPanePage = ({ path }: PageProps) => {
       >
         <div className="TabLayout">
           <button value="Card 1">
-            <span></span>
-            <span>Tab 1</span>
-            <span></span>
+            <span>
+              <span></span>
+              <span>Tab 1</span>
+              <span></span>
+            </span>
           </button>
           <button value="Card 2" tabIndex={-1}>
-            <span></span>
-            <span>Tab 2</span>
-            <span></span>
+            <span>
+              <span></span>
+              <span>Tab 2</span>
+              <span></span>
+            </span>
           </button>
         </div>
         <div className="CardLayout">
