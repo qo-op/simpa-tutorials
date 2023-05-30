@@ -94,6 +94,11 @@ const tutorials = [
         path: "/check-box-demo/",
         folder: "Examples",
     },
+    {
+        text: "Color Chooser Demo",
+        path: "/color-chooser-demo/",
+        folder: "Examples",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

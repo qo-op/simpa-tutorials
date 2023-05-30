@@ -1,6 +1,7 @@
-import React from "react";
-import { useAppSelector } from "app/hooks";
-import ContentSplitPaneDivider from "./ContentSplitPaneDivider";
+import React, { useEffect, useRef } from "react";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
+import { setScrollPosition } from "features/ContentSplitPaneSlice";
 
 const ContentSplitPane = ({
   children,
@@ -13,6 +14,17 @@ const ContentSplitPane = ({
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
+  const scrollPosition = useAppSelector(
+    (state) => state.contentSplitPane.scrollPosition
+  );
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (scrollRef.current == null) {
+      return;
+    }
+    scrollRef.current.scrollTop = scrollPosition;
+  });
   if (loading) {
     return (
       <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
@@ -40,6 +52,9 @@ const ContentSplitPane = ({
       </div>
     );
   } else {
+    const handleScroll = (ev: React.UIEvent<HTMLDivElement>) => {
+      dispatch(setScrollPosition(ev.currentTarget.scrollTop));
+    };
     return (
       <div className="ContentSplitPane SplitPane">
         <div
@@ -49,6 +64,8 @@ const ContentSplitPane = ({
             width: dividerLocation === -1 ? undefined : dividerLocation + "%",
             borderInlineEnd: ".5px solid Gray",
           }}
+          ref={scrollRef}
+          onScroll={handleScroll}
         >
           {children[0]}
         </div>

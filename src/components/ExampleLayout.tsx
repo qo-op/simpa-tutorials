@@ -41,33 +41,33 @@ const ExampleLayout = ({
   const landscapeView = useMediaQuery({ orientation: "landscape" });
   const tutorialIndex = tutorialIndexes[path];
   return (
-      <div
-        className="ExampleLayout LayeredPane"
-        style={{ visibility: loading ? "hidden" : "inherit" }}
-      >
-        <div className="LayoutContentPane BorderLayout">
-          <div className="PageStart">
-            <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
-          </div>
-          <ExampleContentSplitPane mobileView={mobileView}>
-            <NavigationTree
-              mobileView={mobileView}
-              tutorialIndex={tutorialIndex}
-            />
-            <ExamplePane
-              path={path}
-              mobileView={mobileView}
-              landscapeView={landscapeView}
-              tutorialIndex={tutorialIndex}
-              htmlCode={htmlCode}
-              cssCode={cssCode}
-              jsCode={jsCode}
-              info={info}
-            />
-          </ExampleContentSplitPane>
+    <div
+      className="ExampleLayout BorderLayout"
+      style={{ visibility: loading ? "hidden" : "inherit" }}
+    >
+      <div className="LayoutContentPane BorderLayout">
+        <div className="PageStart">
+          <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
         </div>
-        <ModalLayer />
+        <ExampleContentSplitPane mobileView={mobileView}>
+          <NavigationTree
+            mobileView={mobileView}
+            tutorialIndex={tutorialIndex}
+          />
+          <ExamplePane
+            path={path}
+            mobileView={mobileView}
+            landscapeView={landscapeView}
+            tutorialIndex={tutorialIndex}
+            htmlCode={htmlCode}
+            cssCode={cssCode}
+            jsCode={jsCode}
+            info={info}
+          />
+        </ExampleContentSplitPane>
       </div>
+      <ModalLayer />
+    </div>
   );
 };
 

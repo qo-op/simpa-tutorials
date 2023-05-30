@@ -35,7 +35,7 @@ const Layout = ({
   const tutorialIndex = tutorialIndexes[path];
   return (
     <div
-      className="Layout LayeredPane"
+      className="Layout BorderLayout"
       style={{ visibility: loading ? "hidden" : "inherit" }}
     >
       <div className="LayoutContentPane BorderLayout">

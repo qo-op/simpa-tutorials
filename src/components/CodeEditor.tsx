@@ -52,6 +52,9 @@ const CodeEditor = ({
     const textArea: HTMLElement = codeEditor.querySelector(
       "textarea"
     ) as HTMLElement;
+    if (textArea === null) {
+      return;
+    }
     textArea.focus();
   };
   const focusGained = (ev: React.FocusEvent) => {
@@ -85,31 +88,57 @@ const CodeEditor = ({
         break;
     }
   };
-  return (
-    <div
-      className="CodeEditor ScrollPane"
-      data-scrollbar-overlay
-      onClick={click}
-      id={id || ""}
-    >
-      <div className="LayeredPane">
-        <textarea
-          spellCheck="false"
-          onFocus={focusGained}
-          onChange={change}
-          disabled={process.env.NODE_ENV !== "development"}
-          value={
-            language === "html"
-              ? codeEditorHtmlCode
-              : language === "css"
-              ? codeEditorCssCode
-              : codeEditorJavaScriptCode
-          }
-          style={/*{
-            visibility:
-              process.env.NODE_ENV !== "development" ? "hidden" : "inherit",
-          }*/{}}
-        ></textarea>
+  if (process.env.NODE_ENV === "development") {
+    return (
+      <div
+        className="CodeEditor ScrollPane"
+        data-scrollbar-overlay
+        onClick={click}
+        id={id || ""}
+      >
+        <div className="LayeredPane">
+          <textarea
+            spellCheck="false"
+            onFocus={focusGained}
+            onChange={change}
+            value={
+              language === "html"
+                ? codeEditorHtmlCode
+                : language === "css"
+                ? codeEditorCssCode
+                : codeEditorJavaScriptCode
+            }
+          ></textarea>
+          <div className="SyntaxHighlighter">
+            <SyntaxHighlighter
+              language={
+                language === "html"
+                  ? "xml"
+                  : language === "css"
+                  ? "css"
+                  : "javascript"
+              }
+              style={vs2015}
+              wrapLongLines
+            >
+              {language === "html"
+                ? codeEditorHtmlCode || ""
+                : language === "css"
+                ? codeEditorCssCode || ""
+                : codeEditorJavaScriptCode || ""}
+            </SyntaxHighlighter>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div
+        className="CodeEditor ScrollPane"
+        data-scrollbar-overlay
+        onClick={click}
+        id={id || ""}
+      >
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter
             language={
@@ -130,8 +159,8 @@ const CodeEditor = ({
           </SyntaxHighlighter>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default CodeEditor;

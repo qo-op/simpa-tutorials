@@ -56,7 +56,7 @@ const NavigationTreeSlice = createSlice({
                     state.exampleFolderClosed = !state.exampleFolderClosed;
                     break;
             }
-        }
+        },
     }
 });
 

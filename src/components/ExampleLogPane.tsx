@@ -53,12 +53,12 @@ const ExampleLogPane = ({
     }
   });
   if (mobileView && landscapeView) {
-    const iframeRef = useRef(null);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
     const focusGained = (ev: React.FocusEvent) => {
       if (iframeRef.current === null) {
         return;
       }
-      const iFrame: HTMLIFrameElement = iframeRef.current as HTMLIFrameElement;
+      const iFrame: HTMLIFrameElement = iframeRef.current;
       const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
       iFrame.style.display =
         cardComponent.dataset.name === "Result" ? "block" : "none";
@@ -178,7 +178,7 @@ const ExampleLogPane = ({
       </div>
     );
   } else {
-    const iframeRef = useRef(null);
+    const iframeRef = useRef<HTMLIFrameElement>(null);
     const focusGained = (ev: React.FocusEvent) => {
       if (iframeRef.current === null) {
         return;

@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
-import ContentSplitPaneDivider from "./ContentSplitPaneDivider";
+import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
+import { setScrollPosition } from "features/ContentSplitPaneSlice";
 
 const ExampleContentSplitPane = ({
   children,
@@ -13,6 +14,17 @@ const ExampleContentSplitPane = ({
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
+  const scrollPosition = useAppSelector(
+    (state) => state.contentSplitPane.scrollPosition
+  );
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (scrollRef.current == null) {
+      return;
+    }
+    scrollRef.current.scrollTop = scrollPosition;
+  });
   if (loading) {
     return (
       <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>
@@ -39,6 +51,9 @@ const ExampleContentSplitPane = ({
       <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>
     );
   } else {
+    const handleScroll = (ev: React.UIEvent<HTMLDivElement>) => {
+      dispatch(setScrollPosition(ev.currentTarget.scrollTop));
+    };
     return (
       <div className="ExampleContentSplitPane SplitPane">
         <div
@@ -48,6 +63,8 @@ const ExampleContentSplitPane = ({
             width: dividerLocation === -1 ? undefined : dividerLocation + "%",
             borderInlineEnd: ".5px solid Gray",
           }}
+          ref={scrollRef}
+          onScroll={handleScroll}
         >
           {children[0]}
         </div>

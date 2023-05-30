@@ -12,7 +12,7 @@ const ResultPane = ({
   htmlCode: string;
   cssCode: string;
   jsCode: string;
-  iframeRef: React.MutableRefObject<null>;
+  iframeRef: React.RefObject<HTMLIFrameElement>;
 }) => {
   let resultPaneHtmlCode =
     useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
