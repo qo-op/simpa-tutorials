@@ -19,6 +19,9 @@ const ContentSplitPane = ({
   );
   const scrollRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
+  const handleScroll = (ev: React.UIEvent<HTMLDivElement>) => {
+    dispatch(setScrollPosition(ev.currentTarget.scrollTop));
+  };
   useEffect(() => {
     if (scrollRef.current == null) {
       return;
@@ -40,7 +43,12 @@ const ContentSplitPane = ({
       );
     } else {
       return (
-        <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+        <div
+          className="ContentSplitPane ScrollPane"
+          data-scrollbar-overlay
+          ref={scrollRef}
+          onScroll={handleScroll}
+        >
           {children[0]}
         </div>
       );
@@ -52,9 +60,6 @@ const ContentSplitPane = ({
       </div>
     );
   } else {
-    const handleScroll = (ev: React.UIEvent<HTMLDivElement>) => {
-      dispatch(setScrollPosition(ev.currentTarget.scrollTop));
-    };
     return (
       <div className="ContentSplitPane SplitPane">
         <div
