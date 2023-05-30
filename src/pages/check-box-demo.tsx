@@ -27,7 +27,7 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
 <body class="ScrollPane"
       data-scrollbar-overlay
       style="display: grid;"
-      id="CheckBoxDemo">
+      id="check-box-demo">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"

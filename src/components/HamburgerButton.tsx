@@ -2,7 +2,10 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useAppSelector, useAppDispatch } from "app/hooks";
-import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import {
+  setDividerLocation,
+  setScrollPosition,
+} from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 
 const HamburgerButtonStyle: React.CSSProperties = {
@@ -18,6 +21,12 @@ const HamburgerButton = ({ mobileView }: { mobileView: boolean }) => {
   const click = () => {
     dispatch(setDividerLocation(closed ? -2 : -1));
     dispatch(setClosed(!closed));
+    const navigationTreeScrollPane: HTMLElement = document.getElementById(
+      "navigation-tree-scroll-pane"
+    ) as HTMLElement;
+    if (navigationTreeScrollPane !== null) {
+      dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
+    }
   };
   return (
     <button

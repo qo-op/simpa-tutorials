@@ -2,7 +2,10 @@ import React from "react";
 import { navigate } from "gatsby";
 import { useAppDispatch } from "app/hooks";
 import { setNextPath } from "features/NextPathSlice";
-import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import {
+  setDividerLocation,
+  setScrollPosition,
+} from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 import { setReady } from "features/ReadySlice";
 
@@ -15,7 +18,7 @@ const HomeButtonStyle: React.CSSProperties = {
   fontSize: "2rem",
 };
 
-const HomeButton = ({ mobileView }: {mobileView: boolean}) => {
+const HomeButton = ({ mobileView }: { mobileView: boolean }) => {
   const dispatch = useAppDispatch();
   const click = () => {
     const to = "/";
@@ -25,6 +28,12 @@ const HomeButton = ({ mobileView }: {mobileView: boolean}) => {
       dispatch(setReady(false));
       dispatch(setDividerLocation(-1));
       dispatch(setClosed(true));
+    }
+    const navigationTreeScrollPane: HTMLElement = document.getElementById(
+      "navigation-tree-scroll-pane"
+    ) as HTMLElement;
+    if (navigationTreeScrollPane !== null) {
+      dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
     }
 };
   return (

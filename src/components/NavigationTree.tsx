@@ -7,7 +7,10 @@ import { useAppSelector, useAppDispatch } from "app/hooks";
 import { setReady } from "features/ReadySlice";
 import { setNextPath } from "features/NextPathSlice";
 import { toggle } from "features/NavigationTreeSlice";
-import { setDividerLocation } from "features/ContentSplitPaneSlice";
+import {
+  setDividerLocation,
+  setScrollPosition,
+} from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 import tutorials from "app/tutorials";
 import "./NavigationTree.css";
@@ -48,6 +51,12 @@ const NavigationTree = ({
       dispatch(setReady(false));
       dispatch(setDividerLocation(-1));
       dispatch(setClosed(true));
+    }
+    const navigationTreeScrollPane: HTMLElement = document.getElementById(
+      "navigation-tree-scroll-pane"
+    ) as HTMLElement;
+    if (navigationTreeScrollPane !== null) {
+      dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
     }
   };
   const folderClick = (folder: string) => {

@@ -27,7 +27,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
 <body class="ScrollPane"
       data-scrollbar-overlay
       style="display: grid;"
-      id="BorderDemo">
+      id="border-demo">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class=TabbedPane>
@@ -210,11 +210,11 @@ const BorderDemoPage = ({ path }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-#BorderDemo .TabbedPane {
+#border-demo .TabbedPane {
   border: 1px solid Gray
 }
 
-#BorderDemo .CardLayout>* {
+#border-demo .CardLayout>* {
   background-color: WhiteSmoke;
   padding: .5em;
 }

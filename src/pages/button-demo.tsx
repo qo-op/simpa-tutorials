@@ -27,7 +27,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 <body class="ScrollPane"
       data-scrollbar-overlay
       style="display: grid;"
-      id="ButtonDemo">
+      id="button-demo">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"

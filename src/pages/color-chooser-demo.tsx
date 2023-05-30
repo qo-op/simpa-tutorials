@@ -27,7 +27,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
 <body class="ScrollPane"
       data-scrollbar-overlay
       style="display: grid;"
-      id="ColorChooserDemo">
+      id="color-chooser-demo">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"

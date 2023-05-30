@@ -19,11 +19,14 @@ const ExampleContentSplitPane = ({
   );
   const scrollRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
-  const handleScroll = (ev: React.UIEvent<HTMLDivElement>) => {
-    dispatch(setScrollPosition(ev.currentTarget.scrollTop));
+  const handleScroll = () => {
+    dispatch(setScrollPosition(-1));
   };
   useEffect(() => {
     if (scrollRef.current == null) {
+      return;
+    }
+    if (scrollPosition < 0) {
       return;
     }
     scrollRef.current.scrollTop = scrollPosition;
@@ -46,6 +49,7 @@ const ExampleContentSplitPane = ({
           data-scrollbar-overlay
           ref={scrollRef}
           onScroll={handleScroll}
+          id="navigation-tree-scroll-pane"
         >
           {children[0]}
         </div>
@@ -67,6 +71,7 @@ const ExampleContentSplitPane = ({
           }}
           ref={scrollRef}
           onScroll={handleScroll}
+          id="navigation-tree-scroll-pane"
         >
           {children[0]}
         </div>
