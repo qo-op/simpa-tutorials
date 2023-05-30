@@ -32,9 +32,11 @@
     text-align: left;
 }
 
+/*
 .CodeEditor pre code .token.operator {
     background-color: transparent;
 }
+*/
 
 .CodeEditor .SyntaxHighlighter,
 .CodeEditor .SyntaxHighlighter * {

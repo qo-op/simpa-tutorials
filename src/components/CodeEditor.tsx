@@ -30,15 +30,15 @@ const CodeEditor = ({
   switch (language) {
     case "html":
       codeEditorHtmlCode =
-        useAppSelector((state) => state.codeEditor.htmlCode) || code;
+        useAppSelector((state) => state.codeEditor.htmlCode) || (code + " ");
       break;
     case "css":
       codeEditorCssCode =
-        useAppSelector((state) => state.codeEditor.cssCode) || code;
+        useAppSelector((state) => state.codeEditor.cssCode) || (code + " ");
       break;
     case "js":
       codeEditorJavaScriptCode =
-        useAppSelector((state) => state.codeEditor.javaScriptCode) || code;
+        useAppSelector((state) => state.codeEditor.javaScriptCode) || (code + " ");
       break;
   }
   const click = (ev: React.MouseEvent) => {

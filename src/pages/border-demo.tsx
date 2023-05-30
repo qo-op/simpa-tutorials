@@ -7,6 +7,7 @@ const title: string = "BorderDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
 const BorderDemoPage = ({ path }: PageProps) => {
+  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
@@ -26,8 +27,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
-      style="display: grid;"
-      id="border-demo">
+      id="${id}">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class=TabbedPane>
@@ -66,16 +66,16 @@ const BorderDemoPage = ({ path }: PageProps) => {
             line border
           </div>
           <!-- raised level border -->
-          <div style="border: 2px solid;
-                      border-color: White Gray Gray White;"
-               class="CenterLayout">
-            raised bevel border
+          <div class="RaisedBevelBorder">
+            <div class="CenterLayout">
+              raised bevel border
+            </div>
           </div>
           <!-- lowered bevel border -->
-          <div style="border: 2px solid;
-                      border-color: Gray White White Gray;"
-               class="CenterLayout">
-            lowered bevel border
+          <div class="LoweredBevelBorder">
+            <div class="CenterLayout">
+              lowered bevel border
+            </div>
           </div>
         </div>
         <div data-name="Matte"
@@ -109,63 +109,29 @@ const BorderDemoPage = ({ path }: PageProps) => {
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- titled line border (left just.) -->
-          <div class="LayeredPane">
-            <div style="padding-top: .5em;"
-                 class="BorderLayout">
-              <div style="border: 1px solid Gray;
-                          padding-top: .7em"
-                   class="CenterLayout">
-                titled line border (left just.)
-              </div>
-            </div>
-            <div style="display: grid; padding-left: .5em">
-              <div class="GridBagConstraints"
-                   data-anchor="first-line-start">
-                <span style="background-color: WhiteSmoke;
-                             padding-inline: .5em;">
-                  title
-                </span>
-              </div>
+          <div class="TitleBorder"
+               style="background-color: inherit;">
+            <h6>title</h6>
+            <div class="CenterLayout">
+              titled line border (left just.)
             </div>
           </div>
           <!-- titled line border (centered) -->
-          <div class="LayeredPane">
-            <div style="padding-top: .5em;"
-                 class="BorderLayout">
-              <div style="border: 1px solid Gray;
-                          padding-top: .7em"
-                   class="CenterLayout">
-                titled line border (centered)
-              </div>
-            </div>
-            <div style="display: grid; padding-left: .5em">
-              <div class="GridBagConstraints"
-                   data-anchor="page-start">
-                <span style="background-color: WhiteSmoke;
-                             padding-inline: .5em;">
-                  title
-                </span>
-              </div>
+          <div class="TitleBorder"
+               data-title-justification="center"
+               style="background-color: inherit;">
+            <h6>title</h6>
+            <div class="CenterLayout">
+              titled line border (centered)
             </div>
           </div>
           <!-- titled line border (right just.) -->
-          <div class="LayeredPane">
-            <div style="padding-top: .5em;"
-                 class="BorderLayout">
-              <div style="border: 1px solid Gray;
-                          padding-top: .7em"
-                   class="CenterLayout">
-                titled line border (right just.)
-              </div>
-            </div>
-            <div style="display: grid; padding-right: .5em">
-              <div class="GridBagConstraints"
-                   data-anchor="first-line-end">
-                <span style="background-color: WhiteSmoke;
-                            padding-inline: .5em;">
-                  title
-                </span>
-              </div>
+          <div class="TitleBorder"
+               data-title-justification="trailing"
+               style="background-color: inherit;">
+            <h6>title</h6>
+            <div class="CenterLayout">
+              titled line border (right just.)
             </div>
           </div>
         </div>
@@ -210,11 +176,11 @@ const BorderDemoPage = ({ path }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-#border-demo .TabbedPane {
+#${id} .TabbedPane {
   border: 1px solid Gray
 }
 
-#border-demo .CardLayout>* {
+#${id} .CardLayout>* {
   background-color: WhiteSmoke;
   padding: .5em;
 }

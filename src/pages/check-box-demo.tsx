@@ -7,6 +7,7 @@ const title: string = "CheckBoxDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
 const CheckBoxDemoPage = ({ path }: PageProps) => {
+  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
@@ -26,8 +27,7 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
-      style="display: grid;"
-      id="check-box-demo">
+      id="${id}">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"

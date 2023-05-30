@@ -7,6 +7,7 @@ const title: string = "ButtonDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
 const ButtonDemoPage = ({ path }: PageProps) => {
+  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
@@ -26,8 +27,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
-      style="display: grid;"
-      id="button-demo">
+      id="${id}">
   <div class="GridBagConstraints"
        data-anchor="page-start">
     <div class="BoxLayout"

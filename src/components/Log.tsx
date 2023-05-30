@@ -54,6 +54,7 @@ const Log = () => {
   const [lines, setLines] = useState([] as string[][]);
   const click = () => {
     const newLines: string[][] = [];
+    /*
     let container = document.getElementById("iframe");
     if (container === null) {
       return;
@@ -70,6 +71,8 @@ const Log = () => {
       const height: string = "" + container.offsetHeight;
       newLines.push([tagName, classList, width, height]);
     }
+    */
+    const container = document;
     const elements = container.querySelectorAll("*");
     elements.forEach((element: Element) => {
       const htmlElement = element as HTMLElement;

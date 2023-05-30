@@ -7,6 +7,7 @@ const title: string = "ColorChooserDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
 const ColorChooserDemoPage = ({ path }: PageProps) => {
+  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
@@ -26,46 +27,55 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
-      style="display: grid;"
-      id="color-chooser-demo">
+      id="${id}">
   <div class="GridBagConstraints"
        data-anchor="page-start">
-    <div class="BoxLayout"
-         style="gap: .5em">
-      <!-- Disable middle button -->
-      <button onclick="disable(event);"
-              id="b1">
-        <span class="BoxLayout">
-          <span><u>D</u>isable middle button</span>
-          <span class="material-icons"
-                style="width: 1em;">
-            arrow_right
-          </span>
-        </span>
-      </button>
-      <!-- Middle button -->
-      <button id="b2">
-        <span class="BoxLayout"
-              data-axis="page-axis">
-          <span><u>M</u>iddle button</span>
-          <span class="material-icons"
-                style="width: 1em; color: Gold;">
-            star
-          </span>
-        </span>
-      </button>
-      <!-- Enable middle button -->
-      <button onclick="enable(event);"
-              id="b3"
-              disabled>
-        <span class="BoxLayout">
-          <span class="material-icons"
-                style="width: 1em;">
-            arrow_left
-          </span>
-          <span><u>E</u>nable middle button</span>
-        </span>
-      </button>
+    <div class="BorderLayout">
+      <div class="PageStart">
+        <div class="TitleBorder"
+              style="background-color: White;">
+          <h6>Banner</h6>
+          <div class="CenterLayout"
+               style="background-color: blue;">
+            <span style="color: Yellow;
+                         font-size: 24px;">
+              Welcome to the Tutorial Zone!
+            <span>
+          </div>
+        </div>
+      </div>
+      <div class="TitleBorder"
+            style="background-color: White;">
+        <h6>Choose Background Color</h6>
+        <div class="CenterLayout">
+          <button style="margin: .25em;">
+            Show Color Chooser...
+          </button>
+        </div>
+      </div>
+      <div class="PageEnd">
+        <div class="TitleBorder"
+             style="background-color: White;">
+          <h6>Choose Text Color</h6>
+          <div style="padding: .25em;
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      gap: .25em;">
+            <img src="/red.gif"
+                 alt="The red crayon"
+                 style="width: 180px; height: 22px">
+            <img src="/yellow.gif"
+                 alt="The yellow crayon"
+                 style="width: 180px; height: 22px">
+            <img src="/green.gif"
+                 alt="The green crayon"
+                 style="width: 180px; height: 22px">
+            <img src="/blue.gif"
+                 alt="The blue crayon"
+                 style="width: 180px; height: 22px">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
@@ -114,7 +124,7 @@ function handleKeyDown(event) {
 document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
-An HTML version of Oracle's ColorChooserDemo example, using simpa.css
+An HTML version of Oracle's ColorChooserDemo2 example, using simpa.css
 `}
     />
   );
