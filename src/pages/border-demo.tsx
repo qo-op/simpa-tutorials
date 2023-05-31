@@ -70,16 +70,12 @@ const BorderDemoPage = ({ path }: PageProps) => {
             line border
           </div>
           <!-- raised level border -->
-          <div class="RaisedBevelBorder">
-            <div class="CenterLayout">
-              raised bevel border
-            </div>
+          <div class="RaisedBevelBorder CenterLayout">
+            raised bevel border
           </div>
           <!-- lowered bevel border -->
-          <div class="LoweredBevelBorder">
-            <div class="CenterLayout">
-              lowered bevel border
-            </div>
+          <div class="LoweredBevelBorder CenterLayout">
+            lowered bevel border
           </div>
         </div>
         <div data-name="Matte"
@@ -117,30 +113,24 @@ const BorderDemoPage = ({ path }: PageProps) => {
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- titled line border (left just.) -->
-          <div class="TitleBorder"
+          <div class="TitledBorder CenterLayout"
                style="background-color: inherit;">
             <h6>title</h6>
-            <div class="CenterLayout">
-              titled line border (left just.)
-            </div>
+            titled line border (left just.)
           </div>
           <!-- titled line border (centered) -->
-          <div class="TitleBorder"
+          <div class="TitledBorder CenterLayout"
                data-title-justification="center"
                style="background-color: inherit;">
             <h6>title</h6>
-            <div class="CenterLayout">
-              titled line border (centered)
-            </div>
+            titled line border (centered)
           </div>
           <!-- titled line border (right just.) -->
-          <div class="TitleBorder"
+          <div class="TitledBorder CenterLayout"
                data-title-justification="trailing"
                style="background-color: inherit;">
             <h6>title</h6>
-            <div class="CenterLayout">
-              titled line border (right just.)
-            </div>
+            titled line border (right just.)
           </div>
         </div>
         <div data-name="Compound"
@@ -151,24 +141,12 @@ const BorderDemoPage = ({ path }: PageProps) => {
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- raised etched border -->
-          <div class="CompoundBorder"
-               style="border: 2px solid;
-                      border-color: White Gray Gray White;">
-            <div style="border: 2px solid;
-                        border-color: Gray White White Gray;"
-                 class="CenterLayout">
-              raised etched border
-            </div>
+          <div class="RaisedEtchedBorder CenterLayout">
+            raised etched border
           </div>
           <!-- lowered etched border -->
-          <div class="CompoundBorder"
-               style="border: 2px solid;
-                      border-color: Gray White White Gray;">
-            <div style="border: 2px solid;
-                        border-color: White Gray Gray White;"
-                 class="CenterLayout">
-              lowered etched border
-            </div>
+          <div class="LoweredEtchedBorder CenterLayout">
+            lowered etched border
           </div>
           <!-- lowered etched border -->
           <div class="CompoundBorder"

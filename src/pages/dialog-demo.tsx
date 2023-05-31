@@ -36,10 +36,10 @@ const DialogDemoPage = ({ path }: PageProps) => {
     <div class=TabbedPane
          style="border: 1px solid Gray;">
       <div class="TabLayout">
-        <button value="Simple Modal Dialogs"
+        <button value="Simple Dialogs"
                 tabindex=-1>
           <span>
-            <span>Simple Modal Dialogs</span>
+            <span>Simple Dialogs</span>
           </span>
         </button>
         <button value="More Dialogs">
@@ -54,7 +54,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
         </button>
       </div>
       <div class="CardLayout">
-        <div data-name="Simple Modal Dialogs"
+        <div data-name="Simple Dialogs"
              class="BorderLayout"
              style="visibility: inherit;
                     padding: .5em;">
