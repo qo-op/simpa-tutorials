@@ -29,7 +29,8 @@ const ButtonDemoPage = ({ path }: PageProps) => {
       data-scrollbar-overlay
       id="${id}">
   <div class="GridBagConstraints"
-       data-anchor="page-start">
+       data-anchor="page-start"
+       style="padding: .25em;">
     <div class="BoxLayout"
          style="gap: .5em">
       <!-- Disable middle button -->

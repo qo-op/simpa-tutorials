@@ -129,7 +129,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
   <div class="PageStart">
     <button>Button 1</button>
   </div>
-  <button style="margin: 10px 0 0 0;">Button 2</button>
+  <button style="margin-block-start: 10px;">
+    Button 2
+  </button>
 </div>
 ...`}
         </SyntaxHighlighter>
@@ -145,7 +147,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <div className="PageStart">
           <button>Button 1</button>
         </div>
-        <button style={{ margin: "10px 0 0 0" }}>Button 2</button>
+        <button style={{ marginBlockStart: "10px" }}>Button 2</button>
       </div>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />

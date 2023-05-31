@@ -19,8 +19,6 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
@@ -29,11 +27,12 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
       data-scrollbar-overlay
       id="${id}">
   <div class="GridBagConstraints"
-       data-anchor="page-start">
+       data-anchor="page-start"
+       style="padding: .25em;">
     <div class="BoxLayout"
          style="gap: .5em;">
       <!-- check boxes -->
-      <div>
+      <form>
         <!-- Chin check box -->
         <label>
           <input type="checkbox"
@@ -70,7 +69,7 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
                   checked>
             Teeth
         </label>
-      </div>
+      </form>
       <!-- picture -->
       <img src="/geek-cght.gif"
            alt="Geek image"

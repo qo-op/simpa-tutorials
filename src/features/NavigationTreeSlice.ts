@@ -3,57 +3,57 @@ import { createSlice } from '@reduxjs/toolkit'
 const NavigationTreeSlice = createSlice({
     name: "navigationTree",
     initialState: {
-        cssLayoutFolderClosed: false,
-        cssComponentFolderClosed: false,
-        jsComponentFolderClosed: false,
-        exampleFolderClosed: false,
+        cssLayoutsFolderClosed: false,
+        cssComponentsFolderClosed: false,
+        jsComponentsFolderClosed: false,
+        examplesFolderClosed: false,
     },
     reducers: {
         expand: (state, action) => {
             switch (action.payload) {
                 case "CSS Layouts":
-                    state.cssLayoutFolderClosed = false;
+                    state.cssLayoutsFolderClosed = false;
                     break;
                 case "CSS Components":
-                    state.cssComponentFolderClosed = false;
+                    state.cssComponentsFolderClosed = false;
                     break;
                 case "JS Components":
-                    state.jsComponentFolderClosed = false;
+                    state.jsComponentsFolderClosed = false;
                     break;
                 case "Examples":
-                    state.exampleFolderClosed = false;
+                    state.examplesFolderClosed = false;
                     break;
             }
         },
         collapse: (state, action) => {
             switch (action.payload) {
                 case "CSS Layouts":
-                    state.cssLayoutFolderClosed = true;
+                    state.cssLayoutsFolderClosed = true;
                     break;
                 case "CSS Components":
-                    state.cssComponentFolderClosed = true;
+                    state.cssComponentsFolderClosed = true;
                     break;
                 case "JS Components":
-                    state.jsComponentFolderClosed = true;
+                    state.jsComponentsFolderClosed = true;
                     break;
                 case "Examples":
-                    state.exampleFolderClosed = true;
+                    state.examplesFolderClosed = true;
                     break;
             }
         },
         toggle: (state, action) => {
             switch (action.payload) {
                 case "CSS Layouts":
-                    state.cssLayoutFolderClosed = !state.cssLayoutFolderClosed;
+                    state.cssLayoutsFolderClosed = !state.cssLayoutsFolderClosed;
                     break;
                 case "CSS Components":
-                    state.cssComponentFolderClosed = !state.cssComponentFolderClosed;
+                    state.cssComponentsFolderClosed = !state.cssComponentsFolderClosed;
                     break;
                 case "JS Components":
-                    state.jsComponentFolderClosed = !state.jsComponentFolderClosed;
+                    state.jsComponentsFolderClosed = !state.jsComponentsFolderClosed;
                     break;
                 case "Examples":
-                    state.exampleFolderClosed = !state.exampleFolderClosed;
+                    state.examplesFolderClosed = !state.examplesFolderClosed;
                     break;
             }
         },

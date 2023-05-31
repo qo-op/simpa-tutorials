@@ -1,9 +1,12 @@
-const tutorials = [
+export const home = [
     {
         text: "Introduction to Simpa",
         path: "/",
         folder: "",
-    },
+    }
+];
+
+export const cssLayoutsTutorials = [
     {
         text: "How to Use Border Layouts",
         path: "/border-layout/",
@@ -39,6 +42,9 @@ const tutorials = [
         path: "/grid-layout/",
         folder: "CSS Layouts",
     },
+]
+
+export const cssComponentsTutorials = [
     {
         text: "How to Use Layered Panes",
         path: "/layered-pane/",
@@ -59,6 +65,9 @@ const tutorials = [
         path: "/tree/",
         folder: "CSS Components",
     },
+]
+
+export const jsComponentsTutorials = [
     {
         text: "How to Use Dialogs",
         path: "/dialog/",
@@ -79,6 +88,9 @@ const tutorials = [
         path: "/tabbed-pane/",
         folder: "JS Components",
     },
+]
+
+export const examples = [
     {
         text: "Border Demo",
         path: "/border-demo/",
@@ -104,7 +116,14 @@ const tutorials = [
         path: "/combo-box-demo/",
         folder: "Examples",
     },
-];
+    {
+        text: "Dialog Demo",
+        path: "/dialog-demo/",
+        folder: "Examples",
+    },
+]
+
+const tutorials = home.concat(cssLayoutsTutorials, cssComponentsTutorials, jsComponentsTutorials, examples);
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((
     accumulator: { [key: string]: number }, tutorial, index

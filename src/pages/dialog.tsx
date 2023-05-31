@@ -7,7 +7,8 @@ import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 
 const title: string = "How to Use Dialogs with HTML, CSS and JavaScript";
-const description: string = "This tutorial shows how to use dialogs using HTML, CSS and JavaScript.";
+const description: string =
+  "This tutorial shows how to use dialogs using HTML, CSS and JavaScript.";
 
 const DialogPage = ({ path }: PageProps) => {
   const click = (ev: React.MouseEvent) => {
@@ -40,16 +41,16 @@ const DialogPage = ({ path }: PageProps) => {
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
 <div class="Dialog BorderLayout">
-  <!-- dialog title -->
+  <!-- dialog title bar -->
   <div class="DialogTitleBar PageStart"
-         style="padding: 0 .5em; background-color: LightGray;">
-    <span>Message</span>
+       style="background-color: LightGray; padding: 0 .5em;">
+    Message
   </div>
   <!-- dialog content -->
   <div class="BorderLayout"
          style="padding: .5em;">
     <!-- dialog text -->
-    <span style="margin: 0 0 .5em 0;">
+    <span style="margin-block-end: .5em;">
         This is a dialog!
     </span>
     <!-- ok button -->
@@ -79,12 +80,12 @@ const DialogPage = ({ path }: PageProps) => {
           <div className="Dialog BorderLayout" style={{ visibility: "hidden" }}>
             <div
               className="DialogTitleBar PageStart"
-              style={{ padding: "0 .5em", backgroundColor: "LightGray" }}
+              style={{ backgroundColor: "LightGray", padding: "0 .5em" }}
             >
-              <span>Message</span>
+              Message
             </div>
             <div className="BorderLayout" style={{ padding: ".5em" }}>
-              <span style={{ margin: "0 0 .5em 0" }}>This is a dialog!</span>
+              <span style={{ marginBlockEnd: ".5em" }}>This is a dialog!</span>
               <div className="PageEnd CenterLayout">
                 <button onClick={click}>OK</button>
               </div>
@@ -98,7 +99,7 @@ const DialogPage = ({ path }: PageProps) => {
               <span>Message</span>
             </div>
             <div className="BorderLayout" style={{ padding: ".5em" }}>
-              <span style={{ margin: "0 0 .5em 0" }}>This is a dialog!</span>
+              <span style={{ marginBlockEnd: ".5em" }}>This is a dialog!</span>
               <div className="PageEnd CenterLayout">
                 <button onClick={click}>OK</button>
               </div>

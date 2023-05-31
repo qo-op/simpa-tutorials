@@ -19,8 +19,6 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
@@ -29,7 +27,8 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
       data-scrollbar-overlay
       id="${id}">
   <div class="GridBagConstraints"
-       data-anchor="page-start">
+       data-anchor="page-start"
+       style="padding: .25em;">
     <div class="BorderLayout">
       <div class="PageStart">
         <div class="TitleBorder"

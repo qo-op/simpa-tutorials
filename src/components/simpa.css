@@ -73,9 +73,10 @@ body {
 .BorderLayout>.LineStart,
 .BorderLayout>.LineEnd,
 .BorderLayout>.Center {
-    display: grid !important;
+    display: grid;
 }
 
+/*
 .BorderLayout>.North>*,
 .BorderLayout>.South>*,
 .BorderLayout>.West>*,
@@ -88,6 +89,7 @@ body {
     grid-row: 1 !important;
     grid-column: 1 !important;
 }
+*/
 
 .BorderLayout>.Center>* {
     overflow: hidden;
@@ -282,10 +284,12 @@ body {
     justify-items: stretch !important;
 }
 
+/*
 .GridBagConstraints>* {
     grid-row: 1 !important;
     grid-column: 1 !important;
 }
+*/
 
 /**
  * Borders
@@ -360,9 +364,11 @@ body {
     user-select: none;
 }
 
+/*
 .Dialog .DialogTitleBar * {
     pointer-events: none;
 }
+*/
 
 .ModalLayer {
     position: fixed !important;
@@ -371,23 +377,16 @@ body {
     width: 100% !important;
     height: 100% !important;
     z-index: 200 !important;
-    /*
-    background-color: rgba(0, 0, 0, 0.25);
     display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
     align-items: center;
-    justify-content: center;
-    */
+    justify-items: center;
 }
 
-/*
 .ModalLayer>* {
-    grid-row: 1 !important;
-    grid-column: 1 !important;
+    grid-row: 1;
+    grid-column: 1;
     overflow: hidden;
 }
-*/
 
 /**
  * Drag layer
@@ -400,6 +399,10 @@ body {
     width: 100% !important;
     height: 100% !important;
     z-index: 400 !important;
+}
+
+.DragLayer>* {
+    overflow: hidden;
 }
 
 /**

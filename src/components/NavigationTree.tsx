@@ -12,7 +12,12 @@ import {
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
-import tutorials from "app/tutorials";
+import tutorials, {
+  cssComponentsTutorials,
+  cssLayoutsTutorials,
+  examples,
+  jsComponentsTutorials,
+} from "app/tutorials";
 import "./NavigationTree.css";
 
 const NavigationTreeStyle: React.CSSProperties = {
@@ -31,17 +36,17 @@ const NavigationTree = ({
   mobileView: boolean;
   tutorialIndex: number;
 }) => {
-  const cssLayoutFolderClosed = useAppSelector(
-    (state) => state.navigationTree.cssLayoutFolderClosed
+  const cssLayoutsFolderClosed = useAppSelector(
+    (state) => state.navigationTree.cssLayoutsFolderClosed
   );
-  const cssComponentFolderClosed = useAppSelector(
-    (state) => state.navigationTree.cssComponentFolderClosed
+  const cssComponentsFolderClosed = useAppSelector(
+    (state) => state.navigationTree.cssComponentsFolderClosed
   );
-  const jsComponentFolderClosed = useAppSelector(
-    (state) => state.navigationTree.jsComponentFolderClosed
+  const jsComponentsFolderClosed = useAppSelector(
+    (state) => state.navigationTree.jsComponentsFolderClosed
   );
-  const exampleFolderClosed = useAppSelector(
-    (state) => state.navigationTree.exampleFolderClosed
+  const examplesFolderClosed = useAppSelector(
+    (state) => state.navigationTree.examplesFolderClosed
   );
   const dispatch = useAppDispatch();
   const tutorialClick = (to: string, mobileView: boolean) => {
@@ -78,10 +83,10 @@ const NavigationTree = ({
         <li>
           <div
             className="TreeNode"
-            data-closed={cssLayoutFolderClosed ? "true" : "false"}
+            data-closed={cssLayoutsFolderClosed ? "true" : "false"}
             onClick={() => folderClick("CSS Layouts")}
           >
-            {cssLayoutFolderClosed ? (
+            {cssLayoutsFolderClosed ? (
               <KeyboardArrowRightIcon />
             ) : (
               <KeyboardArrowDownIcon />
@@ -89,11 +94,11 @@ const NavigationTree = ({
             <span>CSS Layouts</span>
           </div>
           <ul>
-            {tutorials.slice(0, 8).map((tutorial, index) => (
+            {cssLayoutsTutorials.map((tutorial, index) => (
               <li key={index}>
                 <div
                   className="TreeNode"
-                  style={NavigationTreeNodeStyle(tutorialIndex === index)}
+                  style={NavigationTreeNodeStyle(tutorialIndex === index + 1)}
                   onClick={() => tutorialClick(tutorial.path, mobileView)}
                 >
                   <ArticleIcon />
@@ -106,10 +111,10 @@ const NavigationTree = ({
         <li>
           <div
             className="TreeNode"
-            data-closed={cssComponentFolderClosed ? "true" : "false"}
+            data-closed={cssComponentsFolderClosed ? "true" : "false"}
             onClick={() => folderClick("CSS Components")}
           >
-            {cssComponentFolderClosed ? (
+            {cssComponentsFolderClosed ? (
               <KeyboardArrowRightIcon />
             ) : (
               <KeyboardArrowDownIcon />
@@ -117,11 +122,13 @@ const NavigationTree = ({
             <span>CSS Components</span>
           </div>
           <ul>
-            {tutorials.slice(8, 12).map((tutorial, index) => (
+            {cssComponentsTutorials.map((tutorial, index) => (
               <li key={index}>
                 <div
                   className="TreeNode"
-                  style={NavigationTreeNodeStyle(tutorialIndex === index + 8)}
+                  style={NavigationTreeNodeStyle(
+                    tutorialIndex === index + cssLayoutsTutorials.length + 1
+                  )}
                   onClick={() => tutorialClick(tutorial.path, mobileView)}
                 >
                   <ArticleIcon />
@@ -134,10 +141,10 @@ const NavigationTree = ({
         <li>
           <div
             className="TreeNode"
-            data-closed={jsComponentFolderClosed ? "true" : "false"}
+            data-closed={jsComponentsFolderClosed ? "true" : "false"}
             onClick={() => folderClick("JS Components")}
           >
-            {jsComponentFolderClosed ? (
+            {jsComponentsFolderClosed ? (
               <KeyboardArrowRightIcon />
             ) : (
               <KeyboardArrowDownIcon />
@@ -145,11 +152,17 @@ const NavigationTree = ({
             <span>JS Components</span>
           </div>
           <ul>
-            {tutorials.slice(12, 16).map((tutorial, index) => (
+            {jsComponentsTutorials.map((tutorial, index) => (
               <li key={index}>
                 <div
                   className="TreeNode"
-                  style={NavigationTreeNodeStyle(tutorialIndex === index + 12)}
+                  style={NavigationTreeNodeStyle(
+                    tutorialIndex ===
+                      index +
+                        cssComponentsTutorials.length +
+                        cssLayoutsTutorials.length +
+                        1
+                  )}
                   onClick={() => tutorialClick(tutorial.path, mobileView)}
                 >
                   <ArticleIcon />
@@ -162,10 +175,10 @@ const NavigationTree = ({
         <li>
           <div
             className="TreeNode"
-            data-closed={exampleFolderClosed ? "true" : "false"}
+            data-closed={examplesFolderClosed ? "true" : "false"}
             onClick={() => folderClick("Examples")}
           >
-            {exampleFolderClosed ? (
+            {examplesFolderClosed ? (
               <KeyboardArrowRightIcon />
             ) : (
               <KeyboardArrowDownIcon />
@@ -173,11 +186,18 @@ const NavigationTree = ({
             <span>Examples</span>
           </div>
           <ul>
-            {tutorials.slice(16).map((tutorial, index) => (
+            {examples.map((tutorial, index) => (
               <li key={index}>
                 <div
                   className="TreeNode"
-                  style={NavigationTreeNodeStyle(tutorialIndex === index + 16)}
+                  style={NavigationTreeNodeStyle(
+                    tutorialIndex ===
+                      index +
+                        jsComponentsTutorials.length +
+                        cssComponentsTutorials.length +
+                        cssLayoutsTutorials.length +
+                        1
+                  )}
                   onClick={() => tutorialClick(tutorial.path, mobileView)}
                 >
                   <ArticleIcon />

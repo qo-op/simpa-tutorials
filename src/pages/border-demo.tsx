@@ -29,8 +29,10 @@ const BorderDemoPage = ({ path }: PageProps) => {
       data-scrollbar-overlay
       id="${id}">
   <div class="GridBagConstraints"
-       data-anchor="page-start">
-    <div class=TabbedPane>
+       data-anchor="page-start"
+       style="padding: .25em;">
+    <div class=TabbedPane
+         style="border: 1px solid Gray;">
       <div class="TabLayout">
         <button value="Simple"
                 tabindex=-1>
@@ -57,6 +59,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
       <div class="CardLayout">
         <div data-name="Simple"
              style="visibility: inherit;
+                    background-color: WhiteSmoke;
+                    padding: .5em;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
@@ -80,6 +84,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
         </div>
         <div data-name="Matte"
              style="visibility: hidden;
+                    background-color: WhiteSmoke;
+                    padding: .5em;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
@@ -105,6 +111,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
         </div>
         <div data-name="Titled"
              style="visibility: hidden;
+                    background-color: WhiteSmoke;
+                    padding: .5em;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
@@ -137,6 +145,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
         </div>
         <div data-name="Compound"
              style="visibility: hidden;
+                    background-color: WhiteSmoke;
+                    padding: .5em;
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
@@ -177,12 +187,6 @@ const BorderDemoPage = ({ path }: PageProps) => {
 `}
       cssCode={`/* ${title}.css */
 #${id} .TabbedPane {
-  border: 1px solid Gray
-}
-
-#${id} .CardLayout>* {
-  background-color: WhiteSmoke;
-  padding: .5em;
 }
 `}
       jsCode={`/* ${title}.js */
