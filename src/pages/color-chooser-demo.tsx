@@ -67,40 +67,36 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
                       display: grid;
                       grid-template-columns: 1fr 1fr;
                       gap: .25em;">
-            <button>
+            <button onclick="changeBannerColor(event);"
+                    data-action-command="red">
               <span class="BorderLayout">
                 <img src="/red.gif"
                      alt="The red crayon"
-                     style="width: 180px; height: 22px"
-                     data-action-command="red"
-                     onclick="changeBannerColor(event);">
+                     style="width: 180px; height: 22px">
               </span>
             </button>
-            <button>
+            <button onclick="changeBannerColor(event);"
+                    data-action-command="yellow">
               <span class="BorderLayout">
                 <img src="/yellow.gif"
                      alt="The yellow crayon"
-                     style="width: 180px; height: 22px"
-                     data-action-command="yellow"
-                     onclick="changeBannerColor(event);">
+                     style="width: 180px; height: 22px">
               </span>
             </button>
-            <button>
+            <button onclick="changeBannerColor(event);"
+                    data-action-command="green">
               <span class="BorderLayout">
                 <img src="/green.gif"
                      alt="The green crayon"
-                     style="width: 180px; height: 22px"
-                     data-action-command="green"
-                     onclick="changeBannerColor(event);">
+                     style="width: 180px; height: 22px">
               </span>
             </button>
-            <button>
+            <button onclick="changeBannerColor(event);"
+                    data-action-command="blue">
               <span class="BorderLayout">
                 <img src="/blue.gif"
                      alt="The blue crayon"
-                     style="width: 180px; height: 22px"
-                     data-action-command="blue"
-                     onclick="changeBannerColor(event);">
+                     style="width: 180px; height: 22px">
               </span>
             </button>
           </div>
@@ -121,8 +117,8 @@ function changeBannerBackgroundColor(event) {
   banner.style.backgroundColor = color;
 }
 function changeBannerColor(event) {
-  var img = event.currentTarget;
-  var actionCommand = img.dataset.actionCommand;
+  var button = event.currentTarget;
+  var actionCommand = button.dataset.actionCommand;
   const banner = document.getElementById("banner");
   banner.style.color = actionCommand;
 }

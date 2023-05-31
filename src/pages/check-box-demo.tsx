@@ -106,8 +106,8 @@ function updatePicture(event) {
     c = "-";
   }
   choices[index] = c;
-  const img = document.getElementById("picture");
-  img.src = "/geek-" + choices.join("") + ".gif";
+  const picture = document.getElementById("picture");
+  picture.src = "/geek-" + choices.join("") + ".gif";
 };
 `}
       info={`

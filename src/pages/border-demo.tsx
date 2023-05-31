@@ -141,9 +141,9 @@ const BorderDemoPage = ({ path }: PageProps) => {
                     grid-auto-rows: 1fr;
                     gap: .5em;">
           <!-- raised etched border -->
-          <div style="border: 2px solid;
-                      border-color: White Gray Gray White;"
-               class="BorderLayout">
+          <div class="CompoundBorder"
+               style="border: 2px solid;
+                      border-color: White Gray Gray White;">
             <div style="border: 2px solid;
                         border-color: Gray White White Gray;"
                  class="CenterLayout">
@@ -151,9 +151,9 @@ const BorderDemoPage = ({ path }: PageProps) => {
             </div>
           </div>
           <!-- lowered etched border -->
-          <div style="border: 2px solid;
-                      border-color: Gray White White Gray;"
-               class="BorderLayout">
+          <div class="CompoundBorder"
+               style="border: 2px solid;
+                      border-color: Gray White White Gray;">
             <div style="border: 2px solid;
                         border-color: White Gray Gray White;"
                  class="CenterLayout">
@@ -161,8 +161,8 @@ const BorderDemoPage = ({ path }: PageProps) => {
             </div>
           </div>
           <!-- lowered etched border -->
-          <div style="border: 1px solid Red;"
-               class="BorderLayout">
+          <div class="CompoundBorder"
+               style="border: 1px solid Red;">
             <div style="border: 2px solid Gray;"
                  class="CenterLayout">
               compound border (red outline)

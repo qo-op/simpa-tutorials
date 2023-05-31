@@ -99,6 +99,11 @@ const tutorials = [
         path: "/color-chooser-demo/",
         folder: "Examples",
     },
+    {
+        text: "Combo Box Demo",
+        path: "/combo-box-demo/",
+        folder: "Examples",
+    },
 ];
 
 export const tutorialIndexes: { [key: string]: number } = tutorials.reduce((

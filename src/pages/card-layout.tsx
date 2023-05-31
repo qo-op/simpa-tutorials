@@ -11,15 +11,15 @@ const description: string =
   "This tutorial shows how to use card layouts (CardLayout) using HTML and CSS.";
 
 const CardLayoutPage = ({ path }: PageProps) => {
-  const change = (ev: React.ChangeEvent) => {
-    const name = (ev.target as HTMLSelectElement).value;
+  const handleChange = (ev: React.ChangeEvent) => {
+    const value = (ev.currentTarget as HTMLSelectElement).value;
     const container: HTMLElement = document.getElementById(
       "container"
     ) as HTMLElement;
     const cards = container.children;
     for (let i = 0; i < cards.length; i++) {
       const card: HTMLElement = container.children[i] as HTMLElement;
-      if (card.dataset.name === name) {
+      if (card.dataset.name === value) {
         card.style.visibility = "inherit";
       } else {
         card.style.visibility = "hidden";
@@ -105,13 +105,13 @@ const CardLayoutPage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
   <script>
-    function change(ev) {
-      const name = ev.target.value;
+    function handleChange(ev) {
+      const value = ev.currentTarget.value;
       const container = document.getElementById("container");
       const cards = container.children;
       for (let i = 0; i < cards.length; i++) {
         const card = container.children[i];
-        if (card.dataset.name === name) {
+        if (card.dataset.name === value) {
           card.style.visibility = "inherit";
         } else {
           card.style.visibility = "hidden";
@@ -127,7 +127,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
        style="border: 1px solid Gray; height: 100px; padding: 10px">
     <div class="PageStart">
       <!-- combo box -->
-      <select onchange="change(event);">
+      <select onchange="handleChange(event);">
         <option value="Card 1"
                 selected>1st Card</option>
         <option value="Card 2">2nd Card</option>
@@ -193,7 +193,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
           style={{ border: "1px solid Gray", height: "100px", padding: "10px" }}
         >
           <div className="PageStart">
-            <select onChange={change} defaultValue={"Card 1"}>
+            <select onChange={handleChange} defaultValue={"Card 1"}>
               <option value="Card 1">1st Card</option>
               <option value="Card 2">2nd Card</option>
               <option value="Card 3">3rd Card</option>

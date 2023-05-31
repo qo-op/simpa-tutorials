@@ -89,76 +89,18 @@ const NavigationTree = ({
             <span>CSS Layouts</span>
           </div>
           <ul>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 1)}
-                onClick={() => tutorialClick(tutorials[1].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[1].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 2)}
-                onClick={() => tutorialClick(tutorials[2].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[2].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 3)}
-                onClick={() => tutorialClick(tutorials[3].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[3].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 4)}
-                onClick={() => tutorialClick(tutorials[4].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[4].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 5)}
-                onClick={() => tutorialClick(tutorials[5].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[5].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 6)}
-                onClick={() => tutorialClick(tutorials[6].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[6].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 7)}
-                onClick={() => tutorialClick(tutorials[7].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[7].text}</span>
-              </div>
-            </li>
+            {tutorials.slice(0, 8).map((tutorial, index) => (
+              <li key={index}>
+                <div
+                  className="TreeNode"
+                  style={NavigationTreeNodeStyle(tutorialIndex === index)}
+                  onClick={() => tutorialClick(tutorial.path, mobileView)}
+                >
+                  <ArticleIcon />
+                  <span>{tutorial.text}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </li>
         <li>
@@ -175,46 +117,18 @@ const NavigationTree = ({
             <span>CSS Components</span>
           </div>
           <ul>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 8)}
-                onClick={() => tutorialClick(tutorials[8].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[8].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 9)}
-                onClick={() => tutorialClick(tutorials[9].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[9].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 10)}
-                onClick={() => tutorialClick(tutorials[10].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[10].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 11)}
-                onClick={() => tutorialClick(tutorials[11].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[11].text}</span>
-              </div>
-            </li>
+            {tutorials.slice(8, 12).map((tutorial, index) => (
+              <li key={index}>
+                <div
+                  className="TreeNode"
+                  style={NavigationTreeNodeStyle(tutorialIndex === index + 8)}
+                  onClick={() => tutorialClick(tutorial.path, mobileView)}
+                >
+                  <ArticleIcon />
+                  <span>{tutorial.text}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </li>
         <li>
@@ -231,46 +145,18 @@ const NavigationTree = ({
             <span>JS Components</span>
           </div>
           <ul>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 12)}
-                onClick={() => tutorialClick(tutorials[12].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[12].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 13)}
-                onClick={() => tutorialClick(tutorials[13].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[13].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 14)}
-                onClick={() => tutorialClick(tutorials[14].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[14].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 15)}
-                onClick={() => tutorialClick(tutorials[15].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[15].text}</span>
-              </div>
-            </li>
+            {tutorials.slice(12, 16).map((tutorial, index) => (
+              <li key={index}>
+                <div
+                  className="TreeNode"
+                  style={NavigationTreeNodeStyle(tutorialIndex === index + 12)}
+                  onClick={() => tutorialClick(tutorial.path, mobileView)}
+                >
+                  <ArticleIcon />
+                  <span>{tutorial.text}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </li>
         <li>
@@ -287,46 +173,18 @@ const NavigationTree = ({
             <span>Examples</span>
           </div>
           <ul>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 16)}
-                onClick={() => tutorialClick(tutorials[16].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[16].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 17)}
-                onClick={() => tutorialClick(tutorials[17].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[17].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 18)}
-                onClick={() => tutorialClick(tutorials[18].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[18].text}</span>
-              </div>
-            </li>
-            <li>
-              <div
-                className="TreeNode"
-                style={NavigationTreeNodeStyle(tutorialIndex === 19)}
-                onClick={() => tutorialClick(tutorials[19].path, mobileView)}
-              >
-                <ArticleIcon />
-                <span>{tutorials[19].text}</span>
-              </div>
-            </li>
+            {tutorials.slice(16).map((tutorial, index) => (
+              <li key={index}>
+                <div
+                  className="TreeNode"
+                  style={NavigationTreeNodeStyle(tutorialIndex === index + 16)}
+                  onClick={() => tutorialClick(tutorial.path, mobileView)}
+                >
+                  <ArticleIcon />
+                  <span>{tutorial.text}</span>
+                </div>
+              </li>
+            ))}
           </ul>
         </li>
       </ul>
