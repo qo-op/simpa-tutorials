@@ -88,7 +88,7 @@ const CodeEditor = ({
         break;
     }
   };
-  if (process.env.NODE_ENV === "development" || true) {
+  if (process.env.NODE_ENV === "development") {
     return (
       <div
         className="CodeEditor ScrollPane"

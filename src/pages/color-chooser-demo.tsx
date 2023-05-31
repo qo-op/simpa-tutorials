@@ -51,17 +51,12 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
             style="background-color: White;">
         <h6>Choose Background Color</h6>
         <div class="CenterLayout"
-             style="padding: .25em;
-                    position: relative;">
+             style="padding: .25em;">
           <!-- color chooser -->
           <input type="color"
-                 style="position: absolute;
-                        visibility: hidden;"
-                 id="colorChooser"
+                 value="#0000FF"
+                 id="color-chooser"
                  oninput="changeBannerBackgroundColor(event);">
-          <button onclick="showColorChooser(event);">
-            Show Color Chooser...
-          </button>
         </div>
       </div>
       <div class="PageEnd">
@@ -72,26 +67,42 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
                       display: grid;
                       grid-template-columns: 1fr 1fr;
                       gap: .25em;">
-            <img src="/red.gif"
-                 alt="The red crayon"
-                 style="width: 180px; height: 22px"
-                 data-action-command="red"
-                 onclick="changeBannerColor(event);">
-            <img src="/yellow.gif"
-                 alt="The yellow crayon"
-                 style="width: 180px; height: 22px"
-                 data-action-command="yellow"
-                 onclick="changeBannerColor(event);">
-            <img src="/green.gif"
-                 alt="The green crayon"
-                 style="width: 180px; height: 22px"
-                 data-action-command="green"
-                 onclick="changeBannerColor(event);">
-            <img src="/blue.gif"
-                 alt="The blue crayon"
-                 style="width: 180px; height: 22px"
-                 data-action-command="blue"
-                 onclick="changeBannerColor(event);">
+            <button>
+              <span class="BorderLayout">
+                <img src="/red.gif"
+                     alt="The red crayon"
+                     style="width: 180px; height: 22px"
+                     data-action-command="red"
+                     onclick="changeBannerColor(event);">
+              </span>
+            </button>
+            <button>
+              <span class="BorderLayout">
+                <img src="/yellow.gif"
+                     alt="The yellow crayon"
+                     style="width: 180px; height: 22px"
+                     data-action-command="yellow"
+                     onclick="changeBannerColor(event);">
+              </span>
+            </button>
+            <button>
+              <span class="BorderLayout">
+                <img src="/green.gif"
+                     alt="The green crayon"
+                     style="width: 180px; height: 22px"
+                     data-action-command="green"
+                     onclick="changeBannerColor(event);">
+              </span>
+            </button>
+            <button>
+              <span class="BorderLayout">
+                <img src="/blue.gif"
+                     alt="The blue crayon"
+                     style="width: 180px; height: 22px"
+                     data-action-command="blue"
+                     onclick="changeBannerColor(event);">
+              </span>
+            </button>
           </div>
         </div>
       </div>
@@ -103,10 +114,6 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function showColorChooser(event) {
-  const colorChooser = document.getElementById("colorChooser");
-  colorChooser.click();
-};
 function changeBannerBackgroundColor(event) {
   const colorChooser = event.currentTarget;
   const color = colorChooser.value;
