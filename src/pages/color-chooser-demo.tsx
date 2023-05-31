@@ -36,9 +36,12 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
               style="background-color: White;">
           <h6>Banner</h6>
           <div class="CenterLayout"
-               style="background-color: blue;">
-            <span style="color: Yellow;
-                         font-size: 24px;">
+               style="background-color: blue;
+                      padding: .25em;
+                      color: Yellow;
+                      font-size: 24px;"
+               id="banner">
+            <span>
               Welcome to the Tutorial Zone!
             <span>
           </div>
@@ -47,8 +50,16 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
       <div class="TitleBorder"
             style="background-color: White;">
         <h6>Choose Background Color</h6>
-        <div class="CenterLayout">
-          <button style="margin: .25em;">
+        <div class="CenterLayout"
+             style="padding: .25em;
+                    position: relative;">
+          <!-- color chooser -->
+          <input type="color"
+                 style="position: absolute;
+                        visibility: hidden;"
+                 id="colorChooser"
+                 oninput="changeBannerBackgroundColor(event);">
+          <button onclick="showColorChooser(event);">
             Show Color Chooser...
           </button>
         </div>
@@ -63,16 +74,24 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
                       gap: .25em;">
             <img src="/red.gif"
                  alt="The red crayon"
-                 style="width: 180px; height: 22px">
+                 style="width: 180px; height: 22px"
+                 data-action-command="red"
+                 onclick="changeBannerColor(event);">
             <img src="/yellow.gif"
                  alt="The yellow crayon"
-                 style="width: 180px; height: 22px">
+                 style="width: 180px; height: 22px"
+                 data-action-command="yellow"
+                 onclick="changeBannerColor(event);">
             <img src="/green.gif"
                  alt="The green crayon"
-                 style="width: 180px; height: 22px">
+                 style="width: 180px; height: 22px"
+                 data-action-command="green"
+                 onclick="changeBannerColor(event);">
             <img src="/blue.gif"
                  alt="The blue crayon"
-                 style="width: 180px; height: 22px">
+                 style="width: 180px; height: 22px"
+                 data-action-command="blue"
+                 onclick="changeBannerColor(event);">
           </div>
         </div>
       </div>
@@ -84,44 +103,22 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function disable(event) {
-  const b1 = document.getElementById("b1");
-  const b2 = document.getElementById("b2");
-  const b3 = document.getElementById("b3");
-  b1.disabled = true;
-  b2.disabled = true;
-  b3.disabled = false;
+function showColorChooser(event) {
+  const colorChooser = document.getElementById("colorChooser");
+  colorChooser.click();
 };
-function enable(event) {
-  const b1 = document.getElementById("b1");
-  const b2 = document.getElementById("b2");
-  const b3 = document.getElementById("b3");
-  b1.disabled = false;
-  b2.disabled = false;
-  b3.disabled = true;
-};
-function handleKeyDown(event) {
-  if (event.altKey) {
-    switch(event.key) {
-      case "d":
-        const b1 = document.getElementById("b1");
-        b1.click();
-        event.preventDefault();
-        break;
-      case "m":
-        const b2 = document.getElementById("b2");
-        b2.click();
-        event.preventDefault();
-        break;
-      case "e":
-        const b3 = document.getElementById("b3");
-        b3.click();
-        event.preventDefault();
-        break;
-    }
-  }
-};
-document.addEventListener("keydown", handleKeyDown);
+function changeBannerBackgroundColor(event) {
+  const colorChooser = event.currentTarget;
+  const color = colorChooser.value;
+  const banner = document.getElementById("banner");
+  banner.style.backgroundColor = color;
+}
+function changeBannerColor(event) {
+  var img = event.currentTarget;
+  var actionCommand = img.dataset.actionCommand;
+  const banner = document.getElementById("banner");
+  banner.style.color = actionCommand;
+}
 `}
       info={`
 An HTML version of Oracle's ColorChooserDemo2 example, using simpa.css
