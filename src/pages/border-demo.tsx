@@ -69,6 +69,14 @@ const BorderDemoPage = ({ path }: PageProps) => {
                class="CenterLayout">
             line border
           </div>
+          <!-- raised etched border -->
+          <div class="RaisedEtchedBorder CenterLayout">
+            raised etched border
+          </div>
+          <!-- lowered etched border -->
+          <div class="LoweredEtchedBorder CenterLayout">
+            lowered etched border
+          </div>
           <!-- raised level border -->
           <div class="RaisedBevelBorder CenterLayout">
             raised bevel border
@@ -140,20 +148,29 @@ const BorderDemoPage = ({ path }: PageProps) => {
                     display: grid;
                     grid-auto-rows: 1fr;
                     gap: .5em;">
-          <!-- raised etched border -->
-          <div class="RaisedEtchedBorder CenterLayout">
-            raised etched border
+          <!-- compound border (two bevels) -->
+          <div class="CompoundBorder RaisedBevelBorder">
+            <div class="LoweredBevelBorder CenterLayout">
+              compound border (two bevels)
+            </div>
           </div>
-          <!-- lowered etched border -->
-          <div class="LoweredEtchedBorder CenterLayout">
-            lowered etched border
-          </div>
-          <!-- lowered etched border -->
+          <!-- compound border (red outline) -->
           <div class="CompoundBorder"
                style="border: 1px solid Red;">
             <div style="border: 2px solid Gray;"
                  class="CenterLayout">
               compound border (red outline)
+            </div>
+          </div>
+          <!-- compound border (three colors) -->
+          <div class="CompoundBorder"
+               style="border: 2px solid Red;">
+            <div class="CompoundBorder"
+                 style="border: 2px solid Yellow;">
+              <div style="border: 2px solid Green;"
+                   class="CenterLayout">
+                compound border (three colors)
+              </div>
             </div>
           </div>
         </div>
