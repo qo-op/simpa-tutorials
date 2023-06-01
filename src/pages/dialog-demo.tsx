@@ -26,6 +26,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="preload" href="/middle.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
@@ -182,146 +183,10 @@ const DialogDemoPage = ({ path }: PageProps) => {
       </div>
     </div>
   </div>
-  <!-- modal layer -->
-  <div class="ModalLayer"
-       style="display: none;"
-       id="modal-layer">
-    <!-- option pane -->
-    <div class="Dialog BorderLayout"
-         id="option-pane">
-      <div class="DialogTitleBar PageStart BorderLayout">
-        <!-- option pane title -->
-        <span id="option-pane-title">
-          Message
-        </span>
-        <div class="LineEnd">
-          <!-- option pane close button -->
-          <span class="material-icons"
-                id="option-pane-close-button"
-                onclick="hide(event);">
-            close
-          </span>
-        </div>
-      </div>
-      <div class="BorderLayout"
-              style="padding: .5em;">
-        <div class="BoxLayout"
-             style="margin-block-end: .5em;
-                    gap: .5em;">
-          <!-- option pane icon -->
-          <span class="material-icons"
-                id="option-pane-icon">
-          </span>
-          <!-- option pane message -->
-          <span id="option-pane-message">
-          </span>
-        </div>
-        <div class="PageEnd BoxLayout"
-             style="justify-self: center;
-                    gap: .5em;">
-          <!-- option pane ok button -->
-          <button onclick="hide(event);"
-                  id="option-pane-ok-button">
-            OK
-          </button>
-          <!-- option pane yes button -->
-          <button onclick="hide(event);"
-                  id="option-pane-yes-button">
-            Yes
-          </button>
-          <!-- option pane no button -->
-          <button onclick="hide(event);"
-                  id="option-pane-no-button">
-            No
-          </button>
-          <!-- option pane cancel button -->
-          <button onclick="hide(event);"
-                  id="option-pane-cancel-button">
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
 `}
       cssCode={`/* ${title}.css */
-#option-pane .DialogTitleBar {
-  background-color: LightGray;
-  padding: 0 .5em;
-}
-#option-pane-title {
-  align-self: center;
-}
-#option-pane-close-button {
-  align-self: center;
-  width: 1em;
-  color: Gray;
-}
-#option-pane-close-button:hover {
-  color: Red;
-}
-#option-pane #option-pane-yes-button,
-#option-pane #option-pane-no-button,
-#option-pane #option-pane-cancel-button {
-  display: none;
-}
-#option-pane[data-option-type="yes-no"] #option-pane-yes-button,
-#option-pane[data-option-type="yes-no-cancel"] #option-pane-yes-button {
-  display: block;
-}
-#option-pane[data-option-type="yes-no"] #option-pane-no-button,
-#option-pane[data-option-type="yes-no-cancel"] #option-pane-no-button {
-  display: block;
-}
-#option-pane[data-option-type="ok-cancel"] #option-pane-cancel-button,
-#option-pane[data-option-type="yes-no-cancel"] #option-pane-cancel-button {
-  display: block;
-}
-#option-pane #option-pane-ok-button {
-  display: block;
-}
-#option-pane[data-option-type="yes-no"] #option-pane-ok-button,
-#option-pane[data-option-type="yes-no-cancel"] #option-pane-ok-button {
-  display: none;
-}
-#option-pane-icon {
-  align-self: center;
-  width: 1em;
-  overflow: hidden;
-}
-#option-pane #option-pane-icon {
-  display: block;
-}
-#option-pane[data-message-type="plain"] #option-pane-icon {
-  display: none;
-}
-#option-pane #option-pane-icon::after {
-  color: Blue;
-  content: "info";
-}
-#option-pane[data-option-type="yes-no"] #option-pane-icon::after,
-#option-pane[data-option-type="yes-no-cancel"] #option-pane-icon::after {
-  color: Green;
-  content: "help";
-}
-#option-pane[data-message-type="error"] #option-pane-icon::after {
-  color: Red;
-  content: "error";
-}
-#option-pane[data-message-type="information"] #option-pane-icon::after {
-  color: Blue;
-  content: "info";
-}
-#option-pane[data-message-type="question"] #option-pane-icon::after {
-  color: Green;
-  content: "help";
-}
-#option-pane[data-message-type="warning"] #option-pane-icon::after {
-  color: GoldenRod;
-  content: "warning";
-}
 `}
       jsCode={`/* ${title}.js */
 function showSimpleDialog(event) {
@@ -358,54 +223,54 @@ function showSimpleDialog(event) {
   modal.style.display = "grid";
 };
 function showIconDialog(event) {
-  const optionPane = document.getElementById("option-pane");
-  const title = document.getElementById("option-pane-title");
-  const icon = document.getElementById("option-pane-icon");0
-  const message = document.getElementById("option-pane-message");
   const form = document.getElementById("icon-dialog-form");
   const radios = form.elements["option"];
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
-      icon.textContent = "";
-      message.textContent = "Eggs aren't supposed to be green.";
       const value = radios[i].value; 
       switch (value) {
         case "plain":
-          title.textContent = "A plain message";
+          OptionPane.showMessageDialog(
+            "Eggs aren't supposed to be green.",
+            "A plain message",
+            "plain");
           break;
         case "information":
-          title.textContent = "Inane informational dialog";
+          OptionPane.showMessageDialog(
+            "Eggs aren't supposed to be green.",
+            "Inane informational dialog",
+            "information");
           break;
         case "question":
-          title.textContent = "Inane question";
-          message.textContent = "You shouldn't use a message dialog (like this) for a question, OK?";
+          OptionPane.showMessageDialog(
+            "You shouldn't use a message dialog (like this) for a question, OK?",
+            "Inane question",
+            "question");
           break;
         case "error":
-          title.textContent = "Inane error";
+          OptionPane.showMessageDialog(
+            "Eggs aren't supposed to be green.",
+            "Inane error",
+            "error");
           break;
         case "warning":
-          title.textContent = "Inane warning";
+          OptionPane.showMessageDialog(
+            "Eggs aren't supposed to be green.",
+            "Inane warning",
+            "warning");
           break;
         case "custom":
-          title.textContent = "Inane custom dialog";
-          icon.textContent = "star";
-          icon.style.color = "GoldenRod";
+          OptionPane.showMessageDialog(
+            "Eggs aren't supposed to be green.",
+            "Inane custom dialog",
+            "information",
+            "/middle.gif");
           break;
       }
-      optionPane.dataset.messageType = value;
-      optionPane.dataset.optionType = "default";
       break;
     }
   }
-  optionPane.style.top = "";
-  optionPane.style.left = "";
-  const modal = document.getElementById("modal-layer");
-  modal.style.display = "grid";
 };
-function hide(event) {
-  const modal = document.getElementById("modal-layer");
-  modal.style.display = "none";
-}
 `}
       info={`
 An HTML version of Oracle's DialogDemo example, using simpa.css

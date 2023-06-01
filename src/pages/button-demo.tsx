@@ -24,6 +24,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="preload" href="/middle.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
@@ -49,10 +50,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
         <span class="BoxLayout"
               data-axis="page-axis">
           <span><u>M</u>iddle button</span>
-          <span class="material-icons"
-                style="width: 1em; color: Gold;">
-            star
-          </span>
+          <img src="/middle.gif">
         </span>
       </button>
       <!-- Enable middle button -->

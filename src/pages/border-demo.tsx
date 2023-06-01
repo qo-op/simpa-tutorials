@@ -24,6 +24,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="preload" href="/wavy.png" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay

@@ -22,6 +22,11 @@ const ComboBoxDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="preload" href="/Bird.gif" as="image">
+  <link rel="preload" href="/Cat.gif" as="image">
+  <link rel="preload" href="/Dog.gif" as="image">
+  <link rel="preload" href="/Pig.gif" as="image">
+  <link rel="preload" href="/Rabbit.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
