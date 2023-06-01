@@ -71,7 +71,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
               <span class="BorderLayout">
                 <img src="/red.gif"
                      alt="The red crayon"
-                     style="width: 180px; height: 22px">
+                     style="width: 100%;">
               </span>
             </button>
             <button onclick="changeBannerColor(event);"
@@ -79,7 +79,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
               <span class="BorderLayout">
                 <img src="/yellow.gif"
                      alt="The yellow crayon"
-                     style="width: 180px; height: 22px">
+                     style="width: 100%;">
               </span>
             </button>
             <button onclick="changeBannerColor(event);"
@@ -87,7 +87,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
               <span class="BorderLayout">
                 <img src="/green.gif"
                      alt="The green crayon"
-                     style="width: 180px; height: 22px">
+                     style="width: 100%;">
               </span>
             </button>
             <button onclick="changeBannerColor(event);"
@@ -95,7 +95,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
               <span class="BorderLayout">
                 <img src="/blue.gif"
                      alt="The blue crayon"
-                     style="width: 180px; height: 22px">
+                     style="width: 100%;">
               </span>
             </button>
           </div>
