@@ -61,8 +61,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
                class="BorderLayout"
                style="visibility: inherit;
                       padding: .5em;">
-            <div style="margin-block-end: .5em;
-                        line-height: 1.5;">
+            <div style="margin-block-end: .5em;">
               Some simple message dialogs:<br>
               <form id="simple-dialog-form">
                 <label>
@@ -96,8 +95,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
               class="BorderLayout"
               style="visibility: hidden;
                      padding: .5em;">
-            <div style="margin-block-end: .5em;
-                        line-height: 1.5;">
+            <div style="margin-block-end: .5em;">
               Some more dialogs:<br>
               <form id="feature-dialog-form">
                 <label>
@@ -131,8 +129,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
               class="BorderLayout"
               style="visibility: hidden;
                      padding: .5em;">
-            <div style="margin-block-end: .5em;
-                        line-height: 1.5;">
+            <div style="margin-block-end: .5em;">
               Some choice of icons:<br>
               <form style="display: grid;
                            grid-template-columns: 1fr 1fr;"
