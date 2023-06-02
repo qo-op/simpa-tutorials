@@ -48,9 +48,11 @@ const ResultPane = ({
       "</script>" +
       resultPaneHtmlCode.substring(index);
   }
+  /*
   if (process.env.NODE_ENV === "development") {
     console.log(code);
   }
+  */
   useEffect(() => {
     if (iframeRef.current === null) {
       return;
