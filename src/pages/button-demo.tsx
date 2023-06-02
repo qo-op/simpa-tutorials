@@ -71,6 +71,10 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
+button[disabled] img {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
 `}
       jsCode={`/* ${title}.js */
 function disable(event) {
