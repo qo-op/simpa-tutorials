@@ -36,7 +36,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
     <div class="BorderLayout">
       <div class="PageStart">
         <div class="TitledBorder"
-              style="background-color: White;">
+             style="background-color: White;">
           <h6>Banner</h6>
           <div class="CenterLayout"
                style="background-color: blue;
@@ -51,7 +51,7 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
         </div>
       </div>
       <div class="TitledBorder"
-            style="background-color: White;">
+           style="background-color: White;">
         <h6>Choose Background Color</h6>
         <div class="CenterLayout"
              style="padding: .25em;">

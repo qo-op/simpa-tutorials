@@ -19,12 +19,12 @@ const ButtonDemoPage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
   <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet"
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="preload" href="/left.gif" as="image">
   <link rel="preload" href="/middle.gif" as="image">
+  <link rel="preload" href="/right.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
@@ -39,10 +39,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
               id="b1">
         <span class="BoxLayout">
           <span><u>D</u>isable middle button</span>
-          <span class="material-icons"
-                style="width: 1em;">
-            arrow_right
-          </span>
+          <img src="/right.gif">
         </span>
       </button>
       <!-- Middle button -->
@@ -58,10 +55,7 @@ const ButtonDemoPage = ({ path }: PageProps) => {
               id="b3"
               disabled>
         <span class="BoxLayout">
-          <span class="material-icons"
-                style="width: 1em;">
-            arrow_left
-          </span>
+          <img src="/left.gif">
           <span><u>E</u>nable middle button</span>
         </span>
       </button>

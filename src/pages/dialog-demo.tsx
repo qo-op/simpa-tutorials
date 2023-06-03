@@ -31,9 +31,9 @@ const DialogDemoPage = ({ path }: PageProps) => {
       id="${id}">
   <div class="GridBagConstraints"
        data-anchor="page-start"
-       data-fill="horizontal"
        style="padding: .25em;">
-    <div class="BorderLayout">
+    <div class="BorderLayout"
+         id="frame">
       <div class=TabbedPane
            style="border: 1px solid Gray;">
         <div class="TabLayout">
@@ -90,9 +90,9 @@ const DialogDemoPage = ({ path }: PageProps) => {
             </div>
           </div>
           <div data-name="More Dialogs"
-              class="BorderLayout"
-              style="visibility: hidden;
-                     padding: .5em;">
+               class="BorderLayout"
+               style="visibility: hidden;
+                      padding: .5em;">
             <div style="margin-block-end: .5em;">
               Some more dialogs:<br>
               <form id="feature-dialog-form">
@@ -124,9 +124,9 @@ const DialogDemoPage = ({ path }: PageProps) => {
             </div>
           </div>
           <div data-name="Dialog Icons"
-              class="BorderLayout"
-              style="visibility: hidden;
-                     padding: .5em;">
+               class="BorderLayout"
+               style="visibility: hidden;
+                      padding: .5em;">
             <div style="margin-block-end: .5em;">
               Some choice of icons:<br>
               <form style="display: grid;
@@ -136,7 +136,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
                   <input type="radio"
                          name="option"
                          value="plain"
-                        checked>
+                         checked>
                   Plain (no icon)
                 </label>
                 <label>
@@ -330,6 +330,12 @@ function showFeatureDialog(event) {
     }
   }
 }
+window.addEventListener("load", function() {
+  // pack
+  const frame = document.getElementById("frame");
+  frame.style.width = (frame.clientWidth + 1) + "px";
+  frame.style.height = (frame.clientHeight + 1) + "px";
+});
 `}
       info={`
 An HTML version of Oracle's DialogDemo example, using simpa.css

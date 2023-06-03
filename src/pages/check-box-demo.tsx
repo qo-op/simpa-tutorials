@@ -52,37 +52,37 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
         <!-- Chin check box -->
         <label>
           <input type="checkbox"
-                  name="accessories"
-                  value="c"
-                  onchange="updatePicture(event);"
-                  checked>
+                 name="accessories"
+                 value="c"
+                 onchange="updatePicture(event);"
+                 checked>
             Chin
         </label><br>
         <!-- Glasses check box -->
         <label>
           <input type="checkbox"
-                  name="accessories"
-                  value="g"
-                  onchange="updatePicture(event);"
-                  checked>
+                 name="accessories"
+                 value="g"
+                 onchange="updatePicture(event);"
+                 checked>
             Glasses
         </label><br>
         <!-- Hair check box -->
         <label>
           <input type="checkbox"
-                  name="accessories"
-                  value="h"
-                  onchange="updatePicture(event);"
-                  checked>
+                 name="accessories"
+                 value="h"
+                 onchange="updatePicture(event);"
+                 checked>
             Hair
         </label><br>
         <!-- Teeth check box -->
         <label>
           <input type="checkbox"
-                  name="accessories"
-                  value="t"
-                  onchange="updatePicture(event);"
-                  checked>
+                 name="accessories"
+                 value="t"
+                 onchange="updatePicture(event);"
+                 checked>
             Teeth
         </label>
       </form>
