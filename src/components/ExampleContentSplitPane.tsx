@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
 import { setScrollPosition } from "features/ContentSplitPaneSlice";
+import React, { useEffect, useRef } from "react";
 
 const ExampleContentSplitPane = ({
   children,

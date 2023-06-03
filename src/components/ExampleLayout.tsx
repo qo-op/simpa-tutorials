@@ -1,17 +1,18 @@
-import React from "react";
-import { useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
-import { useAppSelector, useAppDispatch } from "app/hooks";
-import { setLoading } from "features/LoadingSlice";
-import { setNextPath } from "features/NextPathSlice";
+import "./simpa.css";
+import "./ExampleLayout.css";
+
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ExampleContentSplitPane from "components/ExampleContentSplitPane";
+import ExamplePane from "components/ExamplePane";
 import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
-import ExamplePane from "components/ExamplePane";
-import "./simpa.css";
-import "./ExampleLayout.css";
+import { setLoading } from "features/LoadingSlice";
+import { setNextPath } from "features/NextPathSlice";
+import React from "react";
+import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const ExampleLayout = ({
   path,

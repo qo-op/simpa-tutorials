@@ -1,20 +1,21 @@
-import React, { useEffect, useRef } from "react";
-import { useAppDispatch, useAppSelector } from "app/hooks";
-import { setReady } from "features/ReadySlice";
-import { expand } from "features/NavigationTreeSlice";
-import { setDisabled as setPreviousPageButtonDisabled } from "features/PreviousPageButtonSlice";
-import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
-import tutorials from "app/tutorials";
+import "./ExamplePane.css";
+
 import {
   Code,
-  Tag,
-  Javascript,
   InfoOutlined,
+  Javascript,
   SystemUpdateAlt,
+  Tag,
 } from "@mui/icons-material";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import tutorials from "app/tutorials";
 import CodeEditor from "components/CodeEditor";
 import ResultPane from "components/ResultPane";
-import "./ExamplePane.css";
+import { expand } from "features/NavigationTreeSlice";
+import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
+import { setDisabled as setPreviousPageButtonDisabled } from "features/PreviousPageButtonSlice";
+import { setReady } from "features/ReadySlice";
+import React, { useEffect, useRef } from "react";
 
 const ExamplePane = ({
   path,

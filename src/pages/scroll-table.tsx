@@ -1,10 +1,10 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Scrollable Tables with HTML and CSS";
 const description: string =
@@ -192,9 +192,9 @@ const ScrollTablePage = ({ path }: PageProps) => {
         elements: <code>tbody</code> and <code>thead</code>. The{" "}
         <code>tbody</code> element contains the table data, while the{" "}
         <code>thead</code> element holds the column headers. To ensure proper
-        functionality of the <code>ScrollTable</code>, it is important to arrange the
-        elements in the following order: <code>tbody</code> should be placed
-        first, followed by <code>thead</code>.
+        functionality of the <code>ScrollTable</code>, it is important to
+        arrange the elements in the following order: <code>tbody</code> should
+        be placed first, followed by <code>thead</code>.
       </p>
       <p>
         When you run this code, you will see a table displayed with the

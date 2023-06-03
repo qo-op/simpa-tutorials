@@ -1,17 +1,18 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import Layout from "components/Layout";
-import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import Blender from "@mui/icons-material/Blender";
 import CoffeeMaker from "@mui/icons-material/CoffeeMaker";
-import Iron from "@mui/icons-material/Iron";
 import Folder from "@mui/icons-material/Folder";
+import Iron from "@mui/icons-material/Iron";
+import Layout from "components/Layout";
+import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Trees with HTML and CSS";
-const description: string = "This tutorial shows how to use trees (Tree) using HTML, CSS and JavaScript.";
+const description: string =
+  "This tutorial shows how to use trees (Tree) using HTML, CSS and JavaScript.";
 
 const TreePage = ({ path }: PageProps) => {
   return (

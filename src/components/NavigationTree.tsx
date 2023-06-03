@@ -1,24 +1,25 @@
-import React from "react";
-import { navigate } from "gatsby";
+import "./NavigationTree.css";
+
+import ArticleIcon from "@mui/icons-material/Article";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import ArticleIcon from "@mui/icons-material/Article";
-import { useAppSelector, useAppDispatch } from "app/hooks";
-import { setReady } from "features/ReadySlice";
-import { setNextPath } from "features/NextPathSlice";
-import { toggle } from "features/NavigationTreeSlice";
-import {
-  setDividerLocation,
-  setScrollPosition,
-} from "features/ContentSplitPaneSlice";
-import { setClosed } from "features/HamburgerButtonSlice";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import tutorials, {
   cssComponentsTutorials,
   cssLayoutsTutorials,
   examples,
   jsComponentsTutorials,
 } from "app/tutorials";
-import "./NavigationTree.css";
+import {
+  setDividerLocation,
+  setScrollPosition,
+} from "features/ContentSplitPaneSlice";
+import { setClosed } from "features/HamburgerButtonSlice";
+import { toggle } from "features/NavigationTreeSlice";
+import { setNextPath } from "features/NextPathSlice";
+import { setReady } from "features/ReadySlice";
+import { navigate } from "gatsby";
+import React from "react";
 
 const NavigationTreeStyle: React.CSSProperties = {
   marginBlock: ".5em",

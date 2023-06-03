@@ -1,13 +1,14 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Center Layouts with HTML and CSS";
-const description: string = "This tutorial shows how to use center layouts (CenterLayout) using HTML and CSS.";
+const description: string =
+  "This tutorial shows how to use center layouts (CenterLayout) using HTML and CSS.";
 
 const CenterLayoutPage = ({ path }: PageProps) => {
   return (

@@ -1,18 +1,19 @@
+import "./CodeEditor.css";
+
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import {
+  setCssCode as setCodeEditorCssCode,
+  setHtmlCode as setCodeEditorHtmlCode,
+  setJavaScriptCode as setCodeEditorJavaScriptCode,
+} from "features/CodeEditorSlice";
+import {
+  setCssCode as setResultPaneCssCode,
+  setHtmlCode as setResultPaneHtmlCode,
+  setJavaScriptCode as setResultPaneJavaScriptCode,
+} from "features/ResultPaneSlice";
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import "./CodeEditor.css";
-import { useAppDispatch, useAppSelector } from "app/hooks";
-import {
-  setHtmlCode as setResultPaneHtmlCode,
-  setCssCode as setResultPaneCssCode,
-  setJavaScriptCode as setResultPaneJavaScriptCode,
-} from "features/ResultPaneSlice";
-import {
-  setHtmlCode as setCodeEditorHtmlCode,
-  setCssCode as setCodeEditorCssCode,
-  setJavaScriptCode as setCodeEditorJavaScriptCode,
-} from "features/CodeEditorSlice";
 
 const CodeEditor = ({
   code,
@@ -30,15 +31,16 @@ const CodeEditor = ({
   switch (language) {
     case "html":
       codeEditorHtmlCode =
-        useAppSelector((state) => state.codeEditor.htmlCode) || (code + " ");
+        useAppSelector((state) => state.codeEditor.htmlCode) || code + " ";
       break;
     case "css":
       codeEditorCssCode =
-        useAppSelector((state) => state.codeEditor.cssCode) || (code + " ");
+        useAppSelector((state) => state.codeEditor.cssCode) || code + " ";
       break;
     case "js":
       codeEditorJavaScriptCode =
-        useAppSelector((state) => state.codeEditor.javaScriptCode) || (code + " ");
+        useAppSelector((state) => state.codeEditor.javaScriptCode) ||
+        code + " ";
       break;
   }
   const click = (ev: React.MouseEvent) => {

@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "app/hooks";
-import { setReady } from "features/ReadySlice";
-import { expand } from "features/NavigationTreeSlice";
-import { setDisabled as setPreviousPageButtonDisabled } from "features/PreviousPageButtonSlice";
-import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
-import tutorials from "app/tutorials";
 import "./TutorialPane.css";
+
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import tutorials from "app/tutorials";
+import { expand } from "features/NavigationTreeSlice";
+import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
+import { setDisabled as setPreviousPageButtonDisabled } from "features/PreviousPageButtonSlice";
+import { setReady } from "features/ReadySlice";
+import React, { useEffect } from "react";
 
 const TutorialPane = ({
   path,

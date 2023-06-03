@@ -1,13 +1,14 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Layered Panes with HTML and CSS";
-const description: string = "This tutorial shows how to use layered panes (LayeredPane) using HTML and CSS.";
+const description: string =
+  "This tutorial shows how to use layered panes (LayeredPane) using HTML and CSS.";
 
 const LayeredPanePage = ({ path }: PageProps) => {
   return (
@@ -21,8 +22,8 @@ const LayeredPanePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>LayeredPane</code> provides a way to organize and manage
-        multiple components or layers within a single container.
+        <code>LayeredPane</code> provides a way to organize and manage multiple
+        components or layers within a single container.
       </p>
       <p>
         The main purpose of a <code>LayeredPane</code> is to allow components to

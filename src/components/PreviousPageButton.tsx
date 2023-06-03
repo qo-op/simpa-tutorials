@@ -1,15 +1,15 @@
-import React from "react";
-import { navigate } from "gatsby";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useAppSelector, useAppDispatch } from "app/hooks";
-import { setReady } from "features/ReadySlice";
-import { setNextPath } from "features/NextPathSlice";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import tutorials from "app/tutorials";
 import {
   setDividerLocation,
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
-import tutorials from "app/tutorials";
+import { setNextPath } from "features/NextPathSlice";
+import { setReady } from "features/ReadySlice";
+import { navigate } from "gatsby";
+import React from "react";
 
 const PreviousPageButtonStyle: React.CSSProperties = {
   userSelect: "none",
@@ -45,7 +45,7 @@ const PreviousPageButton = ({
       if (navigationTreeScrollPane !== null) {
         dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
       }
-  }
+    }
   };
   return (
     <button

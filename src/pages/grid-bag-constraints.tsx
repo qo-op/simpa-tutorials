@@ -1,13 +1,14 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Grid Bag Constraints with HTML and CSS";
-const description: string = "This tutorial shows how to use grid bag constraints (GridBagConstraints) using HTML and CSS.";
+const description: string =
+  "This tutorial shows how to use grid bag constraints (GridBagConstraints) using HTML and CSS.";
 
 const GridBagConstraintsPage = ({ path }: PageProps) => {
   return (

@@ -1,15 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const PreviousPageButtonSlice = createSlice({
-    name: "previousPageButton",
-    initialState: {
-        disabled: true
+  name: "previousPageButton",
+  initialState: {
+    disabled: true,
+  },
+  reducers: {
+    setDisabled: (state, action) => {
+      state.disabled = action.payload;
     },
-    reducers: {
-        setDisabled: (state, action) => {
-            state.disabled = action.payload;
-        }
-    }
+  },
 });
 
 export const { setDisabled } = PreviousPageButtonSlice.actions;

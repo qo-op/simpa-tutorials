@@ -1,7 +1,7 @@
-import React from "react";
-import { PageProps } from "gatsby";
 import Layout from "components/Layout";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
 
 const title: string = "Introduction to Simpa";
 const description: string =

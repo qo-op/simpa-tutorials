@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
 import { useAppSelector } from "app/hooks";
+import React, { useEffect } from "react";
 
 const ResultPane = ({
   style,
@@ -68,7 +68,7 @@ const ResultPane = ({
   });
   return (
     <iframe
-    id="iframe"
+      id="iframe"
       className="ResultPane"
       style={{
         ...style,

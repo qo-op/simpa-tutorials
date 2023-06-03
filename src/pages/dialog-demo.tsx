@@ -1,7 +1,7 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import { SEO } from "components/SEO";
 import ExampleLayout from "components/ExampleLayout";
+import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
 
 const title: string = "DialogDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
@@ -20,8 +20,6 @@ const DialogDemoPage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
   <script src="https://qo-op.github.io/simpa/simpa.js">
   </script>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet"
         href="./${title}.css">
   <script src="./${title}.js">
@@ -101,7 +99,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
                 <label>
                   <input type="radio"
                          name="option"
-                         value="pickone"
+                         value="select"
                          checked>
                   Pick one of several choices
                 </label><br>
@@ -114,7 +112,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
                 <label>
                   <input type="radio"
                          name="option"
-                         value="nomodal">
+                         value="nonmodal">
                   Non-modal dialog
                 </label>
               </form>
@@ -297,6 +295,41 @@ function showIconDialog(event) {
     }
   }
 };
+function showFeatureDialog(event) {
+  const label = document.getElementById("label");
+  const form = document.getElementById("feature-dialog-form");
+  const radios = form.elements["option"];
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      const value = radios[i].value; 
+      console.log(value);
+      switch (value) {
+        case "select":
+          OptionPane
+            .showInputDialog(
+              "Complete the sentence: Green eggs and...",
+              "Customized Dialog",
+              "plain",
+              "/middle.gif",
+              [ "ham", "spam", "yam" ],
+              "ham")
+            .then(input => {
+              if (input === "Yes") {
+                label.textContent = "Ewww!";
+              } else if (input === "No") {
+                label.textContent = "Me neither!";
+              }
+            });
+          break;
+        case "textfield":
+          break;
+        case "nonmodal":
+          break;
+      }
+      break;
+    }
+  }
+}
 `}
       info={`
 An HTML version of Oracle's DialogDemo example, using simpa.css

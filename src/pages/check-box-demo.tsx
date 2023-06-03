@@ -1,7 +1,7 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import { SEO } from "components/SEO";
 import ExampleLayout from "components/ExampleLayout";
+import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
 
 const title: string = "CheckBoxDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;

@@ -1,12 +1,12 @@
-import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import { useAppSelector, useAppDispatch } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import {
   setDividerLocation,
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
+import React from "react";
 
 const HamburgerButtonStyle: React.CSSProperties = {
   userSelect: "none",

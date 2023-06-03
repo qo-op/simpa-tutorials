@@ -1,5 +1,5 @@
-import React from "react";
 import HelpMenu from "components/HelpMenu";
+import React from "react";
 
 class MenuBar extends React.Component {
   render() {

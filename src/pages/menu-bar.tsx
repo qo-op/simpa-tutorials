@@ -1,18 +1,19 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import Layout from "components/Layout";
-import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import FileOpenIcon from "@mui/icons-material/FileOpen";
-import SaveIcon from "@mui/icons-material/Save";
-import Logout from "@mui/icons-material/Logout";
 import FileOpen from "@mui/icons-material/FileOpen";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import Logout from "@mui/icons-material/Logout";
+import SaveIcon from "@mui/icons-material/Save";
+import Layout from "components/Layout";
+import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Menu Bars with HTML, CSS and JavaScript";
-const description: string = "This tutorial shows how to use menu bars (MenuBar) using HTML, CSS and JavaScript.";
+const description: string =
+  "This tutorial shows how to use menu bars (MenuBar) using HTML, CSS and JavaScript.";
 
 const MenuBarPage = ({ path }: PageProps) => {
   return (

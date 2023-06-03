@@ -10,11 +10,7 @@ const NoteAboutSimpaCSSContentPaneStyle: React.CSSProperties = {
   padding: "0 1em",
 };
 
-const NoteAboutSimpaCSS = ({
-  subject
-}:{
-  subject: string
-}) => {
+const NoteAboutSimpaCSS = ({ subject }: { subject: string }) => {
   return (
     <div className="NoteAboutSimpaCSS" style={NoteAboutSimpaCSSStyle}>
       <hr />

@@ -1,7 +1,7 @@
-import React from "react";
-import { PageProps } from "gatsby";
-import { SEO } from "components/SEO";
 import ExampleLayout from "components/ExampleLayout";
+import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
 
 const title: string = "ButtonDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
@@ -71,10 +71,6 @@ const ButtonDemoPage = ({ path }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-button[disabled] img {
-  filter: grayscale(100%);
-  opacity: 0.5;
-}
 `}
       jsCode={`/* ${title}.js */
 function disable(event) {

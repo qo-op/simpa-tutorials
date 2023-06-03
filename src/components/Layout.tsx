@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
-import { useAppSelector, useAppDispatch } from "app/hooks";
-import { setLoading } from "features/LoadingSlice";
-import { setNextPath } from "features/NextPathSlice";
+import "./simpa.css";
+import "./Layout.css";
+
+import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ContentSplitPane from "components/ContentSplitPane";
 import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
 import TutorialPane from "components/TutorialPane";
-import "./simpa.css";
-import "./Layout.css";
+import { setLoading } from "features/LoadingSlice";
+import { setNextPath } from "features/NextPathSlice";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const Layout = ({
   children,

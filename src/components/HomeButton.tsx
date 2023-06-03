@@ -1,13 +1,13 @@
-import React from "react";
-import { navigate } from "gatsby";
 import { useAppDispatch } from "app/hooks";
-import { setNextPath } from "features/NextPathSlice";
 import {
   setDividerLocation,
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
+import { setNextPath } from "features/NextPathSlice";
 import { setReady } from "features/ReadySlice";
+import { navigate } from "gatsby";
+import React from "react";
 
 const HomeButtonStyle: React.CSSProperties = {
   userSelect: "none",
@@ -35,7 +35,7 @@ const HomeButton = ({ mobileView }: { mobileView: boolean }) => {
     if (navigationTreeScrollPane !== null) {
       dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
     }
-};
+  };
   return (
     <button className="HomeButton" style={HomeButtonStyle} onClick={click}>
       Simpa
