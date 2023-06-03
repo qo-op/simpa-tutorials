@@ -302,7 +302,6 @@ function showFeatureDialog(event) {
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
       const value = radios[i].value; 
-      console.log(value);
       switch (value) {
         case "select":
           OptionPane
@@ -314,14 +313,28 @@ function showFeatureDialog(event) {
               [ "ham", "spam", "yam" ],
               "ham")
             .then(input => {
-              if (input === "Yes") {
-                label.textContent = "Ewww!";
-              } else if (input === "No") {
-                label.textContent = "Me neither!";
+              if (input) {
+                label.textContent = "Green eggs and... " + input + "!";
+              } else {
+                label.textContent = "Come on, finish the sentence!";
               }
             });
           break;
         case "textfield":
+          OptionPane.showInputDialog(
+            "Complete the sentence: Green eggs and...",
+            "Customized Dialog",
+            "plain",
+            "/middle.gif",
+            null,
+            "ham")
+          .then(input => {
+            if (input) {
+              label.textContent = "Green eggs and... " + input + "!";
+            } else {
+              label.textContent = "Come on, finish the sentence!";
+            }
+          });
           break;
         case "nonmodal":
           break;
@@ -331,7 +344,6 @@ function showFeatureDialog(event) {
   }
 }
 window.addEventListener("load", function() {
-  // pack
   const frame = document.getElementById("frame");
   frame.style.width = (frame.clientWidth + 1) + "px";
   frame.style.height = (frame.clientHeight + 1) + "px";
