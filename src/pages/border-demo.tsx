@@ -34,7 +34,7 @@ const BorderDemoPage = ({ path }: PageProps) => {
        style="padding: .25em;">
     <div class=TabbedPane
          style="border: 1px solid Gray;">
-      <div class="TabLayout">
+      <div>
         <button value="Simple"
                 tabindex=-1>
           <span>

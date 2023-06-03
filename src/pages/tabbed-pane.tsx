@@ -42,8 +42,8 @@ const TabbedPanePage = ({ path }: PageProps) => {
           {`...
 <div class="TabbedPane"
      style="height: 200px; border: 1px solid gray;">
-  <!-- tab layout -->
-  <div class="TabLayout">
+  <!-- tab container -->
+  <div>
     <!-- tab component -->
     <button value="Card 1">
       <span>
@@ -63,7 +63,7 @@ const TabbedPanePage = ({ path }: PageProps) => {
       </span>
     </button>
   </div>
-  <!-- card layout -->
+  <!-- card container -->
   <div class="CardLayout">
     <!-- card component -->
     <div class="CenterLayout"
@@ -86,10 +86,10 @@ const TabbedPanePage = ({ path }: PageProps) => {
       <p>
         In the example above, we create a <code>TabbedPane</code> container with
         a height of 200 pixels. Then, we incorporate two containers: a container
-        for tabs with <code>TabLayout</code> class and a container for cards
-        with <code>CardLayout</code> class in the <code>TabbedPane</code>{" "}
-        container. Next, we added two tabs in the tab container along with their
-        corresponding cards in the card container.
+        for tabs and a container for cards (with <code>CardLayout</code> class)
+        in the <code>TabbedPane</code> container. Next, we added two tabs in the
+        tab container along with their corresponding cards in the card
+        container.
       </p>
       <p>
         When you run this code, you should see a tabbed pane containing two tabs
@@ -100,7 +100,7 @@ const TabbedPanePage = ({ path }: PageProps) => {
         className="TabbedPane"
         style={{ height: "200px", border: "1px solid gray" }}
       >
-        <div className="TabLayout">
+        <div>
           <button value="Card 1">
             <span>
               <span></span>

@@ -72,7 +72,7 @@ const ExampleLogPane = ({
         }}
       >
         <div className="TabbedPane" style={{ padding: ".5em" }}>
-          <div className="TabLayout">
+          <div>
             <button value="html" tabIndex={-1}>
               <span>
                 <Code style={{ color: "Red" }} />
@@ -202,7 +202,7 @@ const ExampleLogPane = ({
           style={{ padding: ".5em" }}
         >
           <div className="TabbedPane" style={{ height: "50%" }}>
-            <div className="TabLayout">
+            <div>
               <button value="html" tabIndex={-1}>
                 <span>
                   <Code style={{ color: "Red" }} />
@@ -254,7 +254,7 @@ const ExampleLogPane = ({
             data-tab-placement="page-end"
             style={{ height: "50%" }}
           >
-            <div className="TabLayout">
+            <div>
               <button value="Result" tabIndex={-1}>
                 <span>
                   <SystemUpdateAlt style={{ color: "Green" }} />

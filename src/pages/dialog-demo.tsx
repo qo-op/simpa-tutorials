@@ -36,7 +36,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
          id="frame">
       <div class=TabbedPane
            style="border: 1px solid Gray;">
-        <div class="TabLayout">
+        <div>
           <button value="Simple Dialogs"
                   tabindex=-1>
             <span>

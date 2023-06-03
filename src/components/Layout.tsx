@@ -1,4 +1,4 @@
-import "./simpa.css";
+import "../../static/simpa.css";
 import "./Layout.css";
 
 import { useAppDispatch, useAppSelector } from "app/hooks";

@@ -2,6 +2,7 @@ import "./ExamplePane.css";
 
 import {
   Code,
+  ContentPaste,
   InfoOutlined,
   Javascript,
   SystemUpdateAlt,
@@ -52,6 +53,44 @@ const ExamplePane = ({
       }
     }
   });
+  let resultPaneHtmlCode =
+    useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
+  const resultPaneCssCode =
+    useAppSelector((state) => state.resultPane.cssCode) || cssCode;
+  const resultPaneJavaScriptCode =
+    useAppSelector((state) => state.resultPane.javaScriptCode) || jsCode;
+  const copyCode = async (ev: React.MouseEvent) => {
+    let code = "";
+    resultPaneHtmlCode = resultPaneHtmlCode.replace(
+      /<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">/,
+      ""
+    );
+    resultPaneHtmlCode = resultPaneHtmlCode.replace(
+      /<script src="\.\/[A-Za-z]+\.js">\s*<\/script>/,
+      ""
+    );
+    let index = resultPaneHtmlCode.toLowerCase().indexOf("</head>");
+    if (index === -1) {
+      code =
+        "<head><style>" +
+        resultPaneCssCode +
+        "</style><script>" +
+        resultPaneJavaScriptCode +
+        "</script></head>" +
+        resultPaneHtmlCode;
+    } else {
+      code =
+        resultPaneHtmlCode.substring(0, index) +
+        "<style>" +
+        resultPaneCssCode +
+        "</style><script>" +
+        resultPaneJavaScriptCode +
+        "</script>" +
+        resultPaneHtmlCode.substring(index);
+    }
+    await navigator.clipboard.writeText(code);
+    (window as any).OptionPane.showMessageDialog("Code copied!");
+  };
   if (mobileView && landscapeView) {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const focusGained = (ev: React.FocusEvent) => {
@@ -71,7 +110,19 @@ const ExamplePane = ({
         }}
       >
         <div className="TabbedPane" style={{ padding: ".5em" }}>
-          <div className="TabLayout">
+          <div>
+            <button
+              style={{
+                float: "right",
+                marginBlockStart: ".1em",
+                backgroundColor: "inherit",
+              }}
+              onClick={copyCode}
+            >
+              <span>
+                <ContentPaste style={{ color: "White" }} />
+              </span>
+            </button>
             <button value="html">
               <span>
                 <Code style={{ color: "Red" }} />
@@ -187,7 +238,19 @@ const ExamplePane = ({
           style={{ padding: ".5em" }}
         >
           <div className="TabbedPane" style={{ height: "50%" }}>
-            <div className="TabLayout">
+            <div>
+              <button
+                style={{
+                  float: "right",
+                  marginBlockStart: ".1em",
+                  backgroundColor: "inherit",
+                }}
+                onClick={copyCode}
+              >
+                <span>
+                  <ContentPaste style={{ color: "White" }} />
+                </span>
+              </button>
               <button value="html" tabIndex={-1}>
                 <span>
                   <Code style={{ color: "Red" }} />
@@ -239,7 +302,7 @@ const ExamplePane = ({
             data-tab-placement="page-end"
             style={{ height: "50%" }}
           >
-            <div className="TabLayout">
+            <div>
               <button value="Result" tabIndex={-1}>
                 <span>
                   <SystemUpdateAlt style={{ color: "Green" }} />
