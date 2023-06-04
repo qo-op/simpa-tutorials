@@ -18,6 +18,8 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
 <head>
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
   <link rel="stylesheet"
         href="./${title}.css">
   <script src="./${title}.js">
