@@ -113,14 +113,18 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Adding gaps</h2>
+      <h2>Gaps</h2>
       <p>
-        To create gaps between components in <code>BorderLayout</code>, you can
-        add a margin to the component placed in the <code>center</code> region.
-        For example, if you want to create a gap between a component in the{" "}
-        <code>page-start</code> region and a component in the{" "}
-        <code>center</code> region, you can add a margin to the{" "}
-        <code>center</code> component, as seen below:
+        <code>BorderLayout</code> does not support gaps directly. The{" "}
+        <code>BorderLayout</code> manager is designed to fill the available
+        space without any gaps or spacing between its components. However, you
+        can achieve the effect of having gaps by using additional containers or
+        other layout managers in combination with <code>BorderLayout</code>.
+      </p>
+      <p>
+        One approach is to place your components inside separate panes and add
+        those panes to the <code>BorderLayout</code> regions. Then, you can add
+        paddings to the panes to create the desired gaps between the components.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -130,9 +134,13 @@ const BorderLayoutPage = ({ path }: PageProps) => {
   <div class="PageStart">
     <button>Button 1</button>
   </div>
-  <button style="margin-block-start: 10px;">
-    Button 2
-  </button>
+  <!-- button pane with padding -->
+  <div class="BorderLayout"
+       syle="padding: 10px 0 0 0;">
+    <button>
+      Button 2
+    </button>
+  </div>
 </div>
 ...`}
         </SyntaxHighlighter>
@@ -148,7 +156,9 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <div className="PageStart">
           <button>Button 1</button>
         </div>
-        <button style={{ marginBlockStart: "10px" }}>Button 2</button>
+        <div className="BorderLayout" style={{ padding: "10px 0 0 0" }}>
+          <button>Button 2</button>
+        </div>
       </div>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />

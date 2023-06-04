@@ -4,7 +4,6 @@ import "./Layout.css";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ContentSplitPane from "components/ContentSplitPane";
-import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
 import TutorialPane from "components/TutorialPane";
@@ -39,25 +38,19 @@ const Layout = ({
       className="Layout BorderLayout"
       style={{ visibility: loading ? "hidden" : "inherit" }}
     >
-      <div className="LayoutContentPane BorderLayout">
-        <div className="PageStart">
-          <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
-        </div>
-        <ContentSplitPane mobileView={mobileView}>
-          <NavigationTree
-            mobileView={mobileView}
-            tutorialIndex={tutorialIndex}
-          />
-          <TutorialPane
-            path={path}
-            mobileView={mobileView}
-            tutorialIndex={tutorialIndex}
-          >
-            {children}
-          </TutorialPane>
-        </ContentSplitPane>
+      <div className="PageStart">
+        <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
       </div>
-      <ModalLayer />
+      <ContentSplitPane mobileView={mobileView}>
+        <NavigationTree mobileView={mobileView} tutorialIndex={tutorialIndex} />
+        <TutorialPane
+          path={path}
+          mobileView={mobileView}
+          tutorialIndex={tutorialIndex}
+        >
+          {children}
+        </TutorialPane>
+      </ContentSplitPane>
     </div>
   );
 };

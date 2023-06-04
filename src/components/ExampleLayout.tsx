@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ExampleContentSplitPane from "components/ExampleContentSplitPane";
 import ExamplePane from "components/ExamplePane";
-import ModalLayer from "components/ModalLayer";
 import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
 import { setLoading } from "features/LoadingSlice";
@@ -46,28 +45,22 @@ const ExampleLayout = ({
       className="ExampleLayout BorderLayout"
       style={{ visibility: loading ? "hidden" : "inherit" }}
     >
-      <div className="LayoutContentPane BorderLayout">
-        <div className="PageStart">
-          <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
-        </div>
-        <ExampleContentSplitPane mobileView={mobileView}>
-          <NavigationTree
-            mobileView={mobileView}
-            tutorialIndex={tutorialIndex}
-          />
-          <ExamplePane
-            path={path}
-            mobileView={mobileView}
-            landscapeView={landscapeView}
-            tutorialIndex={tutorialIndex}
-            htmlCode={htmlCode}
-            cssCode={cssCode}
-            jsCode={jsCode}
-            info={info}
-          />
-        </ExampleContentSplitPane>
+      <div className="PageStart">
+        <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
       </div>
-      <ModalLayer />
+      <ExampleContentSplitPane mobileView={mobileView}>
+        <NavigationTree mobileView={mobileView} tutorialIndex={tutorialIndex} />
+        <ExamplePane
+          path={path}
+          mobileView={mobileView}
+          landscapeView={landscapeView}
+          tutorialIndex={tutorialIndex}
+          htmlCode={htmlCode}
+          cssCode={cssCode}
+          jsCode={jsCode}
+          info={info}
+        />
+      </ExampleContentSplitPane>
     </div>
   );
 };
