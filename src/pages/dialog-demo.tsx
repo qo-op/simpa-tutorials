@@ -28,161 +28,161 @@ const DialogDemoPage = ({ path }: PageProps) => {
 <body class="Frame"
       id="${id}">
   <div class="ScrollPane"
-    data-scrollbar-overlay>
-  <div class="GridBagConstraints"
-       data-anchor="page-start"
-       style="padding: .25em;">
-    <div class="BorderLayout"
-         id="frame">
-      <div class=TabbedPane
-           style="border: 1px solid Gray;">
-        <div>
-          <button value="Simple Dialogs"
-                  tabindex=-1>
-            <span>
-              <span>Simple Dialogs</span>
-            </span>
-          </button>
-          <button value="More Dialogs">
-            <span>
-              <span>More Dialogs</span>
-            </span>
-          </button>
-          <button value="Dialog Icons">
-            <span>
-              <span>Dialog Icons</span>
-            </span>
-          </button>
+       data-scrollbar-overlay>
+    <div class="GridBagConstraints"
+        data-anchor="page-start"
+        style="padding: .25em;">
+      <div class="BorderLayout"
+          id="frame">
+        <div class=TabbedPane
+            style="border: 1px solid Gray;">
+          <div>
+            <button value="Simple Dialogs"
+                    tabindex=-1>
+              <span>
+                <span>Simple Dialogs</span>
+              </span>
+            </button>
+            <button value="More Dialogs">
+              <span>
+                <span>More Dialogs</span>
+              </span>
+            </button>
+            <button value="Dialog Icons">
+              <span>
+                <span>Dialog Icons</span>
+              </span>
+            </button>
+          </div>
+          <div class="CardLayout">
+            <div data-name="Simple Dialogs"
+                class="BorderLayout"
+                style="visibility: inherit;
+                        padding: .5em;">
+              <div style="margin-block-end: .5em;">
+                Some simple message dialogs:<br>
+                <form id="simple-dialog-form">
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="default"
+                          checked>
+                    OK
+                  </label><br>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="yes-no">
+                    Yes/No
+                  </label><br>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="yes-no-cancel">
+                    Yes/No/Cancel
+                  </label>
+                </form>
+              </div>
+              <div class="PageEnd">
+                <button onclick="showSimpleDialog(event);">
+                  Show it!
+                </button>
+              </div>
+            </div>
+            <div data-name="More Dialogs"
+                class="BorderLayout"
+                style="visibility: hidden;
+                        padding: .5em;">
+              <div style="margin-block-end: .5em;">
+                Some more dialogs:<br>
+                <form id="feature-dialog-form">
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="select"
+                          checked>
+                    Pick one of several choices
+                  </label><br>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="textfield">
+                    Enter some text
+                  </label>
+                </form>
+              </div>
+              <div class="PageEnd">
+                <button onclick="showFeatureDialog(event);">
+                  Show it!
+                </button>
+              </div>
+            </div>
+            <div data-name="Dialog Icons"
+                class="BorderLayout"
+                style="visibility: hidden;
+                        padding: .5em;">
+              <div style="margin-block-end: .5em;">
+                Some choice of icons:<br>
+                <form style="display: grid;
+                            grid-template-columns: 1fr 1fr;"
+                      id="icon-dialog-form">
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="plain"
+                          checked>
+                    Plain (no icon)
+                  </label>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="error">
+                    Error icon
+                  </label>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="information">
+                    Information icon
+                  </label>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="warning">
+                    Warning icon
+                  </label>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="question">
+                    Question icon
+                  </label>
+                  <label>
+                    <input type="radio"
+                          name="option"
+                          value="custom">
+                    Custom icon
+                  </label>
+                </form>
+              </div>
+              <div class="PageEnd">
+                <button onclick="showIconDialog(event);">
+                  Show it!
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="CardLayout">
-          <div data-name="Simple Dialogs"
-               class="BorderLayout"
-               style="visibility: inherit;
-                      padding: .5em;">
-            <div style="margin-block-end: .5em;">
-              Some simple message dialogs:<br>
-              <form id="simple-dialog-form">
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="default"
-                         checked>
-                  OK
-                </label><br>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="yes-no">
-                  Yes/No
-                </label><br>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="yes-no-cancel">
-                  Yes/No/Cancel
-                </label>
-              </form>
-            </div>
-            <div class="PageEnd">
-              <button onclick="showSimpleDialog(event);">
-                Show it!
-              </button>
-            </div>
-          </div>
-          <div data-name="More Dialogs"
-               class="BorderLayout"
-               style="visibility: hidden;
-                      padding: .5em;">
-            <div style="margin-block-end: .5em;">
-              Some more dialogs:<br>
-              <form id="feature-dialog-form">
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="select"
-                         checked>
-                  Pick one of several choices
-                </label><br>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="textfield">
-                  Enter some text
-                </label>
-              </form>
-            </div>
-            <div class="PageEnd">
-              <button onclick="showFeatureDialog(event);">
-                Show it!
-              </button>
-            </div>
-          </div>
-          <div data-name="Dialog Icons"
-               class="BorderLayout"
-               style="visibility: hidden;
-                      padding: .5em;">
-            <div style="margin-block-end: .5em;">
-              Some choice of icons:<br>
-              <form style="display: grid;
-                           grid-template-columns: 1fr 1fr;"
-                    id="icon-dialog-form">
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="plain"
-                         checked>
-                  Plain (no icon)
-                </label>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="error">
-                  Error icon
-                </label>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="information">
-                  Information icon
-                </label>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="warning">
-                  Warning icon
-                </label>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="question">
-                  Question icon
-                </label>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="custom">
-                  Custom icon
-                </label>
-              </form>
-            </div>
-            <div class="PageEnd">
-              <button onclick="showIconDialog(event);">
-                Show it!
-              </button>
-            </div>
-          </div>
+        <div class="PageEnd"
+            style="border: 1px solid Gray;
+                    border-block-start: none;
+                    padding: .5em;">
+          <span id="label">
+            Click the "Show it!" button to bring up the selected dialog.
+          </span>
         </div>
-      </div>
-      <div class="PageEnd"
-           style="border: 1px solid Gray;
-                  border-block-start: none;
-                  padding: .5em;">
-        <span id="label">
-          Click the "Show it!" button to bring up the selected dialog.
-        </span>
       </div>
     </div>
-  </div>
   </div>
 </body>
 </html>
