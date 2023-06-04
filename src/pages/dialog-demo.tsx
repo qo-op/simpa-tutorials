@@ -108,12 +108,6 @@ const DialogDemoPage = ({ path }: PageProps) => {
                          name="option"
                          value="textfield">
                   Enter some text
-                </label><br>
-                <label>
-                  <input type="radio"
-                         name="option"
-                         value="nonmodal">
-                  Non-modal dialog
                 </label>
               </form>
             </div>
@@ -335,8 +329,6 @@ function showFeatureDialog(event) {
               label.textContent = "Come on, finish the sentence!";
             }
           });
-          break;
-        case "nonmodal":
           break;
       }
       break;
