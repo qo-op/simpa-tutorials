@@ -24,7 +24,6 @@ const DialogDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
-  <link rel="preload" href="/middle.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay

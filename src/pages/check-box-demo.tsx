@@ -22,22 +22,6 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
-  <link rel="preload" href="/geek-----.gif" as="image">
-  <link rel="preload" href="/geek----t.gif" as="image">
-  <link rel="preload" href="/geek---h-.gif" as="image">
-  <link rel="preload" href="/geek---ht.gif" as="image">
-  <link rel="preload" href="/geek--g--.gif" as="image">
-  <link rel="preload" href="/geek--g-t.gif" as="image">
-  <link rel="preload" href="/geek--gh-.gif" as="image">
-  <link rel="preload" href="/geek--ght.gif" as="image">
-  <link rel="preload" href="/geek-c---.gif" as="image">
-  <link rel="preload" href="/geek-c--t.gif" as="image">
-  <link rel="preload" href="/geek-c-h-.gif" as="image">
-  <link rel="preload" href="/geek-c-ht.gif" as="image">
-  <link rel="preload" href="/geek-cg--.gif" as="image">
-  <link rel="preload" href="/geek-cg-t.gif" as="image">
-  <link rel="preload" href="/geek-cgh-.gif" as="image">
-  <link rel="preload" href="/geek-cght.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay

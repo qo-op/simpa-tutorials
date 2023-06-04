@@ -22,10 +22,6 @@ const ColorChooserDemoPage = ({ path }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
-  <link rel="preload" href="/blue.gif" as="image">
-  <link rel="preload" href="/green.gif" as="image">
-  <link rel="preload" href="/red.gif" as="image">
-  <link rel="preload" href="/yellow.gif" as="image">
 </head>
 <body class="ScrollPane"
       data-scrollbar-overlay
