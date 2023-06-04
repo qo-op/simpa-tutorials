@@ -35,7 +35,7 @@ const Layout = ({
   const tutorialIndex = tutorialIndexes[path];
   return (
     <div
-      className="Layout BorderLayout"
+      className="Frame"
       style={{ visibility: loading ? "hidden" : "inherit" }}
     >
       <div className="PageStart">

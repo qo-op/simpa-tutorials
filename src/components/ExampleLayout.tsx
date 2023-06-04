@@ -42,7 +42,7 @@ const ExampleLayout = ({
   const tutorialIndex = tutorialIndexes[path];
   return (
     <div
-      className="ExampleLayout BorderLayout"
+      className="Frame"
       style={{ visibility: loading ? "hidden" : "inherit" }}
     >
       <div className="PageStart">
