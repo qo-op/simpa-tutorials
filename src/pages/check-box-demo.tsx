@@ -25,9 +25,10 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
   <script src="./${title}.js">
   </script>
 </head>
-<body class="ScrollPane"
-      data-scrollbar-overlay
+<body class="Frame"
       id="${id}">
+  <div class="ScrollPane"
+    data-scrollbar-overlay>
   <div class="GridBagConstraints"
        data-anchor="page-start"
        style="padding: .25em;">
@@ -77,6 +78,7 @@ const CheckBoxDemoPage = ({ path }: PageProps) => {
            alt="Geek image"
            id="picture">
     </div>
+  </div>
   </div>
 </body>
 </html>

@@ -25,9 +25,10 @@ const DialogDemoPage = ({ path }: PageProps) => {
   <script src="./${title}.js">
   </script>
 </head>
-<body class="ScrollPane"
-      data-scrollbar-overlay
+<body class="Frame"
       id="${id}">
+  <div class="ScrollPane"
+    data-scrollbar-overlay>
   <div class="GridBagConstraints"
        data-anchor="page-start"
        style="padding: .25em;">
@@ -181,6 +182,7 @@ const DialogDemoPage = ({ path }: PageProps) => {
         </span>
       </div>
     </div>
+  </div>
   </div>
 </body>
 </html>

@@ -121,35 +121,36 @@ const CardLayoutPage = ({ path }: PageProps) => {
   </script>
 </head>
 
-<body class="CenterLayout"
-      style="margin: 0; height: 100vh;">
-  <div class="BorderLayout"
-       style="border: 1px solid Gray; height: 100px; padding: 10px">
-    <div class="PageStart">
-      <!-- combo box -->
-      <select onchange="handleChange(event);">
-        <option value="Card 1"
-                selected>1st Card</option>
-        <option value="Card 2">2nd Card</option>
-        <option value="Card 3">3rd Card</option>
-      </select>
-    </div>
-    <!-- card container -->
-    <div class="CardLayout"
-         id="container"
-         style="padding: 10px">
-      <button data-name="Card 1"
-              style="visibility: inherit;">
-        <u>First</u> Button
-      </button>
-      <button data-name="Card 2"
-              style="visibility: hidden;">
-        <u>Second</u> Button
-      </button>
-      <button data-name="Card 3"
-              style="visibility: hidden;">
-        <u>Third</u> Button
-      </button>
+<body class="Frame">
+  <div class="CenterLayout">
+    <div class="BorderLayout"
+         style="border: 1px solid Gray; height: 100px; padding: 10px">
+      <div class="PageStart">
+        <!-- combo box -->
+        <select onchange="handleChange(event);">
+          <option value="Card 1"
+                  selected>1st Card</option>
+          <option value="Card 2">2nd Card</option>
+          <option value="Card 3">3rd Card</option>
+        </select>
+      </div>
+      <!-- card container -->
+      <div class="CardLayout"
+           id="container"
+           style="padding: 10px">
+        <button data-name="Card 1"
+                style="visibility: inherit;">
+          <u>First</u> Button
+        </button>
+        <button data-name="Card 2"
+                style="visibility: hidden;">
+          <u>Second</u> Button
+        </button>
+        <button data-name="Card 3"
+                style="visibility: hidden;">
+          <u>Third</u> Button
+        </button>
+      </div>
     </div>
   </div>
 </body>
