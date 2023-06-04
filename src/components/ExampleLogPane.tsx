@@ -148,6 +148,7 @@ const ExampleLogPane = ({
               onFocus={focusGained}
             >
               <ResultPane
+                path={path}
                 style={{ display: "none" }}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
@@ -282,6 +283,7 @@ const ExampleLogPane = ({
                 onFocus={focusGained}
               >
                 <ResultPane
+                  path={path}
                   style={{ display: "block" }}
                   htmlCode={htmlCode}
                   cssCode={cssCode}

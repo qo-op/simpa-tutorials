@@ -8,6 +8,7 @@ import {
 import { setClosed } from "features/HamburgerButtonSlice";
 import { setNextPath } from "features/NextPathSlice";
 import { setReady } from "features/ReadySlice";
+import { setIframeReady } from "features/ResultPaneSlice";
 import { navigate } from "gatsby";
 import React from "react";
 
@@ -39,6 +40,7 @@ const NextPageButton = ({
         dispatch(setDividerLocation(-1));
         dispatch(setClosed(true));
       }
+      dispatch(setIframeReady(false));
       const navigationTreeScrollPane: HTMLElement = document.getElementById(
         "navigation-tree-scroll-pane"
       ) as HTMLElement;

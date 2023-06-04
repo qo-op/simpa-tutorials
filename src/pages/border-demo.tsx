@@ -182,8 +182,6 @@ const BorderDemoPage = ({ path }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-#${id} .TabbedPane {
-}
 `}
       jsCode={`/* ${title}.js */
 `}

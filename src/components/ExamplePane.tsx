@@ -193,6 +193,7 @@ const ExamplePane = ({
               onFocus={focusGained}
             >
               <ResultPane
+                path={path}
                 style={{ display: "block" }}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
@@ -325,6 +326,7 @@ const ExamplePane = ({
                 onFocus={focusGained}
               >
                 <ResultPane
+                  path={path}
                   style={{ display: "block" }}
                   htmlCode={htmlCode}
                   cssCode={cssCode}

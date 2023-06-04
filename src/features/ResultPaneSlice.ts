@@ -6,6 +6,7 @@ const ResultPaneSlice = createSlice({
     htmlCode: "",
     cssCode: "",
     javaScriptCode: "",
+    iframeReady: true,
   },
   reducers: {
     setHtmlCode: (state, action) => {
@@ -17,10 +18,13 @@ const ResultPaneSlice = createSlice({
     setJavaScriptCode: (state, action) => {
       state.javaScriptCode = action.payload;
     },
+    setIframeReady: (state, action) => {
+      state.iframeReady = action.payload;
+    },
   },
 });
 
-export const { setHtmlCode, setCssCode, setJavaScriptCode } =
+export const { setHtmlCode, setCssCode, setJavaScriptCode, setIframeReady } =
   ResultPaneSlice.actions;
 
 export default ResultPaneSlice.reducer;

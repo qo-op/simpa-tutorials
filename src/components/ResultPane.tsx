@@ -1,19 +1,31 @@
-import { useAppSelector } from "app/hooks";
+import { useAppDispatch, useAppSelector } from "app/hooks";
+import { setIframeReady } from "features/ResultPaneSlice";
 import React, { useEffect } from "react";
 
 const ResultPane = ({
+  path,
   style,
   htmlCode,
   cssCode,
   jsCode,
   iframeRef,
 }: {
+  path: string;
   style?: React.CSSProperties;
   htmlCode: string;
   cssCode: string;
   jsCode: string;
   iframeRef: React.RefObject<HTMLIFrameElement>;
 }) => {
+  const nextPath = useAppSelector((state) => state.nextPath.value);
+  let iframeReady = useAppSelector((state) => state.resultPane.iframeReady);
+  iframeReady = iframeReady || path === nextPath;
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (iframeReady) {
+      dispatch(setIframeReady(true));
+    }
+  });
   let resultPaneHtmlCode =
     useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
   const resultPaneCssCode =
@@ -75,6 +87,7 @@ const ResultPane = ({
         width: "100%",
         height: "100%",
         border: "none",
+        visibility: !iframeReady ? "hidden" : "inherit",
       }}
       ref={iframeRef}
     />
