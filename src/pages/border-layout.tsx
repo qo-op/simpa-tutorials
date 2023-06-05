@@ -135,7 +135,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
     <button>Button 1</button>
   </div>
   <!-- button pane with padding -->
-  <div class="BorderLayout"
+  <div class="GridBagConstraints"
+       data-fill: "both"
        syle="padding: 10px 0 0 0;">
     <button>
       Button 2
@@ -156,7 +157,11 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <div className="PageStart">
           <button>Button 1</button>
         </div>
-        <div className="BorderLayout" style={{ padding: "10px 0 0 0" }}>
+        <div
+          className="GridBagConstraints"
+          data-fill="both"
+          style={{ padding: "10px 0 0 0" }}
+        >
           <button>Button 2</button>
         </div>
       </div>
