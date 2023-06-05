@@ -20,6 +20,7 @@ import React, { useEffect, useRef } from "react";
 
 const ExampleLogPane = ({
   path,
+  hostname,
   mobileView,
   landscapeView,
   tutorialIndex,
@@ -29,6 +30,7 @@ const ExampleLogPane = ({
   info,
 }: {
   path: string;
+  hostname: string;
   mobileView: boolean;
   landscapeView: boolean;
   tutorialIndex: number;
@@ -117,7 +119,7 @@ const ExampleLogPane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor code={htmlCode} language="html" />
+              <CodeEditor hostname={hostname} code={htmlCode} language="html" />
             </div>
             <div
               className="BorderLayout"
@@ -126,7 +128,7 @@ const ExampleLogPane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor code={cssCode} language="css" />
+              <CodeEditor hostname={hostname} code={cssCode} language="css" />
             </div>
             <div
               className="BorderLayout"
@@ -135,7 +137,7 @@ const ExampleLogPane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor code={jsCode} language="js" />
+              <CodeEditor hostname={hostname} code={jsCode} language="js" />
             </div>
             <div
               className="BorderLayout"
@@ -149,6 +151,7 @@ const ExampleLogPane = ({
             >
               <ResultPane
                 path={path}
+                hostname={hostname}
                 style={{ display: "none" }}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
@@ -229,21 +232,25 @@ const ExampleLogPane = ({
                 data-name="html"
                 style={{ visibility: "inherit" }}
               >
-                <CodeEditor code={htmlCode} language="html" />
+                <CodeEditor
+                  hostname={hostname}
+                  code={htmlCode}
+                  language="html"
+                />
               </div>
               <div
                 className="BorderLayout"
                 data-name="css"
                 style={{ visibility: "hidden" }}
               >
-                <CodeEditor code={cssCode} language="css" />
+                <CodeEditor hostname={hostname} code={cssCode} language="css" />
               </div>
               <div
                 className="BorderLayout"
                 data-name="js"
                 style={{ visibility: "hidden" }}
               >
-                <CodeEditor code={jsCode} language="js" />
+                <CodeEditor hostname={hostname} code={jsCode} language="js" />
               </div>
             </div>
           </div>
@@ -284,6 +291,7 @@ const ExampleLogPane = ({
               >
                 <ResultPane
                   path={path}
+                  hostname={hostname}
                   style={{ display: "block" }}
                   htmlCode={htmlCode}
                   cssCode={cssCode}

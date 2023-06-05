@@ -196,6 +196,7 @@ const ExamplePane = ({
             >
               <ResultPane
                 path={path}
+                hostname={hostname}
                 style={{ display: "block" }}
                 htmlCode={htmlCode}
                 cssCode={cssCode}
@@ -333,6 +334,7 @@ const ExamplePane = ({
               >
                 <ResultPane
                   path={path}
+                  hostname={hostname}
                   style={{ display: "block" }}
                   htmlCode={htmlCode}
                   cssCode={cssCode}

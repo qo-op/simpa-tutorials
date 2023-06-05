@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 
 const ResultPane = ({
   path,
+  hostname,
   style,
   htmlCode,
   cssCode,
@@ -11,6 +12,7 @@ const ResultPane = ({
   iframeRef,
 }: {
   path: string;
+  hostname: string;
   style?: React.CSSProperties;
   htmlCode: string;
   cssCode: string;
@@ -26,13 +28,13 @@ const ResultPane = ({
       dispatch(setIframeReady(true));
     }
   });
+  let code = "";
   let resultPaneHtmlCode =
     useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
   const resultPaneCssCode =
     useAppSelector((state) => state.resultPane.cssCode) || cssCode;
   const resultPaneJavaScriptCode =
     useAppSelector((state) => state.resultPane.javaScriptCode) || jsCode;
-  let code = "";
   resultPaneHtmlCode = resultPaneHtmlCode.replace(
     /<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">/,
     ""
