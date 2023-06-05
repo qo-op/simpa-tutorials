@@ -5,9 +5,9 @@ import React from "react";
 
 const title: string = "ComboBoxDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
+const id = "combo-box-demo";
 
 const ComboBoxDemoPage = ({ path, location }: PageProps) => {
-  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}

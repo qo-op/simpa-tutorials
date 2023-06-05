@@ -5,9 +5,9 @@ import React from "react";
 
 const title: string = "ColorChooserDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
+const id = "color-chooser-demo";
 
 const ColorChooserDemoPage = ({ path, location }: PageProps) => {
-  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}

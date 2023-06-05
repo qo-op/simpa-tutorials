@@ -5,9 +5,9 @@ import React from "react";
 
 const title: string = "CheckBoxDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
+const id = "check-box-demo";
 
 const CheckBoxDemoPage = ({ path, location }: PageProps) => {
-  const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
