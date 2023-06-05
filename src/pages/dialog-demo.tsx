@@ -6,11 +6,12 @@ import React from "react";
 const title: string = "DialogDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
-const DialogDemoPage = ({ path }: PageProps) => {
+const DialogDemoPage = ({ path, location }: PageProps) => {
   const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
+      hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
 <!-- ${description} -->
 <!DOCTYPE html>
@@ -336,11 +337,6 @@ function showFeatureDialog(event) {
     }
   }
 }
-window.addEventListener("load", function() {
-  const frame = document.getElementById("frame");
-  frame.style.width = (frame.clientWidth + 1) + "px";
-  frame.style.height = (frame.clientHeight + 1) + "px";
-});
 `}
       info={`
 An HTML version of Oracle's DialogDemo example, using simpa.css

@@ -16,10 +16,12 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const CodeEditor = ({
+  hostname,
   code,
   language,
   id,
 }: {
+  hostname: string;
   code: string;
   language: string;
   id?: string;
@@ -90,61 +92,29 @@ const CodeEditor = ({
         break;
     }
   };
-  if (
-    process.env.NODE_ENV === "development" ||
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
-  ) {
-    return (
-      <div
-        className="CodeEditor ScrollPane"
-        data-scrollbar-overlay
-        onClick={click}
-        id={id || ""}
-      >
-        <div className="LayeredPane">
-          <textarea
-            spellCheck="false"
-            onFocus={focusGained}
-            onChange={change}
-            value={
-              language === "html"
-                ? codeEditorHtmlCode
-                : language === "css"
-                ? codeEditorCssCode
-                : codeEditorJavaScriptCode
-            }
-          ></textarea>
-          <div className="SyntaxHighlighter">
-            <SyntaxHighlighter
-              language={
-                language === "html"
-                  ? "xml"
-                  : language === "css"
-                  ? "css"
-                  : "javascript"
-              }
-              style={vs2015}
-              wrapLongLines
-            >
-              {language === "html"
-                ? codeEditorHtmlCode || ""
-                : language === "css"
-                ? codeEditorCssCode || ""
-                : codeEditorJavaScriptCode || ""}
-            </SyntaxHighlighter>
-          </div>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div
-        className="CodeEditor ScrollPane"
-        data-scrollbar-overlay
-        onClick={click}
-        id={id || ""}
-      >
+  return (
+    <div
+      className="CodeEditor ScrollPane"
+      data-scrollbar-overlay
+      onClick={click}
+      id={id || ""}
+    >
+      <div className="LayeredPane">
+        <textarea
+          spellCheck="false"
+          onFocus={focusGained}
+          onChange={change}
+          value={
+            language === "html"
+              ? codeEditorHtmlCode
+              : language === "css"
+              ? codeEditorCssCode
+              : codeEditorJavaScriptCode
+          }
+          disabled={
+            process.env.NODE_ENV !== "development" && hostname !== "localhost"
+          }
+        ></textarea>
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter
             language={
@@ -165,8 +135,7 @@ const CodeEditor = ({
           </SyntaxHighlighter>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
-
 export default CodeEditor;

@@ -20,6 +20,7 @@ import React, { useEffect, useRef } from "react";
 
 const ExamplePane = ({
   path,
+  hostname,
   mobileView,
   landscapeView,
   tutorialIndex,
@@ -29,6 +30,7 @@ const ExamplePane = ({
   info,
 }: {
   path: string;
+  hostname: string;
   mobileView: boolean;
   landscapeView: boolean;
   tutorialIndex: number;
@@ -162,7 +164,7 @@ const ExamplePane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor code={htmlCode} language="html" />
+              <CodeEditor hostname={hostname} code={htmlCode} language="html" />
             </div>
             <div
               className="BorderLayout"
@@ -171,7 +173,7 @@ const ExamplePane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor code={cssCode} language="css" />
+              <CodeEditor hostname={hostname} code={cssCode} language="css" />
             </div>
             <div
               className="BorderLayout"
@@ -180,7 +182,7 @@ const ExamplePane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor code={jsCode} language="js" />
+              <CodeEditor hostname={hostname} code={jsCode} language="js" />
             </div>
             <div
               className="BorderLayout"
@@ -277,21 +279,25 @@ const ExamplePane = ({
                 data-name="html"
                 style={{ visibility: "inherit" }}
               >
-                <CodeEditor code={htmlCode} language="html" />
+                <CodeEditor
+                  hostname={hostname}
+                  code={htmlCode}
+                  language="html"
+                />
               </div>
               <div
                 className="BorderLayout"
                 data-name="css"
                 style={{ visibility: "hidden" }}
               >
-                <CodeEditor code={cssCode} language="css" />
+                <CodeEditor hostname={hostname} code={cssCode} language="css" />
               </div>
               <div
                 className="BorderLayout"
                 data-name="js"
                 style={{ visibility: "hidden" }}
               >
-                <CodeEditor code={jsCode} language="js" />
+                <CodeEditor hostname={hostname} code={jsCode} language="js" />
               </div>
             </div>
           </div>

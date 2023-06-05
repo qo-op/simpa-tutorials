@@ -15,12 +15,14 @@ import { useMediaQuery } from "react-responsive";
 
 const ExampleLayout = ({
   path,
+  hostname,
   htmlCode,
   cssCode,
   jsCode,
   info,
 }: {
   path: string;
+  hostname: string;
   htmlCode: string;
   cssCode: string;
   jsCode: string;
@@ -52,6 +54,7 @@ const ExampleLayout = ({
         <NavigationTree mobileView={mobileView} tutorialIndex={tutorialIndex} />
         <ExamplePane
           path={path}
+          hostname={hostname}
           mobileView={mobileView}
           landscapeView={landscapeView}
           tutorialIndex={tutorialIndex}

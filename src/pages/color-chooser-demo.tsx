@@ -6,11 +6,12 @@ import React from "react";
 const title: string = "ColorChooserDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
-const ColorChooserDemoPage = ({ path }: PageProps) => {
+const ColorChooserDemoPage = ({ path, location }: PageProps) => {
   const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
+      hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
 <!-- ${description} -->
 <!DOCTYPE html>

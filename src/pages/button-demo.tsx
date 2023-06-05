@@ -6,11 +6,12 @@ import React from "react";
 const title: string = "ButtonDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
 
-const ButtonDemoPage = ({ path }: PageProps) => {
+const ButtonDemoPage = ({ path, location }: PageProps) => {
   const id = path.replaceAll(/\//g, "");
   return (
     <ExampleLayout
       path={path}
+      hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
 <!-- ${description} -->
 <!DOCTYPE html>
