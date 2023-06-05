@@ -34,7 +34,7 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
         data-anchor="page-start"
         style="padding: .25em;">
       <div class="BorderLayout"
-          id="frame">
+          id="pack">
         <div class=TabbedPane
             style="border: 1px solid Gray;">
           <div>
@@ -336,7 +336,12 @@ function showFeatureDialog(event) {
       break;
     }
   }
-}
+};
+window.addEventListener("load", function() {
+  const pack = document.getElementById("pack");
+  pack.style.width = (pack.clientWidth + 1) + "px";
+  pack.style.height = (pack.clientHeight + 1) + "px";
+});
 `}
       info={`
 An HTML version of Oracle's DialogDemo example, using simpa.css
