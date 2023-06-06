@@ -36,7 +36,9 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
       <div class="BorderLayout">
         <div class="PageStart FlowLayout">
           <!-- File Chooser -->
-          <div class="BoxLayout">
+          <label class="FileChooser">
+            <input type="file"
+                   onchange="handleFileSelected(event);">
             <button onclick="showOpenFile(event);">
               <span class="BoxLayout"
                     style="gap: .5em;">
@@ -44,16 +46,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
                 <span>Open a File...</span>
               </span>
             </button>
-            <div class="ScrollPane"
-                 data-policy="scrollbar-never"
-                 style="width: 0;
-                        height: 0;">
-              <label>
-                <input type="file"
-                      onchange="handleFileSelected(event);">
-              </label>
-            </div>
-          </div>
+          </label>
         </div>
         <div class="EmptyBorder"
              style="padding: .5em 0 0 0;">
@@ -73,7 +66,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
       jsCode={`/* ${title}.js */
 function showOpenFile(event) {
   const button = event.currentTarget;
-  const label = button.parentNode.querySelector(":scope label");
+  const label = button.parentNode;
   label.click();
 }
 function handleFileSelected(event) {
