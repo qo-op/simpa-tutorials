@@ -56,10 +56,19 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
         <div class="CenterLayout"
              style="padding: .25em;">
           <!-- color chooser -->
-          <input type="color"
-                 value="#0000FF"
-                 id="color-chooser"
-                 oninput="changeBannerBackgroundColor(event);">
+          <label class="ColorChooser">
+            <input type="color"
+                   value="#0000FF"
+                   id="color-chooser"
+                   oninput="changeBannerBackgroundColor(event);">
+            <button onclick="showDialog(event);">
+              <span class="BoxLayout"
+                    style="gap: .5em;">
+                <img src="/Open16.gif">
+                <span>Show Color Chooser...</span>
+              </span>
+            </button>
+          </label>
         </div>
       </div>
       <div class="PageEnd">
@@ -114,6 +123,11 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
+function showDialog(event) {
+  const button = event.currentTarget;
+  const label = button.parentNode;
+  label.click();
+}
 function changeBannerBackgroundColor(event) {
   const colorChooser = event.currentTarget;
   const color = colorChooser.value;

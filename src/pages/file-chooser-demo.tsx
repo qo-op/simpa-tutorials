@@ -39,7 +39,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
           <label class="FileChooser">
             <input type="file"
                    onchange="handleFileSelected(event);">
-            <button onclick="showOpenFile(event);">
+            <button onclick="showDialog(event);">
               <span class="BoxLayout"
                     style="gap: .5em;">
                 <img src="/Open16.gif">
@@ -64,7 +64,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function showOpenFile(event) {
+function showDialog(event) {
   const button = event.currentTarget;
   const label = button.parentNode;
   label.click();
