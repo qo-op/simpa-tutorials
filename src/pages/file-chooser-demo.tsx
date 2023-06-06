@@ -44,11 +44,15 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
                 <span>Open a File...</span>
               </span>
             </button>
-            <label>
-              <input type="file"
-                     style="width: 0;"
-                     onchange="handleFileSelected(event);">
-            </label>
+            <div class="ScrollPane"
+                 data-policy="scrollbar-never"
+                 style="width: 0;
+                        height: 0;">
+              <label>
+                <input type="file"
+                      onchange="handleFileSelected(event);">
+              </label>
+            </div>
           </div>
         </div>
         <div class="EmptyBorder"
@@ -69,7 +73,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
       jsCode={`/* ${title}.js */
 function showOpenFile(event) {
   const button = event.currentTarget;
-  const label = button.parentNode.querySelector(":scope > label");
+  const label = button.parentNode.querySelector(":scope label");
   label.click();
 }
 function handleFileSelected(event) {
