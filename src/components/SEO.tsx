@@ -15,7 +15,6 @@ export const SEO = ({
         name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
       />
-      <script src="https://qo-op.github.io/simpa/simpa.js"></script>
     </>
   );
 };

@@ -33,37 +33,43 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
     <div class="GridBagConstraints"
          data-anchor="page-start"
          style="padding: .25em;">
-      <div class="BoxLayout">
-        <div class="PageStart">
-          <div class="TitledBorder">
-            <span>Choose Duke's Layer and Position</span>
-            <div class="FlowLayout"
-                 style="gap:.5em;
-                        padding: .5em;">
-              <select>
-                <option value="0">
-                  Yellow (0)
-                </option>
-                <option value="1">
-                  Magenta (1)
-                </option>
-                <option value="2"
-                        selected>
-                  Cyan (2)
-                </option>
-                <option value="3">
-                  Red (3)
-                </option>
-                <option value="4">
-                  Green (4)
-                </option>
-              </select>
-              <label>
-                <input type="checkbox"
-                       checked>
-                  Top Position in Layer
-              </label>
-            </div>
+      <div class="BoxLayout"
+           data-axis="page-axis"
+           data-alignment-x="stretch">
+        <div class="TitledBorder">
+          <span>Choose Duke's Layer and Position</span>
+          <div class="FlowLayout"
+               style="gap:.5em;
+                      padding: .5em;">
+            <select>
+            <option value="0">
+              Yellow (0)
+            </option>
+            <option value="1">
+              Magenta (1)
+            </option>
+            <option value="2"
+                    selected>
+              Cyan (2)
+            </option>
+            <option value="3">
+              Red (3)
+            </option>
+            <option value="4">
+              Green (4)
+            </option>
+            </select>
+            <label>
+            <input type="checkbox"
+                   checked>
+              Top Position in Layer
+            </label>
+          </div>
+        </div>
+        <div class="TitledBorder">
+          <span>Move the Mouse To Move Duke</span>
+          <div class="LayeredPane">
+            
           </div>
         </div>
       </div>
