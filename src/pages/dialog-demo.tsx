@@ -344,7 +344,7 @@ window.addEventListener("load", function() {
 });
 `}
       info={`
-An HTML version of Oracle's DialogDemo example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.css
 `}
     />
   );

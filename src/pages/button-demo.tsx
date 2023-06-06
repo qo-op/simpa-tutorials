@@ -109,7 +109,7 @@ function handleKeyDown(event) {
 document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
-An HTML version of Oracle's ButtonDemo example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.css
 `}
     />
   );

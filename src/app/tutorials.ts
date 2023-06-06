@@ -121,6 +121,11 @@ export const examples = [
     path: "/dialog-demo/",
     folder: "Examples",
   },
+  {
+    text: "File Chooser Demo",
+    path: "/file-chooser-demo/",
+    folder: "Examples",
+  },
 ];
 
 const tutorials = home.concat(

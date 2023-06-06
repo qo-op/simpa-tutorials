@@ -114,6 +114,11 @@ body {
   display: grid;
 }
 
+.BorderLayout > .Center {
+  grid-template-rows: 1fr !important;
+  grid-template-columns: 1fr !important;
+}
+
 .Frame > .Center > *,
 .BorderLayout > .Center > * {
   overflow: hidden;
@@ -424,6 +429,7 @@ body {
     rgba(255, 255, 255, 0.5);
 }
 
+.EmptyBorder,
 .CompoundBorder {
   display: grid !important;
   grid-template-rows: 1fr !important;

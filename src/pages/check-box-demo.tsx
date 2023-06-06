@@ -115,7 +115,7 @@ function updatePicture(event) {
 };
 `}
       info={`
-An HTML version of Oracle's CheckBoxDemo example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.css
 `}
     />
   );

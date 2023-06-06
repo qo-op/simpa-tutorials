@@ -128,7 +128,7 @@ function changeBannerColor(event) {
 }
 `}
       info={`
-An HTML version of Oracle's ColorChooserDemo2 example, using simpa.css
+An HTML version of Oracle's ${title}2 example, using simpa.css
 `}
     />
   );
