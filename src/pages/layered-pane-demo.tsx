@@ -41,35 +41,93 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
           <div class="FlowLayout"
                style="gap:.5em;
                       padding: .5em;">
-            <select>
-            <option value="0">
-              Yellow (0)
-            </option>
-            <option value="1">
-              Magenta (1)
-            </option>
-            <option value="2"
-                    selected>
-              Cyan (2)
-            </option>
-            <option value="3">
-              Red (3)
-            </option>
-            <option value="4">
-              Green (4)
-            </option>
+            <select onchange="handleChange(event);">
+              <option value="0">
+                Yellow (0)
+              </option>
+              <option value="1">
+                Magenta (1)
+              </option>
+              <option value="2"
+                      selected>
+                Cyan (2)
+              </option>
+              <option value="3">
+                Red (3)
+              </option>
+              <option value="4">
+                Green (4)
+              </option>
             </select>
-            <label>
-            <input type="checkbox"
-                   checked>
-              Top Position in Layer
-            </label>
           </div>
         </div>
         <div class="TitledBorder">
           <span>Move the Mouse To Move Duke</span>
-          <div class="LayeredPane">
-            
+          <div class="LayeredPane"
+               style="width: 300px;
+                      height: 300px;"
+                onpointermove="handlePointerMove(event);">
+            <div class="FlowLayout"
+                 style="position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        width: 140px;
+                        height: 140px;
+                        border: 1px solid Gray;
+                        background-color: Yellow;
+                        z-index: 0;">
+              <span>Yellow (0)</span>
+            </div>
+            <div class="FlowLayout"
+                 style="position: absolute;
+                        top: 45px;
+                        left: 45px;
+                        width: 140px;
+                        height: 140px;
+                        border: 1px solid Gray;
+                        background-color: Magenta;
+                        z-index: 1;">
+              <span>Magenta (1)</span>
+            </div>
+            <div class="FlowLayout"
+                 style="position: absolute;
+                        top: 80px;
+                        left: 80px;
+                        width: 140px;
+                        height: 140px;
+                        border: 1px solid Gray;
+                        background-color: Cyan;
+                        z-index: 2;">
+              <span>Cyan (2)</span>
+            </div>
+            <div class="FlowLayout"
+                 style="position: absolute;
+                        top: 115px;
+                        left: 115px;
+                        width: 140px;
+                        height: 140px;
+                        border: 1px solid Gray;
+                        background-color: Red;
+                        z-index: 3;">
+              <span>Red (3)</span>
+            </div>
+            <div class="FlowLayout"
+                 style="position: absolute;
+                        top: 150px;
+                        left: 150px;
+                        width: 140px;
+                        height: 140px;
+                        border: 1px solid Gray;
+                        background-color: LightGreen;
+                        z-index: 4;">
+              <span>Green (4)</span>
+            </div>
+            <img src="/dukeWaveRed.gif"
+                 style="position: absolute;
+                        top: 15px;
+                        left: 225px;
+                        z-index: 2;"
+                 id="duke">
           </div>
         </div>
       </div>
@@ -81,6 +139,21 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
+function handlePointerMove(event) {
+  const layered = event.currentTarget;
+  const rect = layered.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  const duke = document.getElementById("duke");
+  duke.style.top = Math.max((Math.min(y, 300) - 57), -7) + "px";
+  duke.style.left = Math.max((Math.min(x, 300) - 40), -10) + "px";
+}
+function handleChange(event) {
+  const comboBox = event.currentTarget;
+  const value = comboBox.value;
+  const duke = document.getElementById("duke");
+  duke.style.zIndex = value;
+}
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.css
