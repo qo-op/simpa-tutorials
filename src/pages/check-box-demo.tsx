@@ -40,7 +40,6 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
         <!-- Chin check box -->
         <label>
           <input type="checkbox"
-                 name="accessories"
                  value="c"
                  onchange="updatePicture(event);"
                  checked>
@@ -49,7 +48,6 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
         <!-- Glasses check box -->
         <label>
           <input type="checkbox"
-                 name="accessories"
                  value="g"
                  onchange="updatePicture(event);"
                  checked>
@@ -58,7 +56,6 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
         <!-- Hair check box -->
         <label>
           <input type="checkbox"
-                 name="accessories"
                  value="h"
                  onchange="updatePicture(event);"
                  checked>
@@ -67,7 +64,6 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
         <!-- Teeth check box -->
         <label>
           <input type="checkbox"
-                 name="accessories"
                  value="t"
                  onchange="updatePicture(event);"
                  checked>
