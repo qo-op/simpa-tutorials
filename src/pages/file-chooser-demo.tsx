@@ -71,15 +71,13 @@ function showOpenFile(event) {
 }
 function handleFileSelected(event) {
   const textarea = document.getElementById("textarea");
-  if (textarea.value) {
-    textarea.value += "\\n";
-  }
   const input = event.currentTarget;
   if (input.files.length > 0) {
     const fileSelected = input.files[0];
-    textarea.value += "Opened file: " + fileSelected.name + ".";
-  } else {
-    textarea.value += "User canceled open request.";
+    if (textarea.value) {
+      textarea.value += "\\n";
+    }
+    textarea.value += "Selected file: " + fileSelected.name + ".";
   }
 }
 `}
