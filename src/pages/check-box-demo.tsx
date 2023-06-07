@@ -71,7 +71,7 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
         </label>
       </form>
       <!-- picture -->
-      <img src="/geek-cght.gif"
+      <img src="../images/geek-cght.gif"
            alt="Geek image"
            id="picture">
     </div>
@@ -107,11 +107,11 @@ function updatePicture(event) {
   }
   choices[index] = c;
   const picture = document.getElementById("picture");
-  picture.src = "/geek-" + choices.join("") + ".gif";
+  picture.src = "../images/geek-" + choices.join("") + ".gif";
 };
 `}
       info={`
-An HTML version of Oracle's ${title} example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );

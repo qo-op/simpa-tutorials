@@ -124,7 +124,7 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
                         z-index: 4;">
               <span>Green (4)</span>
             </div>
-            <img src="/dukeWaveRed.gif"
+            <img src="../images/dukeWaveRed.gif"
                  style="position: absolute;
                         top: 15px;
                         left: 225px;
@@ -171,7 +171,7 @@ function handlePointerUp(event) {
 }
 `}
       info={`
-An HTML version of Oracle's ${title} example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );

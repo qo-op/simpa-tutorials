@@ -42,7 +42,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
             <button onclick="showDialog(event);">
               <span class="BoxLayout"
                     style="gap: .5em;">
-                <img src="/Open16.gif">
+                <img src="../images/Open16.gif">
                 <span>Open a File...</span>
               </span>
             </button>
@@ -82,7 +82,7 @@ function handleFileSelected(event) {
 }
 `}
       info={`
-An HTML version of Oracle's ${title} example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );

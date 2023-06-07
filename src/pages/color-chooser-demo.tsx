@@ -29,92 +29,92 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       id="${id}">
   <div class="ScrollPane"
-    data-scrollbar-overlay>
-  <div class="GridBagConstraints"
-       data-anchor="page-start"
-       style="padding: .25em;">
-    <div class="BorderLayout">
-      <div class="PageStart">
-        <div class="TitledBorder"
-             style="background-color: White;">
-          <span>Banner</span>
-          <div class="CenterLayout"
-               style="background-color: blue;
-                      padding: .25em;
-                      color: Yellow;
-                      font-size: 24px;"
-               id="banner">
-            <span>
-              Welcome to the Tutorial Zone!
-            <span>
+       data-scrollbar-overlay>
+    <div class="GridBagConstraints"
+         data-anchor="page-start"
+         style="padding: .25em;">
+      <div class="BorderLayout">
+        <div class="PageStart">
+          <div class="TitledBorder"
+               style="background-color: White;">
+            <span>Banner</span>
+            <div class="CenterLayout"
+                 style="background-color: blue;
+                        padding: .25em;
+                        color: Yellow;
+                        font-size: 24px;"
+                 id="banner">
+              <span>
+                Welcome to the Tutorial Zone!
+              <span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="TitledBorder"
-           style="background-color: White;">
-        <span>Choose Background Color</span>
-        <div class="CenterLayout"
-             style="padding: .25em;">
-          <!-- color chooser -->
-          <label class="ColorChooser">
-            <input type="color"
-                  value="#0000FF"
-                  id="color-chooser"
-                  oninput="changeBannerBackgroundColor(event);">
-            <button onclick="showDialog(event);">
-              <span class="BoxLayout"
-                    style="gap: .5em;">
-                <span>Show Color Chooser...</span>
-              </span>
-            </button>
-          </label>
-        </div>
-      </div>
-      <div class="PageEnd">
         <div class="TitledBorder"
              style="background-color: White;">
-          <span>Choose Text Color</span>
-          <div style="padding: .25em;
-                      display: grid;
-                      grid-template-columns: 1fr 1fr;
-                      gap: .25em;">
-            <button onclick="changeBannerColor(event);"
-                    data-action-command="red">
-              <span class="BorderLayout">
-                <img src="/red.gif"
-                     alt="The red crayon"
-                     style="width: 100%;">
-              </span>
-            </button>
-            <button onclick="changeBannerColor(event);"
-                    data-action-command="yellow">
-              <span class="BorderLayout">
-                <img src="/yellow.gif"
-                     alt="The yellow crayon"
-                     style="width: 100%;">
-              </span>
-            </button>
-            <button onclick="changeBannerColor(event);"
-                    data-action-command="green">
-              <span class="BorderLayout">
-                <img src="/green.gif"
-                     alt="The green crayon"
-                     style="width: 100%;">
-              </span>
-            </button>
-            <button onclick="changeBannerColor(event);"
-                    data-action-command="blue">
-              <span class="BorderLayout">
-                <img src="/blue.gif"
-                     alt="The blue crayon"
-                     style="width: 100%;">
-              </span>
-            </button>
+          <span>Choose Background Color</span>
+          <div class="CenterLayout"
+               style="padding: .25em;">
+            <!-- color chooser -->
+            <label class="ColorChooser">
+              <input type="color"
+                     value="#0000FF"
+                     id="color-chooser"
+                     oninput="changeBannerBackgroundColor(event);">
+              <button onclick="showDialog(event);">
+                <span class="BoxLayout"
+                      style="gap: .5em;">
+                  <span>Show Color Chooser...</span>
+                </span>
+              </button>
+            </label>
+          </div>
+        </div>
+        <div class="PageEnd">
+          <div class="TitledBorder"
+               style="background-color: White;">
+            <span>Choose Text Color</span>
+            <div style="padding: .25em;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: .25em;">
+              <button onclick="changeBannerColor(event);"
+                      data-action-command="red">
+                <span class="BorderLayout">
+                  <img src="../images/red.gif"
+                       alt="The red crayon"
+                       style="width: 100%;">
+                </span>
+              </button>
+              <button onclick="changeBannerColor(event);"
+                      data-action-command="yellow">
+                <span class="BorderLayout">
+                  <img src="../images/yellow.gif"
+                       alt="The yellow crayon"
+                       style="width: 100%;">
+                </span>
+              </button>
+              <button onclick="changeBannerColor(event);"
+                      data-action-command="green">
+                <span class="BorderLayout">
+                  <img src="../images/green.gif"
+                       alt="The green crayon"
+                       style="width: 100%;">
+                </span>
+              </button>
+              <button onclick="changeBannerColor(event);"
+                      data-action-command="blue">
+                <span class="BorderLayout">
+                  <img src="../images/blue.gif"
+                       alt="The blue crayon"
+                       style="width: 100%;">
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </body>
 </html>
@@ -141,7 +141,7 @@ function changeBannerColor(event) {
 }
 `}
       info={`
-An HTML version of Oracle's ${title}2 example, using simpa.css
+An HTML version of Oracle's ${title}2 example, using simpa.
 `}
     />
   );

@@ -36,37 +36,40 @@ const ResultPane = ({
   const resultPaneJavaScriptCode =
     useAppSelector((state) => state.resultPane.javaScriptCode) || jsCode;
   resultPaneHtmlCode = resultPaneHtmlCode.replace(
-    /<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">/,
+    /[^\n]*<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">[^\n]*\r?\n/,
     ""
   );
   resultPaneHtmlCode = resultPaneHtmlCode.replace(
-    /<script src="\.\/[A-Za-z]+\.js">\s*<\/script>/,
+    /[^\n]*<script src="\.\/[A-Za-z]+\.js">\s*<\/script>[^\n]*\r?\n/,
     ""
   );
   let index = resultPaneHtmlCode.toLowerCase().indexOf("</head>");
   if (index === -1) {
     code =
-      "<head><style>" +
-      resultPaneCssCode +
-      "</style><script>" +
-      resultPaneJavaScriptCode +
-      "</script></head>" +
+      "<head>\n" +
+      "  <style>\n" +
+      resultPaneCssCode.trim() +
+      "\n" +
+      "  </style>\n" +
+      "  <script>\n" +
+      resultPaneJavaScriptCode.trim() +
+      "\n" +
+      "  </script>\n" +
+      "</head>\n" +
       resultPaneHtmlCode;
   } else {
     code =
       resultPaneHtmlCode.substring(0, index) +
-      "<style>" +
-      resultPaneCssCode +
-      "</style><script>" +
-      resultPaneJavaScriptCode +
-      "</script>" +
+      "  <style>\n" +
+      resultPaneCssCode.trim() +
+      "\n" +
+      "  </style>\n" +
+      "  <script>\n" +
+      resultPaneJavaScriptCode.trim() +
+      "\n" +
+      "  </script>\n" +
       resultPaneHtmlCode.substring(index);
   }
-  /*
-  if (process.env.NODE_ENV === "development") {
-    console.log(code);
-  }
-  */
   useEffect(() => {
     if (iframeRef.current === null) {
       return;

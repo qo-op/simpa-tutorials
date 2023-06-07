@@ -56,7 +56,7 @@ const ComboBoxDemoPage = ({ path, location }: PageProps) => {
         </option>
       </select>
       <!-- picture -->
-      <img src="/Pig.gif"
+      <img src="../images/Pig.gif"
            alt="Pet image"
            id="picture">
     </div>
@@ -72,11 +72,11 @@ function handleChange(event) {
   const comboBox = event.currentTarget;
   const value = comboBox.value;
   const picture = document.getElementById("picture");
-  picture.src = "/" + value + ".gif";
+  picture.src = "../images/" + value + ".gif";
 };
 `}
       info={`
-An HTML version of Oracle's ${title} example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );

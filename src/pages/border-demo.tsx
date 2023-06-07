@@ -101,7 +101,7 @@ const BorderDemoPage = ({ path, location }: PageProps) => {
                       gap: .5em;">
             <!-- matte border (10, icon) -->
             <div style="border: 10px solid;
-                        border-image: url(/wavy.png) 20 round;"
+                        border-image: url(../images/wavy.png) 20 round;"
                  class="CenterLayout">
               matte border (10, icon)
             </div>
@@ -114,7 +114,7 @@ const BorderDemoPage = ({ path, location }: PageProps) => {
             <!-- matte border (0, 0, 0, 10, icon) -->
             <div style="border: solid;
                         border-width: 0 0 0 10px;
-                        border-image: url(/wavy.png) 20 round;"
+                        border-image: url(../images/wavy.png) 20 round;"
                  class="CenterLayout">
               matte border (0, 0, 0, 10, icon)
             </div>
@@ -191,7 +191,7 @@ const BorderDemoPage = ({ path, location }: PageProps) => {
       jsCode={`/* ${title}.js */
 `}
       info={`
-An HTML version of Oracle's ${title} example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );

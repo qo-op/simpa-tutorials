@@ -40,7 +40,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
               id="b1">
         <span class="BoxLayout">
           <span><u>D</u>isable middle button</span>
-          <img src="/right.gif">
+          <img src="../images/right.gif">
         </span>
       </button>
       <!-- Middle button -->
@@ -48,7 +48,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
         <span class="BoxLayout"
               data-axis="page-axis">
           <span><u>M</u>iddle button</span>
-          <img src="/middle.gif">
+          <img src="../images/middle.gif">
         </span>
       </button>
       <!-- Enable middle button -->
@@ -56,7 +56,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
               id="b3"
               disabled>
         <span class="BoxLayout">
-          <img src="/left.gif">
+          <img src="../images/left.gif">
           <span><u>E</u>nable middle button</span>
         </span>
       </button>
@@ -109,7 +109,7 @@ function handleKeyDown(event) {
 document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
-An HTML version of Oracle's ${title} example, using simpa.css
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );

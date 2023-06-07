@@ -92,6 +92,11 @@ export const jsComponentsTutorials = [
 
 export const examples = [
   {
+    text: "Border Layout Demo",
+    path: "/border-layout-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Border Demo",
     path: "/border-demo/",
     folder: "Examples",

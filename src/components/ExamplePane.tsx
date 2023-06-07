@@ -64,30 +64,38 @@ const ExamplePane = ({
   const copyCode = async (ev: React.MouseEvent) => {
     let code = "";
     resultPaneHtmlCode = resultPaneHtmlCode.replace(
-      /<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">/,
+      /[^\n]*<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">[^\n]*\r?\n/,
       ""
     );
     resultPaneHtmlCode = resultPaneHtmlCode.replace(
-      /<script src="\.\/[A-Za-z]+\.js">\s*<\/script>/,
+      /[^\n]*<script src="\.\/[A-Za-z]+\.js">\s*<\/script>[^\n]*\r?\n/,
       ""
     );
     let index = resultPaneHtmlCode.toLowerCase().indexOf("</head>");
     if (index === -1) {
       code =
-        "<head><style>" +
-        resultPaneCssCode +
-        "</style><script>" +
-        resultPaneJavaScriptCode +
-        "</script></head>" +
+        "<head>\n" +
+        "  <style>\n" +
+        resultPaneCssCode.trim() +
+        "\n" +
+        "  </style>\n" +
+        "  <script>\n" +
+        resultPaneJavaScriptCode.trim() +
+        "\n" +
+        "  </script>\n" +
+        "</head>\n" +
         resultPaneHtmlCode;
     } else {
       code =
         resultPaneHtmlCode.substring(0, index) +
-        "<style>" +
-        resultPaneCssCode +
-        "</style><script>" +
-        resultPaneJavaScriptCode +
-        "</script>" +
+        "  <style>\n" +
+        resultPaneCssCode.trim() +
+        "\n" +
+        "  </style>\n" +
+        "  <script>\n" +
+        resultPaneJavaScriptCode.trim() +
+        "\n" +
+        "  </script>\n" +
         resultPaneHtmlCode.substring(index);
     }
     await navigator.clipboard.writeText(code);
