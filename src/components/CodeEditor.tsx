@@ -111,9 +111,7 @@ const CodeEditor = ({
               ? codeEditorCssCode
               : codeEditorJavaScriptCode
           }
-          disabled={
-            process.env.NODE_ENV !== "development" && hostname !== "localhost"
-          }
+          disabled={false}
         ></textarea>
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter
