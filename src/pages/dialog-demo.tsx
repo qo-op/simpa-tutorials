@@ -176,8 +176,7 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
             </div>
           </div>
         </div>
-        <div class="PageEnd"
-             style="border: 1px solid Gray;
+        <div style="border: 1px solid Gray;
                     border-block-start: none;
                     padding: .5em;">
           <span id="label">
