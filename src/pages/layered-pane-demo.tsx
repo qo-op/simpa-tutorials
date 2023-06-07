@@ -66,7 +66,9 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
           <div class="LayeredPane"
                style="width: 300px;
                       height: 300px;"
-                onpointermove="handlePointerMove(event);">
+                onpointerdown="handlePointerDown(event);"
+                onpointermove="handlePointerMove(event);"
+                onpointerup="handlePointerUp(event);">
             <div class="FlowLayout"
                  style="position: absolute;
                         top: 10px;
@@ -139,6 +141,17 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
+function handleChange(event) {
+  const comboBox = event.currentTarget;
+  const value = comboBox.value;
+  const duke = document.getElementById("duke");
+  duke.style.zIndex = value;
+}
+function handlePointerDown(event) {
+  document.addEventListener("touchmove", preventTouchMove, {
+    passive: false,
+  });
+}
 function handlePointerMove(event) {
   const layered = event.currentTarget;
   const rect = layered.getBoundingClientRect();
@@ -148,11 +161,12 @@ function handlePointerMove(event) {
   duke.style.top = Math.max((Math.min(y, 300) - 57), -7) + "px";
   duke.style.left = Math.max((Math.min(x, 300) - 40), -10) + "px";
 }
-function handleChange(event) {
-  const comboBox = event.currentTarget;
-  const value = comboBox.value;
-  const duke = document.getElementById("duke");
-  duke.style.zIndex = value;
+function handlePointerUp(event) {
+  document.removeEventListener("touchmove", preventTouchMove);
+}
+// This function prevents scrolling on touch-enabled devices.
+function preventTouchMove(event) {
+  ev.preventDefault();
 }
 `}
       info={`

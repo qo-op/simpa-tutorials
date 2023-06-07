@@ -64,7 +64,6 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
             <button onclick="showDialog(event);">
               <span class="BoxLayout"
                     style="gap: .5em;">
-                <img src="/Open16.gif">
                 <span>Show Color Chooser...</span>
               </span>
             </button>
