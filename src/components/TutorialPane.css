@@ -21,13 +21,9 @@
 .TutorialPane pre {
   font-size: 16px;
   line-height: 1.2;
-  overflow: hidden;
-  overflow-wrap: anywhere;
+  overflow: hidden !important;
+  overflow-wrap: anywhere !important;
   text-align: left;
-}
-
-.TutorialPane pre code {
-  overflow-wrap: anywhere;
 }
 
 .TutorialPane thead {

@@ -48,19 +48,31 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
           {`...
 <div style="display: grid;">
   <div style="grid-row: 1; grid-column: 1;">
-    <button>Button 1</button>
+    <button>
+      Button 1
+    </button>
   </div>
   <div style="grid-row: 1; grid-column: 2;">
-    <button>Button 2</button>
+    <button>
+      Button 2
+    </button>
   </div>
   <div style="grid-row: 1; grid-column: 3;">
-    <button>Button 3</button>
+    <button>
+      Button 3
+    </button>
   </div>
   <div style="grid-row: 2; grid-column: 1 / span 3;">
-    <button style="padding: 40px 0;">Long-Named Button 4</button>
+    <button class="BorderLayout">
+      <span style="padding: 40px 0;">
+        Long-Named Button 4
+      </span>
+    </button>
   </div>
   <div style="grid-row: 3; grid-column: 2 / span 2;">
-    <button style="margin: 10px 0 0 0;">5</button>
+    <button style="margin: 10px 0 0 0;">
+      5
+    </button>
   </div>
 </div>
 ...`}
@@ -83,7 +95,9 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             <button>Button 3</button>
           </div>
           <div style={{ gridRow: 2, gridColumn: "1 / span 3" }}>
-            <button style={{ padding: "40px 0" }}>Long-Named Button 4</button>
+            <button className="BorderLayout">
+              <span style={{ padding: "40px 0" }}>Long-Named Button 4</span>
+            </button>
           </div>
           <div style={{ gridRow: 3, gridColumn: "2 / span 2" }}>
             <button style={{ margin: "10px 0 0 0" }}>5</button>
@@ -148,27 +162,39 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
   <div style="grid-row: 1; grid-column: 1;"
        class="GridBagConstraints"
        data-fill="horizontal">
-    <button>Button 1</button>
+    <button>
+      Button 1
+    </button>
   </div>
   <div style="grid-row: 1; grid-column: 2;"
        class="GridBagConstraints"
        data-fill="horizontal">
-    <button>Button 2</button>
+    <button>
+      Button 2
+    </button>
   </div>
   <div style="grid-row: 1; grid-column: 3;"
        class="GridBagConstraints"
        data-fill="horizontal">
-    <button>Button 3</button>
+    <button>
+      Button 3
+    </button>
   </div>
   <div style="grid-row: 2; grid-column: 1 / span 3;"
        class="GridBagConstraints"
        data-fill="horizontal">
-    <button style="padding: 40px 0;">Long-Named Button 4</button>
+    <button class="BorderLayout">
+      <span style="padding: 40px 0;">
+        Long-Named Button 4
+      </span>
+    </button>
   </div>
   <div style="grid-row: 3; grid-column: 2 / span 2;"
        class="GridBagConstraints"
        data-fill="horizontal">
-    <button style="margin: 10px 0 0 0;">5</button>
+    <button style="margin: 10px 0 0 0;">
+      5
+    </button>
   </div>
 </div>
 ...`}
@@ -207,7 +233,9 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             className="GridBagConstraints"
             data-fill="horizontal"
           >
-            <button style={{ padding: "40px 0" }}>Long-Named Button 4</button>
+            <button className="BorderLayout">
+              <span style={{ padding: "40px 0" }}>Long-Named Button 4</span>
+            </button>
           </div>
           <div
             style={{ gridRow: 3, gridColumn: "2 / span 2" }}
@@ -289,7 +317,9 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             className="GridBagConstraints"
             data-fill="horizontal"
           >
-            <button style={{ padding: "40px 0" }}>Long-Named Button 4</button>
+            <button className="BorderLayout">
+              <span style={{ padding: "40px 0" }}>Long-Named Button 4</span>
+            </button>
           </div>
           <div
             style={{ gridRow: 3, gridColumn: "2 / span 2" }}

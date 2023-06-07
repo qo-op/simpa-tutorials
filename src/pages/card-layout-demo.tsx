@@ -60,7 +60,7 @@ const CardLayoutDemoPage = ({ path, location }: PageProps) => {
             <button>Button 2</button>
             <button>Button 3</button>
           </div>
-          <div class="StretchLayout"
+          <div class="BorderLayout"
                data-name="Card with Text Field"
                style="visibility: hidden">
             <input type="text">

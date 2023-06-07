@@ -112,6 +112,11 @@ export const examples = [
     folder: "Examples",
   },
   {
+    text: "Grid Bag Layout Demo",
+    path: "/grid-bag-layout-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Border Demo",
     path: "/border-demo/",
     folder: "Examples",
