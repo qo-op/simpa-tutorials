@@ -100,23 +100,22 @@ const CodeEditor = ({
       id={id || ""}
     >
       <div className="BorderLayout">
-        {process.env.NODE_ENV === "development" || hostname === "localhost" ? (
-          <textarea
-            spellCheck="false"
-            onFocus={focusGained}
-            onChange={change}
-            value={
-              language === "html"
-                ? codeEditorHtmlCode
-                : language === "css"
-                ? codeEditorCssCode
-                : codeEditorJavaScriptCode
-            }
-          ></textarea>
-        ) : (
-          <></>
-        )}
-        <div className="SyntaxHighlighter">
+        <textarea
+          spellCheck="false"
+          onFocus={focusGained}
+          onChange={change}
+          value={
+            language === "html"
+              ? codeEditorHtmlCode
+              : language === "css"
+              ? codeEditorCssCode
+              : codeEditorJavaScriptCode
+          }
+          disabled={
+            process.env.NODE_ENV !== "development" && hostname !== "localhost"
+          }
+        ></textarea>
+        <div className="SyntaxHighlighter Development">
           <SyntaxHighlighter
             language={
               language === "html"

@@ -57,10 +57,12 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
              style="padding: .25em;">
           <!-- color chooser -->
           <label class="ColorChooser">
-            <input type="color"
-                   value="#0000FF"
-                   id="color-chooser"
-                   oninput="changeBannerBackgroundColor(event);">
+            <div style="scroll: hidden;">
+              <input type="color"
+                    value="#0000FF"
+                    id="color-chooser"
+                    oninput="changeBannerBackgroundColor(event);">
+            </div>
             <button onclick="showDialog(event);">
               <span class="BoxLayout"
                     style="gap: .5em;">

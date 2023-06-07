@@ -66,9 +66,9 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
           <div class="LayeredPane"
                style="width: 300px;
                       height: 300px;"
-                onpointerenter="handlePointerEnter(event);"
+                onpointerdown="handlePointerDown(event);"
                 onpointermove="handlePointerMove(event);"
-                onpointerleave="handlePointerLeave(event);">
+                onpointerup="handlePointerUp(event);">
             <div class="FlowLayout"
                  style="position: absolute;
                         top: 10px;
@@ -147,12 +147,10 @@ function handleChange(event) {
   const duke = document.getElementById("duke");
   duke.style.zIndex = value;
 }
-function handlePointerEnter(event) {
+function handlePointerDown(event) {
   var frame = document.getElementsByClassName("Frame")[0];
   frame.children[0].classList.remove("ScrollPane");
-  document.addEventListener("touchmove", preventTouchMove, {
-    passive: false,
-  });
+  handlePointerMove(event);
 }
 function handlePointerMove(event) {
   const layered = event.currentTarget;
@@ -163,14 +161,9 @@ function handlePointerMove(event) {
   duke.style.top = Math.max((Math.min(y, 300) - 57), -7) + "px";
   duke.style.left = Math.max((Math.min(x, 300) - 40), -10) + "px";
 }
-function handlePointerLeave(event) {
+function handlePointerUp(event) {
   var frame = document.getElementsByClassName("Frame")[0];
   frame.children[0].classList.add("ScrollPane");
-  document.removeEventListener("touchmove", preventTouchMove);
-}
-// This function prevents scrolling on touch-enabled devices.
-function preventTouchMove(event) {
-  ev.preventDefault();
 }
 `}
       info={`

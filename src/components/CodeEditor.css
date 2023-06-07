@@ -1,40 +1,45 @@
 .CodeEditor {
-    background-color: rgb(30, 30, 30);
-    padding: .25em .5em;
+  background-color: rgb(30, 30, 30);
+  padding: 0.25em 0.5em;
 }
 
 .CodeEditor textarea {
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    resize: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  resize: none;
 }
 
 .CodeEditor pre {
-    all: initial;
-    visibility: unset;
-    padding: 0 !important;
-    background-color: transparent !important;
+  all: initial;
+  visibility: unset;
+  padding: 0 !important;
+  background-color: transparent !important;
 }
 
 .CodeEditor textarea,
 .CodeEditor pre code {
-    font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono", "Courier New", monospace !important;
-    font-size: 16px !important;
-    line-height: 20px !important;
-    overflow: hidden;
-    overflow-wrap: anywhere;
-    text-align: left;
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono",
+    "Courier New", monospace !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: left;
 }
 
 .CodeEditor .SyntaxHighlighter,
 .CodeEditor .SyntaxHighlighter * {
-    font-style: normal !important;
-    pointer-events: none;
-    text-size-adjust: none !important;
+  font-style: normal !important;
+  text-size-adjust: none !important;
+}
+
+.CodeEditor .SyntaxHighlighter.Development,
+.CodeEditor .SyntaxHighlighter.Development * {
+  pointer-events: none;
 }
