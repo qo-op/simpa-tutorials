@@ -29,39 +29,45 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       id="${id}">
   <div class="ScrollPane"
-    data-scrollbar-overlay>
-  <div class="GridBagConstraints"
-       data-anchor="page-start"
-       style="padding: .25em;">
-    <div class="BoxLayout"
-         style="gap: .5em">
-      <!-- Disable middle button -->
-      <button onclick="disable(event);"
-              id="b1">
-        <span class="BoxLayout">
-          <span><u>D</u>isable middle button</span>
-          <img src="../images/right.gif">
-        </span>
-      </button>
-      <!-- Middle button -->
-      <button id="b2">
-        <span class="BoxLayout"
-              data-axis="page-axis">
-          <span><u>M</u>iddle button</span>
-          <img src="../images/middle.gif">
-        </span>
-      </button>
-      <!-- Enable middle button -->
-      <button onclick="enable(event);"
-              id="b3"
-              disabled>
-        <span class="BoxLayout">
-          <img src="../images/left.gif">
-          <span><u>E</u>nable middle button</span>
-        </span>
-      </button>
+       data-scrollbar-overlay>
+    <div class="GridBagConstraints"
+         data-anchor="page-start"
+         style="padding: .25em;">
+      <div class="BoxLayout"
+           style="gap: .5em">
+        <!-- Disable middle button -->
+        <button onclick="disable(event);"
+                id="b1">
+          <span class="BoxLayout">
+            <span>
+              <u>D</u>isable middle button
+            </span>
+            <img src="../images/right.gif">
+          </span>
+        </button>
+        <!-- Middle button -->
+        <button id="b2">
+          <span class="BoxLayout"
+                data-axis="page-axis">
+            <span>
+              <u>M</u>iddle button
+            </span>
+            <img src="../images/middle.gif">
+          </span>
+        </button>
+        <!-- Enable middle button -->
+        <button onclick="enable(event);"
+                id="b3"
+                disabled>
+          <span class="BoxLayout">
+            <img src="../images/left.gif">
+            <span>
+              <u>E</u>nable middle button
+            </span>
+          </span>
+        </button>
+      </div>
     </div>
-  </div>
   </div>
 </body>
 </html>

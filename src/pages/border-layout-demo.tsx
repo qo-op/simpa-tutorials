@@ -28,43 +28,36 @@ const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
 </head>
 <body class="Frame"
       id="${id}">
-  <div class="ScrollPane"
-       data-scrollbar-overlay>
-    <div class="GridBagConstraints"
-         data-anchor="page-start"
-         style="padding: .25em;">
-      <!-- Border Layout -->
-      <div class="BorderLayout"
-           style="border: 1px solid Gray">
-        <!-- Page Start -->
-        <div class="PageStart">
-          <button>
-            Button 1 (PAGE_START)
-          </button>
-        </div>
-        <!-- Center -->
-        <button style="width: 200px; height: 100px">
-          Button 2 (CENTER)
-        </button>
-        <!-- Line Start -->
-        <div class="LineStart">
-          <button>
-            Button 3 (LINE_START)
-          </button>
-        </div>
-        <!-- Page End -->
-        <div class="PageEnd">
-          <button>
-            Long-Named Button 4 (PAGE_END)
-          </button>
-        </div>
-        <!-- Line End -->
-        <div class="LineEnd">
-          <button>
-            5 (LINE_END)
-          </button>
-        </div>
-      </div>
+  <!-- Border Layout -->
+  <div class="BorderLayout"
+       style="border: 1px solid Gray">
+    <!-- Page Start -->
+    <div class="PageStart">
+      <button>
+        Button 1 (PAGE_START)
+      </button>
+    </div>
+    <!-- Center -->
+    <button>
+      Button 2 (CENTER)
+    </button>
+    <!-- Line Start -->
+    <div class="LineStart">
+      <button>
+        Button 3 (LINE_START)
+      </button>
+    </div>
+    <!-- Page End -->
+    <div class="PageEnd">
+      <button>
+        Long-Named Button 4 (PAGE_END)
+      </button>
+    </div>
+    <!-- Line End -->
+    <div class="LineEnd">
+      <button>
+        5 (LINE_END)
+      </button>
     </div>
   </div>
 </body>

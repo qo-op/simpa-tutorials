@@ -63,8 +63,9 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
     </button>
   </div>
   <div style="grid-row: 2; grid-column: 1 / span 3;">
-    <button class="BorderLayout">
-      <span style="padding: 40px 0;">
+    <button>
+      <span class="EmptyBorder"
+            style="padding: 40px 0;">
         Long-Named Button 4
       </span>
     </button>
@@ -95,8 +96,10 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             <button>Button 3</button>
           </div>
           <div style={{ gridRow: 2, gridColumn: "1 / span 3" }}>
-            <button className="BorderLayout">
-              <span style={{ padding: "40px 0" }}>Long-Named Button 4</span>
+            <button>
+              <span className="EmptyBorder" style={{ padding: "40px 0" }}>
+                Long-Named Button 4
+              </span>
             </button>
           </div>
           <div style={{ gridRow: 3, gridColumn: "2 / span 2" }}>
@@ -183,8 +186,9 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
   <div style="grid-row: 2; grid-column: 1 / span 3;"
        class="GridBagConstraints"
        data-fill="horizontal">
-    <button class="BorderLayout">
-      <span style="padding: 40px 0;">
+    <button>
+      <span class="EmptyBorder"
+            style="padding: 40px 0;">
         Long-Named Button 4
       </span>
     </button>
@@ -233,8 +237,10 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             className="GridBagConstraints"
             data-fill="horizontal"
           >
-            <button className="BorderLayout">
-              <span style={{ padding: "40px 0" }}>Long-Named Button 4</span>
+            <button>
+              <span className="EmptyBorder" style={{ padding: "40px 0" }}>
+                Long-Named Button 4
+              </span>
             </button>
           </div>
           <div
@@ -317,8 +323,10 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
             className="GridBagConstraints"
             data-fill="horizontal"
           >
-            <button className="BorderLayout">
-              <span style={{ padding: "40px 0" }}>Long-Named Button 4</span>
+            <button>
+              <span className="EmptyBorder" style={{ padding: "40px 0" }}>
+                Long-Named Button 4
+              </span>
             </button>
           </div>
           <div

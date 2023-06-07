@@ -30,7 +30,49 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
       id="${id}">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div class="GridBagLayout">
+    <div class="GridBagConstraints"
+         data-anchor="page-start"
+         style="padding: .25em;">
+      <div style="display: grid;">
+        <div style="grid-row: 1; grid-column: 1;"
+             class="GridBagConstraints"
+             data-fill="horizontal">
+          <button>
+            Button 1
+          </button>
+        </div>
+        <div style="grid-row: 1; grid-column: 2;"
+             class="GridBagConstraints"
+             data-fill="horizontal">
+          <button>
+            Button 2
+          </button>
+        </div>
+        <div style="grid-row: 1; grid-column: 3;"
+             class="GridBagConstraints"
+             data-fill="horizontal">
+          <button>
+            Button 3
+          </button>
+        </div>
+        <div style="grid-row: 2; grid-column: 1 / span 3;"
+             class="GridBagConstraints"
+             data-fill="horizontal">
+          <button>
+            <span class="EmptyBorder"
+                  style="padding: 40px 0;">
+              Long-Named Button 4
+            </span>
+          </button>
+        </div>
+        <div style="grid-row: 3; grid-column: 2 / span 2;"
+             class="GridBagConstraints"
+             data-fill="horizontal">
+          <button style="margin: 10px 0 0 0;">
+            5
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </body>
