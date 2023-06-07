@@ -97,6 +97,16 @@ export const examples = [
     folder: "Examples",
   },
   {
+    text: "Box Layout Demo",
+    path: "/box-layout-demo/",
+    folder: "Examples",
+  },
+  {
+    text: "Card Layout Demo",
+    path: "/card-layout-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Border Demo",
     path: "/border-demo/",
     folder: "Examples",

@@ -3,11 +3,11 @@ import { SEO } from "components/SEO";
 import { PageProps } from "gatsby";
 import React from "react";
 
-const title: string = "BorderLayoutDemo";
+const title: string = "BoxLayoutDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
-const id = "border-layout-demo";
+const id = "box-layout-demo";
 
-const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
+const BoxLayoutDemoPage = ({ path, location }: PageProps) => {
   return (
     <ExampleLayout
       path={path}
@@ -33,37 +33,15 @@ const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
     <div class="GridBagConstraints"
          data-anchor="page-start"
          style="padding: .25em;">
-      <!-- Border Layout -->
-      <div class="BorderLayout"
-           style="border: 1px solid Gray">
-        <!-- Page Start -->
-        <div class="PageStart">
-          <button>
-            Button 1 (PAGE_START)
-          </button>
-        </div>
-        <!-- Center -->
-        <button style="width: 200px; height: 100px">
-          Button 2 (CENTER)
-        </button>
-        <!-- Line Start -->
-        <div class="LineStart">
-          <button>
-            Button 3 (LINE_START)
-          </button>
-        </div>
-        <!-- Page End -->
-        <div class="PageEnd">
-          <button>
-            Long-Named Button 4 (PAGE_END)
-          </button>
-        </div>
-        <!-- Line End -->
-        <div class="LineEnd">
-          <button>
-            5 (LINE_END)
-          </button>
-        </div>
+      <!-- Box Layout -->
+      <div class="BoxLayout"
+           data-axis="page-axis"
+           style="border: 1px solid Gray" >
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <button>Button 3</button>
+        <button>Long-Named Button 4</button>
+        <button>5</button>
       </div>
     </div>
   </div>
@@ -81,6 +59,6 @@ An HTML version of Oracle's ${title} example, using simpa.
   );
 };
 
-export default BorderLayoutDemoPage;
+export default BoxLayoutDemoPage;
 
 export const Head = () => <SEO title={title} description={description} />;
