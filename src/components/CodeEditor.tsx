@@ -115,7 +115,14 @@ const CodeEditor = ({
             process.env.NODE_ENV !== "development" && hostname !== "localhost"
           }
         ></textarea>
-        <div className="SyntaxHighlighter Development">
+        <div
+          className={
+            "SyntaxHighlighter" +
+            (process.env.NODE_ENV === "development" || hostname === "localhost"
+              ? " Development"
+              : "")
+          }
+        >
           <SyntaxHighlighter
             language={
               language === "html"

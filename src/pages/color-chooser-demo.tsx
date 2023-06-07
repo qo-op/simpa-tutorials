@@ -57,7 +57,7 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
              style="padding: .25em;">
           <!-- color chooser -->
           <label class="ColorChooser">
-            <div style="scroll: hidden;">
+            <div class="ColorChooserInput">
               <input type="color"
                     value="#0000FF"
                     id="color-chooser"

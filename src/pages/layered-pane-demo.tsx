@@ -27,7 +27,8 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
   </script>
 </head>
 <body class="Frame"
-      id="${id}">
+      id="${id}"
+      onpointerup="handlePointerUp(event);">
   <div class="ScrollPane"
        data-scrollbar-overlay>
     <div class="GridBagConstraints"
@@ -67,8 +68,7 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
                style="width: 300px;
                       height: 300px;"
                 onpointerdown="handlePointerDown(event);"
-                onpointermove="handlePointerMove(event);"
-                onpointerup="handlePointerUp(event);">
+                onpointermove="handlePointerMove(event);"">
             <div class="FlowLayout"
                  style="position: absolute;
                         top: 10px;
@@ -148,9 +148,11 @@ function handleChange(event) {
   duke.style.zIndex = value;
 }
 function handlePointerDown(event) {
-  var frame = document.getElementsByClassName("Frame")[0];
-  frame.children[0].classList.remove("ScrollPane");
-  handlePointerMove(event);
+  if (event.pointerType !== "mouse") {
+    var frame = document.getElementsByClassName("Frame")[0];
+    frame.children[0].classList.remove("ScrollPane");
+    handlePointerMove(event);
+  }
 }
 function handlePointerMove(event) {
   const layered = event.currentTarget;
@@ -162,8 +164,10 @@ function handlePointerMove(event) {
   duke.style.left = Math.max((Math.min(x, 300) - 40), -10) + "px";
 }
 function handlePointerUp(event) {
-  var frame = document.getElementsByClassName("Frame")[0];
-  frame.children[0].classList.add("ScrollPane");
+  if (event.pointerType !== "mouse") {
+    var frame = document.getElementsByClassName("Frame")[0];
+    frame.children[0].classList.add("ScrollPane");
+  }
 }
 `}
       info={`
