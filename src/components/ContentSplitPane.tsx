@@ -33,14 +33,22 @@ const ContentSplitPane = ({
   });
   if (loading) {
     return (
-      <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+      <div
+        className="ContentSplitPane ScrollPane"
+        data-horizontal-policy="scrollbar-never"
+        data-scrollbar-overlay
+      >
         {children[1]}
       </div>
     );
   } else if (mobileView) {
     if (dividerLocation === -1) {
       return (
-        <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+        <div
+          className="ContentSplitPane ScrollPane"
+          data-horizontal-policy="scrollbar-never"
+          data-scrollbar-overlay
+        >
           {children[1]}
         </div>
       );
@@ -59,7 +67,11 @@ const ContentSplitPane = ({
     }
   } else if (dividerLocation === -2) {
     return (
-      <div className="ContentSplitPane ScrollPane" data-scrollbar-overlay>
+      <div
+        className="ContentSplitPane ScrollPane"
+        data-horizontal-policy="scrollbar-never"
+        data-scrollbar-overlay
+      >
         {children[1]}
       </div>
     );
@@ -82,6 +94,7 @@ const ContentSplitPane = ({
         <ContentSplitPaneDivider />
         <div
           className="ScrollPane"
+          data-horizontal-policy="scrollbar-never"
           data-scrollbar-overlay
           style={{ borderInlineStart: ".5px solid Gray" }}
         >
