@@ -75,8 +75,8 @@ const CardLayoutDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function handleChange(ev) {
-  const value = ev.currentTarget.value;
+function handleChange(event) {
+  const value = event.currentTarget.value;
   const container = document.getElementById("container");
   const cards = container.children;
   for (let i = 0; i < cards.length; i++) {

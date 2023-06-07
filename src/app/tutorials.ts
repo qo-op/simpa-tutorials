@@ -107,6 +107,11 @@ export const examples = [
     folder: "Examples",
   },
   {
+    text: "Flow Layout Demo",
+    path: "/flow-layout-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Border Demo",
     path: "/border-demo/",
     folder: "Examples",
