@@ -10,7 +10,7 @@ import {
 } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import tutorials from "app/tutorials";
-import CodeEditor from "components/CodeEditor";
+import CodeViewer from "components/CodeViewer";
 import ResultPane from "components/ResultPane";
 import { expand } from "features/NavigationTreeSlice";
 import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
@@ -164,7 +164,7 @@ const ExamplePane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor hostname={hostname} code={htmlCode} language="html" />
+              <CodeViewer hostname={hostname} code={htmlCode} language="html" />
             </div>
             <div
               className="BorderLayout"
@@ -173,7 +173,7 @@ const ExamplePane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor hostname={hostname} code={cssCode} language="css" />
+              <CodeViewer hostname={hostname} code={cssCode} language="css" />
             </div>
             <div
               className="BorderLayout"
@@ -182,7 +182,7 @@ const ExamplePane = ({
               tabIndex={-1}
               onFocus={focusGained}
             >
-              <CodeEditor hostname={hostname} code={jsCode} language="js" />
+              <CodeViewer hostname={hostname} code={jsCode} language="js" />
             </div>
             <div
               className="BorderLayout"
@@ -280,7 +280,7 @@ const ExamplePane = ({
                 data-name="html"
                 style={{ visibility: "inherit" }}
               >
-                <CodeEditor
+                <CodeViewer
                   hostname={hostname}
                   code={htmlCode}
                   language="html"
@@ -291,14 +291,14 @@ const ExamplePane = ({
                 data-name="css"
                 style={{ visibility: "hidden" }}
               >
-                <CodeEditor hostname={hostname} code={cssCode} language="css" />
+                <CodeViewer hostname={hostname} code={cssCode} language="css" />
               </div>
               <div
                 className="BorderLayout"
                 data-name="js"
                 style={{ visibility: "hidden" }}
               >
-                <CodeEditor hostname={hostname} code={jsCode} language="js" />
+                <CodeViewer hostname={hostname} code={jsCode} language="js" />
               </div>
             </div>
           </div>
