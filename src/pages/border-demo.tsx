@@ -127,22 +127,20 @@ const BorderDemoPage = ({ path, location }: PageProps) => {
                       grid-auto-rows: 1fr;
                       gap: .5em;">
             <!-- titled line border (left just.) -->
-            <div class="TitledBorder" style="background-color: WhiteSmoke;">
-              <span>title</span>
+            <div class="TitledBorder">
+              <span style="background-color: WhiteSmoke;">title</span>
               <div class="CenterLayout">titled line border (left just.)</div>
             </div>
             <!-- titled line border (centered) -->
             <div class="TitledBorder"
-                 data-title-justification="center"
-                 style="background-color: WhiteSmoke;">
-              <span>title</span>
+                 data-title-justification="center">
+              <span style="background-color: WhiteSmoke;">title</span>
               <div class="CenterLayout">titled line border (centered)</div>
             </div>
             <!-- titled line border (right just.) -->
             <div class="TitledBorder"
-                 data-title-justification="trailing"
-                 style="background-color: WhiteSmoke;">
-              <span>title</span>
+                 data-title-justification="trailing">
+              <span style="background-color: WhiteSmoke;">title</span>
               <div class="CenterLayout">titled line border (right just.)</div>
             </div>
           </div>

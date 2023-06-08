@@ -35,8 +35,7 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
          style="padding: .25em;">
       <div class="BorderLayout">
         <div class="PageStart">
-          <div class="TitledBorder"
-               style="background-color: White;">
+          <div class="TitledBorder">
             <span>Banner</span>
             <div class="CenterLayout"
                  style="background-color: blue;
@@ -50,8 +49,7 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
             </div>
           </div>
         </div>
-        <div class="TitledBorder"
-             style="background-color: White;">
+        <div class="TitledBorder">
           <span>Choose Background Color</span>
           <div class="CenterLayout"
                style="padding: .25em;">
@@ -71,8 +69,7 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
           </div>
         </div>
         <div class="PageEnd">
-          <div class="TitledBorder"
-               style="background-color: White;">
+          <div class="TitledBorder">
             <span>Choose Text Color</span>
             <div style="padding: .25em;
                         display: grid;
