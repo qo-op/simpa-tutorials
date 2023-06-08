@@ -14,7 +14,7 @@ const DialogPage = ({ path }: PageProps) => {
   const click = (ev: React.MouseEvent) => {
     const button: HTMLElement = ev.target as HTMLElement;
     const dialog: HTMLElement = button.closest(".Dialog") as HTMLElement;
-    if (dialog.style.position === "absolute") {
+    if (dialog.style.position === "fixed") {
       dialog.style.position = "";
     }
   };
