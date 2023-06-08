@@ -34,28 +34,32 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
          data-anchor="page-start"
          style="padding: .25em;">
       <div style="display: grid;">
-        <div style="grid-row: 1; grid-column: 1;"
+        <div style="grid-row: 1;
+                    grid-column: 1;"
              class="GridBagConstraints"
              data-fill="horizontal">
           <button>
             Button 1
           </button>
         </div>
-        <div style="grid-row: 1; grid-column: 2;"
+        <div style="grid-row: 1;
+                    grid-column: 2;"
              class="GridBagConstraints"
              data-fill="horizontal">
           <button>
             Button 2
           </button>
         </div>
-        <div style="grid-row: 1; grid-column: 3;"
+        <div style="grid-row: 1;
+                    grid-column: 3;"
              class="GridBagConstraints"
              data-fill="horizontal">
           <button>
             Button 3
           </button>
         </div>
-        <div style="grid-row: 2; grid-column: 1 / span 3;"
+        <div style="grid-row: 2;
+                    grid-column: 1 / span 3;"
              class="GridBagConstraints"
              data-fill="horizontal">
           <button>
@@ -65,10 +69,12 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
             </span>
           </button>
         </div>
-        <div style="grid-row: 3; grid-column: 2 / span 2;"
+        <div style="grid-row: 3;
+                    grid-column: 2 / span 2;
+                    padding: 10px 0 0 0;"
              class="GridBagConstraints"
              data-fill="horizontal">
-          <button style="margin: 10px 0 0 0;">
+          <button>
             5
           </button>
         </div>
@@ -81,15 +87,6 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function applyComponentOrientation(event) {
-  event.preventDefault();
-  const button = event.currentTarget;
-  const form = button.parentElement;
-  const checkedRadioButton = form.querySelector(":scope input:checked");
-  const value = checkedRadioButton.value;
-  const compsToExperiment = document.getElementById("compsToExperiment");
-  compsToExperiment.style.direction = value;
-}
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.

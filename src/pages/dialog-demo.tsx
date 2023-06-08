@@ -31,8 +31,8 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
   <div class="ScrollPane"
        data-scrollbar-overlay>
     <div class="GridBagConstraints"
-        data-anchor="page-start"
-        style="padding: .25em;">
+         data-anchor="page-start"
+         style="padding: .25em;">
       <div class="BorderLayout"
            id="pack">
         <div class="PageStart">
@@ -58,8 +58,8 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
             </div>
             <div class="CardLayout">
               <div data-name="Simple Dialogs"
-                  class="BorderLayout"
-                  style="visibility: inherit;
+                   class="BorderLayout"
+                   style="visibility: inherit;
                          padding: .5em;">
                 <div style="margin-block-end: .5em;">
                   Some simple message dialogs:<br>
@@ -92,8 +92,8 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
                 </div>
               </div>
               <div data-name="More Dialogs"
-                  class="BorderLayout"
-                  style="visibility: hidden;
+                   class="BorderLayout"
+                   style="visibility: hidden;
                          padding: .5em;">
                 <div style="margin-block-end: .5em;">
                   Some more dialogs:<br>
@@ -120,8 +120,8 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
                 </div>
               </div>
               <div data-name="Dialog Icons"
-                  class="BorderLayout"
-                  style="visibility: hidden;
+                   class="BorderLayout"
+                   style="visibility: hidden;
                          padding: .5em;">
                 <div style="margin-block-end: .5em;">
                   Some choice of icons:<br>

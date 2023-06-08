@@ -29,38 +29,38 @@ const ComboBoxDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       id="${id}">
   <div class="ScrollPane"
-    data-scrollbar-overlay>
-  <div class="GridBagConstraints"
-       data-anchor="page-start"
-       style="padding: .25em;">
-    <div class="BoxLayout"
-         data-axis="page-axis"
-         style="gap: .5em;">
-      <!-- combo box -->
-      <select onchange="handleChange(event);">
-        <option value="Bird">
-          Bird
-        </option>
-        <option value="Cat">
-          Cat
-        </option>
-        <option value="Dog">
-          Dog
-        </option>
-        <option value="Rabbit">
-          Rabbit
-        </option>
-        <option value="Pig"
-                selected>
-          Pig
-        </option>
-      </select>
-      <!-- picture -->
-      <img src="../images/Pig.gif"
-           alt="Pet image"
-           id="picture">
+       data-scrollbar-overlay>
+    <div class="GridBagConstraints"
+         data-anchor="page-start"
+         style="padding: .25em;">
+      <div class="BoxLayout"
+           data-axis="page-axis"
+           style="gap: .5em;">
+        <!-- combo box -->
+        <select onchange="handleChange(event);">
+          <option value="Bird">
+            Bird
+          </option>
+          <option value="Cat">
+            Cat
+          </option>
+          <option value="Dog">
+            Dog
+          </option>
+          <option value="Rabbit">
+            Rabbit
+          </option>
+          <option value="Pig"
+                  selected>
+            Pig
+          </option>
+        </select>
+        <!-- picture -->
+        <img src="../images/Pig.gif"
+             alt="Pet image"
+             id="picture">
+      </div>
     </div>
-  </div>
   </div>
 </body>
 </html>

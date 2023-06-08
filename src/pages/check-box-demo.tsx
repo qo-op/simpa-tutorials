@@ -29,53 +29,53 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       id="${id}">
   <div class="ScrollPane"
-    data-scrollbar-overlay>
-  <div class="GridBagConstraints"
-       data-anchor="page-start"
-       style="padding: .25em;">
-    <div class="BoxLayout"
-         style="gap: .5em;">
-      <!-- check boxes -->
-      <form>
-        <!-- Chin check box -->
-        <label>
-          <input type="checkbox"
-                 value="c"
-                 onchange="updatePicture(event);"
-                 checked>
-            Chin
-        </label><br>
-        <!-- Glasses check box -->
-        <label>
-          <input type="checkbox"
-                 value="g"
-                 onchange="updatePicture(event);"
-                 checked>
-            Glasses
-        </label><br>
-        <!-- Hair check box -->
-        <label>
-          <input type="checkbox"
-                 value="h"
-                 onchange="updatePicture(event);"
-                 checked>
-            Hair
-        </label><br>
-        <!-- Teeth check box -->
-        <label>
-          <input type="checkbox"
-                 value="t"
-                 onchange="updatePicture(event);"
-                 checked>
-            Teeth
-        </label>
-      </form>
-      <!-- picture -->
-      <img src="../images/geek-cght.gif"
-           alt="Geek image"
-           id="picture">
+       data-scrollbar-overlay>
+    <div class="GridBagConstraints"
+         data-anchor="page-start"
+         style="padding: .25em;">
+      <div class="BoxLayout"
+           style="gap: .5em;">
+        <!-- check boxes -->
+        <form>
+          <!-- Chin check box -->
+          <label>
+            <input type="checkbox"
+                   value="c"
+                   onchange="updatePicture(event);"
+                   checked>
+              Chin
+          </label><br>
+          <!-- Glasses check box -->
+          <label>
+            <input type="checkbox"
+                   value="g"
+                   onchange="updatePicture(event);"
+                   checked>
+              Glasses
+          </label><br>
+          <!-- Hair check box -->
+          <label>
+            <input type="checkbox"
+                   value="h"
+                   onchange="updatePicture(event);"
+                   checked>
+              Hair
+          </label><br>
+          <!-- Teeth check box -->
+          <label>
+            <input type="checkbox"
+                   value="t"
+                   onchange="updatePicture(event);"
+                   checked>
+              Teeth
+          </label>
+        </form>
+        <!-- picture -->
+        <img src="../images/geek-cght.gif"
+             alt="Geek image"
+             id="picture">
+      </div>
     </div>
-  </div>
   </div>
 </body>
 </html>
