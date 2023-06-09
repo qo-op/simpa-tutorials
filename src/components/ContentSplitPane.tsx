@@ -32,6 +32,7 @@ const ContentSplitPane = ({
     scrollRef.current.scrollTop = scrollPosition;
   });
   if (loading) {
+    /*
     return (
       <div
         className="ContentSplitPane ScrollPane"
@@ -41,8 +42,36 @@ const ContentSplitPane = ({
         {children[1]}
       </div>
     );
+    */
+    return (
+      <div className="ContentSplitPane SplitPane">
+        <div
+          className="ScrollPane"
+          data-scrollbar-overlay
+          style={{
+            width: "0%",
+            borderInlineEnd: ".5px solid Gray",
+          }}
+          ref={scrollRef}
+          onScroll={handleScroll}
+          id="navigation-tree-scroll-pane"
+        >
+          {children[0]}
+        </div>
+        <ContentSplitPaneDivider />
+        <div
+          className="ScrollPane"
+          data-horizontal-policy="scrollbar-never"
+          data-scrollbar-overlay
+          style={{ width: "100%", borderInlineStart: ".5px solid Gray" }}
+        >
+          {children[1]}
+        </div>
+      </div>
+    );
   } else if (mobileView) {
     if (dividerLocation === -1) {
+      /*
       return (
         <div
           className="ContentSplitPane ScrollPane"
@@ -52,7 +81,35 @@ const ContentSplitPane = ({
           {children[1]}
         </div>
       );
+      */
+      return (
+        <div className="ContentSplitPane SplitPane">
+          <div
+            className="ScrollPane"
+            data-scrollbar-overlay
+            style={{
+              width: "0%",
+              borderInlineEnd: ".5px solid Gray",
+            }}
+            ref={scrollRef}
+            onScroll={handleScroll}
+            id="navigation-tree-scroll-pane"
+          >
+            {children[0]}
+          </div>
+          <ContentSplitPaneDivider />
+          <div
+            className="ScrollPane"
+            data-horizontal-policy="scrollbar-never"
+            data-scrollbar-overlay
+            style={{ width: "100%", borderInlineStart: ".5px solid Gray" }}
+          >
+            {children[1]}
+          </div>
+        </div>
+      );
     } else {
+      /*
       return (
         <div
           className="ContentSplitPane ScrollPane"
@@ -64,8 +121,36 @@ const ContentSplitPane = ({
           {children[0]}
         </div>
       );
+      */
+      return (
+        <div className="ContentSplitPane SplitPane">
+          <div
+            className="ScrollPane"
+            data-scrollbar-overlay
+            style={{
+              width: "100%",
+              borderInlineEnd: ".5px solid Gray",
+            }}
+            ref={scrollRef}
+            onScroll={handleScroll}
+            id="navigation-tree-scroll-pane"
+          >
+            {children[0]}
+          </div>
+          <ContentSplitPaneDivider />
+          <div
+            className="ScrollPane"
+            data-horizontal-policy="scrollbar-never"
+            data-scrollbar-overlay
+            style={{ width: "0%", borderInlineStart: ".5px solid Gray" }}
+          >
+            {children[1]}
+          </div>
+        </div>
+      );
     }
   } else if (dividerLocation === -2) {
+    /*
     return (
       <div
         className="ContentSplitPane ScrollPane"
@@ -73,6 +158,33 @@ const ContentSplitPane = ({
         data-scrollbar-overlay
       >
         {children[1]}
+      </div>
+    );
+    */
+    return (
+      <div className="ContentSplitPane SplitPane">
+        <div
+          className="ScrollPane"
+          data-scrollbar-overlay
+          style={{
+            width: "0%",
+            borderInlineEnd: ".5px solid Gray",
+          }}
+          ref={scrollRef}
+          onScroll={handleScroll}
+          id="navigation-tree-scroll-pane"
+        >
+          {children[0]}
+        </div>
+        <ContentSplitPaneDivider />
+        <div
+          className="ScrollPane"
+          data-horizontal-policy="scrollbar-never"
+          data-scrollbar-overlay
+          style={{ width: "100%", borderInlineStart: ".5px solid Gray" }}
+        >
+          {children[1]}
+        </div>
       </div>
     );
   } else {
