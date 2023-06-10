@@ -1,14 +1,20 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
-import { setScrollPosition } from "features/ContentSplitPaneSlice";
+import {
+  setScrollMarginTop,
+  setScrollPosition,
+} from "features/ContentSplitPaneSlice";
 import React, { useEffect, useRef } from "react";
+import NavigationTree from "components/NavigationTree";
 
 const ContentSplitPane = ({
   children,
   mobileView,
+  tutorialIndex,
 }: {
-  children: React.ReactNode[];
+  children: React.ReactNode;
   mobileView: boolean;
+  tutorialIndex: number;
 }) => {
   const loading = useAppSelector((state) => state.loading.value);
   const dividerLocation = useAppSelector(
@@ -17,20 +23,22 @@ const ContentSplitPane = ({
   const scrollPosition = useAppSelector(
     (state) => state.contentSplitPane.scrollPosition
   );
+  const scrollMarginTop = useAppSelector(
+    (state) => state.contentSplitPane.scrollMarginTop
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const handleScroll = () => {
     // dispatch(setScrollPosition(-1));
   };
   useEffect(() => {
-    if (scrollRef.current == null) {
+    if (scrollRef.current === null || navRef.current === null) {
       return;
     }
-    if (scrollPosition < 0) {
-      return;
-    }
-    scrollRef.current.scrollTop = scrollPosition;
-  }, [scrollPosition]);
+    scrollRef.current.scrollTop = -scrollMarginTop;
+    dispatch(setScrollMarginTop(0));
+  }, []);
   if (loading) {
     /*
     return (
@@ -48,15 +56,30 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={{
-            width: "0%",
-            borderInlineEnd: ".5px solid Gray",
-          }}
+          style={Object.assign(
+            {
+              width: "0%",
+              borderInlineEnd: ".5px solid Gray",
+            },
+            scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
+          )}
           ref={scrollRef}
           onScroll={handleScroll}
           id="navigation-tree-scroll-pane"
         >
-          {children[0]}
+          <nav
+            ref={navRef}
+            style={
+              scrollMarginTop
+                ? { scrollMarginTop: scrollMarginTop, scrollSnapAlign: "start" }
+                : {}
+            }
+          >
+            <NavigationTree
+              mobileView={mobileView}
+              tutorialIndex={tutorialIndex}
+            />
+          </nav>
         </div>
         <ContentSplitPaneDivider />
         <div
@@ -65,7 +88,7 @@ const ContentSplitPane = ({
           data-scrollbar-overlay
           style={{ width: "100%", borderInlineStart: ".5px solid Gray" }}
         >
-          {children[1]}
+          {children}
         </div>
       </div>
     );
@@ -87,15 +110,33 @@ const ContentSplitPane = ({
           <div
             className="ScrollPane"
             data-scrollbar-overlay
-            style={{
-              width: "0%",
-              borderInlineEnd: ".5px solid Gray",
-            }}
+            style={Object.assign(
+              {
+                width: "0%",
+                borderInlineEnd: ".5px solid Gray",
+              },
+              scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
+            )}
             ref={scrollRef}
             onScroll={handleScroll}
             id="navigation-tree-scroll-pane"
           >
-            {children[0]}
+            <nav
+              ref={navRef}
+              style={
+                scrollMarginTop
+                  ? {
+                      scrollMarginTop: scrollMarginTop,
+                      scrollSnapAlign: "start",
+                    }
+                  : {}
+              }
+            >
+              <NavigationTree
+                mobileView={mobileView}
+                tutorialIndex={tutorialIndex}
+              />
+            </nav>
           </div>
           <ContentSplitPaneDivider />
           <div
@@ -104,7 +145,7 @@ const ContentSplitPane = ({
             data-scrollbar-overlay
             style={{ width: "100%", borderInlineStart: ".5px solid Gray" }}
           >
-            {children[1]}
+            {children}
           </div>
         </div>
       );
@@ -127,15 +168,33 @@ const ContentSplitPane = ({
           <div
             className="ScrollPane"
             data-scrollbar-overlay
-            style={{
-              width: "100%",
-              borderInlineEnd: ".5px solid Gray",
-            }}
+            style={Object.assign(
+              {
+                width: "100%",
+                borderInlineEnd: ".5px solid Gray",
+              },
+              scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
+            )}
             ref={scrollRef}
             onScroll={handleScroll}
             id="navigation-tree-scroll-pane"
           >
-            {children[0]}
+            <nav
+              ref={navRef}
+              style={
+                scrollMarginTop
+                  ? {
+                      scrollMarginTop: scrollMarginTop,
+                      scrollSnapAlign: "start",
+                    }
+                  : {}
+              }
+            >
+              <NavigationTree
+                mobileView={mobileView}
+                tutorialIndex={tutorialIndex}
+              />
+            </nav>
           </div>
           <ContentSplitPaneDivider />
           <div
@@ -144,7 +203,7 @@ const ContentSplitPane = ({
             data-scrollbar-overlay
             style={{ width: "0%", borderInlineStart: ".5px solid Gray" }}
           >
-            {children[1]}
+            {children}
           </div>
         </div>
       );
@@ -166,15 +225,30 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={{
-            width: "0%",
-            borderInlineEnd: ".5px solid Gray",
-          }}
+          style={Object.assign(
+            {
+              width: "0%",
+              borderInlineEnd: ".5px solid Gray",
+            },
+            scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
+          )}
           ref={scrollRef}
           onScroll={handleScroll}
           id="navigation-tree-scroll-pane"
         >
-          {children[0]}
+          <nav
+            ref={navRef}
+            style={
+              scrollMarginTop
+                ? { scrollMarginTop: scrollMarginTop, scrollSnapAlign: "start" }
+                : {}
+            }
+          >
+            <NavigationTree
+              mobileView={mobileView}
+              tutorialIndex={tutorialIndex}
+            />
+          </nav>
         </div>
         <ContentSplitPaneDivider />
         <div
@@ -183,7 +257,7 @@ const ContentSplitPane = ({
           data-scrollbar-overlay
           style={{ width: "100%", borderInlineStart: ".5px solid Gray" }}
         >
-          {children[1]}
+          {children}
         </div>
       </div>
     );
@@ -193,15 +267,30 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={{
-            width: dividerLocation === -1 ? undefined : dividerLocation + "%",
-            borderInlineEnd: ".5px solid Gray",
-          }}
+          style={Object.assign(
+            {
+              width: dividerLocation === -1 ? undefined : dividerLocation + "%",
+              borderInlineEnd: ".5px solid Gray",
+            },
+            scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
+          )}
           ref={scrollRef}
           onScroll={handleScroll}
           id="navigation-tree-scroll-pane"
         >
-          {children[0]}
+          <nav
+            ref={navRef}
+            style={
+              scrollMarginTop
+                ? { scrollMarginTop: scrollMarginTop, scrollSnapAlign: "start" }
+                : {}
+            }
+          >
+            <NavigationTree
+              mobileView={mobileView}
+              tutorialIndex={tutorialIndex}
+            />
+          </nav>
         </div>
         <ContentSplitPaneDivider />
         <div
@@ -210,7 +299,7 @@ const ContentSplitPane = ({
           data-scrollbar-overlay
           style={{ borderInlineStart: ".5px solid Gray" }}
         >
-          {children[1]}
+          {children}
         </div>
       </div>
     );

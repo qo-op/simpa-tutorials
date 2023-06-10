@@ -4,7 +4,6 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ExampleContentSplitPane from "components/ExampleContentSplitPane";
 import ExamplePane from "components/ExamplePane";
-import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
 import { setLoading } from "features/LoadingSlice";
 import { setNextPath } from "features/NextPathSlice";
@@ -49,8 +48,10 @@ const ExampleLayout = ({
       <div className="PageStart">
         <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
       </div>
-      <ExampleContentSplitPane mobileView={mobileView}>
-        <NavigationTree mobileView={mobileView} tutorialIndex={tutorialIndex} />
+      <ExampleContentSplitPane
+        mobileView={mobileView}
+        tutorialIndex={tutorialIndex}
+      >
         <ExamplePane
           path={path}
           hostname={hostname}

@@ -3,7 +3,6 @@ import "./Layout.css";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ContentSplitPane from "components/ContentSplitPane";
-import NavigationTree from "components/NavigationTree";
 import ToolBar from "components/ToolBar";
 import TutorialPane from "components/TutorialPane";
 import { setLoading } from "features/LoadingSlice";
@@ -40,8 +39,7 @@ const Layout = ({
       <div className="PageStart">
         <ToolBar mobileView={mobileView} tutorialIndex={tutorialIndex} />
       </div>
-      <ContentSplitPane mobileView={mobileView}>
-        <NavigationTree mobileView={mobileView} tutorialIndex={tutorialIndex} />
+      <ContentSplitPane mobileView={mobileView} tutorialIndex={tutorialIndex}>
         <TutorialPane
           path={path}
           mobileView={mobileView}

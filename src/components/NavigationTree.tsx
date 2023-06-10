@@ -12,6 +12,7 @@ import tutorials, {
 } from "app/tutorials";
 import {
   setDividerLocation,
+  setScrollMarginTop,
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
@@ -65,153 +66,152 @@ const NavigationTree = ({
     ) as HTMLElement;
     if (navigationTreeScrollPane !== null) {
       dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
+      dispatch(setScrollMarginTop(-navigationTreeScrollPane.scrollTop));
     }
   };
   const folderClick = (folder: string) => {
     dispatch(toggle(folder));
   };
   return (
-    <nav>
-      <ul className="NavigationTree Tree" style={NavigationTreeStyle}>
-        <li>
-          <div
-            className="TreeNode"
-            style={NavigationTreeNodeStyle(tutorialIndex === 0)}
-            onClick={() => tutorialClick(tutorials[0].path, mobileView)}
-          >
-            <ArticleIcon />
-            <span>{tutorials[0].text}</span>
-          </div>
-        </li>
-        <li>
-          <div
-            className="TreeNode"
-            data-closed={cssLayoutsFolderClosed ? "true" : "false"}
-            onClick={() => folderClick("CSS Layouts")}
-          >
-            {cssLayoutsFolderClosed ? (
-              <KeyboardArrowRightIcon />
-            ) : (
-              <KeyboardArrowDownIcon />
-            )}
-            <span>CSS Layouts</span>
-          </div>
-          <ul>
-            {cssLayoutsTutorials.map((tutorial, index) => (
-              <li key={index}>
-                <div
-                  className="TreeNode"
-                  style={NavigationTreeNodeStyle(tutorialIndex === index + 1)}
-                  onClick={() => tutorialClick(tutorial.path, mobileView)}
-                >
-                  <ArticleIcon />
-                  <span>{tutorial.text}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </li>
-        <li>
-          <div
-            className="TreeNode"
-            data-closed={cssComponentsFolderClosed ? "true" : "false"}
-            onClick={() => folderClick("CSS Components")}
-          >
-            {cssComponentsFolderClosed ? (
-              <KeyboardArrowRightIcon />
-            ) : (
-              <KeyboardArrowDownIcon />
-            )}
-            <span>CSS Components</span>
-          </div>
-          <ul>
-            {cssComponentsTutorials.map((tutorial, index) => (
-              <li key={index}>
-                <div
-                  className="TreeNode"
-                  style={NavigationTreeNodeStyle(
-                    tutorialIndex === index + cssLayoutsTutorials.length + 1
-                  )}
-                  onClick={() => tutorialClick(tutorial.path, mobileView)}
-                >
-                  <ArticleIcon />
-                  <span>{tutorial.text}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </li>
-        <li>
-          <div
-            className="TreeNode"
-            data-closed={jsComponentsFolderClosed ? "true" : "false"}
-            onClick={() => folderClick("JS Components")}
-          >
-            {jsComponentsFolderClosed ? (
-              <KeyboardArrowRightIcon />
-            ) : (
-              <KeyboardArrowDownIcon />
-            )}
-            <span>JS Components</span>
-          </div>
-          <ul>
-            {jsComponentsTutorials.map((tutorial, index) => (
-              <li key={index}>
-                <div
-                  className="TreeNode"
-                  style={NavigationTreeNodeStyle(
-                    tutorialIndex ===
-                      index +
-                        cssComponentsTutorials.length +
-                        cssLayoutsTutorials.length +
-                        1
-                  )}
-                  onClick={() => tutorialClick(tutorial.path, mobileView)}
-                >
-                  <ArticleIcon />
-                  <span>{tutorial.text}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </li>
-        <li>
-          <div
-            className="TreeNode"
-            data-closed={examplesFolderClosed ? "true" : "false"}
-            onClick={() => folderClick("Examples")}
-          >
-            {examplesFolderClosed ? (
-              <KeyboardArrowRightIcon />
-            ) : (
-              <KeyboardArrowDownIcon />
-            )}
-            <span>Examples</span>
-          </div>
-          <ul>
-            {examples.map((tutorial, index) => (
-              <li key={index}>
-                <div
-                  className="TreeNode"
-                  style={NavigationTreeNodeStyle(
-                    tutorialIndex ===
-                      index +
-                        jsComponentsTutorials.length +
-                        cssComponentsTutorials.length +
-                        cssLayoutsTutorials.length +
-                        1
-                  )}
-                  onClick={() => tutorialClick(tutorial.path, mobileView)}
-                >
-                  <ArticleIcon />
-                  <span>{tutorial.text}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <ul className="NavigationTree Tree" style={NavigationTreeStyle}>
+      <li>
+        <div
+          className="TreeNode"
+          style={NavigationTreeNodeStyle(tutorialIndex === 0)}
+          onClick={() => tutorialClick(tutorials[0].path, mobileView)}
+        >
+          <ArticleIcon />
+          <span>{tutorials[0].text}</span>
+        </div>
+      </li>
+      <li>
+        <div
+          className="TreeNode"
+          data-closed={cssLayoutsFolderClosed ? "true" : "false"}
+          onClick={() => folderClick("CSS Layouts")}
+        >
+          {cssLayoutsFolderClosed ? (
+            <KeyboardArrowRightIcon />
+          ) : (
+            <KeyboardArrowDownIcon />
+          )}
+          <span>CSS Layouts</span>
+        </div>
+        <ul>
+          {cssLayoutsTutorials.map((tutorial, index) => (
+            <li key={index}>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(tutorialIndex === index + 1)}
+                onClick={() => tutorialClick(tutorial.path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorial.text}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </li>
+      <li>
+        <div
+          className="TreeNode"
+          data-closed={cssComponentsFolderClosed ? "true" : "false"}
+          onClick={() => folderClick("CSS Components")}
+        >
+          {cssComponentsFolderClosed ? (
+            <KeyboardArrowRightIcon />
+          ) : (
+            <KeyboardArrowDownIcon />
+          )}
+          <span>CSS Components</span>
+        </div>
+        <ul>
+          {cssComponentsTutorials.map((tutorial, index) => (
+            <li key={index}>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(
+                  tutorialIndex === index + cssLayoutsTutorials.length + 1
+                )}
+                onClick={() => tutorialClick(tutorial.path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorial.text}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </li>
+      <li>
+        <div
+          className="TreeNode"
+          data-closed={jsComponentsFolderClosed ? "true" : "false"}
+          onClick={() => folderClick("JS Components")}
+        >
+          {jsComponentsFolderClosed ? (
+            <KeyboardArrowRightIcon />
+          ) : (
+            <KeyboardArrowDownIcon />
+          )}
+          <span>JS Components</span>
+        </div>
+        <ul>
+          {jsComponentsTutorials.map((tutorial, index) => (
+            <li key={index}>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(
+                  tutorialIndex ===
+                    index +
+                      cssComponentsTutorials.length +
+                      cssLayoutsTutorials.length +
+                      1
+                )}
+                onClick={() => tutorialClick(tutorial.path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorial.text}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </li>
+      <li>
+        <div
+          className="TreeNode"
+          data-closed={examplesFolderClosed ? "true" : "false"}
+          onClick={() => folderClick("Examples")}
+        >
+          {examplesFolderClosed ? (
+            <KeyboardArrowRightIcon />
+          ) : (
+            <KeyboardArrowDownIcon />
+          )}
+          <span>Examples</span>
+        </div>
+        <ul>
+          {examples.map((tutorial, index) => (
+            <li key={index}>
+              <div
+                className="TreeNode"
+                style={NavigationTreeNodeStyle(
+                  tutorialIndex ===
+                    index +
+                      jsComponentsTutorials.length +
+                      cssComponentsTutorials.length +
+                      cssLayoutsTutorials.length +
+                      1
+                )}
+                onClick={() => tutorialClick(tutorial.path, mobileView)}
+              >
+                <ArticleIcon />
+                <span>{tutorial.text}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </li>
+    </ul>
   );
 };
 

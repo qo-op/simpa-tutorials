@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "app/hooks";
 import tutorials from "app/tutorials";
 import {
   setDividerLocation,
+  setScrollMarginTop,
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
@@ -46,6 +47,7 @@ const PreviousPageButton = ({
       ) as HTMLElement;
       if (navigationTreeScrollPane !== null) {
         dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
+        dispatch(setScrollMarginTop(-navigationTreeScrollPane.scrollTop));
       }
     }
   };

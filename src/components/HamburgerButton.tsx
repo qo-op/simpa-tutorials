@@ -3,6 +3,7 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import {
   setDividerLocation,
+  setScrollMarginTop,
   setScrollPosition,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
@@ -26,6 +27,7 @@ const HamburgerButton = ({ mobileView }: { mobileView: boolean }) => {
     ) as HTMLElement;
     if (navigationTreeScrollPane !== null) {
       dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
+      dispatch(setScrollMarginTop(-navigationTreeScrollPane.scrollTop));
     }
   };
   return (
