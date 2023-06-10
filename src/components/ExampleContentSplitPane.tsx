@@ -30,7 +30,7 @@ const ExampleContentSplitPane = ({
       return;
     }
     scrollRef.current.scrollTop = scrollPosition;
-  });
+  }, [scrollPosition]);
   if (loading) {
     return (
       <div className="ExampleContentSplitPane BorderLayout">{children[1]}</div>

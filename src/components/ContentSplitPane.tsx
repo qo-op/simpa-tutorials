@@ -30,7 +30,7 @@ const ContentSplitPane = ({
       return;
     }
     scrollRef.current.scrollTop = scrollPosition;
-  });
+  }, [scrollPosition]);
   if (loading) {
     /*
     return (
