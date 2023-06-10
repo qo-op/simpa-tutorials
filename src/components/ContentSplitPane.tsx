@@ -20,7 +20,7 @@ const ContentSplitPane = ({
   const scrollRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
   const handleScroll = () => {
-    dispatch(setScrollPosition(-1));
+    // dispatch(setScrollPosition(-1));
   };
   useEffect(() => {
     if (scrollRef.current == null) {
