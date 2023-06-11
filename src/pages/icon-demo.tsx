@@ -5,7 +5,7 @@ import React from "react";
 
 const title: string = "IconDemo";
 const description: string = `An HTML version of Oracle's ${title} example`;
-const id = "border-layout-demo";
+const id = "icon-demo";
 
 const IconDemoPage = ({ path, location }: PageProps) => {
   return (
@@ -28,70 +28,64 @@ const IconDemoPage = ({ path, location }: PageProps) => {
 </head>
 <body class="Frame"
       id="${id}">
-  <div class="ScrollPane"
-       data-scrollbar-overlay>
-    <div class="GridBagConstraints"
-         data-anchor="page-start"
-         style="padding: .25em;">
-      <div class="BorderLayout"
-           style="width: 400px;
-                  height: 300px;">
-        <div class="PageStart">
-          <div class="FlowLayout"
-               style="gap: 1px;">
-            <button onclick="handleClick(event);"
-                    data-caption="Original SUNW Logo"
-                    data-src="../images/sunw01.jpg">
-              <span class="BorderLayout">
-                <img src="../images/sunw01.jpg"
-                     style="width: 32px;
-                            height: 32px;">
-              </span>
-            </button>
-            <button onclick="handleClick(event);"
-                    data-caption="The Clocktower"
-                    data-src="../images/sunw02.jpg">
-              <span class="BorderLayout">
-                <img src="../images/sunw02.jpg"
-                     style="width: 32px;
-                            height: 32px;">
-              </span>
-            </button>
-            <button onclick="handleClick(event);"
-                    data-caption="Clocktower from the West"
-                    data-src="../images/sunw03.jpg">
-              <span class="BorderLayout">
-                <img src="../images/sunw03.jpg"
-                     style="width: 32px;
-                            height: 32px;">
-              </span>
-            </button>
-            <button onclick="handleClick(event);"
-                    data-caption="The Mansion"
-                    data-src="../images/sunw04.jpg">
-              <span class="BorderLayout">
-                <img src="../images/sunw04.jpg"
-                     style="width: 32px;
-                            height: 32px;">
-              </span>
-            </button>
-            <button onclick="handleClick(event);"
-                    data-caption="Sun Auditorium"
-                    data-src="../images/sunw05.jpg">
-              <span class="BorderLayout">
-                <img src="../images/sunw05.jpg"
-                     style="width: 32px;
-                            height: 32px;">
-              </span>
-            </button>
-          </div>
-        </div>
-        <div class="BorderLayout">
-          <div class="PageStart CenterLayout">
-            <span id="title">Please Select an Image</span>
-          </div>
-          <img id="photograph">
-        </div>
+  <div class="BorderLayout">
+    <div class="PageStart">
+      <div class="FlowLayout"
+           style="gap: 1px;">
+        <button onclick="handleClick(event);"
+                data-caption="Original SUNW Logo"
+                data-src="../images/sunw01.jpg">
+          <span class="BorderLayout">
+            <img src="../images/sunw01.jpg"
+                 style="width: 32px;
+                        height: 32px;">
+          </span>
+        </button>
+        <button onclick="handleClick(event);"
+                data-caption="The Clocktower"
+                data-src="../images/sunw02.jpg">
+          <span class="BorderLayout">
+            <img src="../images/sunw02.jpg"
+                 style="width: 32px;
+                        height: 32px;">
+          </span>
+        </button>
+        <button onclick="handleClick(event);"
+                data-caption="Clocktower from the West"
+                data-src="../images/sunw03.jpg">
+          <span class="BorderLayout">
+            <img src="../images/sunw03.jpg"
+                 style="width: 32px;
+                        height: 32px;">
+          </span>
+        </button>
+        <button onclick="handleClick(event);"
+                data-caption="The Mansion"
+                data-src="../images/sunw04.jpg">
+          <span class="BorderLayout">
+            <img src="../images/sunw04.jpg"
+                 style="width: 32px;
+                        height: 32px;">
+          </span>
+        </button>
+        <button onclick="handleClick(event);"
+                data-caption="Sun Auditorium"
+                data-src="../images/sunw05.jpg">
+          <span class="BorderLayout">
+            <img src="../images/sunw05.jpg"
+                 style="width: 32px;
+                        height: 32px;">
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="BorderLayout">
+      <div class="PageStart CenterLayout">
+        <span id="title">Please Select an Image</span>
+      </div>
+      <div class="GridBagConstraints"
+           data-anchor="page-start">
+        <img id="photograph">
       </div>
     </div>
   </div>
@@ -102,13 +96,13 @@ const IconDemoPage = ({ path, location }: PageProps) => {
 `}
       jsCode={`/* ${title}.js */
 function handleClick(event) {
-    const button = event.currentTarget;
-    const caption = button.dataset.caption;
-    const src = button.dataset.src;
-    const title = document.getElementById("title");
-    title.textContent = caption;
-    const photograph = document.getElementById("photograph");
-    photograph.src = src;
+  const button = event.currentTarget;
+  const caption = button.dataset.caption;
+  const src = button.dataset.src;
+  const title = document.getElementById("title");
+  title.textContent = caption;
+  const photograph = document.getElementById("photograph");
+  photograph.src = src;
 }
 `}
       info={`

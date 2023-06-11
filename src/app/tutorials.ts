@@ -166,6 +166,11 @@ export const examples = [
     path: "/layered-pane-demo/",
     folder: "Examples",
   },
+  {
+    text: "Menu Demo",
+    path: "/menu-demo/",
+    folder: "Examples",
+  },
 ];
 
 const tutorials = home.concat(
