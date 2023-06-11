@@ -157,6 +157,11 @@ export const examples = [
     folder: "Examples",
   },
   {
+    text: "Icon Demo",
+    path: "/icon-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Layered Pane Demo",
     path: "/layered-pane-demo/",
     folder: "Examples",
