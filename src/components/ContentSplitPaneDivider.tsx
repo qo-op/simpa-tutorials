@@ -2,7 +2,7 @@ import { useAppDispatch } from "app/hooks";
 import { setDividerLocation } from "features/ContentSplitPaneSlice";
 import React from "react";
 
-const ContentSplitPaneDivider = () => {
+const ContentSplitPaneDivider = ({ draggable }: { draggable: boolean }) => {
   const dispatch = useAppDispatch();
   const pointerup = (ev: React.PointerEvent) => {
     const splitPaneDivider: HTMLElement = ev.currentTarget as HTMLElement;
@@ -20,8 +20,12 @@ const ContentSplitPaneDivider = () => {
     }
   };
   return (
-    <div className="ContentSplitPaneDivider SplitPaneDividerBorder">
-      <div className="SplitPaneDivider" onPointerUp={pointerup} />
+    <div className="ContentSplitPaneDivider">
+      <div
+        className="SplitPaneDivider"
+        data-draggable={draggable}
+        onPointerUp={pointerup}
+      />
     </div>
   );
 };

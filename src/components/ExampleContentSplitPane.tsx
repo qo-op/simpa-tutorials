@@ -28,18 +28,13 @@ const ExampleContentSplitPane = ({
   }, []);
   if (loading) {
     return (
-      <div className="ExampleContentSplitPane BorderLayout">{children}</div>
-    );
-  } else if (mobileView) {
-    if (dividerLocation === -1) {
-      return (
-        <div className="ExampleContentSplitPane BorderLayout">{children}</div>
-      );
-    } else {
-      return (
+      <div className="ContentSplitPane SplitPane">
         <div
-          className="ExampleContentSplitPane ScrollPane"
+          className="ScrollPane"
           data-scrollbar-overlay
+          style={{
+            width: "0%",
+          }}
           ref={scrollRef}
           id="navigation-tree-scroll-pane"
         >
@@ -50,11 +45,88 @@ const ExampleContentSplitPane = ({
             />
           </nav>
         </div>
+        <ContentSplitPaneDivider draggable={false} />
+        <div className="BorderLayout" style={{ width: "100%" }}>
+          {children}
+        </div>
+      </div>
+    );
+  } else if (mobileView) {
+    if (dividerLocation === -1) {
+      return (
+        <div className="ContentSplitPane SplitPane">
+          <div
+            className="ScrollPane"
+            data-scrollbar-overlay
+            style={{
+              width: "0%",
+            }}
+            ref={scrollRef}
+            id="navigation-tree-scroll-pane"
+          >
+            <nav>
+              <NavigationTree
+                mobileView={mobileView}
+                tutorialIndex={tutorialIndex}
+              />
+            </nav>
+          </div>
+          <ContentSplitPaneDivider draggable={false} />
+          <div className="BorderLayout" style={{ width: "100%" }}>
+            {children}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="ContentSplitPane SplitPane">
+          <div
+            className="ScrollPane"
+            data-scrollbar-overlay
+            style={{
+              width: "100%",
+            }}
+            ref={scrollRef}
+            id="navigation-tree-scroll-pane"
+          >
+            <nav>
+              <NavigationTree
+                mobileView={mobileView}
+                tutorialIndex={tutorialIndex}
+              />
+            </nav>
+          </div>
+          <ContentSplitPaneDivider draggable={false} />
+          <div className="BorderLayout" style={{ width: "0%" }}>
+            {children}
+          </div>
+        </div>
       );
     }
   } else if (dividerLocation === -2) {
     return (
-      <div className="ExampleContentSplitPane BorderLayout">{children}</div>
+      <div className="ExampleContentSplitPane SplitPane">
+        <div
+          className="ScrollPane"
+          data-scrollbar-overlay
+          style={{
+            width: "0%",
+          }}
+          ref={scrollRef}
+          id="navigation-tree-scroll-pane"
+        >
+          <nav>
+            <NavigationTree
+              mobileView={mobileView}
+              tutorialIndex={tutorialIndex}
+            />
+          </nav>
+        </div>
+        <ContentSplitPaneDivider draggable={false} />
+        <div className="BorderLayout" style={{ width: "100%" }}>
+          {children}
+        </div>
+      </div>
     );
   } else {
     return (
@@ -90,7 +162,7 @@ const ExampleContentSplitPane = ({
             />
           </nav>
         </div>
-        <ContentSplitPaneDivider />
+        <ContentSplitPaneDivider draggable={true} />
         <div className="BorderLayout">
           <div
             className="BorderLayout"
