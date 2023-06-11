@@ -23,7 +23,7 @@ const ContentSplitPane = ({
     if (scrollRef.current === null) {
       return;
     }
-    scrollRef.current.scrollTop = -scrollTop;
+    scrollRef.current.scrollTop = scrollTop;
     setScrollMarginTop(0);
   }, []);
   if (loading) {
