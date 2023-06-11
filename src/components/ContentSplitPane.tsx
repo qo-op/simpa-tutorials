@@ -1,10 +1,7 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
-import {
-  setScrollMarginTop,
-  setScrollPosition,
-} from "features/ContentSplitPaneSlice";
-import React, { useEffect, useRef } from "react";
+import { setScrollTop } from "features/ContentSplitPaneSlice";
+import React, { useEffect, useRef, useState } from "react";
 import NavigationTree from "components/NavigationTree";
 
 const ContentSplitPane = ({
@@ -20,24 +17,16 @@ const ContentSplitPane = ({
   const dividerLocation = useAppSelector(
     (state) => state.contentSplitPane.dividerLocation
   );
-  const scrollPosition = useAppSelector(
-    (state) => state.contentSplitPane.scrollPosition
-  );
-  const scrollMarginTop = useAppSelector(
-    (state) => state.contentSplitPane.scrollMarginTop
-  );
+  const scrollTop = useAppSelector((state) => state.contentSplitPane.scrollTop);
+  const [scrollMarginTop, setScrollMarginTop] = useState(scrollTop);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const navRef = useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
-  const handleScroll = () => {
-    // dispatch(setScrollPosition(-1));
-  };
   useEffect(() => {
-    if (scrollRef.current === null || navRef.current === null) {
+    if (scrollRef.current === null) {
       return;
     }
-    scrollRef.current.scrollTop = -scrollMarginTop;
-    dispatch(setScrollMarginTop(0));
+    scrollRef.current.scrollTop = -scrollTop;
+    setScrollMarginTop(0);
   }, []);
   if (loading) {
     /*
@@ -56,25 +45,14 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={Object.assign(
-            {
-              width: "0%",
-              borderInlineEnd: ".5px solid Gray",
-            },
-            scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
-          )}
+          style={{
+            width: "0%",
+            borderInlineEnd: ".5px solid Gray",
+          }}
           ref={scrollRef}
-          onScroll={handleScroll}
           id="navigation-tree-scroll-pane"
         >
-          <nav
-            ref={navRef}
-            style={
-              scrollMarginTop
-                ? { scrollMarginTop: scrollMarginTop, scrollSnapAlign: "start" }
-                : {}
-            }
-          >
+          <nav>
             <NavigationTree
               mobileView={mobileView}
               tutorialIndex={tutorialIndex}
@@ -110,28 +88,14 @@ const ContentSplitPane = ({
           <div
             className="ScrollPane"
             data-scrollbar-overlay
-            style={Object.assign(
-              {
-                width: "0%",
-                borderInlineEnd: ".5px solid Gray",
-              },
-              scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
-            )}
+            style={{
+              width: "0%",
+              borderInlineEnd: ".5px solid Gray",
+            }}
             ref={scrollRef}
-            onScroll={handleScroll}
             id="navigation-tree-scroll-pane"
           >
-            <nav
-              ref={navRef}
-              style={
-                scrollMarginTop
-                  ? {
-                      scrollMarginTop: scrollMarginTop,
-                      scrollSnapAlign: "start",
-                    }
-                  : {}
-              }
-            >
+            <nav>
               <NavigationTree
                 mobileView={mobileView}
                 tutorialIndex={tutorialIndex}
@@ -168,28 +132,14 @@ const ContentSplitPane = ({
           <div
             className="ScrollPane"
             data-scrollbar-overlay
-            style={Object.assign(
-              {
-                width: "100%",
-                borderInlineEnd: ".5px solid Gray",
-              },
-              scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
-            )}
+            style={{
+              width: "100%",
+              borderInlineEnd: ".5px solid Gray",
+            }}
             ref={scrollRef}
-            onScroll={handleScroll}
             id="navigation-tree-scroll-pane"
           >
-            <nav
-              ref={navRef}
-              style={
-                scrollMarginTop
-                  ? {
-                      scrollMarginTop: scrollMarginTop,
-                      scrollSnapAlign: "start",
-                    }
-                  : {}
-              }
-            >
+            <nav>
               <NavigationTree
                 mobileView={mobileView}
                 tutorialIndex={tutorialIndex}
@@ -225,25 +175,14 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={Object.assign(
-            {
-              width: "0%",
-              borderInlineEnd: ".5px solid Gray",
-            },
-            scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
-          )}
+          style={{
+            width: "0%",
+            borderInlineEnd: ".5px solid Gray",
+          }}
           ref={scrollRef}
-          onScroll={handleScroll}
           id="navigation-tree-scroll-pane"
         >
-          <nav
-            ref={navRef}
-            style={
-              scrollMarginTop
-                ? { scrollMarginTop: scrollMarginTop, scrollSnapAlign: "start" }
-                : {}
-            }
-          >
+          <nav>
             <NavigationTree
               mobileView={mobileView}
               tutorialIndex={tutorialIndex}
@@ -275,14 +214,15 @@ const ContentSplitPane = ({
             scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
           )}
           ref={scrollRef}
-          onScroll={handleScroll}
           id="navigation-tree-scroll-pane"
         >
           <nav
-            ref={navRef}
             style={
               scrollMarginTop
-                ? { scrollMarginTop: scrollMarginTop, scrollSnapAlign: "start" }
+                ? {
+                    scrollMarginTop: -scrollMarginTop,
+                    scrollSnapAlign: "start",
+                  }
                 : {}
             }
           >

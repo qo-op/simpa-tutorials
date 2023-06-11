@@ -12,8 +12,7 @@ import tutorials, {
 } from "app/tutorials";
 import {
   setDividerLocation,
-  setScrollMarginTop,
-  setScrollPosition,
+  setScrollTop as setScrollTop,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 import { toggle } from "features/NavigationTreeSlice";
@@ -24,8 +23,8 @@ import { navigate } from "gatsby";
 import React from "react";
 
 const NavigationTreeStyle: React.CSSProperties = {
-  marginBlock: ".5em",
-  marginBlockEnd: "80px",
+  paddingBlock: ".5em",
+  paddingBlockEnd: "80px",
 };
 
 const NavigationTreeNodeStyle = (selected: boolean): React.CSSProperties => ({
@@ -65,8 +64,7 @@ const NavigationTree = ({
       "navigation-tree-scroll-pane"
     ) as HTMLElement;
     if (navigationTreeScrollPane !== null) {
-      dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
-      dispatch(setScrollMarginTop(-navigationTreeScrollPane.scrollTop));
+      dispatch(setScrollTop(navigationTreeScrollPane.scrollTop));
     }
   };
   const folderClick = (folder: string) => {

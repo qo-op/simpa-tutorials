@@ -4,23 +4,19 @@ const ContentSplitPaneSlice = createSlice({
   name: "contentSplitPane",
   initialState: {
     dividerLocation: -1,
-    scrollPosition: -1,
-    scrollMarginTop: 0,
+    scrollTop: 0,
   },
   reducers: {
     setDividerLocation: (state, action) => {
       state.dividerLocation = action.payload;
     },
-    setScrollPosition: (state, action) => {
-      state.scrollPosition = action.payload;
-    },
-    setScrollMarginTop: (state, action) => {
-      state.scrollMarginTop = action.payload;
+    setScrollTop: (state, action) => {
+      state.scrollTop = action.payload;
     },
   },
 });
 
-export const { setDividerLocation, setScrollPosition, setScrollMarginTop } =
+export const { setDividerLocation, setScrollTop } =
   ContentSplitPaneSlice.actions;
 
 export default ContentSplitPaneSlice.reducer;

@@ -1,8 +1,7 @@
 import { useAppDispatch } from "app/hooks";
 import {
   setDividerLocation,
-  setScrollMarginTop,
-  setScrollPosition,
+  setScrollTop,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 import { setNextPath } from "features/NextPathSlice";
@@ -36,8 +35,7 @@ const HomeButton = ({ mobileView }: { mobileView: boolean }) => {
       "navigation-tree-scroll-pane"
     ) as HTMLElement;
     if (navigationTreeScrollPane !== null) {
-      dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
-      dispatch(setScrollMarginTop(-navigationTreeScrollPane.scrollTop));
+      dispatch(setScrollTop(navigationTreeScrollPane.scrollTop));
     }
   };
   return (

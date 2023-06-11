@@ -3,8 +3,7 @@ import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import {
   setDividerLocation,
-  setScrollMarginTop,
-  setScrollPosition,
+  setScrollTop,
 } from "features/ContentSplitPaneSlice";
 import { setClosed } from "features/HamburgerButtonSlice";
 import React from "react";
@@ -26,8 +25,7 @@ const HamburgerButton = ({ mobileView }: { mobileView: boolean }) => {
       "navigation-tree-scroll-pane"
     ) as HTMLElement;
     if (navigationTreeScrollPane !== null) {
-      dispatch(setScrollPosition(navigationTreeScrollPane.scrollTop));
-      dispatch(setScrollMarginTop(-navigationTreeScrollPane.scrollTop));
+      dispatch(setScrollTop(navigationTreeScrollPane.scrollTop));
     }
   };
   return (
