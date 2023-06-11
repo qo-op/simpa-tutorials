@@ -1,6 +1,5 @@
-import { useAppDispatch, useAppSelector } from "app/hooks";
+import { useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
-import { setScrollTop } from "features/ContentSplitPaneSlice";
 import React, { useEffect, useRef, useState } from "react";
 import NavigationTree from "components/NavigationTree";
 
@@ -20,7 +19,6 @@ const ContentSplitPane = ({
   const scrollTop = useAppSelector((state) => state.contentSplitPane.scrollTop);
   const [scrollMarginTop, setScrollMarginTop] = useState(scrollTop);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const dispatch = useAppDispatch();
   useEffect(() => {
     if (scrollRef.current === null) {
       return;
@@ -29,17 +27,6 @@ const ContentSplitPane = ({
     setScrollMarginTop(0);
   }, []);
   if (loading) {
-    /*
-    return (
-      <div
-        className="ContentSplitPane ScrollPane"
-        data-horizontal-policy="scrollbar-never"
-        data-scrollbar-overlay
-      >
-        {children[1]}
-      </div>
-    );
-    */
     return (
       <div className="ContentSplitPane SplitPane">
         <div
@@ -72,17 +59,6 @@ const ContentSplitPane = ({
     );
   } else if (mobileView) {
     if (dividerLocation === -1) {
-      /*
-      return (
-        <div
-          className="ContentSplitPane ScrollPane"
-          data-horizontal-policy="scrollbar-never"
-          data-scrollbar-overlay
-        >
-          {children[1]}
-        </div>
-      );
-      */
       return (
         <div className="ContentSplitPane SplitPane">
           <div
@@ -114,19 +90,6 @@ const ContentSplitPane = ({
         </div>
       );
     } else {
-      /*
-      return (
-        <div
-          className="ContentSplitPane ScrollPane"
-          data-scrollbar-overlay
-          ref={scrollRef}
-          onScroll={handleScroll}
-          id="navigation-tree-scroll-pane"
-        >
-          {children[0]}
-        </div>
-      );
-      */
       return (
         <div className="ContentSplitPane SplitPane">
           <div
@@ -159,17 +122,6 @@ const ContentSplitPane = ({
       );
     }
   } else if (dividerLocation === -2) {
-    /*
-    return (
-      <div
-        className="ContentSplitPane ScrollPane"
-        data-horizontal-policy="scrollbar-never"
-        data-scrollbar-overlay
-      >
-        {children[1]}
-      </div>
-    );
-    */
     return (
       <div className="ContentSplitPane SplitPane">
         <div
@@ -209,7 +161,6 @@ const ContentSplitPane = ({
           style={Object.assign(
             {
               width: dividerLocation === -1 ? undefined : dividerLocation + "%",
-              borderInlineEnd: ".5px solid Gray",
             },
             scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
           )}
@@ -217,14 +168,17 @@ const ContentSplitPane = ({
           id="navigation-tree-scroll-pane"
         >
           <nav
-            style={
+            style={Object.assign(
+              {
+                borderInlineEnd: ".5px solid Gray",
+              },
               scrollMarginTop
                 ? {
                     scrollMarginTop: -scrollMarginTop,
                     scrollSnapAlign: "start",
                   }
                 : {}
-            }
+            )}
           >
             <NavigationTree
               mobileView={mobileView}
@@ -237,9 +191,13 @@ const ContentSplitPane = ({
           className="ScrollPane"
           data-horizontal-policy="scrollbar-never"
           data-scrollbar-overlay
-          style={{ borderInlineStart: ".5px solid Gray" }}
         >
-          {children}
+          <div
+            className="BorderLayout"
+            style={{ borderInlineStart: ".5px solid Gray" }}
+          >
+            {children}
+          </div>
         </div>
       </div>
     );

@@ -27,7 +27,7 @@ const Layout = ({
     dispatch(setNextPath(path));
   });
   const mobileView = !useMediaQuery({
-    minWidth: 480,
+    minWidth: 767,
     minHeight: 480,
   });
   const tutorialIndex = tutorialIndexes[path];

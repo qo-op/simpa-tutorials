@@ -1,6 +1,5 @@
-import { useAppDispatch, useAppSelector } from "app/hooks";
+import { useAppSelector } from "app/hooks";
 import ContentSplitPaneDivider from "components/ContentSplitPaneDivider";
-import { setScrollTop } from "features/ContentSplitPaneSlice";
 import React, { useEffect, useRef, useState } from "react";
 import NavigationTree from "components/NavigationTree";
 
@@ -20,7 +19,6 @@ const ExampleContentSplitPane = ({
   const scrollTop = useAppSelector((state) => state.contentSplitPane.scrollTop);
   const [scrollMarginTop, setScrollMarginTop] = useState(scrollTop);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const dispatch = useAppDispatch();
   useEffect(() => {
     if (scrollRef.current === null) {
       return;
@@ -67,7 +65,6 @@ const ExampleContentSplitPane = ({
           style={Object.assign(
             {
               width: dividerLocation === -1 ? undefined : dividerLocation + "%",
-              borderInlineEnd: ".5px solid Gray",
             },
             scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
           )}
@@ -75,14 +72,17 @@ const ExampleContentSplitPane = ({
           id="navigation-tree-scroll-pane"
         >
           <nav
-            style={
+            style={Object.assign(
+              {
+                borderInlineEnd: ".5px solid Gray",
+              },
               scrollMarginTop
                 ? {
                     scrollMarginTop: -scrollMarginTop,
                     scrollSnapAlign: "start",
                   }
                 : {}
-            }
+            )}
           >
             <NavigationTree
               mobileView={mobileView}
@@ -91,11 +91,13 @@ const ExampleContentSplitPane = ({
           </nav>
         </div>
         <ContentSplitPaneDivider />
-        <div
-          className="BorderLayout"
-          style={{ borderInlineStart: ".5px solid Gray" }}
-        >
-          {children}
+        <div className="BorderLayout">
+          <div
+            className="BorderLayout"
+            style={{ borderInlineStart: ".5px solid Gray" }}
+          >
+            {children}
+          </div>
         </div>
       </div>
     );
