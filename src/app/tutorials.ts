@@ -151,13 +151,11 @@ export const examples = [
     path: "/file-chooser-demo/",
     folder: "Examples",
   },
-  /*
   {
     text: "Glass Pane Demo",
     path: "/glass-pane-demo/",
     folder: "Examples",
   },
-  */
   {
     text: "Layered Pane Demo",
     path: "/layered-pane-demo/",

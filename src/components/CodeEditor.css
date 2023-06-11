@@ -39,7 +39,7 @@
   text-size-adjust: none !important;
 }
 
-.CodeEditor.Development .SyntaxHighlighter,
-.CodeEditor.Development .SyntaxHighlighter * {
+.CodeEditor .SyntaxHighlighter,
+.CodeEditor .SyntaxHighlighter * {
   pointer-events: none;
 }

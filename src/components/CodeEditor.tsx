@@ -99,7 +99,7 @@ const CodeEditor = ({
       onClick={click}
       id={id || ""}
     >
-      <div className="BorderLayout">
+      <div className="LayeredPane">
         {process.env.NODE_ENV === "development" || hostname === "localhost" ? (
           <textarea
             spellCheck="false"
