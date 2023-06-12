@@ -74,7 +74,7 @@ const MenuBarPage = ({ path }: PageProps) => {
                     <span />
                   </div>
                 </li>
-                <li className="Separator">
+                <li>
                   <hr />
                 </li>
                 <li>
