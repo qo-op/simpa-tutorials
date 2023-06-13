@@ -100,22 +100,18 @@ const CodeEditor = ({
       id={id || ""}
     >
       <div className="LayeredPane">
-        {process.env.NODE_ENV === "development" || hostname === "localhost" ? (
-          <textarea
-            spellCheck="false"
-            onFocus={focusGained}
-            onChange={change}
-            value={
-              language === "html"
-                ? codeEditorHtmlCode
-                : language === "css"
-                ? codeEditorCssCode
-                : codeEditorJavaScriptCode
-            }
-          ></textarea>
-        ) : (
-          <></>
-        )}
+        <textarea
+          spellCheck="false"
+          onFocus={focusGained}
+          onChange={change}
+          value={
+            language === "html"
+              ? codeEditorHtmlCode
+              : language === "css"
+              ? codeEditorCssCode
+              : codeEditorJavaScriptCode
+          }
+        ></textarea>
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter
             language={
