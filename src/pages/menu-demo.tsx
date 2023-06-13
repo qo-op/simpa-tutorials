@@ -29,9 +29,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
   </script>
 </head>
 <body class="Frame"
+      style="padding-block: .25em;"
       id="${id}">
-  <div class="BorderLayout"
-       style="padding: 0 0 .5em 0;">
+  <div class="BorderLayout">
     <div class="PageStart">
       <ul class="MenuBar"
           style="background-color: WhiteSmoke;">
@@ -46,7 +46,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
           <ul>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <span></span>
                 <span data-key="t"
                       data-altKey>
@@ -61,7 +61,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             </li>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <img src="../images/middle.gif">
                 <span data-key="b"
                       data-altKey>
@@ -72,7 +72,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             </li>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <img src="../images/middle.gif">
                 <span></span>
                 <span></span>
@@ -83,7 +83,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             </li>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <input type="radio"
                        name="group"
                        checked>
@@ -96,7 +96,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             </li>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <input type="radio"
                        name="group">
                 <span data-key="o"
@@ -111,7 +111,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             </li>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <input type="checkbox">
                 <span data-key="c"
                       data-altKey>
@@ -122,7 +122,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             </li>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);">
+                   onpointerup="handlePointerUp(event);">
                 <input type="checkbox">
                 <span data-key="h"
                       data-altKey>
@@ -149,7 +149,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <ul>
                 <li>
                   <div class="MenuItem"
-                       onclick="handleClick(event);"
+                       onpointerup="handlePointerUp(event);"
                        data-key="2"
                        data-altKey>
                     <span></span>
@@ -164,7 +164,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                 </li>
                 <li>
                   <div class="MenuItem"
-                       onclick="handleClick(event);">
+                       onpointerup="handlePointerUp(event);">
                     <span></span>
                     <span>
                       Another item
@@ -187,9 +187,10 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
         </li>
       </ul>
     </div>
-    <div class="BorderLayout"
-         style="padding: .5em 0 0 0;"
-         id="output">
+    <div class="BorderLayout">
+      <textarea class="ScrollPane"
+                readonly
+                id="output"></textarea>
     </div>
   </div>
 </body>
@@ -198,15 +199,17 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function handleClick(event) {
+function handlePointerUp(event) {
   const menuItem = event.currentTarget;
   const output = document.getElementById("output");
-  output.innerHTML += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
+  if (output.value) {
+    output.value += "\\n";
+  }
+  output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
   const input = menuItem.querySelector(":scope input");
   if (input) {
-    output.innerHTML += " (type: " + input.type + ", checked: " + input.checked + ")";
+    output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
   }
-  output.innerHTML += "<br>";
 }
 `}
       info={`

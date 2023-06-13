@@ -27,6 +27,7 @@ const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
   </script>
 </head>
 <body class="Frame"
+      style="padding-block: .25em;"
       id="${id}">
   <!-- Border Layout -->
   <div class="BorderLayout"
