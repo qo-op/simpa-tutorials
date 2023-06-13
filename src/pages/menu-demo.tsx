@@ -189,7 +189,6 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
     </div>
     <div class="BorderLayout">
       <textarea class="ScrollPane"
-                readonly
                 id="output"></textarea>
     </div>
   </div>
@@ -202,10 +201,6 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
 function handleClick(event) {
   const menuItem = event.currentTarget;
   const output = document.getElementById("output");
-  const readonly = output.hasAttribute("readonly");
-  if (readonly) {
-    output.removeAttribute("readonly");
-  }
   if (output.value) {
     output.value += "\\n";
   }
@@ -213,9 +208,6 @@ function handleClick(event) {
   const input = menuItem.querySelector(":scope input");
   if (input) {
     output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
-  }
-  if (readonly) {
-    output.setAttribute("readonly", "");
   }
 }
 `}
