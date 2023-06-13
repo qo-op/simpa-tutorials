@@ -187,9 +187,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
         </li>
       </ul>
     </div>
-    <div class="BorderLayout">
-      <textarea class="ScrollPane"
-                id="output"></textarea>
+    <div class="BorderLayout"
+         style="padding: .5em 0 0 0;"
+         id="output">
     </div>
   </div>
 </body>
@@ -201,14 +201,12 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
 function handleClick(event) {
   const menuItem = event.currentTarget;
   const output = document.getElementById("output");
-  if (output.value) {
-    output.value += "\\n";
-  }
-  output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
+  output.innerHTML += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
   const input = menuItem.querySelector(":scope input");
   if (input) {
-    output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
+    output.innerHTML += " (type: " + input.type + ", checked: " + input.checked + ")";
   }
+  output.innerHTML += "<br>";
 }
 `}
       info={`
