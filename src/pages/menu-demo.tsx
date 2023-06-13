@@ -81,54 +81,54 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <hr>
             </li>
             <li>
-              <div class="MenuItem"
-                   onpointerup="handlePointerUp(event);">
+              <label class="MenuItem">
                 <input type="radio"
                        name="group"
+                       onchange="handleChange(event);"
                        checked>
                 <span data-key="r"
                       data-alt>
                   A <u>r</u>adio button menu item
                 </span>
                 <span></span>
-              </div>
+              </label>
             </li>
             <li>
-              <div class="MenuItem"
-                   onpointerup="handlePointerUp(event);">
+              <label class="MenuItem">
                 <input type="radio"
-                       name="group">
+                       name="group"
+                       onchange="handleChange(event);">
                 <span data-key="o"
                       data-alt>
                   An<u>o</u>ther one
                 </span>
                 <span></span>
-              </div>
+              </label>
             </li>
             <li>
               <hr>
             </li>
             <li>
-              <div class="MenuItem"
-                   onpointerup="handlePointerUp(event);">
-                <input type="checkbox">
+              <label class="MenuItem">
+                <input type="checkbox"
+                       onchange="handleChange(event);">
                 <span data-key="c"
                       data-alt>
                   A <u>c</u>heck box menu item
                 </span>
                 <span></span>
-              </div>
+              </label>
             </li>
             <li>
-              <div class="MenuItem"
-                   onpointerup="handlePointerUp(event);">
-                <input type="checkbox">
+              <label class="MenuItem">
+                <input type="checkbox"
+                       onchange="handleChange(event);">
                 <span data-key="h"
                       data-alt>
                   Anot<u>h</u>er one
                 </span>
                 <span></span>
-              </div>
+              </label>
             </li>
             <li>
               <hr>
@@ -203,10 +203,16 @@ function handlePointerUp(event) {
     output.value += "\\n";
   }
   output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
-  const input = menuItem.querySelector(":scope input");
-  if (input) {
-    output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
+}
+function handleChange(event) {
+  const input = event.currentTarget;
+  const menuItem = input.closest(".MenuItem");
+  const output = document.getElementById("output");
+  if (output.value) {
+    output.value += "\\n";
   }
+  output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
+  output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
 }
 `}
       info={`
