@@ -30,83 +30,101 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
 </head>
 <body class="Frame"
       id="${id}">
-  <div class="BorderLayout">
+  <div class="BorderLayout"
+       style="padding: 0 0 .5em 0;">
     <div class="PageStart">
-      <ul class="MenuBar">
+      <ul class="MenuBar"
+          style="background-color: WhiteSmoke;">
         <li>
           <div class="Menu">
-            <span><u>A</u> Menu</span>
+            <span>A Menu</span>
           </div>
           <ul>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);"
+                   id="Alt 1 MenuItem">
                 <span></span>
                 <div class="MenuItemShortcut">
                   <span>
-                    A <u>t</u>ext-only menu item
+                    A text-only menu item
                   </span>
                   <span>
                     Alt 1
                   </span>
                 </div>
+                <span></span>
               </div>
             </li>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);">
                 <span>
                   <img src="../images/middle.gif">
                 </span>
                 <span>
-                  <u>B</u>oth text and icon
+                  Both text and icon
                 </span>
+                <span></span>
               </div>
             </li>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);">
                 <span>
                   <img src="../images/middle.gif">
                 </span>
+                <span></span>
+                <span></span>
               </div>
             </li>
             <li>
               <hr>
             </li>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);">
                 <input type="radio"
                        name="group"
                        checked>
                 <span>
-                  A <u>r</u>adio button menu item
+                  A radio button menu item
                 </span>
+                <span></span>
               </div>
             </li>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);">
                 <input type="radio"
                        name="group">
                 <span>
-                  An<u>o</u>ther one
+                  Another one
                 </span>
+                <span></span>
               </div>
             </li>
             <li>
               <hr>
             </li>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);">
                 <input type="checkbox">
                 <span>
-                  A <u>c</u>heck box menu item
+                  A check box menu item
                 </span>
+                <span></span>
               </div>
             </li>
             <li>
-              <div class="MenuItem">
+              <div class="MenuItem"
+                   onclick="handleClick(event);">
                 <input type="checkbox">
                 <span>
-                  Anot<u>h</u>er one
+                  Another one
                 </span>
+                <span></span>
               </div>
             </li>
             <li>
@@ -116,7 +134,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <div class="Menu">
                 <span></span>
                 <span>
-                  A <u>s</u>ubmenu
+                  A submenu
                 </span>
                 <span class="material-icons">
                   navigate_next
@@ -124,7 +142,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               </div>
               <ul>
                 <li>
-                  <div class="MenuItem">
+                  <div class="MenuItem"
+                       onclick="handleClick(event);"
+                       id="Alt 2 MenuItem">
                     <span></span>
                     <div class="MenuItemShortcut">
                       <span>
@@ -134,14 +154,17 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                         Alt 2
                       </span>
                     </div>
+                    <span></span>
                   </div>
                 </li>
                 <li>
-                  <div class="MenuItem">
+                  <div class="MenuItem"
+                       onclick="handleClick(event);">
                     <span></span>
                     <span>
                       Another item
                     </span>
+                    <span></span>
                   </div>
                 </li>
               </ul>
@@ -150,10 +173,15 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
         </li>
         <li>
           <div class="Menu">
-            <span>A<u>n</u>other Menu</span>
+            <span>Another Menu</span>
           </div>
         </li>
       </ul>
+    </div>
+    <div class="BorderLayout">
+      <textarea class="ScrollPane"
+                readonly
+                id="output"></textarea>
     </div>
   </div>
 </body>
@@ -162,6 +190,25 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
+function handleClick(event) {
+  const menuItem = event.currentTarget;
+  const output = document.getElementById("output");
+  if (output.value) {
+    output.value += "\\n";
+  }
+  output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
+  const input = menuItem.querySelector(":scope input");
+  if (input) {
+    output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
+  }
+}
+function handleKeyDown(event) {
+  if (event.altKey) {
+    const menuItem = document.getElementById("Alt " + event.key + " MenuItem");
+    menuItem.click();
+  }
+}
+document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
