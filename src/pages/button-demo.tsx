@@ -39,7 +39,8 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
         <button onclick="disable(event);"
                 id="b1">
           <span class="BoxLayout">
-            <span>
+            <span data-key="d"
+                  data-altKey>
               <u>D</u>isable middle button
             </span>
             <img src="../images/right.gif">
@@ -49,7 +50,8 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
         <button id="b2">
           <span class="BoxLayout"
                 data-axis="page-axis">
-            <span>
+            <span data-key="m"
+                  data-altKey>
               <u>M</u>iddle button
             </span>
             <img src="../images/middle.gif">
@@ -61,7 +63,8 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
                 disabled>
           <span class="BoxLayout">
             <img src="../images/left.gif">
-            <span>
+            <span data-key="e"
+                  data-altKey>
               <u>E</u>nable middle button
             </span>
           </span>
@@ -93,23 +96,14 @@ function enable(event) {
 };
 function handleKeyDown(event) {
   if (event.altKey) {
-    switch(event.key) {
-      case "d":
-        const b1 = document.getElementById("b1");
-        b1.click();
-        event.preventDefault();
-        break;
-      case "m":
-        const b2 = document.getElementById("b2");
-        b2.click();
-        event.preventDefault();
-        break;
-      case "e":
-        const b3 = document.getElementById("b3");
-        b3.click();
-        event.preventDefault();
-        break;
+    const element = document.querySelector("[data-altKey][data-key=\\"" + event.key + "\\"]");
+    if (element === null) {
+      return;
     }
+    element.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true, cancelable: true }));
+    element.dispatchEvent(new PointerEvent("pointerup", { bubbles: true, cancelable: true }));
+    element.click();
+    event.preventDefault();
   }
 };
 document.addEventListener("keydown", handleKeyDown);

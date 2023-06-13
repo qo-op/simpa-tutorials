@@ -37,19 +37,24 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
           style="background-color: WhiteSmoke;">
         <li>
           <div class="Menu">
-            <span>A Menu</span>
+            <span data-key="a"
+                  data-altKey
+                  data-pointerdown>
+              <u>A</u> Menu
+            </span>
           </div>
           <ul>
             <li>
               <div class="MenuItem"
-                   onclick="handleClick(event);"
-                   id="Alt 1 MenuItem">
+                   onclick="handleClick(event);">
                 <span></span>
-                <span>
-                  A text-only menu item
+                <span data-key="t"
+                      data-altKey>
+                  A <u>t</u>ext-only menu item
                 </span>
-                <span>
-                  Alt 1
+                <span data-key="1"
+                      data-altKey>
+                  Alt+1
                 </span>
                 <span></span>
               </div>
@@ -58,8 +63,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <div class="MenuItem"
                    onclick="handleClick(event);">
                 <img src="../images/middle.gif">
-                <span>
-                  Both text and icon
+                <span data-key="b"
+                      data-altKey>
+                  <u>B</u>oth text and icon
                 </span>
                 <span></span>
               </div>
@@ -81,8 +87,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                 <input type="radio"
                        name="group"
                        checked>
-                <span>
-                  A radio button menu item
+                <span data-key="r"
+                      data-altKey>
+                  A <u>r</u>adio button menu item
                 </span>
                 <span></span>
               </div>
@@ -92,8 +99,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                    onclick="handleClick(event);">
                 <input type="radio"
                        name="group">
-                <span>
-                  Another one
+                <span data-key="o"
+                      data-altKey>
+                  An<u>o</u>ther one
                 </span>
                 <span></span>
               </div>
@@ -105,8 +113,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <div class="MenuItem"
                    onclick="handleClick(event);">
                 <input type="checkbox">
-                <span>
-                  A check box menu item
+                <span data-key="c"
+                      data-altKey>
+                  A <u>c</u>heck box menu item
                 </span>
                 <span></span>
               </div>
@@ -115,8 +124,9 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <div class="MenuItem"
                    onclick="handleClick(event);">
                 <input type="checkbox">
-                <span>
-                  Another one
+                <span data-key="h"
+                      data-altKey>
+                  Anot<u>h</u>er one
                 </span>
                 <span></span>
               </div>
@@ -127,8 +137,10 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             <li>
               <div class="Menu">
                 <span></span>
-                <span>
-                  A submenu
+                <span data-key="s"
+                      data-altKey
+                      data-pointerdown>
+                  A <u>s</u>ubmenu
                 </span>
                 <span class="material-icons">
                   navigate_next
@@ -138,13 +150,14 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                 <li>
                   <div class="MenuItem"
                        onclick="handleClick(event);"
-                       id="Alt 2 MenuItem">
+                       data-key="2"
+                       data-altKey>
                     <span></span>
                     <span>
                       An item in submenu
                     </span>
                     <span>
-                      Alt 2
+                      Alt+2
                     </span>
                     <span></span>
                   </div>
@@ -165,7 +178,11 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
         </li>
         <li>
           <div class="Menu">
-            <span>Another Menu</span>
+            <span data-key="n"
+                  data-altKey
+                  data-pointerdown>
+              A<u>n</u>other Menu
+            </span>
           </div>
         </li>
       </ul>
@@ -196,8 +213,14 @@ function handleClick(event) {
 }
 function handleKeyDown(event) {
   if (event.altKey) {
-    const menuItem = document.getElementById("Alt " + event.key + " MenuItem");
-    menuItem.click();
+    const element = document.querySelector("[data-altKey][data-key=\\"" + event.key + "\\"]");
+    if (element === null) {
+      return;
+    }
+    element.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true, cancelable: true }));
+    element.dispatchEvent(new PointerEvent("pointerup", { bubbles: true, cancelable: true }));
+    element.click();
+    event.preventDefault();
   }
 }
 document.addEventListener("keydown", handleKeyDown);
