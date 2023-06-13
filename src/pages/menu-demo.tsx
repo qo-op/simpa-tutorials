@@ -38,8 +38,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
         <li>
           <div class="Menu">
             <span data-key="a"
-                  data-altKey
-                  data-pointerdown>
+                  data-alt>
               <u>A</u> Menu
             </span>
           </div>
@@ -49,11 +48,11 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                    onpointerup="handlePointerUp(event);">
                 <span></span>
                 <span data-key="t"
-                      data-altKey>
+                      data-alt>
                   A <u>t</u>ext-only menu item
                 </span>
                 <span data-key="1"
-                      data-altKey>
+                      data-alt>
                   Alt+1
                 </span>
                 <span></span>
@@ -64,7 +63,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                    onpointerup="handlePointerUp(event);">
                 <img src="../images/middle.gif">
                 <span data-key="b"
-                      data-altKey>
+                      data-alt>
                   <u>B</u>oth text and icon
                 </span>
                 <span></span>
@@ -88,7 +87,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                        name="group"
                        checked>
                 <span data-key="r"
-                      data-altKey>
+                      data-alt>
                   A <u>r</u>adio button menu item
                 </span>
                 <span></span>
@@ -100,7 +99,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                 <input type="radio"
                        name="group">
                 <span data-key="o"
-                      data-altKey>
+                      data-alt>
                   An<u>o</u>ther one
                 </span>
                 <span></span>
@@ -114,7 +113,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                    onpointerup="handlePointerUp(event);">
                 <input type="checkbox">
                 <span data-key="c"
-                      data-altKey>
+                      data-alt>
                   A <u>c</u>heck box menu item
                 </span>
                 <span></span>
@@ -125,7 +124,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                    onpointerup="handlePointerUp(event);">
                 <input type="checkbox">
                 <span data-key="h"
-                      data-altKey>
+                      data-alt>
                   Anot<u>h</u>er one
                 </span>
                 <span></span>
@@ -138,8 +137,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <div class="Menu">
                 <span></span>
                 <span data-key="s"
-                      data-altKey
-                      data-pointerdown>
+                      data-alt>
                   A <u>s</u>ubmenu
                 </span>
                 <span class="material-icons">
@@ -151,7 +149,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                   <div class="MenuItem"
                        onpointerup="handlePointerUp(event);"
                        data-key="2"
-                       data-altKey>
+                       data-alt>
                     <span></span>
                     <span>
                       An item in submenu
@@ -179,8 +177,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
         <li>
           <div class="Menu">
             <span data-key="n"
-                  data-altKey
-                  data-pointerdown>
+                  data-alt>
               A<u>n</u>other Menu
             </span>
           </div>

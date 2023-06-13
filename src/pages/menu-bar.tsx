@@ -68,7 +68,9 @@ const MenuBarPage = ({ path }: PageProps) => {
                   <div className="MenuItem">
                     <SaveIcon />
                     <span>Save</span>
-                    <span>Ctrl+S</span>
+                    <span data-key="s" data-ctrl>
+                      Ctrl+S
+                    </span>
                     <span />
                   </div>
                 </li>
@@ -126,7 +128,10 @@ const MenuBarPage = ({ path }: PageProps) => {
           <span></span>
           <span>Save</span>
           <!-- shortcut -->
-          <span>Ctrl+S</span>
+          <span data-key="s"
+                data-ctrl>
+            Ctrl+S
+          </span>
           <span></span>
         </div>
       </li>
@@ -197,7 +202,9 @@ const MenuBarPage = ({ path }: PageProps) => {
                   <div className="MenuItem">
                     <span />
                     <span>Save</span>
-                    <span>Ctrl+S</span>
+                    <span data-key="s" data-ctrl>
+                      Ctrl+S
+                    </span>
                     <span />
                   </div>
                 </li>
@@ -302,7 +309,10 @@ const MenuBarPage = ({ path }: PageProps) => {
           <span></span>
           <span>Save</span>
           <!-- shortcut -->
-          <span>Ctrl+S</span>
+          <span data-key="s"
+                data-ctrl>
+            Ctrl+S
+          </span>
           <span></span>
         </div>
       </li>
@@ -383,7 +393,9 @@ const MenuBarPage = ({ path }: PageProps) => {
                   <div className="MenuItem">
                     <span />
                     <span>Save</span>
-                    <span>Ctrl+S</span>
+                    <span data-key="s" data-ctrl>
+                      Ctrl+S
+                    </span>
                     <span />
                   </div>
                 </li>
