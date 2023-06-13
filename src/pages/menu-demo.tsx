@@ -211,19 +211,6 @@ function handleClick(event) {
     output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
   }
 }
-function handleKeyDown(event) {
-  if (event.altKey) {
-    const element = document.querySelector("[data-altKey][data-key=\\"" + event.key + "\\"]");
-    if (element === null) {
-      return;
-    }
-    element.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true, cancelable: true }));
-    element.dispatchEvent(new PointerEvent("pointerup", { bubbles: true, cancelable: true }));
-    element.click();
-    event.preventDefault();
-  }
-}
-document.addEventListener("keydown", handleKeyDown);
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
