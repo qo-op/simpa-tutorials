@@ -45,23 +45,19 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                    onclick="handleClick(event);"
                    id="Alt 1 MenuItem">
                 <span></span>
-                <div class="MenuItemShortcut">
-                  <span>
-                    A text-only menu item
-                  </span>
-                  <span>
-                    Alt 1
-                  </span>
-                </div>
+                <span>
+                  A text-only menu item
+                </span>
+                <span>
+                  Alt 1
+                </span>
                 <span></span>
               </div>
             </li>
             <li>
               <div class="MenuItem"
                    onclick="handleClick(event);">
-                <span>
-                  <img src="../images/middle.gif">
-                </span>
+                <img src="../images/middle.gif">
                 <span>
                   Both text and icon
                 </span>
@@ -71,9 +67,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
             <li>
               <div class="MenuItem"
                    onclick="handleClick(event);">
-                <span>
-                  <img src="../images/middle.gif">
-                </span>
+                <img src="../images/middle.gif">
                 <span></span>
                 <span></span>
               </div>
@@ -146,14 +140,12 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                        onclick="handleClick(event);"
                        id="Alt 2 MenuItem">
                     <span></span>
-                    <div class="MenuItemShortcut">
-                      <span>
-                        An item in submenu
-                      </span>
-                      <span>
-                        Alt 2
-                      </span>
-                    </div>
+                    <span>
+                      An item in submenu
+                    </span>
+                    <span>
+                      Alt 2
+                    </span>
                     <span></span>
                   </div>
                 </li>

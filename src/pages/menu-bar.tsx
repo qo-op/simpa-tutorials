@@ -67,10 +67,8 @@ const MenuBarPage = ({ path }: PageProps) => {
                 <li>
                   <div className="MenuItem">
                     <SaveIcon />
-                    <div className="MenuItemShortcut">
-                      <span>Save</span>
-                      <span>Ctrl+S</span>
-                    </div>
+                    <span>Save</span>
+                    <span>Ctrl+S</span>
                     <span />
                   </div>
                 </li>
@@ -126,11 +124,9 @@ const MenuBarPage = ({ path }: PageProps) => {
         <!-- menu item -->
         <div class="MenuItem">
           <span></span>
-          <!-- text with shortcut -->
-          <div class="MenuItemShortcut">
-            <span>Save</span>
-            <span>Ctrl+S</span>
-          </div>
+          <span>Save</span>
+          <!-- shortcut -->
+          <span>Ctrl+S</span>
           <span></span>
         </div>
       </li>
@@ -200,10 +196,8 @@ const MenuBarPage = ({ path }: PageProps) => {
                 <li>
                   <div className="MenuItem">
                     <span />
-                    <div className="MenuItemShortcut">
-                      <span>Save</span>
-                      <span>Ctrl+S</span>
-                    </div>
+                    <span>Save</span>
+                    <span>Ctrl+S</span>
                     <span />
                   </div>
                 </li>
@@ -306,10 +300,9 @@ const MenuBarPage = ({ path }: PageProps) => {
         <!-- menu item -->
         <div class="MenuItem">
           <span></span>
-          <div class="MenuItemShortcut">
-            <span>Save</span>
-            <span>Ctrl+S</span>
-          </div>
+          <span>Save</span>
+          <!-- shortcut -->
+          <span>Ctrl+S</span>
           <span></span>
         </div>
       </li>
@@ -389,10 +382,8 @@ const MenuBarPage = ({ path }: PageProps) => {
                 <li>
                   <div className="MenuItem">
                     <span />
-                    <div className="MenuItemShortcut">
-                      <span>Save</span>
-                      <span>Ctrl+S</span>
-                    </div>
+                    <span>Save</span>
+                    <span>Ctrl+S</span>
                     <span />
                   </div>
                 </li>
