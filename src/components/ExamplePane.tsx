@@ -10,7 +10,7 @@ import {
 } from "@mui/icons-material";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import tutorials from "app/tutorials";
-import CodeViewer from "components/CodeViewer";
+import CodeViewer from "components/CodeEditor";
 import ResultPane from "components/ResultPane";
 import { expand } from "features/NavigationTreeSlice";
 import { setDisabled as setNextPageButtonDisabled } from "features/NextPageButtonSlice";
