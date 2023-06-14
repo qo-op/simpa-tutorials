@@ -195,96 +195,91 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function showSimpleDialog(event) {
+async function showSimpleDialog(event) {
   const label = document.getElementById("label");
   const form = document.getElementById("simple-dialog-form");
   const radios = form.elements["option"];
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
-      const value = radios[i].value; 
+      let response;
+      const value = radios[i].value;
       switch (value) {
         case "default":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "Eggs aren't supposed to be green.");
           break;
         case "yes-no":
-          OptionPane
-            .showConfirmDialog(
-              "Would you like green eggs and ham?",
-              "An Inane Question",
-              "yes-no")
-            .then(input => {
-              if (input === "Yes") {
-                label.textContent = "Ewww!";
-              } else if (input === "No") {
-                label.textContent = "Me neither!";
-              }
-            });
+          response = await OptionPane.showConfirmDialog(
+            "Would you like green eggs and ham?",
+            "An Inane Question",
+            "yes-no");
+          if (response === "Yes") {
+            label.textContent = "Ewww!";
+          } else if (response === "No") {
+            label.textContent = "Me neither!";
+          }
           break;
         case "yes-no-cancel":
-          OptionPane
-            .showOptionDialog(
-              "Would you like some green eggs to go with that ham?",
-              "A Silly Question",
-              "yes-no-cancel",
-              "question",
-              null,
-              [ "Yes, please", "No, thanks", "No eggs, no ham!" ],
-              "No eggs, no ham!")
-            .then(input => {
-              if (input === "Yes, please") {
-                label.textContent = "Here you go: green eggs and ham!";
-              } else if (input === "No, thanks") {
-                label.textContent = "OK, just the ham, then.";
-              } else if (input === "No eggs, no ham!") {
-                label.textContent = "Well, I'm certainly not going to eat them!";
-              }
-            })
+          response = await OptionPane.showOptionDialog(
+            "Would you like some green eggs to go with that ham?",
+            "A Silly Question",
+            "yes-no-cancel",
+            "question",
+            null,
+            [ "Yes, please", "No, thanks", "No eggs, no ham!" ],
+            "No eggs, no ham!");
+          if (response === "Yes, please") {
+            label.textContent = "Here you go: green eggs and ham!";
+          } else if (response === "No, thanks") {
+            label.textContent = "OK, just the ham, then.";
+          } else if (response === "No eggs, no ham!") {
+            label.textContent = "Well, I'm certainly not going to eat them!";
+          }
           break;
       }
       break;
     }
   }
 };
-function showIconDialog(event) {
+async function showIconDialog(event) {
   const form = document.getElementById("icon-dialog-form");
   const radios = form.elements["option"];
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
-      const value = radios[i].value; 
+      const value = radios[i].value;
       switch (value) {
         case "plain":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "Eggs aren't supposed to be green.",
             "A plain message",
             "plain");
           break;
         case "information":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "Eggs aren't supposed to be green.",
             "Inane informational dialog",
             "information");
           break;
         case "question":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "You shouldn't use a message dialog (like this) for a question, OK?",
             "Inane question",
             "question");
           break;
         case "error":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "Eggs aren't supposed to be green.",
             "Inane error",
             "error");
           break;
         case "warning":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "Eggs aren't supposed to be green.",
             "Inane warning",
             "warning");
           break;
         case "custom":
-          OptionPane.showMessageDialog(
+          await OptionPane.showMessageDialog(
             "Eggs aren't supposed to be green.",
             "Inane custom dialog",
             "information",
@@ -295,46 +290,42 @@ function showIconDialog(event) {
     }
   }
 };
-function showFeatureDialog(event) {
+async function showFeatureDialog(event) {
   const label = document.getElementById("label");
   const form = document.getElementById("feature-dialog-form");
   const radios = form.elements["option"];
   for (let i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
+      let response;
       const value = radios[i].value; 
       switch (value) {
         case "select":
-          OptionPane
-            .showInputDialog(
-              "Complete the sentence: Green eggs and...",
-              "Customized Dialog",
-              "plain",
-              "../images/middle.gif",
-              [ "ham", "spam", "yam" ],
-              "ham")
-            .then(input => {
-              if (input) {
-                label.textContent = "Green eggs and... " + input + "!";
-              } else {
-                label.textContent = "Come on, finish the sentence!";
-              }
-            });
+          response = await OptionPane.showInputDialog(
+            "Complete the sentence: Green eggs and...",
+            "Customized Dialog",
+            "plain",
+            "../images/middle.gif",
+            [ "ham", "spam", "yam" ],
+            "ham");
+          if (response) {
+            label.textContent = "Green eggs and... " + response + "!";
+          } else {
+            label.textContent = "Come on, finish the sentence!";
+          }
           break;
         case "textfield":
-          OptionPane.showInputDialog(
+          response = await OptionPane.showInputDialog(
             "Complete the sentence: Green eggs and...",
             "Customized Dialog",
             "plain",
             "../images/middle.gif",
             null,
-            "ham")
-          .then(input => {
-            if (input) {
-              label.textContent = "Green eggs and... " + input + "!";
-            } else {
-              label.textContent = "Come on, finish the sentence!";
-            }
-          });
+            "ham");
+          if (response) {
+            label.textContent = "Green eggs and... " + response + "!";
+          } else {
+            label.textContent = "Come on, finish the sentence!";
+          }
           break;
       }
       break;
