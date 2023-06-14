@@ -60,21 +60,24 @@ const ProgressBarDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-function start(event) {
+async function start(event) {
   const output = document.getElementById("output");
   const progress = document.getElementById("progress");
   progress.value = 0;
   async function step() {
     await sleep(Math.floor(Math.random() * 1000));
-    const i = Math.floor(Math.random() * 10);
-    progress.value = Math.min(progress.value + i, 100);
+    progress.value = Math.min(100,
+      progress.value + Math.floor(Math.random() * 10));
+    output.value += "Completed " + progress.value + "% of task.\\n";
+    output.scrollTop = output.scrollHeight;
     if (progress.value < 100) {
       step();
+    } else {
+      output.value += "Done!\\n";
+      output.scrollTop = output.scrollHeight;
     }
   }
-  if (progress.value < 100) {
-    step();
-  }
+  step();
 }
 function sleep(millis) {
   return new Promise(resolve => setTimeout(resolve, millis));
