@@ -6,9 +6,9 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-const title: string = "How to Use Grid Layouts with Grid Bag Constraints";
+const title: string = "How to Use Grid Layouts with Grid Constraints";
 const description: string =
-  "This tutorial shows how to use grid layouts (GridLayout) with Grid Bag Constraints using HTML and CSS.";
+  "This tutorial shows how to use grid layouts (GridLayout) with Grid Constraints using HTML and CSS.";
 
 const CSSGridLayoutPage = ({ path }: PageProps) => {
   return (
@@ -19,7 +19,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         style={{ textAlign: "center" }}
       >
         <span>How to Use Grid Layouts</span>
-        <span>with Grid Bag Constraints</span>
+        <span>with Grid Constraints</span>
       </h1>
       <p>
         CSS <code>Grid</code> Layout is a type of layout manager that enables
@@ -163,11 +163,11 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Example with GridBagConstraints</h2>
+      <h2>Example with GridConstraints</h2>
       <p>
         We have modified the previous example so that the buttons now expand
         horizontally to occupy the entire space within their grid cell, by
-        applying <code>GridBagConstraints</code> layout with{" "}
+        applying <code>GridConstraints</code> layout with{" "}
         <code>horizontal</code> fill to the grid cell:
       </p>
       <div className="SyntaxHighlighter">
@@ -176,7 +176,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
 <div style="display: grid;">
   <div style="grid-row: 1;
               grid-column: 1;"
-       class="GridBagConstraints"
+       class="GridConstraints"
        data-fill="horizontal">
     <button>
       Button 1
@@ -184,7 +184,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
   </div>
   <div style="grid-row: 1;
               grid-column: 2;"
-       class="GridBagConstraints"
+       class="GridConstraints"
        data-fill="horizontal">
     <button>
       Button 2
@@ -192,7 +192,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
   </div>
   <div style="grid-row: 1;
               grid-column: 3;"
-       class="GridBagConstraints"
+       class="GridConstraints"
        data-fill="horizontal">
     <button>
       Button 3
@@ -200,7 +200,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
   </div>
   <div style="grid-row: 2;
               grid-column: 1 / span 3;"
-       class="GridBagConstraints"
+       class="GridConstraints"
        data-fill="horizontal">
     <button>
       <span class="EmptyBorder"
@@ -212,7 +212,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
   <div style="grid-row: 3;
               grid-column: 2 / span 2;
               padding: 10px 0 0 0;"
-       class="GridBagConstraints"
+       class="GridConstraints"
        data-fill="horizontal">
     <button>
       5
@@ -231,28 +231,28 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         <div style={{ display: "grid" }}>
           <div
             style={{ gridRow: 1, gridColumn: 1 }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>Button 1</button>
           </div>
           <div
             style={{ gridRow: 1, gridColumn: 2 }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>Button 2</button>
           </div>
           <div
             style={{ gridRow: 1, gridColumn: 3 }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>Button 3</button>
           </div>
           <div
             style={{ gridRow: 2, gridColumn: "1 / span 3" }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>
@@ -267,7 +267,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
               gridColumn: "2 / span 2",
               padding: "10px 0 0 0",
             }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>5</button>
@@ -321,28 +321,28 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         <div style={{ display: "grid" }}>
           <div
             style={{ gridRow: 1, gridColumn: 1 }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>Button 1</button>
           </div>
           <div
             style={{ gridRow: 1, gridColumn: 2 }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>Button 2</button>
           </div>
           <div
             style={{ gridRow: 1, gridColumn: 3 }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>Button 3</button>
           </div>
           <div
             style={{ gridRow: 2, gridColumn: "1 / span 3" }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>
@@ -357,7 +357,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
               gridColumn: "2 / span 2",
               padding: "10px 0 0 0",
             }}
-            className="GridBagConstraints"
+            className="GridConstraints"
             data-fill="horizontal"
           >
             <button>5</button>
@@ -365,9 +365,8 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        If you want to learn more about <code>GridBagConstraints</code>, refer
-        to the{" "}
-        <Link to="/grid-bag-constraints/">How to Use GridBagConstraints</Link>{" "}
+        If you want to learn more about <code>GridConstraints</code>, refer to
+        the <Link to="/grid-constraints/">How to Use GridConstraints</Link>{" "}
         tutorial.
       </p>
       <p></p>

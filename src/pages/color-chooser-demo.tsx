@@ -4,7 +4,7 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "ColorChooserDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string = `An HTML version of Oracle's ${title}2 example`;
 const id = "color-chooser-demo";
 
 const ColorChooserDemoPage = ({ path, location }: PageProps) => {
@@ -30,7 +30,7 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
       id="${id}">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div class="GridBagConstraints"
+    <div class="GridConstraints"
          data-anchor="page-start"
          style="padding: .25em;">
       <div class="BorderLayout">

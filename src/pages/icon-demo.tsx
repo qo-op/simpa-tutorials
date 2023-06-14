@@ -30,7 +30,7 @@ const IconDemoPage = ({ path, location }: PageProps) => {
       id="${id}">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div class="GridBagConstraints"
+    <div class="GridConstraints"
          data-anchor="page-start"
          style="padding: .25em;">
       <div class="BorderLayout"
@@ -90,7 +90,7 @@ const IconDemoPage = ({ path, location }: PageProps) => {
           <div class="PageStart CenterLayout">
             <span id="title">Please Select an Image</span>
           </div>
-          <div class="GridBagConstraints"
+          <div class="GridConstraints"
                data-anchor="page-start">
             <img id="photograph">
           </div>

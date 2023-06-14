@@ -33,8 +33,8 @@ export const cssLayoutsTutorials = [
     folder: "CSS Layouts",
   },
   {
-    text: "How to Use Grid Bag Constraints",
-    path: "/grid-bag-constraints/",
+    text: "How to Use Grid Constraints",
+    path: "/grid-constraints/",
     folder: "CSS Layouts",
   },
   {

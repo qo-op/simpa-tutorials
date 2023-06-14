@@ -30,7 +30,7 @@ const FlowLayoutDemoPage = ({ path, location }: PageProps) => {
       id="${id}">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div class="GridBagConstraints"
+    <div class="GridConstraints"
          data-anchor="page-start"
          style="padding: .25em;">
       <div class="BorderLayout"
