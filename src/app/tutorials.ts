@@ -176,6 +176,11 @@ export const examples = [
     path: "/progress-bar-demo/",
     folder: "Examples",
   },
+  {
+    text: "Radio Button Demo",
+    path: "/radio-button-demo/",
+    folder: "Examples",
+  },
 ];
 
 const tutorials = home.concat(

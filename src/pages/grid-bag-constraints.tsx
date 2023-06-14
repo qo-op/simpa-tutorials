@@ -324,7 +324,7 @@ const GridBagConstraintsPage = ({ path }: PageProps) => {
       </h2>
       <p>
         You can combine the <code>data-anchor</code> and <code>data-fill</code>{" "}
-        attributes in a GridBagLayout. As already seen above, the{" "}
+        attributes in a GridBagConstraints. As already seen above, the{" "}
         <code>data-anchor</code> attribute determines where the component should
         be placed within its container, while the <code>data-fill</code>{" "}
         attribute determines how the component should be resized within its
