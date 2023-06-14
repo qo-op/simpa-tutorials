@@ -81,7 +81,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
               <hr>
             </li>
             <li>
-              <label class="MenuItem">
+              <div class="MenuItem">
                 <input type="radio"
                        name="group"
                        onchange="handleChange(event);"
@@ -91,10 +91,10 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                   A <u>r</u>adio button menu item
                 </span>
                 <span></span>
-              </label>
+              </div>
             </li>
             <li>
-              <label class="MenuItem">
+              <div class="MenuItem">
                 <input type="radio"
                        name="group"
                        onchange="handleChange(event);">
@@ -103,13 +103,13 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                   An<u>o</u>ther one
                 </span>
                 <span></span>
-              </label>
+              </div>
             </li>
             <li>
               <hr>
             </li>
             <li>
-              <label class="MenuItem">
+              <div class="MenuItem">
                 <input type="checkbox"
                        onchange="handleChange(event);">
                 <span data-key="c"
@@ -117,10 +117,10 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                   A <u>c</u>heck box menu item
                 </span>
                 <span></span>
-              </label>
+              </div>
             </li>
             <li>
-              <label class="MenuItem">
+              <div class="MenuItem">
                 <input type="checkbox"
                        onchange="handleChange(event);">
                 <span data-key="h"
@@ -128,7 +128,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
                   Anot<u>h</u>er one
                 </span>
                 <span></span>
-              </label>
+              </div>
             </li>
             <li>
               <hr>
