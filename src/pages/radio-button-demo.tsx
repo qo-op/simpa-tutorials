@@ -34,8 +34,7 @@ const RadioButtonDemoPage = ({ path, location }: PageProps) => {
          style="padding: .25em;">
       <div class="BorderLayout">
         <div class="LineStart">
-          <div style="display: grid;
-                      grid-auto-rows: 1fr">
+          <div style="display: grid;">
             <label>
               <input type="radio"
                      name="option"

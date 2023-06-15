@@ -148,7 +148,7 @@ function handleChange(event) {
 }
 function handlePointerDown(event) {
   if (event.pointerType !== "mouse") {
-    var frame = document.getElementById("${id}");
+    const frame = document.getElementById("${id}");
     frame.firstElementChild.classList.remove("ScrollPane");
     handlePointerMove(event);
   }
@@ -164,7 +164,7 @@ function handlePointerMove(event) {
 }
 function handlePointerUp(event) {
   if (event.pointerType !== "mouse") {
-    var frame = document.getElementById("${id}");
+    const frame = document.getElementById("${id}");
     frame.firstElementChild.classList.add("ScrollPane");
   }
 }

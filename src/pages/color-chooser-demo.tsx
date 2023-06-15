@@ -130,8 +130,8 @@ function changeBannerBackgroundColor(event) {
   banner.style.backgroundColor = color;
 }
 function changeBannerColor(event) {
-  var button = event.currentTarget;
-  var actionCommand = button.dataset.actionCommand;
+  const button = event.currentTarget;
+  const actionCommand = button.dataset.actionCommand;
   const banner = document.getElementById("banner");
   banner.style.color = actionCommand;
 }

@@ -182,6 +182,11 @@ export const examples = [
     folder: "Examples",
   },
   {
+    text: "Scroll Pane Demo",
+    path: "/scroll-pane-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Split Pane Demo",
     path: "/split-pane-demo/",
     folder: "Examples",

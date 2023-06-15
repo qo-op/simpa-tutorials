@@ -82,7 +82,7 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-var choices = "cght".split("");
+choices = "cght".split("");
 function updatePicture(event) {
   let index = 0;
   const checkBox = event.currentTarget;
