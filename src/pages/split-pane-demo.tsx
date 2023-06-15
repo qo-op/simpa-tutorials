@@ -39,16 +39,18 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
              data-orientation="vertical-split"
              style="border: 1px solid Gray;
                     width: 240px;
-                    height: 200px;">
-          <div style="height: calc(100% - 1.5em);">
+                    height: 160px;">
+          <div style="height: calc(100% - 1.5em);
+                      border-bottom: .5px solid Gray;">
             <div class="SplitPane">
-              <div class="ScrollPane">
+              <div class="ScrollPane"
+                   style="border-right: .5px solid Gray;">
                 <ul style="margin: 0;
                            padding: 0;
                            list-style-type: none;
                            cursor: default;"
                            onclick="handleClick(event);">
-                  <li>Bird</li>
+                  <li style="background-color: LightGray;">Bird</li>
                   <li>Cat</li>
                   <li>Dog</li>
                   <li>Rabbit</li>
@@ -61,7 +63,8 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
               </div>
               <div>
               </div>
-              <div class="ScrollPane CenterLayout">
+              <div class="ScrollPane CenterLayout"
+                   style="border-left: .5px solid Gray;">
                 <img src="../images/Bird.gif"
                     alt="Pet image"
                     id="picture">
@@ -70,8 +73,12 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
           </div>
           <div>
           </div>
-          <div>
-            <span class="CenterLayout"></span>
+          <div style="height: 1.5em;
+                      border-top: .5px solid Gray;">
+            <span class="CenterLayout"
+                  id="label">
+              Click on an image name in the list
+            </span>
           </div>
         </div>
       </div>
@@ -86,13 +93,20 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
 function handleClick(event) {
   const ul = event.currentTarget;
   const li = event.target;
-  for (const child of ul.children) {
-    child.style.backgroundColor = child === li ? "LightGray" : "";
+  let index = Array.from(ul.children).indexOf(li);
+  if (index === -1) {
+    return;
+  }
+  for (let i = 0; i < ul.children.length; i++) {
+    const child = ul.children[i];
+    child.style.backgroundColor = i === index ? "LightGray" : "";
   }
   const value = li.textContent;
   console.log("../images/" + value + ".gif");
   const picture = document.getElementById("picture");
   picture.src = "../images/" + value + ".gif";
+  const label = document.getElementById("label");
+  label.textContent = "Selected image number " + index;
 };
 `}
       info={`

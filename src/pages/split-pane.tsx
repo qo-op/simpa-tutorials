@@ -23,18 +23,17 @@ const SplitPanePage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        <code>SplitPane</code> is a component in Java Swing that provides a way
-        to divide a container into two resizable areas, with a divider in
-        between. It allows the user to interactively resize the two areas by
-        dragging the divider.
+        <code>SplitPane</code> is a component that provides a way to divide a
+        container into two resizable areas, with a divider in between. It allows
+        the user to interactively resize the two areas by dragging the divider.
       </p>
       <p>
         It is commonly used to create resizable split views, such as a vertical
         or horizontal split pane in an application's user interface.
       </p>
       <p>
-        Here's a basic example of using JSplitPane to create a horizontal split
-        pane:
+        Here's a basic example of using <code>SplitPane</code> to create a
+        horizontal split pane:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -61,9 +60,7 @@ const SplitPanePage = ({ path }: PageProps) => {
         <code>data-orientation</code> attribute of the container to indicate a
         horizontal split.
       </p>
-      <p>
-        We then add two components and a <code>div</code> between then.
-      </p>
+      <p>We then add two components and a divider between then.</p>
       <p>
         The resulting split pane will display the two panels side by side, with
         a divider in between. You can resize the panels by dragging the divider
