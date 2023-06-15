@@ -20,13 +20,10 @@ const ContentSplitPaneDivider = ({ draggable }: { draggable: boolean }) => {
     }
   };
   return (
-    <div className="ContentSplitPaneDivider">
-      <div
-        className="SplitPaneDivider"
-        data-draggable={draggable}
-        onPointerUp={pointerup}
-      />
-    </div>
+    <div
+      onPointerUp={pointerup}
+      style={draggable ? {} : { pointerEvents: "none" }}
+    ></div>
   );
 };
 

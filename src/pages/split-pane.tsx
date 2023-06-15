@@ -45,9 +45,8 @@ const SplitPanePage = ({ path }: PageProps) => {
   <!-- left component -->
   <div style="width: 50%; background-color: Cyan;">
   </div>
+  <!-- split pane divider-->
   <div>
-    <!-- split pane divider-->
-    <div class="SplitPaneDivider"></div>
   </div>
   <!-- right component -->
   <div style="width: 50%; background-color: LightGreen;">
@@ -63,8 +62,7 @@ const SplitPanePage = ({ path }: PageProps) => {
         horizontal split.
       </p>
       <p>
-        We then add two components and a <code>SplitPaneDivider</code> wrapped
-        in a <code>SplitPaneDividerBorder</code> between then.
+        We then add two components and a <code>div</code> between then.
       </p>
       <p>
         The resulting split pane will display the two panels side by side, with
@@ -76,9 +74,7 @@ const SplitPanePage = ({ path }: PageProps) => {
         style={{ height: "100px", paddingInline: "32px" }}
       >
         <div style={{ width: "50%", backgroundColor: "Cyan" }}></div>
-        <div className="SplitPaneDividerBorder">
-          <div className="SplitPaneDivider"></div>
-        </div>
+        <div></div>
         <div style={{ backgroundColor: "LightGreen" }}></div>
       </div>
       <p></p>

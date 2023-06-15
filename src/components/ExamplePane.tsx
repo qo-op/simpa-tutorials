@@ -310,9 +310,7 @@ const ExamplePane = ({
               </div>
             </div>
           </div>
-          <div>
-            <div className="SplitPaneDivider" />
-          </div>
+          <div></div>
           <div
             className="TabbedPane"
             data-tab-placement="page-end"

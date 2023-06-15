@@ -181,6 +181,11 @@ export const examples = [
     path: "/radio-button-demo/",
     folder: "Examples",
   },
+  {
+    text: "Split Pane Demo",
+    path: "/split-pane-demo/",
+    folder: "Examples",
+  },
 ];
 
 const tutorials = home.concat(
