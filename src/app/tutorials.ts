@@ -191,6 +191,11 @@ export const examples = [
     path: "/split-pane-demo/",
     folder: "Examples",
   },
+  {
+    text: "Table Demo",
+    path: "/table-demo/",
+    folder: "Examples",
+  },
 ];
 
 const tutorials = home.concat(
