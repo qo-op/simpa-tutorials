@@ -148,7 +148,6 @@ const ContentSplitPane = ({
           data-scrollbar-overlay
           style={Object.assign(
             {
-              borderInlineEnd: ".5px solid Gray",
               padding: 0,
               width: dividerLocation === -1 ? undefined : dividerLocation + "%",
             },
@@ -179,7 +178,7 @@ const ContentSplitPane = ({
           className="ScrollPane"
           data-horizontal-policy="scrollbar-never"
           data-scrollbar-overlay
-          style={{ borderInlineStart: ".5px solid Gray", padding: 0 }}
+          style={{ borderInlineStart: "1px solid Gray", padding: 0 }}
         >
           <div className="BorderLayout" style={{}}>
             {children}

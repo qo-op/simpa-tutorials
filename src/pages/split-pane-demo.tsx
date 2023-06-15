@@ -60,12 +60,14 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
           </div>
           <div>
           </div>
-          <div class="ScrollPane CenterLayout"
+          <div class="ScrollPane"
                 style="width: 50%%;
                       border-left: 1px solid Gray;">
-            <img src="../images/Bird.gif"
-                alt="Pet image"
-                id="picture">
+            <div class="CenterLayout">
+              <img src="../images/Bird.gif"
+                   alt="Pet image"
+                   id="picture">
+            </div>
           </div>
         </div>
       </div>
