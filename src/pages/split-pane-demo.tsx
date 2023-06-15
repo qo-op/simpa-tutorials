@@ -4,7 +4,7 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "SplitPaneDemo";
-const description: string = `An HTML version of Oracle's ${title}2 example`;
+const description: string = `An HTML version of Oracle's ${title} example`;
 const id = "split-pane-demo";
 
 const SplitPaneDemoPage = ({ path, location }: PageProps) => {
@@ -36,49 +36,37 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
            data-anchor="page-start"
            style="padding: .25em;">
         <div class="SplitPane"
-             data-orientation="vertical-split"
              style="border: 1px solid Gray;
-                    width: 240px;
-                    height: 160px;">
-          <div style="height: calc(100% - 1.5em);
-                      border-bottom: .5px solid Gray;">
-            <div class="SplitPane">
-              <div class="ScrollPane"
-                   style="border-right: .5px solid Gray;">
-                <ul style="margin: 0;
-                           padding: 0;
-                           list-style-type: none;
-                           cursor: default;"
-                           onclick="handleClick(event);">
-                  <li style="background-color: LightGray;">Bird</li>
-                  <li>Cat</li>
-                  <li>Dog</li>
-                  <li>Rabbit</li>
-                  <li>Pig</li>
-                  <li>dukeWaveRed</li>
-                  <li>left</li>
-                  <li>middle</li>
-                  <li>right</li>
-                </ul>
-              </div>
-              <div>
-              </div>
-              <div class="ScrollPane CenterLayout"
-                   style="border-left: .5px solid Gray;">
-                <img src="../images/Bird.gif"
-                    alt="Pet image"
-                    id="picture">
-              </div>
+                    width: 300px;
+                    height: 150px;">
+          <div style="width: 50%;
+                      border-right: .5px solid Gray;">
+            <div class="ScrollPane">
+              <ul style="margin: 0;
+                          padding: 0;
+                          list-style-type: none;
+                          cursor: default;"
+                          onclick="handleClick(event);">
+                <li style="background-color: LightGray;">Bird</li>
+                <li>Cat</li>
+                <li>Dog</li>
+                <li>Rabbit</li>
+                <li>Pig</li>
+                <li>dukeWaveRed</li>
+                <li>left</li>
+                <li>middle</li>
+                <li>right</li>
+              </ul>
             </div>
           </div>
           <div>
           </div>
-          <div style="height: 1.5em;
-                      border-top: .5px solid Gray;">
-            <span class="CenterLayout"
-                  id="label">
-              Click on an image name in the list
-            </span>
+          <div class="ScrollPane CenterLayout"
+                style="width: 50%%;
+                      border-left: .5px solid Gray;">
+            <img src="../images/Bird.gif"
+                alt="Pet image"
+                id="picture">
           </div>
         </div>
       </div>
@@ -109,7 +97,7 @@ function handleClick(event) {
 };
 `}
       info={`
-An HTML version of Oracle's ${title}2 example, using simpa.
+An HTML version of Oracle's ${title} example, using simpa.
 `}
     />
   );
