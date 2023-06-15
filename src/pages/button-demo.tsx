@@ -30,8 +30,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
       id="${id}">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div class="GridConstraints"
-         data-anchor="page-start"
+    <div class="CenterLayout"
          style="padding: .25em;">
       <div class="BoxLayout"
            style="gap: .5em">

@@ -31,8 +31,7 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
       onpointerup="handlePointerUp(event);">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div class="GridConstraints"
-         data-anchor="page-start"
+    <div class="CenterLayout"
          style="padding: .25em;">
       <div class="BoxLayout"
            data-axis="page-axis"

@@ -30,44 +30,40 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
       id="${id}">
   <div class="ScrollPane"
        data-scrollbar-overlay>
-    <div style="display: grid;
-                grid-template-column: minmax(0, auto)">
-      <div class="GridConstraints"
-           data-anchor="page-start"
-           style="padding: .25em;">
-        <div class="SplitPane"
-             style="border: 1px solid Gray;
-                    width: 300px;
-                    height: 150px;">
-          <div style="width: 50%;">
-            <div class="ScrollPane">
-              <ul style="margin: 0;
-                          padding: 0;
-                          list-style-type: none;
-                          cursor: default;"
-                          onclick="handleClick(event);">
-                <li style="background-color: LightGray;">Bird</li>
-                <li>Cat</li>
-                <li>Dog</li>
-                <li>Rabbit</li>
-                <li>Pig</li>
-                <li>dukeWaveRed</li>
-                <li>left</li>
-                <li>middle</li>
-                <li>right</li>
-              </ul>
-            </div>
+    <div class="CenterLayout"
+         style="padding: .25em;">
+      <div class="SplitPane"
+            style="border: 1px solid Gray;
+                   width: 300px;
+                   height: 150px;">
+        <div style="width: 50%;">
+          <div class="ScrollPane">
+            <ul style="margin: 0;
+                       padding: 0;
+                       list-style-type: none;
+                       cursor: default;"
+                       onclick="handleClick(event);">
+              <li style="background-color: LightGray;">Bird</li>
+              <li>Cat</li>
+              <li>Dog</li>
+              <li>Rabbit</li>
+              <li>Pig</li>
+              <li>dukeWaveRed</li>
+              <li>left</li>
+              <li>middle</li>
+              <li>right</li>
+            </ul>
           </div>
-          <div>
-          </div>
-          <div class="ScrollPane"
-                style="width: 50%%;
-                      border-left: 1px solid Gray;">
-            <div class="CenterLayout">
-              <img src="../images/Bird.gif"
-                   alt="Pet image"
-                   id="picture">
-            </div>
+        </div>
+        <div>
+        </div>
+        <div class="ScrollPane"
+             style="width: 50%%;
+                    border-left: 1px solid Gray;">
+          <div class="CenterLayout">
+            <img src="../images/Bird.gif"
+                 alt="Pet image"
+                 id="picture">
           </div>
         </div>
       </div>
