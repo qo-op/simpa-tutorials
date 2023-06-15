@@ -102,7 +102,6 @@ function handleClick(event) {
     child.style.backgroundColor = i === index ? "LightGray" : "";
   }
   const value = li.textContent;
-  console.log("../images/" + value + ".gif");
   const picture = document.getElementById("picture");
   picture.src = "../images/" + value + ".gif";
   const label = document.getElementById("label");

@@ -111,7 +111,6 @@ function handleChange(event) {
   glassPane.style.visibility = checkBox.checked ? "inherit" : "hidden";
 }
 function handleClick(event) {
-  console.log("handleClick");
   const glassPane = event.currentTarget;
   while (glassPane.firstElementChild) {
     glassPane.firstElementChild.remove();
