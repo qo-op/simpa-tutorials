@@ -8,6 +8,25 @@
   color: White;
 }
 
+#top-container,
+#bottom-container {
+  @media (pointer: coarse) {
+    height: calc(50% - 16px);
+  }
+  @media (pointer: fine) {
+    height: calc(50% - 4px);
+  }
+}
+#divider {
+  @media (pointer: coarse) {
+    height: 32px;
+  }
+  @media (pointer: fine) {
+    height: 8px;
+  }
+}
+
+/*
 @media (pointer: coarse) {
   .ExamplePane div[data-name="Result"],
   .ExampleLogPane div[data-name="Result"] {
@@ -21,3 +40,4 @@
     padding-block-start: 10px;
   }
 }
+*/

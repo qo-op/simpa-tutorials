@@ -249,7 +249,11 @@ const ExamplePane = ({
           data-orientation="vertical-split"
           style={{ padding: ".5em" }}
         >
-          <div className="TabbedPane" style={{ height: "50%" }}>
+          <div
+            className="TabbedPane"
+            style={{ height: "50%" }}
+            id="bottom-container"
+          >
             <div>
               <button
                 style={{
@@ -310,11 +314,12 @@ const ExamplePane = ({
               </div>
             </div>
           </div>
-          <div></div>
+          <div id="divider"></div>
           <div
             className="TabbedPane"
             data-tab-placement="page-end"
             style={{ height: "50%" }}
+            id="bottom-container"
           >
             <div>
               <button value="Result" tabIndex={-1}>

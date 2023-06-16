@@ -28,7 +28,7 @@ const ExampleContentSplitPane = ({
   }, []);
   if (loading) {
     return (
-      <div className="ContentSplitPane SplitPane">
+      <div className="ExampleContentSplitPane SplitPane">
         <div
           className="ScrollPane"
           data-scrollbar-overlay
@@ -52,7 +52,7 @@ const ExampleContentSplitPane = ({
   } else if (mobileView) {
     if (dividerLocation === -1) {
       return (
-        <div className="ContentSplitPane SplitPane">
+        <div className="ExampleContentSplitPane SplitPane">
           <div
             className="ScrollPane"
             data-scrollbar-overlay
@@ -75,7 +75,7 @@ const ExampleContentSplitPane = ({
       );
     } else {
       return (
-        <div className="ContentSplitPane SplitPane">
+        <div className="ExampleContentSplitPane SplitPane">
           <div
             className="ScrollPane"
             data-scrollbar-overlay

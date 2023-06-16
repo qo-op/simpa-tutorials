@@ -2,6 +2,7 @@ import "./ExamplePane.css";
 
 import {
   Code,
+  ContentPaste,
   InfoOutlined,
   Javascript,
   SystemUpdateAlt,
@@ -55,6 +56,52 @@ const ExampleLogPane = ({
       }
     }
   });
+  let resultPaneHtmlCode =
+    useAppSelector((state) => state.resultPane.htmlCode) || htmlCode;
+  const resultPaneCssCode =
+    useAppSelector((state) => state.resultPane.cssCode) || cssCode;
+  const resultPaneJavaScriptCode =
+    useAppSelector((state) => state.resultPane.javaScriptCode) || jsCode;
+  const copyCode = async (ev: React.MouseEvent) => {
+    let code = "";
+    resultPaneHtmlCode = resultPaneHtmlCode.replace(
+      /[^\n]*<link rel="stylesheet"\s*href="\.\/[A-Za-z]+\.css">[^\n]*\r?\n/,
+      ""
+    );
+    resultPaneHtmlCode = resultPaneHtmlCode.replace(
+      /[^\n]*<script src="\.\/[A-Za-z]+\.js">\s*<\/script>[^\n]*\r?\n/,
+      ""
+    );
+    let index = resultPaneHtmlCode.toLowerCase().indexOf("</head>");
+    if (index === -1) {
+      code =
+        "<head>\n" +
+        "  <style>\n" +
+        resultPaneCssCode.trim() +
+        "\n" +
+        "  </style>\n" +
+        "  <script>\n" +
+        resultPaneJavaScriptCode.trim() +
+        "\n" +
+        "  </script>\n" +
+        "</head>\n" +
+        resultPaneHtmlCode;
+    } else {
+      code =
+        resultPaneHtmlCode.substring(0, index) +
+        "  <style>\n" +
+        resultPaneCssCode.trim() +
+        "\n" +
+        "  </style>\n" +
+        "  <script>\n" +
+        resultPaneJavaScriptCode.trim() +
+        "\n" +
+        "  </script>\n" +
+        resultPaneHtmlCode.substring(index);
+    }
+    await navigator.clipboard.writeText(code);
+    (window as any).OptionPane.showMessageDialog("Code copied!");
+  };
   if (mobileView && landscapeView) {
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const focusGained = (ev: React.FocusEvent) => {
@@ -75,6 +122,18 @@ const ExampleLogPane = ({
       >
         <div className="TabbedPane" style={{ padding: ".5em" }}>
           <div>
+            <button
+              style={{
+                float: "right",
+                marginBlockStart: ".1em",
+                backgroundColor: "inherit",
+              }}
+              onClick={copyCode}
+            >
+              <span>
+                <ContentPaste style={{ color: "White" }} />
+              </span>
+            </button>
             <button value="html" tabIndex={-1}>
               <span>
                 <Code style={{ color: "Red" }} />
@@ -111,7 +170,7 @@ const ExampleLogPane = ({
               </span>
             </button>
           </div>
-          <div className="CardLayout" id="card-container">
+          <div className="CardLayout">
             <div
               className="BorderLayout"
               data-name="html"
@@ -205,8 +264,24 @@ const ExampleLogPane = ({
           data-orientation="vertical-split"
           style={{ padding: ".5em" }}
         >
-          <div className="TabbedPane" style={{ height: "50%" }}>
+          <div
+            className="TabbedPane"
+            style={{ height: "50%" }}
+            id="bottom-container"
+          >
             <div>
+              <button
+                style={{
+                  float: "right",
+                  marginBlockStart: ".1em",
+                  backgroundColor: "inherit",
+                }}
+                onClick={copyCode}
+              >
+                <span>
+                  <ContentPaste style={{ color: "White" }} />
+                </span>
+              </button>
               <button value="html" tabIndex={-1}>
                 <span>
                   <Code style={{ color: "Red" }} />
@@ -226,7 +301,7 @@ const ExampleLogPane = ({
                 </span>
               </button>
             </div>
-            <div className="CardLayout" id="card-container">
+            <div className="CardLayout">
               <div
                 className="BorderLayout"
                 data-name="html"
@@ -254,11 +329,12 @@ const ExampleLogPane = ({
               </div>
             </div>
           </div>
-          <div></div>
+          <div id="divider"></div>
           <div
             className="TabbedPane"
             data-tab-placement="page-end"
             style={{ height: "50%" }}
+            id="bottom-container"
           >
             <div>
               <button value="Result" tabIndex={-1}>
