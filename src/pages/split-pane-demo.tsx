@@ -35,36 +35,30 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
       <div class="SplitPane"
             style="width: 300px;
                    height: 150px;">
-        <div class="BorderLayout"
-             style="width: 50%;">
-          <div class="BorderLayout"
-               id="left-component">
-            <div class="ScrollPane"
-                 style="border: 1px solid Gray;">
-              <ul style="margin: 0;
-                         padding: 0;
-                         list-style-type: none;
-                         cursor: default;"
-                         onclick="handleClick(event);">
-                <li style="background-color: LightGray;">Bird</li>
-                <li>Cat</li>
-                <li>Dog</li>
-                <li>Rabbit</li>
-                <li>Pig</li>
-                <li>dukeWaveRed</li>
-                <li>left</li>
-                <li>middle</li>
-                <li>right</li>
-              </ul>
-            </div>
+        <div id="left-container">
+          <div class="ScrollPane"
+               style="border: 1px solid Gray;">
+            <ul style="margin: 0;
+                      padding: 0;
+                      list-style-type: none;
+                      cursor: default;"
+                      onclick="handleClick(event);">
+              <li style="background-color: LightGray;">Bird</li>
+              <li>Cat</li>
+              <li>Dog</li>
+              <li>Rabbit</li>
+              <li>Pig</li>
+              <li>dukeWaveRed</li>
+              <li>left</li>
+              <li>middle</li>
+              <li>right</li>
+            </ul>
           </div>
         </div>
-        <div>
-        </div>
-        <div class="ScrollPane"
-             style="width: 50%%;
-                    border: 1px solid Gray;">
-          <div class="CenterLayout">
+        <div id="divider"></div>
+        <div id="right-container">
+          <div class="ScrollPane CenterLayout"
+               style="border: 1px solid Gray;">
             <img src="../images/Bird.gif"
                  alt="Pet image"
                  id="picture">
@@ -77,12 +71,21 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-#left-component {
+#left-container,
+#right-container {
   @media (pointer: coarse) {
-    padding: 0 24px 0 0;
+    width: calc(50% - 16px);
   }
   @media (pointer: fine) {
-    padding: 0 4px 0 0;
+    width: calc(50% - 4px);
+  }
+}
+#divider {
+  @media (pointer: coarse) {
+    width: 32px;
+  }
+  @media (pointer: fine) {
+    width: 8px;
   }
 }
 `}
@@ -101,8 +104,6 @@ function handleClick(event) {
   const value = li.textContent;
   const picture = document.getElementById("picture");
   picture.src = "../images/" + value + ".gif";
-  const label = document.getElementById("label");
-  label.textContent = "Selected image number " + index;
 };
 `}
       info={`
