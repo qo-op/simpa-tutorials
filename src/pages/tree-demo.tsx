@@ -25,22 +25,180 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body class="Frame"
+      style="padding-block: .25em;"
       id="${id}">
-  <div class="ScrollPane"
-       data-scrollbar-overlay>
-    <div class="CenterLayout"
-         style="padding: .25em;">
-      
+  <div class="BorderLayout">
+    <div class="SplitPane"
+          data-orientation="vertical-split">
+      <div class="BorderLayout"
+           style="height: 50%;">
+        <div class="BorderLayout"
+             id="top-component">
+          <div class="ScrollPane"
+              style="border: 1px solid Gray;">
+            <ul class="Tree">
+              <li>
+                <div class="TreeNode"
+                    onclick="expandOrCollapse(event);"
+                    data-closed="false">
+                  <span class="material-icons"></span>
+                  <span>The Java Series</span>
+                </div>
+                <ul>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 24px;"
+                        onclick="expandOrCollapse(event);"
+                        data-closed="true">
+                      <span class="material-icons"></span>
+                      <span>Books for Java Programmers</span>                
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="tutorial"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The Java Tutorial: A Short Course on the Basics</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="tutorialcont"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The Java Tutorial Continued: The Rest of the JDK</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="swingtutorial"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The JFC Swing Tutorial: A Guide to Constructing GUIs</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="bloch"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>Effective Java Programming Language Guide</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="arnold"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The Java Programming Language</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="chan"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The Java Developers Almanac</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 24px;"
+                        onclick="expandOrCollapse(event);"
+                        data-closed="true">
+                      <span class="material-icons"></span>
+                      <span>Books for Java Implementers</span>                
+                    </div>
+                    <ul>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="vm"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The Java Virtual Machine Specification</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="TreeNode"
+                            style="padding: 0 0 0 48px;"
+                            data-user-object="jls"
+                            onclick="handleClick(event);">
+                          <span class="material-icons"></span>
+                          <span>The Java Language Specification</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div></div>
+      <div class="ScrollPane"
+           style="height: 50%;
+                  border: 1px solid Gray;"
+                  id="htmlPane">
+      </div>
     </div>
   </div>
 </body>
 </html>
 `}
       cssCode={`/* ${title}.css */
+#top-component {
+  @media (pointer: coarse) {
+    padding: 0 0 24px 0;
+  }
+  @media (pointer: fine) {
+    padding: 0 0 4px 0;
+  }
+}
+.TreeNode>.material-icons::after {
+  content: "description";
+}
+.TreeNode[data-closed="true"]>.material-icons::after {
+  content: "keyboard_arrow_right";
+}
+.TreeNode[data-closed="false"]>.material-icons::after {
+  content: "keyboard_arrow_down";
+}
 `}
       jsCode={`/* ${title}.js */
+function expandOrCollapse(event) {
+  const treeNode = event.currentTarget;
+  const closed = treeNode.dataset.closed;
+  treeNode.dataset.closed = closed === "false" ? "true" : "false";
+  displayURL("../html/TreeDemoHelp.txt");
+}
+function handleClick(event) {
+  const treeNode = event.currentTarget;
+  const userObject = treeNode.dataset.userObject;
+  displayURL("../html/" + userObject + ".txt");
+}
+async function displayURL(url) {
+  const response = await fetch(url);
+  const text = await response.text();
+  const htmlPane = document.getElementById("htmlPane");
+  htmlPane.innerHTML = text;
+}
+displayURL("../html/TreeDemoHelp.txt");
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.

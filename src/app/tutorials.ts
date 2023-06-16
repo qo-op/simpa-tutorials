@@ -201,6 +201,11 @@ export const examples = [
     path: "/table-demo/",
     folder: "Examples",
   },
+  {
+    text: "Tree Demo",
+    path: "/tree-demo/",
+    folder: "Examples",
+  },
 ];
 
 const tutorials = home.concat(
