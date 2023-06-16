@@ -41,14 +41,16 @@ const SplitPanePage = ({ path }: PageProps) => {
 <div class="SplitPane"
      data-orientation="horizontal-split"
      style="height: 100px;">
-  <!-- left component -->
-  <div style="width: 50%; background-color: Cyan;">
+  <!-- left container -->
+  <div style="width: 50%; min-width: 16px; background-color: Cyan;">
+    <button>Left component</button>
   </div>
   <!-- split pane divider-->
-  <div>
+  <div class="EmptyDivider">
   </div>
-  <!-- right component -->
-  <div style="width: 50%; background-color: LightGreen;">
+  <!-- right container -->
+  <div style="width: 50%; min-width: 16px; background-color: LightGreen;">
+    <button>Left component</button>
   </div>
 </div>
 ...`}
@@ -60,7 +62,10 @@ const SplitPanePage = ({ path }: PageProps) => {
         <code>data-orientation</code> attribute of the container to indicate a
         horizontal split.
       </p>
-      <p>We then add two components and a divider between then.</p>
+      <p>
+        We then add two containers with no margin, border, or padding, and place
+        an <code>EmptyDivider</code> between them.
+      </p>
       <p>
         The resulting split pane will display the two panels side by side, with
         a divider in between. You can resize the panels by dragging the divider
@@ -70,9 +75,17 @@ const SplitPanePage = ({ path }: PageProps) => {
         className="SplitPane"
         style={{ height: "100px", paddingInline: "32px" }}
       >
-        <div style={{ width: "50%", backgroundColor: "Cyan" }}></div>
-        <div></div>
-        <div style={{ backgroundColor: "LightGreen" }}></div>
+        <div
+          style={{ width: "50%", minWidth: "16px", backgroundColor: "Cyan" }}
+        ></div>
+        <div className="EmptyDivider"></div>
+        <div
+          style={{
+            width: "50%",
+            minWidth: "16px",
+            backgroundColor: "LightGreen",
+          }}
+        ></div>
       </div>
       <p></p>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
