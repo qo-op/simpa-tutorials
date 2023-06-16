@@ -4,7 +4,7 @@ import React from "react";
 
 const ContentSplitPaneDivider = ({ draggable }: { draggable: boolean }) => {
   const dispatch = useAppDispatch();
-  const pointerup = (ev: React.PointerEvent) => {
+  const handlePointerUp = (ev: React.PointerEvent) => {
     const splitPaneDivider: HTMLElement = ev.currentTarget as HTMLElement;
     const splitPane: HTMLElement = splitPaneDivider.closest(
       ".SplitPane"
@@ -21,7 +21,8 @@ const ContentSplitPaneDivider = ({ draggable }: { draggable: boolean }) => {
   };
   return (
     <div
-      onPointerUp={pointerup}
+      className="LineDivider"
+      onPointerUp={handlePointerUp}
       style={draggable ? {} : { pointerEvents: "none" }}
     ></div>
   );

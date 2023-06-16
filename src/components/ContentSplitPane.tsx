@@ -32,7 +32,7 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={{ padding: "0", width: "0%" }}
+          style={{ width: "0%" }}
           ref={scrollRef}
           id="navigation-tree-scroll-pane"
         >
@@ -48,7 +48,7 @@ const ContentSplitPane = ({
           className="ScrollPane"
           data-horizontal-policy="scrollbar-never"
           data-scrollbar-overlay
-          style={{ padding: "0", width: "100%" }}
+          style={{ width: "100%" }}
         >
           {children}
         </div>
@@ -61,7 +61,7 @@ const ContentSplitPane = ({
           <div
             className="ScrollPane"
             data-scrollbar-overlay
-            style={{ padding: 0, width: "0%" }}
+            style={{ width: "0%" }}
             ref={scrollRef}
             id="navigation-tree-scroll-pane"
           >
@@ -77,7 +77,7 @@ const ContentSplitPane = ({
             className="ScrollPane"
             data-horizontal-policy="scrollbar-never"
             data-scrollbar-overlay
-            style={{ padding: 0, width: "100%" }}
+            style={{ width: "100%" }}
           >
             {children}
           </div>
@@ -89,7 +89,7 @@ const ContentSplitPane = ({
           <div
             className="ScrollPane"
             data-scrollbar-overlay
-            style={{ padding: 0, width: "100%" }}
+            style={{ width: "100%" }}
             ref={scrollRef}
             id="navigation-tree-scroll-pane"
           >
@@ -105,7 +105,7 @@ const ContentSplitPane = ({
             className="ScrollPane"
             data-horizontal-policy="scrollbar-never"
             data-scrollbar-overlay
-            style={{ padding: 0, width: "0%" }}
+            style={{ width: "0%" }}
           >
             {children}
           </div>
@@ -118,7 +118,7 @@ const ContentSplitPane = ({
         <div
           className="ScrollPane"
           data-scrollbar-overlay
-          style={{ padding: 0, width: "0%" }}
+          style={{ width: "0%" }}
           ref={scrollRef}
           id="navigation-tree-scroll-pane"
         >
@@ -134,7 +134,7 @@ const ContentSplitPane = ({
           className="ScrollPane"
           data-horizontal-policy="scrollbar-never"
           data-scrollbar-overlay
-          style={{ padding: 0, width: "100%" }}
+          style={{ width: "100%" }}
         >
           {children}
         </div>
@@ -148,7 +148,6 @@ const ContentSplitPane = ({
           data-scrollbar-overlay
           style={Object.assign(
             {
-              padding: 0,
               width: dividerLocation === -1 ? undefined : dividerLocation + "%",
             },
             scrollMarginTop ? { scrollSnapType: "y mandatory" } : {}
@@ -157,15 +156,14 @@ const ContentSplitPane = ({
           id="navigation-tree-scroll-pane"
         >
           <nav
-            style={Object.assign(
-              {},
+            style={
               scrollMarginTop
                 ? {
                     scrollMarginTop: -scrollMarginTop,
                     scrollSnapAlign: "start",
                   }
                 : {}
-            )}
+            }
           >
             <NavigationTree
               mobileView={mobileView}
@@ -178,11 +176,12 @@ const ContentSplitPane = ({
           className="ScrollPane"
           data-horizontal-policy="scrollbar-never"
           data-scrollbar-overlay
-          style={{ borderInlineStart: "1px solid Gray", padding: 0 }}
+          style={{
+            width:
+              dividerLocation === -1 ? undefined : 100 - dividerLocation + "%",
+          }}
         >
-          <div className="BorderLayout" style={{}}>
-            {children}
-          </div>
+          {children}
         </div>
       </div>
     );
