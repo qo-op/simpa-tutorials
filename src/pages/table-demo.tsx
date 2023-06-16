@@ -114,7 +114,7 @@ function handleClick(event) {
   }
   const cell = event.target;
   const columnIndex = cell.cellIndex;
-  if (columnIndex < 2) {
+  if (columnIndex < 2 || columnIndex === 4) {
     return;
   }
   cell.contentEditable = true;
@@ -126,7 +126,7 @@ function handleBlur(event) {
   }
   const cell = event.target;
   const columnIndex = cell.cellIndex;
-  if (columnIndex < 2) {
+  if (columnIndex < 2 || columnIndex === 4) {
     return;
   }
   cell.contentEditable = false;
