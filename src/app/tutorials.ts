@@ -197,6 +197,11 @@ export const examples = [
     folder: "Examples",
   },
   {
+    text: "Tabbed Pane Demo",
+    path: "/tabbed-pane-demo/",
+    folder: "Examples",
+  },
+  {
     text: "Table Demo",
     path: "/table-demo/",
     folder: "Examples",

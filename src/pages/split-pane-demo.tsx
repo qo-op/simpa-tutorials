@@ -71,15 +71,6 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-#left-container,
-#right-container {
-  @media (pointer: coarse) {
-    width: calc(50% - 16px);
-  }
-  @media (pointer: fine) {
-    width: calc(50% - 4px);
-  }
-}
 #divider {
   @media (pointer: coarse) {
     width: 32px;
