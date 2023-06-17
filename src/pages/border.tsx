@@ -209,7 +209,6 @@ const BorderPage = ({ path }: PageProps) => {
           Compound Border
         </div>
       </div>
-
       <p>
         <code>CompoundBorder</code> is a versatile border type that allows
         developers to combine multiple border instances to create a composite

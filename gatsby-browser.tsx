@@ -1,6 +1,7 @@
 import wrapWithProvider from "./wrap-with-provider";
 export const wrapRootElement = wrapWithProvider;
 
+/*
 import React from "react";
 export const onInitialClientRender = () => {
   const link = document.createElement("link");
@@ -11,3 +12,4 @@ export const onInitialClientRender = () => {
   script.src = "https://qo-op.github.io/simpa/simpa.js";
   document.head.appendChild(script);
 };
+*/

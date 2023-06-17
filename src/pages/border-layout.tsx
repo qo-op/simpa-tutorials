@@ -112,55 +112,6 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <button>Click me!</button>
       </div>
       <p></p>
-      <hr />
-      <h2>Gaps</h2>
-      <p>
-        <code>BorderLayout</code> does not support gaps directly. The{" "}
-        <code>BorderLayout</code> manager is designed to fill the available
-        space without any gaps or spacing between its components. However, you
-        can achieve the effect of having gaps by using additional containers or
-        other layout managers in combination with <code>BorderLayout</code>.
-      </p>
-      <p>
-        One approach is to place your components inside separate panes and add
-        those panes to the <code>BorderLayout</code> regions. Then, you can add
-        paddings to the panes to create the desired gaps between the components.
-      </p>
-      <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="BorderLayout"
-     style="height: 100px;">
-  <div class="PageStart">
-    <button>Button 1</button>
-  </div>
-  <!-- button pane with padding -->
-  <div class="EmptyBorder"
-       syle="padding: 10px 0 0 0;">
-    <button>
-      Button 2
-    </button>
-  </div>
-</div>
-...`}
-        </SyntaxHighlighter>
-      </div>
-      <p>
-        After running this code, you will see a panel with two buttons with a
-        gap between them.
-      </p>
-      <div
-        className="BorderLayout"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
-      >
-        <div className="PageStart">
-          <button>Button 1</button>
-        </div>
-        <div className="EmptyBorder" style={{ padding: "10px 0 0 0" }}>
-          <button>Button 2</button>
-        </div>
-      </div>
-      <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );

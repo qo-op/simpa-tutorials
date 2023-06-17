@@ -41,20 +41,28 @@ const DialogPage = ({ path }: PageProps) => {
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
 <div class="Dialog BorderLayout">
-  <!-- dialog title bar -->
-  <div class="DialogTitleBar PageStart"
-       style="background-color: LightGray; padding: 0 .5em;">
-    Message
+  <div class="PageStart">
+    <!-- dialog title bar -->
+    <div class="DialogTitleBar"
+         style="background-color: LightGray;
+                padding: 0 .5em;">
+      Message
+    </div>
   </div>
   <!-- dialog content -->
-  <div class="BorderLayout"
-         style="padding: .5em;">
+  <div class="BoxLayout"
+       data-axis="page-axis"
+       data-alignment-x="stretch"
+       style="gap: .5em;
+              padding: .5em;">
     <!-- dialog text -->
-    <span style="margin-block-end: .5em;">
-        This is a dialog!
+    <span>
+      This is a dialog!
     </span>
-    <!-- ok button -->
-    <div class="PageEnd CenterLayout">
+    <!-- button pane -->
+    <div class="FlowLayout"
+         style="gap: .5em;">
+      <!-- ok button -->
       <button>OK</button>
     </div>
   </div>
@@ -78,35 +86,83 @@ const DialogPage = ({ path }: PageProps) => {
       <div className="CenterLayout">
         <div className="LayeredPane">
           <div className="Dialog BorderLayout" style={{ visibility: "hidden" }}>
-            <div
-              className="DialogTitleBar PageStart"
-              style={{ backgroundColor: "LightGray", padding: "0 .5em" }}
-            >
-              Message
+            <div className="PageStart">
+              <div
+                className="DialogTitleBar"
+                style={{ backgroundColor: "LightGray", padding: "0 .5em" }}
+              >
+                Message
+              </div>
             </div>
-            <div className="BorderLayout" style={{ padding: ".5em" }}>
-              <span style={{ marginBlockEnd: ".5em" }}>This is a dialog!</span>
-              <div className="PageEnd CenterLayout">
-                <button onClick={click}>OK</button>
+            <div
+              className="BoxLayout"
+              data-axis="page-axis"
+              data-alignment-x="stretch"
+              style={{ gap: ".5em", padding: ".5em" }}
+            >
+              <span>This is a dialog!</span>
+              <div className="FlowLayout" style={{ gap: ".5em" }}>
+                <button>OK</button>
               </div>
             </div>
           </div>
           <div className="Dialog BorderLayout">
-            <div
-              className="DialogTitleBar PageStart"
-              style={{ padding: "0 .5em", backgroundColor: "LightGray" }}
-            >
-              <span>Message</span>
+            <div className="PageStart">
+              <div
+                className="DialogTitleBar"
+                style={{ backgroundColor: "LightGray", padding: "0 .5em" }}
+              >
+                Message
+              </div>
             </div>
-            <div className="BorderLayout" style={{ padding: ".5em" }}>
-              <span style={{ marginBlockEnd: ".5em" }}>This is a dialog!</span>
-              <div className="PageEnd CenterLayout">
+            <div
+              className="BoxLayout"
+              data-axis="page-axis"
+              data-alignment-x="stretch"
+              style={{ gap: ".5em", padding: ".5em" }}
+            >
+              <span>This is a dialog!</span>
+              <div className="FlowLayout" style={{ gap: ".5em" }}>
                 <button onClick={click}>OK</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <p></p>
+      <hr />
+      <h2>Creating simple dialogs with OptionPane</h2>
+      <p>
+        <code>OptionPane</code> is a class that provides a convenient way to
+        display various types of dialog boxes, including information messages,
+        warning messages, error messages, and input prompts, within an
+        application. With OptionPane, developers can easily create and manage
+        these dialog boxes without having to build them from scratch.
+      </p>
+      <p>
+        To use <code>OptionPane</code>, you typically start by calling one of
+        its static methods, such as <code>showMessageDialog()</code>,{" "}
+        <code>showConfirmDialog()</code>, or <code>showInputDialog()</code>,
+        passing the necessary parameters to specify the dialog's content, title,
+        icon, buttons, and other options.
+      </p>
+      <p>
+        The <code>OptionPane</code> class offers a wide range of dialog box
+        options and customization capabilities. You can display text messages,
+        display different types of icons to represent the dialog's purpose,
+        provide multiple choices for confirmation or selection, and retrieve
+        input from the user.
+      </p>
+      <p>
+        Overall, <code>OptionPane</code> simplifies the process of displaying
+        standard dialog boxes in SPA applications. It provides a straightforward
+        and flexible way to interact with users, present information, and gather
+        input, enhancing the user experience and making it easier to communicate
+        with the users of your application.
+      </p>
+      <hr />
+      <h2>showMessageDialog</h2>
+      <p></p>
       <p></p>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>
