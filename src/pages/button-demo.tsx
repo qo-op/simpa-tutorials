@@ -39,7 +39,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
                 id="b1">
           <span class="BoxLayout">
             <span data-key="d"
-                  data-altKey>
+                  data-alt>
               <u>D</u>isable middle button
             </span>
             <img src="../images/right.gif">
@@ -50,7 +50,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
           <span class="BoxLayout"
                 data-axis="page-axis">
             <span data-key="m"
-                  data-altKey>
+                  data-alt>
               <u>M</u>iddle button
             </span>
             <img src="../images/middle.gif">
@@ -63,7 +63,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
           <span class="BoxLayout">
             <img src="../images/left.gif">
             <span data-key="e"
-                  data-altKey>
+                  data-alt>
               <u>E</u>nable middle button
             </span>
           </span>

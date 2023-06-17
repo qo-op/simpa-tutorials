@@ -39,25 +39,37 @@ const TabbedPaneDemoPage = ({ path, location }: PageProps) => {
                   tabindex="-1">
             <span>
               <img src="../images/middle.gif">
-              <span>Tab 1</span>
+              <span data-key="1"
+                    data-alt>
+                Tab <u>1</u>
+              </span>
             </span>
           </button>
           <button value="panel2">
             <span>
               <img src="../images/middle.gif">
-              <span>Tab 2</span>
+              <span data-key="2"
+                    data-alt>
+                Tab <u>2</u>
+              </span>
             </span>
           </button>
           <button value="panel3">
             <span>
               <img src="../images/middle.gif">
-              <span>Tab 3</span>
+              <span data-key="3"
+                    data-alt>
+                Tab <u>3</u>
+              </span>
             </span>
           </button>
           <button value="panel4">
             <span>
               <img src="../images/middle.gif">
-              <span>Tab 4</span>
+              <span data-key="4"
+                    data-alt>
+                Tab <u>4</u>
+              </span>
             </span>
           </button>
         </div>
