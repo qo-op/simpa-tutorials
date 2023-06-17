@@ -46,6 +46,11 @@ export const cssLayoutsTutorials = [
 
 export const cssComponentsTutorials = [
   {
+    text: "How to Use Borders",
+    path: "/border/",
+    folder: "CSS Components",
+  },
+  {
     text: "How to Use Layered Panes",
     path: "/layered-pane/",
     folder: "CSS Components",
