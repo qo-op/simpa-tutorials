@@ -31,127 +31,125 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       style="padding-block: .25em;"
       id="${id}">
-  <div class="BorderLayout">
-    <div class="SplitPane"
-         data-orientation="vertical-split">
-      <div class="BorderLayout"
-           id="top-container">
-        <div class="ScrollPane"
-             style="border: 1px solid Gray;">
-          <ul class="Tree">
-            <li>
-              <div class="TreeNode"
-                  onclick="expandOrCollapse(event);"
-                  data-closed="false">
-                <span class="material-icons"></span>
-                <span>The Java Series</span>
-              </div>
-              <ul>
-                <li>
-                  <div class="TreeNode"
-                      style="padding: 0 0 0 24px;"
-                      onclick="expandOrCollapse(event);"
-                      data-closed="true">
-                    <span class="material-icons"></span>
-                    <span>Books for Java Programmers</span>                
-                  </div>
-                  <ul>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="tutorial"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The Java Tutorial: A Short Course on the Basics</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="tutorialcont"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The Java Tutorial Continued: The Rest of the JDK</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="swingtutorial"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The JFC Swing Tutorial: A Guide to Constructing GUIs</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="bloch"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>Effective Java Programming Language Guide</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="arnold"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The Java Programming Language</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="chan"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The Java Developers Almanac</span>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <div class="TreeNode"
-                      style="padding: 0 0 0 24px;"
-                      onclick="expandOrCollapse(event);"
-                      data-closed="true">
-                    <span class="material-icons"></span>
-                    <span>Books for Java Implementers</span>                
-                  </div>
-                  <ul>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="vm"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The Java Virtual Machine Specification</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="TreeNode"
-                          style="padding: 0 0 0 48px;"
-                          data-user-object="jls"
-                          onclick="handleClick(event);">
-                        <span class="material-icons"></span>
-                        <span>The Java Language Specification</span>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+  <div class="SplitPane"
+       data-orientation="vertical-split">
+    <div class="BorderLayout"
+          id="top-container">
+      <div class="ScrollPane"
+            style="border: 1px solid Gray;">
+        <ul class="Tree">
+          <li>
+            <div class="TreeNode"
+                onclick="expandOrCollapse(event);"
+                data-closed="false">
+              <span class="material-icons"></span>
+              <span>The Java Series</span>
+            </div>
+            <ul>
+              <li>
+                <div class="TreeNode"
+                    style="padding: 0 0 0 24px;"
+                    onclick="expandOrCollapse(event);"
+                    data-closed="true">
+                  <span class="material-icons"></span>
+                  <span>Books for Java Programmers</span>                
+                </div>
+                <ul>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="tutorial"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The Java Tutorial: A Short Course on the Basics</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="tutorialcont"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The Java Tutorial Continued: The Rest of the JDK</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="swingtutorial"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The JFC Swing Tutorial: A Guide to Constructing GUIs</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="bloch"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>Effective Java Programming Language Guide</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="arnold"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The Java Programming Language</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="chan"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The Java Developers Almanac</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="TreeNode"
+                    style="padding: 0 0 0 24px;"
+                    onclick="expandOrCollapse(event);"
+                    data-closed="true">
+                  <span class="material-icons"></span>
+                  <span>Books for Java Implementers</span>                
+                </div>
+                <ul>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="vm"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The Java Virtual Machine Specification</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="TreeNode"
+                        style="padding: 0 0 0 48px;"
+                        data-user-object="jls"
+                        onclick="handleClick(event);">
+                      <span class="material-icons"></span>
+                      <span>The Java Language Specification</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <div id="divider"></div>
-      <div id="bottom-container">
-        <div class="ScrollPane"
-             style="border: 1px solid Gray;"
-                    id="htmlPane">
-        </div>
+    </div>
+    <div id="divider"></div>
+    <div id="bottom-container">
+      <div class="ScrollPane"
+            style="border: 1px solid Gray;"
+                  id="htmlPane">
       </div>
     </div>
   </div>
