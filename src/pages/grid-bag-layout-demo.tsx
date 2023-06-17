@@ -29,7 +29,7 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       id="${id}">
   <div class="ScrollPane"
-       data-scrollbar-overlay>
+       data-overlay>
     <div class="CenterLayout"
          style="padding: .25em;">
       <div style="display: grid;">

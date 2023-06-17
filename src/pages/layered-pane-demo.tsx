@@ -30,7 +30,7 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
       id="${id}"
       onpointerup="handlePointerUp(event);">
   <div class="ScrollPane"
-       data-scrollbar-overlay>
+       data-overlay>
     <div class="CenterLayout"
          style="padding: .25em;">
       <div class="BoxLayout"

@@ -27,7 +27,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         a specific direction, such as in a toolbar.
       </p>
       <hr />
-      <h2>Example with components arranged horizontally</h2>
+      <h2>Example with Components Arranged Horizontally</h2>
       <p>
         To use <code>BoxLayout</code>, you first need to create a container to
         hold your components. This can be a <code>div</code> element. Once you
@@ -66,7 +66,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Example with components arranged vertically</h2>
+      <h2>Example with Components Arranged Vertically</h2>
       <p>
         To use BoxLayout to lay out components vertically, you need to set{" "}
         <code>data-axis</code> to <code>"page-axis"</code>. Here's an example:
@@ -101,7 +101,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Horizontal alignment of the components</h2>
+      <h2>Horizontal Alignment of the Components</h2>
       <p>
         To stretch components horizontally within a vertical{" "}
         <code>BoxLayout</code> container, you need to set the{" "}
@@ -239,7 +239,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>Vertical alignment of the components</h2>
+      <h2>Vertical Alignment of the Components</h2>
       <p>
         Note that the x alignment property of a <code>BoxLayout</code> container
         only affects the horizontal position of the child components. The
@@ -378,7 +378,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>Combining the x and y alignments</h2>
+      <h2>Combining X and Y Alignments</h2>
       <p>
         You can combine the x and y alignments of a <code>BoxLayout</code>{" "}
         container to position the child components both horizontally and
@@ -391,7 +391,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       </p>
       <p></p>
       <hr />
-      <h2>Adding gaps</h2>
+      <h2>Creating Component Gaps</h2>
       <p>
         To create gaps between components in <code>BoxLayout</code>, you can use
         the <code>gap</code> style property.

@@ -29,9 +29,7 @@ const GridConstraintsPage = ({ path }: PageProps) => {
         and <code>data-fill</code>
       </p>
       <hr />
-      <h2>
-        The <code>data-anchor</code> attribute
-      </h2>
+      <h2>The Anchor Attribute</h2>
       <p>
         The <code>data-anchor</code> attribute in the{" "}
         <code>GridConstraints</code> layout is used to specify the position of a
@@ -225,9 +223,7 @@ const GridConstraintsPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>
-        The <code>data-fill</code> attribute
-      </h2>
+      <h2>The Fill Attribute</h2>
       <p>
         The <code>data-fill</code> attribute in the <code>GridConstraints</code>{" "}
         layout is used to specify how a component should be resized within its
@@ -318,10 +314,7 @@ const GridConstraintsPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <hr />
-      <h2>
-        Combining the <code>data-anchor</code> and <code>data-fill</code>{" "}
-        attributes
-      </h2>
+      <h2>Combining Anchor and Fill Attributes</h2>
       <p>
         You can combine the <code>data-anchor</code> and <code>data-fill</code>{" "}
         attributes in a GridConstraints. As already seen above, the{" "}

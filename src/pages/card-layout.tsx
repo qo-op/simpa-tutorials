@@ -93,7 +93,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Example with a simple code to switch between cards</h2>
+      <h2>Example with a Simple Code to Switch between Cards</h2>
       <p>Here's a example that uses JavaScript to switch between cards:</p>
       <p></p>
       <div className="SyntaxHighlighter">

@@ -55,9 +55,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>
-        Example with <code>leading</code> alignment
-      </h2>
+      <h2>Example with Leading Alignment</h2>
       <p>
         The <code>data-alignment</code> attribute controls the alignment of the
         components in the container. By default, components are centered in the
@@ -112,9 +110,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>
-        Example with <code>rtl</code> direction
-      </h2>
+      <h2>Example with RTL Direction</h2>
       <p>
         In order to change the flow direction from right to left, you can set
         its <code>direction</code> style to <code>rtl</code>.
@@ -153,7 +149,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Adding gaps</h2>
+      <h2>Creating Component Gaps</h2>
       <p>
         To create gaps between rows of components in <code>FlowLayout</code>,
         you can use the <code>row-gap</code> style property. If you want to

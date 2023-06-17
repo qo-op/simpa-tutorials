@@ -145,7 +145,7 @@ const BorderPage = ({ path }: PageProps) => {
       </div>
       <hr />
       <div className="TitledBorder">
-        <span>How to use Borders</span>
+        <span>How to Use Borders</span>
         <h2 style={{ padding: ".5em" }}>Titled Border</h2>
       </div>
       <p>
@@ -164,7 +164,7 @@ const BorderPage = ({ path }: PageProps) => {
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
 <div class="TitledBorder">
-  <span>How to use Borders</span>
+  <span>How to Use Borders</span>
   <div style="padding: .5em;">
     Titled Border
   </div>
@@ -173,7 +173,7 @@ const BorderPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <div className="TitledBorder" data-title-justification="center">
-        <span>How to use Borders</span>
+        <span>How to Use Borders</span>
         <div style={{ padding: ".5em" }}>Center justified title</div>
       </div>
       <p>
@@ -185,7 +185,7 @@ const BorderPage = ({ path }: PageProps) => {
           {`...
 <div class="TitledBorder"
      data-title-justification="center">
-  <span>How to use Borders</span>
+  <span>How to Use Borders</span>
   <div style="padding: .5em;">
     Center justified title
   </div>

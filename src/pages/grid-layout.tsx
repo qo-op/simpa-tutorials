@@ -163,7 +163,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Example with GridConstraints</h2>
+      <h2>Example with Grid Constraints</h2>
       <p>
         We have modified the previous example so that the buttons now expand
         horizontally to occupy the entire space within their grid cell, by

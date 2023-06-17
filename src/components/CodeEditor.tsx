@@ -95,7 +95,7 @@ const CodeEditor = ({
   return (
     <div
       className="CodeEditor ScrollPane"
-      data-scrollbar-overlay
+      data-overlay
       onClick={click}
       id={id || ""}
     >

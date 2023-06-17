@@ -60,7 +60,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         fill the remaining space in the container.
       </p>
       <hr />
-      <h2>Example with two components</h2>
+      <h2>Example with Two Components</h2>
       <p>
         Here's an example of using <code>BorderLayout</code> to create a simple
         user interface with a text and a button:

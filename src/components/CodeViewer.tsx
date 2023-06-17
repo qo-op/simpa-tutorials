@@ -16,7 +16,7 @@ const CodeViewer = ({
   id?: string;
 }) => {
   return (
-    <div className="CodeViewer ScrollPane" data-scrollbar-overlay id={id || ""}>
+    <div className="CodeViewer ScrollPane" data-overlay id={id || ""}>
       <div className="BorderLayout">
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter
