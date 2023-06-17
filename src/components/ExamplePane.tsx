@@ -114,7 +114,7 @@ const ExamplePane = ({
     };
     return (
       <div
-        className="ExamplePane Panel BorderLayout"
+        className="ExamplePane BorderLayout"
         style={{
           visibility: mobileView && !ready ? "hidden" : "inherit",
         }}
@@ -239,7 +239,7 @@ const ExamplePane = ({
     };
     return (
       <div
-        className="ExamplePane Panel BorderLayout"
+        className="ExamplePane BorderLayout"
         style={{
           visibility: mobileView && !ready ? "hidden" : "inherit",
         }}

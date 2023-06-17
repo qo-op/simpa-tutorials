@@ -84,20 +84,18 @@ const ResultPane = ({
     iFrameDocument.close();
   });
   return (
-    <div className="Panel">
-      <iframe
-        id="iframe"
-        className="ResultPane"
-        style={{
-          ...style,
-          width: "100%",
-          height: "100%",
-          border: "none",
-          visibility: !iframeReady ? "hidden" : "inherit",
-        }}
-        ref={iframeRef}
-      />
-    </div>
+    <iframe
+      id="iframe"
+      className="ResultPane"
+      style={{
+        ...style,
+        width: "100%",
+        height: "100%",
+        border: "none",
+        visibility: !iframeReady ? "hidden" : "inherit",
+      }}
+      ref={iframeRef}
+    />
   );
 };
 
