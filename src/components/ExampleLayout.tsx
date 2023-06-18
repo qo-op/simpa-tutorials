@@ -3,7 +3,7 @@ import "./ExampleLayout.css";
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { tutorialIndexes } from "app/tutorials";
 import ExampleContentSplitPane from "components/ExampleContentSplitPane";
-import ExamplePane from "components/ExamplePane";
+import ExamplePane from "components/ExampleLogPane";
 import ToolBar from "components/ToolBar";
 import { setLoading } from "features/LoadingSlice";
 import { setNextPath } from "features/NextPathSlice";

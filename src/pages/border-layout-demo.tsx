@@ -29,7 +29,7 @@ const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
 <body class="Frame"
       style="padding-block: .25em;"
       id="${id}">
-  <!-- Border Layout -->
+  <!-- Container with Border Layout -->
   <div class="BorderLayout"
        style="border: 1px solid Gray">
     <!-- Page Start -->
@@ -70,6 +70,9 @@ const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to demonstrate the usage of the BorderLayout layout manager in a SPA application.
+This example creates a SPA application with a container and adds various components to it, such as buttons, using the BorderLayout.
+Running this example will display the SPA application with the buttons arranged according to the BorderLayout regions, showcasing the layout behavior of BorderLayout.
 `}
     />
   );
