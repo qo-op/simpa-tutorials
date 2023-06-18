@@ -102,6 +102,26 @@ const ExamplePane = ({
     await navigator.clipboard.writeText(code);
     (window as any).OptionPane.showMessageDialog("Code copied!");
   };
+  const iframeRef1 = useRef<HTMLIFrameElement>(null);
+  const handleFocus1 = (ev: React.FocusEvent) => {
+    if (iframeRef1.current === null) {
+      return;
+    }
+    const iFrame: HTMLIFrameElement = iframeRef1.current;
+    const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
+    iFrame.style.display =
+      cardComponent.dataset.name === "Result" ? "block" : "none";
+  };
+  const iframeRef2 = useRef<HTMLIFrameElement>(null);
+  const handleFocus2 = (ev: React.FocusEvent) => {
+    if (iframeRef2.current === null) {
+      return;
+    }
+    const iFrame: HTMLIFrameElement = iframeRef2.current;
+    const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
+    iFrame.style.display =
+      cardComponent.dataset.name === "Result" ? "block" : "none";
+  };
   return (
     <div className="SplitPane">
       <div
@@ -175,6 +195,8 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="html"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
+                onFocus={handleFocus1}
               >
                 <CodeViewer
                   hostname={hostname}
@@ -186,6 +208,8 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="css"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
+                onFocus={handleFocus1}
               >
                 <CodeViewer hostname={hostname} code={cssCode} language="css" />
               </div>
@@ -193,6 +217,8 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="js"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
+                onFocus={handleFocus1}
               >
                 <CodeViewer hostname={hostname} code={jsCode} language="js" />
               </div>
@@ -201,6 +227,7 @@ const ExamplePane = ({
                 data-name="Result"
                 style={{ visibility: "inherit" }}
                 tabIndex={-1}
+                onFocus={handleFocus1}
               >
                 <ResultPane
                   path={path}
@@ -208,12 +235,14 @@ const ExamplePane = ({
                   htmlCode={htmlCode}
                   cssCode={cssCode}
                   jsCode={jsCode}
+                  iframeRef={iframeRef1}
                 />
               </div>
               <div
                 data-name="Info"
                 style={{ textAlign: "justify", visibility: "hidden" }}
                 tabIndex={-1}
+                onFocus={handleFocus1}
               >
                 {info.split("\n").map((line, index) => (
                   <p key={index}>{line}</p>
@@ -224,6 +253,7 @@ const ExamplePane = ({
                 data-name="Log"
                 style={{ visibility: "hidden" }}
                 tabIndex={-1}
+                onFocus={handleFocus1}
               >
                 <Log />
               </div>
@@ -341,6 +371,7 @@ const ExamplePane = ({
                 data-name="Result"
                 style={{ visibility: "inherit" }}
                 tabIndex={-1}
+                onFocus={handleFocus2}
               >
                 <ResultPane
                   path={path}
@@ -348,12 +379,14 @@ const ExamplePane = ({
                   htmlCode={htmlCode}
                   cssCode={cssCode}
                   jsCode={jsCode}
+                  iframeRef={iframeRef2}
                 />
               </div>
               <div
                 data-name="Info"
                 style={{ textAlign: "justify", visibility: "hidden" }}
                 tabIndex={-1}
+                onFocus={handleFocus2}
               >
                 {info.split("\n").map((line, index) => (
                   <p key={index}>{line}</p>
@@ -364,6 +397,7 @@ const ExamplePane = ({
                 data-name="Log"
                 style={{ visibility: "hidden" }}
                 tabIndex={-1}
+                onFocus={handleFocus2}
               >
                 <Log />
               </div>

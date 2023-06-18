@@ -189,6 +189,7 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="html"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={handleFocus1}
               >
                 <CodeViewer
@@ -201,6 +202,7 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="css"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={handleFocus1}
               >
                 <CodeViewer hostname={hostname} code={cssCode} language="css" />
@@ -209,6 +211,7 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="js"
                 style={{ visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={handleFocus1}
               >
                 <CodeViewer hostname={hostname} code={jsCode} language="js" />
@@ -217,6 +220,7 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="Result"
                 style={{ visibility: "inherit" }}
+                tabIndex={-1}
                 onFocus={handleFocus1}
               >
                 <ResultPane
@@ -231,6 +235,7 @@ const ExamplePane = ({
               <div
                 data-name="Info"
                 style={{ textAlign: "justify", visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={handleFocus1}
               >
                 {info.split("\n").map((line, index) => (
@@ -345,6 +350,7 @@ const ExamplePane = ({
                 className="BorderLayout"
                 data-name="Result"
                 style={{ visibility: "inherit" }}
+                tabIndex={-1}
                 onFocus={handleFocus2}
               >
                 <ResultPane
@@ -359,6 +365,7 @@ const ExamplePane = ({
               <div
                 data-name="Info"
                 style={{ textAlign: "justify", visibility: "hidden" }}
+                tabIndex={-1}
                 onFocus={handleFocus2}
               >
                 {info.split("\n").map((line, index) => (
