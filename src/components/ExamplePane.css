@@ -8,21 +8,22 @@
   color: White;
 }
 
-#top-container,
-#bottom-container {
-  @media (pointer: coarse) {
-    height: calc(50% - 16px);
-  }
-  @media (pointer: fine) {
-    height: calc(50% - 4px);
-  }
-}
-#divider {
-  @media (pointer: coarse) {
+@media (pointer: coarse) {
+  #divider {
     height: 32px;
   }
-  @media (pointer: fine) {
+  #top-container,
+  #bottom-container {
+    height: calc(50% - 16px);
+  }
+}
+@media (pointer: fine) {
+  #divider {
     height: 8px;
+  }
+  #top-container,
+  #bottom-container {
+    height: calc(50% - 4px);
   }
 }
 
