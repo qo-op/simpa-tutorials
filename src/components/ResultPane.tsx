@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "app/hooks";
 import { setIframeReady } from "features/ResultPaneSlice";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const ResultPane = ({
   path,
@@ -9,7 +9,6 @@ const ResultPane = ({
   htmlCode,
   cssCode,
   jsCode,
-  iframeRef,
 }: {
   path: string;
   hostname: string;
@@ -17,7 +16,6 @@ const ResultPane = ({
   htmlCode: string;
   cssCode: string;
   jsCode: string;
-  iframeRef: React.RefObject<HTMLIFrameElement>;
 }) => {
   const nextPath = useAppSelector((state) => state.nextPath.value);
   let iframeReady = useAppSelector((state) => state.resultPane.iframeReady);
@@ -70,6 +68,7 @@ const ResultPane = ({
       "  </script>\n" +
       resultPaneHtmlCode.substring(index);
   }
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   useEffect(() => {
     if (iframeRef.current === null) {
       return;

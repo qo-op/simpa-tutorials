@@ -101,146 +101,136 @@ const ExamplePane = ({
     await navigator.clipboard.writeText(code);
     (window as any).OptionPane.showMessageDialog("Code copied!");
   };
-  if (mobileView && landscapeView) {
-    const iframeRef = useRef<HTMLIFrameElement>(null);
-    const focusGained = (ev: React.FocusEvent) => {
-      if (iframeRef.current === null) {
-        return;
-      }
-      const iFrame: HTMLIFrameElement = iframeRef.current;
-      const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
-      iFrame.style.display =
-        cardComponent.dataset.name === "Result" ? "block" : "none";
-    };
-    return (
+  return (
+    <div className="SplitPane">
       <div
         className="ExamplePane BorderLayout"
         style={{
+          width: mobileView && landscapeView ? "100%" : "0%",
           visibility: mobileView && !ready ? "hidden" : "inherit",
         }}
       >
-        <div className="TabbedPane" style={{ padding: ".5em" }}>
-          <div>
-            <button
-              style={{
-                float: "right",
-                marginBlockStart: ".1em",
-                backgroundColor: "inherit",
-              }}
-              onClick={copyCode}
-            >
-              <span>
-                <ContentPaste style={{ color: "White" }} />
-              </span>
-            </button>
-            <button value="html">
-              <span>
-                <Code style={{ color: "Red" }} />
-                <span>html</span>
-              </span>
-            </button>
-            <button value="css">
-              <span>
-                <Tag style={{ color: "Blue" }} />
-                <span>css</span>
-              </span>
-            </button>
-            <button value="js">
-              <span>
-                <Javascript style={{ color: "Yellow" }} />
-                <span>js</span>
-              </span>
-            </button>
-            <button value="Result" tabIndex={-1}>
-              <span>
-                <SystemUpdateAlt style={{ color: "Green" }} />
-                <span>result</span>
-              </span>
-            </button>
-            <button value="Info">
-              <span>
-                <InfoOutlined style={{ color: "Blue" }} />
-                <span>info</span>
-              </span>
-            </button>
+        <div
+          className="SplitPane"
+          data-orientation="vertical-split"
+          style={{ padding: ".5em" }}
+        >
+          <div
+            className="TabbedPane"
+            style={{ height: "100%" }}
+            id="top-container"
+          >
+            <div>
+              <button
+                style={{
+                  float: "right",
+                  marginBlockStart: ".1em",
+                  backgroundColor: "inherit",
+                }}
+                onClick={copyCode}
+              >
+                <span>
+                  <ContentPaste style={{ color: "White" }} />
+                </span>
+              </button>
+              <button value="html">
+                <span>
+                  <Code style={{ color: "Red" }} />
+                  <span>html</span>
+                </span>
+              </button>
+              <button value="css">
+                <span>
+                  <Tag style={{ color: "Blue" }} />
+                  <span>css</span>
+                </span>
+              </button>
+              <button value="js">
+                <span>
+                  <Javascript style={{ color: "Yellow" }} />
+                  <span>js</span>
+                </span>
+              </button>
+              <button value="Result" tabIndex={-1}>
+                <span>
+                  <SystemUpdateAlt style={{ color: "Green" }} />
+                  <span>result</span>
+                </span>
+              </button>
+              <button value="Info">
+                <span>
+                  <InfoOutlined style={{ color: "Blue" }} />
+                  <span>info</span>
+                </span>
+              </button>
+            </div>
+            <div className="CardLayout">
+              <div
+                className="BorderLayout"
+                data-name="html"
+                style={{ visibility: "hidden" }}
+              >
+                <CodeViewer
+                  hostname={hostname}
+                  code={htmlCode}
+                  language="html"
+                />
+              </div>
+              <div
+                className="BorderLayout"
+                data-name="css"
+                style={{ visibility: "hidden" }}
+              >
+                <CodeViewer hostname={hostname} code={cssCode} language="css" />
+              </div>
+              <div
+                className="BorderLayout"
+                data-name="js"
+                style={{ visibility: "hidden" }}
+              >
+                <CodeViewer hostname={hostname} code={jsCode} language="js" />
+              </div>
+              <div
+                className="BorderLayout"
+                data-name="Result"
+                style={{ visibility: "inherit" }}
+                tabIndex={-1}
+              >
+                <ResultPane
+                  path={path}
+                  hostname={hostname}
+                  htmlCode={htmlCode}
+                  cssCode={cssCode}
+                  jsCode={jsCode}
+                />
+              </div>
+              <div
+                data-name="Info"
+                style={{ textAlign: "justify", visibility: "hidden" }}
+                tabIndex={-1}
+              >
+                {info.split("\n").map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="CardLayout">
-            <div
-              className="BorderLayout"
-              data-name="html"
-              style={{ visibility: "hidden" }}
-              tabIndex={-1}
-              onFocus={focusGained}
-            >
-              <CodeViewer hostname={hostname} code={htmlCode} language="html" />
-            </div>
-            <div
-              className="BorderLayout"
-              data-name="css"
-              style={{ visibility: "hidden" }}
-              tabIndex={-1}
-              onFocus={focusGained}
-            >
-              <CodeViewer hostname={hostname} code={cssCode} language="css" />
-            </div>
-            <div
-              className="BorderLayout"
-              data-name="js"
-              style={{ visibility: "hidden" }}
-              tabIndex={-1}
-              onFocus={focusGained}
-            >
-              <CodeViewer hostname={hostname} code={jsCode} language="js" />
-            </div>
-            <div
-              className="BorderLayout"
-              data-name="Result"
-              style={{
-                visibility: "inherit",
-                paddingBlockStart: "10px",
-              }}
-              tabIndex={-1}
-              onFocus={focusGained}
-            >
-              <ResultPane
-                path={path}
-                hostname={hostname}
-                style={{ display: "block" }}
-                htmlCode={htmlCode}
-                cssCode={cssCode}
-                jsCode={jsCode}
-                iframeRef={iframeRef}
-              />
-            </div>
-            <div
-              data-name="Info"
-              style={{ textAlign: "justify", visibility: "hidden" }}
-              tabIndex={-1}
-              onFocus={focusGained}
-            >
-              {info.split("\n").map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
-            </div>
+          <div style={{ height: "0" }} id="divider"></div>
+          <div
+            className="TabbedPane"
+            style={{ height: "0" }}
+            id="bottom-container"
+          >
+            <div></div>
+            <div className="CardLayout"></div>
           </div>
         </div>
       </div>
-    );
-  } else {
-    const iframeRef = useRef<HTMLIFrameElement>(null);
-    const focusGained = (ev: React.FocusEvent) => {
-      if (iframeRef.current === null) {
-        return;
-      }
-      const iFrame: HTMLIFrameElement = iframeRef.current;
-      const cardComponent: HTMLElement = ev.currentTarget as HTMLElement;
-      iFrame.style.display =
-        cardComponent.dataset.name === "Result" ? "block" : "none";
-    };
-    return (
+      <div></div>
       <div
         className="ExamplePane BorderLayout"
         style={{
+          width: mobileView && landscapeView ? "0%" : "100%",
           visibility: mobileView && !ready ? "hidden" : "inherit",
         }}
       >
@@ -332,23 +322,19 @@ const ExamplePane = ({
                 data-name="Result"
                 style={{ visibility: "inherit" }}
                 tabIndex={-1}
-                onFocus={focusGained}
               >
                 <ResultPane
                   path={path}
                   hostname={hostname}
-                  style={{ display: "block" }}
                   htmlCode={htmlCode}
                   cssCode={cssCode}
                   jsCode={jsCode}
-                  iframeRef={iframeRef}
                 />
               </div>
               <div
                 data-name="Info"
                 style={{ textAlign: "justify", visibility: "hidden" }}
                 tabIndex={-1}
-                onFocus={focusGained}
               >
                 {info.split("\n").map((line, index) => (
                   <p key={index}>{line}</p>
@@ -358,8 +344,8 @@ const ExamplePane = ({
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default ExamplePane;
