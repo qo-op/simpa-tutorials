@@ -11,19 +11,52 @@ const description: string =
   "This tutorial shows how to use dialogs using HTML, CSS and JavaScript.";
 
 const DialogPage = ({ path }: PageProps) => {
-  const click = (ev: React.MouseEvent) => {
+  const handleClick = (ev: React.MouseEvent) => {
     const button: HTMLElement = ev.target as HTMLElement;
     const dialog: HTMLElement = button.closest(".Dialog") as HTMLElement;
     if (dialog.style.position === "fixed") {
       dialog.style.position = "";
     }
   };
-  const showMessage = (ev: React.MouseEvent) => {
+  const showMessageDialog = (ev: React.MouseEvent) => {
     (window as any).OptionPane.showMessageDialog(
-      "Hello, World!",
-      "Message Dialog",
+      "Eggs aren't supposed to be green.",
+      "Message",
       "information"
     );
+  };
+  const showConfirmDialog = async (ev: React.MouseEvent) => {
+    const textarea = document.getElementById("textarea") as HTMLTextAreaElement;
+    const choice = await (window as any).OptionPane.showConfirmDialog(
+      "Would you like green eggs and ham?",
+      "An Inane Question",
+      "yes-no"
+    );
+    if (choice === "Yes") {
+      textarea.value += "Ewww!\n";
+    } else {
+      textarea.value += "Me neither!\n";
+    }
+    textarea.scrollTop = textarea.scrollHeight;
+  };
+  const showInputDialog = async (ev: React.MouseEvent) => {
+    const textarea = document.getElementById(
+      "textarea2"
+    ) as HTMLTextAreaElement;
+    const input = await (window as any).OptionPane.showInputDialog(
+      "Complete the sentence: Green eggs and...",
+      "Customized Dialog",
+      "information",
+      null,
+      null,
+      "ham"
+    );
+    if (input) {
+      textarea.value += "Green eggs and... " + input + "!\n";
+    } else {
+      textarea.value += "Come on, finish the sentence!\n";
+    }
+    textarea.scrollTop = textarea.scrollHeight;
   };
   return (
     <Layout path={path}>
@@ -57,20 +90,20 @@ const DialogPage = ({ path }: PageProps) => {
     </div>
   </div>
   <!-- dialog content -->
-  <div class="BoxLayout"
-       data-axis="page-axis"
-       data-alignment-x="stretch"
-       style="gap: .5em;
+  <div class="BorderLayout"
+       style="--gap: .5em;
               padding: .5em;">
     <!-- dialog text -->
     <span>
       This is a dialog!
     </span>
-    <!-- button pane -->
-    <div class="FlowLayout"
-         style="gap: .5em;">
-      <!-- ok button -->
-      <button>OK</button>
+    <div class="PageEnd">
+      <!-- button pane -->
+      <div class="FlowLayout"
+           style="gap: .5em;">
+        <!-- ok button -->
+        <button>OK</button>
+      </div>
     </div>
   </div>
 </div>
@@ -102,14 +135,16 @@ const DialogPage = ({ path }: PageProps) => {
               </div>
             </div>
             <div
-              className="BoxLayout"
-              data-axis="page-axis"
-              data-alignment-x="stretch"
-              style={{ gap: ".5em", padding: ".5em" }}
+              className="BorderLayout"
+              style={
+                { "--gap": ".5em", padding: ".5em" } as React.CSSProperties
+              }
             >
               <span>This is a dialog!</span>
-              <div className="FlowLayout" style={{ gap: ".5em" }}>
-                <button>OK</button>
+              <div className="PageEnd">
+                <div className="FlowLayout" style={{ gap: ".5em" }}>
+                  <button>OK</button>
+                </div>
               </div>
             </div>
           </div>
@@ -123,14 +158,16 @@ const DialogPage = ({ path }: PageProps) => {
               </div>
             </div>
             <div
-              className="BoxLayout"
-              data-axis="page-axis"
-              data-alignment-x="stretch"
-              style={{ gap: ".5em", padding: ".5em" }}
+              className="BorderLayout"
+              style={
+                { "--gap": ".5em", padding: ".5em" } as React.CSSProperties
+              }
             >
               <span>This is a dialog!</span>
-              <div className="FlowLayout" style={{ gap: ".5em" }}>
-                <button onClick={click}>OK</button>
+              <div className="PageEnd">
+                <div className="FlowLayout" style={{ gap: ".5em" }}>
+                  <button onClick={handleClick}>OK</button>
+                </div>
               </div>
             </div>
           </div>
@@ -180,16 +217,16 @@ const DialogPage = ({ path }: PageProps) => {
   <script src="https://qo-op.github.io/simpa/simpa.js">
   </script>
   <script>
-    function showMessage(event) {
+    function handleClick(event) {
       OptionPane.showMessageDialog(
-        "Hello, World!",
-        "Message Dialog",
+        "Eggs aren't supposed to be green.",
+        "Message",
         "information");
     }
   </script>
 </head>
 <body class="Frame CenterLayout">
-  <button onclick="showMessage(event);">
+  <button onclick="handleClick(event);">
     Click me!
   </button>
 </body>
@@ -199,17 +236,164 @@ const DialogPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we have an HTML page with a button. When the button is
-        clicked, the <code>showMessage()</code> function is called, which
+        clicked, the <code>handleClick()</code> function is called, which
         triggers the <code>OptionPane.showMessageDialog()</code> method. A modal
-        dialog box will appear with the message "Hello, World!" and an OK
-        button. The dialog will be centered on the screen, and the title will be
-        "Message Dialog".
+        dialog box will appear with the message "Eggs aren't supposed to be
+        green." and an OK button.
       </p>
       <div
         className="CenterLayout"
         style={{ height: "100px", backgroundColor: "LightGray" }}
       >
-        <button onClick={showMessage}>Click me!</button>
+        <button onClick={showMessageDialog}>Click me!</button>
+      </div>
+      <hr />
+      <h2>OptionPane's showConfirmDialog()</h2>
+      <p>
+        The <code>showConfirmDialog()</code> method in OptionPane is a useful
+        feature that enables developers to display a dialog box with a message
+        and customizable buttons to prompt the user for confirmation or choice.
+        By calling this method and providing the necessary parameters such as
+        the message content, title, message type, and button options, a modal
+        dialog box is created and presented to the user.
+      </p>
+      <p>
+        Here's an example of how to use the <code>showConfirmDialog()</code>{" "}
+        method in OptionPane:
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
+  <script>
+    async function handleClick(event) {
+      const textarea = document.getElementById("textarea");
+      const choice = await OptionPane.showConfirmDialog(
+        "Would you like green eggs and ham?",
+        "An Inane Question",
+        "yes-no");
+      if (choice === "Yes") {
+        textarea.value += "Ewww!\\n";
+      } else {
+        textarea.value += "Me neither!\\n";
+      }
+      textarea.scrollTop = textarea.scrollHeight;
+    }
+  </script>
+</head>
+<body class="Frame CenterLayout">
+  <div class="BoxLayout"
+       data-axis="page-axis"
+       style="gap: .5em;">
+    <button onclick="handleClick(event);">
+      Click me!
+    </button>
+    <textarea rows="3"
+              cols="40"
+              id="textarea"></textarea>
+  </div>
+</body>
+</html>
+`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        In this example, when the button is clicked, a modal dialog box will
+        appear with the message 'Would you like green eggs and ham?' and 'Yes'
+        and 'No' buttons. If the user clicks 'Yes', the text 'Ewww!' will be
+        printed to the textarea. If the user clicks 'No', the text 'Me neither!'
+        will be printed to the textarea.
+      </p>
+      <div
+        className="CenterLayout"
+        style={{ height: "100px", backgroundColor: "LightGray" }}
+      >
+        <div
+          className="BoxLayout"
+          data-axis="page-axis"
+          style={{ gap: ".5em" }}
+        >
+          <button onClick={showConfirmDialog}>Click me!</button>
+          <textarea rows={3} cols={40} id="textarea"></textarea>
+        </div>
+      </div>
+      <hr />
+      <h2>OptionPane's showInputDialog()</h2>
+      <p>
+        The <code>showInputDialog()</code> method in OptionPane is a convenient
+        feature that allows developers to display a dialog box with a message
+        and a combo box or a text input field, prompting the user for input.
+      </p>
+      <p>
+        Here's an example of how to use the <code>showInputDialog()</code>{" "}
+        method in OptionPane:
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
+  <script>
+    async function handleClick(event) {
+      const textarea = document.getElementById("textarea");
+      const input = await OptionPane.showInputDialog(
+        "Complete the sentence: Green eggs and...",
+        "Customized Dialog",
+        "information",
+        null,
+        null,
+        "ham");
+      if (input) {
+        textarea.value = "Green eggs and... " + input + "!\\n";
+      } else {
+        textarea.value = "Come on, finish the sentence!\\n";
+      }
+      textarea.scrollTop = textarea.scrollHeight;
+    }
+  </script>
+</head>
+<body class="Frame CenterLayout">
+  <div class="BoxLayout"
+       data-axis="page-axis"
+       style="gap: .5em;">
+    <button onclick="handleClick(event);">
+      Click me!
+    </button>
+    <textarea rows="3"
+              cols="40"
+              id="textarea"></textarea>
+  </div>
+</body>
+</html>
+`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        In this example, when the button is clicked, a modal dialog box will
+        appear with the message 'Complete the sentence: Green eggs and...' and
+        the user is prompted to complete the sentence in the input field.
+      </p>
+      <div
+        className="CenterLayout"
+        style={{ height: "100px", backgroundColor: "LightGray" }}
+      >
+        <div
+          className="BoxLayout"
+          data-axis="page-axis"
+          style={{ gap: ".5em" }}
+        >
+          <button onClick={showInputDialog}>Click me!</button>
+          <textarea rows={3} cols={40} id="textarea2"></textarea>
+        </div>
       </div>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>

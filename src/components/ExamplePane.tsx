@@ -317,7 +317,6 @@ const ExamplePane = ({
           <div id="divider"></div>
           <div
             className="TabbedPane"
-            data-tab-placement="page-end"
             style={{ height: "50%" }}
             id="bottom-container"
           >
