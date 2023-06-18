@@ -18,6 +18,13 @@ const DialogPage = ({ path }: PageProps) => {
       dialog.style.position = "";
     }
   };
+  const showMessage = (ev: React.MouseEvent) => {
+    (window as any).OptionPane.showMessageDialog(
+      "Hello, World!",
+      "Message Dialog",
+      "information"
+    );
+  };
   return (
     <Layout path={path}>
       <h1
@@ -131,39 +138,79 @@ const DialogPage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Creating simple dialogs with OptionPane</h2>
+      <h2>Creating Simple Dialogs with OptionPane</h2>
       <p>
         <code>OptionPane</code> is a class that provides a convenient way to
         display various types of dialog boxes, including information messages,
         warning messages, error messages, and input prompts, within an
-        application. With OptionPane, developers can easily create and manage
-        these dialog boxes without having to build them from scratch.
+        application.
       </p>
       <p>
-        To use <code>OptionPane</code>, you typically start by calling one of
-        its static methods, such as <code>showMessageDialog()</code>,{" "}
+        To use <code>OptionPane</code>, you start by calling one of its static
+        methods, such as <code>showMessageDialog()</code>,{" "}
         <code>showConfirmDialog()</code>, or <code>showInputDialog()</code>,
         passing the necessary parameters to specify the dialog's content, title,
         icon, buttons, and other options.
       </p>
-      <p>
-        The <code>OptionPane</code> class offers a wide range of dialog box
-        options and customization capabilities. You can display text messages,
-        display different types of icons to represent the dialog's purpose,
-        provide multiple choices for confirmation or selection, and retrieve
-        input from the user.
-      </p>
-      <p>
-        Overall, <code>OptionPane</code> simplifies the process of displaying
-        standard dialog boxes in SPA applications. It provides a straightforward
-        and flexible way to interact with users, present information, and gather
-        input, enhancing the user experience and making it easier to communicate
-        with the users of your application.
-      </p>
       <hr />
-      <h2>showMessageDialog</h2>
-      <p></p>
-      <p></p>
+      <h2>OptionPane's showMessageDialog()</h2>
+      <p>
+        The <code>showMessageDialog()</code> method in <code>OptionPane</code>{" "}
+        is a convenient way to display a dialog box with a message and an OK
+        button. By calling this method and providing the necessary parameters,
+        such as the message content, title, and message type, a modal dialog box
+        is created and displayed to the user. The{" "}
+        <code>showMessageDialog()</code> method allows developers to quickly
+        inform users about important information or display notifications,
+        without the need for manual creation and management of dialog
+        components, making it an efficient way to communicate messages within a
+        SPA application.
+      </p>
+      <p>
+        Here's an example of how to use the <code>showMessageDialog()</code>{" "}
+        method in OptionPane:
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
+  <script>
+    function showMessage(event) {
+      OptionPane.showMessageDialog(
+        "Hello, World!",
+        "Message Dialog",
+        "information");
+    }
+  </script>
+</head>
+<body class="Frame CenterLayout">
+  <button onclick="showMessage(event);">
+    Click me!
+  </button>
+</body>
+</html>
+`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        In this example, we have an HTML page with a button. When the button is
+        clicked, the <code>showMessage()</code> function is called, which
+        triggers the <code>OptionPane.showMessageDialog()</code> method. A modal
+        dialog box will appear with the message "Hello, World!" and an OK
+        button. The dialog will be centered on the screen, and the title will be
+        "Message Dialog".
+      </p>
+      <div
+        className="CenterLayout"
+        style={{ height: "100px", backgroundColor: "LightGray" }}
+      >
+        <button onClick={showMessage}>Click me!</button>
+      </div>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>
   );

@@ -243,7 +243,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>Example with row headers</h2>
+      <h2>Example with Row Headers</h2>
       <p>
         Row headers serve as labels or identifiers and provide a way to visually
         distinguish and reference each row in the table. They often contain

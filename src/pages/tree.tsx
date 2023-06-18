@@ -131,9 +131,7 @@ const TreePage = ({ path }: PageProps) => {
       </div>
       <p></p>
       <hr />
-      <h2>
-        The <code>data-closed</code> attribute
-      </h2>
+      <h2>The Closed Attribute</h2>
       <p>
         The <code>data-closed</code> attribute serves the purpose of controlling
         the visibility of leaf nodes within a branch node. By toggling this

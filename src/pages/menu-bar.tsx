@@ -239,7 +239,7 @@ const MenuBarPage = ({ path }: PageProps) => {
       </div>
       <p>Try clicking a menu in the menu bar above.</p>
       <hr />
-      <h2>Example with a submenu</h2>
+      <h2>Example with a Submenu</h2>
       <p>
         You can nest menus inside menus to create a hierarchical structure with
         multiple levels.
