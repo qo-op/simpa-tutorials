@@ -214,7 +214,7 @@ const ExamplePane = ({
             </div>
             <div
               data-name="Info"
-              style={{ visibility: "hidden" }}
+              style={{ textAlign: "justify", visibility: "hidden" }}
               tabIndex={-1}
               onFocus={focusGained}
             >
@@ -354,7 +354,7 @@ const ExamplePane = ({
               </div>
               <div
                 data-name="Info"
-                style={{ visibility: "hidden" }}
+                style={{ textAlign: "justify", visibility: "hidden" }}
                 tabIndex={-1}
                 onFocus={focusGained}
               >

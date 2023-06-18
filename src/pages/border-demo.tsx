@@ -189,6 +189,10 @@ const BorderDemoPage = ({ path, location }: PageProps) => {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of the this example is to demonstrate different types of borders and their usage in a SPA application.
+This example creates a SPA application with multiple panes, each showcasing a different category of borders: simple borders, matte borders, titled borders, and compound borders.
+Each pane contains various components with different border styles applied to them, such as line borders, etched borders, bevel borders, matte borders, and compound borders.
+Running this example will display the SPA application with the different border examples, allowing users to see the visual representation of each border type and its effects on the components.
 `}
     />
   );
