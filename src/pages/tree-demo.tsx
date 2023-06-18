@@ -157,20 +157,21 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-#top-container,
-#bottom-container {
-  @media (pointer: coarse) {
+@media (pointer: coarse) {
+  #top-container,
+  #bottom-container {
     height: calc(50% - 16px);
   }
-  @media (pointer: fine) {
-    height: calc(50% - 4px);
-  }
-}
-#divider {
-  @media (pointer: coarse) {
+  #divider {
     height: 32px;
   }
-  @media (pointer: fine) {
+}
+@media (pointer: fine) {
+  #top-container,
+  #bottom-container {
+    height: calc(50% - 4px);
+  }
+  #divider {
     height: 8px;
   }
 }
