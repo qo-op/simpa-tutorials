@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "BorderDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Learn how to create an HTML version of Oracle's BorderDemo example using simpa. This comprehensive tutorial demonstrates different types of borders and their usage in a single-page application (SPA). Explore various border styles, including simple borders, matte borders, titled borders, and compound borders, applied to different components. Enhance your understanding of line borders, etched borders, bevel borders, and matte borders, and observe their visual effects on the components. Follow step-by-step instructions to run the example and explore the diverse range of border options available. Elevate your web development skills and master the art of creating visually appealing borders in your applications.";
 const id = "border-demo";
 
 const BorderDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const BorderDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

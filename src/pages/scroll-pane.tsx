@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Scrollable Panes with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use scrollable panes (ScrollPane) using HTML and CSS.";
+  "Discover how to implement scrollable panes in HTML and CSS to enhance the usability of components with overflowing content. Learn how ScrollPane provides a scrollable view of a component or a group of components, allowing users to navigate vertically and/or horizontally to access the complete content. Explore an example code snippet that demonstrates the usage of ScrollPane, where a div container with the ScrollPane class encapsulates a paragraph with lengthy text, showcasing the scrolling functionality. Find out how ScrollPane improves the user experience by automatically adding scrollbars when the content exceeds the visible area. Additionally, learn about the overlay attribute that, in some browsers, enables scrollbars to overlay the content without affecting its dimensions.";
 
 const ScrollPanePage = ({ path }: PageProps) => {
   return (

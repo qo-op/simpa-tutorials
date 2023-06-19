@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Dialogs with HTML, CSS and JavaScript";
 const description: string =
-  "This tutorial shows how to use dialogs using HTML, CSS and JavaScript.";
+  "Learn how to effectively use dialogs in HTML, CSS, and JavaScript to enhance user interaction and display important information. Understand the purpose of dialogs as secondary windows that appear on top of the main application, commonly used for input prompts, messages, and additional information. Explore a practical example showcasing the creation of a basic dialog using HTML and CSS. Discover the default behavior of Dialog, allowing users to move the dialog by clicking and dragging its title bar. Dive into the OptionPane class, which provides a convenient way to display various types of dialog boxes, including information messages, warnings, errors, and input prompts. Gain insights into the showMessageDialog() method, enabling developers to quickly inform users and display notifications without manual creation and management of dialog components. Explore the showConfirmDialog() method to prompt users for confirmation or choice with customizable buttons. Discover the showInputDialog() method to interactively gather user input using combo boxes or text fields.";
 
 const DialogPage = ({ path }: PageProps) => {
   const handleClick = (ev: React.MouseEvent) => {
@@ -124,7 +124,7 @@ const DialogPage = ({ path }: PageProps) => {
         title bar.
       </p>
       <div className="CenterLayout">
-        <div className="LayeredPane">
+        <div className="BorderLayout">
           <div className="Dialog BorderLayout" style={{ visibility: "hidden" }}>
             <div className="PageStart">
               <div

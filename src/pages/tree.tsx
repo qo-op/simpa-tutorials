@@ -12,7 +12,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Trees with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use trees (Tree) using HTML, CSS and JavaScript.";
+  "Learn how to effectively use trees in HTML and CSS to represent and manipulate hierarchical data. Discover the Tree component, which organizes data in a hierarchical structure consisting of nodes. Each node represents an element in the hierarchy, and nodes can have child nodes, forming a tree-like structure. Dive into a practical example showcasing the creation of a simple tree using HTML and CSS. Explore the utilization of the material icons library to enhance the visual representation of tree nodes. Gain insights into the data-closed attribute, which controls the visibility of leaf nodes within branch nodes, enabling convenient collapsing and expanding. Explore the option of utilizing JavaScript code to dynamically modify the data-closed attribute based on user interaction.";
 
 const TreePage = ({ path }: PageProps) => {
   return (

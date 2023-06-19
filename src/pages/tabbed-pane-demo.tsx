@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "TabbedPaneDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's TabbedPaneDemo example. This example showcases a tabbed pane implementation in a single-page application (SPA). The program demonstrates the use of multiple tabs, each representing a distinct card with text labels and associated icons. Explore this example to learn how to create interactive tabbed interfaces in HTML applications using simpa.";
 const id = "tabbed-pane-demo";
 
 const TabbedPaneDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const TabbedPaneDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

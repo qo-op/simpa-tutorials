@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "ScrollPaneDemo";
-const description: string = `An HTML version of Oracle's ScrollDemo2 example`;
+const description: string =
+  "An HTML version of Oracle's ScrollPaneDemo example. This example showcases the functionality of scrolling within a graphical user interface. The program creates a panel with a drawing area where circles can be drawn by clicking the left mouse button. Circles are represented as div elements and displayed using different colors. Clicking the right mouse button clears the drawing area. The panel is placed inside a scroll pane, allowing users to scroll and view the entire drawing area if it exceeds the visible area. The program uses mouse event listeners to handle circle placement and clearing, dynamically adjusts the size of the drawing area, and updates the scroll pane accordingly. Explore this example to learn how to implement scrolling functionality and interactive drawing areas in HTML applications.";
 const id = "scroll-pane-demo";
 
 const ScrollPaneDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const ScrollPaneDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ScrollDemo2 example, using simpa.} -->
 <!DOCTYPE html>
 <html>
 <head>

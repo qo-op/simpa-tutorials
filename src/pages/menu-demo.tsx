@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "MenuDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's MenuDemo example. This example showcases the creation and functionality of menus, submenus, and various types of menu items, including text-only items, items with icons, radio button items, and check box items. The application provides a single-page application (SPA) that allows users to interact with the menu items and displays information about the menu events triggered by the user's interactions.";
 const id = "menu-demo";
 
 const MenuDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

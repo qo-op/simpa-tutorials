@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "ComboBoxDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Explore an HTML version of Oracle's ComboBoxDemo example implemented using simpa. Immerse yourself in this captivating demonstration that showcases the usage of combo boxes in a single-page application (SPA) environment. Experience the power of interactivity as users select pet names from the combo box and witness the dynamic display of corresponding pet images. Delve into the inner workings of this example to learn how to set up components, handle selection events from the combo box, and seamlessly update the displayed image based on the selected pet. Discover the possibilities of creating engaging user experiences and providing dynamic content updates in SPAs. Elevate your web development projects by mastering the art of combo box integration and enhancing user interactions in your applications.";
 const id = "combo-box-demo";
 
 const ComboBoxDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const ComboBoxDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

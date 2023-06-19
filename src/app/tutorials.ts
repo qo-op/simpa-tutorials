@@ -51,11 +51,6 @@ export const cssComponentsTutorials = [
     folder: "CSS Components",
   },
   {
-    text: "How to Use Layered Panes",
-    path: "/layered-pane/",
-    folder: "CSS Components",
-  },
-  {
     text: "How to Use Scrollable Panes",
     path: "/scroll-pane/",
     folder: "CSS Components",

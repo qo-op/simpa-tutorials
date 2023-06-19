@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "CardLayoutDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Explore an HTML version of Oracle's CardLayoutDemo example implemented using simpa. This tutorial focuses on the usage of the CardLayout layout manager in a single-page application (SPA). Discover how to create a dynamic application with multiple panels, or 'cards,' that can be switched using a combo box. Each card represents a specific layout with unique components such as buttons and a text field. By selecting different cards, you can observe the CardLayout seamlessly transitioning between them. Enhance your understanding of layout management by studying the behavior of CardLayout and its ability to control component visibility. Run the example and witness the smooth switching of cards based on user interaction. Elevate your web development skills and master the implementation of CardLayout in SPA applications.";
 const id = "card-layout-demo";
 
 const CardLayoutDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const CardLayoutDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

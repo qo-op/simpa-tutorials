@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "TreeDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's TreeDemo example. This example showcases a single-page application (SPA) that displays a tree structure with selectable nodes and associated HTML content. The application provides a split-pane layout with a tree view at the top and an HTML view at the bottom. Users can expand or collapse tree nodes and view corresponding HTML content. Explore this example to learn how to create interactive tree structures and display associated content in HTML applications using simpa.";
 const id = "tree-demo";
 
 const TreeDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "RadioButtonDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's RadioButtonDemo example. This example demonstrates the usage of radio buttons in a single-page application (SPA) and dynamically displays corresponding images based on the selected option. The application includes a set of radio buttons representing different animals: bird, cat, dog, rabbit, and pig. When a radio button is selected, an event listener triggers, changing the image displayed in the central picture. Explore this example to learn how to implement radio buttons and dynamically update content based on user selection in HTML applications.";
 const id = "radio-button-demo";
 
 const RadioButtonDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const RadioButtonDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

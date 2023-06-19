@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Box Layouts with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use box layouts (BoxLayout) using HTML and CSS.";
+  "Discover how to effectively utilize Box Layouts in HTML and CSS to arrange components in a single row or column. Learn how BoxLayout can be applied to create horizontal or vertical layouts, enabling you to structure components based on your specific requirements. Explore examples showcasing the alignment options, such as stretching, starting, ending, and centering components within the layout. Additionally, learn how to create component gaps and gain insights into using Simpa CSS Layouts to enhance your web designs.";
 
 const BorderLayoutPage = ({ path }: PageProps) => {
   return (

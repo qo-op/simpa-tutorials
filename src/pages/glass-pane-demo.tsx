@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "GlassPaneDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's GlassPaneDemo example. This example demonstrates the usage of a glass pane in a single-page application (SPA). It includes a checkbox labeled 'Glass pane 'visible'.' When the checkbox is selected, a red circle is painted on the glass pane, which is an overlay covering both the menu bar and the content pane.";
 const id = "glass-pane-demo";
 
 const GlassPaneDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const GlassPaneDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +35,7 @@ const GlassPaneDemoPage = ({ path, location }: PageProps) => {
          style="padding: .25em;">
       <div class="BorderLayout"
            style="border: 1px solid gray;">
-        <div class="LayeredPane">
+        <div class="BorderLayout">
           <div class="BorderLayout">
             <div class="PageStart">
               <!-- menu bar -->

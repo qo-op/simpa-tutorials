@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "BorderLayoutDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Learn how to create an HTML version of Oracle's BorderLayoutDemo example using simpa. This tutorial focuses on the implementation of the BorderLayout layout manager in a single-page application (SPA). Explore the functionality of BorderLayout by adding components, specifically buttons, to a container in different regions. Witness the layout behavior of BorderLayout as the buttons are arranged in the PAGE_START, CENTER, LINE_START, PAGE_END, and LINE_END regions. Run the example to observe the visual representation of the SPA application with buttons positioned according to the BorderLayout regions. Enhance your understanding of layout management and improve your web development skills with this comprehensive example.";
 const id = "border-layout-demo";
 
 const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const BorderLayoutDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

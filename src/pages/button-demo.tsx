@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "ButtonDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Discover an HTML version of Oracle's ButtonDemo example implemented using simpa. This tutorial showcases the implementation of button components in a single-page application (SPA) environment. Experience the power and versatility of buttons as essential user interface elements. Explore a panel container that features three buttons, each with unique text and icons. Learn how to configure buttons with mnemonic keys and action commands, enhancing accessibility and user interaction. Dive into event handling as event listeners respond to button clicks, dynamically enabling or disabling buttons based on their states. Acquire practical knowledge on managing button behavior and integrating event-driven functionality into your SPA development. Elevate your skills in creating engaging and interactive user interfaces with the ButtonDemo.";
 const id = "button-demo";
 
 const ButtonDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

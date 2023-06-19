@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Scrollable Tables with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use scrollable tables (ScrollTable) using HTML and CSS.";
+  "Explore how to effectively use scrollable tables in HTML and CSS to handle large amounts of data within limited space. Learn about ScrollTable, a powerful component that combines the functionality of a table with scrollbars, enabling users to view and interact with sizable tables. Discover how ScrollTable provides vertical and/or horizontal scrolling when the content exceeds the dimensions of the container. The fixed column and row headers in ScrollTable ensure consistent visibility, allowing users to easily identify the associated data points even while scrolling. Dive into a practical example showcasing the implementation of a ScrollTable using a div container and a table with specified column names and data. Gain insights on the proper arrangement of elements, including the tbody for table data and the thead for column headers, to ensure optimal ScrollTable functionality. Witness how scrollbars become visible only when the content extends beyond the visible area. Additionally, explore the option of using row headers to enhance the table by providing labels or identifiers for each row.";
 
 const ScrollTablePage = ({ path }: PageProps) => {
   return (

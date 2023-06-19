@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Center Layouts with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use center layouts (CenterLayout) using HTML and CSS.";
+  "Discover how to effectively utilize Center Layouts in HTML and CSS to center components both horizontally and vertically within a container. Learn how to implement CenterLayout, a powerful layout manager, by creating a container using a div element and setting its class attribute to CenterLayout. Explore a practical example where a button is centered using CenterLayout, providing a visually appealing user interface.";
 
 const CenterLayoutPage = ({ path }: PageProps) => {
   return (

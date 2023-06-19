@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Split Panes with HTML, CSS and JavaScript";
 const description: string =
-  "This tutorial shows how to use split panes (SplitPane) using HTML, CSS and JavaScript.";
+  "Learn how to use split panes with HTML, CSS, and JavaScript to create resizable and interactive areas in your web application. SplitPane is a versatile component that allows you to divide a container into two resizable areas with a draggable divider. This tutorial provides step-by-step instructions on implementing horizontal and vertical split panes, adjusting panel widths, and handling user interactions. Enhance your user interface and provide a seamless experience with split panes.";
 
 const SplitPanePage = ({ path }: PageProps) => {
   return (

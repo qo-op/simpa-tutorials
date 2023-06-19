@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "FlowLayoutDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Discover an HTML version of Oracle's FlowLayoutDemo example implemented using simpa. This tutorial focuses on the utilization of the FlowLayout layout manager in a single-page application (SPA). Experience the dynamic arrangement of components in a flow-like manner, where a series of buttons are positioned based on available space. Explore the flexibility of FlowLayout in adapting to different screen sizes and orientations. Additionally, experiment with the component orientation options, allowing you to choose between left-to-right or right-to-left flow. With a simple click on the 'Apply component orientation' button, observe how the layout seamlessly adjusts its flow direction. Enhance your understanding of layout management and gain practical insights into implementing FlowLayout in SPA applications.";
 const id = "flow-layout-demo";
 
 const FlowLayoutDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const FlowLayoutDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

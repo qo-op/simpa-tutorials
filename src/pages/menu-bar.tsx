@@ -13,7 +13,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Menu Bars with HTML, CSS and JavaScript";
 const description: string =
-  "This tutorial shows how to use menu bars (MenuBar) using HTML, CSS and JavaScript.";
+  "Learn how to use menu bars with HTML, CSS, and JavaScript to create interactive and user-friendly web pages. This tutorial covers the implementation of MenuBar components, drop-down menus, and nested menus. Discover how to design and customize menus, add menu items, create submenus, and handle user interactions. Enhance the navigation and functionality of your website with menu bars.";
 
 const MenuBarPage = ({ path }: PageProps) => {
   return (

@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Borders with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use borders using HTML and CSS.";
+  "Discover the power of borders in HTML and CSS to enhance the visual appearance and user experience of your web applications. Learn how borders can be applied to various HTML elements such as <div>, <span>, <label>, and <p>, among others. Explore different border types, including Raised Etched Border, Lowered Etched Border, Raised Bevel Border, and Lowered Bevel Border, each creating unique effects to make your components stand out. Dive into TitledBorder, which adds a titled label to a component's border, improving organization and readability. Explore examples of using TitledBorder with different title alignments, such as center justification. Unlock the versatility of CompoundBorder, enabling you to combine multiple border styles to create composite borders with various stacking and nesting options.";
 
 const BorderPage = ({ path }: PageProps) => {
   const handleChange = (ev: React.ChangeEvent) => {

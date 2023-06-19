@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Tabbed Panes with HTML, CSS and JavaScript";
 const description: string =
-  "This tutorial shows how to use tabbed panes (TabbedPane) using HTML, CSS and JavaScript.";
+  "Discover how to use tabbed panes with HTML, CSS, and JavaScript to create organized and interactive interfaces in your web application. TabbedPane is a versatile component that enables users to switch between different panels by selecting corresponding tabs. This comprehensive tutorial provides step-by-step instructions on implementing tabbed interfaces, creating multiple tabs, managing tab content, and enhancing user navigation. Elevate your application's user experience and streamline functionality with tabbed panes.";
 
 const TabbedPanePage = ({ path }: PageProps) => {
   return (

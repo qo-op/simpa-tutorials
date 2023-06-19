@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Grid Layouts with Grid Constraints";
 const description: string =
-  "This tutorial shows how to use grid layouts (GridLayout) with Grid Constraints using HTML and CSS.";
+  "Explore the power of CSS Grid Layout and learn how to create dynamic and responsive two-dimensional grid-based layouts. Discover how to activate the grid layout by applying the display: grid property to the container and define the size and proportions of rows and columns using flexible units like fr, percentages, or fixed values. Learn to control the placement and spanning of grid items within the grid using grid-specific properties like grid-row and grid-column. Dive into an example showcasing the usage of CSS Grid Layout to create a panel with multiple buttons, and understand how to apply GridConstraints layout to expand the buttons horizontally within their cells.";
 
 const CSSGridLayoutPage = ({ path }: PageProps) => {
   return (

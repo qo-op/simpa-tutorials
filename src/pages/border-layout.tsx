@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Border Layouts with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use border layouts (BorderLayout) using HTML and CSS.";
+  "Learn how to effectively use Border Layouts in HTML and CSS to organize and arrange components within a container. Understand the five regions of BorderLayout, such as PageStart, PageEnd, LineStart, LineEnd, and Center, and how they determine the placement of components. Explore examples and techniques to create responsive user interfaces with BorderLayout, including creating gaps between components and incorporating Simpa CSS Layouts for enhanced styling.";
 
 const BorderLayoutPage = ({ path }: PageProps) => {
   return (

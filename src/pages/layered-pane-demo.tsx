@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "LayeredPaneDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's LayeredPaneDemo example. This example showcases the use of a layered pane to display and manipulate layered components in a single-page application (SPA). It creates a layered pane with colored panels and a Duke icon that can be moved using the mouse cursor. Users can also change the layer of the Duke icon using a combo box.";
 const id = "layered-pane-demo";
 
 const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,8 +64,8 @@ const LayeredPaneDemoPage = ({ path, location }: PageProps) => {
         </div>
         <div class="TitledBorder">
           <span>Move the Mouse To Move Duke</span>
-          <div class="LayeredPane"
-               style="width: 300px;
+          <div style="position: relative;
+                      width: 300px;
                       height: 300px;"
                 onpointerdown="handlePointerDown(event);"
                 onpointermove="handlePointerMove(event);"">

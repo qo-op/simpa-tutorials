@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "TableDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's TableDemo example. This example showcases a scrollable table implementation using simpa. The program defines a table with rows and columns, displaying specific data in each cell. The table is wrapped inside a ScrollTable to handle large amounts of data efficiently. Explore this example to learn how to create interactive and scrollable tables in HTML applications with simpa.";
 const id = "table-demo";
 
 const TableDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const TableDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

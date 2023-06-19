@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "CheckBoxDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Explore an HTML version of Oracle's CheckBoxDemo example implemented using simpa. This tutorial focuses on the usage of checkboxes in a single-page application (SPA) environment. Dive into a captivating demonstration that presents a window with four checkboxes: 'Chin,' 'Glasses,' 'Hair,' and 'Teeth.' Witness the dynamic behavior as the program updates a string representation of the selected accessories based on the user's checkbox selections. Experience the magic of visual transformation as the program dynamically updates and displays an image of a 'geek' character based on the selected accessories. Delve into the event handling mechanism that drives these updates, gaining insight into checkbox event management in SPAs. Acquire practical knowledge on integrating checkboxes, managing state changes, and leveraging event-driven functionality to create engaging user experiences within your SPA development endeavors.";
 const id = "check-box-demo";
 
 const CheckBoxDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const CheckBoxDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

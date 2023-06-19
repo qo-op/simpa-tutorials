@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "FileChooserDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's FileChooserDemo example. This example demonstrates the usage of file selection in a single-page application (SPA). It includes an 'Open a File...' button that opens a file dialog for the user to select a file. The selected file's name is logged in the application.";
 const id = "file-chooser-demo";
 
 const FileChooserDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const FileChooserDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

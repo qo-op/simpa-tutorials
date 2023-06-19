@@ -99,7 +99,7 @@ const CodeEditor = ({
       onClick={click}
       id={id || ""}
     >
-      <div className="LayeredPane">
+      <div className="BorderLayout">
         <textarea
           spellCheck="false"
           onFocus={focusGained}

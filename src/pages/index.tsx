@@ -5,7 +5,7 @@ import React from "react";
 
 const title: string = "Introduction to Simpa";
 const description: string =
-  "This series of tutorial shows how to use Simpa layouts and components using HTML, CSS and JavaScript.";
+  "Learn how to use Simpa layouts and components to create Single-Page Applications (SPAs) with this tutorial series. Discover the basics of Simpa and explore topics such as layout managers, borders, dialogs, menus, split panes, tabbed panes, tables, and trees. Each concept is explained using practical examples and code snippets.";
 
 const IndexPage = ({ path }: PageProps) => {
   return (
@@ -29,8 +29,8 @@ const IndexPage = ({ path }: PageProps) => {
       <ul>
         <li>How to use layout managers to arrange components on the screen</li>
         <li>
-          The fundamentals of Simpa composite components, such as menus, split
-          panes, tabbed panes, tables, and trees
+          The fundamentals of Simpa components, such as borders, dialogs, menus,
+          split panes, tabbed panes, tables, and trees
         </li>
       </ul>
       <p>

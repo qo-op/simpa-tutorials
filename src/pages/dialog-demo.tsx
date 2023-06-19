@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "DialogDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's DialogDemo example using simpa. This example creates a single-page application (SPA) for demonstrating different types of dialogs. It showcases simple message dialogs, more dialogs, and dialogs with icons. The code uses OptionPane to handle dialog creation and display. Explore this example to learn how to implement and customize dialogs in your own applications.";
 const id = "dialog-demo";
 
 const DialogDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const DialogDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

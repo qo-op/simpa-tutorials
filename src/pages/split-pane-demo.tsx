@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "SplitPaneDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's SplitPaneDemo example. This example showcases a split pane with a scrollable list of image names on one side and an image display area on the other side. The program allows users to select an image name from the list, and the corresponding image is dynamically displayed. Explore this example to learn how to implement split panes and interactive image displays in HTML applications.";
 const id = "split-pane-demo";
 
 const SplitPaneDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

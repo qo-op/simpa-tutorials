@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "ColorChooserDemo";
-const description: string = `An HTML version of Oracle's ${title}2 example`;
+const description: string =
+  "Discover an HTML version of Oracle's ColorChooserDemo2 example implemented using simpa. Immerse yourself in this captivating demonstration that showcases the usage of color choosers in a single-page application (SPA) environment. Experience the power of interactivity as users are empowered to choose both the background color and the text color. Witness the seamless integration of a color chooser for the background color selection and a collection of vibrant crayon buttons for text color selection. See the magic unfold as the chosen colors are dynamically displayed in a custom preview panel. Explore the inner workings of this example to learn how to handle user interactions with the color chooser, update the SPA application based on color selections, and provide a visually appealing preview of the chosen colors. Unlock the secrets of effective color management in SPAs and elevate your web development projects to new heights.";
 const id = "color-chooser-demo";
 
 const ColorChooserDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const ColorChooserDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title}2 example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "BoxLayoutDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Discover how to create an HTML version of Oracle's BoxLayoutDemo example using simpa. This tutorial focuses on the implementation of the BoxLayout layout manager in a single-page application (SPA). Learn how to create a vertical BoxLayout container and add buttons to it in a sequential manner. Witness the visual representation of the SPA application with buttons arranged vertically using BoxLayout. Enhance your understanding of layout management by exploring the behavior of BoxLayout and its impact on component positioning. Run the example to observe the buttons dynamically adapting to the container's dimensions. Strengthen your web development skills with this comprehensive example and elevate your proficiency in layout management.";
 const id = "box-layout-demo";
 
 const BoxLayoutDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const BoxLayoutDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

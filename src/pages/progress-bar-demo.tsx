@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "ProgressBarDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's ProgressBarDemo example. This example showcases the implementation of a progress bar in a single-page application (SPA). The application includes a start button, a progress bar, and a text area. When the start button is pressed, a background task is initiated, and the progress bar updates incrementally until it reaches 100%. The text area displays the progress updates during the task execution. Once the task is completed, a completion message is shown. Explore this example to learn how to create and manage progress bars in HTML applications.";
 const id = "progress-bar-demo";
 
 const ProgressBarDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const ProgressBarDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

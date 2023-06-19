@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Flow Layouts with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use flow layouts (FlowLayout) using HTML and CSS.";
+  "Learn how to effectively utilize Flow Layouts in HTML and CSS to arrange components in a left-to-right or right-to-left flow within a container, with the ability to wrap components to the next row if needed. Explore the step-by-step process of implementing FlowLayout, where components are arranged in the order they are added. Discover how to control the alignment of components using the data-alignment attribute, enabling leading or trailing alignment based on the container's orientation. Additionally, explore examples showcasing leading alignment, changing flow direction, and creating component gaps using row-gap and column-gap. Unlock the potential of Flow Layouts to achieve flexible and responsive component arrangements in your web designs.";
 
 const FlowLayoutPage = ({ path }: PageProps) => {
   return (

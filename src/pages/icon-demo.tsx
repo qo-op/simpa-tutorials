@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "IconDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's IconDemo example. This example demonstrates loading image files into img elements for use in a user interface in a single-page application (SPA). It creates a toolbar with thumbnail previews of each image file, allowing users to click on a thumbnail to display the full image in the main display area.";
 const id = "icon-demo";
 
 const IconDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const IconDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

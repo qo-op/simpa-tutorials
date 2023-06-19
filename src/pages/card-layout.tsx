@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Card Layouts with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use card layouts (CardLayout) using HTML and CSS.";
+  "Learn how to effectively utilize Card Layouts in HTML and CSS to create dynamic user interfaces with multiple views. Discover how CardLayout, a versatile layout manager, allows you to switch between components like flipping through a deck of cards. Explore practical examples showcasing the implementation of CardLayout, including the use of hidden visibility and JavaScript to control card display. Enhance your web designs by incorporating Simpa CSS Layouts, and get step-by-step instructions on including the Simpa stylesheet in your HTML file.";
 
 const CardLayoutPage = ({ path }: PageProps) => {
   const handleChange = (ev: React.ChangeEvent) => {

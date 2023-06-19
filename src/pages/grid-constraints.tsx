@@ -8,7 +8,7 @@ import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Grid Constraints with HTML and CSS";
 const description: string =
-  "This tutorial shows how to use grid constraints (GridConstraints) using HTML and CSS.";
+  "Learn how to effectively utilize Grid Constraints in HTML and CSS to position and resize components within a container. Discover the power of the data-anchor attribute, allowing you to specify the precise position of a component, whether it's centered, aligned with edges, or placed in corners. Explore examples showcasing various data-anchor values and their interpretations in a container layout. Additionally, dive into the flexibility provided by the data-fill attribute, enabling you to resize components horizontally, vertically, or in both directions to efficiently utilize available space. Combine the data-anchor and data-fill attributes to achieve versatile layouts tailored to your design requirements.";
 
 const GridConstraintsPage = ({ path }: PageProps) => {
   return (

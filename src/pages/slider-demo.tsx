@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "SliderDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "An HTML version of Oracle's SliderDemo example. This example showcases an animation created using a slider to control the frames per second (FPS). The program displays a series of doggy pictures as an animation, and the slider allows users to adjust the speed by modifying the FPS. Explore this example to learn how to implement interactive animations with a slider in HTML applications.";
 const id = "slider-demo";
 
 const SliderDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const SliderDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>

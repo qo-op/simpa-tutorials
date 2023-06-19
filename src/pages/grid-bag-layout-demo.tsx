@@ -4,7 +4,8 @@ import { PageProps } from "gatsby";
 import React from "react";
 
 const title: string = "GridBagLayoutDemo";
-const description: string = `An HTML version of Oracle's ${title} example`;
+const description: string =
+  "Explore an HTML version of Oracle's GridBagLayoutDemo example implemented using simpa. This tutorial showcases the implementation of GridConstraints layout manager in a single-page application (SPA). Experience the power and flexibility of CSS Grid layout as it effortlessly arranges a series of button components in a grid-like structure. Each button is defined with GridConstraints, allowing fine-grained control over the fill behavior in the horizontal direction. Gain insights into creating responsive and dynamic grid-based layouts that adapt to varying content sizes and requirements. Discover practical techniques for defining grid rows and columns, spanning cells, and utilizing CSS properties for precise control over button positioning. Enhance your understanding of layout management and elevate your SPA development skills with GridBagLayout.";
 const id = "grid-bag-layout-demo";
 
 const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
@@ -13,7 +14,7 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
       path={path}
       hostname={location.hostname}
       htmlCode={`<!-- ${title}.html -->
-<!-- ${description} -->
+<!-- An HTML version of Oracle's ${title} example, using simpa. -->
 <!DOCTYPE html>
 <html>
 <head>
