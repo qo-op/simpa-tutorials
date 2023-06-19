@@ -91,13 +91,13 @@ const DialogPage = ({ path }: PageProps) => {
   </div>
   <!-- dialog content -->
   <div class="BorderLayout"
-       style="--gap: .5em;
-              padding: .5em;">
+       style="padding: .5em;">
     <!-- dialog text -->
     <span>
       This is a dialog!
     </span>
-    <div class="PageEnd">
+    <div class="PageEnd"
+         style="margin: .5em 0 0 0">
       <!-- button pane -->
       <div class="FlowLayout"
            style="gap: .5em;">
@@ -134,14 +134,9 @@ const DialogPage = ({ path }: PageProps) => {
                 Message
               </div>
             </div>
-            <div
-              className="BorderLayout"
-              style={
-                { "--gap": ".5em", padding: ".5em" } as React.CSSProperties
-              }
-            >
+            <div className="BorderLayout" style={{ padding: ".5em" }}>
               <span>This is a dialog!</span>
-              <div className="PageEnd">
+              <div className="PageEnd" style={{ margin: ".5em 0 0 0" }}>
                 <div className="FlowLayout" style={{ gap: ".5em" }}>
                   <button>OK</button>
                 </div>
@@ -157,14 +152,9 @@ const DialogPage = ({ path }: PageProps) => {
                 Message
               </div>
             </div>
-            <div
-              className="BorderLayout"
-              style={
-                { "--gap": ".5em", padding: ".5em" } as React.CSSProperties
-              }
-            >
+            <div className="BorderLayout" style={{ padding: ".5em" }}>
               <span>This is a dialog!</span>
-              <div className="PageEnd">
+              <div className="PageEnd" style={{ margin: ".5em 0 0 0" }}>
                 <div className="FlowLayout" style={{ gap: ".5em" }}>
                   <button onClick={handleClick}>OK</button>
                 </div>
@@ -247,6 +237,7 @@ const DialogPage = ({ path }: PageProps) => {
       >
         <button onClick={showMessageDialog}>Click me!</button>
       </div>
+      <p></p>
       <hr />
       <h2>OptionPane's showConfirmDialog()</h2>
       <p>
@@ -322,6 +313,7 @@ const DialogPage = ({ path }: PageProps) => {
           <textarea rows={3} cols={40} id="textarea"></textarea>
         </div>
       </div>
+      <p></p>
       <hr />
       <h2>OptionPane's showInputDialog()</h2>
       <p>

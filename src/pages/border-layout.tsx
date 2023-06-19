@@ -112,6 +112,45 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         <button>Click me!</button>
       </div>
       <p></p>
+      <hr />
+      <h2>Creating Component Gaps</h2>
+      <p>
+        To create gaps between components in <code>BorderLayout</code>, you can
+        add margins to its components. For example, if you want to create a gap
+        between a component in the <code>page-start</code> region and a
+        component in the <code>center</code> region, you can add a margin as
+        follow:
+      </p>
+      <div className="SyntaxHighlighter">
+        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+          {`...
+<div class="BorderLayout"
+     style="height: 100px;">
+  <div class="PageStart"
+       style="margin: 0 0 10px 0">
+    <button>Button 1</button>
+  </div>
+  <button>
+    Button 2
+  </button>
+</div>
+...`}
+        </SyntaxHighlighter>
+      </div>
+      <p>
+        After running this code, you will see a panel with two buttons with a
+        gap between them.
+      </p>
+      <div
+        className="BorderLayout"
+        style={{ height: "100px", backgroundColor: "LightGray" }}
+      >
+        <div className="PageStart" style={{ margin: "0 0 10px 0" }}>
+          <button>Button 1</button>
+        </div>
+        <button>Button 2</button>
+      </div>
+      <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
     </Layout>
   );
