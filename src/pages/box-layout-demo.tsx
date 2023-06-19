@@ -53,6 +53,9 @@ const BoxLayoutDemoPage = ({ path, location }: PageProps) => {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to demonstrate the usage of the BoxLayout layout manager in a SPA application.
+This example creates a SPA application with a container and adds buttons to it using a vertical BoxLayout.
+Running this example will display the SPA application with buttons arranged vertically using BoxLayout.
 `}
     />
   );

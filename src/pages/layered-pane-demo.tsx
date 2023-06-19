@@ -171,6 +171,10 @@ function handlePointerUp(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that showcases the use of a layered pane to display and manipulate layered components.
+The application creates a layered pane with several colored panels and a Duke icon.
+The user can move the Duke icon by moving the mouse cursor and can also change the layer of the Duke icon using a combo box.
+This example handles user interactions and updates the layering of the Duke icon accordingly.
 `}
     />
   );

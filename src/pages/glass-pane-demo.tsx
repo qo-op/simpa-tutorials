@@ -37,6 +37,7 @@ const GlassPaneDemoPage = ({ path, location }: PageProps) => {
         <div class="LayeredPane">
           <div class="BorderLayout">
             <div class="PageStart">
+              <!-- menu bar -->
               <ul class="MenuBar">
                 <li>
                   <div class="Menu">
@@ -54,17 +55,16 @@ const GlassPaneDemoPage = ({ path, location }: PageProps) => {
                 </li>
               </ul>
             </div>
-            <div class="EmptyBorder"
-                 style="padding: .5em;">
-              <div class="FlowLayout"
-                   style="gap: .5em;">
-                <button>
-                  Button 1
-                </button>
-                <button>
-                  Button 2
-                </button>
-              </div>
+            <!-- content pane -->
+            <div class="FlowLayout"
+                 style="gap: .5em;
+                        padding: .5em">
+              <button>
+                Button 1
+              </button>
+              <button>
+                Button 2
+              </button>
             </div>
           </div>
           <!-- GlassPane -->
@@ -123,6 +123,10 @@ function handleClick(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to demonstrate the usage of a glass pane in a SPA application.
+It creates a checkbox labeled 'Glass pane "visible"'.
+When the checkbox is selected, a red circle is painted on the glass pane.
+The glass pane is an overlay that covers both the menu bar and the content pane.
 `}
     />
   );

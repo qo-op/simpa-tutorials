@@ -99,6 +99,12 @@ function handleContextMenu(event) {
 `}
       info={`
 An HTML version of Oracle's ScrollDemo2 example, using simpa.
+The purpose of this example is to demonstrate the functionality of scrolling within a graphical user interface.
+The program creates a panel that contains a drawing area where circles can be drawn by clicking the left mouse button.
+The circles are represented as div elements and are displayed using different colors.
+Clicking the right mouse button clears the drawing area.
+The panel is placed inside a scroll pane, allowing the user to scroll and view the entire drawing area if it exceeds the visible area.
+The program utilizes mouse event listeners to handle the placement and clearing of circles, and it dynamically adjusts the size of the drawing area and updates the scroll pane accordingly.
 `}
     />
   );

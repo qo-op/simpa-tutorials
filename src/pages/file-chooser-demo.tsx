@@ -82,6 +82,10 @@ function handleFileSelected(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to demonstrate the usage of file selection in a SPA application.
+It creates a SPA application that includes an "Open a File..." button.
+When the "Open a File..." button is clicked, it opens a file dialog for the user to select a file.
+If a file is selected, the application logs the name of the file.
 `}
     />
   );

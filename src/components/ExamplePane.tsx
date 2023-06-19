@@ -233,7 +233,9 @@ const ExamplePane = ({
                 />
               </div>
               <div
+                className="ScrollPane"
                 data-name="Info"
+                data-overlay
                 style={{ textAlign: "justify", visibility: "hidden" }}
                 tabIndex={-1}
                 onFocus={handleFocus1}
@@ -363,7 +365,9 @@ const ExamplePane = ({
                 />
               </div>
               <div
+                className="ScrollPane"
                 data-name="Info"
+                data-overlay
                 style={{ textAlign: "justify", visibility: "hidden" }}
                 tabIndex={-1}
                 onFocus={handleFocus2}

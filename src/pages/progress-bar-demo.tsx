@@ -82,6 +82,11 @@ function sleep(millis) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the use of a progress bar to represent the progress of a background task.
+The application consists of a UI with a start button, a progress bar, and a text area.
+When the start button is pressed, a background task is executed using an async function.
+The task updates the progress bar and performs a simulated task with random progress updates.
+The progress updates are displayed in the text area. Once the task is completed, a completion message is shown, and the UI elements are adjusted accordingly.
 `}
     />
   );

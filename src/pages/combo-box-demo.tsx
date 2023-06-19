@@ -76,6 +76,10 @@ function handleChange(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the use of a combo box.
+The application displays a list of pet names (Bird, Cat, Dog, Rabbit, Pig) in a combo box.
+When a pet name is selected from the combo box, an image corresponding to the selected pet is displayed.
+This example sets up the components, handles the selection events from the combo box and updates the displayed image.
 `}
     />
   );

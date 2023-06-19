@@ -207,6 +207,10 @@ displayURL("../html/TreeDemoHelp.txt");
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+This example is a SPA application that displays a tree structure with selectable nodes and associated HTML content.
+It creates a div element with a Tree class for the tree structure and a textarea to display the HTML content.
+Its layout consists of a split pane with the tree view at the top and the HTML view at the bottom.
+It sets up event listeners and provides methods for expanding or collapsing the tree nodes and displaying the corresponding HTML content.
 `}
     />
   );

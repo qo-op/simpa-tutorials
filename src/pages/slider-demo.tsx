@@ -59,28 +59,45 @@ const SliderDemoPage = ({ path, location }: PageProps) => {
       cssCode={`/* ${title}.css */
 `}
       jsCode={`/* ${title}.js */
-index = 0;
 fps = 15;
-if (typeof interval === "undefined") {
+index = 0;
+picture = null;
+function startAnimation() {
+  picture = document.getElementById("picture");
   interval = setInterval(function() {
-    picture.src = "../images/T" + ++index % 14 + ".gif";
+    if (picture) {
+      picture.src = "../images/T" + ++index % 14 + ".gif";
+    }
   }, 1000 / fps);
+}
+function stopAnimation() {
+  if (typeof interval !== "undefined" && interval) {
+    clearInterval(interval);
+    interval = null;
+  }
 }
 function handleInput(event) {
   const slider = event.currentTarget;
   fps = slider.value;
   const label = document.getElementById("label");
   label.textContent = fps + " Frames Per Second";
-  clearInterval(interval);
+  stopAnimation();
   if (fps > 0) {
-    interval = setInterval(function() {
-      picture.src = "../images/T" + ++index % 14 + ".gif";
-    }, 1000 / fps);
+    startAnimation();
   }
 }
+window.addEventListener("load", function() {
+  stopAnimation();
+  startAnimation();
+});
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates an animation using a slider to control the frames per second (FPS).
+The program displays a series of doggy pictures as an animation.
+It consists of a slider that allows the user to adjust the FPS of the animation, an img element to display the animation, and additional components for layout and interaction.
+The animation loops through a predefined number of frames, and the slider enables the user to control the speed of the animation by adjusting the FPS.
+The program utilizes timers, listeners, and event handlers to handle animation updates and slider changes.
 `}
     />
   );

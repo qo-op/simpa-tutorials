@@ -138,6 +138,11 @@ function changeBannerColor(event) {
 `}
       info={`
 An HTML version of Oracle's ${title}2 example, using simpa.
+The purpose of this example is to showcase the usage of color choosers in a SPA application.
+In this example, users have the ability to choose both the background color and the text color.
+They can do so through a color chooser for the background color and a set of colored crayon buttons for the text color.
+The chosen colors are then displayed in a custom preview panel.
+This example demonstrates how to handle user interactions with the color chooser, update the SPA application based on color selections, and provide a visual preview of the chosen colors.
 `}
     />
   );

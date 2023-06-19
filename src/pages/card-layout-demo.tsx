@@ -51,6 +51,7 @@ const CardLayoutDemoPage = ({ path, location }: PageProps) => {
         <div class="CardLayout"
              style="padding: .5em 0 0 0;"
              id="container">
+          <!-- card with buttons -->
           <div class="FlowLayout"
                data-name="Card with Buttons"
                style="gap: .5em;
@@ -59,6 +60,7 @@ const CardLayoutDemoPage = ({ path, location }: PageProps) => {
             <button>Button 2</button>
             <button>Button 3</button>
           </div>
+          <!-- card with text field -->
           <div class="BorderLayout"
                data-name="Card with Text Field"
                style="visibility: hidden">
@@ -90,6 +92,11 @@ function handleChange(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the usage of the CardLayout layout manager.
+This example uses a CardLayout to switch between different panels within the application.
+The panels are created as "cards" and contain different components such as buttons and a text field.
+The user can select different cards using a combo box at the top of the page.
+When a different card is selected, the CardLayout switches the currently visible card accordingly.
 `}
     />
   );

@@ -99,6 +99,11 @@ function handleClick(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates a split pane with a list of image names on one side and an image display on the other side.
+The program allows the user to select an image name from the list, and the corresponding image is displayed in the picture area.
+It consists of a split pane that divides the window horizontally, with a scrollable list of image names on the left side and a scrollable image display on the right side.
+The split pane allows the user to resize the two components.
+The program utilizes a event handler to respond to list selection changes and updates the image display accordingly.
 `}
     />
   );

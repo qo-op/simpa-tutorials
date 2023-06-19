@@ -134,6 +134,10 @@ function handleBlur(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a scrollable table.
+It defines a table that displays data in rows and columns, with each column having a specific name.
+The table is wrapped inside a ScrollTable to handle large amounts of data.
+The code also includes methods to handle table interactions, such as updating cell values.
 `}
     />
   );

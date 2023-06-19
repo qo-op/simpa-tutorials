@@ -217,6 +217,11 @@ function handleChange(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the creation and functionality of menus, submenus, menu items, radio button menu items, and check box menu items.
+The application creates a menu bar with two menus: "A Menu" and "Another Menu".
+The "A Menu" contains various types of menu items, including text-only items, items with icons, radio button items, and check box items.
+The menu items are associated with event listeners to perform actions when selected or interacted with.
+The application also includes a text area that displays information about the menu events triggered by the user's interactions.
 `}
     />
   );

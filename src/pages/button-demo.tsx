@@ -32,9 +32,10 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
        data-overlay>
     <div class="CenterLayout"
          style="padding: .25em;">
+      <!-- button panel -->
       <div class="BoxLayout"
            style="gap: .5em">
-        <!-- Disable middle button -->
+        <!-- disable middle button -->
         <button onclick="disable(event);"
                 id="b1">
           <span class="BoxLayout">
@@ -45,7 +46,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
             <img src="../images/right.gif">
           </span>
         </button>
-        <!-- Middle button -->
+        <!-- middle button -->
         <button id="b2">
           <span class="BoxLayout"
                 data-axis="page-axis">
@@ -56,7 +57,7 @@ const ButtonDemoPage = ({ path, location }: PageProps) => {
             <img src="../images/middle.gif">
           </span>
         </button>
-        <!-- Enable middle button -->
+        <!-- enable middle button -->
         <button onclick="enable(event);"
                 id="b3"
                 disabled>
@@ -96,6 +97,10 @@ function enable(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the usage of button components.
+This example creates a panel container. It adds three buttons to the panel, each with different text and icons.
+The buttons are configured with mnemonic keys and action commands.
+When the buttons are clicked, event listeners handle the events and enables/disables the buttons accordingly.
 `}
     />
   );

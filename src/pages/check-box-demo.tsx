@@ -111,6 +111,11 @@ function updatePicture(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+This example demonstrates the usage of checkboxes in a SPA application.
+It creates a window with four checkboxes labeled "Chin," "Glasses," "Hair," and "Teeth."
+When the user selects or deselects these checkboxes, the program updates a string representing the selected accessories.
+Based on this string, the program dynamically updates the displayed image of a "geek" character.
+The purpose of this example is to showcase how to handle checkbox events in a SPA application.
 `}
     />
   );

@@ -32,8 +32,10 @@ const TabbedPaneDemoPage = ({ path, location }: PageProps) => {
        data-overlay>
     <div class="CenterLayout"
          style="padding: .25em;">
+      <!-- tabbed pane -->
       <div class="TabbedPane"
            style="border: 1px solid Gray;">
+        <!-- tab container -->
         <div>
           <button value="panel1"
                   tabindex="-1">
@@ -73,6 +75,7 @@ const TabbedPaneDemoPage = ({ path, location }: PageProps) => {
             </span>
           </button>
         </div>
+        <!-- card container -->
         <div class="CardLayout">
           <div class="CenterLayout"
                data-name="panel1"
@@ -109,6 +112,9 @@ const TabbedPaneDemoPage = ({ path, location }: PageProps) => {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the use of a tabbed pane.
+The program generates a tabbed pane with individual tabs representing distinct cards containing text labels.
+It sets up multiple tabs and associates icons with each of them.
 `}
     />
   );

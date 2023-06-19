@@ -25,6 +25,11 @@ const IconDemoPage = ({ path, location }: PageProps) => {
         href="./${title}.css">
   <script src="./${title}.js">
   </script>
+  <link rel="preload" as="image" href="../images/sunw01.jpg">
+  <link rel="preload" as="image" href="../images/sunw02.jpg">
+  <link rel="preload" as="image" href="../images/sunw03.jpg">
+  <link rel="preload" as="image" href="../images/sunw04.jpg">
+  <link rel="preload" as="image" href="../images/sunw05.jpg">
 </head>
 <body class="Frame"
       id="${id}">
@@ -36,6 +41,7 @@ const IconDemoPage = ({ path, location }: PageProps) => {
            style="width: 340px;
                   height: 280px;">
         <div class="PageStart">
+          <!-- thumbnails -->
           <div class="FlowLayout"
                style="gap: .5em;">
             <div onclick="handleClick(event);"
@@ -115,6 +121,9 @@ function handleClick(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates loading image files into img elements for use in a user interface.
+The application creates a toolbar with thumbnail previews of each image file.
+Clicking on a thumbnail displays the full image in the main display area.
 `}
     />
   );

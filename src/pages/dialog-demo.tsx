@@ -338,6 +338,10 @@ window.addEventListener("load", function() {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application for a dialog demo.
+It sets up different panels for displaying simple modal dialogs, more dialogs, and dialogs with icons.
+This example also handles event listeners for button clicks and displays different types of dialogs based on the user's selection.
+Overall, the code demonstrates the usage of OptionPane to create and display different types of dialogs in a SPA application.
 `}
     />
   );

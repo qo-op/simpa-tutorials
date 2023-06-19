@@ -34,6 +34,7 @@ const RadioButtonDemoPage = ({ path, location }: PageProps) => {
          style="padding: .25em;">
       <div class="BorderLayout">
         <div class="LineStart">
+          <!-- radio buttons -->
           <div style="display: grid;">
             <label>
               <input type="radio"
@@ -110,6 +111,10 @@ function handleChange(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of the provided code is to create a SPA application that showcases the use of radio buttons and displays corresponding images based on the selected option.
+The application consists of a UI with a set of radio buttons representing different animals (bird, cat, dog, rabbit, pig) and a central picture img element.
+Each radio button is associated with a value that corresponds to an image file.
+When a radio button is selected, the event listener is triggered, changing the image displayed in the picture img element based on the selected animal.
 `}
     />
   );

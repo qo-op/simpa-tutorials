@@ -89,6 +89,9 @@ const GridBagLayoutDemoPage = ({ path, location }: PageProps) => {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the usage of the GridConstraints layout manager.
+This example uses CSS Grid layout to arrange a series of button components in a grid-like structure.
+The GridConstraints class is used to define the fill constraints for each button.
 `}
     />
   );

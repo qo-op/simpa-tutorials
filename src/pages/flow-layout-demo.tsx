@@ -97,6 +97,11 @@ function applyComponentOrientation(event) {
 `}
       info={`
 An HTML version of Oracle's ${title} example, using simpa.
+The purpose of this example is to create a SPA application that demonstrates the usage of the FlowLayout layout manager.
+This example uses FlowLayout to arrange components in a flow-like manner.
+The components in the layout are a series of buttons.
+This example also provides radio buttons to select the component orientation, either left to right or right to left.
+When the "Apply component orientation" button is pressed, the component orientation of the layout is updated accordingly.
 `}
     />
   );
