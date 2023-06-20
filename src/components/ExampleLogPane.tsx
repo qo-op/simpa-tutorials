@@ -145,7 +145,6 @@ const ExamplePane = ({
               <button
                 style={{
                   float: "right",
-                  marginBlockStart: ".1em",
                   backgroundColor: "inherit",
                 }}
                 onClick={copyCode}
@@ -290,7 +289,6 @@ const ExamplePane = ({
               <button
                 style={{
                   float: "right",
-                  marginBlockStart: ".1em",
                   backgroundColor: "inherit",
                 }}
                 onClick={copyCode}
