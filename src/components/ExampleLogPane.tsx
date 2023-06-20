@@ -272,7 +272,7 @@ const ExamplePane = ({
           </div>
         </div>
       </div>
-      <div></div>
+      <div style={{ width: "0" }}></div>
       <div
         className="ExamplePane BorderLayout"
         style={{
@@ -346,7 +346,7 @@ const ExamplePane = ({
               </div>
             </div>
           </div>
-          <div id="divider"></div>
+          <div></div>
           <div className="TabbedPane" id="bottom-container">
             <div>
               <button value="Result" tabIndex={-1}>

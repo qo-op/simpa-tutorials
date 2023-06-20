@@ -36,7 +36,8 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
       <div class="SplitPane"
             style="width: 300px;
                    height: 150px;">
-        <div id="left-container">
+        <!-- left container -->
+        <div>
           <div class="ScrollPane"
                style="border: 1px solid Gray;">
             <ul style="margin: 0;
@@ -56,8 +57,10 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
             </ul>
           </div>
         </div>
-        <div id="divider"></div>
-        <div id="right-container">
+        <!-- divider -->
+        <div></div>
+        <!-- right container -->
+        <div>
           <div class="ScrollPane CenterLayout"
                style="border: 1px solid Gray;">
             <img src="../images/Bird.gif"
@@ -72,16 +75,6 @@ const SplitPaneDemoPage = ({ path, location }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
-@media (pointer: coarse) {
-  #divider {
-    width: 32px;
-  }
-}
-@media (pointer: fine) {
-  #divider {
-    width: 8px;
-  }
-}
 `}
       jsCode={`/* ${title}.js */
 function handleClick(event) {

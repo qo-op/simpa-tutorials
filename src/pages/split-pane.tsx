@@ -37,55 +37,56 @@ const SplitPanePage = ({ path }: PageProps) => {
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="SplitPane"
-     data-orientation="horizontal-split"
-     style="height: 100px;">
-  <!-- left container -->
-  <div style="width: 50%; min-width: 16px; background-color: Cyan;">
-    <button>Left component</button>
-  </div>
-  <!-- split pane divider-->
-  <div class="EmptyDivider">
-  </div>
-  <!-- right container -->
-  <div style="width: 50%; min-width: 16px; background-color: LightGreen;">
-    <button>Left component</button>
-  </div>
-</div>
-...`}
+          {`<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+    <script src="https://qo-op.github.io/simpa/simpa.js"></script>
+  </head>
+  <body class="Frame" id="split-pane-demo">
+    <!-- split pane -->
+    <div class="SplitPane"
+         data-orientation="horizontal-split">
+      <!-- left container -->
+      <div>
+        <button>Left Button</button>
+      </div>
+      <!-- divider -->
+      <div></div>
+      <!-- right container -->
+      <div>
+        <button>Right Button</button>
+      </div>
+    </div>
+  </body>
+</html>
+`}
         </SyntaxHighlighter>
       </div>
       <p>
-        In the example above, we create a <code>div</code> container and assign
-        it the class <code>SplitPane</code>. Then, we set the{" "}
-        <code>data-orientation</code> attribute of the container to indicate a
-        horizontal split.
+        In the given example, we start by creating a <code>&lt;div&gt;</code>{" "}
+        container and assigning it the class <code>"SplitPane"</code>. This
+        container is configured for a horizontal split by setting the{" "}
+        <code>data-orientation</code> attribute.
       </p>
       <p>
-        We then add two containers with no margin, border, or padding, and place
-        an <code>EmptyDivider</code> between them.
+        Next, we include a left container and a right container without any
+        margins, borders, or padding. These containers are separated by a
+        divider. Each container contains a button.
       </p>
       <p>
-        The resulting split pane will display the two panels side by side, with
-        a divider in between. You can resize the panels by dragging the divider
-        to adjust the width of each panel.
+        As a result, the split pane will show the two buttons positioned next to
+        each other, with the divider in the middle. You can adjust the width of
+        the containers and resize the buttons by dragging the divider.
       </p>
-      <div
-        className="SplitPane"
-        style={{ height: "100px", paddingInline: "32px" }}
-      >
-        <div
-          style={{ width: "50%", minWidth: "16px", backgroundColor: "Cyan" }}
-        ></div>
-        <div className="EmptyDivider"></div>
-        <div
-          style={{
-            width: "50%",
-            minWidth: "16px",
-            backgroundColor: "LightGreen",
-          }}
-        ></div>
+      <div className="SplitPane" style={{ height: "100px" }}>
+        <div>
+          <button>Left Button</button>
+        </div>
+        <div></div>
+        <div>
+          <button>Right Button</button>
+        </div>
       </div>
       <p></p>
       <NoteAboutSimpaJS subject="Simpa JS Components" />
