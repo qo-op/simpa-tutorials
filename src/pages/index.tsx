@@ -1,0 +1,46 @@
+import Layout from "components/Layout";
+import { SEO } from "components/SEO";
+import { PageProps } from "gatsby";
+import React from "react";
+
+const title: string = "Introduction to Simpa";
+const description: string =
+  "Learn how to use Simpa layouts and components to create Single-Page Applications (SPAs) with this tutorial series. Discover the basics of Simpa and explore topics such as layout managers, borders, dialogs, menus, split panes, tabbed panes, tables, and trees. Each concept is explained using practical examples and code snippets.";
+
+const IndexPage = ({ path }: PageProps) => {
+  return (
+    <Layout path={path}>
+      <h1
+        className="BoxLayout"
+        data-axis="page-axis"
+        style={{ textAlign: "center" }}
+      >
+        <span>Introduction to Simpa</span>
+      </h1>
+      <p>
+        Simpa is a user interface library that helps developers create
+        Single-Page Applications. Simpa provides a set of layouts and components
+        for building graphical user interfaces.
+      </p>
+      <p>
+        In this series of tutorials, we will explore the basics of Simpa and how
+        to use it in Single-Page Applications. We will cover topics such as:
+      </p>
+      <ul>
+        <li>How to use layout managers to arrange components on the screen</li>
+        <li>
+          The fundamentals of Simpa components, such as borders, dialogs, menus,
+          split panes, tabbed panes, tables, and trees
+        </li>
+      </ul>
+      <p>
+        Throughout these tutorials, we will use practical examples and code
+        snippets to illustrate each concept.
+      </p>
+    </Layout>
+  );
+};
+
+export default IndexPage;
+
+export const Head = () => <SEO title={title} description={description} />;

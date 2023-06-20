@@ -1,0 +1,27 @@
+.CodeViewer {
+  background-color: rgb(30, 30, 30);
+  padding: 0.25em 0.5em;
+}
+
+.CodeViewer pre {
+  all: initial;
+  visibility: unset;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.CodeViewer pre code {
+  font-family: Menlo, Monaco, Consolas, "Andale Mono", "Ubuntu Mono",
+    "Courier New", monospace !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.CodeViewer .SyntaxHighlighter,
+.CodeViewer .SyntaxHighlighter * {
+  font-style: normal !important;
+  text-size-adjust: none !important;
+}

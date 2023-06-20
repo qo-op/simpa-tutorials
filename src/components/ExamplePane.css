@@ -1,0 +1,44 @@
+.ExamplePane .TabbedPane:first-child > :first-child {
+  background-color: rgb(38, 38, 38);
+  color: White;
+}
+
+.ExamplePane .TabbedPane:first-child > :first-child > button[tabindex="-1"] {
+  background-color: rgb(30, 30, 30);
+  color: White;
+}
+
+@media (pointer: coarse) {
+  #divider {
+    height: 32px;
+  }
+  #top-container,
+  #bottom-container {
+    height: calc(50% - 16px);
+  }
+}
+@media (pointer: fine) {
+  #divider {
+    height: 8px;
+  }
+  #top-container,
+  #bottom-container {
+    height: calc(50% - 4px);
+  }
+}
+
+/*
+@media (pointer: coarse) {
+  .ExamplePane div[data-name="Result"],
+  .ExampleLogPane div[data-name="Result"] {
+    padding-block-start: 34px;
+  }
+}
+
+@media (pointer: fine) {
+  .ExamplePane div[data-name="Result"],
+  .ExampleLogPane div[data-name="Result"] {
+    padding-block-start: 10px;
+  }
+}
+*/

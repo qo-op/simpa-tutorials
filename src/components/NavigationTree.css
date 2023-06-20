@@ -1,0 +1,8 @@
+.NavigationTree li>.TreeNode {
+    padding-inline: .5em;
+    padding-inline-start: 2rem;
+}
+
+.NavigationTree>li>.TreeNode {
+    padding-inline-start: .5em;
+}

@@ -1,0 +1,50 @@
+{
+  "name": "simpa-tutorials",
+  "version": "1.0.0",
+  "private": true,
+  "description": "simpa-tutorials",
+  "author": "qo-op",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop --host 0.0.0.0",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:imports": "import-sort --write \"src/**/*.{ts,tsx}\""
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.3",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/react-helmet": "^6.1.6",
+    "gatsby": "^5.9.0",
+    "gatsby-remark-vscode": "^3.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^8.0.5",
+    "react-responsive": "^9.0.2",
+    "react-syntax-highlighter": "^15.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
+    "@types/react-syntax-highlighter": "^15.5.6",
+    "gatsby-plugin-root-import": "^2.0.9",
+    "import-sort": "^6.0.0",
+    "import-sort-cli": "^6.0.0",
+    "import-sort-parser-typescript": "^6.0.0",
+    "import-sort-style-module": "^6.0.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
+  }
+}
