@@ -1,0 +1,21 @@
+.CopyToClipboardSyntaxHighlighter .TitleBar {
+  background-color: rgb(38, 38, 38);
+  line-height: 1.2;
+  padding-inline: 0.5em;
+}
+.CopyToClipboardSyntaxHighlighter .TitleBar .Language {
+  color: White;
+}
+.CopyToClipboardSyntaxHighlighter .TitleBar .CopyButton {
+  /* Resets all CSS properties to their initial/default values */
+  all: initial;
+  cursor: pointer;
+}
+.CopyToClipboardSyntaxHighlighter .TitleBar .CopyButton svg {
+  margin-block: 0.1em;
+  width: 1em;
+  height: 1em;
+}
+.CopyToClipboardSyntaxHighlighter pre {
+  margin: 0;
+}
