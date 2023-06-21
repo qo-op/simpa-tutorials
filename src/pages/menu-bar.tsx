@@ -28,12 +28,11 @@ const MenuBarPage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        <code>MenuBar</code> is a component that provides a menu bar
-        functionality to a page or a top-level container. It serves as a
-        container for drop-down <code>Menu</code> objects, which in turn contain{" "}
-        <code>MenuItem</code> objects. A menu bar typically appears at the top
-        of a page and contains a collection of drop-down menus that can be
-        accessed by the user.
+        MenuBar is a component that provides a menu bar functionality to a page
+        or a top-level container. It serves as a container for drop-down Menu
+        objects, which in turn contain MenuItem objects. A menu bar typically
+        appears at the top of a page and contains a collection of drop-down
+        menus that can be accessed by the user.
       </p>
       <div
         className="BorderLayout"

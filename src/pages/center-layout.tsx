@@ -22,14 +22,13 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>CenterLayout</code> is a layout manager that is used to center a
-        component both horizontally and vertically.
+        CenterLayout is a layout manager that is used to center a component both
+        horizontally and vertically.
       </p>
       <p>
-        To use <code>CenterLayout</code>, you first need to create a container
-        to hold your component. This can be a <code>div</code> element. Once you
-        have your container, you can set its layout to <code>CenterLayout</code>{" "}
-        by adding <code>"CenterLayout"</code> to its <code>class</code>{" "}
+        To use CenterLayout, you first need to create a container to hold your
+        component. This can be a div element. Once you have your container, you
+        can set its layout to CenterLayout by adding "CenterLayout" to its class{" "}
         attribute.
       </p>
       <div className="SyntaxHighlighter">
@@ -43,14 +42,13 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we're setting the <code>div</code>'s layout to{" "}
-        <code>CenterLayout</code> to center its content. We then add a{" "}
-        <code>button</code> with the text <code>"Click me!"</code> to the
-        container.
+        In this example, we're setting the div's layout to CenterLayout to
+        center its content. We then add a button with the text "Click me!" to
+        the container.
       </p>
       <p>
-        When you run this code, you will see a panel with a <code>button</code>{" "}
-        in the center, like this:
+        When you run this code, you will see a panel with a button in the
+        center, like this:
       </p>
       <div
         className="CenterLayout"

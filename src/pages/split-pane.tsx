@@ -23,17 +23,17 @@ const SplitPanePage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        <code>SplitPane</code> is a component that provides a way to divide a
-        container into two resizable areas, with a divider in between. It allows
-        the user to interactively resize the two areas by dragging the divider.
+        SplitPane is a component that provides a way to divide a container into
+        two resizable areas, with a divider in between. It allows the user to
+        interactively resize the two areas by dragging the divider.
       </p>
       <p>
         It is commonly used to create resizable split views, such as a vertical
         or horizontal split pane in an application's user interface.
       </p>
       <p>
-        Here's a basic example of using <code>SplitPane</code> to create a
-        horizontal split pane:
+        Here's a basic example of using SplitPane to create a horizontal split
+        pane:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -64,10 +64,9 @@ const SplitPanePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In the given example, we start by creating a <code>&lt;div&gt;</code>{" "}
-        container and assigning it the class <code>"SplitPane"</code>. This
-        container is configured for a horizontal split by setting the{" "}
-        <code>data-orientation</code> attribute.
+        In the given example, we start by creating a &lt;div&gt; container and
+        assigning it the class "SplitPane". This container is configured for a
+        horizontal split by setting the data-orientation attribute.
       </p>
       <p>
         Next, we include a left container and a right container without any

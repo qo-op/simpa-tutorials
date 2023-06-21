@@ -70,13 +70,11 @@ const DialogPage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        A <code>Dialog</code> represents a secondary window that appears on top
-        of the main application. It is typically used to prompt the user for
-        input, display messages, or provide additional information.
+        A Dialog represents a secondary window that appears on top of the main
+        application. It is typically used to prompt the user for input, display
+        messages, or provide additional information.
       </p>
-      <p>
-        Here's an example of a basic <code>Dialog</code>:
-      </p>
+      <p>Here's an example of a basic Dialog:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -111,17 +109,16 @@ const DialogPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In the example above, we create a <code>div</code> container and set its
-        class to <code>"Dialog"</code>.
+        In the example above, we create a div container and set its class to
+        "Dialog".
       </p>
       <p>
         When you run this code, you will see a dialog with a "This is a dialog!"
         message.
       </p>
       <p>
-        By default, <code>Dialog</code> enables the user to move itself by
-        simply clicking and dragging its title bar. Try moving the dialog by its
-        title bar.
+        By default, Dialog enables the user to move itself by simply clicking
+        and dragging its title bar. Try moving the dialog by its title bar.
       </p>
       <div className="CenterLayout">
         <div className="BorderLayout">
@@ -167,35 +164,32 @@ const DialogPage = ({ path }: PageProps) => {
       <hr />
       <h2>Creating Simple Dialogs with OptionPane</h2>
       <p>
-        <code>OptionPane</code> is a class that provides a convenient way to
-        display various types of dialog boxes, including information messages,
-        warning messages, error messages, and input prompts, within an
-        application.
+        OptionPane is a class that provides a convenient way to display various
+        types of dialog boxes, including information messages, warning messages,
+        error messages, and input prompts, within an application.
       </p>
       <p>
-        To use <code>OptionPane</code>, you start by calling one of its static
-        methods, such as <code>showMessageDialog()</code>,{" "}
-        <code>showConfirmDialog()</code>, or <code>showInputDialog()</code>,
+        To use OptionPane, you start by calling one of its static methods, such
+        as showMessageDialog(), showConfirmDialog(), or showInputDialog(),
         passing the necessary parameters to specify the dialog's content, title,
         icon, buttons, and other options.
       </p>
       <hr />
       <h2>OptionPane's showMessageDialog()</h2>
       <p>
-        The <code>showMessageDialog()</code> method in <code>OptionPane</code>{" "}
-        is a convenient way to display a dialog box with a message and an OK
-        button. By calling this method and providing the necessary parameters,
-        such as the message content, title, and message type, a modal dialog box
-        is created and displayed to the user. The{" "}
-        <code>showMessageDialog()</code> method allows developers to quickly
-        inform users about important information or display notifications,
-        without the need for manual creation and management of dialog
-        components, making it an efficient way to communicate messages within a
-        SPA application.
+        The showMessageDialog() method in OptionPane is a convenient way to
+        display a dialog box with a message and an OK button. By calling this
+        method and providing the necessary parameters, such as the message
+        content, title, and message type, a modal dialog box is created and
+        displayed to the user. The showMessageDialog() method allows developers
+        to quickly inform users about important information or display
+        notifications, without the need for manual creation and management of
+        dialog components, making it an efficient way to communicate messages
+        within a SPA application.
       </p>
       <p>
-        Here's an example of how to use the <code>showMessageDialog()</code>{" "}
-        method in OptionPane:
+        Here's an example of how to use the showMessageDialog() method in
+        OptionPane:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
@@ -226,10 +220,9 @@ const DialogPage = ({ path }: PageProps) => {
       </div>
       <p>
         In this example, we have an HTML page with a button. When the button is
-        clicked, the <code>handleClick()</code> function is called, which
-        triggers the <code>OptionPane.showMessageDialog()</code> method. A modal
-        dialog box will appear with the message "Eggs aren't supposed to be
-        green." and an OK button.
+        clicked, the handleClick() function is called, which triggers the
+        OptionPane.showMessageDialog() method. A modal dialog box will appear
+        with the message "Eggs aren't supposed to be green." and an OK button.
       </p>
       <div
         className="CenterLayout"
@@ -241,16 +234,16 @@ const DialogPage = ({ path }: PageProps) => {
       <hr />
       <h2>OptionPane's showConfirmDialog()</h2>
       <p>
-        The <code>showConfirmDialog()</code> method in OptionPane is a useful
-        feature that enables developers to display a dialog box with a message
-        and customizable buttons to prompt the user for confirmation or choice.
-        By calling this method and providing the necessary parameters such as
-        the message content, title, message type, and button options, a modal
-        dialog box is created and presented to the user.
+        The showConfirmDialog() method in OptionPane is a useful feature that
+        enables developers to display a dialog box with a message and
+        customizable buttons to prompt the user for confirmation or choice. By
+        calling this method and providing the necessary parameters such as the
+        message content, title, message type, and button options, a modal dialog
+        box is created and presented to the user.
       </p>
       <p>
-        Here's an example of how to use the <code>showConfirmDialog()</code>{" "}
-        method in OptionPane:
+        Here's an example of how to use the showConfirmDialog() method in
+        OptionPane:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
@@ -317,13 +310,13 @@ const DialogPage = ({ path }: PageProps) => {
       <hr />
       <h2>OptionPane's showInputDialog()</h2>
       <p>
-        The <code>showInputDialog()</code> method in OptionPane is a convenient
-        feature that allows developers to display a dialog box with a message
-        and a combo box or a text input field, prompting the user for input.
+        The showInputDialog() method in OptionPane is a convenient feature that
+        allows developers to display a dialog box with a message and a combo box
+        or a text input field, prompting the user for input.
       </p>
       <p>
-        Here's an example of how to use the <code>showInputDialog()</code>{" "}
-        method in OptionPane:
+        Here's an example of how to use the showInputDialog() method in
+        OptionPane:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>

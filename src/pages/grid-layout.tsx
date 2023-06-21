@@ -22,27 +22,23 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         <span>with Grid Constraints</span>
       </h1>
       <p>
-        CSS <code>Grid</code> Layout is a type of layout manager that enables
-        you to create two-dimensional grid-based layouts.
+        CSS Grid Layout is a type of layout manager that enables you to create
+        two-dimensional grid-based layouts.
       </p>
       <p>
-        By applying the <code>display: grid</code> property to the container,
-        you activate the grid layout. The container can have any number of rows
-        and columns and you can define their sizes and proportions using
-        flexible units like <code>fr</code> (fraction of available space),
-        percentages, or fixed values. You can also specify the gap between grid
-        cells using the <code>gap</code> property.
+        By applying the display: grid property to the container, you activate
+        the grid layout. The container can have any number of rows and columns
+        and you can define their sizes and proportions using flexible units like
+        fr (fraction of available space), percentages, or fixed values. You can
+        also specify the gap between grid cells using the gap property.
       </p>
       <p>
         Grid items are the child elements within the grid container. They can be
         placed in any cell of the grid using grid-specific properties like{" "}
-        <code>grid-row</code>, <code>grid-column</code> and more. These
-        properties allow you to precisely control the placement and spanning of
-        items across the grid.
+        grid-row, grid-column and more. These properties allow you to precisely
+        control the placement and spanning of items across the grid.
       </p>
-      <p>
-        Here's an example of how to use CSS <code>Grid</code> Layout:
-      </p>
+      <p>Here's an example of how to use CSS Grid Layout:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -167,8 +163,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
       <p>
         We have modified the previous example so that the buttons now expand
         horizontally to occupy the entire space within their grid cell, by
-        applying <code>GridConstraints</code> layout with{" "}
-        <code>horizontal</code> fill to the grid cell:
+        applying GridConstraints layout with horizontal fill to the grid cell:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -365,8 +360,8 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        If you want to learn more about <code>GridConstraints</code>, refer to
-        the <Link to="/grid-constraints/">How to Use GridConstraints</Link>{" "}
+        If you want to learn more about GridConstraints, refer to the{" "}
+        <Link to="/grid-constraints/">How to Use GridConstraints</Link>{" "}
         tutorial.
       </p>
       <p></p>

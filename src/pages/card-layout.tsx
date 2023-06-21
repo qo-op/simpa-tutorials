@@ -37,17 +37,15 @@ const CardLayoutPage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>CardLayout</code> is a layout manager that allows you to switch
-        between multiple components in a container like flipping through a deck
-        of cards. It is useful for creating user interfaces with multiple views.
+        CardLayout is a layout manager that allows you to switch between
+        multiple components in a container like flipping through a deck of
+        cards. It is useful for creating user interfaces with multiple views.
       </p>
       <p>
-        With <code>CardLayout</code>, you can have several components in a
-        single container, but only one is visible at a time.
+        With CardLayout, you can have several components in a single container,
+        but only one is visible at a time.
       </p>
-      <p>
-        Here's an example of how to use <code>CardLayout</code>:
-      </p>
+      <p>Here's an example of how to use CardLayout:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -67,17 +65,14 @@ const CardLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container with its{" "}
-        <code>class</code> set to <code>"CardLayout"</code>. We then add three{" "}
-        <code>buttons</code> that we want to switch between to the container.
+        In this example, we create a div container with its class set to
+        "CardLayout". We then add three buttons that we want to switch between
+        to the container.
       </p>
-      <p>
-        We set the <code>visibility</code> of the first and third buttons to{" "}
-        <code>hidden</code>.
-      </p>
+      <p>We set the visibility of the first and third buttons to hidden.</p>
       <p>
         When you this code, you will see a container with a button labeled "
-        <code>Button 2</code>", like this:
+        Button 2", like this:
       </p>
       <div
         className="CardLayout"
@@ -159,27 +154,27 @@ const CardLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create three <code>buttons</code> as cards. We add
-        the <code>buttons</code> to the card container giving each a{" "}
-        <code>data-name</code> attribute, which will be used to switch between
-        them later with JavaScript, when the combo box value is changed.
+        In this example, we create three buttons as cards. We add the buttons to
+        the card container giving each a data-name attribute, which will be used
+        to switch between them later with JavaScript, when the combo box value
+        is changed.
       </p>
       <p>
         When we run the code, initially we will see a panel with a combo box
-        with <code>"1st Card"</code> item selected and a button with the text "
+        with "1st Card" item selected and a button with the text "
         <code>
           <u>First</u> Button
         </code>
         ".
       </p>
       <p>
-        If you select the <code>"2nd Card"</code> item in the combo box, the
-        button with the text "
+        If you select the "2nd Card" item in the combo box, the button with the
+        text "
         <code>
           <u>Second</u> Button
         </code>
-        " will be shown. If you select the <code>"3rd Card"</code> item in the
-        combo box, the button with the text "
+        " will be shown. If you select the "3rd Card" item in the combo box, the
+        button with the text "
         <code>
           <u>Third</u> Button
         </code>

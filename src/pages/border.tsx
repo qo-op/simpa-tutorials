@@ -39,10 +39,9 @@ const BorderPage = ({ path }: PageProps) => {
       <p>
         Borders are used to enhance and differentiate components by creating a
         visual boundary around them. They can be applied to various HTML
-        elements, including <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>,{" "}
-        <code>&lt;label&gt;</code>, <code>&lt;p&gt;</code>, and more. By
-        utilizing borders, developers can improve the overall appearance and
-        user experience of their applications.
+        elements, including &lt;div&gt;, &lt;span&gt;, &lt;label&gt;, &lt;p&gt;,
+        and more. By utilizing borders, developers can improve the overall
+        appearance and user experience of their applications.
       </p>
       <hr />
       <div
@@ -52,12 +51,10 @@ const BorderPage = ({ path }: PageProps) => {
         Raised Etched Border
       </div>
       <p>
-        <code>RaisedEtchedBorder</code> is a border type that creates a raised
-        effect by etching a pattern around a component.
+        RaisedEtchedBorder is a border type that creates a raised effect by
+        etching a pattern around a component.
       </p>
-      <p>
-        Here's an example of how to use <code>RaisedEtchedBorder</code>:
-      </p>
+      <p>Here's an example of how to use RaisedEtchedBorder:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -76,12 +73,10 @@ const BorderPage = ({ path }: PageProps) => {
         Lowered Etched Border
       </div>
       <p>
-        <code>LoweredEtchedBorder</code> is a border type that creates a sunken
-        effect by etching a pattern around a component.
+        LoweredEtchedBorder is a border type that creates a sunken effect by
+        etching a pattern around a component.
       </p>
-      <p>
-        Here's an example of how to use <code>LoweredEtchedBorder</code>:
-      </p>
+      <p>Here's an example of how to use LoweredEtchedBorder:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -100,14 +95,12 @@ const BorderPage = ({ path }: PageProps) => {
         Raised Bevel Border
       </div>
       <p>
-        <code>RaisedBevelBorder</code> is a border type that adds a raised
-        effect to a component's border. It achieves this by incorporating a
-        beveled edge, creating an illusion of depth and giving the appearance
-        that the component is elevated above its surrounding area.
+        RaisedBevelBorder is a border type that adds a raised effect to a
+        component's border. It achieves this by incorporating a beveled edge,
+        creating an illusion of depth and giving the appearance that the
+        component is elevated above its surrounding area.
       </p>
-      <p>
-        Here's an example of how to use <code>RaisedEtchedBorder</code>:
-      </p>
+      <p>Here's an example of how to use RaisedEtchedBorder:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -126,13 +119,11 @@ const BorderPage = ({ path }: PageProps) => {
         Lowered Bevel Border
       </div>
       <p>
-        <code>LoweredBevelBorder</code> is a border type that creates a lowered
-        or sunken effect for a component's border. It gives the impression that
-        the component is recessed into the surrounding area.
+        LoweredBevelBorder is a border type that creates a lowered or sunken
+        effect for a component's border. It gives the impression that the
+        component is recessed into the surrounding area.
       </p>
-      <p>
-        Here's an example of how to use <code>LoweredBevelBorder</code>:
-      </p>
+      <p>Here's an example of how to use LoweredBevelBorder:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -149,17 +140,15 @@ const BorderPage = ({ path }: PageProps) => {
         <h2 style={{ padding: ".5em" }}>Titled Border</h2>
       </div>
       <p>
-        <code>TitledBorder</code> is a type of border that adds a titled label
-        to a component's border, providing a clear and descriptive title for the
+        TitledBorder is a type of border that adds a titled label to a
+        component's border, providing a clear and descriptive title for the
         enclosed content. It allows developers to specify a title text
         alignment. The title is displayed along with a line border, creating a
         distinct visual separation for the component. TitledBorder is useful for
         organizing and categorizing components, providing clarity and improving
         the user interface's overall readability.
       </p>
-      <p>
-        Here's an example of how to use <code>TitledBorder</code>:
-      </p>
+      <p>Here's an example of how to use TitledBorder:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -177,8 +166,8 @@ const BorderPage = ({ path }: PageProps) => {
         <div style={{ padding: ".5em" }}>Center justified title</div>
       </div>
       <p>
-        And here's another example of how to use <code>TitledBorder</code> with
-        the <code>data-title-justification="center"</code> attribute:
+        And here's another example of how to use TitledBorder with the
+        data-title-justification="center" attribute:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -194,11 +183,10 @@ const BorderPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In the second example, the{" "}
-        <code>data-title-justification="center"</code> attribute is added to the{" "}
-        <code>&lt;div&gt;</code> element with the class
-        <code>"TitledBorder"</code>. This attribute specifies that the title
-        text should be centered within the titled border.
+        In the second example, the data-title-justification="center" attribute
+        is added to the &lt;div&gt; element with the class "TitledBorder". This
+        attribute specifies that the title text should be centered within the
+        titled border.
       </p>
       <hr />
       <div className="CompoundBorder RaisedBevelBorder">
@@ -210,16 +198,13 @@ const BorderPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        <code>CompoundBorder</code> is a versatile border type that allows
-        developers to combine multiple border instances to create a composite
-        border. It enables the stacking or nesting of different border styles,
-        such as LineBorder, EtchedBorder, TitledBorder, or any other border
+        CompoundBorder is a versatile border type that allows developers to
+        combine multiple border instances to create a composite border. It
+        enables the stacking or nesting of different border styles, such as
+        LineBorder, EtchedBorder, TitledBorder, or any other border
         implementation.
       </p>
-      <p>
-        Here's an example of how to use <code>CompoundBorder</code> with two
-        bevels:
-      </p>
+      <p>Here's an example of how to use CompoundBorder with two bevels:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -247,8 +232,8 @@ const BorderPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        And here's another example of how to use <code>CompoundBorder</code>{" "}
-        with three borders:
+        And here's another example of how to use CompoundBorder with three
+        borders:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>

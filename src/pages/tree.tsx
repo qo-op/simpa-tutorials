@@ -26,21 +26,21 @@ const TreePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        A <code>Tree</code> is a component that represents a hierarchical
+        A Tree is a component that represents a hierarchical
         structure of data in a tree-like format. It is used to display and
         manipulate hierarchical data.
       </p>
       <p>
-        The <code>Tree</code> component organizes data in a hierarchical
+        The Tree component organizes data in a hierarchical
         structure consisting of nodes. Each node represents an element in the
         hierarchy, and nodes can have child nodes to form a tree-like structure.
       </p>
       <p>
         The data structure that represents a node is called a{" "}
-        <code>TreeNode</code>.
+        TreeNode.
       </p>
       <p>
-        Here's an example of how you can create a simple <code>Tree</code>:
+        Here's an example of how you can create a simple Tree:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -133,7 +133,7 @@ const TreePage = ({ path }: PageProps) => {
       <hr />
       <h2>The Closed Attribute</h2>
       <p>
-        The <code>data-closed</code> attribute serves the purpose of controlling
+        The data-closed attribute serves the purpose of controlling
         the visibility of leaf nodes within a branch node. By toggling this
         attribute, you can conveniently collapse or expand the branch node as
         needed.
@@ -189,8 +189,8 @@ const TreePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        By assigning the value <code>"true"</code> to the{" "}
-        <code>data-closed</code> attribute of the "Appliances" tree node, we
+        By assigning the value "true" to the{" "}
+        data-closed attribute of the "Appliances" tree node, we
         effectively collapse it.
       </p>
       <div style={{ height: "100px", border: "1px solid Gray" }}>
@@ -226,7 +226,7 @@ const TreePage = ({ path }: PageProps) => {
       <p>
         When the user interacts with the branch node, you have the option to
         utilize JavaScript code to dynamically modify the{" "}
-        <code>data-closed</code> attribute, setting it to "true" or "false"
+        data-closed attribute, setting it to "true" or "false"
         accordingly. This mechanism enables you to expand or collapse the node
         as desired.
       </p>

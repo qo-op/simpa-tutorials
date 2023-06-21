@@ -22,15 +22,15 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>FlowLayout</code> is a layout manager that arranges components in
-        a container in a left-to-right or right-to-left flow, wrapping to the
-        next row if necessary.
+        FlowLayout is a layout manager that arranges components in a container
+        in a left-to-right or right-to-left flow, wrapping to the next row if
+        necessary.
       </p>
       <p>
-        When you add components to a container with <code>FlowLayout</code>,
-        they are arranged in the order they are added. If the width of the
-        container is too small to fit all the components on one row, the
-        components will be wrapped to the next row.
+        When you add components to a container with FlowLayout, they are
+        arranged in the order they are added. If the width of the container is
+        too small to fit all the components on one row, the components will be
+        wrapped to the next row.
       </p>
       <div
         className="FlowLayout"
@@ -57,24 +57,23 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <hr />
       <h2>Example with Leading Alignment</h2>
       <p>
-        The <code>data-alignment</code> attribute controls the alignment of the
-        components in the container. By default, components are centered in the
-        container. You can change the alignment of the components by setting{" "}
-        <code>data-alignment</code> to <code>leading</code> or{" "}
-        <code>trailing</code>.
+        The data-alignment attribute controls the alignment of the components in
+        the container. By default, components are centered in the container. You
+        can change the alignment of the components by setting data-alignment to
+        leading or trailing.
       </p>
       <p>
-        The <code>leading</code> alignment refers to the arrangement of
-        components in the container based on the container orientation. When the
-        container orientation is left-to-right (LTR), the <code>leading</code>{" "}
-        alignment places components at the left edge of the container. When the
-        container orientation is right-to-left (RTL), the <code>leading</code>{" "}
-        alignment places components at the right edge of the container.
+        The leading alignment refers to the arrangement of components in the
+        container based on the container orientation. When the container
+        orientation is left-to-right (LTR), the leading alignment places
+        components at the left edge of the container. When the container
+        orientation is right-to-left (RTL), the leading alignment places
+        components at the right edge of the container.
       </p>
       <p>
-        The <code>trailing</code> alignment, on the other hand, places
-        components at the right edge of the container in a left-to-right layout,
-        and at the left edge of the container in a right-to-left layout.
+        The trailing alignment, on the other hand, places components at the
+        right edge of the container in a left-to-right layout, and at the left
+        edge of the container in a right-to-left layout.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -90,14 +89,13 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container, set its{" "}
-        <code>class</code> to <code>"FlowLayout"</code> and set the{" "}
-        <code>data-alignment</code> attribute to <code>leading</code>. We then
-        add three <code>buttons</code> to the <code>div</code> container.
+        In this example, we create a div container, set its class to
+        "FlowLayout" and set the data-alignment attribute to leading. We then
+        add three buttons to the div container.
       </p>
       <p>
-        When we run the example, we will see three buttons arranged in a{" "}
-        <code>leading</code> alignment.
+        When we run the example, we will see three buttons arranged in a leading
+        alignment.
       </p>
       <div
         className="FlowLayout"
@@ -113,7 +111,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <h2>Example with RTL Direction</h2>
       <p>
         In order to change the flow direction from right to left, you can set
-        its <code>direction</code> style to <code>rtl</code>.
+        its direction style to rtl.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -129,10 +127,9 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container, set its layout
-        to <code>FlowLayout</code> and its alignment to <code>leading</code>.
-        Then we set the <code>direction</code> style to <code>rtl</code>, which
-        changes the flow direction to right-to-left.
+        In this example, we create a div container, set its layout to FlowLayout
+        and its alignment to leading. Then we set the direction style to rtl,
+        which changes the flow direction to right-to-left.
       </p>
       <div
         className="FlowLayout"
@@ -151,10 +148,9 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <hr />
       <h2>Creating Component Gaps</h2>
       <p>
-        To create gaps between rows of components in <code>FlowLayout</code>,
-        you can use the <code>row-gap</code> style property. If you want to
-        create gaps between components in a row, you can use the{" "}
-        <code>column-gap</code> style property.
+        To create gaps between rows of components in FlowLayout, you can use the
+        row-gap style property. If you want to create gaps between components in
+        a row, you can use the column-gap style property.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>

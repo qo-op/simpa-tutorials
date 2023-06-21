@@ -1,22 +1,13 @@
-import { ContentPaste } from "@mui/icons-material";
+import { Code, ContentPaste, Javascript, Tag } from "@mui/icons-material";
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "styles/CopyToClipboardSyntaxHighlighter.css";
 
 const CopyToClipboardSyntaxHighlighter = ({
   children,
-  language,
-  style,
-  wrapLongLines,
 }: {
   children: string;
-  language: string;
-  style?:
-    | {
-        [key: string]: React.CSSProperties;
-      }
-    | undefined;
-  wrapLongLines?: boolean | undefined;
 }) => {
   const handleOnClick = async (ev: React.MouseEvent) => {
     await navigator.clipboard.writeText(children);
@@ -25,7 +16,12 @@ const CopyToClipboardSyntaxHighlighter = ({
   return (
     <div className="CopyToClipboardSyntaxHighlighter BorderLayout">
       <div className="TitleBar PageStart BorderLayout">
-        <div className="Language LineStart">{language}</div>
+        <div className="Language LineStart BoxLayout" style={{ gap: ".5em" }}>
+          <span className="BorderLayout">
+            <Code style={{ color: "Red" }} />
+          </span>
+          <span>html</span>
+        </div>
         <div className="LineEnd">
           <button className="CopyButton" onClick={handleOnClick}>
             <span className="BorderLayout">
@@ -34,17 +30,7 @@ const CopyToClipboardSyntaxHighlighter = ({
           </button>
         </div>
       </div>
-      <SyntaxHighlighter
-        language={
-          language === "html"
-            ? "xml"
-            : language === "css"
-            ? "css"
-            : "javascript"
-        }
-        style={style}
-        wrapLongLines={wrapLongLines}
-      >
+      <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
         {children}
       </SyntaxHighlighter>
     </div>

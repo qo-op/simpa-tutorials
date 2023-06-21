@@ -22,21 +22,19 @@ const ScrollPanePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>ScrollPane</code> provides a scrollable view of another component
-        or a group of components. It is often used when the content within a
-        component exceeds the available space, allowing users to scroll
-        vertically and/or horizontally to view the entire content.
+        ScrollPane provides a scrollable view of another component or a group of
+        components. It is often used when the content within a component exceeds
+        the available space, allowing users to scroll vertically and/or
+        horizontally to view the entire content.
       </p>
       <p>
-        The primary purpose of <code>ScrollPane</code> is to enhance the
-        usability of components that contain more content than can be displayed
-        within the available area. It may add scrollbars to the container, which
-        can be used to navigate and view the content that extends beyond the
-        visible boundaries.
+        The primary purpose of ScrollPane is to enhance the usability of
+        components that contain more content than can be displayed within the
+        available area. It may add scrollbars to the container, which can be
+        used to navigate and view the content that extends beyond the visible
+        boundaries.
       </p>
-      <p>
-        Here's an example of how to use <code>ScrollPane</code>:
-      </p>
+      <p>Here's an example of how to use ScrollPane:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -48,16 +46,15 @@ const ScrollPanePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container and set its
-        class to <code>"ScrollPane"</code>. Inside the <code>div</code>{" "}
-        container, we create a paragraph and set some sample text to demonstrate
-        scrolling.
+        In this example, we create a div container and set its class to
+        "ScrollPane". Inside the div container, we create a paragraph and set
+        some sample text to demonstrate scrolling.
       </p>
       <p>
         When you run this code, you will see a panel with a scrollable paragraph
-        inside the <code>ScrollPane</code>. The scrollbars may appear
-        automatically when the text content extends beyond the visible area,
-        allowing you to scroll and view the complete text.
+        inside the ScrollPane. The scrollbars may appear automatically when the
+        text content extends beyond the visible area, allowing you to scroll and
+        view the complete text.
       </p>
       <div className="CenterLayout">
         <div
@@ -82,8 +79,8 @@ const ScrollPanePage = ({ path }: PageProps) => {
         being affected by the space taken up by the scrollbars.
       </p>
       <p>
-        If your browser supports scrollbar overlay, you can add the{" "}
-        <code>data-overlay</code> attribute to enable it.
+        If your browser supports scrollbar overlay, you can add the data-overlay
+        attribute to enable it.
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>

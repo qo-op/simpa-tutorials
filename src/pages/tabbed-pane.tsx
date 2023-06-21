@@ -23,10 +23,10 @@ const TabbedPanePage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        <code>TabbedPane</code> is a component that provides a tabbed pane
-        container for organizing and displaying multiple components or panels.
-        It allows the user to switch between different panels by selecting the
-        corresponding tabs.
+        TabbedPane is a component that provides a tabbed pane container for
+        organizing and displaying multiple components or panels. It allows the
+        user to switch between different panels by selecting the corresponding
+        tabs.
       </p>
       <p>
         It is commonly used to create tabbed interfaces in applications, where
@@ -34,8 +34,8 @@ const TabbedPanePage = ({ path }: PageProps) => {
         application.
       </p>
       <p>
-        Here's a basic example of using <code>TabbedPane</code> to create a
-        tabbed pane with two tabs:
+        Here's a basic example of using TabbedPane to create a tabbed pane with
+        two tabs:
       </p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -84,12 +84,11 @@ const TabbedPanePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In the example above, we create a <code>TabbedPane</code> container with
-        a height of 200 pixels. Then, we incorporate two containers: a container
-        for tabs and a container for cards (with <code>CardLayout</code> class)
-        in the <code>TabbedPane</code> container. Next, we added two tabs in the
-        tab container along with their corresponding cards in the card
-        container.
+        In the example above, we create a TabbedPane container with a height of
+        200 pixels. Then, we incorporate two containers: a container for tabs
+        and a container for cards (with CardLayout class) in the TabbedPane
+        container. Next, we added two tabs in the tab container along with their
+        corresponding cards in the card container.
       </p>
       <p>
         When you run this code, you should see a tabbed pane containing two tabs

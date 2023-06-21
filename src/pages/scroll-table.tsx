@@ -22,19 +22,19 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        <code>ScrollTable</code> combines the functionality of a table with
-        scrollbars to accommodate large amounts of data within a limited space.
-        It allows users to view and interact with a sizable table by providing
-        vertical and/or horizontal scrolling when the table's content exceeds
-        the dimensions of its container.
+        ScrollTable combines the functionality of a table with scrollbars to
+        accommodate large amounts of data within a limited space. It allows
+        users to view and interact with a sizable table by providing vertical
+        and/or horizontal scrolling when the table's content exceeds the
+        dimensions of its container.
       </p>
       <p>
-        In a <code>ScrollTable</code> component, the{" "}
-        <b>column and row headers</b> are designed to{" "}
-        <b>remain visible even when scrolling</b> through the table's content.
-        This means that as you scroll vertically or horizontally within the
-        table, the column headers for each column and the row headers for each
-        row will stay fixed at the top or left side of the table, respectively.
+        In a ScrollTable component, the <b>column and row headers</b> are
+        designed to <b>remain visible even when scrolling</b> through the
+        table's content. This means that as you scroll vertically or
+        horizontally within the table, the column headers for each column and
+        the row headers for each row will stay fixed at the top or left side of
+        the table, respectively.
       </p>
       <div className="CenterLayout">
         <div
@@ -128,14 +128,11 @@ const ScrollTablePage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        The fixed column and row headers in <code>ScrollTable</code> ensure that
-        users can identify the column and row associated with each data point,
-        especially when dealing with large tables that may require significant
-        scrolling.
+        The fixed column and row headers in ScrollTable ensure that users can
+        identify the column and row associated with each data point, especially
+        when dealing with large tables that may require significant scrolling.
       </p>
-      <p>
-        Here's an example of how to use <code>ScrollTable</code>:
-      </p>
+      <p>Here's an example of how to use ScrollTable:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -182,19 +179,16 @@ const ScrollTablePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container and set its
-        class to <code>"ScrollTable"</code>. Inside the <code>div</code>{" "}
-        container, we create a table with five columns: "Name", "Age",
-        "Occupation", "Gender" and "Country".
+        In this example, we create a div container and set its class to
+        "ScrollTable". Inside the div container, we create a table with five
+        columns: "Name", "Age", "Occupation", "Gender" and "Country".
       </p>
       <p>
-        Please note that in the <code>table</code> element, we have two child
-        elements: <code>tbody</code> and <code>thead</code>. The{" "}
-        <code>tbody</code> element contains the table data, while the{" "}
-        <code>thead</code> element holds the column headers. To ensure proper
-        functionality of the <code>ScrollTable</code>, it is important to
-        arrange the elements in the following order: <code>tbody</code> should
-        be placed first, followed by <code>thead</code>.
+        Please note that in the table element, we have two child elements: tbody
+        and thead. The tbody element contains the table data, while the thead
+        element holds the column headers. To ensure proper functionality of the
+        ScrollTable, it is important to arrange the elements in the following
+        order: tbody should be placed first, followed by thead.
       </p>
       <p>
         When you run this code, you will see a table displayed with the
@@ -255,10 +249,7 @@ const ScrollTablePage = ({ path }: PageProps) => {
         data. They are separate from the regular data columns and provide a
         fixed reference point for the rows.
       </p>
-      <p>
-        Here's an example of creating a <code>ScrollTable</code> with row
-        headers:
-      </p>
+      <p>Here's an example of creating a ScrollTable with row headers:</p>
       <div className="SyntaxHighlighter">
         <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
           {`...
@@ -307,14 +298,13 @@ const ScrollTablePage = ({ path }: PageProps) => {
         </SyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a <code>div</code> container and set its
-        class to <code>"ScrollTable"</code>. We then enable the{" "}
-        <code>data-row-header</code> attribute by setting it to{" "}
-        <code>"true"</code>.
+        In this example, we create a div container and set its class to
+        "ScrollTable". We then enable the data-row-header attribute by setting
+        it to "true".
       </p>
       <p>
-        When you run this code, you will see a window containing the{" "}
-        <code>ScrollTable</code> with the first column cells as row headers.
+        When you run this code, you will see a window containing the ScrollTable
+        with the first column cells as row headers.
       </p>
       <div className="CenterLayout">
         <div

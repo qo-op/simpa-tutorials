@@ -6,6 +6,11 @@
 .CopyToClipboardSyntaxHighlighter .TitleBar .Language {
   color: White;
 }
+.CopyToClipboardSyntaxHighlighter .TitleBar .Language svg {
+  margin-block: 0.1em;
+  width: 1em;
+  height: 1em;
+}
 .CopyToClipboardSyntaxHighlighter .TitleBar .CopyButton {
   /* Resets all CSS properties to their initial/default values */
   all: initial;
