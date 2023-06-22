@@ -190,7 +190,7 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
 function expandOrCollapse(event) {
   const treeNode = event.currentTarget;
   const closed = treeNode.dataset.closed;
-  treeNode.dataset.closed = closed === "false" ? "true" : "false";
+  treeNode.dataset.closed = closed === "true" ? "false" : "true";
   displayURL("../html/TreeDemoHelp.txt");
 }
 function handleClick(event) {

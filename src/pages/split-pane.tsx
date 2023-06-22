@@ -40,7 +40,7 @@ const SplitPanePage = ({ path }: PageProps) => {
           {`<!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">
     <script src="https://qo-op.github.io/simpa/simpa.js"></script>
   </head>
   <body class="Frame" id="split-pane-demo">

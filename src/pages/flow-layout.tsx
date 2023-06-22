@@ -79,7 +79,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
 <html>
 <head>
   <link rel="stylesheet"
-        href="https://qo-op.github.io/simpa/simpa.css" />
+        href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
   <!-- Container with FlowLayout -->
@@ -128,7 +128,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
           {`<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
   <!-- Container with FlowLayout -->
@@ -179,7 +179,7 @@ const FlowLayoutPage = ({ path }: PageProps) => {
           {`<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
   <!-- Container with FlowLayout -->

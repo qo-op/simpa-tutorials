@@ -1,3 +1,4 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
@@ -22,19 +23,11 @@ const ScrollTablePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        ScrollTable combines the functionality of a table with scrollbars to
-        accommodate large amounts of data within a limited space. It allows
-        users to view and interact with a sizable table by providing vertical
-        and/or horizontal scrolling when the table's content exceeds the
-        dimensions of its container.
-      </p>
-      <p>
-        In a ScrollTable component, the <b>column and row headers</b> are
-        designed to <b>remain visible even when scrolling</b> through the
-        table's content. This means that as you scroll vertically or
-        horizontally within the table, the column headers for each column and
-        the row headers for each row will stay fixed at the top or left side of
-        the table, respectively.
+        Scrollable tables are a useful way to handle large amounts of data
+        within a limited space. They provide vertical and/or horizontal
+        scrolling when the content of the table exceeds the dimensions of its
+        container, allowing users to view and interact with the table
+        effectively.
       </p>
       <div className="CenterLayout">
         <div
@@ -128,74 +121,78 @@ const ScrollTablePage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        The fixed column and row headers in ScrollTable ensure that users can
-        identify the column and row associated with each data point, especially
-        when dealing with large tables that may require significant scrolling.
+        ScrollTable ensures that the column and row headers remain visible even
+        when scrolling through the table's content. This fixed positioning of
+        headers helps users identify the associated column and row for each data
+        point, particularly in large tables that require significant scrolling.
       </p>
       <p>Here's an example of how to use ScrollTable:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="ScrollTable"
-     style="max-width: 500px;">
-  <table>
-    <!-- table data -->
-    <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>35</td>
-        <td>Engineer</td>
-        <td>Male</td>
-        <td>United States</td>
-      </tr>
-      <tr>
-        <td>Jane Smith</td>
-        <td>28</td>
-        <td>Teacher</td>
-        <td>Female</td>
-        <td>Canada</td>
-      </tr>
-      <tr>
-        <td>Michael Johnson</td>
-        <td>42</td>
-        <td>Doctor</td>
-        <td>Male</td>
-        <td>Australia</td>
-      </tr>
-    </tbody>
-    <!-- column headers -->
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Occupation</th>
-        <th>Gender</th>
-        <th>Country</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+</head>
+<body>
+  <!-- ScrollTable -->
+  <div class="ScrollTable"
+       style="max-width: 500px">
+    <table>
+      <!-- Table Data -->
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>35</td>
+          <td>Engineer</td>
+          <td>Male</td>
+          <td>United States</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>28</td>
+          <td>Teacher</td>
+          <td>Female</td>
+          <td>Canada</td>
+        </tr>
+        <tr>
+          <td>Michael Johnson</td>
+          <td>42</td>
+          <td>Doctor</td>
+          <td>Male</td>
+          <td>Australia</td>
+        </tr>
+      </tbody>
+      <!-- Column Headers -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Occupation</th>
+          <th>Gender</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+</html>`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container and set its class to
-        "ScrollTable". Inside the div container, we create a table with five
-        columns: "Name", "Age", "Occupation", "Gender" and "Country".
+        In this example, a div container with the class "ScrollTable" is
+        created, and its maximum width is set to 500 pixels. Inside the div
+        container, a table is defined with five columns representing the data:
+        "Name", "Age", "Occupation", "Gender", and "Country". The table rows and
+        column headers are structured using the tbody and thead elements,
+        respectively. It's crucial to maintain the order of tbody before thead
+        for proper functionality.
       </p>
       <p>
-        Please note that in the table element, we have two child elements: tbody
-        and thead. The tbody element contains the table data, while the thead
-        element holds the column headers. To ensure proper functionality of the
-        ScrollTable, it is important to arrange the elements in the following
-        order: tbody should be placed first, followed by thead.
-      </p>
-      <p>
-        When you run this code, you will see a table displayed with the
-        specified column names and data. If the size of your screen is
-        sufficiently large, scrollbars will not be visible. The scrollbars
-        become visible only when the content of the table extends beyond the
-        visible area.
+        When you run this code, a table will be displayed with the specified
+        column names and data. If the table's content exceeds the visible area,
+        scrollbars will appear to enable scrolling.
       </p>
       <div className="CenterLayout">
         <div className="ScrollTable" style={{ maxWidth: "500px" }}>
@@ -239,72 +236,69 @@ const ScrollTablePage = ({ path }: PageProps) => {
       <hr />
       <h2>Example with Row Headers</h2>
       <p>
-        Row headers serve as labels or identifiers and provide a way to visually
-        distinguish and reference each row in the table. They often contain
-        information that helps identify the data in the corresponding row.
+        Additionally, you can include row headers in the ScrollTable by using
+        the data-row-header="true" attribute. Here's an example:
       </p>
-      <p>
-        Row headers can be used to display additional information about each
-        row, such as row numbers, unique identifiers, or any other relevant
-        data. They are separate from the regular data columns and provide a
-        fixed reference point for the rows.
-      </p>
-      <p>Here's an example of creating a ScrollTable with row headers:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<!-- ScrollTable with data-row-header="true" -->
-<div class="ScrollTable"
-     data-row-header="true"
-     style="max-width: 250px;">
-  <table>
-    <!-- table data -->
-    <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>35</td>
-        <td>Engineer</td>
-        <td>Male</td>
-        <td>United States</td>
-      </tr>
-      <tr>
-        <td>Jane Smith</td>
-        <td>28</td>
-        <td>Teacher</td>
-        <td>Female</td>
-        <td>Canada</td>
-      </tr>
-      <tr>
-        <td>Michael Johnson</td>
-        <td>42</td>
-        <td>Doctor</td>
-        <td>Male</td>
-        <td>Australia</td>
-      </tr>
-    </tbody>
-    <!-- column headers -->
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Occupation</th>
-        <th>Gender</th>
-        <th>Country</th>
-      </tr>
-    </thead>
-  </table>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+</head>
+<body>
+  <!-- ScrollTable -->
+  <!-- data-row-header="true" -->
+  <div class="ScrollTable"
+       data-row-header="true"
+       style="max-width: 250px">
+    <table>
+      <!-- Table Data -->
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>35</td>
+          <td>Engineer</td>
+          <td>Male</td>
+          <td>United States</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>28</td>
+          <td>Teacher</td>
+          <td>Female</td>
+          <td>Canada</td>
+        </tr>
+        <tr>
+          <td>Michael Johnson</td>
+          <td>42</td>
+          <td>Doctor</td>
+          <td>Male</td>
+          <td>Australia</td>
+        </tr>
+      </tbody>
+      <!-- column headers -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Occupation</th>
+          <th>Gender</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container and set its class to
-        "ScrollTable". We then enable the data-row-header attribute by setting
-        it to "true".
-      </p>
-      <p>
-        When you run this code, you will see a window containing the ScrollTable
-        with the first column cells as row headers.
+        In this modified example, the data-row-header="true" attribute is added
+        to enable row headers. The first column cells in the table will serve as
+        row headers.
       </p>
       <div className="CenterLayout">
         <div

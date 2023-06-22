@@ -36,7 +36,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
 <html>
 <head>
   <link rel="stylesheet"
-        href="https://qo-op.github.io/simpa/simpa.css" />
+        href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
   <!-- Container with CenterLayout -->

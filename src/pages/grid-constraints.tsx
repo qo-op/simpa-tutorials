@@ -43,7 +43,7 @@ const GridConstraintsPage = ({ path }: PageProps) => {
 <html>
 <head>
   <link rel="stylesheet"
-        href="https://qo-op.github.io/simpa/simpa.css" />
+        href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
   <!-- Container with GridConstraints -->
@@ -248,7 +248,7 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           {`<!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">
   </head>
   <body>
     <!-- Container with GridConstraints -->
