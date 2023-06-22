@@ -1,10 +1,9 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
 import { Link, PageProps } from "gatsby";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Grid Layouts with Grid Constraints";
 const description: string =
@@ -22,69 +21,72 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         <span>with Grid Constraints</span>
       </h1>
       <p>
-        CSS Grid Layout is a type of layout manager that enables you to create
-        two-dimensional grid-based layouts.
+        CSS Grid Layout is a powerful layout manager that allows you to create
+        two-dimensional grid-based layouts in HTML and CSS.
       </p>
       <p>
-        By applying the display: grid property to the container, you activate
-        the grid layout. The container can have any number of rows and columns
-        and you can define their sizes and proportions using flexible units like
-        fr (fraction of available space), percentages, or fixed values. You can
-        also specify the gap between grid cells using the gap property.
+        To activate the grid layout, you need to apply the display: grid
+        property to the container element. The container can have any number of
+        rows and columns, and you can define their sizes and proportions using
+        flexible units like fr (fraction of available space), percentages, or
+        fixed values. Additionally, you can specify the gap between grid cells
+        using the gap property.
       </p>
       <p>
-        Grid items are the child elements within the grid container. They can be
-        placed in any cell of the grid using grid-specific properties like{" "}
-        grid-row, grid-column and more. These properties allow you to precisely
-        control the placement and spanning of items across the grid.
+        The child elements within the grid container are called grid items. You
+        can position grid items within the grid using grid-specific properties
+        like grid-row and grid-column, among others. These properties allow you
+        to precisely control the placement and spanning of items across the
+        grid.
       </p>
       <p>Here's an example of how to use CSS Grid Layout:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div style="display: grid;">
-  <div style="grid-row: 1;
-              grid-column: 1;">
-    <button>
-      Button 1
-    </button>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with CSS Grid Layout -->
+  <div style="display: grid">
+    <div style="grid-row: 1;
+                grid-column: 1">
+      <button>Button 1</button>
+    </div>
+    <div style="grid-row: 1;
+                grid-column: 2">
+      <button>Button 2</button>
+    </div>
+    <div style="grid-row: 1;
+                grid-column: 3">
+      <button>Button 3</button>
+    </div>
+    <div style="grid-row: 2;
+                grid-column: 1 / span 3">
+      <button>
+        <span class="EmptyBorder"
+              style="padding: 40px 0">
+          Long-Named Button 4
+        </span>
+      </button>
+    </div>
+    <div style="grid-row: 3;
+                grid-column: 2 / span 2;
+                padding: 10px 0 0 0">
+      <button>5</button>
+    </div>
   </div>
-  <div style="grid-row: 1;
-              grid-column: 2;">
-    <button>
-      Button 2
-    </button>
-  </div>
-  <div style="grid-row: 1;
-              grid-column: 3;">
-    <button>
-      Button 3
-    </button>
-  </div>
-  <div style="grid-row: 2;
-              grid-column: 1 / span 3;">
-    <button>
-      <span class="EmptyBorder"
-            style="padding: 40px 0;">
-        Long-Named Button 4
-      </span>
-    </button>
-  </div>
-  <div style="grid-row: 3;
-              grid-column: 2 / span 2;
-              padding: 10px 0 0 0;">
-    <button>
-      5
-    </button>
-  </div>
-</div>
-...`}
-        </SyntaxHighlighter>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        When you run this code, you will see a panel with five buttons. To aid
-        the comprehension of the preceding code, a red grid was overlaid onto
-        the image:
+        When you run this code, you will see a panel with five buttons arranged
+        in a grid. To aid in understanding the code, a red grid overlay has been
+        added to the image.
       </p>
       <div className="BorderLayout" style={{ backgroundColor: "LightGray" }}>
         <div style={{ display: "grid" }}>
@@ -161,66 +163,78 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
       <hr />
       <h2>Example with Grid Constraints</h2>
       <p>
-        We have modified the previous example so that the buttons now expand
-        horizontally to occupy the entire space within their grid cell, by
-        applying GridConstraints layout with horizontal fill to the grid cell:
+        Now let's look at an example using Grid Constraints to modify the
+        previous layout. In this example, the buttons will expand horizontally
+        to occupy the entire space within their grid cell by applying the
+        GridConstraints layout with a horizontal fill:
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div style="display: grid;">
-  <div style="grid-row: 1;
-              grid-column: 1;"
-       class="GridConstraints"
-       data-fill="horizontal">
-    <button>
-      Button 1
-    </button>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with CSS Grid Layout -->
+  <div style="display: grid">
+    <!-- Container with GridConstraints -->
+    <!-- data-fill="horizontal" -->
+    <div style="grid-row: 1;
+                grid-column: 1"
+         class="GridConstraints"
+         data-fill="horizontal">
+      <button>Button 1</button>
+    </div>
+    <!-- Container with GridConstraints -->
+    <!-- data-fill="horizontal" -->
+    <div style="grid-row: 1;
+                grid-column: 2"
+         class="GridConstraints"
+         data-fill="horizontal">
+      <button>Button 2</button>
+    </div>
+    <!-- Container with GridConstraints -->
+    <!-- data-fill="horizontal" -->
+    <div style="grid-row: 1;
+                grid-column: 3"
+         class="GridConstraints"
+         data-fill="horizontal">
+      <button>Button 3</button>
+    </div>
+    <!-- Container with GridConstraints -->
+    <!-- data-fill="horizontal" -->
+    <div style="grid-row: 2;
+                grid-column: 1 / span 3"
+         class="GridConstraints"
+         data-fill="horizontal">
+      <button>
+        <span class="EmptyBorder"
+              style="padding: 40px 0">
+          Long-Named Button 4
+        </span>
+      </button>
+    </div>
+    <!-- Container with GridConstraints -->
+    <!-- data-fill="horizontal" -->
+    <div style="grid-row: 3;
+                grid-column: 2 / span 2;
+                padding: 10px 0 0 0"
+         class="GridConstraints"
+         data-fill="horizontal">
+      <button>5</button>
+    </div>
   </div>
-  <div style="grid-row: 1;
-              grid-column: 2;"
-       class="GridConstraints"
-       data-fill="horizontal">
-    <button>
-      Button 2
-    </button>
-  </div>
-  <div style="grid-row: 1;
-              grid-column: 3;"
-       class="GridConstraints"
-       data-fill="horizontal">
-    <button>
-      Button 3
-    </button>
-  </div>
-  <div style="grid-row: 2;
-              grid-column: 1 / span 3;"
-       class="GridConstraints"
-       data-fill="horizontal">
-    <button>
-      <span class="EmptyBorder"
-            style="padding: 40px 0;">
-        Long-Named Button 4
-      </span>
-    </button>
-  </div>
-  <div style="grid-row: 3;
-              grid-column: 2 / span 2;
-              padding: 10px 0 0 0;"
-       class="GridConstraints"
-       data-fill="horizontal">
-    <button>
-      5
-    </button>
-  </div>
-</div>
-...`}
-        </SyntaxHighlighter>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
         When you run this code, you will see a panel with five buttons stretched
-        horizontally within its cell. To aid the comprehension of the preceding
-        code, a red grid was overlaid onto the image:
+        horizontally within their grid cells. Again, a red grid overlay is
+        provided for clarity.
       </p>
       <div className="BorderLayout" style={{ backgroundColor: "LightGray" }}>
         <div style={{ display: "grid" }}>
@@ -360,7 +374,7 @@ const CSSGridLayoutPage = ({ path }: PageProps) => {
         </div>
       </div>
       <p>
-        If you want to learn more about GridConstraints, refer to the{" "}
+        If you want to learn more about GridConstraints, you can refer to the{" "}
         <Link to="/grid-constraints/">How to Use GridConstraints</Link>{" "}
         tutorial.
       </p>
