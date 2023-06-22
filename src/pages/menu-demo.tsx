@@ -199,21 +199,17 @@ const MenuDemoPage = ({ path, location }: PageProps) => {
       jsCode={`/* ${title}.js */
 function handlePointerUp(event) {
   const menuItem = event.currentTarget;
+  const span = menuItem.children[1];
   const output = document.getElementById("output");
-  if (output.value) {
-    output.value += "\\n";
-  }
-  output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
+  output.value += "Clicked: " + span.textContent.trim() + "\\n";
 }
 function handleChange(event) {
   const input = event.currentTarget;
   const menuItem = input.closest(".MenuItem");
+  const span = menuItem.children[1];
   const output = document.getElementById("output");
-  if (output.value) {
-    output.value += "\\n";
-  }
-  output.value += "Clicked: " + menuItem.textContent.trim().replace(/\\s+/g, " ");
-  output.value += " (type: " + input.type + ", checked: " + input.checked + ")";
+  output.value += "Clicked: " + span.textContent.trim();
+  output.value += " (type: " + input.type + ", checked: " + input.checked + ")\\n";
 }
 `}
       info={`

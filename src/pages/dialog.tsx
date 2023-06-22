@@ -84,24 +84,26 @@ const DialogPage = ({ path }: PageProps) => {
   <script src="https://qo-op.github.io/simpa/simpa.js">
   </script>
   <script>
-function showDialog(event) {
-  const dialog = document.getElementById("dialog");
-  dialog.style.display = "block";
-  const modalLayer = document.getElementById("modal-layer");
-  modalLayer.style.visibility = "inherit";
-}
-function ok(event) {
-  const modalLayer = document.getElementById("modal-layer");
-  modalLayer.style.visibility = "hidden";
-  const dialog = document.getElementById("dialog");
-  dialog.style.display = "none";
-  dialog.style.position = "";
-}
+    function showDialog(event) {
+      const dialog = document.getElementById("dialog");
+      dialog.style.display = "block";
+      const modalLayer = document.getElementById("modal-layer");
+      modalLayer.style.visibility = "inherit";
+    }
+    function ok(event) {
+      const modalLayer = document.getElementById("modal-layer");
+      modalLayer.style.visibility = "hidden";
+      const dialog = document.getElementById("dialog");
+      dialog.style.display = "none";
+      dialog.style.position = "";
+    }
   </script>
 </head>
 <body class="Frame">
   <div class="CenterLayout">
-    <button onclick="showDialog(event);">Click me!</button>
+    <button onclick="showDialog(event);">
+      Click me!
+    </button>
   </div>
   <div class="ModalLayer CenterLayout"
        style="visibility: hidden"
@@ -233,10 +235,12 @@ function ok(event) {
     }
   </script>
 </head>
-<body class="Frame CenterLayout">
-  <button onclick="handleClick(event);">
-    Click me!
-  </button>
+<body class="Frame">
+  <div class="CenterLayout">
+    <button onclick="handleClick(event);">
+      Click me!
+    </button>
+  </div>
 </body>
 </html>
 `}
@@ -249,7 +253,7 @@ function ok(event) {
       </p>
       <div
         className="CenterLayout"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
+        style={{ height: "100px", border: "1px solid Gray" }}
       >
         <button onClick={showMessageDialog}>Click me!</button>
       </div>
@@ -287,16 +291,18 @@ function ok(event) {
     }
   </script>
 </head>
-<body class="Frame CenterLayout">
-  <div class="BoxLayout"
-       data-axis="page-axis"
-       style="gap: .5em;">
-    <button onclick="handleClick(event);">
-      Click me!
-    </button>
-    <textarea rows="3"
-              cols="40"
-              id="textarea"></textarea>
+<body class="Frame">
+  <div class="CenterLayout">
+    <div class="BoxLayout"
+        data-axis="page-axis"
+        style="gap: .5em;">
+      <button onclick="handleClick(event);">
+        Click me!
+      </button>
+      <textarea rows="3"
+                cols="40"
+                id="textarea"></textarea>
+    </div>
   </div>
 </body>
 </html>
@@ -311,7 +317,7 @@ function ok(event) {
       </p>
       <div
         className="CenterLayout"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
+        style={{ height: "100px", border: "1px solid Gray" }}
       >
         <div
           className="BoxLayout"
@@ -351,24 +357,26 @@ function ok(event) {
         null,
         "ham");
       if (input) {
-        textarea.value = "Green eggs and... " + input + "!\\n";
+        textarea.value += "Green eggs and... " + input + "!\\n";
       } else {
-        textarea.value = "Come on, finish the sentence!\\n";
+        textarea.value += "Come on, finish the sentence!\\n";
       }
       textarea.scrollTop = textarea.scrollHeight;
     }
   </script>
 </head>
-<body class="Frame CenterLayout">
-  <div class="BoxLayout"
-       data-axis="page-axis"
-       style="gap: .5em;">
-    <button onclick="handleClick(event);">
-      Click me!
-    </button>
-    <textarea rows="3"
-              cols="40"
-              id="textarea"></textarea>
+<body class="Frame">
+  <div class="CenterLayout">
+    <div class="BoxLayout"
+         data-axis="page-axis"
+         style="gap: .5em;">
+      <button onclick="handleClick(event);">
+        Click me!
+      </button>
+      <textarea rows="3"
+                cols="40"
+                id="textarea"></textarea>
+    </div>
   </div>
 </body>
 </html>
@@ -382,7 +390,7 @@ function ok(event) {
       </p>
       <div
         className="CenterLayout"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
+        style={{ height: "100px", border: "1px solid Gray" }}
       >
         <div
           className="BoxLayout"

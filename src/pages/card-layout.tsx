@@ -102,20 +102,20 @@ const CardLayoutPage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
   <script>
-function handleChange(ev) {
-  const comboBox = ev.currentTarget;
-  const value = comboBox.value;
-  const container = document.getElementById("container");
-  const cards = container.children;
-  for (let i = 0; i < cards.length; i++) {
-    const card = container.children[i];
-    if (card.dataset.name === value) {
-      card.style.visibility = "inherit";
-    } else {
-      card.style.visibility = "hidden";
-    }
-  }
-};
+    function handleChange(ev) {
+      const comboBox = ev.currentTarget;
+      const value = comboBox.value;
+      const container = document.getElementById("container");
+      const cards = container.children;
+      for (let i = 0; i < cards.length; i++) {
+        const card = container.children[i];
+        if (card.dataset.name === value) {
+          card.style.visibility = "inherit";
+        } else {
+          card.style.visibility = "hidden";
+        }
+      }
+    };
   </script>
 </head>
 <body>

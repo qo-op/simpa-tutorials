@@ -51,11 +51,11 @@ const TreePage = ({ path }: PageProps) => {
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script>
-function expandOrCollapse(event) {
-  const treeNode = event.currentTarget;
-  const closed = treeNode.dataset.closed;
-  treeNode.dataset.closed = closed === "true" ? "false" : "true";
-}
+    function expandOrCollapse(event) {
+      const treeNode = event.currentTarget;
+      const closed = treeNode.dataset.closed;
+      treeNode.dataset.closed = closed === "true" ? "false" : "true";
+    }
   </script>
 </head>
 <body>
@@ -167,11 +167,11 @@ function expandOrCollapse(event) {
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script>
-function expandOrCollapse(event) {
-  const treeNode = event.currentTarget;
-  const closed = treeNode.dataset.closed;
-  treeNode.dataset.closed = closed === "true" ? "false" : "true";
-}
+    function expandOrCollapse(event) {
+      const treeNode = event.currentTarget;
+      const closed = treeNode.dataset.closed;
+      treeNode.dataset.closed = closed === "true" ? "false" : "true";
+    }
   </script>
 </head>
 <body>
