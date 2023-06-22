@@ -1,10 +1,9 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 import { PageProps } from "gatsby";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Dialogs with HTML, CSS and JavaScript";
 const description: string =
@@ -70,55 +69,88 @@ const DialogPage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        A Dialog represents a secondary window that appears on top of the main
-        application. It is typically used to prompt the user for input, display
+        Dialogs are secondary windows that appear on top of the main
+        application, typically used to prompt the user for input, display
         messages, or provide additional information.
       </p>
-      <p>Here's an example of a basic Dialog:</p>
+      <p>Here's an example of a basic dialog:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="Dialog BorderLayout">
-  <div class="PageStart">
-    <!-- dialog title bar -->
-    <div class="DialogTitleBar"
-         style="background-color: LightGray;
-                padding: 0 .5em;">
-      Message
-    </div>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
+  <script>
+function showDialog(event) {
+  const dialog = document.getElementById("dialog");
+  dialog.style.display = "block";
+  const modalLayer = document.getElementById("modal-layer");
+  modalLayer.style.visibility = "inherit";
+}
+function ok(event) {
+  const modalLayer = document.getElementById("modal-layer");
+  modalLayer.style.visibility = "hidden";
+  const dialog = document.getElementById("dialog");
+  dialog.style.display = "none";
+  dialog.style.position = "";
+}
+  </script>
+</head>
+<body class="Frame">
+  <div class="CenterLayout">
+    <button onclick="showDialog(event);">Click me!</button>
   </div>
-  <!-- dialog content -->
-  <div class="BorderLayout"
-       style="padding: .5em;">
-    <!-- dialog text -->
-    <span>
-      This is a dialog!
-    </span>
-    <div class="PageEnd"
-         style="margin: .5em 0 0 0">
-      <!-- button pane -->
-      <div class="FlowLayout"
-           style="gap: .5em;">
-        <!-- ok button -->
-        <button>OK</button>
+  <div class="ModalLayer CenterLayout"
+       style="visibility: hidden"
+       id="modal-layer">
+    <!-- Dialog -->
+    <div class="Dialog BorderLayout"
+         style="display: none;
+                background-color: WhiteSmoke"
+         id="dialog">
+      <div class="PageStart">
+        <!-- Dialog Title Bar -->
+        <div class="DialogTitleBar"
+             style="background-color: LightGray;
+             padding: 0 0.5em">
+          Message
+        </div>
+      </div>
+      <!-- Dialog Content -->
+      <div class="BorderLayout"
+           style="padding: 0.5em">
+        <!-- Dialog Text -->
+        <span>This is a dialog!</span>
+        <div class="PageEnd"
+             style="margin: 0.5em 0 0 0">
+          <!-- Button Pane -->
+          <div class="FlowLayout"
+               style="gap: 0.5em">
+            <!-- OK Button -->
+            <button onclick="ok(event);">
+              OK
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-...`}
-        </SyntaxHighlighter>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In the example above, we create a div container and set its class to
-        "Dialog".
+        In the above example, we create a &lt;div&gt; container and set its
+        class to "Dialog." When you run this code and the button is clicked, you
+        will see a dialog with a "This is a dialog!" message.
       </p>
       <p>
-        When you run this code, you will see a dialog with a "This is a dialog!"
-        message.
-      </p>
-      <p>
-        By default, Dialog enables the user to move itself by simply clicking
-        and dragging its title bar. Try moving the dialog by its title bar.
+        By default, dialogs allow the user to move them by clicking and dragging
+        the title bar.
       </p>
       <div className="CenterLayout">
         <div className="BorderLayout">
@@ -165,8 +197,8 @@ const DialogPage = ({ path }: PageProps) => {
       <h2>Creating Simple Dialogs with OptionPane</h2>
       <p>
         OptionPane is a class that provides a convenient way to display various
-        types of dialog boxes, including information messages, warning messages,
-        error messages, and input prompts, within an application.
+        types of dialog boxes within a web application, including information
+        messages, warning messages, error messages, and input prompts.
       </p>
       <p>
         To use OptionPane, you start by calling one of its static methods, such
@@ -177,22 +209,14 @@ const DialogPage = ({ path }: PageProps) => {
       <hr />
       <h2>OptionPane's showMessageDialog()</h2>
       <p>
-        The showMessageDialog() method in OptionPane is a convenient way to
-        display a dialog box with a message and an OK button. By calling this
-        method and providing the necessary parameters, such as the message
-        content, title, and message type, a modal dialog box is created and
-        displayed to the user. The showMessageDialog() method allows developers
-        to quickly inform users about important information or display
-        notifications, without the need for manual creation and management of
-        dialog components, making it an efficient way to communicate messages
-        within a SPA application.
+        The showMessageDialog() method in OptionPane allows you to display a
+        dialog box with a message and an OK button. It quickly informs users
+        about important information or displays notifications without the need
+        for manual creation and management of dialog components.
       </p>
-      <p>
-        Here's an example of how to use the showMessageDialog() method in
-        OptionPane:
-      </p>
+      <p>Here's an example of how to use the showMessageDialog() method:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
+        <CopyToClipboardSyntaxHighlighter>
           {`<!DOCTYPE html>
 <html>
 <head>
@@ -216,13 +240,12 @@ const DialogPage = ({ path }: PageProps) => {
 </body>
 </html>
 `}
-        </SyntaxHighlighter>
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we have an HTML page with a button. When the button is
-        clicked, the handleClick() function is called, which triggers the
-        OptionPane.showMessageDialog() method. A modal dialog box will appear
-        with the message "Eggs aren't supposed to be green." and an OK button.
+        In this example, when the button is clicked, a modal dialog box will
+        appear with the message "Eggs aren't supposed to be green." and an OK
+        button.
       </p>
       <div
         className="CenterLayout"
@@ -234,19 +257,13 @@ const DialogPage = ({ path }: PageProps) => {
       <hr />
       <h2>OptionPane's showConfirmDialog()</h2>
       <p>
-        The showConfirmDialog() method in OptionPane is a useful feature that
-        enables developers to display a dialog box with a message and
-        customizable buttons to prompt the user for confirmation or choice. By
-        calling this method and providing the necessary parameters such as the
-        message content, title, message type, and button options, a modal dialog
-        box is created and presented to the user.
+        The showConfirmDialog() method in OptionPane enables you to display a
+        dialog box with a message and customizable buttons to prompt the user
+        for confirmation or choice.
       </p>
-      <p>
-        Here's an example of how to use the showConfirmDialog() method in
-        OptionPane:
-      </p>
+      <p>Here's an example of how to use the showConfirmDialog() method:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
+        <CopyToClipboardSyntaxHighlighter>
           {`<!DOCTYPE html>
 <html>
 <head>
@@ -284,14 +301,13 @@ const DialogPage = ({ path }: PageProps) => {
 </body>
 </html>
 `}
-        </SyntaxHighlighter>
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
         In this example, when the button is clicked, a modal dialog box will
-        appear with the message 'Would you like green eggs and ham?' and 'Yes'
-        and 'No' buttons. If the user clicks 'Yes', the text 'Ewww!' will be
-        printed to the textarea. If the user clicks 'No', the text 'Me neither!'
-        will be printed to the textarea.
+        appear with the message "Would you like green eggs and ham?" and 'Yes'
+        and 'No' buttons. The corresponding text will be printed to the textarea
+        based on the user's choice.
       </p>
       <div
         className="CenterLayout"
@@ -310,16 +326,13 @@ const DialogPage = ({ path }: PageProps) => {
       <hr />
       <h2>OptionPane's showInputDialog()</h2>
       <p>
-        The showInputDialog() method in OptionPane is a convenient feature that
-        allows developers to display a dialog box with a message and a combo box
-        or a text input field, prompting the user for input.
+        The showInputDialog() method in OptionPane allows you to display a
+        dialog box with a message and a combo box or a text input field,
+        prompting the user for input.
       </p>
-      <p>
-        Here's an example of how to use the showInputDialog() method in
-        OptionPane:
-      </p>
+      <p>Here's an example of how to use the showInputDialog() method:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="javascript" style={vs2015} wrapLongLines>
+        <CopyToClipboardSyntaxHighlighter>
           {`<!DOCTYPE html>
 <html>
 <head>
@@ -360,12 +373,12 @@ const DialogPage = ({ path }: PageProps) => {
 </body>
 </html>
 `}
-        </SyntaxHighlighter>
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
         In this example, when the button is clicked, a modal dialog box will
-        appear with the message 'Complete the sentence: Green eggs and...' and
-        the user is prompted to complete the sentence in the input field.
+        appear with the message "Complete the sentence: Green eggs and..." and
+        prompt the user to complete the sentence in the input field.
       </p>
       <div
         className="CenterLayout"
