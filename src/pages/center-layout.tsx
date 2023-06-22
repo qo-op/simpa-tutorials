@@ -1,3 +1,4 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
@@ -27,19 +28,28 @@ const CenterLayoutPage = ({ path }: PageProps) => {
       </p>
       <p>
         To use CenterLayout, you first need to create a container to hold your
-        component. This can be a div element. Once you have your container, you
-        can set its layout to CenterLayout by adding "CenterLayout" to its class{" "}
-        attribute.
+        component. This can be a &lt;div&gt; element. Once you have your
+        container, you can set its layout to CenterLayout by adding
+        "CenterLayout" to its class attribute.
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="CenterLayout"
-     style="height: 100px">
-  <button>Click me!</button>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with CenterLayout -->
+  <div class="CenterLayout"
+       style="height: 100px;
+              background-color: LightGray">
+    <button>Button</button>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
         In this example, we're setting the div's layout to CenterLayout to
@@ -54,7 +64,7 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         className="CenterLayout"
         style={{ height: "100px", backgroundColor: "LightGray" }}
       >
-        <button>Click me!</button>
+        <button>Button</button>
       </div>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />
