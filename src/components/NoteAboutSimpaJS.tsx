@@ -20,9 +20,9 @@ const NoteAboutSimpaJS = ({ subject }: { subject: string }) => {
       >
         <h2>Note about {subject}</h2>
         <p>
-          In order to use {subject} in your HTML file, you need to include a{" "}
-          link to the Simpa stylesheet and a link to the Simpa JavaScript in the
-          head section of your HTML document.
+          To utilize {subject} in your HTML file, you need to include links to
+          the Simpa stylesheet and the Simpa JavaScript in the head section of
+          your HTML document:
         </p>
         <div className="SyntaxHighlighter">
           <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
@@ -37,13 +37,14 @@ const NoteAboutSimpaJS = ({ subject }: { subject: string }) => {
           </SyntaxHighlighter>
         </div>
         <p>
-          It's important to note that the URLs in the href and src attributes
-          points to external resources on the internet. This means that your web
-          page will only be able to use Simpa if it has a working internet
-          connection and can access the Simpa CDN (Content Delivery Network) at
-          the specified URL. If you want to use Simpa offline or on a local
-          server, you can download the Simpa stylesheet and JavaScript and
-          include them in your project directory instead of using the CDN.
+          It's important to be aware that the URLs specified in the href and src
+          attributes point to external resources on the internet. Therefore,
+          your web page will only be able to utilize Simpa if it has a
+          functional internet connection and can access the Simpa CDN (Content
+          Delivery Network) at the provided URLs. If you prefer to use Simpa
+          offline or on a local server, you can download the Simpa stylesheet
+          and JavaScript files and include them in your project directory
+          instead of relying on the CDN.
         </p>
       </div>
       <hr />

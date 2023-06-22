@@ -29,7 +29,7 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         To start using Box Layouts, you'll need to create a container to hold
         your components. This can be achieved by using a &lt;div&gt; element.
         Once you have created your container, you can apply the Box Layout by
-        assigning the class name "BoxLayout" to the container's class attribute
+        assigning the class name "BoxLayout" to the container's class attribute.
       </p>
       <hr />
       <h2>Example with Components Arranged Horizontally</h2>
@@ -175,11 +175,10 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>Other data-alignment-x values that control horizontal alignment:</p>
       <ul>
         <li>
-          <div>
+          <p>
             data-alignment-x="start" aligns components to the left edge of the
             container.
-          </div>
-          <br />
+          </p>
           <div
             className="BoxLayout"
             data-axis="page-axis"
@@ -194,14 +193,32 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             <button>Third</button>
             <button>Fourth</button>
           </div>
+          <p>
+            On a horizontal Box Layout container, components will be justified
+            to the left edge.
+          </p>
+          <div
+            className="BoxLayout"
+            data-axis="line-axis"
+            data-alignment-x="start"
+            style={{
+              height: "100px",
+              backgroundColor: "LightGray",
+            }}
+          >
+            <button>Button</button>
+            <button>
+              Another
+              <br />
+              button
+            </button>
+          </div>
         </li>
-        <br />
         <li>
-          <div>
+          <p>
             data-alignment-x="end" aligns components to the right edge of the
             container.
-          </div>
-          <br />
+          </p>
           <div
             className="BoxLayout"
             data-axis="page-axis"
@@ -216,12 +233,10 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             <button>Third</button>
             <button>Fourth</button>
           </div>
-          <br />
-          <div>
+          <p>
             On a horizontal Box Layout container, components will be justified
             to the right edge.
-          </div>
-          <br />
+          </p>
           <div
             className="BoxLayout"
             data-axis="line-axis"
@@ -239,13 +254,29 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             </button>
           </div>
         </li>
-        <br />
         <li>
-          <div>
-            data-alignment-x="center" centers the components horizontally on a
-            horizontal Box Layout container.
+          <p>
+            data-alignment-x="center" aligns components at the center of the
+            container.
+          </p>
+          <div
+            className="BoxLayout"
+            data-axis="page-axis"
+            data-alignment-x="center"
+            style={{
+              height: "100px",
+              backgroundColor: "LightGray",
+            }}
+          >
+            <button>First</button>
+            <button>Second</button>
+            <button>Third</button>
+            <button>Fourth</button>
           </div>
-          <br />
+          <p>
+            On a horizontal Box Layout container, components will be justified
+            at the center within the container.
+          </p>
           <div
             className="BoxLayout"
             data-axis="line-axis"
@@ -317,11 +348,10 @@ const BorderLayoutPage = ({ path }: PageProps) => {
       <p>Other data-alignment-y values that control vertical alignment:</p>
       <ul>
         <li>
-          <div>
+          <p>
             data-alignment-y="start" aligns components to the top edge of the
             container.
-          </div>
-          <br />
+          </p>
           <div
             className="BoxLayout"
             data-axis="line-axis"
@@ -338,14 +368,30 @@ const BorderLayoutPage = ({ path }: PageProps) => {
               button
             </button>
           </div>
+          <p>
+            On a vertical Box Layout container, components will be justified to
+            the top edge.
+          </p>
+          <div
+            className="BoxLayout"
+            data-axis="page-axis"
+            data-alignment-y="start"
+            style={{
+              height: "150px",
+              backgroundColor: "LightGray",
+            }}
+          >
+            <button>First</button>
+            <button>Second</button>
+            <button>Third</button>
+            <button>Fourth</button>
+          </div>
         </li>
-        <br />
         <li>
-          <div>
+          <p>
             data-alignment-y="end" aligns components to the bottom edge of the
             container.
-          </div>
-          <br />
+          </p>
           <div
             className="BoxLayout"
             data-axis="line-axis"
@@ -362,12 +408,10 @@ const BorderLayoutPage = ({ path }: PageProps) => {
               button
             </button>
           </div>
-          <br />
-          <div>
+          <p>
             On a vertical Box Layout container, components will be justified to
             the bottom edge.
-          </div>
-          <br />
+          </p>
           <div
             className="BoxLayout"
             data-axis="page-axis"
@@ -383,13 +427,31 @@ const BorderLayoutPage = ({ path }: PageProps) => {
             <button>Fourth</button>
           </div>
         </li>
-        <br />
         <li>
-          <div>
-            data-alignment-y="center" centers the components vertically on a
-            vertical Box Layout container.
+          <p>
+            data-alignment-y="center" aligns components at the center of the
+            container.
+          </p>
+          <div
+            className="BoxLayout"
+            data-axis="line-axis"
+            data-alignment-y="center"
+            style={{
+              height: "100px",
+              backgroundColor: "LightGray",
+            }}
+          >
+            <button>Button</button>
+            <button>
+              Another
+              <br />
+              button
+            </button>
           </div>
-          <br />
+          <p>
+            On a vertical Box Layout container, components will be justified at
+            the center within the container.
+          </p>
           <div
             className="BoxLayout"
             data-axis="page-axis"
