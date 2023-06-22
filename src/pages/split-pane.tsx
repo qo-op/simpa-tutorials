@@ -1,10 +1,9 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 import { PageProps } from "gatsby";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Split Panes with HTML, CSS and JavaScript";
 const description: string =
@@ -23,20 +22,17 @@ const SplitPanePage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        SplitPane is a component that provides a way to divide a container into
-        two resizable areas, with a divider in between. It allows the user to
-        interactively resize the two areas by dragging the divider.
-      </p>
-      <p>
-        It is commonly used to create resizable split views, such as a vertical
-        or horizontal split pane in an application's user interface.
+        A SplitPane is a component that allows you to divide a container into
+        two resizable areas with a draggable divider. It is commonly used to
+        create resizable split views, such as vertical or horizontal split panes
+        in a user interface.
       </p>
       <p>
         Here's a basic example of using SplitPane to create a horizontal split
         pane:
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
+        <CopyToClipboardSyntaxHighlighter>
           {`<!DOCTYPE html>
 <html>
   <head>
@@ -44,16 +40,16 @@ const SplitPanePage = ({ path }: PageProps) => {
     <script src="https://qo-op.github.io/simpa/simpa.js"></script>
   </head>
   <body class="Frame" id="split-pane-demo">
-    <!-- split pane -->
+    <!-- Container with SplitPane -->
     <div class="SplitPane"
          data-orientation="horizontal-split">
-      <!-- left container -->
+      <!-- Left Container -->
       <div>
         <button>Left Button</button>
       </div>
-      <!-- divider -->
+      <!-- Divider -->
       <div></div>
-      <!-- right container -->
+      <!-- Right Container -->
       <div>
         <button>Right Button</button>
       </div>
@@ -61,22 +57,21 @@ const SplitPanePage = ({ path }: PageProps) => {
   </body>
 </html>
 `}
-        </SyntaxHighlighter>
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In the given example, we start by creating a &lt;div&gt; container and
-        assigning it the class "SplitPane". This container is configured for a
-        horizontal split by setting the data-orientation attribute.
+        In the above example, we create a &lt;div&gt; container with the class
+        "SplitPane" and set the data-orientation attribute to "horizontal-split"
+        to configure it as a horizontal split pane.
       </p>
       <p>
-        Next, we include a left container and a right container without any
-        margins, borders, or padding. These containers are separated by a
-        divider. Each container contains a button.
+        Inside the split pane, we have a left container, a divider, and a right
+        container. The left and right containers contain buttons.
       </p>
       <p>
-        As a result, the split pane will show the two buttons positioned next to
-        each other, with the divider in the middle. You can adjust the width of
-        the containers and resize the buttons by dragging the divider.
+        When you run this code, you will see two buttons positioned next to each
+        other, with the draggable divider in the middle. You can adjust the
+        width of the containers and resize the buttons by dragging the divider.
       </p>
       <div className="SplitPane" style={{ height: "100px" }}>
         <div>

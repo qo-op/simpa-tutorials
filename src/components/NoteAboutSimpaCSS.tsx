@@ -1,6 +1,5 @@
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import CopyToClipboardSyntaxHighlighter from "./CopyToClipboardSyntaxHighlighter";
 
 const NoteAboutSimpaCSSStyle: React.CSSProperties = {
   backgroundColor: "ivory",
@@ -24,14 +23,10 @@ const NoteAboutSimpaCSS = ({ subject }: { subject: string }) => {
           Simpa stylesheet in the head section of your HTML document:
         </p>
         <div className="SyntaxHighlighter">
-          <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-            {`<head>
-  ...
-  <link rel="stylesheet"
-        href="https://qo-op.github.io/simpa/simpa.css">
-  ...
-</head>`}
-          </SyntaxHighlighter>
+          <CopyToClipboardSyntaxHighlighter>
+            {`<link rel="stylesheet"
+      href="https://qo-op.github.io/simpa/simpa.css">`}
+          </CopyToClipboardSyntaxHighlighter>
         </div>
         <p>
           It's important to be aware that the URL specified in the href

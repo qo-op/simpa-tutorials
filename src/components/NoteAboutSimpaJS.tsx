@@ -1,6 +1,5 @@
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import CopyToClipboardSyntaxHighlighter from "./CopyToClipboardSyntaxHighlighter";
 
 const NoteAboutSimpaJSStyle: React.CSSProperties = {
   backgroundColor: "ivory",
@@ -25,16 +24,13 @@ const NoteAboutSimpaJS = ({ subject }: { subject: string }) => {
           your HTML document:
         </p>
         <div className="SyntaxHighlighter">
-          <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-            {`<head>
-  ...
-  <link rel="stylesheet"
-        href="https://qo-op.github.io/simpa/simpa.css">
-  <script src="https://qo-op.github.io/simpa/simpa.js">
-  </script>
-  ...
-</head>`}
-          </SyntaxHighlighter>
+          <CopyToClipboardSyntaxHighlighter>
+            {`<link rel="stylesheet"
+      href="https://qo-op.github.io/simpa/simpa.css">
+<script src="https://qo-op.github.io/simpa/simpa.js">
+</script>
+`}
+          </CopyToClipboardSyntaxHighlighter>
         </div>
         <p>
           It's important to be aware that the URLs specified in the href and src
