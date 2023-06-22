@@ -1,3 +1,4 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
@@ -22,39 +23,50 @@ const ScrollPanePage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        ScrollPane provides a scrollable view of another component or a group of
-        components. It is often used when the content within a component exceeds
-        the available space, allowing users to scroll vertically and/or
-        horizontally to view the entire content.
+        ScrollPane is a tool for creating scrollable views of components or
+        groups of components. It is particularly useful when the content within
+        a component exceeds the available space, enabling users to scroll
+        vertically and/or horizontally to access the entire content.
       </p>
       <p>
-        The primary purpose of ScrollPane is to enhance the usability of
-        components that contain more content than can be displayed within the
-        available area. It may add scrollbars to the container, which can be
-        used to navigate and view the content that extends beyond the visible
-        boundaries.
+        The main purpose of ScrollPane is to enhance the usability of components
+        that contain more content than can be displayed within the available
+        area. By incorporating ScrollPane, scrollbars can be added to the
+        container, facilitating navigation and viewing of content that extends
+        beyond the visible boundaries.
       </p>
-      <p>Here's an example of how to use ScrollPane:</p>
+      <p>Here's an example illustrating how to utilize ScrollPane:</p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="ScrollPane"
-     style="width: 200px; white-space: nowrap;">
-  <p>This is a long text that requires scrolling.</p>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <div class="ScrollPane"
+       style="width: 200px;
+              white-space: nowrap;
+              border: 1px solid Gray;
+              background-color: WhiteSmoke;">
+    <p>This is a long text that requires scrolling.</p>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container and set its class to
-        "ScrollPane". Inside the div container, we create a paragraph and set
-        some sample text to demonstrate scrolling.
+        In this example, a div container with the class "ScrollPane" is created.
+        Inside the div, a paragraph is included, serving as sample text that
+        necessitates scrolling.
       </p>
       <p>
-        When you run this code, you will see a panel with a scrollable paragraph
-        inside the ScrollPane. The scrollbars may appear automatically when the
-        text content extends beyond the visible area, allowing you to scroll and
-        view the complete text.
+        Upon running this code, a panel with a scrollable paragraph will be
+        displayed within the ScrollPane. The scrollbars will automatically
+        appear when the text content extends beyond the visible area, enabling
+        users to scroll and access the complete text.
       </p>
       <div className="CenterLayout">
         <div
@@ -73,30 +85,42 @@ const ScrollPanePage = ({ path }: PageProps) => {
       <hr />
       <h2>The Overlay Attribute</h2>
       <p>
-        Some browsers can display the scrollbars on top of the content, rather
-        than taking up additional space within the container. This overlay
-        effect allows the content to maintain its original dimensions without
-        being affected by the space taken up by the scrollbars.
+        Certain browsers offer the option to display scrollbars on top of the
+        content, rather than occupying additional space within the container.
+        This overlay effect allows the content to maintain its original
+        dimensions without being affected by the space occupied by the
+        scrollbars.
       </p>
       <p>
-        If your browser supports scrollbar overlay, you can add the data-overlay
-        attribute to enable it.
+        To enable scrollbar overlay, you can include the data-overlay attribute
+        as follows:
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="ScrollPane"
-     data-overlay
-     style="max-width: 200px; white-space: nowrap;">
-  <p>This is a long text that requires scrolling.</p>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <div class="ScrollPane"
+       data-overlay
+       style="width: 200px;
+              white-space: nowrap;
+              border: 1px solid Gray;
+              background-color: WhiteSmoke;">
+    <p>This is a long text that requires scrolling.</p>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        When you run this code, you will see a semi-transparent scrollbar when
-        you hover over the scrollpane if scrollbar overlay is natively supported
-        by your browser.
+        When executing this code, a semi-transparent scrollbar will appear when
+        hovering over the scrollpane, provided that your browser natively
+        supports scrollbar overlay.
       </p>
       <div className="CenterLayout">
         <div
