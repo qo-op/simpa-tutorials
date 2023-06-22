@@ -1,3 +1,4 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
@@ -22,53 +23,63 @@ const GridConstraintsPage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        GridConstraints is a layout manager that is used to lay out a single
-        component in a container. It is used to specify how a component should
-        be positioned as well as how the component should be resize within its
-        container. It has two attributes: data-anchor and data-fill
+        GridConstraints is a layout manager that allows you to define the
+        positioning and resizing behavior of a single component within a
+        container. It consists of two attributes: data-anchor and data-fill.
       </p>
       <hr />
       <h2>The Anchor Attribute</h2>
       <p>
-        The data-anchor attribute in the GridConstraints layout is used to
-        specify the position of a component within its container.
+        The data-anchor attribute in GridConstraints is utilized to specify the
+        position of a component within its container.
       </p>
       <p>
-        Here's an example of using GridConstraints layout with the data-anchor
+        Here's an example of using GridConstraints with the data-anchor
         attribute:
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="GridConstraints"
-     data-anchor="center"
-     style="height: 100px;">
-  <button>Click me!</button>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with GridConstraints -->
+  <div class="GridConstraints"
+       data-anchor="center"
+       style="height: 100px;
+              background-color: LightGray">
+    <button>Button</button>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container, set its class attribute to
-        "GridConstraints" and its data-anchor attribute to center. We then add a{" "}
-        button with the text "Click me!" to the container.
+        In this example, a &lt;div&gt; container is created with the class
+        attribute set to "GridConstraints" and the data-anchor attribute set to
+        center. A button with the text "Button" is added to the container.
       </p>
       <p>
-        When you run this code, you will see a panel with a centered button:
+        When you run this code, you will observe a panel with a button centered
+        within it:
       </p>
       <div
         className="GridConstraints"
         data-anchor="center"
         style={{ height: "100px", backgroundColor: "LightGray" }}
       >
-        <button>Click me!</button>
+        <button>Button</button>
       </div>
       <p>
-        The data-anchor attribute can be set to one of the following values:
+        The data-anchor attribute can be assigned one of the following values:
       </p>
       <ul>
         <li>
-          center: Centers the component within its container (default).
+          <p>center: Centers the component within its container (default).</p>
           <div
             className="GridConstraints"
             data-anchor="center"
@@ -76,10 +87,11 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>center</button>
           </div>
-          <br />
         </li>
         <li>
-          page-start: Aligns the component with the top edge of its container.
+          <p>
+            page-start: Aligns the component with the top edge of its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="page-start"
@@ -87,10 +99,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>page-start</button>
           </div>
-          <br />
         </li>
         <li>
-          page-end: Aligns the component with the bottom edge of its container.
+          <p>
+            page-end: Aligns the component with the bottom edge of its
+            container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="page-end"
@@ -98,10 +112,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>page-end</button>
           </div>
-          <br />
         </li>
         <li>
-          line-start: Aligns the component with the left edge of its container.
+          <p>
+            line-start: Aligns the component with the left edge of its
+            container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="line-start"
@@ -109,10 +125,11 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>line-start</button>
           </div>
-          <br />
         </li>
         <li>
-          line-end: Aligns the component with the right edge of its container.
+          <p>
+            line-end: Aligns the component with the right edge of its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="line-end"
@@ -120,11 +137,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>line-end</button>
           </div>
-          <br />
         </li>
         <li>
-          first-line-start: Aligns the component with the top-left corner of its
-          container.
+          <p>
+            first-line-start: Aligns the component with the top-left corner of
+            its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="first-line-start"
@@ -132,11 +150,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>first-line-start</button>
           </div>
-          <br />
         </li>
         <li>
-          first-line-end: Aligns the component with the top-right corner of its
-          container.
+          <p>
+            first-line-end: Aligns the component with the top-right corner of
+            its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="first-line-end"
@@ -144,11 +163,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>first-line-end</button>
           </div>
-          <br />
         </li>
         <li>
-          last-line-start: Aligns the component with the bottom-left corner of
-          its container.
+          <p>
+            last-line-start: Aligns the component with the bottom-left corner of
+            its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="last-line-start"
@@ -156,11 +176,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>last-line-start</button>
           </div>
-          <br />
         </li>
         <li>
-          last-line-end: Aligns the component with the bottom-right corner of
-          its container.
+          <p>
+            last-line-end: Aligns the component with the bottom-right corner of
+            its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="last-line-end"
@@ -171,8 +192,8 @@ const GridConstraintsPage = ({ path }: PageProps) => {
         </li>
       </ul>
       <p>
-        Here is a picture that summarizes how these data-anchor values are
-        interpreted in a container.
+        Here is a visual representation summarizing the interpretation of these
+        data-anchor values within a container:
       </p>
       <div
         style={{
@@ -184,72 +205,87 @@ const GridConstraintsPage = ({ path }: PageProps) => {
         }}
       >
         <div className="GridConstraints" data-anchor="first-line-start">
-          <span>first-line-start</span>
+          <button>first-line-start</button>
         </div>
         <div className="GridConstraints" data-anchor="page-start">
-          <span>page-start</span>
+          <button>page-start</button>
         </div>
         <div className="GridConstraints" data-anchor="first-line-end">
-          <span>first-line-end</span>
+          <button>first-line-end</button>
         </div>
         <div className="GridConstraints" data-anchor="line-start">
-          <span>line-start</span>
+          <button>line-start</button>
         </div>
         <div className="GridConstraints" data-anchor="center">
-          <span>center</span>
+          <button>center</button>
         </div>
         <div className="GridConstraints" data-anchor="line-end">
-          <span>line-end</span>
+          <button>line-end</button>
         </div>
         <div className="GridConstraints" data-anchor="last-line-start">
-          <span>last-line-start</span>
+          <button>last-line-start</button>
         </div>
         <div className="GridConstraints" data-anchor="page-end">
-          <span>page-end</span>
+          <button>page-end</button>
         </div>
         <div className="GridConstraints" data-anchor="last-line-end">
-          <span>last-line-end</span>
+          <button>last-line-end</button>
         </div>
       </div>
       <p></p>
       <hr />
       <h2>The Fill Attribute</h2>
       <p>
-        The data-fill attribute in the GridConstraints layout is used to specify
-        how a component should be resized within its container.
+        The data-fill attribute in GridConstraints is used to specify the
+        resizing behavior of a component within its container.
       </p>
       <p>
-        Here's an example of how to use the data-fill attribute to specify the
+        Here's an example of how to use the data-fill attribute to define the
         fill behavior for a component:
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="GridConstraints"
-     data-fill="vertical"
-     style="height: 100px;">
-  <button>Click me!</button>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+  </head>
+  <body>
+    <!-- Container with GridConstraints -->
+    <div
+      class="GridConstraints"
+      data-fill="vertical"
+      style="height: 100px; background-color: LightGray"
+    >
+      <button>Button</button>
+    </div>
+  </body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container, sets its class to
-        GridConstraints and set its data-fill attribute to vertical. This will
-        resize the button vertically to fill the available space in its
-        container, but will not resize it horizontally:
+        In this example, a &lt;div&gt; container is created with the class
+        attribute set to "GridConstraints" and the data-fill attribute set to
+        vertical. This will resize the button vertically to fill the available
+        space within its container, while maintaining its original horizontal
+        size.
+      </p>
+      <p>
+        When you run this code, you will see a button that is vertically resized
+        to fill the available space:
       </p>
       <div
         className="GridConstraints"
         data-fill="vertical"
         style={{ height: "100px", backgroundColor: "LightGray" }}
       >
-        <button>Click me!</button>
+        <button>Button</button>
       </div>
-      <p>The data-fill attribute can be set to one of the following values:</p>
+      <p>The data-fill attribute can take one of the following values:</p>
       <ul>
         <li>
-          none: The component is not resized (default).
+          <p>none: The component is not resized (default).</p>
           <div
             className="GridConstraints"
             data-anchor="center"
@@ -257,11 +293,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>none</button>
           </div>
-          <br />
         </li>
         <li>
-          horizontal: The component is resized horizontally to fill the
-          available space in its container.
+          <p>
+            horizontal: The component is resized horizontally to fill the
+            available space within its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="center"
@@ -270,11 +307,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>horizontal</button>
           </div>
-          <br />
         </li>
         <li>
-          vertical: The component is resized vertically to fill the available
-          space in its container.
+          <p>
+            vertical: The component is resized vertically to fill the available
+            space within its container.
+          </p>
           <div
             className="GridConstraints"
             data-anchor="center"
@@ -283,11 +321,12 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>vertical</button>
           </div>
-          <br />
         </li>
         <li>
-          both: The component is resized both horizontally and vertically to
-          fill the available space in its container.
+          <p>
+            both: The component is resized both horizontally and vertically to
+            fill the available space within its container.
+          </p>
           <div
             className="GridConstraints"
             data-fill="both"
@@ -295,19 +334,17 @@ const GridConstraintsPage = ({ path }: PageProps) => {
           >
             <button>both</button>
           </div>
-          <br />
         </li>
       </ul>
       <hr />
       <h2>Combining Anchor and Fill Attributes</h2>
       <p>
-        You can combine the data-anchor and data-fill attributes in a
-        GridConstraints. As already seen above, the data-anchor attribute
-        determines where the component should be placed within its container,
-        while the data-fill attribute determines how the component should be
-        resized within its container. By combining these two attributes, you can
-        position and resize components in a variety of ways to achieve the
-        desired layout.
+        You can combine the data-anchor and data-fill attributes in
+        GridConstraints. As shown in the examples above, the data-anchor
+        attribute determines the component's placement within the container,
+        while the data-fill attribute determines its resizing behavior. By
+        combining these attributes, you can position and resize components in
+        various ways to achieve the desired layout.
       </p>
       <p></p>
       <NoteAboutSimpaCSS subject="Simpa CSS Layouts" />

@@ -1,3 +1,4 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
@@ -22,15 +23,15 @@ const FlowLayoutPage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        FlowLayout is a layout manager that arranges components in a container
-        in a left-to-right or right-to-left flow, wrapping to the next row if
-        necessary.
+        FlowLayout is a layout manager that organizes components within a
+        container in either a left-to-right or right-to-left flow, with the
+        ability to wrap components to the next row if necessary.
       </p>
       <p>
-        When you add components to a container with FlowLayout, they are
-        arranged in the order they are added. If the width of the container is
-        too small to fit all the components on one row, the components will be
-        wrapped to the next row.
+        When you add components to a container using FlowLayout, they will be
+        arranged in the order they are added. If the container's width is
+        insufficient to accommodate all the components on a single row, they
+        will automatically wrap to the next row.
       </p>
       <div
         className="FlowLayout"
@@ -57,45 +58,54 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <hr />
       <h2>Example with Leading Alignment</h2>
       <p>
-        The data-alignment attribute controls the alignment of the components in
-        the container. By default, components are centered in the container. You
-        can change the alignment of the components by setting data-alignment to
-        leading or trailing.
+        The alignment of components within the container is controlled by the
+        data-alignment attribute. By default, components are centered within the
+        container. However, you can modify the alignment by setting the
+        data-alignment attribute to "leading" or "trailing".
       </p>
       <p>
-        The leading alignment refers to the arrangement of components in the
-        container based on the container orientation. When the container
-        orientation is left-to-right (LTR), the leading alignment places
-        components at the left edge of the container. When the container
-        orientation is right-to-left (RTL), the leading alignment places
-        components at the right edge of the container.
+        In the context of FlowLayout, leading alignment places components at the
+        left edge of the container in a left-to-right (LTR) orientation, and at
+        the right edge of the container in a right-to-left (RTL) orientation.
       </p>
       <p>
-        The trailing alignment, on the other hand, places components at the
-        right edge of the container in a left-to-right layout, and at the left
-        edge of the container in a right-to-left layout.
+        On the other hand, trailing alignment positions components at the right
+        edge of the container in a left-to-right layout, and at the left edge in
+        a right-to-left layout.
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="FlowLayout"
-     data-alignment="leading"
-     style="height: 100px;">
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with FlowLayout -->
+  <!-- data-alignment="leading" -->
+  <div class="FlowLayout"
+       data-alignment="leading"
+       style="height: 100px;
+              background-color: LightGray">
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container, set its class to
-        "FlowLayout" and set the data-alignment attribute to leading. We then
-        add three buttons to the div container.
+        In this example, we create a &lt;div&gt; container and assign it the
+        class "FlowLayout". The data-alignment attribute is set to "leading",
+        resulting in a leading alignment. Three buttons are added within the
+        &lt;div&gt; container.
       </p>
       <p>
-        When we run the example, we will see three buttons arranged in a leading
-        alignment.
+        When you run this example, you will observe the three buttons arranged
+        in a leading alignment:
       </p>
       <div
         className="FlowLayout"
@@ -110,26 +120,38 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <hr />
       <h2>Example with RTL Direction</h2>
       <p>
-        In order to change the flow direction from right to left, you can set
-        its direction style to rtl.
+        To change the flow direction from left to right to right to left, you
+        can apply the "rtl" value to the direction style.
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="FlowLayout"
-     data-alignment="leading"
-     style="direction: rtl; height: 100px;">
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with FlowLayout -->
+  <!-- data-alignment="leading" -->
+  <!-- direction: rtl -->
+  <div class="FlowLayout"
+       data-alignment="leading"
+       style="direction: rtl;
+              height: 100px;
+              background-color: LightGray">
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we create a div container, set its layout to FlowLayout
-        and its alignment to leading. Then we set the direction style to rtl,
-        which changes the flow direction to right-to-left.
+        In this example, a &lt;div&gt; container with the FlowLayout class is
+        created, along with leading alignment and a specified height. By adding
+        the style "direction: rtl", the flow direction changes to right-to-left.
       </p>
       <div
         className="FlowLayout"
@@ -148,31 +170,45 @@ const FlowLayoutPage = ({ path }: PageProps) => {
       <hr />
       <h2>Creating Component Gaps</h2>
       <p>
-        To create gaps between rows of components in FlowLayout, you can use the
-        row-gap style property. If you want to create gaps between components in
-        a row, you can use the column-gap style property.
+        To introduce gaps between rows of components in FlowLayout, you can
+        utilize the row-gap style property. If you wish to create gaps between
+        components within a row, you can use the column-gap style property.
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="FlowLayout"
-     style="row-gap: 20px; column-gap: 40px; height: 100px;">
-  <button>Button 1</button>
-  <button>Button 2</button>
-  <button>Button 3</button>
-  <button>Button 4</button>
-  <button>Button 5</button>
-  <button>Button 6</button>
-  <button>Button 7</button>
-  <button>Button 8</button>
-  <button>Button 9</button>
-</div>
-...`}
-        </SyntaxHighlighter>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+</head>
+<body>
+  <!-- Container with FlowLayout -->
+  <!-- row-gap: 20px -->
+  <!-- column-gap: 40px -->
+  <div class="FlowLayout"
+       style="row-gap: 20px;
+              column-gap: 40px;
+              height: 200px;
+              background-color: LightGray">
+    <button>Button 1</button>
+    <button>Button 2</button>
+    <button>Button 3</button>
+    <button>Button 4</button>
+    <button>Button 5</button>
+    <button>Button 6</button>
+    <button>Button 7</button>
+    <button>Button 8</button>
+    <button>Button 9</button>
+  </div>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        After running this code, you will see a panel with 9 buttons with the
-        horizontal gap set to 40 pixels and the vertical gap set to 20 pixels.
+        After executing this code, you will see a panel with nine buttons, where
+        the horizontal gap is set to 40 pixels and the vertical gap is set to 20
+        pixels, as defined by the row-gap and column-gap style properties.
       </p>
       <div
         className="FlowLayout"

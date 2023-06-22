@@ -4,8 +4,6 @@ import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
 import { SEO } from "components/SEO";
 import { PageProps } from "gatsby";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Center Layouts with HTML and CSS";
 const description: string =
@@ -23,21 +21,22 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         <span>with HTML and CSS</span>
       </h1>
       <p>
-        CenterLayout is a layout manager that is used to center a component both
-        horizontally and vertically.
+        CenterLayout is a layout manager that facilitates the centering of a
+        component both horizontally and vertically within a container.
       </p>
       <p>
-        To use CenterLayout, you first need to create a container to hold your
-        component. This can be a &lt;div&gt; element. Once you have your
-        container, you can set its layout to CenterLayout by adding
-        "CenterLayout" to its class attribute.
+        To employ CenterLayout, you must first create a container to hold your
+        component. This container can be represented by a &lt;div&gt; element.
+        Once the container is established, you can apply the CenterLayout by
+        adding the class attribute "CenterLayout" to it.
       </p>
       <div className="SyntaxHighlighter">
         <CopyToClipboardSyntaxHighlighter>
           {`<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css" />
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css" />
 </head>
 <body>
   <!-- Container with CenterLayout -->
@@ -52,13 +51,13 @@ const CenterLayoutPage = ({ path }: PageProps) => {
         </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        In this example, we're setting the div's layout to CenterLayout to
-        center its content. We then add a button with the text "Click me!" to
-        the container.
+        In this example, the layout of the &lt;div&gt; is set to CenterLayout in
+        order to center its content. A button with the text "Button" is added
+        within the container.
       </p>
       <p>
-        When you run this code, you will see a panel with a button in the
-        center, like this:
+        Upon executing this code, you will observe a panel with a button
+        positioned in the center, as demonstrated below:
       </p>
       <div
         className="CenterLayout"
