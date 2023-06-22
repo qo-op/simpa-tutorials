@@ -35,26 +35,29 @@ const SplitPanePage = ({ path }: PageProps) => {
         <CopyToClipboardSyntaxHighlighter>
           {`<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://qo-op.github.io/simpa/simpa.css">
-    <script src="https://qo-op.github.io/simpa/simpa.js"></script>
-  </head>
-  <body class="Frame" id="split-pane-demo">
-    <!-- Container with SplitPane -->
-    <div class="SplitPane"
-         data-orientation="horizontal-split">
-      <!-- Left Container -->
-      <div>
-        <button>Left Button</button>
-      </div>
-      <!-- Divider -->
-      <div></div>
-      <!-- Right Container -->
-      <div>
-        <button>Right Button</button>
-      </div>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
+</head>
+<body class="Frame"
+      id="split-pane-demo">
+  <!-- Container with SplitPane -->
+  <div class="SplitPane"
+       data-orientation="horizontal-split">
+    <!-- Left Container -->
+    <div>
+      <button>Left Button</button>
     </div>
-  </body>
+    <!-- Divider -->
+    <div></div>
+    <!-- Right Container -->
+    <div>
+      <button>Right Button</button>
+    </div>
+  </div>
+</body>
 </html>
 `}
         </CopyToClipboardSyntaxHighlighter>

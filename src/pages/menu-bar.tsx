@@ -125,25 +125,25 @@ const MenuBarPage = ({ path }: PageProps) => {
     <div class="PageStart">
       <ul class="MenuBar">
         <li>
-          <!-- menu -->
+          <!-- Menu -->
           <div class="Menu">
             <span>File</span>
           </div>
           <ul>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
-                <!-- icon -->
+                <!-- Icon -->
                 <span>New</span>
-                <!-- text -->
+                <!-- Text -->
                 <span></span>
-                <!-- submenu icon -->
+                <!-- Submenu Icon -->
               </div>
             </li>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span class="material-icons">file_open</span>
@@ -152,22 +152,22 @@ const MenuBarPage = ({ path }: PageProps) => {
               </div>
             </li>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
                 <span>Save</span>
-                <!-- shortcut -->
+                <!-- Shortcut -->
                 <span data-key="s" data-ctrl>Ctrl+S</span>
                 <span></span>
               </div>
             </li>
             <li>
-              <!-- separator -->
+              <!-- Separator -->
               <hr />
             </li>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
@@ -178,13 +178,13 @@ const MenuBarPage = ({ path }: PageProps) => {
           </ul>
         </li>
         <li>
-          <!-- menu -->
+          <!-- Menu -->
           <div class="Menu">
             <span>Edit</span>
           </div>
           <ul>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
@@ -320,13 +320,13 @@ const MenuBarPage = ({ path }: PageProps) => {
     <div class="PageStart">
       <ul class="MenuBar">
         <li>
-          <!-- menu -->
+          <!-- Menu -->
           <div class="Menu">
             <span>File</span>
           </div>
           <ul>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
@@ -335,8 +335,8 @@ const MenuBarPage = ({ path }: PageProps) => {
               </div>
             </li>
             <li>
-              <!-- menu item -->
-              <div class="MenuItem"
+            <!-- MenuItem -->
+            <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
                 <span>Open</span>
@@ -344,7 +344,7 @@ const MenuBarPage = ({ path }: PageProps) => {
               </div>
             </li>
             <li>
-              <!-- submenu -->
+              <!-- Submenu -->
               <div class="Menu">
                 <span></span>
                 <span>Recent</span>
@@ -352,7 +352,7 @@ const MenuBarPage = ({ path }: PageProps) => {
               </div>
               <ul>
                 <li>
-                  <!-- submenu item -->
+                  <!-- Submenu MenuItem -->
                   <div class="MenuItem"
                        onpointerup="handlePointerUp(event);">
                     <span></span>
@@ -361,7 +361,7 @@ const MenuBarPage = ({ path }: PageProps) => {
                   </div>
                 </li>
                 <li>
-                  <!-- submenu item -->
+                  <!-- Submenu MenuItem -->
                   <div class="MenuItem"
                        onpointerup="handlePointerUp(event);">
                     <span></span>
@@ -372,12 +372,12 @@ const MenuBarPage = ({ path }: PageProps) => {
               </ul>
             </li>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>
                 <span>Save</span>
-                <!-- shortcut -->
+                <!-- Shortcut -->
                 <span data-key="s" data-ctrl> Ctrl+S </span>
                 <span></span>
               </div>
@@ -386,7 +386,7 @@ const MenuBarPage = ({ path }: PageProps) => {
               <hr />
             </li>
             <li>
-              <!-- menu item -->
+              <!-- MenuItem -->
               <div class="MenuItem"
                    onpointerup="handlePointerUp(event);">
                 <span></span>

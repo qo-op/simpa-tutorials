@@ -188,10 +188,8 @@ const CardLayoutPage = ({ path }: PageProps) => {
           style={{ border: "1px solid Gray", height: "100px", padding: "10px" }}
         >
           <div className="PageStart" style={{ margin: "0 0 10px 0" }}>
-            <select onChange={handleChange} defaultValue={"Card 1"}>
-              <option value="Card 1" selected>
-                1st Card
-              </option>
+            <select onChange={handleChange} defaultValue="Card 1">
+              <option value="Card 1">1st Card</option>
               <option value="Card 2">2nd Card</option>
               <option value="Card 3">3rd Card</option>
             </select>

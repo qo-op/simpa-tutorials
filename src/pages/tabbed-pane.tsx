@@ -1,10 +1,9 @@
+import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
 import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 import { PageProps } from "gatsby";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const title: string = "How to Use Tabbed Panes with HTML, CSS and JavaScript";
 const description: string =
@@ -23,76 +22,88 @@ const TabbedPanePage = ({ path }: PageProps) => {
         <span>and JavaScript</span>
       </h1>
       <p>
-        TabbedPane is a component that provides a tabbed pane container for
-        organizing and displaying multiple components or panels. It allows the
-        user to switch between different panels by selecting the corresponding
-        tabs.
+        A TabbedPane is a component that provides a container for organizing and
+        displaying multiple components or panels using tabs. It enables users to
+        switch between different panels by selecting the corresponding tabs.
       </p>
       <p>
-        It is commonly used to create tabbed interfaces in applications, where
-        each tab represents a different section or functionality of the
-        application.
+        Tabbed panes are commonly used to create tabbed interfaces in
+        applications, where each tab represents a different section or
+        functionality.
       </p>
       <p>
         Here's a basic example of using TabbedPane to create a tabbed pane with
         two tabs:
       </p>
       <div className="SyntaxHighlighter">
-        <SyntaxHighlighter language="xml" style={vs2015} wrapLongLines>
-          {`...
-<div class="TabbedPane"
-     style="height: 200px; border: 1px solid gray;">
-  <!-- tab container -->
-  <div>
-    <!-- tab component -->
-    <button value="Card 1">
-      <span>
-        <span></span> <!-- tab icon -->
-        <span>Tab 1</span> <!-- tab text -->
-        <span></span> <!-- tab close icon -->
-      </span>
-    </button>
-    <!-- tab component selected -->
-    <!-- with tabindex="-1" -->
-    <button value="Card 2"
-            tabindex="-1">
-      <span>
-        <span></span>
-        <span>Tab 2</span>
-        <span></span>
-      </span>
-    </button>
-  </div>
-  <!-- card container -->
-  <div class="CardLayout">
-    <!-- card component -->
-    <div class="CenterLayout"
-         data-name="Card 1"
-         style="visibility: hidden;">
-      <span>Panel #1</span>
+        <CopyToClipboardSyntaxHighlighter>
+          {`<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+        href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
+</head>
+<body>
+  <div class="TabbedPane"
+       style="height: 200px;
+              border: 1px solid gray">
+    <!-- Tab Container -->
+    <div>
+      <!-- Tab Component -->
+      <button value="Card 1">
+        <span>
+          <!-- Tab Icon -->
+          <span></span>
+          <!-- Tab Text -->
+          <span>Tab 1</span>
+          <!-- Tab Close Icon -->
+          <span></span>
+        </span>
+      </button>
+      <!-- Tab Component Selected -->
+      <!-- tabindex="-1" -->
+      <button value="Card 2" tabindex="-1">
+        <span>
+          <span></span>
+          <span>Tab 2</span>
+          <span></span>
+        </span>
+      </button>
     </div>
-    <!-- card component selected -->
-    <!-- not hidden -->
-    <div class="CenterLayout"
-         data-name="Card 2"
-         style="visibility: inherit;">
-      <span>Panel #2</span>
+    <!-- Card Container -->
+    <div class="CardLayout">
+      <!-- Card Component -->
+      <div class="CenterLayout"
+           data-name="Card 1"
+           style="visibility: hidden">
+        <span>Panel #1</span>
+      </div>
+      <!-- Card Component Selected -->
+      <!-- visibility: inherit -->
+      <div class="CenterLayout"
+           data-name="Card 2"
+           style="visibility: inherit">
+        <span>Panel #2</span>
+      </div>
     </div>
   </div>
-</div>
-...`}
-        </SyntaxHighlighter>
+</body>
+</html>
+`}
+        </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
         In the example above, we create a TabbedPane container with a height of
-        200 pixels. Then, we incorporate two containers: a container for tabs
-        and a container for cards (with CardLayout class) in the TabbedPane
-        container. Next, we added two tabs in the tab container along with their
-        corresponding cards in the card container.
+        200 pixels. Inside the TabbedPane container, we have a container for
+        tabs and a container for cards (using the CardLayout class). We add two
+        tabs in the tab container along with their corresponding cards in the
+        card container.
       </p>
       <p>
-        When you run this code, you should see a tabbed pane containing two tabs
-        labeled "Tab 1" and "Tab 2". Try clicking on a tab to see the associated
+        When you run this code, you will see a tabbed pane containing two tabs
+        labeled "Tab 1" and "Tab 2". Clicking on a tab will show the associated
         card.
       </p>
       <div
