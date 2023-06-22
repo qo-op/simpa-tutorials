@@ -48,8 +48,14 @@ const BorderLayoutPage = ({ path }: PageProps) => {
        data-axis="line-axis"
        style="height: 100px;
               background-color: LightGray">
-    <button>Button</button>
-    <button>Another<br />button</button>
+    <button>
+      Button
+    </button>
+    <button>
+      Another
+      <br>
+      button
+    </button>
   </div>
 </body>
 </html>
@@ -321,8 +327,14 @@ const BorderLayoutPage = ({ path }: PageProps) => {
        data-alignment-y="stretch"
        style="height: 100px;
               background-color: LightGray">
-    <button>Button</button>
-    <button>Another<br />button</button>
+    <button>
+      Button
+    </button>
+    <button>
+      Another
+      <br>
+      button
+    </button>
   </div>
 </body>
 </html>`}

@@ -103,13 +103,10 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         button is automatically placed in the Center region of the container.
       </p>
       <p>
-        When you use this code, you will see a panel with "Button 1" at the top
-        and "Button 2" in the center, like this:
+        When you use this code, you will see a "Button 1" at the top and a
+        "Button 2" in the center, like this:
       </p>
-      <div
-        className="BorderLayout"
-        style={{ height: "100px", backgroundColor: "LightGray" }}
-      >
+      <div className="BorderLayout" style={{ height: "100px" }}>
         <div className="PageStart">
           <button>Button 1</button>
         </div>
@@ -150,8 +147,8 @@ const BorderLayoutPage = ({ path }: PageProps) => {
         </CopyToClipboardSyntaxHighlighter>
       </div>
       <p>
-        After running this code, you will see a panel with two buttons and a gap
-        between them:
+        After running this code, you will see two buttons and a gap between
+        them:
       </p>
       <div className="BorderLayout" style={{ height: "100px" }}>
         <div className="PageStart" style={{ margin: "0 0 10px 0" }}>

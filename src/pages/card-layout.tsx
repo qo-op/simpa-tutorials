@@ -56,8 +56,7 @@ const CardLayoutPage = ({ path }: PageProps) => {
 <body>
   <!-- Container with CardLayout -->
   <div class="CardLayout"
-       style="height: 100px;
-              background-color: LightGray">
+       style="height: 100px">
     <button style="visibility: hidden">
       Button 1
     </button>
@@ -84,7 +83,6 @@ const CardLayoutPage = ({ path }: PageProps) => {
         className="CardLayout"
         style={{
           height: "100px",
-          backgroundColor: "LightGray",
         }}
       >
         <button style={{ visibility: "hidden" }}>Button 1</button>
