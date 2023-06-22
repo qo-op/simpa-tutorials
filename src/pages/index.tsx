@@ -18,24 +18,33 @@ const IndexPage = ({ path }: PageProps) => {
         <span>Introduction to Simpa</span>
       </h1>
       <p>
-        Simpa is a user interface library that helps developers create
-        Single-Page Applications. Simpa provides a set of layouts and components
-        for building graphical user interfaces.
+        Simpa is a user interface library designed to assist developers in
+        creating Single-Page Applications (SPAs). It offers a collection of
+        layouts and components specifically tailored for building graphical user
+        interfaces.
       </p>
       <p>
-        In this series of tutorials, we will explore the basics of Simpa and how
-        to use it in Single-Page Applications. We will cover topics such as:
+        This series of tutorials aims to provide a comprehensive understanding
+        of Simpa and guide developers on how to effectively utilize it in their
+        Single-Page Applications. The tutorials will cover the following key
+        topics:
       </p>
       <ul>
-        <li>How to use layout managers to arrange components on the screen</li>
+        <li>
+          How to use Simpa's layout managers to organize and arrange components
+          on the screen efficiently. Layout managers simplify the process of
+          creating responsive and visually appealing interfaces.
+        </li>
         <li>
           The fundamentals of Simpa components, such as borders, dialogs, menus,
-          split panes, tabbed panes, tables, and trees
+          split panes, tabbed panes, tables, and trees.
         </li>
       </ul>
       <p>
-        Throughout these tutorials, we will use practical examples and code
-        snippets to illustrate each concept.
+        Throughout the tutorials, practical examples and code snippets will be
+        provided to illustrate each concept clearly. By following along with
+        these examples, developers will be able to grasp the concepts
+        effectively and apply them in their own projects.
       </p>
     </Layout>
   );
