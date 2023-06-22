@@ -43,12 +43,14 @@ const ScrollPanePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
-  <div class="ScrollPane"
-       style="width: 200px;
-              white-space: nowrap;
-              border: 1px solid Gray;
-              background-color: WhiteSmoke;">
-    <p>This is a long text that requires scrolling.</p>
+  <div class="CenterLayout">
+    <div class="ScrollPane"
+        style="width: 200px;
+               white-space: nowrap;
+               border: 1px solid Gray;
+               background-color: WhiteSmoke;">
+      <p>This is a long text that requires scrolling.</p>
+    </div>
   </div>
 </body>
 </html>
@@ -102,13 +104,15 @@ const ScrollPanePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
-  <div class="ScrollPane"
-       data-overlay
-       style="width: 200px;
-              white-space: nowrap;
-              border: 1px solid Gray;
-              background-color: WhiteSmoke;">
-    <p>This is a long text that requires scrolling.</p>
+  <div class="CenterLayout">
+    <div class="ScrollPane"
+        data-overlay
+        style="width: 200px;
+               white-space: nowrap;
+               border: 1px solid Gray;
+               background-color: WhiteSmoke;">
+      <p>This is a long text that requires scrolling.</p>
+    </div>
   </div>
 </body>
 </html>

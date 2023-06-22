@@ -51,6 +51,11 @@ export const cssComponentsTutorials = [
     folder: "CSS Components",
   },
   {
+    text: "How to Use Frames",
+    path: "/frame/",
+    folder: "CSS Components",
+  },
+  {
     text: "How to Use Scrollable Panes",
     path: "/scroll-pane/",
     folder: "CSS Components",

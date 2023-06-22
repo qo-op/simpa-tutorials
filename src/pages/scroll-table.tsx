@@ -134,45 +134,47 @@ const ScrollTablePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
-  <!-- ScrollTable -->
-  <div class="ScrollTable"
-       style="max-width: 500px">
-    <table>
-      <!-- Table Data -->
-      <tbody>
-        <tr>
-          <td>John Doe</td>
-          <td>35</td>
-          <td>Engineer</td>
-          <td>Male</td>
-          <td>United States</td>
-        </tr>
-        <tr>
-          <td>Jane Smith</td>
-          <td>28</td>
-          <td>Teacher</td>
-          <td>Female</td>
-          <td>Canada</td>
-        </tr>
-        <tr>
-          <td>Michael Johnson</td>
-          <td>42</td>
-          <td>Doctor</td>
-          <td>Male</td>
-          <td>Australia</td>
-        </tr>
-      </tbody>
-      <!-- Column Headers -->
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Occupation</th>
-          <th>Gender</th>
-          <th>Country</th>
-        </tr>
-      </thead>
-    </table>
+  <div class="CenterLayout">
+    <!-- ScrollTable -->
+    <div class="ScrollTable"
+         style="max-width: 500px">
+      <table>
+        <!-- Table Data -->
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>35</td>
+            <td>Engineer</td>
+            <td>Male</td>
+            <td>United States</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>28</td>
+            <td>Teacher</td>
+            <td>Female</td>
+            <td>Canada</td>
+          </tr>
+          <tr>
+            <td>Michael Johnson</td>
+            <td>42</td>
+            <td>Doctor</td>
+            <td>Male</td>
+            <td>Australia</td>
+          </tr>
+        </tbody>
+        <!-- Column Headers -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Occupation</th>
+            <th>Gender</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
   </div>
 </body>
 </html>`}
@@ -246,47 +248,49 @@ const ScrollTablePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body>
-  <!-- ScrollTable -->
-  <!-- data-row-header="true" -->
-  <div class="ScrollTable"
-       data-row-header="true"
-       style="max-width: 250px">
-    <table>
-      <!-- Table Data -->
-      <tbody>
-        <tr>
-          <td>John Doe</td>
-          <td>35</td>
-          <td>Engineer</td>
-          <td>Male</td>
-          <td>United States</td>
-        </tr>
-        <tr>
-          <td>Jane Smith</td>
-          <td>28</td>
-          <td>Teacher</td>
-          <td>Female</td>
-          <td>Canada</td>
-        </tr>
-        <tr>
-          <td>Michael Johnson</td>
-          <td>42</td>
-          <td>Doctor</td>
-          <td>Male</td>
-          <td>Australia</td>
-        </tr>
-      </tbody>
-      <!-- column headers -->
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Occupation</th>
-          <th>Gender</th>
-          <th>Country</th>
-        </tr>
-      </thead>
-    </table>
+  <div class="CenterLayout">
+    <!-- ScrollTable -->
+    <!-- data-row-header="true" -->
+    <div class="ScrollTable"
+        data-row-header="true"
+        style="max-width: 250px">
+      <table>
+        <!-- Table Data -->
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>35</td>
+            <td>Engineer</td>
+            <td>Male</td>
+            <td>United States</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>28</td>
+            <td>Teacher</td>
+            <td>Female</td>
+            <td>Canada</td>
+          </tr>
+          <tr>
+            <td>Michael Johnson</td>
+            <td>42</td>
+            <td>Doctor</td>
+            <td>Male</td>
+            <td>Australia</td>
+          </tr>
+        </tbody>
+        <!-- column headers -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Occupation</th>
+            <th>Gender</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
   </div>
 </body>
 </html>
