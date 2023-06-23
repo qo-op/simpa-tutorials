@@ -34,8 +34,7 @@ const ScrollPanePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
 </head>
 <body class="Frame"
-      style="border: 1px solid Gray;
-             background-color: LightGray">
+      style="background-color: LightGray">
 </body>
 </html>
 `}
