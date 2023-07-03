@@ -65,11 +65,6 @@ export const cssComponentsTutorials = [
     path: "/scroll-table/",
     folder: "CSS Components",
   },
-  {
-    text: "How to Use Trees",
-    path: "/tree/",
-    folder: "CSS Components",
-  },
 ];
 
 export const jsComponentsTutorials = [
@@ -92,6 +87,11 @@ export const jsComponentsTutorials = [
     text: "How to Use Tabbed Panes",
     path: "/tabbed-pane/",
     folder: "JS Components",
+  },
+  {
+    text: "How to Use Trees",
+    path: "/tree/",
+    folder: "CSS Components",
   },
 ];
 

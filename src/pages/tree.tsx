@@ -4,7 +4,7 @@ import Folder from "@mui/icons-material/Folder";
 import Iron from "@mui/icons-material/Iron";
 import CopyToClipboardSyntaxHighlighter from "components/CopyToClipboardSyntaxHighlighter";
 import Layout from "components/Layout";
-import NoteAboutSimpaCSS from "components/NoteAboutSimpaCSS";
+import NoteAboutSimpaJS from "components/NoteAboutSimpaJS";
 import { SEO } from "components/SEO";
 import { PageProps } from "gatsby";
 import React from "react";
@@ -50,13 +50,6 @@ const TreePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script>
-    function expandOrCollapse(event) {
-      const treeNode = event.currentTarget;
-      const closed = treeNode.dataset.closed;
-      treeNode.dataset.closed = closed === "true" ? "false" : "true";
-    }
-  </script>
 </head>
 <body>
   <!-- Tree -->
@@ -64,10 +57,8 @@ const TreePage = ({ path }: PageProps) => {
     <li>
       <!-- Tree Node -->
       <div class="TreeNode"
-           onclick="expandOrCollapse(event);">
-        <span class="material-icons">
-          folder
-        </span>
+           data-closed="false">
+        <span class="material-icons"></span>
         <span>Appliances</span>
       </div>
       <ul>
@@ -122,8 +113,8 @@ const TreePage = ({ path }: PageProps) => {
       <div style={{ height: "100px", border: "1px solid Gray" }}>
         <ul className="Tree">
           <li>
-            <div className="TreeNode" onClick={expandOrCollapse}>
-              <Folder fontSize="small" />
+            <div className="TreeNode" data-closed="false">
+              <span className="material-icons"></span>
               <span>Appliances</span>
             </div>
             <ul>
@@ -166,13 +157,6 @@ const TreePage = ({ path }: PageProps) => {
         href="https://qo-op.github.io/simpa/simpa.css">
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script>
-    function expandOrCollapse(event) {
-      const treeNode = event.currentTarget;
-      const closed = treeNode.dataset.closed;
-      treeNode.dataset.closed = closed === "true" ? "false" : "true";
-    }
-  </script>
 </head>
 <body>
   <!-- Tree -->
@@ -234,11 +218,7 @@ const TreePage = ({ path }: PageProps) => {
       <div style={{ height: "100px", border: "1px solid Gray" }}>
         <ul className="Tree">
           <li>
-            <div
-              className="TreeNode"
-              data-closed="true"
-              onClick={expandOrCollapse}
-            >
+            <div className="TreeNode" data-closed="true">
               <Folder fontSize="small" />
               <span>Appliances</span>
             </div>
@@ -266,7 +246,7 @@ const TreePage = ({ path }: PageProps) => {
         </ul>
       </div>
       <p></p>
-      <NoteAboutSimpaCSS subject="Simpa CSS Components" />
+      <NoteAboutSimpaJS subject="Simpa JS Components" />
     </Layout>
   );
 };

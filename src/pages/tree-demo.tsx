@@ -41,8 +41,9 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
         <ul class="Tree">
           <li>
             <div class="TreeNode"
-                onclick="expandOrCollapse(event);"
-                data-closed="false">
+                 data-user-object="TreeDemoHelp"
+                 onclick="handleClick(event);"
+                 data-closed="false">
               <span class="material-icons"></span>
               <span>The Java Series</span>
             </div>
@@ -50,7 +51,8 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
               <li>
                 <div class="TreeNode"
                     style="padding: 0 0 0 24px;"
-                    onclick="expandOrCollapse(event);"
+                    data-user-object="TreeDemoHelp"
+                    onclick="handleClick(event);"
                     data-closed="true">
                   <span class="material-icons"></span>
                   <span>Books for Java Programmers</span>                
@@ -115,7 +117,8 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
               <li>
                 <div class="TreeNode"
                     style="padding: 0 0 0 24px;"
-                    onclick="expandOrCollapse(event);"
+                    data-user-object="TreeDemoHelp"
+                    onclick="handleClick(event);"
                     data-closed="true">
                   <span class="material-icons"></span>
                   <span>Books for Java Implementers</span>                
@@ -176,23 +179,8 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
     height: 8px;
   }
 }
-.TreeNode>.material-icons::after {
-  content: "description";
-}
-.TreeNode[data-closed="true"]>.material-icons::after {
-  content: "keyboard_arrow_right";
-}
-.TreeNode[data-closed="false"]>.material-icons::after {
-  content: "keyboard_arrow_down";
-}
 `}
       jsCode={`/* ${title}.js */
-function expandOrCollapse(event) {
-  const treeNode = event.currentTarget;
-  const closed = treeNode.dataset.closed;
-  treeNode.dataset.closed = closed === "true" ? "false" : "true";
-  displayURL("../html/TreeDemoHelp.txt");
-}
 function handleClick(event) {
   const treeNode = event.currentTarget;
   const userObject = treeNode.dataset.userObject;

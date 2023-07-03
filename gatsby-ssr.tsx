@@ -5,6 +5,11 @@ import React from "react";
 export function onRenderBody({ setHeadComponents }) {
   setHeadComponents([
     <link
+      key="material-icons.css"
+      rel="stylesheet"
+      href="/css/material-icons.css"
+    />,
+    <link
       key="simpa.css"
       rel="stylesheet"
       href="https://qo-op.github.io/simpa/simpa.css"
