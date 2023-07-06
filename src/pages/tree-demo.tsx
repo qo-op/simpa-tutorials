@@ -161,6 +161,9 @@ const TreeDemoPage = ({ path, location }: PageProps) => {
 </html>
 `}
       cssCode={`/* ${title}.css */
+.TreeNode > .material-icons::after {
+  content: "insert_drive_file";
+}
 @media (pointer: coarse) {
   #top-container,
   #bottom-container {
