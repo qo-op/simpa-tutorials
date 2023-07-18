@@ -47,14 +47,12 @@ const SplitPanePage = ({ path }: PageProps) => {
   <div class="SplitPane"
        data-orientation="horizontal-split">
     <!-- Left Container -->
-    <div>
-      <button>Left Button</button>
+    <div style="width: 100px; background-color: blue;">
     </div>
     <!-- Divider -->
     <div></div>
     <!-- Right Container -->
-    <div>
-      <button>Right Button</button>
+    <div style="background-color: green;">
     </div>
   </div>
 </body>
@@ -77,13 +75,9 @@ const SplitPanePage = ({ path }: PageProps) => {
         width of the containers and resize the buttons by dragging the divider.
       </p>
       <div className="SplitPane" style={{ height: "100px" }}>
-        <div>
-          <button>Left Button</button>
-        </div>
+        <div style={{ width: "100px", backgroundColor: "blue" }}></div>
         <div></div>
-        <div>
-          <button>Right Button</button>
-        </div>
+        <div style={{ backgroundColor: "green" }}></div>
       </div>
       <p></p>
       <NoteAboutSimpaJS subject="Simpa JS Components" />

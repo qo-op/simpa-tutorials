@@ -48,6 +48,8 @@ const TreePage = ({ path }: PageProps) => {
 <head>
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -155,6 +157,8 @@ const TreePage = ({ path }: PageProps) => {
 <head>
   <link rel="stylesheet"
         href="https://qo-op.github.io/simpa/simpa.css">
+  <script src="https://qo-op.github.io/simpa/simpa.js">
+  </script>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
