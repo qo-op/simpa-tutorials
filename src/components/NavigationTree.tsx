@@ -67,8 +67,9 @@ const NavigationTree = ({
       dispatch(setScrollTop(navigationTreeScrollPane.scrollTop));
     }
   };
-  const folderClick = (folder: string) => {
+  const folderClick = (ev: React.MouseEvent, folder: string) => {
     dispatch(toggle(folder));
+    ev.stopPropagation();
   };
   return (
     <ul className="NavigationTree Tree" style={NavigationTreeStyle}>
@@ -86,7 +87,7 @@ const NavigationTree = ({
         <div
           className="TreeNode"
           data-closed={cssLayoutsFolderClosed ? "true" : "false"}
-          onClick={() => folderClick("CSS Layouts")}
+          onClick={(event) => folderClick(event, "CSS Layouts")}
         >
           {cssLayoutsFolderClosed ? (
             <KeyboardArrowRightIcon />
@@ -114,7 +115,7 @@ const NavigationTree = ({
         <div
           className="TreeNode"
           data-closed={cssComponentsFolderClosed ? "true" : "false"}
-          onClick={() => folderClick("CSS Components")}
+          onClick={(event) => folderClick(event, "CSS Components")}
         >
           {cssComponentsFolderClosed ? (
             <KeyboardArrowRightIcon />
@@ -144,7 +145,7 @@ const NavigationTree = ({
         <div
           className="TreeNode"
           data-closed={jsComponentsFolderClosed ? "true" : "false"}
-          onClick={() => folderClick("JS Components")}
+          onClick={(event) => folderClick(event, "JS Components")}
         >
           {jsComponentsFolderClosed ? (
             <KeyboardArrowRightIcon />
@@ -178,7 +179,7 @@ const NavigationTree = ({
         <div
           className="TreeNode"
           data-closed={examplesFolderClosed ? "true" : "false"}
-          onClick={() => folderClick("Examples")}
+          onClick={(event) => folderClick(event, "Examples")}
         >
           {examplesFolderClosed ? (
             <KeyboardArrowRightIcon />
